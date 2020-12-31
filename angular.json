@@ -3,5 +3,128 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "classroom-rds": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/classroom-rds",
+      "sourceRoot": "projects/classroom-rds/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/classroom-rds",
+            "index": "projects/classroom-rds/src/index.html",
+            "main": "projects/classroom-rds/src/main.ts",
+            "polyfills": "projects/classroom-rds/src/polyfills.ts",
+            "tsConfig": "projects/classroom-rds/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/classroom-rds/src/favicon.ico",
+              "projects/classroom-rds/src/assets"
+            ],
+            "styles": [
+              "projects/classroom-rds/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/classroom-rds/src/environments/environment.ts",
+                  "with": "projects/classroom-rds/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "classroom-rds:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "classroom-rds:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "classroom-rds:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/classroom-rds/src/test.ts",
+            "polyfills": "projects/classroom-rds/src/polyfills.ts",
+            "tsConfig": "projects/classroom-rds/tsconfig.spec.json",
+            "karmaConfig": "projects/classroom-rds/karma.conf.js",
+            "assets": [
+              "projects/classroom-rds/src/favicon.ico",
+              "projects/classroom-rds/src/assets"
+            ],
+            "styles": [
+              "projects/classroom-rds/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/classroom-rds/tsconfig.app.json",
+              "projects/classroom-rds/tsconfig.spec.json",
+              "projects/classroom-rds/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/classroom-rds/e2e/protractor.conf.js",
+            "devServerTarget": "classroom-rds:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "classroom-rds:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "cli": {
+    "analytics": "11384632-5fa9-499b-99ce-82cdc30ab53c"
+  },
+  "defaultProject": "classroom-rds"
 }
