@@ -28,6 +28,8 @@
               "projects/classroom-rds/src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/scss/bootstrap.scss",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "projects/classroom-rds/src/styles.scss"
             ],
             "scripts": []
@@ -91,6 +93,8 @@
               "projects/classroom-rds/src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/scss/bootstrap.scss",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "projects/classroom-rds/src/styles.scss"
             ],
             "scripts": []
@@ -104,9 +108,7 @@
               "projects/classroom-rds/tsconfig.spec.json",
               "projects/classroom-rds/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -122,7 +124,8 @@
           }
         }
       }
-    }},
+    }
+  },
   "cli": {
     "analytics": "11384632-5fa9-499b-99ce-82cdc30ab53c"
   },
