@@ -1,23 +1,22 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #leftSidenav [@onSideNavChange]="sideNavState ? 'open' : 'close'"
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'push' : 'side'"
     [opened]="(isHandset$ | async) === false">
     <div fxLayout="column" style="height: 100%;" fxLayoutAlign="space-between wrap">
       <mat-nav-list dense>
         <!-- <mat-accordion> -->
         <a mat-list-item [routerLink]="['auth','profile']" routerLinkActive="active">
           <img mat-list-icon [src]="['assets/images/dummy-user.png']" alt="User avatar">
-          <p matLine [@animateText]="linkText ? 'show' : 'hide'">Perfil</p>
+          <span matLine [@animateText]="linkText ? 'show' : 'hide'">Perfil</span>
         </a>
         <mat-divider></mat-divider>
         <!--  <mat-expansion-panel>
            <mat-expansion-panel-header>
              <p [@animateText]="linkText ? 'show' : 'hide'">Classroom </p>
            </mat-expansion-panel-header> -->
-        <a *ngFor="let page of classroomPages" mat-list-item [routerLink]="page.route" routerLinkActive="active"
-          (click)="leftSidenav.close()">
+        <a *ngFor="let page of classroomPages" mat-list-item [routerLink]="page.route" routerLinkActive="active">
           <fa-icon matListIcon [icon]="page.icon"></fa-icon>
-          <p matLine [@animateText]="linkText ? 'show' : 'hide'">{{ page?.name }} </p>
+          <span matLine [@animateText]="linkText ? 'show' : 'hide'">{{ page?.name }} </span>
         </a>
         <!-- </mat-expansion-panel>
        </mat-accordion> -->
@@ -29,7 +28,7 @@
       </mat-nav-list>
     </div>
   </mat-sidenav>
-  <mat-sidenav-content [@onMainContentChange]="onSideNavChange ? 'open': 'close'">
+  <mat-sidenav-content [@onMainContentChange]="(onSideNavChange && isHandset$) ? 'open': 'close'">
     <main class="main_container" fxLayout="column" fxLayoutGap="0px" style="min-height: 500vh;">
       <router-outlet></router-outlet>
     </main>

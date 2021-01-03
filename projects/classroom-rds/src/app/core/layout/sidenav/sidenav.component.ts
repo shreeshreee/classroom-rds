@@ -52,6 +52,7 @@ export class SidenavComponent implements OnInit {
     })
 
   }
+
   onSidenavToggle() {
     this.sideNavState = !this.sideNavState
 

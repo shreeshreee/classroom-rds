@@ -1,2 +1,2 @@
-<app-header [isHandset$]="isHandset$"></app-header>
-<app-sidenav [isHandset$]="isHandset$"></app-sidenav>
+<app-header [isHandset$]="isHandset$" [isOnline]="isOnline$|async" [user]="user$|async"></app-header>
+<app-sidenav *ngIf="(isOnline$|async)" [isHandset$]="isHandset$"></app-sidenav>

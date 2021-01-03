@@ -108,7 +108,9 @@
               "projects/classroom-rds/tsconfig.spec.json",
               "projects/classroom-rds/e2e/tsconfig.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {
@@ -122,6 +124,10 @@
               "devServerTarget": "classroom-rds:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

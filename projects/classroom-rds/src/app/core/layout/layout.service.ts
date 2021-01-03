@@ -1,24 +1,32 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { EventEmitter, HostListener, Injectable } from '@angular/core';
 
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
 
 @Injectable()
 export class LayoutService {
-
   public toggleSidenavLeft: EventEmitter<any> = new EventEmitter();
-  public toggleSidenavRight: EventEmitter<any> = new EventEmitter();
   // this variable track the value between sessions.
   private _sideState: any = 'open';
   public sideNavState$: Subject<boolean> = new Subject();
   /** This is the mini variant solution with animations trick. */
-  sideNavListener: any = new Subject();
   prevScrollpos;
-  constructor() {
+
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+  ) {
     this.prevScrollpos = window.pageYOffset;
-    this.sideNavListener.subscribe(state => {
+    this.sideNavState$.subscribe(state => {
       this.setSidenavState(state);
     });
   }
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
+
   get sideNavState() {
     return this._sideState;
   }
