@@ -1,9 +1,11 @@
-.mat-toolbar.mat-primary {
+
+.mat-toolbar{
   position: sticky;
   top: 0;
   z-index: 100;
   min-height: 50px!important;
   height: 50px !important;
+  background-color: lightcyan;
 }
 .img-user {
   border:2px solid green;

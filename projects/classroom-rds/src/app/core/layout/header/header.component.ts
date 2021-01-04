@@ -1,19 +1,17 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit, Input } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 
-import { faBars, faSignInAlt, faSignOutAlt, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faSignInAlt, faShieldAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { Store } from '@ngrx/store';
 
 import { Observable } from 'rxjs';
 
 import { LayoutService } from '../layout.service';
-import { AppState } from './../../../store/app.state';
+import { AppState } from '../../../store/app.state';
 import { User } from '../../../auth/models/user.model';
-import { AuthService } from './../../../auth/services/auth.service';
 import * as fromAuthActions from "../../../auth/state/auth.actions";
-import { SignInComponent } from './../../../auth/components/sign-in/sign-in.component';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -30,26 +28,32 @@ import { SignInComponent } from './../../../auth/components/sign-in/sign-in.comp
 export class HeaderComponent implements OnInit {
   @Input() isHandset$: Observable<boolean>;
   @Input() user: User;
-  @Input() isOnline: boolean
+  @Input() isOnline: boolean;
+  @Input() isAdmin: boolean;
   basicProfile: gapi.auth2.BasicProfile;
   faBars = faBars;
   faSignIn = faSignInAlt;
-  faSignOut = faSignOutAlt;
   faShieldAlt = faShieldAlt;
+  faSignOut = faSignOutAlt;
+
   constructor(
     private layoutService: LayoutService,
-    private dialog: MatDialog,
     private store: Store<AppState>
+
   ) { }
 
   ngOnInit() { }
   toggleSidenavLeft($event: any) {
     this.layoutService.toggleSidenavLeft.emit($event);
   }
-  onLogin() {
-    this.dialog.open(SignInComponent, { height: '250px', width: '380px' });
+  onSignIn() {
+    this.store.dispatch(
+      fromAuthActions.signIn()
+    );
   }
   onSignOut() {
-    this.store.dispatch(fromAuthActions.signOut({ user: this.user }));
+    this.store.dispatch(
+      fromAuthActions.signOut({ user: this.user })
+    );
   }
 }

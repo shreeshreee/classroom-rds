@@ -1,6 +1,21 @@
-.sidenav-container {
-  height: calc(100vh - 50px);
+ .sidenav-container {
+  background-color: lightseagreen;
+  height:100%;
 }
 
+.sidenav {
+  background-color:lightblue;
+  border:none;
+}
 
+.img-google {
+  height: 50px;
+  width: auto;
+}
 
+.sidenav-container {
+  height: calc(100vh - 80px);
+}
+.main-container {
+  min-height: calc(100vh - 80px);
+}

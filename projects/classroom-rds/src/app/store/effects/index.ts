@@ -1,6 +1,6 @@
 // start:ng42.barrel
-export * from './dialog.effects';
 export * from './route.effects';
-export * from './store.effects';
+export * from './app.effects';
+export * from './spinner.effects';
 // end:ng42.barrel
 

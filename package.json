@@ -7,7 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "prod": "ng build --prod",
+    "deploy": "ng build --prod && npm run doc:g && firebase deploy",
+    "doc:g": "npx @compodoc/compodoc -p ./tsconfig.json --output ./docs --name \"Google Classroom RDS Admin\" --customFavicon ./projects/classroom-rds/src/assets/icons/favicon.ico --customLogo ./projects/rds-admin/src/assets/images/rds-nobackground.png --disableDependencies --theme material --disableSourceCode --hideGenerator --language es-ES"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +32,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@ngrx/effects": "^10.1.2",
+    "@ngrx/entity": "^10.1.2",
     "@ngrx/router-store": "^10.1.2",
     "@ngrx/store": "^10.1.2",
     "@ngrx/store-devtools": "^10.1.2",
@@ -36,6 +40,7 @@
     "firebase": "^8.2.1",
     "ng-gapi": "0.0.94",
     "ngx-bootstrap": "^6.2.0",
+    "ngx-spinner": "^9.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

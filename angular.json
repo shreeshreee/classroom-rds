@@ -23,10 +23,7 @@
             "polyfills": "projects/classroom-rds/src/polyfills.ts",
             "tsConfig": "projects/classroom-rds/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "projects/classroom-rds/src/favicon.ico",
-              "projects/classroom-rds/src/assets"
-            ],
+            "assets": ["projects/classroom-rds/src/assets"],
             "styles": [
               "./node_modules/bootstrap/scss/bootstrap.scss",
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
@@ -108,9 +105,7 @@
               "projects/classroom-rds/tsconfig.spec.json",
               "projects/classroom-rds/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {

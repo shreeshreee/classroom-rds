@@ -5,7 +5,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 
 import { tap } from 'rxjs/operators';
 
-import * as fromAuthActions from './../../../auth/state/auth.actions';
+import * as fromAuthActions from '../../auth/state/auth.actions';
 @Injectable()
 export class RouteEffects {
 
@@ -13,6 +13,7 @@ export class RouteEffects {
     () =>
       this.actions$.pipe(
         ofType(
+          fromAuthActions.browserReload,
           fromAuthActions.signInSuccess,
           fromAuthActions.signInFailure,
           fromAuthActions.signOutCompleted),

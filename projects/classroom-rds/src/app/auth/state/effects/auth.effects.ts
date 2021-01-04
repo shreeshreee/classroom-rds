@@ -2,11 +2,15 @@ import { Injectable } from '@angular/core';
 
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
-import { of, Observable, defer } from 'rxjs';
-import { switchMap, map, catchError } from 'rxjs/operators';
-import { AuthService } from '../../services/auth.service';
+import { of, Observable, defer, from } from 'rxjs';
+import { switchMap, map, catchError, mergeMap } from 'rxjs/operators';
+
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 import * as fromAuthActions from '../auth.actions';
+import { User } from '../../models/user.model';
+import { AuthService } from '../../services/auth.service';
 @Injectable()
 export class AuthEffects {
 
@@ -14,14 +18,14 @@ export class AuthEffects {
     () =>
       this.actions$.pipe(
         ofType(fromAuthActions.signIn),
-        switchMap(() => this.authService.handleSignInClick()
+        switchMap(() => from(this.authService.handleSignInClick())
           .pipe(
             map((res) => {
               return {
                 id: res.user.providerData[0].uid,
                 name: res.user.displayName,
                 email: res.user.email,
-                photoUrl: res.user.providerData[0].photoURL,
+                photoUrl: res.user.photoURL,
                 isNew: res.additionalUserInfo.isNewUser,
                 isVerified: res.user.emailVerified,
                 creationTime: res.user.metadata.creationTime,
@@ -29,7 +33,7 @@ export class AuthEffects {
                 uid: res.user.uid
               };
             }),
-            switchMap((user) => {
+            switchMap((user: User) => {
               if (user.isNew) {
                 return [
                   fromAuthActions.signInSuccess({ user }),
@@ -67,7 +71,7 @@ export class AuthEffects {
       this.actions$.pipe(
         ofType(fromAuthActions.signOut),
         switchMap((action) =>
-          this.authService.signOut()
+          from(this.authService.signOut())
             .pipe(
               map(() => fromAuthActions.updateOnlineStatus({ uid: action.user.uid, isOnline: action.user.isOnline })),
               map(() => fromAuthActions.signOutCompleted())

@@ -15,16 +15,19 @@ import { LayoutService } from './layout.service';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent {
-  isHandset$: Observable<boolean> = this.layoutService.isHandset$;
+  isHandset$: Observable<boolean>;
   user$: Observable<User>;
   isOnline$: Observable<boolean>;
+  isAdmin$: Observable<boolean>;
 
   constructor(
     private layoutService: LayoutService,
     private store: Store<AppState>
   ) {
+    this.isHandset$ = this.layoutService.isHandset$
     this.isOnline$ = this.store.select(fromAuthSelectors.selectIsLoggedIn);
     this.user$ = this.store.select(fromAuthSelectors.selectUser);
+    this.isAdmin$ = this.store.select(fromAuthSelectors.selectIsAdmin);
   }
 
 }

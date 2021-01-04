@@ -1,18 +1,17 @@
-<mat-toolbar color="primary" class="animation fadeInOut mat-elevation-z10 ">
+<mat-toolbar class="animation fadeInOut mat-elevation-z0 header">
   <mat-toolbar-row fxLayoutAlign="space-between center">
     <div fxLayout="row">
-      <fa-icon *ngIf="(isHandset$|async) && (isOnline)" mat-icon-button aria-label="Toggle sidenav"
+      <fa-icon *ngIf="(isHandset$|async) && isOnline" mat-icon-button aria-label="Toggle sidenav"
         (click)="toggleSidenavLeft($event)" [icon]="faBars">
       </fa-icon>
     </div>
     <div fxLayout="row">
-      <button *ngIf="isOnline" class="img-user" mat-icon-button [matMenuTriggerFor]="userMenu">
-        <!-- <img class="img-fluid rounded-circle" [src]="user.photoUrl ? user.photoUrl : 'assets/images/dummy-user.png'" /> -->
+      <a *ngIf="isOnline && user" class="img-user" mat-icon-button [matMenuTriggerFor]="userMenu">
         <img class="img-fluid rounded-circle"
           [src]="[user.photoUrl ? user.photoUrl : 'assets/images/dummy-user.png']" />
-      </button>
+      </a>
 
-      <button *ngIf="!isOnline" mat-button (click)="onLogin()">
+      <button *ngIf="!isOnline" mat-button (click)="onSignIn()">
         <fa-icon [icon]="faSignIn" size="lg"></fa-icon>&nbsp;&nbsp;Inicia Sesión
       </button>
     </div>
@@ -21,8 +20,10 @@
 
 <!-- Menu Items -->
 <mat-menu #userMenu="matMenu" fxLayoutAlign="right">
-  <!-- <app-user [user]="user" [isAdmin]="isAdmin" [isOnline]="isOnline" [routerLink]="['auth', 'profile']"></app-user> -->
-  <div mat-menu-item [routerLink]="['admin']">
+  <app-user mat-list-item *ngIf="isOnline && user" [routerLink]="['auth','profile']" routerLinkActive="active"
+    [isOnline]="isOnline" [isAdmin]="isAdmin" [user]="user">
+  </app-user>
+  <div *ngIf="isOnline && isAdmin" mat-menu-item [routerLink]="['admin']">
     <fa-icon matListIcon [icon]="faShieldAlt" size="lg"></fa-icon>
     Administración
   </div>

@@ -1,12 +1,15 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { MatDialog } from '@angular/material/dialog';
 
-import { faUser, faHome, faSchool, faChalkboardTeacher, faUserTie, faUserGraduate, faUserCog, IconDefinition, faCompressAlt } from '@fortawesome/free-solid-svg-icons';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { faUser, faHome, faSchool, faChalkboardTeacher, faUserTie, faUserGraduate, faUserCog, IconDefinition, faCompressAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { Observable } from 'rxjs';
 
 import { LayoutService } from './../layout.service';
 import { animateText, onMainContentChange, onSideNavChange } from '../../animations/animations';
+import { User } from '../../../auth/models/user.model';
 interface Page {
   route: string[];
   name: string;
@@ -21,25 +24,28 @@ interface Page {
 export class SidenavComponent implements OnInit {
   @ViewChild('leftSidenav') sidenavLeft: MatSidenav;
   @Input() isHandset$: Observable<boolean>;
+  @Input() isOnline: boolean;
+  @Input() isAdmin: boolean;
+  @Input() user: User;
   sideNavState: boolean = false;
   onSideNavChange: boolean;
   linkText: boolean = false;
   classroomPages: Page[] = [
     { name: 'Inicio', route: ['/'], icon: faHome },
-    { name: 'Coursos', route: ['classroom', 'courses'], icon: faChalkboardTeacher },
-    { name: 'Profesores', route: ['classroom', 'teachers'], icon: faUserTie },
-    { name: 'Alumnos', route: ['classroom', 'stundets'], icon: faUserGraduate },
+    { name: 'Coursos', route: ['courses'], icon: faChalkboardTeacher },
+    { name: 'Profesores', route: ['teachers'], icon: faUserTie },
+    { name: 'Alumnos', route: ['stundets'], icon: faUserGraduate },
   ]
   faCompressAlt = faCompressAlt;
   faUser = faUser;
-  faHome = faHome;
+
   faSchool = faSchool;
-  faChalkboardTeacher = faChalkboardTeacher;
-  faUserTie = faUserTie;
-  faUserGraduate = faUserGraduate;
+
   faUserCog = faUserCog;
+  faGoogle = faGoogle;
+
   constructor(
-    public layoutService: LayoutService,
+    private layoutService: LayoutService,
   ) {
     this.layoutService.toggleSidenavLeft.subscribe(() => {
       this.sidenavLeft.toggle();
@@ -52,7 +58,6 @@ export class SidenavComponent implements OnInit {
     })
 
   }
-
   onSidenavToggle() {
     this.sideNavState = !this.sideNavState
 

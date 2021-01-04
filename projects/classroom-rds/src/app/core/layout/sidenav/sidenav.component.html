@@ -1,35 +1,19 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #leftSidenav [@onSideNavChange]="sideNavState ? 'open' : 'close'"
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'push' : 'side'"
+  <mat-sidenav #leftSidenav class="sidenav" [@onSideNavChange]="sideNavState ? 'open' : 'close'" fixedInViewPort
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === false">
-    <div fxLayout="column" style="height: 100%;" fxLayoutAlign="space-between wrap">
-      <mat-nav-list dense>
-        <!-- <mat-accordion> -->
-        <a mat-list-item [routerLink]="['auth','profile']" routerLinkActive="active">
-          <img mat-list-icon [src]="['assets/images/dummy-user.png']" alt="User avatar">
-          <span matLine [@animateText]="linkText ? 'show' : 'hide'">Perfil</span>
-        </a>
-        <mat-divider></mat-divider>
-        <!--  <mat-expansion-panel>
-           <mat-expansion-panel-header>
-             <p [@animateText]="linkText ? 'show' : 'hide'">Classroom </p>
-           </mat-expansion-panel-header> -->
-        <a *ngFor="let page of classroomPages" mat-list-item [routerLink]="page.route" routerLinkActive="active">
-          <fa-icon matListIcon [icon]="page.icon"></fa-icon>
-          <span matLine [@animateText]="linkText ? 'show' : 'hide'">{{ page?.name }} </span>
-        </a>
-        <!-- </mat-expansion-panel>
-       </mat-accordion> -->
-      </mat-nav-list>
-      <mat-nav-list>
-        <a mat-list-item (click)="onSidenavToggle()">
-          <fa-icon matListIcon [icon]="faCompressAlt"></fa-icon>
-        </a>
-      </mat-nav-list>
-    </div>
+    <mat-nav-list *ngIf="isOnline" fxLayout="column" fxLayoutAlign="space-between center">
+      <a *ngFor="let page of classroomPages" mat-list-item [routerLink]="page.route" routerLinkActive="active">
+        <fa-icon matListIcon [icon]="page.icon"></fa-icon>
+        <span matLine [@animateText]="linkText ? 'show' : 'hide'">{{ page?.name }} </span>
+      </a>
+      <a mat-list-item (click)="onSidenavToggle()" routerLinkActive="active">
+        <fa-icon matListIcon [icon]="faCompressAlt"></fa-icon>
+      </a>
+    </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content [@onMainContentChange]="(onSideNavChange && isHandset$) ? 'open': 'close'">
-    <main class="main_container" fxLayout="column" fxLayoutGap="0px" style="min-height: 500vh;">
+  <mat-sidenav-content [@onMainContentChange]="(onSideNavChange) ? 'open': 'close'">
+    <main class="main-container">
       <router-outlet></router-outlet>
     </main>
   </mat-sidenav-content>
