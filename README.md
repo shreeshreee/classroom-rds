@@ -1,4 +1,5 @@
-# ClassroomRds
+![Deploy to Firebase Hosting on merge](https://github.com/jcmelchorp/classroom-rds/workflows/Deploy%20to%20Firebase%20Hosting%20on%20merge/badge.svg?branch=main)
+# Classroom - RDS
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
