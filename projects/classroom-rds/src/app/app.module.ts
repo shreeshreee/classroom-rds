@@ -27,6 +27,7 @@ import { MaterialModule } from './modules/material.module';
 import { reducers, metaReducers } from './store/app.state';
 import { RouteEffects, AppEffects, SpinnerEffects } from './store/effects';
 import { AuthEffects, FireEffects } from './auth/state/effects';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { AuthEffects, FireEffects } from './auth/state/effects';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFirestoreModule,
-    EntityDataModule.forRoot({})
+    EntityDataModule.forRoot({}),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   bootstrap: [AppComponent]
 })

@@ -23,7 +23,7 @@
             "polyfills": "projects/classroom-rds/src/polyfills.ts",
             "tsConfig": "projects/classroom-rds/tsconfig.app.json",
             "aot": true,
-            "assets": ["projects/classroom-rds/src/assets"],
+            "assets": ["projects/classroom-rds/src/assets", "projects/classroom-rds/src/manifest.webmanifest"],
             "styles": [
               "./node_modules/bootstrap/scss/bootstrap.scss",
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
@@ -57,7 +57,9 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "projects/classroom-rds/ngsw-config.json"
             }
           }
         },
@@ -87,7 +89,8 @@
             "karmaConfig": "projects/classroom-rds/karma.conf.js",
             "assets": [
               "projects/classroom-rds/src/favicon.ico",
-              "projects/classroom-rds/src/assets"
+              "projects/classroom-rds/src/assets",
+              "projects/classroom-rds/src/manifest.webmanifest"
             ],
             "styles": [
               "./node_modules/bootstrap/scss/bootstrap.scss",

@@ -1,0 +1,510 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Google Classroom RDS Admin</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Google Classroom RDS Admin</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Escribe para buscar"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Inyectables</li>
+  <li>AuthEffects</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>Fichero</h3>
+        </p>
+        <p class="comment">
+            <code>projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts</code>
+        </p>
+
+
+
+
+            <section>
+    <h3 id="index">Índice</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Propiedades</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#init$">init$</a>
+                            </li>
+                            <li>
+                                <a href="#signIn$">signIn$</a>
+                            </li>
+                            <li>
+                                <a href="#signInSuccess$">signInSuccess$</a>
+                            </li>
+                            <li>
+                                <a href="#signOut$">signOut$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(actions$: Actions, authService: <a href="../injectables/AuthService.html">AuthService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="88" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:88</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parámetros :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Nombre</td>
+                                                    <td>Tipo</td>
+                                                <td>Opcional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>actions$</td>
+                                                  
+                                                        <td>
+                                                                    <code>Actions</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+            <section>
+    
+        <h3 id="inputs">
+            Propiedades
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="init$"></a>
+                        <span class="name">
+                            <b>
+                            init$</b>
+                            <a href="#init$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>    <code>Observable&lt;any&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>defer(() &#x3D;&gt; {
+    return of(fromAuthActions.getUser());
+  })</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="86" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:86</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="signIn$"></a>
+                        <span class="name">
+                            <b>
+                            signIn$</b>
+                            <a href="#signIn$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>createEffect(
+    () &#x3D;&gt;
+      this.actions$.pipe(
+        ofType(fromAuthActions.signIn),
+        switchMap(() &#x3D;&gt; from(this.authService.handleSignInClick())
+          .pipe(
+            map((res) &#x3D;&gt; {
+              return {
+                id: res.user.providerData[0].uid,
+                name: res.user.displayName,
+                email: res.user.email,
+                photoUrl: res.user.photoURL,
+                isNew: res.additionalUserInfo.isNewUser,
+                isVerified: res.user.emailVerified,
+                creationTime: res.user.metadata.creationTime,
+                lastLogin: res.user.metadata.lastSignInTime,
+                uid: res.user.uid
+              };
+            }),
+            switchMap((user: User) &#x3D;&gt; {
+              if (user.isNew) {
+                return [
+                  fromAuthActions.signInSuccess({ user }),
+                  fromAuthActions.saveUser({ user }),
+                  fromAuthActions.checkAdminRole({ uid: user.uid }),
+                ];
+              } else {
+                return [
+                  fromAuthActions.signInSuccess({ user }),
+                  fromAuthActions.checkAdminRole({ uid: user.uid }),
+                ];
+              }
+            }),
+            catchError((err) &#x3D;&gt; {
+              return of(fromAuthActions.signInFailure({ error: err }));
+            })
+          )
+        )
+      )
+  )</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="signInSuccess$"></a>
+                        <span class="name">
+                            <b>
+                            signInSuccess$</b>
+                            <a href="#signInSuccess$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>createEffect(
+    () &#x3D;&gt;
+      this.actions$.pipe(
+        ofType(fromAuthActions.signInSuccess),
+        switchMap((action) &#x3D;&gt; {
+          return [
+            fromAuthActions.updateOnlineStatus({ uid: action.user.uid, isOnline: true }),
+          ];
+        })
+      ),
+  )</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="58" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:58</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="signOut$"></a>
+                        <span class="name">
+                            <b>
+                            signOut$</b>
+                            <a href="#signOut$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>createEffect(
+    () &#x3D;&gt;
+      this.actions$.pipe(
+        ofType(fromAuthActions.signOut),
+        switchMap((action) &#x3D;&gt;
+          from(this.authService.signOut(action.user.uid))
+            .pipe(
+              map(() &#x3D;&gt; fromAuthActions.signOutCompleted()),
+              catchError((err) &#x3D;&gt; {
+                return of(fromAuthActions.authError({ error: err }));
+              })
+            )
+        )
+      )
+  )</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="70" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:70</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+
+import { Actions, createEffect, ofType } from &#x27;@ngrx/effects&#x27;;
+
+import { of, Observable, defer, from } from &#x27;rxjs&#x27;;
+import { switchMap, map, catchError, mergeMap, concatMap } from &#x27;rxjs/operators&#x27;;
+
+import firebase from &#x27;firebase/app&#x27;;
+import &#x27;firebase/auth&#x27;;
+
+import * as fromAuthActions from &#x27;../auth.actions&#x27;;
+import { User } from &#x27;../../models/user.model&#x27;;
+import { AuthService } from &#x27;../../services/auth.service&#x27;;
+@Injectable()
+export class AuthEffects {
+
+  signIn$ &#x3D; createEffect(
+    () &#x3D;&gt;
+      this.actions$.pipe(
+        ofType(fromAuthActions.signIn),
+        switchMap(() &#x3D;&gt; from(this.authService.handleSignInClick())
+          .pipe(
+            map((res) &#x3D;&gt; {
+              return {
+                id: res.user.providerData[0].uid,
+                name: res.user.displayName,
+                email: res.user.email,
+                photoUrl: res.user.photoURL,
+                isNew: res.additionalUserInfo.isNewUser,
+                isVerified: res.user.emailVerified,
+                creationTime: res.user.metadata.creationTime,
+                lastLogin: res.user.metadata.lastSignInTime,
+                uid: res.user.uid
+              };
+            }),
+            switchMap((user: User) &#x3D;&gt; {
+              if (user.isNew) {
+                return [
+                  fromAuthActions.signInSuccess({ user }),
+                  fromAuthActions.saveUser({ user }),
+                  fromAuthActions.checkAdminRole({ uid: user.uid }),
+                ];
+              } else {
+                return [
+                  fromAuthActions.signInSuccess({ user }),
+                  fromAuthActions.checkAdminRole({ uid: user.uid }),
+                ];
+              }
+            }),
+            catchError((err) &#x3D;&gt; {
+              return of(fromAuthActions.signInFailure({ error: err }));
+            })
+          )
+        )
+      )
+  );
+
+  signInSuccess$ &#x3D; createEffect(
+    () &#x3D;&gt;
+      this.actions$.pipe(
+        ofType(fromAuthActions.signInSuccess),
+        switchMap((action) &#x3D;&gt; {
+          return [
+            fromAuthActions.updateOnlineStatus({ uid: action.user.uid, isOnline: true }),
+          ];
+        })
+      ),
+  );
+
+  signOut$ &#x3D; createEffect(
+    () &#x3D;&gt;
+      this.actions$.pipe(
+        ofType(fromAuthActions.signOut),
+        switchMap((action) &#x3D;&gt;
+          from(this.authService.signOut(action.user.uid))
+            .pipe(
+              map(() &#x3D;&gt; fromAuthActions.signOutCompleted()),
+              catchError((err) &#x3D;&gt; {
+                return of(fromAuthActions.authError({ error: err }));
+              })
+            )
+        )
+      )
+  );
+
+  init$: Observable&lt;any&gt; &#x3D; defer(() &#x3D;&gt; {
+    return of(fromAuthActions.getUser());
+  });
+
+  constructor(
+    private actions$: Actions,
+    private authService: AuthService,
+  ) { }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No hay resultados que coincidan "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthEffects.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

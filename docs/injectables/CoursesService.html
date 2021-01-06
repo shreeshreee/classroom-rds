@@ -1,0 +1,776 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Google Classroom RDS Admin</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Google Classroom RDS Admin</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Escribe para buscar"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Inyectables</li>
+  <li>CoursesService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>Fichero</h3>
+        </p>
+        <p class="comment">
+            <code>projects/classroom-rds/src/app/courses/services/courses.service.ts</code>
+        </p>
+
+
+
+
+            <section>
+    <h3 id="index">Índice</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Propiedades</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#isLoaded">isLoaded</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Métodos</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createCourse">createCourse</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createSchoolAnnouncement">createSchoolAnnouncement</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getCourseOwner">getCourseOwner</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getCoursesList">getCoursesList</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#handleClassroomLoad">handleClassroomLoad</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="10" class="link-to-prism">projects/classroom-rds/src/app/courses/services/courses.service.ts:10</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Métodos
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createCourse"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            createCourse
+                        </b>
+                        <a href="#createCourse"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createCourse(course: <a href="../classes/Course.html">gapi.client.classroom.Course</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="78"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/courses.service.ts:78</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Create a courses in Google Classroom</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>course</td>
+                                    <td>
+                                                <code><a href="../classes/Course.html" target="_self" >gapi.client.classroom.Course</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>    <code>{}</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createSchoolAnnouncement"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            createSchoolAnnouncement
+                        </b>
+                        <a href="#createSchoolAnnouncement"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createSchoolAnnouncement(announcement: gapi.client.classroom.Announcement, courseId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="101"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/courses.service.ts:101</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Make an announcement on a given course in Google Classroom</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                    <td>Descripción</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>announcement</td>
+                                    <td>
+                                            <code>gapi.client.classroom.Announcement</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Announcement object to send.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>courseId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Identifier of course to be announce.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>    <code>{}</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCourseOwner"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            getCourseOwner
+                        </b>
+                        <a href="#getCourseOwner"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getCourseOwner(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, ownerId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="59"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/courses.service.ts:59</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>ownerId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>    <code>{}</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCoursesList"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            getCoursesList
+                        </b>
+                        <a href="#getCoursesList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getCoursesList(studentId?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, teacherId?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, courseStates?: string[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="43"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/courses.service.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrive an array of courses according to permissions access user logged in Google Classroom</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                    <td>Descripción</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>studentId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Si
+                                    </td>
+
+
+                                    <td>
+                                        <p>User Identifier from courses&#39;s list which is enrolled as student.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>teacherId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Si
+                                    </td>
+
+
+                                    <td>
+                                        <p>User Identifier from courses&#39;s list which is enrolled as teacher.</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>courseStates</td>
+                                    <td>
+                                            <code>string[]</code>
+                                    </td>
+
+                                    <td>
+                                        Si
+                                    </td>
+
+
+                                    <td>
+                                        <p>The course states from te courses to be query.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>    <code>{}</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Course Array</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleClassroomLoad"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            handleClassroomLoad
+                        </b>
+                        <a href="#handleClassroomLoad"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleClassroomLoad()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="15"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/courses.service.ts:15</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>    <code>Promise&lt;void&gt;</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Propiedades
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isLoaded"></a>
+                        <span class="name">
+                            <b>
+                            isLoaded</b>
+                            <a href="#isLoaded"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="10" class="link-to-prism">projects/classroom-rds/src/app/courses/services/courses.service.ts:10</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+
+import { Observable } from &#x27;rxjs&#x27;;
+
+import { environment } from &#x27;./../../../environments/environment&#x27;;
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class CoursesService {
+  isLoaded: Observable&lt;boolean&gt;;
+  constructor(
+  ) {
+    this.handleClassroomLoad();
+  }
+  async handleClassroomLoad(): Promise&lt;void&gt; {
+    // Retrieve the GoogleUser object for the current user.
+    const googleAuth: gapi.auth2.GoogleAuth &#x3D; gapi.auth2.getAuthInstance();
+    const googleUser: gapi.auth2.GoogleUser &#x3D; googleAuth.currentUser.get();
+    const isAuthorized &#x3D; googleUser.hasGrantedScopes(environment.gapiClientConfig.classroomScopes);
+    if (!isAuthorized) {
+      const option: gapi.auth2.SigninOptionsBuilder &#x3D; new gapi.auth2.SigninOptionsBuilder();
+      option.setScope(environment.gapiClientConfig.classroomScopes);
+      await googleUser.grant(option).then(
+        (success) &#x3D;&gt; {
+          //alert(JSON.stringify({ message: &quot;success&quot;, value: success }));
+        },
+        (fail) &#x3D;&gt; {
+          alert(JSON.stringify({ message: &#x27;fail&#x27;, value: fail }));
+        });
+    }
+    gapi.client.load(&#x27;classroom&#x27;, &#x27;v1&#x27;, () &#x3D;&gt; {
+      // alert(&#x27;loaded classroom&#x27;);
+    });
+  }
+  /**
+  * Retrive an array of courses according to permissions access user logged in Google Classroom
+  *
+  * @param studentId User Identifier from courses&#x27;s list which is enrolled as student.
+  * @param teacherId User Identifier from courses&#x27;s list which is enrolled as teacher.
+  * @param courseStates The course states from te courses to be query.
+  * @returns Course Array
+  */
+  async getCoursesList(studentId?: string, teacherId?: string, courseStates?: string[]) {
+    let courses: gapi.client.classroom.Course[];
+    const result &#x3D; await gapi.client.classroom.courses.list({ studentId, teacherId, courseStates })
+      .then(
+        (success: gapi.client.HttpRequestFulfilled&lt;gapi.client.classroom.ListCoursesResponse&gt;) &#x3D;&gt; {
+          courses &#x3D; success.result.courses;
+          return courses;
+        },
+        (reason: gapi.client.HttpRequestRejected) &#x3D;&gt; {
+          alert(&#x60;(${reason.status})\nError: ${reason.result[&#x27;error&#x27;].message}&#x60;);
+          courses &#x3D; [];
+          return courses;
+        }
+      );
+    return result;
+  }
+  async getCourseOwner(id: string, ownerId: string) {
+    const result: gapi.client.classroom.Teacher &#x3D; await gapi.client.classroom.courses.teachers.get({ courseId: id, userId: ownerId })
+      .then(
+        (success: gapi.client.HttpRequestFulfilled&lt;gapi.client.classroom.Teacher&gt;) &#x3D;&gt; {
+          return success.result;
+        },
+        (reason: gapi.client.HttpRequestRejected) &#x3D;&gt; {
+          alert(&#x60;(${reason.status})\nError: ${reason.result[&#x27;error&#x27;].message}&#x60;);
+          return null;
+        }
+      );
+    return result;
+  }
+
+  /**
+  * Create a courses in Google Classroom
+  *
+  * @param resource Course object to be created.
+  */
+  async createCourse(
+    course: gapi.client.classroom.Course
+  ) {
+    const result &#x3D; await gapi.client.classroom.courses.create({ resource: course })
+      .then(
+        (success: gapi.client.HttpRequestFulfilled&lt;gapi.client.classroom.Course&gt;) &#x3D;&gt; {
+          let course: gapi.client.classroom.Course &#x3D; success.result;
+          return course;
+        },
+        (reason: gapi.client.HttpRequestRejected) &#x3D;&gt; {
+          alert(&#x60;(${reason.status})\nError: ${reason.result[&#x27;error&#x27;].message}&#x60;);
+          let course: gapi.client.classroom.Course &#x3D; {};
+          return course;
+        }
+      );
+    return result;
+  }
+  /**
+  * Make an announcement on a given course in Google Classroom
+  *
+  * @param courseId Identifier of course to be announce.
+  * @param announcement Announcement object to send.
+  */
+  async createSchoolAnnouncement(announcement: gapi.client.classroom.Announcement, courseId: string) {
+    const result &#x3D; await gapi.client.classroom.courses.announcements.create({ courseId, resource: announcement })
+      .then(
+        (success: gapi.client.HttpRequestFulfilled&lt;gapi.client.classroom.Announcement&gt;) &#x3D;&gt; {
+          let announcement: gapi.client.classroom.Course &#x3D; success.result;
+          return announcement;
+        },
+        (reason: gapi.client.HttpRequestRejected) &#x3D;&gt; {
+          alert(&#x60;(${reason.status})\nError: ${reason.result[&#x27;error&#x27;].message}&#x60;);
+          let announcement: gapi.client.classroom.Course &#x3D; {};
+          return announcement;
+        }
+      );
+    return result;
+  }
+
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No hay resultados que coincidan "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'CoursesService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
