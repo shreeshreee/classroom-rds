@@ -1,28 +1,123 @@
-![Deploy to Firebase Hosting on merge](https://github.com/jcmelchorp/classroom-rds/workflows/Deploy%20to%20Firebase%20Hosting%20on%20merge/badge.svg?branch=main)
-# Classroom - RDS
+![Deploy to Firebase Hosting on merge](https://github.com/jcmelchorp/classroom-rds/workflows/Deploy%20to%20Firebase%20Hosting/badge.svg?branch=main)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<h1> <a href="https://classroom-rds.web.app">
+ <img src="projects/classroom-rds/src/assets/icons/android-icon-72x72.png">
+ </a> Classroom - RDS
+ </h1>
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Angular web app for a school admin in Google Classroom. Classroom entities adapted to fit "Escuela Rafael Díaz Serdan" requirements (Massive course's announcements, students and teachers block enrollment, manage groups and courses, view and edit information asan Admin and Superadmin in Google Workspace, and many more).
 
-## Build
+### Comming soon
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Create school grades reports from Google Classroom submissions.
 
-## Running unit tests
+## Documentation and Demo
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+See Documentation for this project at: [Classroom RDS Doc](https://jcmelchorp.github.io/classroom-rds/).
 
-## Running end-to-end tests
+See Demo app for this project at: [Classroom RDS](https://classroom-rds.web.app).
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Features
 
-## Further help
+- Angular 11.0.5
+- Angular Material 11.0.3 with custom theme
+- NGRX State Management 10.1.2 (@ngrx/route-store & @ngrx/data)
+- Angular FontAwesome 5.15.1
+- Angular Flex-layout 11
+- Full Angular PWA
+- Lasy Loading & SEO.
+- Ngx-bootstrap 6.2.0
+- Google API Auth2 (via GAPI with @types/gapi.auth2) & and Firebase Authentication
+- Google Classroom Client (via GAPI with @types/gapi.client.classroom)
+- Google Firebase for FireHosting
+- Google Firebase Real-Time Database & Firestore
+- CompoDoc for automated documentation.
+- Angular PWA assets generator for icons.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Screenshots
+
+![](projects/classroom-rds/src/assets/screenshots/screenshot01.png)
+
+**Fig. 1** - View example
+
+![](projects/classroom-rds/src/assets/screenshots/screenshot02.png)
+
+**Fig. 2** - View example
+
+![](projects/classroom-rds/src/assets/screenshots/screenshot03.png)
+
+**Fig. 3** - View example
+## Install this repository
+
+If you want to use this repository as a template, run:
+
+```` bash
+git clone https://github.com/JulioMelchorPinto/classroom-rds.git
+````
+
+then, enter the workspace directory:
+
+```` bash
+cd classroom-rds
+````
+
+and install NPM packages:
+
+```` bash
+npm install
+````
+
+## Build requirements
+
+This repository has the following pre-requisites:
+
+- [NodeJS](https://nodejs.org/)
+- [Google Firebase](https://firebase.google.com/) Account (optional for Hosting and further features)
+- [Angular CLI](https://cli.angular.io/)
+
+
+The Angular CLI, CompoDoc, PWA asset generator comes with NPM install. If you want to use Angular CLI as a shell command:
+
+```` bash
+npm i -g @angular/cli
+````
+## Commands
+
+Besides the built-in commands from @angular/cli, this proyect contains other some:
+
+### Documentation
+
+By default, this project generate documentation with Material Theme in *docs/* directory.
+
+To generate documentation:
+
+```` bash
+ npm run doc:g
+````
+
+### Deployment
+
+Build in production environment and deploy on Google Firebase
+
+```` bash
+npm run deploy
+````
+
+### Reset project to default
+
+To reset project just type:
+
+```` bash
+npm run reset
+````
+
+### PWA Assets Generator
+
+To generate Apple icons, MS-Tiles and splash run:
+
+```` bash
+npm run pwa:asset-std-logo
+````
