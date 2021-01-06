@@ -11,7 +11,7 @@
     "prod": "ng build --prod",
     "deploy": "ng build --prod && npm run doc:g && firebase deploy",
     "doc:g": "npx @compodoc/compodoc -p ./tsconfig.json --output ./docs --name \"Google Classroom RDS Admin\" --customFavicon ./projects/classroom-rds/src/assets/icons/favicon.ico --customLogo ./projects/classroom-rds/src/assets/images/rds-nobackground.png --theme material --hideGenerator --language es-ES",
-    "pwa:assets-std-logo": "npx pwa-asset-generator ./projects/classroom-rds/src/assets/images/rds-nobackground.png ./projects/classroom-rds/src/assets/icons/ --manifest ./projects/classroom-rds/src/manifest.webmanifest --index ./projects/classroom-rds/src/index.html --type png --maskable true --opaque false --favicon",
+    "pwa:assets-std-logo": "npx pwa-asset-generator ./projects/classroom-rds/src/assets/images/rds-nobackground.png ./projects/classroom-rds/src/assets/icons/ --manifest ./projects/classroom-rds/src/manifest.webmanifest --index ./projects/classroom-rds/src/index.html --type png --maskable true --opaque false --mstile --favicon",
     "pwa:assets-icons": "npx pwa-asset-generator ./projects/classroom-rds/src/assets/images/rds-nobackground.png ./projects/classroom-rds/src/assets/icons/ --only-icons --index ./projects/classroom-rds/src/index.html --favicon"
   },
   "private": true,
