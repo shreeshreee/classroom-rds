@@ -55,7 +55,7 @@ See Demo app for this project at: [Classroom RDS](https://classroom-rds.web.app)
 If you want to use this repository as a template, run:
 
 ```` bash
-git clone https://github.com/JulioMelchorPinto/classroom-rds.git
+git clone https://github.com/jcmelchorp/classroom-rds.git
 ````
 
 then, enter the workspace directory:
@@ -84,9 +84,6 @@ The Angular CLI, CompoDoc, PWA asset generator comes with NPM install. If you wa
 ```` bash
 npm i -g @angular/cli
 ````
-## Commands
-
-Besides the built-in commands from @angular/cli, this proyect contains other some:
 
 ### Documentation
 
