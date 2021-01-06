@@ -1,37 +1,31 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 
+import { select, Store } from '@ngrx/store';
+
 import { Observable, of } from 'rxjs';
-import { catchError, switchMap, take } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 
-import { AuthFireService } from '../services';
+import { isLoggedIn } from '../state/auth.selectors';
+import { AppState } from './../../store/app.state';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthGuard implements CanActivate {
   constructor(
-    private authFireService: AuthFireService,
+    private store: Store<AppState>,
     private router: Router
   ) { }
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.authFireService.afAuth.authState
+    state: RouterStateSnapshot): Observable<boolean> {
+    return this.store
       .pipe(
-        take(1),
-        switchMap((user) => {
-          if (!user) {
-            this.router.navigateByUrl('/login');
-            return of(false);
+        select(isLoggedIn),
+        tap(loggedIn => {
+          if (!loggedIn) {
+            this.router.navigateByUrl('/');
           }
-          return of(true);
-        }),
-        catchError(() => {
-          this.router.navigateByUrl('/login');
-          return of(false);
         })
-      );
+      )
   }
-
 }

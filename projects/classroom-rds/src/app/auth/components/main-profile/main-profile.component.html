@@ -1,0 +1,19 @@
+<mat-card [class.mat-elevation-z10]="true">
+  <mat-card-content>
+    <h2 class="mat-h2 mb-4">Editar perfil</h2>
+    <!--Body-->
+    <form [formGroup]="updateProfileForm" (onSubmit)="onProfileUpdate()">
+      <mat-form-field class="d-block" appearance="outline">
+        <mat-label>Nombre completo</mat-label>
+        <input matInput type="text" formControlName="name" />
+      </mat-form-field>
+      <mat-form-field class="d-block" appearance="outline">
+        <mat-label>Photo</mat-label>
+        <input matInput type="text" formControlName="photoUrl" />
+      </mat-form-field>
+      <div class="text-right">
+        <button mat-raised-button type="submit" (click)="onProfileUpdate()">Guardar</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

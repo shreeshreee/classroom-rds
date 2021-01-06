@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
 import { of, Observable, defer, from } from 'rxjs';
-import { switchMap, map, catchError, mergeMap } from 'rxjs/operators';
+import { switchMap, map, catchError, mergeMap, concatMap } from 'rxjs/operators';
 
 import firebase from 'firebase/app';
 import 'firebase/auth';
@@ -38,6 +38,7 @@ export class AuthEffects {
                 return [
                   fromAuthActions.signInSuccess({ user }),
                   fromAuthActions.saveUser({ user }),
+                  fromAuthActions.checkAdminRole({ uid: user.uid }),
                 ];
               } else {
                 return [
@@ -71,10 +72,12 @@ export class AuthEffects {
       this.actions$.pipe(
         ofType(fromAuthActions.signOut),
         switchMap((action) =>
-          from(this.authService.signOut())
+          from(this.authService.signOut(action.user.uid))
             .pipe(
-              map(() => fromAuthActions.updateOnlineStatus({ uid: action.user.uid, isOnline: action.user.isOnline })),
-              map(() => fromAuthActions.signOutCompleted())
+              map(() => fromAuthActions.signOutCompleted()),
+              catchError((err) => {
+                return of(fromAuthActions.authError({ error: err }));
+              })
             )
         )
       )

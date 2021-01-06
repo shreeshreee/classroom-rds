@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { MatDialog } from '@angular/material/dialog';
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { faUser, faHome, faSchool, faChalkboardTeacher, faUserTie, faUserGraduate, faUserCog, IconDefinition, faCompressAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
@@ -27,6 +28,8 @@ export class SidenavComponent implements OnInit {
   @Input() isOnline: boolean;
   @Input() isAdmin: boolean;
   @Input() user: User;
+  @Output() routeUser: EventEmitter<User>;
+  loading = true;
   sideNavState: boolean = false;
   onSideNavChange: boolean;
   linkText: boolean = false;
@@ -46,9 +49,27 @@ export class SidenavComponent implements OnInit {
 
   constructor(
     private layoutService: LayoutService,
+    private router: Router
   ) {
     this.layoutService.toggleSidenavLeft.subscribe(() => {
       this.sidenavLeft.toggle();
+    });
+    this.router.events.subscribe(event => {
+      switch (true) {
+        case event instanceof NavigationStart: {
+          this.loading = true;
+          break;
+        }
+        case event instanceof NavigationEnd:
+        case event instanceof NavigationCancel:
+        case event instanceof NavigationError: {
+          this.loading = false;
+          break;
+        }
+        default: {
+          break;
+        }
+      }
     });
   }
 

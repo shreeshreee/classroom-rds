@@ -4,9 +4,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { ActivatedRoute } from '@angular/router';
 
 import { faBan, faExclamation, faTimes, faUserGraduate, faUserTie, faCheck, faScrewdriver, faArchive, faUserPlus, faBullhorn, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faEdit, } from '@fortawesome/free-regular-svg-icons';
+
+import { Store } from '@ngrx/store';
+
+import { Observable } from 'rxjs';
+
+import { AppState } from './../../../store/app.state';
 
 
 
@@ -23,13 +30,13 @@ import { faEdit, } from '@fortawesome/free-regular-svg-icons';
   ],
 })
 export class CoursesTableComponent implements AfterViewInit, OnInit {
-  @Input() data: gapi.client.classroom.Course[];
+  @Input() courses: gapi.client.classroom.Course[];
+  public dataSource: MatTableDataSource<gapi.client.classroom.Course>;
   @Output() course = new EventEmitter<gapi.client.classroom.Course>();
   @Output() teacherInCourse = new EventEmitter<gapi.client.classroom.Course>();
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatTable) table: MatTable<gapi.client.classroom.Course>;
-  public dataSource: MatTableDataSource<gapi.client.classroom.Course>;
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['courseState', 'name', 'section', 'room', 'acciones'];
   public searchForm: FormGroup;
@@ -51,7 +58,7 @@ export class CoursesTableComponent implements AfterViewInit, OnInit {
   searching = false;
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource(this.data);
+    this.dataSource = new MatTableDataSource(this.courses);
     this.searchFormInit();
     this.dataSource.filterPredicate = this.getFilterPredicate();
   }
@@ -67,7 +74,9 @@ export class CoursesTableComponent implements AfterViewInit, OnInit {
   onAddTeacher(course: gapi.client.classroom.Course): void {
     this.teacherInCourse.emit(course);
   }
-
+  onActivated(course: gapi.client.classroom.Course): void {
+    this.course.emit(course);
+  }
   searchFormInit(): void {
     this.searchForm = new FormGroup({
       courseName: new FormControl('', Validators.pattern('^[a-zA-Z ]+$')),

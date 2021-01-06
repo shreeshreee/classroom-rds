@@ -49,6 +49,7 @@ export class CourseDialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
   onStateSelection(event) {
     this.data.course.courseState = event.key;

@@ -1,4 +1,3 @@
-import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -6,20 +5,14 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
-
-import {
-  GoogleApiModule,
-  GoogleApiService,
-  GoogleAuthService,
-  NgGapiClientConfig,
-  NG_GAPI_CONFIG,
-  GoogleApiConfig
-} from "ng-gapi";
+import { EntityDataModule } from '@ngrx/data';
 
 import { NgxSpinnerModule } from 'ngx-spinner';
 
@@ -29,28 +22,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { AuthModule } from './auth/auth.module';
-import * as fromAuthServices from './auth/services';
 import { CoreModule } from './core/core.module';
+import { MaterialModule } from './modules/material.module';
 import { reducers, metaReducers } from './store/app.state';
-import * as fromEffects from './store/effects';
-import * as fromAuthEffects from './auth/state/effects';
-import * as fromCoursesEffects from './courses/state/courses.effects';
+import { RouteEffects, AppEffects, SpinnerEffects } from './store/effects';
+import { AuthEffects, FireEffects } from './auth/state/effects';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    RouterModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     CoreModule,
-    AuthModule,
-    GoogleApiModule.forRoot({
-      provide: NG_GAPI_CONFIG,
-      useValue: environment.gapiClientConfig as NgGapiClientConfig,
-    }),
+    MaterialModule,
+    AuthModule.forRoot(),
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
@@ -62,27 +50,26 @@ import * as fromCoursesEffects from './courses/state/courses.effects';
         strictActionTypeUniqueness: true,
       },
     }),
-    StoreRouterConnectingModule.forRoot(),
+    StoreRouterConnectingModule.forRoot({
+      stateKey: 'router',
+      routerState: RouterState.Minimal
+    }),
     !environment.production ? StoreDevtoolsModule.instrument() : StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
     }),
     EffectsModule.forRoot([
-      fromEffects.RouteEffects,
-      fromEffects.AppEffects,
-      fromEffects.SpinnerEffects,
-      //fromAuthEffects.AuthEffects,
-      //fromCoursesEffects.CoursesEffects
+      RouteEffects,
+      AppEffects,
+      SpinnerEffects,
     ]),
     NgxSpinnerModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    AngularFirestoreModule
-  ],
-  providers: [
-    fromAuthServices.AuthService,
-    fromAuthServices.AuthFireService
+    AngularFirestoreModule,
+    EntityDataModule.forRoot({})
   ],
   bootstrap: [AppComponent]
 })

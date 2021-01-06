@@ -1,31 +1,43 @@
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 
-import { GoogleAuthService, GoogleApiService } from 'ng-gapi';
-
 import { MaterialModule } from '../modules/material.module';
-import { environment } from '../../environments/environment';
 
+import { AuthService } from './services';
+
+import { AuthGuard } from './guards/auth.guard';
 import * as fromAuthReducer from './state/auth.reducer';
 import * as fromAuthEffects from './state/effects';
-import { UserComponent } from './components/user/user.component';
+import { MainProfileComponent } from './components/main-profile/main-profile.component';
+import { ProfileUserComponent } from './components/profile-user/profile-user.component';
+import { ProfileComponent } from './containers/profile/profile.component';
 @NgModule({
-  declarations: [UserComponent],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     FlexLayoutModule,
     FontAwesomeModule,
     MaterialModule,
     StoreModule.forFeature(fromAuthReducer.authFeatureKey, fromAuthReducer.authReducer),
     EffectsModule.forFeature([fromAuthEffects.AuthEffects, fromAuthEffects.FireEffects]),
   ],
-  providers: [GoogleApiService, GoogleAuthService],
-  exports: [UserComponent]
+  declarations: [MainProfileComponent, ProfileUserComponent, ProfileComponent],
 })
-export class AuthModule { }
+export class AuthModule {
+  static forRoot(): ModuleWithProviders<AuthModule> {
+    return {
+      ngModule: AuthModule,
+      providers: [
+        AuthService,
+        AuthGuard
+      ]
+    }
+  }
+}

@@ -1,8 +1,8 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #leftSidenav class="sidenav" [@onSideNavChange]="sideNavState ? 'open' : 'close'" fixedInViewPort
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false">
-    <mat-nav-list *ngIf="isOnline" fxLayout="column" fxLayoutAlign="space-between center">
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="'side'"
+    [opened]="(isHandset$ | async) === false" *ngIf="isOnline">
+    <mat-nav-list fxLayout="column" fxLayoutAlign="space-between center">
       <a *ngFor="let page of classroomPages" mat-list-item [routerLink]="page.route" routerLinkActive="active">
         <fa-icon matListIcon [icon]="page.icon"></fa-icon>
         <span matLine [@animateText]="linkText ? 'show' : 'hide'">{{ page?.name }} </span>
@@ -14,7 +14,14 @@
   </mat-sidenav>
   <mat-sidenav-content [@onMainContentChange]="(onSideNavChange) ? 'open': 'close'">
     <main class="main-container">
-      <router-outlet></router-outlet>
+      <div *ngIf="loading" style="min-height: 50vh;" fxLayout="column" fxLayoutAlign="center center">
+        <mat-spinner strokeWidth="3" [diameter]="100">
+        </mat-spinner>
+        <span>Cargando...</span><br>
+      </div>
+      <div *ngIf="!loading">
+        <router-outlet></router-outlet>
+      </div>
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -25,6 +25,7 @@ export const authReducer = createReducer<AuthenticationState>(
     return {
       ...state,
       user: action.user,
+      isAdmin: action.user.isAdmin,
       error: null,
       isLoggedIn: true
     };
@@ -49,12 +50,13 @@ export const authReducer = createReducer<AuthenticationState>(
       error: action.error
     };
   }),
-  on(fromauthActions.signOut, (state, action) => {
+  on(fromauthActions.signOutCompleted, (state, action) => {
     return {
       ...state,
       user: null,
       isLoggedIn: false,
-      isAdmin: false
+      isAdmin: false,
+      error: null
     };
   }),
   on(fromauthActions.updateAdminRole, (state, action) => {

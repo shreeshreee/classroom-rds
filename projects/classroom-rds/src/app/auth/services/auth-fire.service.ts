@@ -7,7 +7,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import { from, Observable, of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 
 import { UpdatedUser, User } from './../models/user.model';
 @Injectable({
@@ -33,7 +33,8 @@ export class AuthFireService {
   signInWithCredential(credentials: firebase.auth.AuthCredential): Promise<firebase.auth.UserCredential> {
     return this.afAuth.signInWithCredential(credentials);
   }
-  signOut(): Promise<void> {
+  signOut(uid: string): Promise<void> {
+    this.updateOnlineStatus(uid, false);
     return this.afAuth.signOut();
   }
   updateOnlineStatus(uid: string, status: boolean): Observable<void> {
@@ -45,10 +46,10 @@ export class AuthFireService {
   createUser(user: User) {
     const key = user.id;
     console.log(key);
-    this.afStore.collection('users').doc(key).set({
+    return this.afStore.collection('users').doc(key).set({
       isNew: user.isNew,
-      isAdmin: false,
       isVerified: user.isVerified,
+      isAdmin: false,
       name: user.name,
       email: user.email,
       photoUrl: user.photoUrl,
@@ -66,7 +67,15 @@ export class AuthFireService {
   }
 
   checkAdminRole(uid: string): Observable<boolean> {
-    const val = this.afDatabase.object<boolean>(`admins/${uid}`).valueChanges();
+    const val = this.afDatabase.object<boolean>(`admins/${uid}`).valueChanges()
+      .pipe(
+        map((isAdmin: boolean) => {
+          if (isAdmin) {
+            this.addAdminPrivileges(uid);
+          }
+          return isAdmin;
+        })
+      );
     return val;
   }
 
@@ -82,7 +91,14 @@ export class AuthFireService {
     };
     return from(userRef.set(data, { merge: true }));
   }
-  /*  getAuthState(): Observable<firebase.User> {
-     return this.afAuth.authState;
-   } */
+  private addAdminPrivileges(uid: string): Observable<void> {
+    const adminsRef = this.afDatabase.object(`admins/${uid}`);
+    this.afDatabase.object(`users/${uid}`).update({ isAdmin: true });
+    return from(adminsRef.set(true));
+  }
+
+  private removeAdminPrivileges(uid: string): Observable<void> {
+    this.afDatabase.object(`users/${uid}`).update({ isAdmin: false });
+    return from(this.afDatabase.object(`admins/${uid}`).remove());
+  }
 }

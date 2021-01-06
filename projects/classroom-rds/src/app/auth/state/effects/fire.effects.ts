@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+
 import { Actions, createEffect, ofType } from '@ngrx/effects';
+
 import { of } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
-import { AuthFireService } from '../../services/auth-fire.service';
+
 import * as fromAuthActions from '../auth.actions';
+import { AuthFireService } from '../../services/auth-fire.service';
 @Injectable()
 export class FireEffects {
   saveUser$ = createEffect(
@@ -23,10 +26,8 @@ export class FireEffects {
         switchMap((action) =>
           this.authFireService.checkAdminRole(action.uid)
             .pipe(
-              map((isAdmin: boolean) =>
-                fromAuthActions.updateAdminRole({ isAdmin })
-              ),
-              catchError((error: any) => of(fromAuthActions.adminError({ error })))
+              map((isAdmin: boolean) => fromAuthActions.updateAdminRole({ isAdmin })),
+              catchError((error) => of(fromAuthActions.adminError({ error })))
             )
         )
       ),
@@ -38,9 +39,6 @@ export class FireEffects {
         ofType(fromAuthActions.updateOnlineStatus),
         switchMap((action) =>
           this.authFireService.updateOnlineStatus(action.uid, action.isOnline)
-            .pipe(
-              catchError((error: any) => of(fromAuthActions.authError({ error })))
-            )
         )
       ),
     { dispatch: false }

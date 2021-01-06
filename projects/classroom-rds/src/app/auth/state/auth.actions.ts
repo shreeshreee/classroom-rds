@@ -20,7 +20,7 @@ export const getUser = createAction(
   '[Auth Effect] Get current user'
 );
 export const signOut = createAction(
-  '[Auth Effect] Google`s sign-ou request',
+  '[Auth Effect] Google`s sign-out request',
   props<{ user: User }>()
 );
 
@@ -56,7 +56,7 @@ export const removeAdminPrivileges = createAction(
   props<{ uid: string }>()
 );
 export const adminError = createAction(
-  '[Auth Component] Check user adimn error',
+  '[Auth Component] Check user admin error',
   props<{ error: any }>()
 );
 export const authError = createAction(

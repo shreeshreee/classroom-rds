@@ -7,8 +7,7 @@
     </div>
     <div fxLayout="row">
       <a *ngIf="isOnline && user" class="img-user" mat-icon-button [matMenuTriggerFor]="userMenu">
-        <img class="img-fluid rounded-circle"
-          [src]="[user.photoUrl ? user.photoUrl : 'assets/images/dummy-user.png']" />
+        <img class="img-fluid rounded-circle" [src]="[user.photoUrl]" />
       </a>
 
       <button *ngIf="!isOnline" mat-button (click)="onSignIn()">
@@ -20,7 +19,7 @@
 
 <!-- Menu Items -->
 <mat-menu #userMenu="matMenu" fxLayoutAlign="right">
-  <app-user mat-list-item *ngIf="isOnline && user" [routerLink]="['auth','profile']" routerLinkActive="active"
+  <app-user mat-list-item *ngIf="isOnline && user" [routerLink]="['profile']" routerLinkActive="active"
     [isOnline]="isOnline" [isAdmin]="isAdmin" [user]="user">
   </app-user>
   <div *ngIf="isOnline && isAdmin" mat-menu-item [routerLink]="['admin']">

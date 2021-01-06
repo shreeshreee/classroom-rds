@@ -23,12 +23,5 @@
   </mat-card>
 </div>
 <div class="p-2">
-  <mat-card *ngIf="!(isLoading$|async)" [class.mat-elevation-z6]="true">
-    <!--  <div style="min-height: 50vh;" *ngIf="(isLoading$|async)" fxLayout="column" fxLayoutAlign="center center">
-      <mat-spinner strokeWidth="3" [diameter]="50">
-      </mat-spinner>
-      <span>Buscando Cursos...</span><br>
-    </div> -->
-    <app-course-table [data]="courses$|async"></app-course-table>
-  </mat-card>
+  <app-course-table [courses]="(courses$|async)"></app-course-table>
 </div>

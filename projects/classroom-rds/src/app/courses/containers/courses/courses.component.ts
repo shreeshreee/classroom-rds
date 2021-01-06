@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, ChangeDetectionStrategy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { faBullhorn, faPlus } from '@fortawesome/free-solid-svg-icons';
@@ -8,10 +8,8 @@ import { select, Store } from '@ngrx/store';
 import { Observable, Subject } from 'rxjs';
 import { map, takeUntil, mergeMap } from 'rxjs/operators';
 
+import { CourseEntityService } from '../../services/course-entity.service';
 import { CoursesService } from '../../services/courses.service';
-import * as fromCoursesActions from './../../state/courses.actions';
-import { CoursesState } from './../../state/courses.reducer';
-import * as fromCoursesSelector from './../../state/courses.selectors';
 import { AppState } from '../../../store/app.state';
 import { AnnouncementDialogComponent } from '../../components/announcement-dialog/announcement-dialog.component';
 import { AnnouncementResultComponent } from '../../components/announcement-result/announcement-result.component';
@@ -19,7 +17,9 @@ import { CourseDialogComponent } from '../../components/course-dialog/course-dia
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.scss']
+  styleUrls: ['./courses.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+
 })
 export class CoursesComponent implements OnInit {
   courses$: Observable<gapi.client.classroom.Course[]>;
@@ -30,15 +30,18 @@ export class CoursesComponent implements OnInit {
   faBullhorn = faBullhorn;
   constructor(
     private coursesService: CoursesService,
+    private coursesEntityService: CourseEntityService,
+
     private dialog: MatDialog,
-    private store: Store<CoursesState>,
+    private store: Store<AppState>,
   ) {
-    this.isLoading$ = this.store.pipe(select(fromCoursesSelector.selectCourseIsLoading));
-    this.courses$ = this.store.pipe(select(fromCoursesSelector.selectAllCourses));
+    //this.isLoading$ = this.store.pipe(select(fromCoursesSelector.selectCourseIsLoading));
+    //this.courses$ = this.store.pipe(select(fromCoursesSelector.selectAllCourses));
+
   }
   ngOnInit(): void {
-
-    this.store.select(fromCoursesSelector.selectAllCourses).pipe(
+    this.reload();
+    /* this.store.select(fromCoursesSelector.selectAllCourses).pipe(
       takeUntil(this.onDestroy$),
       map((courses) => {
         if (!courses) {
@@ -46,9 +49,13 @@ export class CoursesComponent implements OnInit {
         }
         return courses;
       })
-    ).subscribe(courses => this.courses = courses)
+    ).subscribe(courses => this.courses = courses) */
   }
-
+  reload() {
+    this.courses$ = this.coursesEntityService.entities$.pipe(
+      map(courses => courses.filter(course => course.courseState == 'ACTIVE'))
+    );
+  }
   openCreateCourseDialog() {
     let course: gapi.client.classroom.Course = {};
     /* course = {

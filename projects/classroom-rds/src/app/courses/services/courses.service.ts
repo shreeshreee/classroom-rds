@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
 
-import { GoogleApiService, GoogleAuthService } from 'ng-gapi';
+import { Observable } from 'rxjs';
 
 import { environment } from './../../../environments/environment';
-declare const gapi: any;
 @Injectable({
   providedIn: 'root'
 })
 export class CoursesService {
-  isLoaded: boolean = false;
+  isLoaded: Observable<boolean>;
   constructor(
   ) {
     this.handleClassroomLoad();
   }
-  handleClassroomLoad(): void {
+  async handleClassroomLoad(): Promise<void> {
     // Retrieve the GoogleUser object for the current user.
     const googleAuth: gapi.auth2.GoogleAuth = gapi.auth2.getAuthInstance();
     const googleUser: gapi.auth2.GoogleUser = googleAuth.currentUser.get();
@@ -21,9 +20,9 @@ export class CoursesService {
     if (!isAuthorized) {
       const option: gapi.auth2.SigninOptionsBuilder = new gapi.auth2.SigninOptionsBuilder();
       option.setScope(environment.gapiClientConfig.classroomScopes);
-      googleUser.grant(option).then(
+      await googleUser.grant(option).then(
         (success) => {
-          alert(JSON.stringify({ message: "success", value: success }));
+          //alert(JSON.stringify({ message: "success", value: success }));
         },
         (fail) => {
           alert(JSON.stringify({ message: 'fail', value: fail }));
@@ -57,6 +56,20 @@ export class CoursesService {
       );
     return result;
   }
+  async getCourseOwner(id: string, ownerId: string) {
+    const result: gapi.client.classroom.Teacher = await gapi.client.classroom.courses.teachers.get({ courseId: id, userId: ownerId })
+      .then(
+        (success: gapi.client.HttpRequestFulfilled<gapi.client.classroom.Teacher>) => {
+          return success.result;
+        },
+        (reason: gapi.client.HttpRequestRejected) => {
+          alert(`(${reason.status})\nError: ${reason.result['error'].message}`);
+          return null;
+        }
+      );
+    return result;
+  }
+
   /**
   * Create a courses in Google Classroom
   *

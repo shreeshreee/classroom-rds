@@ -12,11 +12,7 @@ export class RouteEffects {
   gohome$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(
-          fromAuthActions.browserReload,
-          fromAuthActions.signInSuccess,
-          fromAuthActions.signInFailure,
-          fromAuthActions.signOutCompleted),
+        ofType(fromAuthActions.browserReload, fromAuthActions.signOutCompleted),
         tap(() => this.router.navigate(['/']))
       ),
     { dispatch: false }
