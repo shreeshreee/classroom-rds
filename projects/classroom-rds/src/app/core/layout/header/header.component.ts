@@ -4,13 +4,14 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { faBars, faSignInAlt, faShieldAlt, faSignOutAlt, faEllipsisV, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faSignInAlt, faShieldAlt, faSignOutAlt, faEllipsisV, faGlobe, faInfo } from '@fortawesome/free-solid-svg-icons';
 
 import { Store } from '@ngrx/store';
 
 import { Observable } from 'rxjs';
 
 import { LayoutService } from '../layout.service';
+import { animateText } from '../../animations/animations';
 import { AppState } from '../../../store/app.state';
 import { User } from '../../../auth/models/user.model';
 import * as fromAuthActions from "../../../auth/state/auth.actions";
@@ -19,7 +20,7 @@ import * as fromAuthActions from "../../../auth/state/auth.actions";
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  animations: [
+  animations: [animateText,
     trigger('fade',
       [
         state('void', style({ opacity: 0 })),
@@ -38,7 +39,9 @@ export class HeaderComponent implements OnInit {
   faSignIn = faSignInAlt;
   faEllipsisV = faEllipsisV;
   faGlobe = faGlobe;
-  faGoogle = faGoogle
+  faGoogle = faGoogle;
+  faInfo = faInfo;
+  linkText: boolean = false;
   constructor(
     private layoutService: LayoutService,
     private store: Store<AppState>,

@@ -1,17 +1,22 @@
 <mat-toolbar class="animation fadeInOut mat-elevation-z0">
   <mat-toolbar-row fxLayoutAlign="space-between center">
-    <div fxLayout="row">
+    <div fxLayout="row" fxLayoutGap="20px">
       <fa-icon *ngIf="(isHandset$|async) && isOnline" mat-icon-button aria-label="Toggle sidenav"
         (click)="toggleSidenavLeft($event)" [icon]="faBars">
       </fa-icon>
+      <button mat-icon-button [matMenuTriggerFor]="infoMenu">
+        <img class="img-fluid" src="/assets/icons/android-chrome-512x512.png" />
+      </button>
+      <button *ngIf="!isOnline" mat-icon-button (click)="onSignIn()" (mouseover)="linkText=true"
+        (mouseout)="linkText=false">
+        <div fxLayout="row">
+          <img class="img-fluid" src="/assets/images/google-logo.svg" />
+          <span [@animateText]="linkText ? 'show' : 'hide'">&nbsp;Inicia Sesión</span>
+        </div>
+      </button>
     </div>
     <div>
       <div fxLayout="row">
-        <div *ngIf="!isOnline">
-          <button mat-button (click)="onSignIn()">
-            <fa-icon [icon]="faGoogle" size="lg"></fa-icon>&nbsp;&nbsp;Inicia Sesión
-          </button>
-        </div>
         <button mat-icon-button [matMenuTriggerFor]="langs" aria-label="Example icon-button with a menu">
           <fa-icon [icon]="faGlobe" size="lg"></fa-icon>
         </button>
@@ -23,9 +28,9 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <!-- Menu Items -->
-<mat-menu #menu="matMenu" fxLayoutAlign="end">
-  <div mat-menu-item [routerLink]="['about']">Acerca de...</div>
-  <div mat-menu-item [routerLink]="['privacy-policy']">Politicas de Privacidad</div>
+<mat-menu #menu="matMenu" fxLayoutAlign="right">
+  <div mat-menu-item [routerLink]="['under-construction']">Tema</div>
+  <div mat-menu-item [routerLink]="['under-construction']">Configuración</div>
 </mat-menu>
 <mat-menu #langs="matMenu" fxLayoutAlign="end">
   <div mat-menu-item>
@@ -38,3 +43,36 @@
   </div>
 </mat-menu>
 <!---->
+<mat-menu #infoMenu="matMenu">
+  <div mat-menu-item [routerLink]="['/']" [matMenuTriggerFor]="escuela">Escuela</div>
+  <div mat-menu-item [matMenuTriggerFor]="webapp">Aplicación</div>
+</mat-menu>
+
+<mat-menu #escuela="matMenu">
+  <div mat-menu-item [routerLink]="['about']">Quiénes somos</div>
+  <div mat-menu-item [matMenuTriggerFor]="oferta">Oferta educativa</div>
+  <div mat-menu-item>Ubicación y contacto</div>
+  <div mat-menu-item>Contacto</div>
+
+
+</mat-menu>
+
+<mat-menu #webapp="matMenu">
+  <div mat-menu-item [routerLink]="['privacy-policy']">Políticas de privacidad</div>
+  <div mat-menu-item>Términos de uso</div>
+  <div mat-menu-item [routerLink]="['license']">Licencia</div>
+  <div mat-menu-item [routerLink]="['code-conduct']">Código de conducta</div>
+</mat-menu>
+
+<mat-menu #oferta="matMenu">
+  <div mat-menu-item>Preescolar</div>
+  <div mat-menu-item>Primaria</div>
+  <div mat-menu-item>Secundaria</div>
+</mat-menu>
+
+<mat-menu #amphibians="matMenu">
+  <button mat-menu-item>Sonoran desert toad</button>
+  <button mat-menu-item>Western toad</button>
+  <button mat-menu-item>Arroyo toad</button>
+  <button mat-menu-item>Yosemite toad</button>
+</mat-menu>

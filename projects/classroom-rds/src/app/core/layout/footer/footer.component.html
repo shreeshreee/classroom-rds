@@ -1,10 +1,10 @@
 <footer>
-  <div class="px-3" fxLayout="row" fxLayoutAlign="space-between end">
+  <div class="px-3" fxLayout="row" fxLayoutAlign="space-between center">
     <div>
-      <h3 class="mat-h3 h3-responsive">2021 &copy; Escuela Rafael Díaz Serdán</h3>
+      <h3 class="pt-2 mat-h3 h3-responsive">2021 &copy; Escuela Rafael Díaz Serdán</h3>
     </div>
     <div>
-      <mat-list fxLayout="row">
+      <mat-list fxLayout="row" dense>
         <a mat-list-item *ngFor="let social of socialSet" href="{{social.site}}" target="_blank">
           <fa-icon matListIcon matTooltip="{{social.name}}" [icon]="social.icon"></fa-icon>
         </a>
