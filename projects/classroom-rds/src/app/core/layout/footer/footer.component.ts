@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+import { faFacebook, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
+
 import { Observable } from 'rxjs';
 
 @Component({
@@ -8,8 +10,24 @@ import { Observable } from 'rxjs';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  @Input() isOnline: boolean;
   @Input() isHandset$: Observable<boolean>;
+  socialSet: any[] = [
+    {
+      name: 'Github',
+      icon: faGithub,
+      site: 'https://github.com/jcmelchorp/classroom-rds',
+    },
+    {
+      name: 'Facebook',
+      icon: faFacebook,
+      site: 'https://www.facebook.com/RDSLaFallito',
+    },
+    {
+      name: 'Twitter',
+      icon: faTwitter,
+      site: 'https://twitter.com/Escuela_RDS',
+    }
+  ];
   constructor() { }
 
   ngOnInit(): void {

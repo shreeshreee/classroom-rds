@@ -12,10 +12,14 @@
   height: 50px;
   width: auto;
 }
+.img-user {
+  border:2px solid green;
+}
 
 .sidenav-container {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 100px);
 }
 .main-container {
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 100px);
+  width: 100%;
 }

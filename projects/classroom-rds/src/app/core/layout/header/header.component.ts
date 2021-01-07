@@ -1,7 +1,10 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit, Input } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
-import { faBars, faSignInAlt, faShieldAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { faBars, faSignInAlt, faShieldAlt, faSignOutAlt, faEllipsisV, faGlobe } from '@fortawesome/free-solid-svg-icons';
 
 import { Store } from '@ngrx/store';
 
@@ -33,14 +36,24 @@ export class HeaderComponent implements OnInit {
   basicProfile: gapi.auth2.BasicProfile;
   faBars = faBars;
   faSignIn = faSignInAlt;
-  faShieldAlt = faShieldAlt;
-  faSignOut = faSignOutAlt;
-
+  faEllipsisV = faEllipsisV;
+  faGlobe = faGlobe;
+  faGoogle = faGoogle
   constructor(
     private layoutService: LayoutService,
-    private store: Store<AppState>
-
-  ) { }
+    private store: Store<AppState>,
+    iconRegistry: MatIconRegistry,
+    sanitizer: DomSanitizer
+  ) {
+    iconRegistry.addSvgIcon(
+      'en',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/flags/en.svg')
+    );
+    iconRegistry.addSvgIcon(
+      'es',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/flags/es.svg')
+    );
+  }
 
   ngOnInit() { }
   toggleSidenavLeft($event: any) {
@@ -51,9 +64,5 @@ export class HeaderComponent implements OnInit {
       fromAuthActions.signIn()
     );
   }
-  onSignOut() {
-    this.store.dispatch(
-      fromAuthActions.signOut({ user: this.user })
-    );
-  }
+
 }

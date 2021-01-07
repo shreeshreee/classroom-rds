@@ -25,35 +25,19 @@ export class CoursesComponent implements OnInit {
   courses$: Observable<gapi.client.classroom.Course[]>;
   isLoading$: Observable<boolean>;
   courses: gapi.client.classroom.Course[];
-  onDestroy$ = new Subject<boolean>();
   faPlus = faPlus;
   faBullhorn = faBullhorn;
   constructor(
     private coursesService: CoursesService,
     private coursesEntityService: CourseEntityService,
-
     private dialog: MatDialog,
-    private store: Store<AppState>,
-  ) {
-    //this.isLoading$ = this.store.pipe(select(fromCoursesSelector.selectCourseIsLoading));
-    //this.courses$ = this.store.pipe(select(fromCoursesSelector.selectAllCourses));
-
-  }
+  ) { }
   ngOnInit(): void {
     this.reload();
-    /* this.store.select(fromCoursesSelector.selectAllCourses).pipe(
-      takeUntil(this.onDestroy$),
-      map((courses) => {
-        if (!courses) {
-          this.store.dispatch(fromCoursesActions.loadCourses());
-        }
-        return courses;
-      })
-    ).subscribe(courses => this.courses = courses) */
   }
   reload() {
     this.courses$ = this.coursesEntityService.entities$.pipe(
-      map(courses => courses.filter(course => course.courseState == 'ACTIVE'))
+      map(courses => courses.filter(course => course.courseState == 'ACTIVE')),
     );
   }
   openCreateCourseDialog() {

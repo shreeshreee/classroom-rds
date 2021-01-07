@@ -166,7 +166,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(seoService: <a href="../injectables/SeoService.html">SeoService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -175,6 +175,36 @@
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parámetros :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Nombre</td>
+                                                    <td>Tipo</td>
+                                                <td>Opcional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>seoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SeoService.html" target="_self" >SeoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -210,8 +240,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="12"
-                            class="link-to-prism">projects/classroom-rds/src/app/app.component.ts:12</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="14"
+                            class="link-to-prism">projects/classroom-rds/src/app/app.component.ts:14</a></div>
                 </td>
             </tr>
 
@@ -253,7 +283,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>&#x27;classroom-rds&#x27;</code>
+                            <i>Valor por defecto : </i><code>&#x27;Classroom RDS Administrator&#x27;</code>
                         </td>
                     </tr>
                         <tr>
@@ -272,17 +302,26 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from &#x27;@angular/router&#x27;;
+
+import { SeoService } from &#x27;./shared/services&#x27;;
 @Component({
   selector: &#x27;app-root&#x27;,
   templateUrl: &#x27;./app.component.html&#x27;,
   styleUrls: [&#x27;./app.component.scss&#x27;]
 })
 export class AppComponent implements OnInit {
-
-  title &#x3D; &#x27;classroom-rds&#x27;;
-  constructor() { }
-  ngOnInit(): void { }
+  title &#x3D; &#x27;Classroom RDS Administrator&#x27;;
+  constructor(
+    private seoService: SeoService
+  ) { }
+  ngOnInit(): void {
+    this.seoService.titleInit();
+    this.seoService.generateTags({
+      title: this.title,
+      description: &#x27;Angular web app for a school admin in Google Classroom.&#x27;,
+      image: &#x27;assets/screenshots/screenshot02.png&#x27;
+    });
+  }
 }
 </code></pre>
     </div>
@@ -291,7 +330,6 @@ export class AppComponent implements OnInit {
         <pre class="line-numbers"><code class="language-html">&lt;ngx-spinner bdColor&#x3D;&quot;rgba(0, 0, 0, 0.7)&quot; size&#x3D;&quot;medium&quot; color&#x3D;&quot;primary&quot; type&#x3D;&quot;ball-clip-rotate&quot; [fullScreen]&#x3D;&quot;false&quot;&gt;
   &lt;p style&#x3D;&quot;color: white&quot;&gt; Loading... &lt;/p&gt;
 &lt;/ngx-spinner&gt;
-
 &lt;router-outlet&gt;&lt;/router-outlet&gt;
 </code></pre>
     </div>
@@ -340,7 +378,7 @@ export class AppComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><ngx-spinner bdColor="rgba(0, 0, 0, 0.7)" size="medium" color="primary" type="ball-clip-rotate" [fullScreen]="false">  <p style="color: white"> Loading... </p></ngx-spinner><router-outlet></router-outlet></div>'
-    var COMPONENTS = [{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesTableComponent', 'selector': 'app-course-table'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainProfileComponent', 'selector': 'app-main-profile'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesTableComponent', 'selector': 'app-course-table'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainProfileComponent', 'selector': 'app-main-profile'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': 'app-snackbar'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>

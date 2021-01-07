@@ -12,7 +12,9 @@ import { faEdit, } from '@fortawesome/free-regular-svg-icons';
 import { Store } from '@ngrx/store';
 
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
+import { CourseEntityService } from '../../services/course-entity.service';
 import { AppState } from './../../../store/app.state';
 
 
@@ -30,7 +32,7 @@ import { AppState } from './../../../store/app.state';
   ],
 })
 export class CoursesTableComponent implements AfterViewInit, OnInit {
-  @Input() courses: gapi.client.classroom.Course[];
+  courses: gapi.client.classroom.Course[];
   public dataSource: MatTableDataSource<gapi.client.classroom.Course>;
   @Output() course = new EventEmitter<gapi.client.classroom.Course>();
   @Output() teacherInCourse = new EventEmitter<gapi.client.classroom.Course>();
@@ -56,12 +58,18 @@ export class CoursesTableComponent implements AfterViewInit, OnInit {
   faPlus = faPlus;
   faBullhorn = faBullhorn;
   searching = false;
-
+  message = 'Courses';
+  constructor(
+    private coursesEntityService: CourseEntityService,
+  ) {
+    this.coursesEntityService.entities$.subscribe(courses => this.courses = courses);
+  }
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource(this.courses);
     this.searchFormInit();
     this.dataSource.filterPredicate = this.getFilterPredicate();
   }
+
 
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;

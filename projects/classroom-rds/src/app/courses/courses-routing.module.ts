@@ -11,22 +11,11 @@ import { CoursesComponent } from './containers/courses/courses.component';
 
 const routes: Routes = [
   {
-    path: '', component: CoursesComponent, resolve: {
-      courses: CoursesResolver
-    }, children: [
-      {
-        path: '', component: CoursesTableComponent, resolve: {
-          courses: CoursesResolver
-        }
-      },
-      {
-        path: ':id', component: CourseComponent, resolve: {
-          courses: CoursesResolver
-        }
-      },
-
+    path: '', component: CoursesComponent, resolve: { courses: CoursesResolver }, children: [
+      { path: '', component: CoursesTableComponent, resolve: { courses: CoursesResolver } },
+      { path: ':id', component: CourseComponent, resolve: { courses: CoursesResolver } },
     ]
-  }
+  },
 ];
 
 @NgModule({

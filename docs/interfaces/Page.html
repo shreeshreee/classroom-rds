@@ -193,17 +193,20 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from &#x27;@angular/core&#x27;;
 import { MatSidenav } from &#x27;@angular/material/sidenav&#x27;;
-import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from &#x27;@angular/router&#x27;;
 
 import { faGoogle } from &#x27;@fortawesome/free-brands-svg-icons&#x27;;
-import { faUser, faHome, faSchool, faChalkboardTeacher, faUserTie, faUserGraduate, faUserCog, IconDefinition, faCompressAlt, faSignOutAlt } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
+import { faUser, faHome, faSchool, faChalkboardTeacher, faUserTie, faUserGraduate, faUserCog, IconDefinition, faCompressAlt, faSignOutAlt, faShieldAlt } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
+
+import { Store } from &#x27;@ngrx/store&#x27;;
 
 import { Observable } from &#x27;rxjs&#x27;;
 
 import { LayoutService } from &#x27;./../layout.service&#x27;;
 import { animateText, onMainContentChange, onSideNavChange } from &#x27;../../animations/animations&#x27;;
+import { AppState } from &#x27;../../../store/app.state&#x27;;
 import { User } from &#x27;../../../auth/models/user.model&#x27;;
+import { signOut } from &#x27;../../../auth/state/auth.actions&#x27;;
 interface Page {
   route: string[];
   name: string;
@@ -234,15 +237,16 @@ export class SidenavComponent implements OnInit {
   ]
   faCompressAlt &#x3D; faCompressAlt;
   faUser &#x3D; faUser;
-
+  faShieldAlt &#x3D; faShieldAlt;
+  faSignOut &#x3D; faSignOutAlt;
   faSchool &#x3D; faSchool;
-
   faUserCog &#x3D; faUserCog;
   faGoogle &#x3D; faGoogle;
 
   constructor(
     private layoutService: LayoutService,
-    private router: Router
+    private router: Router,
+    private store: Store&lt;AppState&gt;,
   ) {
     this.layoutService.toggleSidenavLeft.subscribe(() &#x3D;&gt; {
       this.sidenavLeft.toggle();
@@ -280,7 +284,10 @@ export class SidenavComponent implements OnInit {
     }, 100)
     this.layoutService.sideNavState$.next(this.sideNavState)
   }
-
+  onSignOut() {
+    this.store.dispatch(signOut({ user: this.user })
+    );
+  }
 }
 </code></pre>
     </div>

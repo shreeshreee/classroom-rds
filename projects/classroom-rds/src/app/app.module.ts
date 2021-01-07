@@ -7,6 +7,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
@@ -24,10 +25,10 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { MaterialModule } from './modules/material.module';
+import { SharedModule } from './shared/shared.module';
 import { reducers, metaReducers } from './store/app.state';
 import { RouteEffects, AppEffects, SpinnerEffects } from './store/effects';
 import { AuthEffects, FireEffects } from './auth/state/effects';
-import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     AppRoutingModule,
     CoreModule,
     MaterialModule,
+    SharedModule,
     AuthModule.forRoot(),
     StoreModule.forRoot(reducers, {
       metaReducers,

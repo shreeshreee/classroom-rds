@@ -1,0 +1,31 @@
+.img-container {
+  width: 25%;
+  height: auto;
+}
+.display-4-responsive {
+  font-family: 'Fredoka One';
+  font-size: calc(1rem + 3vw);
+  font-weight: 100;
+  color:#0063a3;
+}
+
+.h2-responsive {
+  font-family: 'Poiret One';
+  margin-top: -20px;
+  font-size: calc(0.5rem + 1.5vw);
+  font-weight: 800;
+}
+
+.h1-responsive {
+  margin-bottom: -5px;
+  font-family: 'Poiret One';
+  color:black;
+  font-size: calc(1rem + 2vw);
+}
+
+.blockquote-responsive {
+  font-family: 'Poiret One';
+  font-size: calc(1rem + 1vw);
+  font-weight: 800;
+
+}

@@ -1,6 +1,14 @@
-<mat-toolbar class="footer">
-  <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center">
-    <p> 2020 &copy; Julio César Melchor Pinto</p>
-    <p>Iconos de Social</p>
-  </mat-toolbar-row>
-</mat-toolbar>
+<footer>
+  <div class="px-3" fxLayout="row" fxLayoutAlign="space-between end">
+    <div>
+      <h3 class="mat-h3 h3-responsive">2021 &copy; Escuela Rafael Díaz Serdán</h3>
+    </div>
+    <div>
+      <mat-list fxLayout="row">
+        <a mat-list-item *ngFor="let social of socialSet" href="{{social.site}}" target="_blank">
+          <fa-icon matListIcon matTooltip="{{social.name}}" [icon]="social.icon"></fa-icon>
+        </a>
+      </mat-list>
+    </div>
+  </div>
+</footer>

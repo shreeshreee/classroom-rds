@@ -8,7 +8,7 @@
  </h1>
 
 
-Angular web app for a school admin in Google Classroom. Classroom entities adapted to fit "Escuela Rafael Díaz Serdan" requirements (Massive course's announcements, students and teachers block enrollment, manage groups and courses, view and edit information asan Admin and Superadmin in Google Workspace, and many more).
+Angular web app for a school admin in Google Classroom. Classroom entities adapted to fit "Escuela Rafael Díaz Serdan" requirements (Massive course's announcements, students and teachers block enrollment, manage groups and courses, view and edit information as an Admin and Superadmin in Google Workspace, and many more).
 
 ### Comming soon
 

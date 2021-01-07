@@ -37,4 +37,5 @@ export class LayoutComponent {
     this.isAdmin$ = this.store.pipe(select(fromAuthSelectors.isAdmin));
   }
   ngOnInit(): void { }
+
 }

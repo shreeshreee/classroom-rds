@@ -64,8 +64,8 @@ export class AuthService {
   /**
    * Handler method for Authorize button
    */
-  handleSignInClick(): Promise<firebase.auth.UserCredential> {
-    return this.signIn();
+  handleSignInClick() {
+    return from(this.signIn());
 
   }
   async signIn() {
@@ -82,7 +82,7 @@ export class AuthService {
       () => { console.log('Google API logout Success') },
       () => { console.log('Google API logout Failded') }
     );
-    return this.authFireService.signOut(uid);
+    return from(this.authFireService.signOut(uid));
   }
 
   setSigninStatus(user) {

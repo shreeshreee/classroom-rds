@@ -1,33 +1,40 @@
-<mat-toolbar class="animation fadeInOut mat-elevation-z0 header">
+<mat-toolbar class="animation fadeInOut mat-elevation-z0">
   <mat-toolbar-row fxLayoutAlign="space-between center">
     <div fxLayout="row">
       <fa-icon *ngIf="(isHandset$|async) && isOnline" mat-icon-button aria-label="Toggle sidenav"
         (click)="toggleSidenavLeft($event)" [icon]="faBars">
       </fa-icon>
     </div>
-    <div fxLayout="row">
-      <a *ngIf="isOnline && user" class="img-user" mat-icon-button [matMenuTriggerFor]="userMenu">
-        <img class="img-fluid rounded-circle" [src]="[user.photoUrl]" />
-      </a>
-
-      <button *ngIf="!isOnline" mat-button (click)="onSignIn()">
-        <fa-icon [icon]="faSignIn" size="lg"></fa-icon>&nbsp;&nbsp;Inicia Sesión
-      </button>
+    <div>
+      <div fxLayout="row">
+        <div *ngIf="!isOnline">
+          <button mat-button (click)="onSignIn()">
+            <fa-icon [icon]="faGoogle" size="lg"></fa-icon>&nbsp;&nbsp;Inicia Sesión
+          </button>
+        </div>
+        <button mat-icon-button [matMenuTriggerFor]="langs" aria-label="Example icon-button with a menu">
+          <fa-icon [icon]="faGlobe" size="lg"></fa-icon>
+        </button>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <fa-icon [icon]="faEllipsisV" size="lg"></fa-icon>
+        </button>
+      </div>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
-
 <!-- Menu Items -->
-<mat-menu #userMenu="matMenu" fxLayoutAlign="right">
-  <app-user mat-list-item *ngIf="isOnline && user" [routerLink]="['profile']" routerLinkActive="active"
-    [isOnline]="isOnline" [isAdmin]="isAdmin" [user]="user">
-  </app-user>
-  <div *ngIf="isOnline && isAdmin" mat-menu-item [routerLink]="['admin']">
-    <fa-icon matListIcon [icon]="faShieldAlt" size="lg"></fa-icon>
-    Administración
-  </div>
-  <a mat-menu-item *ngIf="isOnline" (click)="onSignOut()">
-    <fa-icon matListIcon [icon]="faSignOut" size="lg"></fa-icon>
-    Cerrar Sesión
-  </a>
+<mat-menu #menu="matMenu" fxLayoutAlign="end">
+  <div mat-menu-item [routerLink]="['about']">Acerca de...</div>
+  <div mat-menu-item [routerLink]="['privacy-policy']">Politicas de Privacidad</div>
 </mat-menu>
+<mat-menu #langs="matMenu" fxLayoutAlign="end">
+  <div mat-menu-item>
+    <mat-icon svgIcon="es" aria-hidden="false" aria-label="español flag icon"></mat-icon>
+    Espa&ntilde;ol
+  </div>
+  <div mat-menu-item>
+    <mat-icon svgIcon="en" aria-hidden="false" aria-label="english flag icon"></mat-icon>
+    English
+  </div>
+</mat-menu>
+<!---->

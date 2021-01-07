@@ -1,5 +1,11 @@
-<app-header [isHandset$]="isHandset$" [isOnline]="isOnline$|async" [user]="user$|async" [isAdmin]="isAdmin$|async">
-</app-header>
-<app-sidenav [isHandset$]="isHandset$" [isOnline]="(isOnline$|async)" [user]="user$|async" [isAdmin]="isAdmin$|async">
-</app-sidenav>
-<app-footer [isHandset$]="isHandset$" [isOnline]="(isOnline$|async)"></app-footer>
+<div fxLayout="column" fxFlexFill>
+  <app-header [user]="(user$|async)" [isHandset$]="isHandset$" [isAdmin]="(isAdmin$|async)"
+    [isOnline]="(isOnline$|async)">
+  </app-header>
+  <div fxFlex>
+    <app-sidenav [isHandset$]="isHandset$" [isOnline]="(isOnline$|async)" [user]="(user$|async)"
+      [isAdmin]="(isAdmin$|async)">
+    </app-sidenav>
+  </div>
+  <app-footer [isHandset$]="isHandset$" *ngIf="!(isOnline$|async)" fxFlexOffset="auto"></app-footer>
+</div>

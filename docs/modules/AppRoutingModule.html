@@ -78,14 +78,22 @@ import { AngularFireAuthGuard } from &#x27;@angular/fire/auth-guard&#x27;;
 import { AuthGuard } from &#x27;./auth/guards/auth.guard&#x27;;
 import { LayoutComponent } from &#x27;./core/layout/layout.component&#x27;;
 import { ProfileComponent } from &#x27;./auth/containers/profile/profile.component&#x27;;
+import { AboutComponent } from &#x27;./shared/components/about/about.component&#x27;;
 import { HomeComponent } from &#x27;./shared/components/home/home.component&#x27;;
+import { NotFoundComponent } from &#x27;./shared/components/not-found/not-found.component&#x27;;
+import { PrivacyPolicyComponent } from &#x27;./shared/components/privacy-policy/privacy-policy.component&#x27;;
+import { UnderConstructionComponent } from &#x27;./shared/components/under-construction/under-construction.component&#x27;;
 
 const routes: Routes &#x3D; [{
   path: &#x27;&#x27;, component: LayoutComponent, children: [
     { path: &#x27;&#x27;, component: HomeComponent },
     { path: &#x27;courses&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./courses/courses.module&#x27;).then(m &#x3D;&gt; m.CoursesModule)&quot;, canActivate: [AuthGuard]/* ,canActivate: [AuthGuard]  */ },
     { path: &#x27;profile&#x27;, component: ProfileComponent, canActivate: [AngularFireAuthGuard] },
-    { path: &#x27;**&#x27;, redirectTo: &#x27;/&#x27; }
+    { path: &#x27;about&#x27;, component: AboutComponent },
+    { path: &#x27;privacy-policy&#x27;, component: PrivacyPolicyComponent },
+    { path: &#x27;not-found&#x27;, component: NotFoundComponent },
+    { path: &#x27;under-construction&#x27;, component: UnderConstructionComponent },
+    { path: &#x27;**&#x27;, redirectTo: &#x27;not-found&#x27; }
   ]
 },
 ];

@@ -1,16 +1,19 @@
 import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { MatDialog } from '@angular/material/dialog';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { faUser, faHome, faSchool, faChalkboardTeacher, faUserTie, faUserGraduate, faUserCog, IconDefinition, faCompressAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faHome, faSchool, faChalkboardTeacher, faUserTie, faUserGraduate, faUserCog, IconDefinition, faCompressAlt, faSignOutAlt, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
+
+import { Store } from '@ngrx/store';
 
 import { Observable } from 'rxjs';
 
 import { LayoutService } from './../layout.service';
 import { animateText, onMainContentChange, onSideNavChange } from '../../animations/animations';
+import { AppState } from '../../../store/app.state';
 import { User } from '../../../auth/models/user.model';
+import { signOut } from '../../../auth/state/auth.actions';
 interface Page {
   route: string[];
   name: string;
@@ -41,15 +44,16 @@ export class SidenavComponent implements OnInit {
   ]
   faCompressAlt = faCompressAlt;
   faUser = faUser;
-
+  faShieldAlt = faShieldAlt;
+  faSignOut = faSignOutAlt;
   faSchool = faSchool;
-
   faUserCog = faUserCog;
   faGoogle = faGoogle;
 
   constructor(
     private layoutService: LayoutService,
-    private router: Router
+    private router: Router,
+    private store: Store<AppState>,
   ) {
     this.layoutService.toggleSidenavLeft.subscribe(() => {
       this.sidenavLeft.toggle();
@@ -87,5 +91,8 @@ export class SidenavComponent implements OnInit {
     }, 100)
     this.layoutService.sideNavState$.next(this.sideNavState)
   }
-
+  onSignOut() {
+    this.store.dispatch(signOut({ user: this.user })
+    );
+  }
 }

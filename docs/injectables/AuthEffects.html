@@ -219,7 +219,7 @@
     () &#x3D;&gt;
       this.actions$.pipe(
         ofType(fromAuthActions.signIn),
-        switchMap(() &#x3D;&gt; from(this.authService.handleSignInClick())
+        switchMap(() &#x3D;&gt; this.authService.handleSignInClick()
           .pipe(
             map((res) &#x3D;&gt; {
               return {
@@ -321,7 +321,7 @@
       this.actions$.pipe(
         ofType(fromAuthActions.signOut),
         switchMap((action) &#x3D;&gt;
-          from(this.authService.signOut(action.user.uid))
+          this.authService.signOut(action.user.uid)
             .pipe(
               map(() &#x3D;&gt; fromAuthActions.signOutCompleted()),
               catchError((err) &#x3D;&gt; {
@@ -368,7 +368,7 @@ export class AuthEffects {
     () &#x3D;&gt;
       this.actions$.pipe(
         ofType(fromAuthActions.signIn),
-        switchMap(() &#x3D;&gt; from(this.authService.handleSignInClick())
+        switchMap(() &#x3D;&gt; this.authService.handleSignInClick()
           .pipe(
             map((res) &#x3D;&gt; {
               return {
@@ -422,7 +422,7 @@ export class AuthEffects {
       this.actions$.pipe(
         ofType(fromAuthActions.signOut),
         switchMap((action) &#x3D;&gt;
-          from(this.authService.signOut(action.user.uid))
+          this.authService.signOut(action.user.uid)
             .pipe(
               map(() &#x3D;&gt; fromAuthActions.signOutCompleted()),
               catchError((err) &#x3D;&gt; {

@@ -22,10 +22,7 @@ import { SidenavComponent } from './layout/sidenav/sidenav.component';
     LayoutComponent,
     HeaderComponent,
     SidenavComponent,
-    FooterComponent,
-    HomeComponent,
-    WellcomeComponent,
-    DashboardComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

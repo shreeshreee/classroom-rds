@@ -84,22 +84,11 @@ import { CoursesComponent } from &#x27;./containers/courses/courses.component&#x
 
 const routes: Routes &#x3D; [
   {
-    path: &#x27;&#x27;, component: CoursesComponent, resolve: {
-      courses: CoursesResolver
-    }, children: [
-      {
-        path: &#x27;&#x27;, component: CoursesTableComponent, resolve: {
-          courses: CoursesResolver
-        }
-      },
-      {
-        path: &#x27;:id&#x27;, component: CourseComponent, resolve: {
-          courses: CoursesResolver
-        }
-      },
-
+    path: &#x27;&#x27;, component: CoursesComponent, resolve: { courses: CoursesResolver }, children: [
+      { path: &#x27;&#x27;, component: CoursesTableComponent, resolve: { courses: CoursesResolver } },
+      { path: &#x27;:id&#x27;, component: CourseComponent, resolve: { courses: CoursesResolver } },
     ]
-  }
+  },
 ];
 
 @NgModule({

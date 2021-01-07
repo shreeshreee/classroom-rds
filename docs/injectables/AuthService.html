@@ -296,7 +296,7 @@
 </div>
 
                     <div class="io-description">
-                        <b>Devuelve : </b>        <code><a href="../interfaces/User.html" target="_self" >Promise&lt;firebase.auth.UserCredential&gt;</a></code>
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                     </div>
                 </td>
@@ -716,8 +716,8 @@ export class AuthService {
   /**
    * Handler method for Authorize button
    */
-  handleSignInClick(): Promise&lt;firebase.auth.UserCredential&gt; {
-    return this.signIn();
+  handleSignInClick() {
+    return from(this.signIn());
 
   }
   async signIn() {
@@ -734,7 +734,7 @@ export class AuthService {
       () &#x3D;&gt; { console.log(&#x27;Google API logout Success&#x27;) },
       () &#x3D;&gt; { console.log(&#x27;Google API logout Failded&#x27;) }
     );
-    return this.authFireService.signOut(uid);
+    return from(this.authFireService.signOut(uid));
   }
 
   setSigninStatus(user) {

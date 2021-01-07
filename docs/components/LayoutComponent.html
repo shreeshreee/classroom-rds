@@ -431,16 +431,23 @@ export class LayoutComponent {
     this.isAdmin$ &#x3D; this.store.pipe(select(fromAuthSelectors.isAdmin));
   }
   ngOnInit(): void { }
+
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;app-header [isHandset$]&#x3D;&quot;isHandset$&quot; [isOnline]&#x3D;&quot;isOnline$|async&quot; [user]&#x3D;&quot;user$|async&quot; [isAdmin]&#x3D;&quot;isAdmin$|async&quot;&gt;
-&lt;/app-header&gt;
-&lt;app-sidenav [isHandset$]&#x3D;&quot;isHandset$&quot; [isOnline]&#x3D;&quot;(isOnline$|async)&quot; [user]&#x3D;&quot;user$|async&quot; [isAdmin]&#x3D;&quot;isAdmin$|async&quot;&gt;
-&lt;/app-sidenav&gt;
-&lt;app-footer [isHandset$]&#x3D;&quot;isHandset$&quot; [isOnline]&#x3D;&quot;(isOnline$|async)&quot;&gt;&lt;/app-footer&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div fxLayout&#x3D;&quot;column&quot; fxFlexFill&gt;
+  &lt;app-header [user]&#x3D;&quot;(user$|async)&quot; [isHandset$]&#x3D;&quot;isHandset$&quot; [isAdmin]&#x3D;&quot;(isAdmin$|async)&quot;
+    [isOnline]&#x3D;&quot;(isOnline$|async)&quot;&gt;
+  &lt;/app-header&gt;
+  &lt;div fxFlex&gt;
+    &lt;app-sidenav [isHandset$]&#x3D;&quot;isHandset$&quot; [isOnline]&#x3D;&quot;(isOnline$|async)&quot; [user]&#x3D;&quot;(user$|async)&quot;
+      [isAdmin]&#x3D;&quot;(isAdmin$|async)&quot;&gt;
+    &lt;/app-sidenav&gt;
+  &lt;/div&gt;
+  &lt;app-footer [isHandset$]&#x3D;&quot;isHandset$&quot; *ngIf&#x3D;&quot;!(isOnline$|async)&quot; fxFlexOffset&#x3D;&quot;auto&quot;&gt;&lt;/app-footer&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -477,8 +484,8 @@ export class LayoutComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-header [isHandset$]="isHandset$" [isOnline]="isOnline$|async" [user]="user$|async" [isAdmin]="isAdmin$|async"></app-header><app-sidenav [isHandset$]="isHandset$" [isOnline]="(isOnline$|async)" [user]="user$|async" [isAdmin]="isAdmin$|async"></app-sidenav><app-footer [isHandset$]="isHandset$" [isOnline]="(isOnline$|async)"></app-footer></div>'
-    var COMPONENTS = [{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesTableComponent', 'selector': 'app-course-table'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainProfileComponent', 'selector': 'app-main-profile'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
+        var COMPONENT_TEMPLATE = '<div><div fxLayout="column" fxFlexFill>  <app-header [user]="(user$|async)" [isHandset$]="isHandset$" [isAdmin]="(isAdmin$|async)"    [isOnline]="(isOnline$|async)">  </app-header>  <div fxFlex>    <app-sidenav [isHandset$]="isHandset$" [isOnline]="(isOnline$|async)" [user]="(user$|async)"      [isAdmin]="(isAdmin$|async)">    </app-sidenav>  </div>  <app-footer [isHandset$]="isHandset$" *ngIf="!(isOnline$|async)" fxFlexOffset="auto"></app-footer></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesTableComponent', 'selector': 'app-course-table'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainProfileComponent', 'selector': 'app-main-profile'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': 'app-snackbar'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LayoutComponent'};
 </script>

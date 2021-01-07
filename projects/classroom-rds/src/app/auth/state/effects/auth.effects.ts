@@ -18,7 +18,7 @@ export class AuthEffects {
     () =>
       this.actions$.pipe(
         ofType(fromAuthActions.signIn),
-        switchMap(() => from(this.authService.handleSignInClick())
+        switchMap(() => this.authService.handleSignInClick()
           .pipe(
             map((res) => {
               return {
@@ -72,7 +72,7 @@ export class AuthEffects {
       this.actions$.pipe(
         ofType(fromAuthActions.signOut),
         switchMap((action) =>
-          from(this.authService.signOut(action.user.uid))
+          this.authService.signOut(action.user.uid)
             .pipe(
               map(() => fromAuthActions.signOutCompleted()),
               catchError((err) => {

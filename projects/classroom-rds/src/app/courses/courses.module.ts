@@ -17,6 +17,7 @@ import { CoursesDataService } from './services/course-data.service';
 import { CourseEntityService } from './services/course-entity.service';
 import { CoursesResolver } from './services/courses.resolver';
 import { CoursesService } from './services/courses.service';
+import { TeacherEntityService } from './services/teacher-entity.service';
 import { AnnouncementDialogComponent } from './components/announcement-dialog/announcement-dialog.component';
 import { AnnouncementResultComponent } from './components/announcement-result/announcement-result.component';
 import { CourseDialogComponent } from './components/course-dialog/course-dialog.component';
@@ -47,7 +48,7 @@ const entityMetadata: EntityMetadataMap = {
     FontAwesomeModule,
   ],
   providers: [CoursesService, CourseEntityService, CoursesResolver,
-    CoursesDataService]
+    CoursesDataService, TeacherEntityService]
 })
 export class CoursesModule {
   constructor(
