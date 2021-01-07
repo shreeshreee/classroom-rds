@@ -5,10 +5,12 @@ import { DefaultDataService, HttpUrlGenerator } from '@ngrx/data';
 
 import { from, Observable } from 'rxjs';
 
+import { Course } from '../models/course.model';
+
 import { CoursesService } from './courses.service';
 
 @Injectable()
-export class CoursesDataService extends DefaultDataService<gapi.client.classroom.Course> {
+export class CourseDataService extends DefaultDataService<gapi.client.classroom.Course> {
 
 
   constructor(
@@ -20,7 +22,7 @@ export class CoursesDataService extends DefaultDataService<gapi.client.classroom
 
   }
 
-  getAll(): Observable<gapi.client.classroom.Course[]> {
+  getAll(): Observable<Course[]> {
     return from(this.coursesService.getCoursesList());
   }
 }

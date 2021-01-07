@@ -13,7 +13,7 @@ import { MaterialModule } from './../modules/material.module';
 
 import { CoursesRoutingModule } from './courses-routing.module';
 
-import { CoursesDataService } from './services/course-data.service';
+import { CourseDataService } from './services/course-data.service';
 import { CourseEntityService } from './services/course-entity.service';
 import { CoursesResolver } from './services/courses.resolver';
 import { CoursesService } from './services/courses.service';
@@ -33,8 +33,8 @@ const entityMetadata: EntityMetadataMap = {
       optimisticUpdate: true
     }
   },
-  /* Lesson: {
-  } */
+  Teacher: {
+  }
 };
 @NgModule({
   declarations: [CoursesComponent, AnnouncementDialogComponent, AnnouncementResultComponent, CourseDialogComponent, CoursesTableComponent, CourseComponent, CourseStudentsComponent, CourseTeachersComponent],
@@ -48,17 +48,19 @@ const entityMetadata: EntityMetadataMap = {
     FontAwesomeModule,
   ],
   providers: [CoursesService, CourseEntityService, CoursesResolver,
-    CoursesDataService, TeacherEntityService]
+    CourseDataService, TeacherEntityService]
 })
 export class CoursesModule {
   constructor(
     private eds: EntityDefinitionService,
     private entityDataService: EntityDataService,
-    private coursesDataService: CoursesDataService) {
+    private courseDataService: CourseDataService,
+    private teacherDataService: CourseDataService) {
 
     eds.registerMetadataMap(entityMetadata);
 
-    entityDataService.registerService('Course', coursesDataService);
+    entityDataService.registerService('Course', courseDataService);
+    entityDataService.registerService('Teacher', teacherDataService);
 
   }
 }

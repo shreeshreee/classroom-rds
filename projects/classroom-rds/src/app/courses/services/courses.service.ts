@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
+import { Course } from '../models/course.model';
 import { environment } from './../../../environments/environment';
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,48 @@ export class CoursesService {
       // alert('loaded classroom');
     });
   }
+  async getFullCourses() {
+    const courses = this.getCoursesList().then(courses => courses = courses);
+    let fullCourses: Course[] = (await courses).map(course => {
+      let fullCourse: Course = {
+        course: course,
+      };
+      this.getFullCourse(course.id, course.ownerId).then(
+        success => {
+          fullCourse.owner = success.ownerResponse.result;
+          fullCourse.students = success.studentsResponse.result.students;
+          fullCourse.teachers = success.teachersResponse.result.teachers;
+          fullCourse.courseWorks = success.courseWorkResponse.result.courseWork;
+        }
+      );
+      return fullCourse;
+    });
+    return fullCourses;
+
+  }
+  async getFullCourse(courseId: string, ownerId: string) {
+
+    const ownerResponse: gapi.client.Response<gapi.client.classroom.Teacher> =
+      await gapi.client.classroom.courses.teachers.get({ userId: ownerId, courseId: courseId });
+
+    const studentsResponse: gapi.client.Response<gapi.client.classroom.ListStudentsResponse> =
+      await gapi.client.classroom.courses.students.list({ courseId });
+
+    const teachersResponse: gapi.client.Response<gapi.client.classroom.ListTeachersResponse> =
+      await gapi.client.classroom.courses.teachers.list({ courseId });
+
+    const courseWorkResponse: gapi.client.Response<gapi.client.classroom.ListCourseWorkResponse> =
+      await gapi.client.classroom.courses.courseWork.list({ courseId });
+
+    return {
+      ownerResponse,
+      studentsResponse,
+      teachersResponse,
+      courseWorkResponse
+    };
+  }
+
+
   /**
   * Retrive an array of courses according to permissions access user logged in Google Classroom
   *
@@ -69,7 +112,24 @@ export class CoursesService {
       );
     return result;
   }
+  async listTeachersCourse(
+    cid: string,
+    pSize?: number,
+    pToken?: string
+  ) {
+    const params = {
+      courseId: cid || null,
+      pageSize: pSize || null,
+      pageToken: pToken || null
+    };
 
+
+    const teachers = await gapi.client.classroom.courses.teachers.list(params)
+      .then(res => {
+        return res.result.teachers;
+      })
+    return teachers;
+  }
   /**
   * Create a courses in Google Classroom
   *

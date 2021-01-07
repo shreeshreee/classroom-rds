@@ -66,10 +66,10 @@ export class SeoService {
       { name: 'apple-mobile-web-app-capable', content: 'yes' },
       { name: 'mobile-web-app-capable', content: 'yes' },
       { name: 'msapplication-TileColor', content: '#2b5797' },
-      { name: 'msapplication-square70x70logo" ', content: 'assets/icons/mstile-icon-128.png' },
+      { name: 'msapplication-square70x70logo', content: 'assets/icons/mstile-icon-128.png' },
       { name: 'msapplication-square150x150logo', content: 'assets/icons/mstile-icon-270.png' },
       { name: 'msapplication-square310x310logo', content: 'assets/icons/mstile-icon-558.png' },
-      { name: 'msapplication-wide310x150logo" ', content: 'assets/icons/mstile-icon-558-270.png' },
+      { name: 'msapplication-wide310x150logo', content: 'assets/icons/mstile-icon-558-270.png' },
       // OpenGraph metatags
       { property: 'og:title', content: title },
       { property: 'og:type', content: 'profile' },

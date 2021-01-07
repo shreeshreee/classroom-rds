@@ -24,7 +24,7 @@ import { AppState } from '../../../store/app.state';
 export class CourseComponent implements OnInit {
   course$: Observable<gapi.client.classroom.Course>;
   loading$: Observable<boolean>;
-  teacher$: Observable<gapi.client.classroom.Student[]>;
+  teacher$: Observable<gapi.client.classroom.Teacher[]>;
 
   faUserGraduate = faUserGraduate;
   faFileSignature = faFileSignature;
@@ -49,12 +49,12 @@ export class CourseComponent implements OnInit {
     this.teacher$ = this.teacherEntityService.entities$
       .pipe(
         withLatestFrom(this.course$),
-        tap(([teacher, course]) => {
+        tap(([teachers, course]) => {
           this.loadTeacher(course);
 
         }),
-        map(([lessons, course]) =>
-          lessons.filter(lesson => lesson.courseId == course.id))
+        map(([teachers, course]) =>
+          teachers.filter(teacher => teacher.courseId == course.id))
       );
 
     this.loading$ = this.teacherEntityService.loading$.pipe(delay(0));
