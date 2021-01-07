@@ -3,7 +3,7 @@
 
 
 <h1> <a href="https://classroom-rds.web.app">
- <img src="projects/classroom-rds/src/assets/icons/android-icon-72x72.png">
+ <img src="projects/classroom-rds/src/assets/icons/apple-touch-icon-precomposed.png">
  </a> Classroom - RDS
  </h1>
 
