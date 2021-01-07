@@ -22,7 +22,7 @@ export class CourseDataService extends DefaultDataService<gapi.client.classroom.
 
   }
 
-  getAll(): Observable<Course[]> {
+  getAll(): Observable<gapi.client.classroom.Course[]> {
     return from(this.coursesService.getCoursesList());
   }
 }
