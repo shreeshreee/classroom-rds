@@ -1,10 +1,13 @@
 import { AboutComponent } from './about/about.component';
+import { CodeConductComponent } from './code-conduct/code-conduct.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
+import { LicenseComponent } from './license/license.component';
 import { LogoComponent } from './logo/logo.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { SnackComponent } from './snack/snack.component';
+import { TermsComponent } from './terms/terms.component';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
 import { UserComponent } from './user/user.component';
 import { WellcomeComponent } from './wellcome/wellcome.component';
@@ -20,7 +23,10 @@ export const sharedComponents: any[] = [
   SnackComponent,
   UnderConstructionComponent,
   UserComponent,
-  WellcomeComponent
+  WellcomeComponent,
+  LicenseComponent,
+  CodeConductComponent,
+  TermsComponent
 ];
 
 export * from './about/about.component';

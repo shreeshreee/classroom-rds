@@ -1,4 +1,5 @@
 export class Course {
+  courseId?: string
   course: gapi.client.classroom.Course;
   owner?: gapi.client.classroom.Teacher;
   students?: gapi.client.classroom.Student[];
@@ -20,13 +21,9 @@ export class Course {
   }
 }
 
-export interface ICourse extends gapi.client.classroom.Course {
-  owner?: gapi.client.classroom.Teacher;
-  students?: gapi.client.classroom.Student[];
-  teachers?: gapi.client.classroom.Teacher[];
-  courseWorks?: gapi.client.classroom.CourseWork[];
-  courseMaterialSet?: gapi.client.classroom.CourseMaterial[];
-  announcements?: gapi.client.classroom.Announcement[];
-  aliases?: gapi.client.classroom.CourseAlias[];
-  topics?: gapi.client.classroom.Topic[];
+
+
+export class ListCoursesResponse {
+  courses: Course[];
+  nxtPgTk: string;
 }

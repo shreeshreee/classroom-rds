@@ -7,15 +7,12 @@ import { routerReducer, RouterReducerState } from '@ngrx/router-store';
 
 import { environment } from '../../environments/environment';
 import { AuthenticationState, authFeatureKey, authReducer } from '../auth/state/auth.reducer';
-import { coursesFeatureKey, coursesReducer, CoursesState } from './../courses/state/courses.reducer';
 export interface AppState {
   [authFeatureKey]: AuthenticationState;
-  [coursesFeatureKey]: CoursesState;
   router: RouterReducerState;
 }
 export const reducers: ActionReducerMap<AppState> = {
   [authFeatureKey]: authReducer,
-  [coursesFeatureKey]: coursesReducer,
   router: routerReducer,
 };
 

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { EntityCollectionServiceBase, EntityCollectionServiceElementsFactory } from '@ngrx/data';
 
+import { Course } from '../models/course.model';
+
 
 @Injectable()
 export class CourseEntityService

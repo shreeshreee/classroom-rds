@@ -28,7 +28,6 @@ import { MaterialModule } from './modules/material.module';
 import { SharedModule } from './shared/shared.module';
 import { reducers, metaReducers } from './store/app.state';
 import { RouteEffects, AppEffects, SpinnerEffects } from './store/effects';
-import { AuthEffects, FireEffects } from './auth/state/effects';
 
 @NgModule({
   declarations: [

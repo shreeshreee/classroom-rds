@@ -9,9 +9,6 @@ import { MaterialModule } from './../modules/material.module';
 
 import * as fromSharedComponents from './components';
 import * as fromSharedServices from './services';
-import { LicenseComponent } from './components/license/license.component';
-import { CodeConductComponent } from './components/code-conduct/code-conduct.component';
-import { TermsComponent } from './components/terms/terms.component'
 
 @NgModule({
   imports: [
@@ -22,7 +19,7 @@ import { TermsComponent } from './components/terms/terms.component'
     MaterialModule
   ],
   providers: [...fromSharedServices.sharedServices],
-  declarations: [...fromSharedComponents.sharedComponents, LicenseComponent, CodeConductComponent, TermsComponent],
+  declarations: [...fromSharedComponents.sharedComponents],
   exports: [...fromSharedComponents.sharedComponents]
 })
 export class SharedModule { }

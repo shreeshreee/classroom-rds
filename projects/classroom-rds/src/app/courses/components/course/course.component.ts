@@ -22,9 +22,9 @@ import { AppState } from '../../../store/app.state';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CourseComponent implements OnInit {
-  course$: Observable<gapi.client.classroom.Course>;
+  fullcourse$: Observable<Course>;
   loading$: Observable<boolean>;
-  teacher$: Observable<gapi.client.classroom.Teacher[]>;
+  teachers$: Observable<gapi.client.classroom.Teacher[]>;
 
   faUserGraduate = faUserGraduate;
   faFileSignature = faFileSignature;
@@ -42,27 +42,27 @@ export class CourseComponent implements OnInit {
   }
   ngOnInit() {
     const courseId = this.route.snapshot.paramMap.get('id');
-    this.course$ = this.courseEntityService.entities$
+    /* this.fullcourse$ = this.courseEntityService.entities$
       .pipe(
-        map(courses => courses.find(course => course.id == courseId))
+        map(fullcourses => fullcourses.find(fullcourse => fullcourse.course.id == courseId))
       );
-    this.teacher$ = this.teacherEntityService.entities$
+    this.teachers$ = this.teacherEntityService.entities$
       .pipe(
-        withLatestFrom(this.course$),
-        tap(([teachers, course]) => {
-          this.loadTeacher(course);
+        withLatestFrom(this.fullcourse$),
+        tap(([teachers, fullcourse]) => {
+          //this.loadTeacher(fullcourse);
 
         }),
-        map(([teachers, course]) =>
-          teachers.filter(teacher => teacher.courseId == course.id))
+        map(([teachers, fullcourse]) =>
+          teachers.filter(teacher => teacher.courseId == fullcourse.course.id))
       );
 
-    this.loading$ = this.teacherEntityService.loading$.pipe(delay(0));
+    this.loading$ = this.teacherEntityService.loading$.pipe(delay(0)); */
   }
 
-  loadTeacher(course: gapi.client.classroom.Course) {
+  loadTeacher(fullcourse: Course) {
     this.teacherEntityService.getWithQuery({
-      'courseId': course.id,
+      'courseId': fullcourse.course.id,
     });
   }
 }

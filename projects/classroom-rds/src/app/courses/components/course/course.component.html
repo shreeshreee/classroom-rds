@@ -1,14 +1,14 @@
-<div style="min-height: 50vh;" *ngIf="!(course$|async)" fxLayout="column" fxLayoutAlign="center center">
+<div style="min-height: 50vh;" *ngIf="!(fullcourse$|async)" fxLayout="column" fxLayoutAlign="center center">
   <mat-spinner strokeWidth="3" [diameter]="50">
   </mat-spinner>
   <span>Buscando clases...</span><br>
 </div>
-<mat-card *ngIf="(course$|async) as course" [class.mat-elevation-z6]="true">
+<mat-card *ngIf="(fullcourse$|async) as fullcourse" [class.mat-elevation-z6]="true">
   <mat-card-header>
     <!-- <img mat-card-avatar [src]="[owner.profile.photoUrl]"> -->
-    <mat-card-title>{{ course.name }}</mat-card-title>
+    <mat-card-title>{{ fullcourse.course.name }}</mat-card-title>
     <!-- <mat-card-subtitle>{{owner.profile.name.fullName}}</mat-card-subtitle> -->
-    <mat-card-subtitle><b>{{ course.room }}&#176; {{ course.section }}</b></mat-card-subtitle>
+    <mat-card-subtitle><b>{{ fullcourse.course.room }}&#176; {{ fullcourse.course.section }}</b></mat-card-subtitle>
   </mat-card-header>
   <mat-card-actions fxLayout="row wrap" fxLayoutAlign="space-around center">
     <div fxLayout="column" fxLayoutAlign="center center">
@@ -24,18 +24,18 @@
       <!--  <p matBadge="{{ courseWorks ? courseWorks.length : 0 }}" matBadgeColor="warn" matBadgePosition="before">
       Actividades</p> -->
     </div>
-    <div fxLayout="column" *ngIf="course.courseMaterialSets" fxLayoutAlign="center center">
+    <div fxLayout="column" *ngIf="fullcourse.course.courseMaterialSets" fxLayoutAlign="center center">
       <fa-icon mat-icon-button matTooltip="Consulta el trabajo de clase" matTooltipPosition="above"
         [icon]="faFileSignature" size="2x">
       </fa-icon>
-      <p matBadge="{{ course.courseMaterialSets.length ? course.courseMaterialSets.length : 0 }}" matBadgeColor="warn"
-        matBadgePosition="before">
+      <p matBadge="{{ fullcourse.course.courseMaterialSets.length ? fullcourse.course.courseMaterialSets.length : 0 }}"
+        matBadgeColor="warn" matBadgePosition="before">
         Actividades</p>
     </div>
     <div fxLayout="column" fxLayoutAlign="center center">
-      <fa-icon class="px-1" [ngClass]="course.guardiansEnabled ? 'text-success' : 'text-danger'"
-        [icon]="course.guardiansEnabled ? faBell : faBellSlash " size="2x" matTooltip="{{
-          course.guardiansEnabled
+      <fa-icon class="px-1" [ngClass]="fullcourse.course.guardiansEnabled ? 'text-success' : 'text-danger'"
+        [icon]="fullcourse.course.guardiansEnabled ? faBell : faBellSlash " size="2x" matTooltip="{{
+          fullcourse.course.guardiansEnabled
             ? 'Informe a tutores Activado'
             : 'Informe a tutores Desactivado'
         }}" matTooltipPosition="above">
@@ -51,10 +51,10 @@
     </div>
   </mat-card-actions>
   <mat-card-content>
-    <div *ngIf="course">
-      {{course|json}}
+    <div *ngIf="fullcourse">
+      {{fullcourse|json}}
     </div>
-    <div *ngIf="(teacher$|async) as teacher">
+    <div *ngIf="(teachers$|async) as teacher">
       {{teacher|json}}
     </div>
   </mat-card-content>

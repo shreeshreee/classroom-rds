@@ -1,9 +1,9 @@
-<div>
-  <div style="min-height: 50vh;" *ngIf="!(courses)" fxLayout="column" fxLayoutAlign="center center">
-    <mat-spinner strokeWidth="3" [diameter]="50">
-    </mat-spinner>
-    <span>Buscando clases...</span><br>
-  </div>
+<div style="min-height: 50vh;" *ngIf="!fullCourses" fxLayout="column" fxLayoutAlign="center center">
+  <mat-spinner strokeWidth="3" [diameter]="50">
+  </mat-spinner>
+  <span>Buscando clases...</span><br>
+</div>
+<div *ngIf="fullCourses">
   <form [formGroup]="searchForm">
     <div fxLayout="row wrap" fxLayoutAlign="space-around" fxLayoutGap="5px" fxLayout.lt-md="column wrap">
       <mat-form-field fxFlex="0 1 calc(50% - 5px)" fxFlex.lt-md="100%" appearance="outline">
@@ -27,17 +27,17 @@
     <ng-container matColumnDef="courseState">
       <mat-header-cell class="small-th" *matHeaderCellDef mat-sort-header>Estado</mat-header-cell>
       <mat-cell *matCellDef="let row">
-        <div [ngSwitch]="row.courseState">
+        <div [ngSwitch]="row.course.courseState">
           <div *ngSwitchCase="'COURSE_STATE_UNSPECIFIED'">
             <fa-icon matTooltip="{{row.courseState}}" matTooltipPosition="above" class="text-primary"
               [icon]="faExclamation" size="lg"></fa-icon>
           </div>
           <div *ngSwitchCase="'ACTIVE'">
-            <fa-icon matTooltip="{{row.courseState}}" matTooltipPosition="above" class="text-success" [icon]="faCheck"
-              size="lg"></fa-icon>
+            <fa-icon matTooltip="{{row.course.courseState}}" matTooltipPosition="above" class="text-success"
+              [icon]="faCheck" size="lg"></fa-icon>
           </div>
           <div *ngSwitchCase="'ARCHIVED'">
-            <fa-icon matTooltip="{{row.courseState}}" matTooltipPosition="above" class="text-warning"
+            <fa-icon matTooltip="{{row.course.courseState}}" matTooltipPosition="above" class="text-warning"
               [icon]="faFileArchive" size="lg"></fa-icon>
           </div>
           <div *ngSwitchCase="'PROVISIONED'">
@@ -45,11 +45,11 @@
               [icon]="faScrewdriver" size="lg"></fa-icon>
           </div>
           <div *ngSwitchCase="'DECLINED'">
-            <fa-icon matTooltip="{{row.courseState}}" matTooltipPosition="above" class="text-danger" [icon]="faTimes"
-              size="lg"></fa-icon>
+            <fa-icon matTooltip="{{row.course.courseState}}" matTooltipPosition="above" class="text-danger"
+              [icon]="faTimes" size="lg"></fa-icon>
           </div>
           <div *ngSwitchCase="'SUSPENDED'">
-            <fa-icon matTooltip="{{row.courseState}}" matTooltipPosition="above" class="text-dark" [icon]="faBan"
+            <fa-icon matTooltip="{{row.course.courseState}}" matTooltipPosition="above" class="text-dark" [icon]="faBan"
               size="lg"></fa-icon>
           </div>
         </div>
@@ -58,29 +58,29 @@
     <!-- Title Column -->
     <ng-container matColumnDef="name">
       <mat-header-cell class="large-th" *matHeaderCellDef mat-sort-header>Nombre</mat-header-cell>
-      <mat-cell *matCellDef="let row">{{row.name}}
+      <mat-cell *matCellDef="let row">{{row.course.name}}
       </mat-cell>
     </ng-container>
     <ng-container matColumnDef="section">
       <mat-header-cell class="medium-th" *matHeaderCellDef mat-sort-header>Nivel</mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.section}} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.course.section}} </mat-cell>
     </ng-container>
     <ng-container matColumnDef="room">
       <mat-header-cell class="medium-th" *matHeaderCellDef mat-sort-header>Grado</mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.room}} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.course.room}} </mat-cell>
     </ng-container>
     <!-- Buttons column -->
     <ng-container matColumnDef="acciones">
       <mat-header-cell class="medium-th" *matHeaderCellDef> Acciones </mat-header-cell>
       <mat-cell *matCellDef="let row">
-        <fa-icon mat-icon-button (click)="onDetails(row)" matTooltip="Información" matTooltipPosition="above"
+        <fa-icon mat-icon-button (click)="onDetails(row.course)" matTooltip="Información" matTooltipPosition="above"
           [icon]="faEdit"></fa-icon>&nbsp;&nbsp;
-        <fa-icon mat-icon-button (click)="onAddTeacher(row)" matTooltip="Maestros del curso" matTooltipPosition="above"
-          [icon]="faUserPlus"></fa-icon>
+        <fa-icon mat-icon-button (click)="onAddTeacher(row.course)" matTooltip="Maestros del curso"
+          matTooltipPosition="above" [icon]="faUserPlus"></fa-icon>
       </mat-cell>
     </ng-container>
     <mat-header-row mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;" class="element-row" [routerLink]="[row.id]">
+    <mat-row *matRowDef="let row; columns: displayedColumns;" class="element-row" [routerLink]="[row.course.id]">
     </mat-row>
     <!-- Row shown when there is no matching data.-->
     <mat-header-row class="mat-row" *matNoDataRow>

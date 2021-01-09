@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { Observable, of } from 'rxjs';
+import { from, Observable, of } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { Course } from '../models/course.model';
 import { environment } from './../../../environments/environment';
@@ -8,7 +9,6 @@ import { environment } from './../../../environments/environment';
   providedIn: 'root'
 })
 export class CoursesService {
-  isLoaded: Observable<boolean>;
   constructor(
   ) {
     this.handleClassroomLoad();
@@ -33,26 +33,55 @@ export class CoursesService {
       // alert('loaded classroom');
     });
   }
-  async getFullCourses() {
-    const courses = this.getCoursesList().then(courses => courses = courses);
-    let fullCourses: Course[] = (await courses).map(course => {
-      let fullCourse: Course = {
-        course: course,
-      };
-      this.getFullCourse(course.id, course.ownerId).then(
-        success => {
-          fullCourse.owner = success.ownerResponse.result;
-          fullCourse.students = success.studentsResponse.result.students;
-          fullCourse.teachers = success.teachersResponse.result.teachers;
-          fullCourse.courseWorks = success.courseWorkResponse.result.courseWork;
-        }
-      );
-      return fullCourse;
-    });
-    return fullCourses;
+
+  /**
+  * Retrive an array of courses according to permissions access user logged in Google Classroom
+  *
+  * @param studentId User Identifier from courses's list which is enrolled as student.
+  * @param teacherId User Identifier from courses's list which is enrolled as teacher.
+  * @param courseStates The course states from te courses to be query.
+  * @returns Course Array
+  */
+  async getCourses(pageSize?: number, courseStates?: string[]) {
+    const response: gapi.client.Response<gapi.client.classroom.ListCoursesResponse> =
+      await gapi.client.classroom.courses.list({
+        courseStates: courseStates,
+        pageSize: pageSize
+      });
+    return response.result.courses;
+  }
+  async getFullCourses(studentId?: string, teacherId?: string, pageSize?: number, courseStates?: string[]) {
+    var pageToken = null;
+    var optionalArgs = {
+      courseStates: courseStates,
+      pageToken: pageToken,
+      pageSize: pageSize
+    };
+    while (true) {
+      const coursesResponse = this.getListCourses(studentId, teacherId, optionalArgs).then(courses => courses = courses);
+      pageToken = (await coursesResponse).nextPageToken;
+      return (await coursesResponse).courses.map(course => {
+        let fullCourse: Course = {
+          course: course,
+        };
+        this.getFullCourse(course.id, course.ownerId).then(
+          success => {
+            fullCourse.owner = success.ownerResponse.result;
+            fullCourse.students = success.studentsResponse.result.students;
+            fullCourse.teachers = success.teachersResponse.result.teachers;
+            fullCourse.courseWorks = success.courseWorkResponse.result.courseWork;
+          }
+        );
+        return fullCourse;
+      });
+      if (!pageToken) {
+        break;
+      }
+      //return coursesResponse
+    }
 
   }
-  async getFullCourse(courseId: string, ownerId: string) {
+  async getFullCourse(courseId: string, ownerId) {
 
     const ownerResponse: gapi.client.Response<gapi.client.classroom.Teacher> =
       await gapi.client.classroom.courses.teachers.get({ userId: ownerId, courseId: courseId });
@@ -83,21 +112,16 @@ export class CoursesService {
   * @param courseStates The course states from te courses to be query.
   * @returns Course Array
   */
-  async getCoursesList(studentId?: string, teacherId?: string, courseStates?: string[]) {
-    let courses: gapi.client.classroom.Course[];
-    const result = await gapi.client.classroom.courses.list({ studentId, teacherId, courseStates })
-      .then(
-        (success: gapi.client.HttpRequestFulfilled<gapi.client.classroom.ListCoursesResponse>) => {
-          courses = success.result.courses;
-          return courses;
-        },
-        (reason: gapi.client.HttpRequestRejected) => {
-          alert(`(${reason.status})\nError: ${reason.result['error'].message}`);
-          courses = [];
-          return courses;
-        }
-      );
-    return result;
+  async getListCourses(studentId?: string, teacherId?: string, optionalArgs?: any) {
+    const response: gapi.client.Response<gapi.client.classroom.ListCoursesResponse> =
+      await gapi.client.classroom.courses.list({
+        studentId: studentId,
+        teacherId: teacherId,
+        courseStates: optionalArgs.courseStates,
+        pageSize: optionalArgs.pageSize,
+        pageToken: optionalArgs.pageToken
+      });
+    return response.result;
   }
   async getCourseOwner(id: string, ownerId: string) {
     const result: gapi.client.classroom.Teacher = await gapi.client.classroom.courses.teachers.get({ courseId: id, userId: ownerId })

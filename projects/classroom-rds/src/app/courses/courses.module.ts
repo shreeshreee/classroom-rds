@@ -1,4 +1,5 @@
-import { FlexLayoutModule } from '@angular/flex-layout';
+/* import { CoursesEffects } from './state/courses.effects';
+ */import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -24,8 +25,12 @@ import { CourseDialogComponent } from './components/course-dialog/course-dialog.
 import { CourseStudentsComponent } from './components/course-students/course-students.component';
 import { CourseTeachersComponent } from './components/course-teachers/course-teachers.component';
 import { CourseComponent } from './components/course/course.component';
+import { CoursesListComponent } from './components/courses-list/courses-list.component';
 import { CoursesTableComponent } from './components/courses-table/courses-table.component';
 import { CoursesComponent } from './containers/courses/courses.component';
+/* import { coursesReducer, coursesFeatureKey } from './state/courses.reducer';
+ */import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../../environments/environment';
 
 const entityMetadata: EntityMetadataMap = {
   Course: {
@@ -37,7 +42,7 @@ const entityMetadata: EntityMetadataMap = {
   }
 };
 @NgModule({
-  declarations: [CoursesComponent, AnnouncementDialogComponent, AnnouncementResultComponent, CourseDialogComponent, CoursesTableComponent, CourseComponent, CourseStudentsComponent, CourseTeachersComponent],
+  declarations: [CoursesComponent, AnnouncementDialogComponent, AnnouncementResultComponent, CourseDialogComponent, CoursesTableComponent, CourseComponent, CourseStudentsComponent, CourseTeachersComponent, CoursesListComponent],
   imports: [
     CommonModule,
     CoursesRoutingModule,
@@ -46,8 +51,11 @@ const entityMetadata: EntityMetadataMap = {
     MaterialModule,
     FlexLayoutModule,
     FontAwesomeModule,
+    //StoreModule.forFeature(coursesFeatureKey, coursesReducer),
+    //EffectsModule.forFeature([CoursesEffects]),
   ],
-  providers: [CoursesService, CourseEntityService, CoursesResolver,
+  exports: [CoursesTableComponent, CoursesListComponent],
+  providers: [CoursesService, CourseDataService, CourseEntityService, CoursesResolver,
     CourseDataService, TeacherEntityService]
 })
 export class CoursesModule {

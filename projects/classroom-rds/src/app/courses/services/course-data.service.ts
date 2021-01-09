@@ -21,8 +21,10 @@ export class CourseDataService extends DefaultDataService<gapi.client.classroom.
     super('Course', http, httpUrlGenerator);
 
   }
-
   getAll(): Observable<gapi.client.classroom.Course[]> {
-    return from(this.coursesService.getCoursesList());
+    return from(this.coursesService.getCourses());
+    /*  getAll(): Observable<Course[]> {
+       return from(this.coursesService.getFullCourses());
+      */
   }
 }

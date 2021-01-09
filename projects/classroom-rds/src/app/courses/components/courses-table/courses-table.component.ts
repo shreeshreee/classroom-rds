@@ -14,6 +14,8 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { ListCoursesResponse } from './../../models/course.model';
+import { Course } from '../../models/course.model';
 import { CourseEntityService } from '../../services/course-entity.service';
 import { AppState } from './../../../store/app.state';
 
@@ -32,13 +34,13 @@ import { AppState } from './../../../store/app.state';
   ],
 })
 export class CoursesTableComponent implements AfterViewInit, OnInit {
-  courses: gapi.client.classroom.Course[];
-  public dataSource: MatTableDataSource<gapi.client.classroom.Course>;
-  @Output() course = new EventEmitter<gapi.client.classroom.Course>();
-  @Output() teacherInCourse = new EventEmitter<gapi.client.classroom.Course>();
+  fullCourses: Course[];
+  public dataSource: MatTableDataSource<Course>;
+  @Output() course = new EventEmitter<Course>();
+  @Output() teacherInCourse = new EventEmitter<Course>();
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatTable) table: MatTable<gapi.client.classroom.Course>;
+  @ViewChild(MatTable) table: MatTable<Course>;
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['courseState', 'name', 'section', 'room', 'acciones'];
   public searchForm: FormGroup;
@@ -58,14 +60,14 @@ export class CoursesTableComponent implements AfterViewInit, OnInit {
   faPlus = faPlus;
   faBullhorn = faBullhorn;
   searching = false;
-  message = 'Courses';
   constructor(
     private coursesEntityService: CourseEntityService,
   ) {
-    this.coursesEntityService.entities$.subscribe(courses => this.courses = courses);
+    //this.coursesEntityService.entities$.subscribe(courses => this.fullcourses = courses);
+    //this.coursesEntityService.entities$.pipe(map(courses => this.fullCourses = courses));
   }
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource(this.courses);
+    this.dataSource = new MatTableDataSource(this.fullCourses);
     this.searchFormInit();
     this.dataSource.filterPredicate = this.getFilterPredicate();
   }
@@ -76,13 +78,13 @@ export class CoursesTableComponent implements AfterViewInit, OnInit {
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
-  onDetails(course: gapi.client.classroom.Course): void {
+  onDetails(course: Course): void {
     this.course.emit(course);
   }
-  onAddTeacher(course: gapi.client.classroom.Course): void {
+  onAddTeacher(course: Course): void {
     this.teacherInCourse.emit(course);
   }
-  onActivated(course: gapi.client.classroom.Course): void {
+  onActivated(course: Course): void {
     this.course.emit(course);
   }
   searchFormInit(): void {
@@ -94,7 +96,7 @@ export class CoursesTableComponent implements AfterViewInit, OnInit {
 
   /* this method well be called for each row in table  */
   getFilterPredicate() {
-    return (row: gapi.client.classroom.Course, filters: string) => {
+    return (row: Course, filters: string) => {
       // split string per '$' to array
       const filterArray = filters.split('$');
       const departureDate = filterArray[0];
@@ -103,8 +105,8 @@ export class CoursesTableComponent implements AfterViewInit, OnInit {
       const matchFilter = [];
 
       // Fetch data from row
-      const columnDepartureDate = new Date(row.creationTime).toLocaleDateString();
-      const columnCourseWorkTitle = row.name;
+      const columnDepartureDate = new Date(row.course.creationTime).toLocaleDateString();
+      const columnCourseWorkTitle = row.course.name;
 
       // verify fetching data by our searching values
       const customFilterDD = columnDepartureDate.toLowerCase().includes(departureDate);

@@ -1,3 +1,9 @@
+import { CourseResponse } from './../models/course-response.model';
 import { createAction, props } from '@ngrx/store';
 
-export const loadCourses = createAction('[User/API] Load Users', props<{ courses: gapi.client.classroom.Course[] }>());
+import { Course } from '../models/course.model';
+import { CourseParams } from '../models/course-params.model';
+
+export const loadCourses = createAction('[Courses] Loading Courses', props<{ params?: CourseParams }>());
+export const loadCoursesSuccess = createAction('[Courses] Load Courses Success', props<{ courses: gapi.client.classroom.Course[] }>());
+export const loadCoursesFail = createAction('[Courses] Load Courses Fail', props<{ error: any }>());
