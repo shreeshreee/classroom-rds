@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { from, Observable, Subject } from 'rxjs';
+import { from, Observable, Subject, Subscription } from 'rxjs';
 
 import firebase from 'firebase/app';
 import 'firebase/auth';
@@ -9,15 +9,34 @@ import { environment } from './../../../environments/environment';
 
 import { AuthFireService } from './auth-fire.service';
 //declare const gapi: any;
+const extractAccessToken = (_googleAuth: gapi.auth2.GoogleAuth) => {
+  return (
+    _googleAuth && _googleAuth.currentUser.get().getAuthResponse().access_token
+  );
+};
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  googleAuth: gapi.auth2.GoogleAuth;
+  private _googleAuth: gapi.auth2.GoogleAuth;
+  private _accessToken: string;
+  private autoSignInTimer: Subscription;
+  set accessToken(value) {
+    this._accessToken = value;
+  }
+  get accessToken() {
+    const token = {
+      fromGoogle: extractAccessToken(this._googleAuth),
+      fromApp: this._accessToken,
+      equal: true
+    };
+    return token.fromGoogle;
+  }
   status$ = new Subject<boolean>();
   constructor(
     private authFireService: AuthFireService,
   ) { }
+
   handleClientLoad() {
     // Load the API's client and auth2 modules.
     // Call the initClient function after the modules load.
@@ -102,8 +121,8 @@ export class AuthService {
   }
 
   getAuth(): Observable<gapi.auth2.GoogleAuth> {
-    this.googleAuth = gapi.auth2.getAuthInstance();
-    return from(this.googleAuth);
+    this._googleAuth = gapi.auth2.getAuthInstance();
+    return from(this._googleAuth);
   }
 
 }

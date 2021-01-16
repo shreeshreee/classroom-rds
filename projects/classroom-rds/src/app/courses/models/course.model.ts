@@ -1,5 +1,5 @@
 export class Course {
-  courseId?: string
+  id?: string
   course: gapi.client.classroom.Course;
   owner?: gapi.client.classroom.Teacher;
   students?: gapi.client.classroom.Student[];

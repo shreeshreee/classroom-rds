@@ -1,9 +1,13 @@
 
 import { Injectable } from '@angular/core';
+
 import { Actions, Effect, ofType, createEffect } from '@ngrx/effects';
+
 import { from, of } from 'rxjs';
 import { switchMap, map, catchError } from 'rxjs/operators';
-import { CoursesService } from '../services/courses.service';
+
+import { CoursesService } from '../services/course/courses.service';
+
 import { loadCourses, loadCoursesSuccess, loadCoursesFail } from './courses.actions';
 
 @Injectable()

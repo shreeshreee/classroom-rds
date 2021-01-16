@@ -4,12 +4,12 @@ import { Injectable } from '@angular/core';
 import { DefaultDataService, HttpUrlGenerator } from '@ngrx/data';
 
 import { from, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-import { Course } from '../models/course.model';
+import { CoursesService } from '../../courses/services/course/courses.service';
 
-import { CoursesService } from './courses.service';
-
-@Injectable()
+import * as fromCourse from './';
+@Injectable({ providedIn: 'root' })
 export class CourseDataService extends DefaultDataService<gapi.client.classroom.Course> {
 
 
@@ -18,13 +18,17 @@ export class CourseDataService extends DefaultDataService<gapi.client.classroom.
     httpUrlGenerator: HttpUrlGenerator,
     private coursesService: CoursesService
   ) {
-    super('Course', http, httpUrlGenerator);
-
+    super(fromCourse.entityCollectionName, http, httpUrlGenerator);
   }
   getAll(): Observable<gapi.client.classroom.Course[]> {
     return from(this.coursesService.getCourses());
-    /*  getAll(): Observable<Course[]> {
-       return from(this.coursesService.getFullCourses());
-      */
   }
+
+  getBykey(id: string): Observable<gapi.client.classroom.Course> {
+    return this.getById(id).pipe(map(course => { return { ...course }; }));
+  }
+
+  /* private mapcourse(course: gapi.client.classroom.Course): gapi.client.classroom.Course {
+    return { ...course }
+  } */
 }

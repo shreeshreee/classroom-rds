@@ -7,7 +7,7 @@ import { SeoService } from './shared/services';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'Classroom RDS Administrator';
+  title = 'Classroom RDS Admin';
   constructor(
     private seoService: SeoService
   ) { }

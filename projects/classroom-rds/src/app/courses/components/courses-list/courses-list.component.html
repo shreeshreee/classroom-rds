@@ -5,7 +5,8 @@
     </div>
     <mat-form-field appearance="outline">
       <mat-label>Estado del curso</mat-label>
-      <mat-select [(ngModel)]="selectedStates" type="text" placeholder="Todos" multiple>
+      <mat-select [(ngModel)]="selectedStates" (selectionChange)="applyFilter($event.value)" type="text"
+        placeholder="Todos" multiple>
         <mat-option *ngFor="let key of keys" [value]="states[key]">
           {{states[key]}}
         </mat-option>

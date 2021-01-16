@@ -7,9 +7,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { MaterialModule } from '../modules/material.module';
 import { SharedModule } from '../shared/shared.module';
-import { DashboardComponent } from '../shared/components/dashboard/dashboard.component';
-import { HomeComponent } from '../shared/components/home/home.component';
-import { WellcomeComponent } from '../shared/components/wellcome/wellcome.component';
 
 import { LayoutComponent } from './layout/layout.component';
 import { LayoutService } from './layout/layout.service';

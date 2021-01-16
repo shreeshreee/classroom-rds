@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { from, Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Course } from '../../models/course.model';
+import { environment } from './../../../../environments/environment';
 
-import { Course } from '../models/course.model';
-import { environment } from './../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +10,14 @@ export class CoursesService {
   constructor(
   ) {
     this.handleClassroomLoad();
+  }
+  private hasAccessScopes(googleAuth: gapi.auth2.GoogleAuth): boolean {
+    return (
+      googleAuth &&
+      googleAuth.currentUser
+        .get()
+        .hasGrantedScopes(environment.gapiClientConfig.classroomScopes)
+    );
   }
   async handleClassroomLoad(): Promise<void> {
     // Retrieve the GoogleUser object for the current user.
@@ -49,6 +55,13 @@ export class CoursesService {
         pageSize: pageSize
       });
     return response.result.courses;
+  }
+  async getStudents(courseId: string) {
+    const response: gapi.client.Response<gapi.client.classroom.ListStudentsResponse> =
+      await gapi.client.classroom.courses.students.list({
+        courseId: courseId,
+      });
+    return response.result.students;
   }
   async getFullCourses(studentId?: string, teacherId?: string, pageSize?: number, courseStates?: string[]) {
     var pageToken = null;

@@ -1,13 +1,16 @@
-import { filter } from 'rxjs/operators';
-import { CourseEntityService } from './../../services/course-entity.service';
 import { Component, OnInit, AfterViewInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
-import { concat, Observable, Subject } from 'rxjs';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
-import { faEdit, faUserGraduate, faUserTie, faExclamation, faCheck, faArchive, faScrewdriver, faTimes, faUserPlus, faBan, faPlus, faBullhorn } from '@fortawesome/free-solid-svg-icons';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+
+import { faEdit, faUserGraduate, faUserTie, faExclamation, faCheck, faArchive, faScrewdriver, faTimes, faUserPlus, faBan, faPlus, faBullhorn } from '@fortawesome/free-solid-svg-icons';
+
+import { filter } from 'rxjs/operators';
+import { concat, Observable, Subject } from 'rxjs';
+
 import { CourseState } from '../../models/classroom.enum';
+import { CourseEntityService } from '../../../store/course/course-entity.service';
 
 @Component({
   selector: 'app-courses-list',
@@ -54,9 +57,10 @@ export class CoursesListComponent implements OnInit, AfterViewInit {
     private fb: FormBuilder
   ) {
     this.keys = Object.keys(this.states).filter(Number);
-    courseEntityService.entities$.subscribe(courses => this.courses = courses);
     this.isLoading$ = courseEntityService.loading$;
     this.courseTotal$ = this.courseEntityService.count$
+    this.courseEntityService.entities$.subscribe(courses => this.courses = courses);
+
   }
   ngOnInit(): void {
     this.searchFormInit();

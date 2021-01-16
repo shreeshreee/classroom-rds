@@ -16,7 +16,6 @@ import { map } from 'rxjs/operators';
 
 import { ListCoursesResponse } from './../../models/course.model';
 import { Course } from '../../models/course.model';
-import { CourseEntityService } from '../../services/course-entity.service';
 import { AppState } from './../../../store/app.state';
 
 
@@ -61,7 +60,6 @@ export class CoursesTableComponent implements AfterViewInit, OnInit {
   faBullhorn = faBullhorn;
   searching = false;
   constructor(
-    private coursesEntityService: CourseEntityService,
   ) {
     //this.coursesEntityService.entities$.subscribe(courses => this.fullcourses = courses);
     //this.coursesEntityService.entities$.pipe(map(courses => this.fullCourses = courses));
