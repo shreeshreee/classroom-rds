@@ -59,7 +59,7 @@
             <h3>Fichero</h3>
             </p>
             <p class="comment">
-                <code>projects/classroom-rds/src/app/courses/services/courses.resolver.ts</code>
+                <code>projects/classroom-rds/src/app/courses/services/course/courses.resolver.ts</code>
             </p>
 
 
@@ -105,7 +105,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">projects/classroom-rds/src/app/courses/services/courses.resolver.ts:13</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="11" class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.resolver.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -163,15 +163,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>resolve(route: <a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank">ActivatedRouteSnapshot</a>, state: <a href="../undefineds/State.html">RouterStateSnapshot</a>)</code>
+<code>resolve(route: <a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank">ActivatedRouteSnapshot</a>, state: <a href="../interfaces/State.html">RouterStateSnapshot</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="19"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/courses.resolver.ts:19</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="17"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.resolver.ts:17</a></div>
                 </td>
             </tr>
 
@@ -205,7 +205,7 @@
                                 <tr>
                                     <td>state</td>
                                     <td>
-                                                <code><a href="../miscellaneous/enumerations.html#State" target="_self" >RouterStateSnapshot</a></code>
+                                                <code><a href="../interfaces/State.html" target="_self" >RouterStateSnapshot</a></code>
                                     </td>
 
                                     <td>
@@ -241,35 +241,38 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from &#x27;@angu
 import { Observable } from &#x27;rxjs&#x27;;
 import { filter, first, map, tap } from &#x27;rxjs/operators&#x27;;
 
-import { loadCourses } from &#x27;./../state/courses.actions&#x27;;
-
-import { CourseEntityService } from &#x27;./course-entity.service&#x27;;
-
+import { loadCoursesSuccess } from &#x27;./../../state/courses.actions&#x27;;
+import { CourseEntityService } from &#x27;../../../store/course/course-entity.service&#x27;;
 
 @Injectable()
 export class CoursesResolver implements Resolve&lt;boolean&gt; {
 
-  constructor(private courseEntityService: CourseEntityService) {
+  constructor(
+    private courseEntityService: CourseEntityService,
+  ) { }
 
-  }
-
-  resolve(route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable&lt;boolean&gt; {
+  resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable&lt;boolean&gt; {
 
     return this.courseEntityService.loaded$
       .pipe(
         tap(loaded &#x3D;&gt; {
           if (!loaded) {
-            this.courseEntityService.getAll();
+            this.courseEntityService.getAll()
+             /*  .pipe(
+                map(courses &#x3D;&gt;
+                  loadCoursesSuccess({ courses: courses })
+                )
+              ) */;
           }
         }),
         filter(loaded &#x3D;&gt; !!loaded),
         first()
       );
 
-
   }
-
 }
 </code></pre>
         </div>

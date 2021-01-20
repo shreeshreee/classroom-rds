@@ -1,0 +1,51 @@
+  <mat-toolbar class="header animation fadeInOut">
+    <mat-toolbar-row fxLayoutAlign="space-between">
+      <div fxLayout="row">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="toggleSidenavLeft($event)"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <button mat-button class="brand" [routerLink]="['/']">RDS</button>
+        <!--buttons disappear on Xs devices-->
+        <div *ngIf="!(isHandset$ | async)" fxLayoutAlign="space-between">
+          <!-- <ng-container *ngTemplateOutlet="headerNavButtons"></ng-container> -->
+          <button mat-button [routerLink]="['under-construction']">Section 1</button>
+          <button mat-button [routerLink]="['under-construction']">Section 2</button>
+          <button mat-button [routerLink]="['under-construction']">Section 3</button>
+        </div>
+        <!---->
+      </div>
+      <div fxLayout="row">
+        <button mat-icon-button [matMenuTriggerFor]="langs" aria-label="Example icon-button with a menu">
+          <mat-icon>language</mat-icon>
+        </button>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar-row>
+    <!--mat-toolbar-row displayed on Xs devices-->
+    <mat-toolbar-row *ngIf="(isHandset$ | async)" fxLayoutAlign="space-between center">
+      <!-- <ng-container *ngTemplateOutlet="headerNavButtons"></ng-container> -->
+      <button mat-button [routerLink]="['under-construction']">Section 1</button>
+      <button mat-button [routerLink]="['under-construction']">Section 2</button>
+      <button mat-button [routerLink]="['under-construction']">Section 3</button>
+    </mat-toolbar-row>
+    <!---->
+  </mat-toolbar>
+  <!-- Menu Items -->
+  <mat-menu #menu="matMenu" fxLayoutAlign="end">
+    <div mat-menu-item [routerLink]="['under-construction']">Tema</div>
+    <div mat-menu-item [routerLink]="['under-construction']">Configuración</div>
+  </mat-menu>
+  <mat-menu #langs="matMenu" fxLayoutAlign="end">
+    <div mat-menu-item>
+      <mat-icon svgIcon="es" aria-hidden="false" aria-label="español flag icon"></mat-icon>
+      Espa&ntilde;ol
+    </div>
+    <div mat-menu-item>
+      <mat-icon svgIcon="en" aria-hidden="false" aria-label="english flag icon"></mat-icon>
+      English
+    </div>
+  </mat-menu>
+  <!---->

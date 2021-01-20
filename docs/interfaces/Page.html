@@ -193,7 +193,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from &#x27;@angular/core&#x27;;
 import { MatSidenav } from &#x27;@angular/material/sidenav&#x27;;
-import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from &#x27;@angular/router&#x27;;
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from &#x27;@angular/router&#x27;;
 
 import { faGoogle } from &#x27;@fortawesome/free-brands-svg-icons&#x27;;
 import { faUser, faHome, faSchool, faChalkboardTeacher, faUserTie, faUserGraduate, faUserCog, IconDefinition, faCompressAlt, faSignOutAlt, faShieldAlt } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
@@ -225,7 +225,6 @@ export class SidenavComponent implements OnInit {
   @Input() isAdmin: boolean;
   @Input() user: User;
   @Output() routeUser: EventEmitter&lt;User&gt;;
-  loading &#x3D; true;
   sideNavState: boolean &#x3D; false;
   onSideNavChange: boolean;
   linkText: boolean &#x3D; false;
@@ -245,28 +244,10 @@ export class SidenavComponent implements OnInit {
 
   constructor(
     private layoutService: LayoutService,
-    private router: Router,
     private store: Store&lt;AppState&gt;,
   ) {
     this.layoutService.toggleSidenavLeft.subscribe(() &#x3D;&gt; {
       this.sidenavLeft.toggle();
-    });
-    this.router.events.subscribe(event &#x3D;&gt; {
-      switch (true) {
-        case event instanceof NavigationStart: {
-          this.loading &#x3D; true;
-          break;
-        }
-        case event instanceof NavigationEnd:
-        case event instanceof NavigationCancel:
-        case event instanceof NavigationError: {
-          this.loading &#x3D; false;
-          break;
-        }
-        default: {
-          break;
-        }
-      }
     });
   }
 
@@ -274,8 +255,8 @@ export class SidenavComponent implements OnInit {
     this.layoutService.sideNavState$.subscribe(res &#x3D;&gt; {
       this.onSideNavChange &#x3D; res;
     })
-
   }
+
   onSidenavToggle() {
     this.sideNavState &#x3D; !this.sideNavState
 

@@ -108,7 +108,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="59" class="link-to-prism">projects/classroom-rds/src/app/store/effects/app.effects.ts:59</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="61" class="link-to-prism">projects/classroom-rds/src/app/store/effects/app.effects.ts:61</a></div>
                             </td>
                         </tr>
 
@@ -194,7 +194,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="48" class="link-to-prism">projects/classroom-rds/src/app/store/effects/app.effects.ts:48</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="50" class="link-to-prism">projects/classroom-rds/src/app/store/effects/app.effects.ts:50</a></div>
                             </td>
                         </tr>
 
@@ -219,7 +219,9 @@
     () &#x3D;&gt;
       this.actions$.pipe(
         ofType(fromAuthActions.signOutCompleted),
-        tap(() &#x3D;&gt; localStorage.removeItem(&#x27;user&#x27;))
+        tap(() &#x3D;&gt;
+          localStorage.removeItem(&#x27;user&#x27;)
+        )
       ),
     { dispatch: false }
   )</code>
@@ -303,7 +305,9 @@ export class AppEffects {
     () &#x3D;&gt;
       this.actions$.pipe(
         ofType(fromAuthActions.signOutCompleted),
-        tap(() &#x3D;&gt; localStorage.removeItem(&#x27;user&#x27;))
+        tap(() &#x3D;&gt;
+          localStorage.removeItem(&#x27;user&#x27;)
+        )
       ),
     { dispatch: false }
   );

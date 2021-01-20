@@ -169,7 +169,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(store: <a href="../interfaces/AppState.html">Store<AppState></a>)</code>
+<code>constructor(store: <a href="../undefineds/State.html">Store<AppState></a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -195,7 +195,7 @@
                                                         <td>store</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../interfaces/AppState.html" target="_self" >Store&lt;AppState&gt;</a></code>
+                                                                        <code><a href="../miscellaneous/enumerations.html#State" target="_self" >Store&lt;AppState&gt;</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -296,7 +296,7 @@
     {
       title: &#x27;Classroom&#x27;,
       description: &#x27;Realiza funciones globales y particulares en Google Classroom&#x27;,
-      route: &#x27;courses&#x27;,
+      route: &#x27;courses/c&#x27;,
       imgUrl: &#x27;assets/images/classroom-administrator.png&#x27;,
     },
     {
@@ -384,7 +384,7 @@ export class DashboardComponent implements OnInit {
     {
       title: &#x27;Classroom&#x27;,
       description: &#x27;Realiza funciones globales y particulares en Google Classroom&#x27;,
-      route: &#x27;courses&#x27;,
+      route: &#x27;courses/c&#x27;,
       imgUrl: &#x27;assets/images/classroom-administrator.png&#x27;,
     },
     {
@@ -468,7 +468,7 @@ export class DashboardComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="px-5 py-3">  <div class="breadcrumb" *ngIf="user$|async as user">    <div fxLayout="row" fxLayoutAlign="left center">      <div>        <!-- <img class="img-fluid" src="assets/images/rds-classroom.png" /> -->      </div>      <div>        <p class="display-4 display-4-responsive"> Bienvenido </p>        <p class="h4 h2-responsive text-black-50"> {{user.name}}</p>      </div>    </div>  </div>  <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="10px" fxLayoutAlign="flex-start">    <mat-card *ngFor="let item of cards" [class.mat-elevation-z4]="true" class="mb-2" fxFlex="0 1 calc(33.3% - 10px)"      fxFlex.lt-md="0 1 calc(50% - 10px)" fxFlex.lt-sm="100%" [routerLink]="[item.route]">      <mat-card-header>        <mat-card-title>          {{ item.title }}        </mat-card-title>        <mat-card-subtitle>{{ item.description }}</mat-card-subtitle>      </mat-card-header>      <img class="img-card" mat-card-image src="{{item.imgUrl}}">    </mat-card>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesTableComponent', 'selector': 'app-course-table'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainProfileComponent', 'selector': 'app-main-profile'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': 'app-snackbar'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthUserComponent', 'selector': 'app-auth-user'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CourseInfoComponent', 'selector': 'app-course-info'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CoursesTableComponent', 'selector': 'app-course-table'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainProfileComponent', 'selector': 'app-main-profile'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': 'app-snackbar'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DashboardComponent'};
 </script>

@@ -105,7 +105,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="45" class="link-to-prism">projects/classroom-rds/src/app/store/effects/spinner.effects.ts:45</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="50" class="link-to-prism">projects/classroom-rds/src/app/store/effects/spinner.effects.ts:50</a></div>
                             </td>
                         </tr>
 
@@ -181,6 +181,9 @@
         ofType(
           fromAppActions.loadAppFail,
           fromAppActions.loadAppSuccess,
+          //fromCoursesActions.loadCoursesSuccess,
+          //fromCoursesActions.loadCoursesFail,
+          //fromAuthActions.signOutCompleted,
           fromAuthActions.signInSuccess,
           fromAuthActions.signInFailure,
           fromAuthActions.updateProfileSuccess,
@@ -197,7 +200,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="28" class="link-to-prism">projects/classroom-rds/src/app/store/effects/spinner.effects.ts:28</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="30" class="link-to-prism">projects/classroom-rds/src/app/store/effects/spinner.effects.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -223,7 +226,9 @@
       this.actions$.pipe(
         ofType(
           fromAppActions.loadApp,
+          //fromCoursesActions.loadCourses,
           fromAuthActions.signIn,
+          //fromAuthActions.signOut,
           fromAuthActions.updateProfile,
         ),
         tap(() &#x3D;&gt; this.spinner.show())
@@ -257,8 +262,8 @@ import { tap } from &#x27;rxjs/operators&#x27;;
 
 import * as fromAppActions from &#x27;./../actions/app.actions&#x27;;
 import * as fromAuthActions from &#x27;./../../auth/state/auth.actions&#x27;;
-import * as fromCoursesActions from &#x27;./../../courses/state/courses.actions&#x27;;
-
+/* import * as fromCoursesActions from &#x27;./../../courses/state/courses.actions&#x27;;
+ */
 @Injectable()
 export class SpinnerEffects {
   spinneron$ &#x3D; createEffect(
@@ -266,7 +271,9 @@ export class SpinnerEffects {
       this.actions$.pipe(
         ofType(
           fromAppActions.loadApp,
+          //fromCoursesActions.loadCourses,
           fromAuthActions.signIn,
+          //fromAuthActions.signOut,
           fromAuthActions.updateProfile,
         ),
         tap(() &#x3D;&gt; this.spinner.show())
@@ -280,6 +287,9 @@ export class SpinnerEffects {
         ofType(
           fromAppActions.loadAppFail,
           fromAppActions.loadAppSuccess,
+          //fromCoursesActions.loadCoursesSuccess,
+          //fromCoursesActions.loadCoursesFail,
+          //fromAuthActions.signOutCompleted,
           fromAuthActions.signInSuccess,
           fromAuthActions.signInFailure,
           fromAuthActions.updateProfileSuccess,

@@ -1,0 +1,89 @@
+@startuml [Auth Effect] Google`s sign-in Success
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+interface "[Auth Effect] Google`s sign-in Success" << (A,#FF7700) action >> {
+            variable: signInSuccess
+            src: auth.actions
+            --
+            props<{user: User}>
+
+        }
+
+        
+interface "auth.reducer:: authReducer L" << (L,orchid) listen >> {
+            name: signInSuccess
+            action: [Auth Effect] Google`s sign-in Success
+            ..
+            Variable: authReducer
+            __
+        }
+        "[Auth Effect] Google`s sign-in Success" <.down. "auth.reducer:: authReducer L"
+
+interface "auth.effects:: AuthEffects D" << (D,orchid) dispatch >> {
+            name: signInSuccess
+            action: [Auth Effect] Google`s sign-in Success
+            ..
+            Class: AuthEffects
+Property: signIn$
+            __
+        }
+        "[Auth Effect] Google`s sign-in Success" -down-> "auth.effects:: AuthEffects D"
+
+interface "auth.effects:: AuthEffects D" << (D,orchid) dispatch >> {
+            name: signInSuccess
+            action: [Auth Effect] Google`s sign-in Success
+            ..
+            Class: AuthEffects
+Property: signIn$
+            __
+        }
+        "[Auth Effect] Google`s sign-in Success" -down-> "auth.effects:: AuthEffects D"
+
+interface "auth.effects:: AuthEffects L" << (L,orchid) listen >> {
+            name: signInSuccess
+            action: [Auth Effect] Google`s sign-in Success
+            ..
+            Class: AuthEffects
+Property: signInSuccess$
+            __
+        }
+        "[Auth Effect] Google`s sign-in Success" <.down. "auth.effects:: AuthEffects L"
+
+interface "route.effects:: RouteEffects L" << (L,orchid) listen >> {
+            name: signInSuccess
+            action: [Auth Effect] Google`s sign-in Success
+            ..
+            Class: RouteEffects
+Property: gohome$
+            __
+        }
+        "[Auth Effect] Google`s sign-in Success" <.down. "route.effects:: RouteEffects L"
+
+interface "app.effects:: AppEffects L" << (L,orchid) listen >> {
+            name: signInSuccess
+            action: [Auth Effect] Google`s sign-in Success
+            ..
+            Class: AppEffects
+Property: storeUser$
+            __
+        }
+        "[Auth Effect] Google`s sign-in Success" <.down. "app.effects:: AppEffects L"
+
+interface "spinner.effects:: SpinnerEffects L" << (L,orchid) listen >> {
+            name: signInSuccess
+            action: [Auth Effect] Google`s sign-in Success
+            ..
+            Class: SpinnerEffects
+Property: spinneroff$
+            __
+        }
+        "[Auth Effect] Google`s sign-in Success" <.down. "spinner.effects:: SpinnerEffects L"
+ 
+
+@enduml

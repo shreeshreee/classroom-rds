@@ -1,0 +1,50 @@
+@startuml [Auth Component] Update profile
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+interface "[Auth Component] Update profile" << (A,#FF7700) action >> {
+            variable: updateProfile
+            src: auth.actions
+            --
+            props<{userData: UpdatedUser}>
+
+        }
+
+        
+interface "profile.component:: ProfileComponent D" << (D,orchid) dispatch >> {
+            name: updateProfile
+            action: [Auth Component] Update profile
+            ..
+            Class: ProfileComponent
+Method: updateProfile
+            __
+        }
+        "[Auth Component] Update profile" -down-> "profile.component:: ProfileComponent D"
+
+interface "fire.effects:: FireEffects L" << (L,orchid) listen >> {
+            name: updateProfile
+            action: [Auth Component] Update profile
+            ..
+            Class: FireEffects
+Property: updateProfile$
+            __
+        }
+        "[Auth Component] Update profile" <.down. "fire.effects:: FireEffects L"
+
+interface "spinner.effects:: SpinnerEffects L" << (L,orchid) listen >> {
+            name: updateProfile
+            action: [Auth Component] Update profile
+            ..
+            Class: SpinnerEffects
+Property: spinneron$
+            __
+        }
+        "[Auth Component] Update profile" <.down. "spinner.effects:: SpinnerEffects L"
+ 
+
+@enduml

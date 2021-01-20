@@ -1,0 +1,1173 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Google Classroom RDS Admin</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Google Classroom RDS Admin</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Escribe para buscar"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Inyectables</li>
+  <li>UserProfileActions</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>Fichero</h3>
+        </p>
+        <p class="comment">
+            <code>projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts</code>
+        </p>
+
+
+
+
+            <section>
+    <h3 id="index">Índice</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Propiedades</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#ADD_PLAYLISTS">ADD_PLAYLISTS</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#ADD_TO_PLAYLIST">ADD_TO_PLAYLIST</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#CHECK_USER_AUTH">CHECK_USER_AUTH</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#SET_PLAYLISTS">SET_PLAYLISTS</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#UPDATE">UPDATE</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#UPDATE_NEXT_PAGE_TOKEN">UPDATE_NEXT_PAGE_TOKEN</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#UPDATE_TOKEN">UPDATE_TOKEN</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#UPDATE_USER_PROFILE">UPDATE_USER_PROFILE</a>
+                            </li>
+                            <li>
+                                <a href="#updateData">updateData</a>
+                            </li>
+                            <li>
+                                <a href="#updateToken">updateToken</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#USER_PLAYLISTS_FETCH_ERROR">USER_PLAYLISTS_FETCH_ERROR</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#USER_PROFILE_COMPLETED">USER_PROFILE_COMPLETED</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#USER_PROFILE_RECIEVED">USER_PROFILE_RECIEVED</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#USER_SIGNIN">USER_SIGNIN</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#USER_SIGNIN_START">USER_SIGNIN_START</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#USER_SIGNIN_SUCCESS">USER_SIGNIN_SUCCESS</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#USER_SIGNOUT">USER_SIGNOUT</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#USER_SIGNOUT_SUCCESS">USER_SIGNOUT_SUCCESS</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#VIEWED_PLAYLIST">VIEWED_PLAYLIST</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Métodos</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#updatePageToken">updatePageToken</a>
+                            </li>
+                            <li>
+                                <a href="#userProfileCompleted">userProfileCompleted</a>
+                            </li>
+                            <li>
+                                <a href="#userProfileRecieved">userProfileRecieved</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section>
+    
+    <h3 id="methods">
+        Métodos
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePageToken"></a>
+                    <span class="name">
+                        <b>
+                            updatePageToken
+                        </b>
+                        <a href="#updatePageToken"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updatePageToken(token: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="49"
+                            class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>token</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>    <code>{ type: string; payload: string; }</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userProfileCompleted"></a>
+                    <span class="name">
+                        <b>
+                            userProfileCompleted
+                        </b>
+                        <a href="#userProfileCompleted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>userProfileCompleted()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="56"
+                            class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:56</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>    <code>{ type: string; }</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userProfileRecieved"></a>
+                    <span class="name">
+                        <b>
+                            userProfileRecieved
+                        </b>
+                        <a href="#userProfileRecieved"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>userProfileRecieved(profile: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="62"
+                            class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:62</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>profile</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>    <code>{ type: string; payload: any; }</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Propiedades
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ADD_PLAYLISTS"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            ADD_PLAYLISTS</b>
+                            <a href="#ADD_PLAYLISTS"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;[UserProfile] ADD_PLAYLISTS&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="10" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:10</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ADD_TO_PLAYLIST"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            ADD_TO_PLAYLIST</b>
+                            <a href="#ADD_TO_PLAYLIST"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;user/mediaAddedToPlaylist&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="27" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="CHECK_USER_AUTH"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            CHECK_USER_AUTH</b>
+                            <a href="#CHECK_USER_AUTH"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;[UserProfile] CHECK_USER_AUTH&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="19" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="SET_PLAYLISTS"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            SET_PLAYLISTS</b>
+                            <a href="#SET_PLAYLISTS"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;[UserProfile] SET_PLAYLISTS&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="11" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:11</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="UPDATE"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            UPDATE</b>
+                            <a href="#UPDATE"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;[UserProfile] UPDATE&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="9" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:9</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="UPDATE_NEXT_PAGE_TOKEN"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            UPDATE_NEXT_PAGE_TOKEN</b>
+                            <a href="#UPDATE_NEXT_PAGE_TOKEN"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;[UserProfile] UPDATE_NEXT_PAGE_TOKEN&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:13</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="UPDATE_TOKEN"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            UPDATE_TOKEN</b>
+                            <a href="#UPDATE_TOKEN"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;[UserProfile] UPDATE_TOKEN&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="UPDATE_USER_PROFILE"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            UPDATE_USER_PROFILE</b>
+                            <a href="#UPDATE_USER_PROFILE"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;[UserProfile] UPDATE_USER_PROFILE&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updateData"></a>
+                        <span class="name">
+                            <b>
+                            updateData</b>
+                            <a href="#updateData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="31" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updateToken"></a>
+                        <span class="name">
+                            <b>
+                            updateToken</b>
+                            <a href="#updateToken"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="47" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:47</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="USER_PLAYLISTS_FETCH_ERROR"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            USER_PLAYLISTS_FETCH_ERROR</b>
+                            <a href="#USER_PLAYLISTS_FETCH_ERROR"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;[UserProfile] USER_PLAYLISTS_FETCH_ERROR&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="26" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="USER_PROFILE_COMPLETED"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            USER_PROFILE_COMPLETED</b>
+                            <a href="#USER_PROFILE_COMPLETED"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;[UserProfile] USER_PROFILE_COMPLETED&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="14" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="USER_PROFILE_RECIEVED"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            USER_PROFILE_RECIEVED</b>
+                            <a href="#USER_PROFILE_RECIEVED"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;[UserProfile] USER_PROFILE_RECIEVED&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="16" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="USER_SIGNIN"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            USER_SIGNIN</b>
+                            <a href="#USER_SIGNIN"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;[UserProfile] USER_SIGNIN&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="20" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="USER_SIGNIN_START"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            USER_SIGNIN_START</b>
+                            <a href="#USER_SIGNIN_START"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;[UserProfile] USER_SIGNIN_START&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="21" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:21</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="USER_SIGNIN_SUCCESS"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            USER_SIGNIN_SUCCESS</b>
+                            <a href="#USER_SIGNIN_SUCCESS"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;[UserProfile] USER_SIGNIN_SUCCESS&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="22" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="USER_SIGNOUT"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            USER_SIGNOUT</b>
+                            <a href="#USER_SIGNOUT"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;[UserProfile] USER_SIGNOUT&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="24" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="USER_SIGNOUT_SUCCESS"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            USER_SIGNOUT_SUCCESS</b>
+                            <a href="#USER_SIGNOUT_SUCCESS"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;[UserProfile] USER_SIGNOUT_SUCCESS&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="25" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="VIEWED_PLAYLIST"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            VIEWED_PLAYLIST</b>
+                            <a href="#VIEWED_PLAYLIST"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;[UserProfile] VIEWED_PLAYLIST&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+
+import { Action } from &#x27;@ngrx/store&#x27;;
+
+//import { GoogleBasicProfile } from &#x27;./user-profile.reducer&#x27;;
+
+@Injectable()
+export class UserProfileActions {
+  static UPDATE &#x3D; &#x27;[UserProfile] UPDATE&#x27;;
+  static ADD_PLAYLISTS &#x3D; &#x27;[UserProfile] ADD_PLAYLISTS&#x27;;
+  static SET_PLAYLISTS &#x3D; &#x27;[UserProfile] SET_PLAYLISTS&#x27;;
+  static UPDATE_TOKEN &#x3D; &#x27;[UserProfile] UPDATE_TOKEN&#x27;;
+  static UPDATE_NEXT_PAGE_TOKEN &#x3D; &#x27;[UserProfile] UPDATE_NEXT_PAGE_TOKEN&#x27;;
+  static USER_PROFILE_COMPLETED &#x3D; &#x27;[UserProfile] USER_PROFILE_COMPLETED&#x27;;
+  static UPDATE_USER_PROFILE &#x3D; &#x27;[UserProfile] UPDATE_USER_PROFILE&#x27;;
+  static USER_PROFILE_RECIEVED &#x3D; &#x27;[UserProfile] USER_PROFILE_RECIEVED&#x27;;
+  static VIEWED_PLAYLIST &#x3D; &#x27;[UserProfile] VIEWED_PLAYLIST&#x27;;
+
+  static CHECK_USER_AUTH &#x3D; &#x27;[UserProfile] CHECK_USER_AUTH&#x27;;
+  static USER_SIGNIN &#x3D; &#x27;[UserProfile] USER_SIGNIN&#x27;;
+  static USER_SIGNIN_START &#x3D; &#x27;[UserProfile] USER_SIGNIN_START&#x27;;
+  static USER_SIGNIN_SUCCESS &#x3D; &#x27;[UserProfile] USER_SIGNIN_SUCCESS&#x27;;
+
+  static USER_SIGNOUT &#x3D; &#x27;[UserProfile] USER_SIGNOUT&#x27;;
+  static USER_SIGNOUT_SUCCESS &#x3D; &#x27;[UserProfile] USER_SIGNOUT_SUCCESS&#x27;;
+  static USER_PLAYLISTS_FETCH_ERROR &#x3D; &#x27;[UserProfile] USER_PLAYLISTS_FETCH_ERROR&#x27;;
+  static ADD_TO_PLAYLIST &#x3D; &#x27;user/mediaAddedToPlaylist&#x27;
+
+  //setViewPlaylist &#x3D; ActionCreatorFactory.create&lt;string&gt;(UserProfileActions.VIEWED_PLAYLIST);
+
+  updateData &#x3D; (data: any) &#x3D;&gt; ({ type: UserProfileActions.UPDATE, payload: data });
+
+  /*  addPlaylists(playlists: GoogleApiYouTubePlaylistResource[]) {
+     return {
+       type: UserProfileActions.ADD_PLAYLISTS,
+       payload: playlists
+     };
+   }
+
+   setPlaylists(playlists: GoogleApiYouTubePlaylistResource[]) {
+     return {
+       type: UserProfileActions.SET_PLAYLISTS,
+       payload: playlists
+     };
+   } */
+
+  updateToken &#x3D; (payload: string) &#x3D;&gt; ({ type: UserProfileActions.UPDATE_TOKEN, payload });
+
+  updatePageToken(token: string) {
+    return {
+      type: UserProfileActions.UPDATE_NEXT_PAGE_TOKEN,
+      payload: token
+    };
+  }
+
+  userProfileCompleted() {
+    return {
+      type: UserProfileActions.USER_PROFILE_COMPLETED
+    };
+  }
+
+  userProfileRecieved(profile: any) {
+    return {
+      type: UserProfileActions.USER_PROFILE_RECIEVED,
+      payload: profile
+    };
+  }
+
+  /*  updateUserProfile(profile: GoogleBasicProfile) {
+     return {
+       type: UserProfileActions.UPDATE_USER_PROFILE,
+       payload: profile
+     };
+   } */
+}
+
+export class UserSignin implements Action {
+  readonly type &#x3D; UserProfileActions.USER_SIGNIN;
+  constructor() { }
+}
+
+export class UserSigninStart implements Action {
+  readonly type &#x3D; UserProfileActions.USER_SIGNIN_START;
+  constructor() { }
+}
+
+export class UserSigninSuccess implements Action {
+  readonly type &#x3D; UserProfileActions.USER_SIGNIN_SUCCESS;
+  constructor(public payload: gapi.auth2.GoogleUser) { }
+}
+
+export class UserSignout implements Action {
+  readonly type &#x3D; UserProfileActions.USER_SIGNOUT;
+}
+
+export class UserSignoutSuccess implements Action {
+  readonly type &#x3D; UserProfileActions.USER_SIGNOUT_SUCCESS;
+  constructor() { }
+}
+
+export class CheckUserAuth implements Action {
+  readonly type &#x3D; UserProfileActions.CHECK_USER_AUTH;
+  constructor() { }
+}
+export class UserPlaylistsFetchError implements Action {
+  readonly type &#x3D; UserProfileActions.USER_PLAYLISTS_FETCH_ERROR;
+  constructor(public payload: any) { }
+}
+
+export class AddToPlaylist implements Action {
+  readonly type &#x3D; UserProfileActions.ADD_TO_PLAYLIST;
+  constructor(public payload: { playlist: any; media: any }) { }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No hay resultados que coincidan "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserProfileActions.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

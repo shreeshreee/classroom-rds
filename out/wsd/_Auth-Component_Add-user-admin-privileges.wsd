@@ -1,0 +1,20 @@
+@startuml [Auth Component] Add user admin privileges
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+interface "[Auth Component] Add user admin privileges" << (A,#FF7700) action >> {
+            variable: addAdminPrivileges
+            src: auth.actions
+            --
+            props<{uid: string}>
+
+        }
+
+         
+
+@enduml

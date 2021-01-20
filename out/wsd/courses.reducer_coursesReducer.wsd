@@ -1,0 +1,101 @@
+@startuml courses.reducer_coursesReducer
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+interface "[Courses] Load Courses Success" << (A,#FF7700) action >> {
+            variable: loadCoursesSuccess
+            src: courses.actions
+            --
+            props<{courses: gapi.client.classroom.Course[]}>
+
+        }
+
+        
+interface "courses.reducer:: coursesReducer L" << (L,orchid) listen >> {
+            name: loadCoursesSuccess
+            action: [Courses] Load Courses Success
+            ..
+            Variable: coursesReducer
+            __
+        }
+        "[Courses] Load Courses Success" <.down. "courses.reducer:: coursesReducer L"
+
+interface "[Course] Loading Course Success" << (A,#FF7700) action >> {
+            variable: loadCourseSuccess
+            src: courses.actions
+            --
+            props<{course: gapi.client.classroom.Course}>
+
+        }
+
+        
+interface "courses.reducer:: coursesReducer L" << (L,orchid) listen >> {
+            name: loadCourseSuccess
+            action: [Course] Loading Course Success
+            ..
+            Variable: coursesReducer
+            __
+        }
+        "[Course] Loading Course Success" <.down. "courses.reducer:: coursesReducer L"
+
+interface "[Course] Loading Course Fail" << (A,#FF7700) action >> {
+            variable: loadCourseFail
+            src: courses.actions
+            --
+            props<{error: any}>
+
+        }
+
+        
+interface "courses.reducer:: coursesReducer L" << (L,orchid) listen >> {
+            name: loadCourseFail
+            action: [Course] Loading Course Fail
+            ..
+            Variable: coursesReducer
+            __
+        }
+        "[Course] Loading Course Fail" <.down. "courses.reducer:: coursesReducer L"
+
+interface "[Courses] Load Courses Fail" << (A,#FF7700) action >> {
+            variable: loadCoursesFail
+            src: courses.actions
+            --
+            props<{error: any}>
+
+        }
+
+        
+interface "courses.reducer:: coursesReducer L" << (L,orchid) listen >> {
+            name: loadCoursesFail
+            action: [Courses] Load Courses Fail
+            ..
+            Variable: coursesReducer
+            __
+        }
+        "[Courses] Load Courses Fail" <.down. "courses.reducer:: coursesReducer L"
+
+interface "[Course] Select Course" << (A,#FF7700) action >> {
+            variable: selectCourse
+            src: courses.actions
+            --
+            props<{selectedCourseId: string}>
+
+        }
+
+        
+interface "courses.reducer:: coursesReducer L" << (L,orchid) listen >> {
+            name: selectCourse
+            action: [Course] Select Course
+            ..
+            Variable: coursesReducer
+            __
+        }
+        "[Course] Select Course" <.down. "courses.reducer:: coursesReducer L"
+ 
+
+@enduml

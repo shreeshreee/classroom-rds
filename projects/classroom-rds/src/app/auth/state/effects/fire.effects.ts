@@ -6,9 +6,11 @@ import { of } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
 
 import * as fromAuthActions from '../auth.actions';
+import { User } from '../../models/user.model';
 import { AuthFireService } from '../../services/auth-fire.service';
 @Injectable()
 export class FireEffects {
+
   saveUser$ = createEffect(
     () =>
       this.actions$.pipe(
@@ -19,6 +21,7 @@ export class FireEffects {
       ),
     { dispatch: false }
   );
+
   checkAdminRole$ = createEffect(
     () =>
       this.actions$.pipe(
@@ -27,12 +30,40 @@ export class FireEffects {
           this.authFireService.checkAdminRole(action.uid)
             .pipe(
               map((isAdmin: boolean) => fromAuthActions.updateAdminRole({ isAdmin })),
-              catchError((error) => of(fromAuthActions.adminError({ error })))
+              catchError((err) => of(fromAuthActions.authError({ error: err })))
             )
         )
       ),
-    { dispatch: false }
+    //{ dispatch: false }
   );
+
+  updateProfile$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(fromAuthActions.updateProfile),
+        switchMap((action) =>
+          this.authFireService.updateUser(action.userData)
+            .pipe(
+              map(() => {
+                const currentUser: any = this.authFireService.user$;
+                const updatedUser: User = {
+                  id: currentUser.id,
+                  uid: currentUser.uid,
+                  name: currentUser.name,
+                  email: currentUser.email,
+                  photoUrl: currentUser.photoURL,
+                  isAdmin: currentUser.isAdmin,
+                  isOnline: currentUser.isOnline,
+                  isNew: currentUser.isNew,
+                };
+                return fromAuthActions.updateProfileSuccess({ user: updatedUser });
+              }),
+              catchError((err) => of(fromAuthActions.authError({ error: err })))
+            )
+        )
+      ),
+  );
+
   updateOnlineStatus$ = createEffect(
     () =>
       this.actions$.pipe(

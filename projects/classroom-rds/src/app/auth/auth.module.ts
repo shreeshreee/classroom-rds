@@ -15,6 +15,7 @@ import { AuthService } from './services';
 import { AuthGuard } from './guards/auth.guard';
 import * as fromAuthReducer from './state/auth.reducer';
 import * as fromAuthEffects from './state/effects';
+import { LoginDialogComponent } from './components/login-dialog/login-dialog.component';
 import { MainProfileComponent } from './components/main-profile/main-profile.component';
 import { ProfileUserComponent } from './components/profile-user/profile-user.component';
 import { ProfileComponent } from './containers/profile/profile.component';
@@ -28,7 +29,8 @@ import { ProfileComponent } from './containers/profile/profile.component';
     StoreModule.forFeature(fromAuthReducer.authFeatureKey, fromAuthReducer.authReducer),
     EffectsModule.forFeature([fromAuthEffects.AuthEffects, fromAuthEffects.FireEffects]),
   ],
-  declarations: [MainProfileComponent, ProfileUserComponent, ProfileComponent],
+  declarations: [MainProfileComponent, ProfileUserComponent, ProfileComponent, LoginDialogComponent],
+  exports: [LoginDialogComponent]
 })
 export class AuthModule {
   static forRoot(): ModuleWithProviders<AuthModule> {

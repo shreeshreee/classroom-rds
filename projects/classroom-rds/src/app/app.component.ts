@@ -9,8 +9,10 @@ import { SeoService } from './shared/services';
 export class AppComponent implements OnInit {
   title = 'Classroom RDS Admin';
   constructor(
-    private seoService: SeoService
-  ) { }
+    private seoService: SeoService,
+  ) {
+
+  }
   ngOnInit(): void {
     this.seoService.titleInit();
     this.seoService.generateTags({
@@ -18,5 +20,8 @@ export class AppComponent implements OnInit {
       description: 'Angular web app for a school admin in Google Classroom.',
       image: 'assets/screenshots/screenshot02.png'
     });
+
   }
+
+
 }

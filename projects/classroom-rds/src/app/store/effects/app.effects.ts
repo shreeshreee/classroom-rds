@@ -26,7 +26,9 @@ export class AppEffects {
     () =>
       this.actions$.pipe(
         ofType(fromAuthActions.signOutCompleted),
-        tap(() => localStorage.removeItem('user'))
+        tap(() =>
+          localStorage.removeItem('user')
+        )
       ),
     { dispatch: false }
   );

@@ -1,0 +1,58 @@
+@startuml [Auth Effect] Google`s sign-out request
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+interface "[Auth Effect] Google`s sign-out request" << (A,#FF7700) action >> {
+            variable: signOut
+            src: auth.actions
+            --
+            props<{user: User}>
+
+        }
+
+        
+interface "auth.reducer:: authReducer L" << (L,orchid) listen >> {
+            name: signOut
+            action: [Auth Effect] Google`s sign-out request
+            ..
+            Variable: authReducer
+            __
+        }
+        "[Auth Effect] Google`s sign-out request" <.down. "auth.reducer:: authReducer L"
+
+interface "app.state:: logout L" << (L,orchid) listen >> {
+            name: signOut
+            action: [Auth Effect] Google`s sign-out request
+            ..
+            Function: logout
+            __
+        }
+        "[Auth Effect] Google`s sign-out request" <.down. "app.state:: logout L"
+
+interface "profile.component:: ProfileComponent D" << (D,orchid) dispatch >> {
+            name: signOut
+            action: [Auth Effect] Google`s sign-out request
+            ..
+            Class: ProfileComponent
+Method: logoutUser
+            __
+        }
+        "[Auth Effect] Google`s sign-out request" -down-> "profile.component:: ProfileComponent D"
+
+interface "auth.effects:: AuthEffects L" << (L,orchid) listen >> {
+            name: signOut
+            action: [Auth Effect] Google`s sign-out request
+            ..
+            Class: AuthEffects
+Property: signOut$
+            __
+        }
+        "[Auth Effect] Google`s sign-out request" <.down. "auth.effects:: AuthEffects L"
+ 
+
+@enduml

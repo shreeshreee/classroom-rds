@@ -106,12 +106,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(actions$: Actions, authService: <a href="../injectables/AuthService.html">AuthService</a>)</code>
+<code>constructor(actions$: Actions, authService: <a href="../injectables/AuthService.html">AuthService</a>, authFireService: <a href="../injectables/AuthFireService.html">AuthFireService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="88" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:88</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="85" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:85</a></div>
                             </td>
                         </tr>
 
@@ -145,6 +145,18 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authFireService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthFireService.html" target="_self" >AuthFireService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -194,7 +206,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="86" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:86</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="83" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:83</a></div>
                             </td>
                         </tr>
 
@@ -237,20 +249,16 @@
             switchMap((user: User) &#x3D;&gt; {
               if (user.isNew) {
                 return [
-                  fromAuthActions.signInSuccess({ user }),
                   fromAuthActions.saveUser({ user }),
-                  fromAuthActions.checkAdminRole({ uid: user.uid }),
+                  fromAuthActions.signInSuccess({ user }),
                 ];
               } else {
                 return [
                   fromAuthActions.signInSuccess({ user }),
-                  fromAuthActions.checkAdminRole({ uid: user.uid }),
                 ];
               }
             }),
-            catchError((err) &#x3D;&gt; {
-              return of(fromAuthActions.signInFailure({ error: err }));
-            })
+            catchError((err) &#x3D;&gt; of(fromAuthActions.authError({ error: err })))
           )
         )
       )
@@ -259,7 +267,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:17</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="18" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -287,6 +295,7 @@
         switchMap((action) &#x3D;&gt; {
           return [
             fromAuthActions.updateOnlineStatus({ uid: action.user.uid, isOnline: true }),
+            fromAuthActions.checkAdminRole({ uid: action.user.uid }),
           ];
         })
       ),
@@ -295,7 +304,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="58" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:58</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="55" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:55</a></div>
                             </td>
                         </tr>
 
@@ -321,21 +330,20 @@
       this.actions$.pipe(
         ofType(fromAuthActions.signOut),
         switchMap((action) &#x3D;&gt;
-          this.authService.signOut(action.user.uid)
+          from(this.authService.signOut(action.user.uid))
             .pipe(
               map(() &#x3D;&gt; fromAuthActions.signOutCompleted()),
-              catchError((err) &#x3D;&gt; {
-                return of(fromAuthActions.authError({ error: err }));
-              })
+              catchError((err) &#x3D;&gt; of(fromAuthActions.authError({ error: err })))
             )
         )
-      )
+      ),
+    //{ dispatch: false }
   )</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="70" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:70</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="68" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:68</a></div>
                             </td>
                         </tr>
 
@@ -353,12 +361,13 @@
 import { Actions, createEffect, ofType } from &#x27;@ngrx/effects&#x27;;
 
 import { of, Observable, defer, from } from &#x27;rxjs&#x27;;
-import { switchMap, map, catchError, mergeMap, concatMap } from &#x27;rxjs/operators&#x27;;
+import { switchMap, map, catchError, mergeMap, concatMap, tap } from &#x27;rxjs/operators&#x27;;
 
 import firebase from &#x27;firebase/app&#x27;;
 import &#x27;firebase/auth&#x27;;
 
 import * as fromAuthActions from &#x27;../auth.actions&#x27;;
+import { AuthFireService } from &#x27;../../services&#x27;;
 import { User } from &#x27;../../models/user.model&#x27;;
 import { AuthService } from &#x27;../../services/auth.service&#x27;;
 @Injectable()
@@ -386,20 +395,16 @@ export class AuthEffects {
             switchMap((user: User) &#x3D;&gt; {
               if (user.isNew) {
                 return [
-                  fromAuthActions.signInSuccess({ user }),
                   fromAuthActions.saveUser({ user }),
-                  fromAuthActions.checkAdminRole({ uid: user.uid }),
+                  fromAuthActions.signInSuccess({ user }),
                 ];
               } else {
                 return [
                   fromAuthActions.signInSuccess({ user }),
-                  fromAuthActions.checkAdminRole({ uid: user.uid }),
                 ];
               }
             }),
-            catchError((err) &#x3D;&gt; {
-              return of(fromAuthActions.signInFailure({ error: err }));
-            })
+            catchError((err) &#x3D;&gt; of(fromAuthActions.authError({ error: err })))
           )
         )
       )
@@ -412,6 +417,7 @@ export class AuthEffects {
         switchMap((action) &#x3D;&gt; {
           return [
             fromAuthActions.updateOnlineStatus({ uid: action.user.uid, isOnline: true }),
+            fromAuthActions.checkAdminRole({ uid: action.user.uid }),
           ];
         })
       ),
@@ -422,15 +428,14 @@ export class AuthEffects {
       this.actions$.pipe(
         ofType(fromAuthActions.signOut),
         switchMap((action) &#x3D;&gt;
-          this.authService.signOut(action.user.uid)
+          from(this.authService.signOut(action.user.uid))
             .pipe(
               map(() &#x3D;&gt; fromAuthActions.signOutCompleted()),
-              catchError((err) &#x3D;&gt; {
-                return of(fromAuthActions.authError({ error: err }));
-              })
+              catchError((err) &#x3D;&gt; of(fromAuthActions.authError({ error: err })))
             )
         )
-      )
+      ),
+    //{ dispatch: false }
   );
 
   init$: Observable&lt;any&gt; &#x3D; defer(() &#x3D;&gt; {
@@ -440,6 +445,8 @@ export class AuthEffects {
   constructor(
     private actions$: Actions,
     private authService: AuthService,
+    private authFireService: AuthFireService,
+
   ) { }
 }
 </code></pre>

@@ -223,11 +223,11 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Action, createReducer, on } from &#x27;@ngrx/store&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { createReducer, on } from &#x27;@ngrx/store&#x27;;
 
 import { User } from &#x27;../models/user.model&#x27;;
 
-import * as fromauthActions from &#x27;./auth.actions&#x27;;
+import * as fromAuthActions from &#x27;./auth.actions&#x27;;
 export const authFeatureKey &#x3D; &#x27;auth&#x27;;
 
 export interface AuthenticationState {
@@ -246,22 +246,22 @@ export const initialState: AuthenticationState &#x3D; {
 
 export const authReducer &#x3D; createReducer&lt;AuthenticationState&gt;(
   initialState,
-  on(fromauthActions.signInSuccess, fromauthActions.browserReload, (state, action) &#x3D;&gt; {
+  on(fromAuthActions.signInSuccess, (state, action) &#x3D;&gt; {
     return {
       ...state,
       user: action.user,
-      isAdmin: action.user.isAdmin,
+      isAdmin: false,
       error: null,
       isLoggedIn: true
     };
   }),
-  on(fromauthActions.updateProfileSuccess, (state, action) &#x3D;&gt; {
+  on(fromAuthActions.updateProfileSuccess, (state, action) &#x3D;&gt; {
     return {
       ...state,
       user: action.user,
     };
   }),
-  on(fromauthActions.signInFailure, (state, action) &#x3D;&gt; {
+  on(fromAuthActions.signInFailure, (state, action) &#x3D;&gt; {
     return {
       ...state,
       user: null,
@@ -269,22 +269,20 @@ export const authReducer &#x3D; createReducer&lt;AuthenticationState&gt;(
       error: action.error
     };
   }),
-  on(fromauthActions.authError, (state, action) &#x3D;&gt; {
+  on(fromAuthActions.authError, (state, action) &#x3D;&gt; {
     return {
       ...state,
       error: action.error
     };
   }),
-  on(fromauthActions.signOutCompleted, (state, action) &#x3D;&gt; {
+  on(fromAuthActions.signOut, (state) &#x3D;&gt; {
     return {
       ...state,
       user: null,
       isLoggedIn: false,
-      isAdmin: false,
-      error: null
     };
   }),
-  on(fromauthActions.updateAdminRole, (state, action) &#x3D;&gt; {
+  on(fromAuthActions.updateAdminRole, (state, action) &#x3D;&gt; {
     return {
       ...state,
       isAdmin: action.isAdmin
@@ -292,6 +290,8 @@ export const authReducer &#x3D; createReducer&lt;AuthenticationState&gt;(
 
   })
 );
+
+
 </code></pre>
     </div>
 </div>

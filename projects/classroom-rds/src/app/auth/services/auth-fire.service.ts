@@ -10,6 +10,8 @@ import { from, Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 
 import { UpdatedUser, User } from './../models/user.model';
+
+import { AuthService } from './auth.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -19,6 +21,7 @@ export class AuthFireService {
     public afAuth: AngularFireAuth,
     private afDatabase: AngularFireDatabase,
     private afStore: AngularFirestore,
+
   ) {
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user) => {
@@ -33,7 +36,7 @@ export class AuthFireService {
   signInWithCredential(credentials: firebase.auth.AuthCredential): Promise<firebase.auth.UserCredential> {
     return this.afAuth.signInWithCredential(credentials);
   }
-  signOut(uid: string): Promise<void> {
+  signOut(uid: string) {
     this.updateOnlineStatus(uid, false);
     return this.afAuth.signOut();
   }

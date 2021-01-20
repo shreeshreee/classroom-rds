@@ -1,0 +1,342 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Google Classroom RDS Admin</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Google Classroom RDS Admin</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Escribe para buscar"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Clases</li>
+  <li>CheckUserAuth</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>Fichero</h3>
+        </p>
+        <p class="comment">
+            <code>projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts</code>
+        </p>
+
+
+
+            <p class="comment">
+                <h3>Implementa</h3>
+            </p>
+            <p class="comment">
+                        <code>Action</code>
+            </p>
+
+
+            <section>
+    <h3 id="index">Índice</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Propiedades</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#type">type</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="102" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:102</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+        <h3 id="inputs">
+            Propiedades
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="type"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Readonly</span>
+                            type</b>
+                            <a href="#type"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>UserProfileActions.CHECK_USER_AUTH</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="102" class="link-to-prism">projects/users-rds/src/app/shared/store/user-profile/user-profile.actions.ts:102</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+
+import { Action } from &#x27;@ngrx/store&#x27;;
+
+//import { GoogleBasicProfile } from &#x27;./user-profile.reducer&#x27;;
+
+@Injectable()
+export class UserProfileActions {
+  static UPDATE &#x3D; &#x27;[UserProfile] UPDATE&#x27;;
+  static ADD_PLAYLISTS &#x3D; &#x27;[UserProfile] ADD_PLAYLISTS&#x27;;
+  static SET_PLAYLISTS &#x3D; &#x27;[UserProfile] SET_PLAYLISTS&#x27;;
+  static UPDATE_TOKEN &#x3D; &#x27;[UserProfile] UPDATE_TOKEN&#x27;;
+  static UPDATE_NEXT_PAGE_TOKEN &#x3D; &#x27;[UserProfile] UPDATE_NEXT_PAGE_TOKEN&#x27;;
+  static USER_PROFILE_COMPLETED &#x3D; &#x27;[UserProfile] USER_PROFILE_COMPLETED&#x27;;
+  static UPDATE_USER_PROFILE &#x3D; &#x27;[UserProfile] UPDATE_USER_PROFILE&#x27;;
+  static USER_PROFILE_RECIEVED &#x3D; &#x27;[UserProfile] USER_PROFILE_RECIEVED&#x27;;
+  static VIEWED_PLAYLIST &#x3D; &#x27;[UserProfile] VIEWED_PLAYLIST&#x27;;
+
+  static CHECK_USER_AUTH &#x3D; &#x27;[UserProfile] CHECK_USER_AUTH&#x27;;
+  static USER_SIGNIN &#x3D; &#x27;[UserProfile] USER_SIGNIN&#x27;;
+  static USER_SIGNIN_START &#x3D; &#x27;[UserProfile] USER_SIGNIN_START&#x27;;
+  static USER_SIGNIN_SUCCESS &#x3D; &#x27;[UserProfile] USER_SIGNIN_SUCCESS&#x27;;
+
+  static USER_SIGNOUT &#x3D; &#x27;[UserProfile] USER_SIGNOUT&#x27;;
+  static USER_SIGNOUT_SUCCESS &#x3D; &#x27;[UserProfile] USER_SIGNOUT_SUCCESS&#x27;;
+  static USER_PLAYLISTS_FETCH_ERROR &#x3D; &#x27;[UserProfile] USER_PLAYLISTS_FETCH_ERROR&#x27;;
+  static ADD_TO_PLAYLIST &#x3D; &#x27;user/mediaAddedToPlaylist&#x27;
+
+  //setViewPlaylist &#x3D; ActionCreatorFactory.create&lt;string&gt;(UserProfileActions.VIEWED_PLAYLIST);
+
+  updateData &#x3D; (data: any) &#x3D;&gt; ({ type: UserProfileActions.UPDATE, payload: data });
+
+  /*  addPlaylists(playlists: GoogleApiYouTubePlaylistResource[]) {
+     return {
+       type: UserProfileActions.ADD_PLAYLISTS,
+       payload: playlists
+     };
+   }
+
+   setPlaylists(playlists: GoogleApiYouTubePlaylistResource[]) {
+     return {
+       type: UserProfileActions.SET_PLAYLISTS,
+       payload: playlists
+     };
+   } */
+
+  updateToken &#x3D; (payload: string) &#x3D;&gt; ({ type: UserProfileActions.UPDATE_TOKEN, payload });
+
+  updatePageToken(token: string) {
+    return {
+      type: UserProfileActions.UPDATE_NEXT_PAGE_TOKEN,
+      payload: token
+    };
+  }
+
+  userProfileCompleted() {
+    return {
+      type: UserProfileActions.USER_PROFILE_COMPLETED
+    };
+  }
+
+  userProfileRecieved(profile: any) {
+    return {
+      type: UserProfileActions.USER_PROFILE_RECIEVED,
+      payload: profile
+    };
+  }
+
+  /*  updateUserProfile(profile: GoogleBasicProfile) {
+     return {
+       type: UserProfileActions.UPDATE_USER_PROFILE,
+       payload: profile
+     };
+   } */
+}
+
+export class UserSignin implements Action {
+  readonly type &#x3D; UserProfileActions.USER_SIGNIN;
+  constructor() { }
+}
+
+export class UserSigninStart implements Action {
+  readonly type &#x3D; UserProfileActions.USER_SIGNIN_START;
+  constructor() { }
+}
+
+export class UserSigninSuccess implements Action {
+  readonly type &#x3D; UserProfileActions.USER_SIGNIN_SUCCESS;
+  constructor(public payload: gapi.auth2.GoogleUser) { }
+}
+
+export class UserSignout implements Action {
+  readonly type &#x3D; UserProfileActions.USER_SIGNOUT;
+}
+
+export class UserSignoutSuccess implements Action {
+  readonly type &#x3D; UserProfileActions.USER_SIGNOUT_SUCCESS;
+  constructor() { }
+}
+
+export class CheckUserAuth implements Action {
+  readonly type &#x3D; UserProfileActions.CHECK_USER_AUTH;
+  constructor() { }
+}
+export class UserPlaylistsFetchError implements Action {
+  readonly type &#x3D; UserProfileActions.USER_PLAYLISTS_FETCH_ERROR;
+  constructor(public payload: any) { }
+}
+
+export class AddToPlaylist implements Action {
+  readonly type &#x3D; UserProfileActions.ADD_TO_PLAYLIST;
+  constructor(public payload: { playlist: any; media: any }) { }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No hay resultados que coincidan "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'CheckUserAuth.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

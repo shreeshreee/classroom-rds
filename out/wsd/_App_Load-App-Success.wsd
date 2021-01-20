@@ -1,0 +1,39 @@
+@startuml [App] Load App Success
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+interface "[App] Load App Success" << (A,#FF7700) action >> {
+            variable: loadAppSuccess
+            src: app.actions
+            --
+            
+        }
+
+        
+interface "app.effects:: AppEffects D" << (D,orchid) dispatch >> {
+            name: loadAppSuccess
+            action: [App] Load App Success
+            ..
+            Class: AppEffects
+Property: loadApp$
+            __
+        }
+        "[App] Load App Success" -down-> "app.effects:: AppEffects D"
+
+interface "spinner.effects:: SpinnerEffects L" << (L,orchid) listen >> {
+            name: loadAppSuccess
+            action: [App] Load App Success
+            ..
+            Class: SpinnerEffects
+Property: spinneroff$
+            __
+        }
+        "[App] Load App Success" <.down. "spinner.effects:: SpinnerEffects L"
+ 
+
+@enduml

@@ -57,7 +57,7 @@
             <h3>Fichero</h3>
         </p>
         <p class="comment">
-            <code>projects/classroom-rds/src/app/courses/services/teacher-entity.service.ts</code>
+            <code>projects/classroom-rds/src/app/store/teacher/teacher-entity.service.ts</code>
         </p>
 
 
@@ -81,7 +81,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="8" class="link-to-prism">projects/classroom-rds/src/app/courses/services/teacher-entity.service.ts:8</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="10" class="link-to-prism">projects/classroom-rds/src/app/store/teacher/teacher-entity.service.ts:10</a></div>
                             </td>
                         </tr>
 
@@ -129,16 +129,15 @@
 
 import { EntityCollectionServiceBase, EntityCollectionServiceElementsFactory } from &#x27;@ngrx/data&#x27;;
 
+import * as fromTeacher from &#x27;./&#x27;;
 
-
-@Injectable()
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
 export class TeacherEntityService extends EntityCollectionServiceBase&lt;gapi.client.classroom.Teacher&gt; {
-
-  constructor(serviceElementsFactory: EntityCollectionServiceElementsFactory) {
-    super(&quot;Teacher&quot;, serviceElementsFactory);
+  constructor(readonly serviceElementsFactory: EntityCollectionServiceElementsFactory) {
+    super(fromTeacher.entityCollectionName, serviceElementsFactory);
   }
-
-
 }
 </code></pre>
     </div>

@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
 import { of, Observable, defer, from } from 'rxjs';
-import { switchMap, map, catchError, mergeMap, concatMap } from 'rxjs/operators';
+import { switchMap, map, catchError, mergeMap, concatMap, tap } from 'rxjs/operators';
 
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import * as fromAuthActions from '../auth.actions';
+import { AuthFireService } from '../../services';
 import { User } from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
 @Injectable()
@@ -36,20 +37,16 @@ export class AuthEffects {
             switchMap((user: User) => {
               if (user.isNew) {
                 return [
-                  fromAuthActions.signInSuccess({ user }),
                   fromAuthActions.saveUser({ user }),
-                  fromAuthActions.checkAdminRole({ uid: user.uid }),
+                  fromAuthActions.signInSuccess({ user }),
                 ];
               } else {
                 return [
                   fromAuthActions.signInSuccess({ user }),
-                  fromAuthActions.checkAdminRole({ uid: user.uid }),
                 ];
               }
             }),
-            catchError((err) => {
-              return of(fromAuthActions.signInFailure({ error: err }));
-            })
+            catchError((err) => of(fromAuthActions.authError({ error: err })))
           )
         )
       )
@@ -62,6 +59,7 @@ export class AuthEffects {
         switchMap((action) => {
           return [
             fromAuthActions.updateOnlineStatus({ uid: action.user.uid, isOnline: true }),
+            fromAuthActions.checkAdminRole({ uid: action.user.uid }),
           ];
         })
       ),
@@ -72,15 +70,14 @@ export class AuthEffects {
       this.actions$.pipe(
         ofType(fromAuthActions.signOut),
         switchMap((action) =>
-          this.authService.signOut(action.user.uid)
+          from(this.authService.signOut(action.user.uid))
             .pipe(
               map(() => fromAuthActions.signOutCompleted()),
-              catchError((err) => {
-                return of(fromAuthActions.authError({ error: err }));
-              })
+              catchError((err) => of(fromAuthActions.authError({ error: err })))
             )
         )
-      )
+      ),
+    //{ dispatch: false }
   );
 
   init$: Observable<any> = defer(() => {
@@ -90,5 +87,7 @@ export class AuthEffects {
   constructor(
     private actions$: Actions,
     private authService: AuthService,
+    private authFireService: AuthFireService,
+
   ) { }
 }

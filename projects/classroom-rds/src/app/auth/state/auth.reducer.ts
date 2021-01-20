@@ -1,7 +1,8 @@
 import { createReducer, on } from '@ngrx/store';
+
 import { User } from '../models/user.model';
 
-import * as fromauthActions from './auth.actions';
+import * as fromAuthActions from './auth.actions';
 export const authFeatureKey = 'auth';
 
 export interface AuthenticationState {
@@ -20,22 +21,22 @@ export const initialState: AuthenticationState = {
 
 export const authReducer = createReducer<AuthenticationState>(
   initialState,
-  on(fromauthActions.signInSuccess, fromauthActions.browserReload, (state, action) => {
+  on(fromAuthActions.signInSuccess, (state, action) => {
     return {
       ...state,
       user: action.user,
-      isAdmin: action.user.isAdmin,
+      isAdmin: false,
       error: null,
       isLoggedIn: true
     };
   }),
-  on(fromauthActions.updateProfileSuccess, (state, action) => {
+  on(fromAuthActions.updateProfileSuccess, (state, action) => {
     return {
       ...state,
       user: action.user,
     };
   }),
-  on(fromauthActions.signInFailure, (state, action) => {
+  on(fromAuthActions.signInFailure, (state, action) => {
     return {
       ...state,
       user: null,
@@ -43,22 +44,20 @@ export const authReducer = createReducer<AuthenticationState>(
       error: action.error
     };
   }),
-  on(fromauthActions.authError, (state, action) => {
+  on(fromAuthActions.authError, (state, action) => {
     return {
       ...state,
       error: action.error
     };
   }),
-  on(fromauthActions.signOutCompleted, (state, action) => {
+  on(fromAuthActions.signOut, (state) => {
     return {
       ...state,
       user: null,
       isLoggedIn: false,
-      isAdmin: false,
-      error: null
     };
   }),
-  on(fromauthActions.updateAdminRole, (state, action) => {
+  on(fromAuthActions.updateAdminRole, (state, action) => {
     return {
       ...state,
       isAdmin: action.isAdmin

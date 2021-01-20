@@ -1,0 +1,12 @@
+@startuml user-profile.reducer_featureReducer
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+ 
+
+@enduml

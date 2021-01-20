@@ -11,7 +11,7 @@ import { filter, first, map, tap } from 'rxjs/operators';
 import { StudentEntityService } from '../../../store/student/student-entity.service';
 
 @Injectable()
-export class StudentResolver implements Resolve<boolean> {
+export class StudentsResolver implements Resolve<boolean> {
   courseId: string;
   constructor(
     private studentEntityService: StudentEntityService,
@@ -25,7 +25,7 @@ export class StudentResolver implements Resolve<boolean> {
       .pipe(
         tap(loaded => {
           if (!loaded) {
-            this.studentEntityService.getWithQuery(route.params.courseId);
+            this.studentEntityService.getWithQuery(route.parent.params.courseId);
           }
         }),
         filter(loaded => !!loaded),

@@ -1,0 +1,19 @@
+@startuml [Auth Effect] Check current user
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+interface "[Auth Effect] Check current user" << (A,#FF7700) action >> {
+            variable: checkUser
+            src: auth.actions
+            --
+            
+        }
+
+         
+
+@enduml

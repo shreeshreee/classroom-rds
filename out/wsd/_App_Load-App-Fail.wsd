@@ -1,0 +1,40 @@
+@startuml [App] Load App Fail
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+interface "[App] Load App Fail" << (A,#FF7700) action >> {
+            variable: loadAppFail
+            src: app.actions
+            --
+            props<{error: any}>
+
+        }
+
+        
+interface "app.effects:: AppEffects D" << (D,orchid) dispatch >> {
+            name: loadAppFail
+            action: [App] Load App Fail
+            ..
+            Class: AppEffects
+Property: loadApp$
+            __
+        }
+        "[App] Load App Fail" -down-> "app.effects:: AppEffects D"
+
+interface "spinner.effects:: SpinnerEffects L" << (L,orchid) listen >> {
+            name: loadAppFail
+            action: [App] Load App Fail
+            ..
+            Class: SpinnerEffects
+Property: spinneroff$
+            __
+        }
+        "[App] Load App Fail" <.down. "spinner.effects:: SpinnerEffects L"
+ 
+
+@enduml

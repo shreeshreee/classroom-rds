@@ -6,14 +6,15 @@ import { faBell, faBellSlash, faFileSignature, faUserGraduate, faUserTie } from 
 
 import { Store, select } from '@ngrx/store';
 
-import { Observable } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { delay, map, tap, withLatestFrom } from 'rxjs/operators';
 
 import { Course } from '../../models/course.model';
 import { AppState } from '../../../store/app.state';
 import { CourseDataService } from '../../../store/course/course-data.service';
 import { CourseEntityService } from '../../../store/course/course-entity.service';
-import { StudentEntityService } from '../../../store/student/student-entity.service';
+import { StudentEntityService } from './../../../store/student/student-entity.service';
+import { TeacherEntityService } from './../../../store/teacher/teacher-entity.service';
 
 @Component({
   selector: 'app-course',
@@ -25,31 +26,53 @@ export class CourseComponent implements OnInit {
   course$: Observable<gapi.client.classroom.Course>;
   isLoading$: Observable<boolean>;
   students$: Observable<gapi.client.classroom.Student[]>;
-  students: gapi.client.classroom.Student[];
+  teachers$: Observable<gapi.client.classroom.Teacher[]>;
+  owner$: Observable<gapi.client.classroom.Teacher>;
+  courseWorks$: Observable<gapi.client.classroom.CourseWork[]>;
+  announcements$: Observable<gapi.client.classroom.Announcement[]>;
+  topics$: Observable<gapi.client.classroom.Topic[]>;
+  courseWorkMaterials: Observable<gapi.client.classroom.CourseWorkMaterial[]>;
   courseId: string;
-  faUserGraduate = faUserGraduate;
-  faFileSignature = faFileSignature;
-  faBellSlash = faBellSlash;
+  ownerId: string;
+  faStudents = faUserGraduate;
+  faTeachers = faUserTie;
   faBell = faBell;
+  faBellSlash = faBellSlash;
+  faFileSignature = faFileSignature;
+  faUserGraduate = faUserGraduate;
   faUserTie = faUserTie;
   constructor(
     private route: ActivatedRoute,
-    private studentEntityService: StudentEntityService,
     private courseEntityService: CourseEntityService,
-
+    private studentEntityService: StudentEntityService,
+    private teacherEntityService: TeacherEntityService
   ) {
 
-    //studentEntityService.getWithQuery(this.courseId).subscribe(students => this.students = students);
-    /*  this.courseId = route.snapshot.params['id'];
-     this.studentEntityService.entities$.pipe(map(response => {
-       this.students = response
-     })); */
-    //this.store.select(fromCoursesSelector.selectAllCourses).subscribe(courses => this.courses = courses);
   }
   ngOnInit() {
-    this.isLoading$ = this.studentEntityService.loading$;
-    this.students$ = this.studentEntityService.entities$;
-    this.course$ = this.courseEntityService.getByKey(this.route.snapshot.paramMap.get('courseId'));
+    this.courseId = this.route.snapshot.paramMap.get('courseId');
+    this.isLoading$ = this.courseEntityService.loading$;
+    this.course$ = this.courseEntityService.entities$
+      .pipe(
+        map(courses => {
+          return courses.find(course => {
+            course.id === this.courseId
+            return course;
+          })
+        })
+      );
+    this.students$ = this.studentEntityService.getWithQuery(this.courseId);
+    this.teachers$ = this.teacherEntityService.getWithQuery(this.courseId);
+    this.course$.subscribe(course => this.ownerId = course.ownerId);
+    this.owner$ = this.teachers$
+      .pipe(
+        map(teachers => {
+          return teachers.find(teacher => {
+            teacher.userId === this.ownerId
+            return teacher;
+          })
+        }));
+    //this.course$ = this.courseEntityService.getByKey(this.route.snapshot.paramMap.get('courseId'));
     /*     this.courses$ = this.courseEntityService.filteredEntities$
      */      /* .pipe(
 map(course => course.find(course => course.id == courseId))

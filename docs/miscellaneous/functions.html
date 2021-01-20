@@ -59,10 +59,52 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
-                            <a href="#clearState" title="projects/classroom-rds/src/app/store/app.state.ts"><b>clearState</b>&nbsp;&nbsp;&nbsp;(projects/.../app.state.ts)</a>
+                            <a href="#clearState" title="projects/users-rds/src/app/shared/store/reducers.ts"><b>clearState</b>&nbsp;&nbsp;&nbsp;(projects/.../reducers.ts)</a>
                         </li>
                         <li>
                             <a href="#debug" title="projects/classroom-rds/src/app/store/app.state.ts"><b>debug</b>&nbsp;&nbsp;&nbsp;(projects/.../app.state.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#debug" title="projects/users-rds/src/app/shared/store/reducers.ts"><b>debug</b>&nbsp;&nbsp;&nbsp;(projects/.../reducers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getCourseId" title="projects/classroom-rds/src/app/store/config/entity-metadata.ts"><b>getCourseId</b>&nbsp;&nbsp;&nbsp;(projects/.../entity-metadata.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getSidebarExpanded" title="projects/users-rds/src/app/shared/store/app-core/app-core.reducer.ts"><b>getSidebarExpanded</b>&nbsp;&nbsp;&nbsp;(projects/.../app-core.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getStudentId" title="projects/classroom-rds/src/app/store/config/entity-metadata.ts"><b>getStudentId</b>&nbsp;&nbsp;&nbsp;(projects/.../entity-metadata.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getTeacherId" title="projects/classroom-rds/src/app/store/config/entity-metadata.ts"><b>getTeacherId</b>&nbsp;&nbsp;&nbsp;(projects/.../entity-metadata.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getVersion" title="projects/users-rds/src/app/shared/store/app-core/app-core.reducer.ts"><b>getVersion</b>&nbsp;&nbsp;&nbsp;(projects/.../app-core.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#logout" title="projects/classroom-rds/src/app/store/app.state.ts"><b>logout</b>&nbsp;&nbsp;&nbsp;(projects/.../app.state.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#nameFilter" title="projects/classroom-rds/src/app/store/config/entity-metadata.ts"><b>nameFilter</b>&nbsp;&nbsp;&nbsp;(projects/.../entity-metadata.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#nameFilter" title="projects/users-rds/src/app/shared/store/config/entity-metadata.ts"><b>nameFilter</b>&nbsp;&nbsp;&nbsp;(projects/.../entity-metadata.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#reducer" title="projects/classroom-rds/src/app/courses/state/courses.reducer.ts"><b>reducer</b>&nbsp;&nbsp;&nbsp;(projects/.../courses.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#reducer" title="projects/users-rds/src/app/shared/store/user-profile/user-profile.reducer.ts"><b>reducer</b>&nbsp;&nbsp;&nbsp;(projects/.../user-profile.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#sortByName" title="projects/classroom-rds/src/app/store/config/entity-metadata.ts"><b>sortByName</b>&nbsp;&nbsp;&nbsp;(projects/.../entity-metadata.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#sortByName" title="projects/users-rds/src/app/shared/store/config/entity-metadata.ts"><b>sortByName</b>&nbsp;&nbsp;&nbsp;(projects/.../entity-metadata.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#user" title="projects/users-rds/src/app/shared/store/user-profile/user-profile.selectors.ts"><b>user</b>&nbsp;&nbsp;&nbsp;(projects/.../user-profile.selectors.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -71,7 +113,7 @@
     </table>
 </section>
 
-    <h3>projects/classroom-rds/src/app/store/app.state.ts</h3>
+    <h3>projects/users-rds/src/app/shared/store/reducers.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
@@ -123,7 +165,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Devuelve : </b>        <code><a href="../interfaces/AppState.html" target="_self" >ActionReducer&lt;AppState&gt;</a></code>
+                        <b>Devuelve : </b>        <code><a href="../miscellaneous/enumerations.html#State" target="_self" >ActionReducer&lt;AppState&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -183,7 +225,904 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Devuelve : </b>        <code><a href="../interfaces/AppState.html" target="_self" >ActionReducer&lt;AppState&gt;</a></code>
+                        <b>Devuelve : </b>        <code><a href="../miscellaneous/enumerations.html#State" target="_self" >ActionReducer&lt;AppState&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>projects/classroom-rds/src/app/store/app.state.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="debug"></a>
+                    <span class="name">
+                        <b>
+                            debug
+                        </b>
+                        <a href="#debug"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>debug(reducer)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>reducer</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="../miscellaneous/enumerations.html#State" target="_self" >ActionReducer&lt;AppState&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logout"></a>
+                    <span class="name">
+                        <b>
+                            logout
+                        </b>
+                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logout(reducer)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>reducer</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="../miscellaneous/enumerations.html#State" target="_self" >ActionReducer&lt;AppState, Action&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>projects/classroom-rds/src/app/store/config/entity-metadata.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCourseId"></a>
+                    <span class="name">
+                        <b>
+                            getCourseId
+                        </b>
+                        <a href="#getCourseId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCourseId(course)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>course</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getStudentId"></a>
+                    <span class="name">
+                        <b>
+                            getStudentId
+                        </b>
+                        <a href="#getStudentId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getStudentId(student)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>student</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTeacherId"></a>
+                    <span class="name">
+                        <b>
+                            getTeacherId
+                        </b>
+                        <a href="#getTeacherId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTeacherId(student)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>student</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nameFilter"></a>
+                    <span class="name">
+                        <b>
+                            nameFilter
+                        </b>
+                        <a href="#nameFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>nameFilter(entities, search)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>entities</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>search</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sortByName"></a>
+                    <span class="name">
+                        <b>
+                            sortByName
+                        </b>
+                        <a href="#sortByName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sortByName(a, b)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>a</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>b</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>projects/users-rds/src/app/shared/store/app-core/app-core.reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSidebarExpanded"></a>
+                    <span class="name">
+                        <b>
+                            getSidebarExpanded
+                        </b>
+                        <a href="#getSidebarExpanded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSidebarExpanded($state)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$state</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getVersion"></a>
+                    <span class="name">
+                        <b>
+                            getVersion
+                        </b>
+                        <a href="#getVersion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getVersion(state, packageJson: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>state</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>packageJson</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="../interfaces/IAppVersion.html" target="_self" >IAppVersion</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>projects/users-rds/src/app/shared/store/config/entity-metadata.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nameFilter"></a>
+                    <span class="name">
+                        <b>
+                            nameFilter
+                        </b>
+                        <a href="#nameFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>nameFilter(entities, search)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>entities</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>search</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sortByName"></a>
+                    <span class="name">
+                        <b>
+                            sortByName
+                        </b>
+                        <a href="#sortByName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sortByName(a, b)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>a</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>b</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>projects/classroom-rds/src/app/courses/state/courses.reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reducer"></a>
+                    <span class="name">
+                        <b>
+                            reducer
+                        </b>
+                        <a href="#reducer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>reducer(state, action)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>state</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>action</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>projects/users-rds/src/app/shared/store/user-profile/user-profile.reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reducer"></a>
+                    <span class="name">
+                        <b>
+                            reducer
+                        </b>
+                        <a href="#reducer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>reducer(state, action)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>state</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>action</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>projects/users-rds/src/app/shared/store/user-profile/user-profile.selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="user"></a>
+                    <span class="name">
+                        <b>
+                            user
+                        </b>
+                        <a href="#user"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>user(state, action)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>state</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>action</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="../interfaces/IUserProfile.html" target="_self" >IUserProfile</a></code>
 
                     </div>
                     <div class="io-description">

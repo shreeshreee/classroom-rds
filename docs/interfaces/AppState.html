@@ -83,7 +83,7 @@
                                         <a href="#authFeatureKey">authFeatureKey</a>
                                 </li>
                                 <li>
-                                        <a href="#coursesFeatureKey">coursesFeatureKey</a>
+                                        <a href="#pluralizedEntityName">pluralizedEntityName</a>
                                 </li>
                                 <li>
                                         <a href="#router">router</a>
@@ -132,13 +132,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="coursesFeatureKey"></a>
-                                        <span class="name"><b>coursesFeatureKey</b><a href="#coursesFeatureKey"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="pluralizedEntityName"></a>
+                                        <span class="name"><b>pluralizedEntityName</b><a href="#pluralizedEntityName"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>coursesFeatureKey:         <code><a href="../interfaces/CoursesState.html" target="_self" >CoursesState</a></code>
+                                        <code>pluralizedEntityName:         <code><a href="../interfaces/CoursesState.html" target="_self" >CoursesState</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -167,7 +167,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>router:         <code><a href="../miscellaneous/enumerations.html#State" target="_self" >RouterReducerState</a></code>
+                                        <code>router:         <code><a href="../interfaces/State.html" target="_self" >RouterReducerState</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -175,7 +175,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Tipo : </i>        <code><a href="../miscellaneous/enumerations.html#State" target="_self" >RouterReducerState</a></code>
+                                            <i>Tipo : </i>        <code><a href="../interfaces/State.html" target="_self" >RouterReducerState</a></code>
 
                                         </td>
                                     </tr>
@@ -191,53 +191,56 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
-  ActionReducer,
-  ActionReducerMap,
-  MetaReducer
-} from &#x27;@ngrx/store&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Action, ActionReducer, ActionReducerMap, INIT, MetaReducer } from &#x27;@ngrx/store&#x27;;
 import { routerReducer, RouterReducerState } from &#x27;@ngrx/router-store&#x27;;
 
 import { environment } from &#x27;../../environments/environment&#x27;;
+import * as fromauthActions from &#x27;../auth/state/auth.actions&#x27;;
 import { AuthenticationState, authFeatureKey, authReducer } from &#x27;../auth/state/auth.reducer&#x27;;
-import { coursesFeatureKey, coursesReducer, CoursesState } from &#x27;./../courses/state/courses.reducer&#x27;;
+import { coursesReducer, CoursesState } from &#x27;../courses/state/courses.reducer&#x27;;
+
+import { pluralizedEntityName } from &#x27;./course/state&#x27;;
 export interface AppState {
+  [pluralizedEntityName]: CoursesState;
   [authFeatureKey]: AuthenticationState;
-  [coursesFeatureKey]: CoursesState;
   router: RouterReducerState;
 }
 export const reducers: ActionReducerMap&lt;AppState&gt; &#x3D; {
+  [pluralizedEntityName]: coursesReducer,
   [authFeatureKey]: authReducer,
-  [coursesFeatureKey]: coursesReducer,
   router: routerReducer,
 };
 
 export const metaReducers: MetaReducer&lt;AppState&gt;[] &#x3D; !environment.production
-  ? [debug, clearState]
-  : [];
+  ? [debug, logout]
+  : [/* clearState */];
 
 export function debug(
   reducer: ActionReducer&lt;AppState&gt;
 ): ActionReducer&lt;AppState&gt; {
-  return (state, action) &#x3D;&gt; {
-    console.groupCollapsed(&#x60;Action type: ${action.type}&#x60;);
-    console.log(&quot;state before: &quot;, state);
-    console.log(&quot;action&quot;, action);
-    console.groupEnd();
-    return reducer(state, action);
+  return function (state: AppState | undefined, action: Action) {
+    if (state !&#x3D;&#x3D; undefined || state !&#x3D;&#x3D; null) {
+      console.groupCollapsed(&#x60;Action type: ${action.type}&#x60;);
+      console.log(&#x60;%c Preview State: &#x60;, &#x60;color: #007bb4; font-weight: bold&#x60;, state);
+      console.log(&#x60;%c Action: &#x60;, &#x60;color: #b46c00; font-weight: bold&#x60;, action);
+      const nextState &#x3D; reducer(state, action);
+      console.log(&#x60;%c Next State: &#x60;, &#x60;color: #196d00; font-weight: bold&#x60;, nextState);
+      console.groupEnd();
+      return reducer(state, action);
+    }
   }
 }
 
-export function clearState(
-  reducer: ActionReducer&lt;AppState&gt;
-): ActionReducer&lt;AppState&gt; {
-  return (state, action): AppState &#x3D;&gt; {
-    if (action.type &#x3D;&#x3D;&#x3D; &#x27;[Auth Effect] Google&#x60;s sign-out completed&#x27;) {
-      state &#x3D; undefined;
+export function logout(reducer: ActionReducer&lt;AppState, Action&gt;): ActionReducer&lt;AppState, Action&gt; {
+  return (state, action) &#x3D;&gt; {
+    if (action !&#x3D; null &amp;&amp; action.type &#x3D;&#x3D;&#x3D; fromauthActions.signOut.type) {
+      return reducer(undefined, { type: INIT });
     }
     return reducer(state, action);
   };
 }
+
+
 </code></pre>
     </div>
 </div>

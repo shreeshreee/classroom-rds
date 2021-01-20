@@ -57,7 +57,7 @@ export class CoursesListComponent implements OnInit, AfterViewInit {
     private fb: FormBuilder
   ) {
     this.keys = Object.keys(this.states).filter(Number);
-    this.isLoading$ = courseEntityService.loading$;
+    this.isLoading$ = this.courseEntityService.loading$;
     this.courseTotal$ = this.courseEntityService.count$
     this.courseEntityService.entities$.subscribe(courses => this.courses = courses);
 

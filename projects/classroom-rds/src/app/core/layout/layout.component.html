@@ -1,4 +1,9 @@
-<div fxLayout="column" fxFlexFill>
+<div *ngIf="loading" style="min-height: 50vh;" fxLayout="column" fxLayoutAlign="center center">
+  <mat-spinner strokeWidth="10" [diameter]="100">
+  </mat-spinner>
+  <span>Cargando...</span><br>
+</div>
+<div fxLayout="column" fxFlexFill *ngIf="!loading">
   <app-header [user]="(user$|async)" [isHandset$]="isHandset$" [isAdmin]="(isAdmin$|async)"
     [isOnline]="(isOnline$|async)">
   </app-header>

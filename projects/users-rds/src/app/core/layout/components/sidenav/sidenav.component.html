@@ -1,0 +1,24 @@
+<mat-sidenav-container>
+  <mat-sidenav #leftSidenav class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>
+      <img class="img-small" src="assets/icons/apple-touch-icon.png" />
+      <div class="pl-3">
+        <div class="mat-body-strong">Escuela Rafael Díaz Serdán</div>
+        <div class="mat-small">Administración</div>
+      </div>
+    </mat-toolbar>
+    <mat-nav-list>
+      <app-auth-user [user]="user$" [isAdmin]="isAdmin$" [isOnline]="isOnline$"></app-auth-user>
+      <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content fxLayout="column">
+    <ng-content></ng-content>
+    <div style=" min-height: 100vh">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

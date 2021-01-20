@@ -17,14 +17,7 @@
   </mat-sidenav>
   <mat-sidenav-content [@onMainContentChange]="(onSideNavChange) ? 'open': 'close'">
     <main class="main-container">
-      <div *ngIf="loading" style="min-height: 50vh;" fxLayout="column" fxLayoutAlign="center center">
-        <mat-spinner strokeWidth="3" [diameter]="100">
-        </mat-spinner>
-        <span>Cargando...</span><br>
-      </div>
-      <div *ngIf="!loading">
-        <router-outlet></router-outlet>
-      </div>
+      <router-outlet></router-outlet>
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>

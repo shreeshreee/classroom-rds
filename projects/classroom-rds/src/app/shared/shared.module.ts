@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { MaterialModule } from './../modules/material.module';
+import { MaterialModule } from '../modules/material.module';
 
 import * as fromSharedComponents from './components';
 import * as fromSharedServices from './services';

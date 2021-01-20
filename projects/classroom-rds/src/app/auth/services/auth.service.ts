@@ -96,12 +96,9 @@ export class AuthService {
     return this.authFireService.signInWithCredential(credential);
   }
 
-  signOut(uid: string) {
-    gapi.auth2.getAuthInstance().signOut().then(
-      () => { console.log('Google API logout Success') },
-      () => { console.log('Google API logout Failded') }
-    );
-    return from(this.authFireService.signOut(uid));
+  async signOut(uid: string) {
+    this.authFireService.signOut(uid);
+    return gapi.auth2.getAuthInstance().signOut();
   }
 
   setSigninStatus(user) {

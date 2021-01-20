@@ -1,0 +1,20 @@
+@startuml [Course] Loading Course
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+interface "[Course] Loading Course" << (A,#FF7700) action >> {
+            variable: loadCourse
+            src: courses.actions
+            --
+            props<{courseId: string}>
+
+        }
+
+         
+
+@enduml

@@ -1,0 +1,29 @@
+@startuml [Auth Effect] Get current user
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+interface "[Auth Effect] Get current user" << (A,#FF7700) action >> {
+            variable: getUser
+            src: auth.actions
+            --
+            
+        }
+
+        
+interface "auth.effects:: AuthEffects D" << (D,orchid) dispatch >> {
+            name: getUser
+            action: [Auth Effect] Get current user
+            ..
+            Class: AuthEffects
+Property: init$
+            __
+        }
+        "[Auth Effect] Get current user" -down-> "auth.effects:: AuthEffects D"
+ 
+
+@enduml

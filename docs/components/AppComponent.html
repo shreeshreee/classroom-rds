@@ -240,8 +240,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="14"
-                            class="link-to-prism">projects/classroom-rds/src/app/app.component.ts:14</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="16"
+                            class="link-to-prism">projects/classroom-rds/src/app/app.component.ts:16</a></div>
                 </td>
             </tr>
 
@@ -283,7 +283,7 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>&#x27;Classroom RDS Administrator&#x27;</code>
+                            <i>Valor por defecto : </i><code>&#x27;Classroom RDS Admin&#x27;</code>
                         </td>
                     </tr>
                         <tr>
@@ -310,10 +310,12 @@ import { SeoService } from &#x27;./shared/services&#x27;;
   styleUrls: [&#x27;./app.component.scss&#x27;]
 })
 export class AppComponent implements OnInit {
-  title &#x3D; &#x27;Classroom RDS Administrator&#x27;;
+  title &#x3D; &#x27;Classroom RDS Admin&#x27;;
   constructor(
-    private seoService: SeoService
-  ) { }
+    private seoService: SeoService,
+  ) {
+
+  }
   ngOnInit(): void {
     this.seoService.titleInit();
     this.seoService.generateTags({
@@ -321,7 +323,10 @@ export class AppComponent implements OnInit {
       description: &#x27;Angular web app for a school admin in Google Classroom.&#x27;,
       image: &#x27;assets/screenshots/screenshot02.png&#x27;
     });
+
   }
+
+
 }
 </code></pre>
     </div>
@@ -343,7 +348,7 @@ export class AppComponent implements OnInit {
   height: 300px;
   width: 345px;
   display: flex;
-  background: white;
+  background: #ffffff;
   margin-top: 70px;
   z-index: 1;
   opacity: 0.5;
@@ -378,7 +383,7 @@ export class AppComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><ngx-spinner bdColor="rgba(0, 0, 0, 0.7)" size="medium" color="primary" type="ball-clip-rotate" [fullScreen]="false">  <p style="color: white"> Loading... </p></ngx-spinner><router-outlet></router-outlet></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesTableComponent', 'selector': 'app-course-table'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainProfileComponent', 'selector': 'app-main-profile'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': 'app-snackbar'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthUserComponent', 'selector': 'app-auth-user'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CourseInfoComponent', 'selector': 'app-course-info'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CoursesTableComponent', 'selector': 'app-course-table'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainProfileComponent', 'selector': 'app-main-profile'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': 'app-snackbar'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>

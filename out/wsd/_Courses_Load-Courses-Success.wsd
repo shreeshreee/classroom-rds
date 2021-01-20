@@ -1,0 +1,29 @@
+@startuml [Courses] Load Courses Success
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+interface "[Courses] Load Courses Success" << (A,#FF7700) action >> {
+            variable: loadCoursesSuccess
+            src: courses.actions
+            --
+            props<{courses: gapi.client.classroom.Course[]}>
+
+        }
+
+        
+interface "courses.reducer:: coursesReducer L" << (L,orchid) listen >> {
+            name: loadCoursesSuccess
+            action: [Courses] Load Courses Success
+            ..
+            Variable: coursesReducer
+            __
+        }
+        "[Courses] Load Courses Success" <.down. "courses.reducer:: coursesReducer L"
+ 
+
+@enduml

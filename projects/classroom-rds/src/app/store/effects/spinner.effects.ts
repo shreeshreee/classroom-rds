@@ -19,6 +19,7 @@ export class SpinnerEffects {
           fromAppActions.loadApp,
           //fromCoursesActions.loadCourses,
           fromAuthActions.signIn,
+          //fromAuthActions.signOut,
           fromAuthActions.updateProfile,
         ),
         tap(() => this.spinner.show())
@@ -34,6 +35,7 @@ export class SpinnerEffects {
           fromAppActions.loadAppSuccess,
           //fromCoursesActions.loadCoursesSuccess,
           //fromCoursesActions.loadCoursesFail,
+          //fromAuthActions.signOutCompleted,
           fromAuthActions.signInSuccess,
           fromAuthActions.signInFailure,
           fromAuthActions.updateProfileSuccess,

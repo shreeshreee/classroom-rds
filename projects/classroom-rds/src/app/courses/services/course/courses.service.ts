@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Course } from '../../models/course.model';
+import { Course } from './../../models/course.model';
 import { environment } from './../../../../environments/environment';
 
 @Injectable({
@@ -48,7 +48,7 @@ export class CoursesService {
   * @param courseStates The course states from te courses to be query.
   * @returns Course Array
   */
-  async getCourses(pageSize?: number, courseStates?: string[]) {
+  async getCourses(pageSize?: number, courseStates?: string[]): Promise<gapi.client.classroom.Course[]> {
     const response: gapi.client.Response<gapi.client.classroom.ListCoursesResponse> =
       await gapi.client.classroom.courses.list({
         courseStates: courseStates,
@@ -56,13 +56,75 @@ export class CoursesService {
       });
     return response.result.courses;
   }
-  async getStudents(courseId: string) {
+  async getTeachers(courseId: string): Promise<gapi.client.classroom.Teacher[]> {
+    const response: gapi.client.Response<gapi.client.classroom.ListTeachersResponse> =
+      await gapi.client.classroom.courses.teachers.list({
+        courseId: courseId,
+      });
+    return response.result.teachers;
+  }
+  async getOwner(userId: string): Promise<gapi.client.classroom.UserProfile> {
+    const response: gapi.client.Response<gapi.client.classroom.UserProfile> =
+      await gapi.client.classroom.userProfiles.get({
+        userId: userId
+      });
+    return response.result;
+  }
+  async getStudents(courseId: string): Promise<gapi.client.classroom.Student[]> {
     const response: gapi.client.Response<gapi.client.classroom.ListStudentsResponse> =
       await gapi.client.classroom.courses.students.list({
         courseId: courseId,
       });
     return response.result.students;
   }
+  async getCourseWorks(courseId: string): Promise<gapi.client.classroom.CourseWork[]> {
+    const response: gapi.client.Response<gapi.client.classroom.ListCourseWorkResponse> =
+      await gapi.client.classroom.courses.courseWork.list({
+        courseId: courseId,
+      });
+    return response.result.courseWork;
+  }
+  async getCourseWorkMaterials(courseId: string): Promise<gapi.client.classroom.CourseWorkMaterial[]> {
+    const response: gapi.client.Response<gapi.client.classroom.ListCourseWorkMaterialResponse> =
+      await gapi.client.classroom.courses.courseWorkMaterials.list({
+        courseId: courseId,
+      });
+    return response.result.courseWorkMaterial;
+  }
+  async getAnnouncements(courseId: string): Promise<gapi.client.classroom.Announcement[]> {
+    const response: gapi.client.Response<gapi.client.classroom.ListAnnouncementsResponse> =
+      await gapi.client.classroom.courses.announcements.list({
+        courseId: courseId,
+      });
+    return response.result.announcements;
+  }
+  async getAliases(courseId: string): Promise<gapi.client.classroom.CourseAlias[]> {
+    const response: gapi.client.Response<gapi.client.classroom.ListCourseAliasesResponse> =
+      await gapi.client.classroom.courses.aliases.list({
+        courseId: courseId,
+      });
+    return response.result.aliases;
+  }
+  async getTopics(courseId: string): Promise<gapi.client.classroom.Topic[]> {
+    const response: gapi.client.Response<gapi.client.classroom.ListTopicResponse> =
+      await gapi.client.classroom.courses.topics.list({
+        courseId: courseId,
+      });
+    return response.result.topic;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
   async getFullCourses(studentId?: string, teacherId?: string, pageSize?: number, courseStates?: string[]) {
     var pageToken = null;
     var optionalArgs = {

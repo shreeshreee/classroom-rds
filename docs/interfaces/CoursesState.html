@@ -70,7 +70,7 @@
                 <h3>Extiende</h3>
             </p>
             <p class="comment">
-                        <code><a href="../miscellaneous/enumerations.html#State" target="_self" >EntityState</a></code>
+                        <code><a href="../interfaces/State.html" target="_self" >EntityState</a></code>
             </p>
 
         <section>
@@ -86,10 +86,23 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#allCoursesLoaded">allCoursesLoaded</a>
+                                        <a href="#entities">entities</a>
                                 </li>
                                 <li>
+                                            <span class="modifier">Opcional</span>
+                                        <a href="#error">error</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Opcional</span>
+                                        <a href="#isLoading">isLoading</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Opcional</span>
                                         <a href="#selectedCourseId">selectedCourseId</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Opcional</span>
+                                        <a href="#total">total</a>
                                 </li>
                             </ul>
                         </td>
@@ -106,13 +119,76 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="allCoursesLoaded"></a>
-                                        <span class="name"><b>allCoursesLoaded</b><a href="#allCoursesLoaded"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="entities"></a>
+                                        <span class="name"><b>entities</b><a href="#entities"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>allCoursesLoaded:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                        <code>entities:     <code>literal type</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>    <code>literal type</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="error"></a>
+                                        <span class="name"><b>error</b><a href="#error"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>error:         <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="isLoading"></a>
+                                        <span class="name"><b>isLoading</b><a href="#isLoading"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>isLoading:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -125,6 +201,11 @@
                                         </td>
                                     </tr>
 
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
 
 
 
@@ -141,7 +222,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>selectedCourseId:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>selectedCourseId:     <code>string | number</code>
 </code>
                                     </td>
                                 </tr>
@@ -149,11 +230,50 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            <i>Tipo : </i>    <code>string | number</code>
 
                                         </td>
                                     </tr>
 
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="total"></a>
+                                        <span class="name"><b>total</b><a href="#total"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>total:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
 
 
 
@@ -170,45 +290,65 @@ import { Action, createReducer, on } from &#x27;@ngrx/store&#x27;;
 
 import * as coursesActions from &#x27;./courses.actions&#x27;;
 export const coursesFeatureKey &#x3D; &#x27;courses&#x27;;
-
-export interface CoursesState extends EntityState&lt;gapi.client.classroom.Course&gt; {
-  // additional entities state properties
-  allCoursesLoaded: boolean;
-  selectedCourseId: string;
-
-}
-export const adapter: EntityAdapter&lt;gapi.client.classroom.Course&gt; &#x3D; createEntityAdapter&lt;gapi.client.classroom.Course&gt;();
-export const initialState: CoursesState &#x3D; adapter.getInitialState({
-  // additional entity state properties
-  allCoursesLoaded: false,
-  selectedCourseId: null
+/** --------------------------------------- */
+export const coursesAdapter: EntityAdapter&lt;gapi.client.classroom.Course&gt; &#x3D; createEntityAdapter&lt;gapi.client.classroom.Course&gt;({
+  selectId: model &#x3D;&gt; model.id,
 });
+export interface CoursesState extends EntityState&lt;gapi.client.classroom.Course&gt; {
+  entities: { [id: string]: gapi.client.classroom.Course };
+  isLoading?: boolean;
+  error?: any;
+  total?: number;
+  selectedCourseId?: string | number;
+}
+
+export const initialState: CoursesState &#x3D; coursesAdapter.getInitialState({
+  entities: {},
+  isLoading: false,
+  error: null,
+  selectedCourseId: null,
+  total: 0
+});
+
 export const coursesReducer &#x3D; createReducer&lt;CoursesState&gt;(
   initialState,
-  on(coursesActions.loadCourses, (state, action) &#x3D;&gt; {
-    return adapter.setAll(action.courses, state);
-  }),
+  on(coursesActions.loadCoursesSuccess, (state, { courses }) &#x3D;&gt;
+    coursesAdapter.setAll(courses, {
+      ...state,
+    })
+  ),
+  on(coursesActions.loadCourseSuccess, (state, { course }) &#x3D;&gt;
+    coursesAdapter.setOne(course, {
+      ...state
+    })
+  ),
+  on(coursesActions.loadCourseFail, coursesActions.loadCoursesFail, (state, { error }) &#x3D;&gt; ({
+    ...state,
+    isLoading: false,
+    error
+  })),
+  on(coursesActions.selectCourse, (state, { selectedCourseId }) &#x3D;&gt; {
+    return ({
+      ...state,
+      selectedCourseId
+    });
+  })
 );
-export const getSelectedCourseId &#x3D; (state: CoursesState) &#x3D;&gt; state.selectedCourseId;
-const {
+
+export function reducer(state: CoursesState | undefined, action: Action) {
+  return coursesReducer(state, action);
+}
+/*
+export const getSelectedCourseId &#x3D; (state: State) &#x3D;&gt; state.selectedCourseId;
+
+
+export const {
   selectIds,
   selectEntities,
   selectAll,
   selectTotal,
-} &#x3D; adapter.getSelectors();
-
-// select the array of user ids
-export const selectCourseIds &#x3D; selectIds;
-
-// select the dictionary of user entities
-export const selectCourseEntities &#x3D; selectEntities;
-
-// select the array of users
-export const selectAllCourses &#x3D; selectAll;
-
-// select the total user count
-export const selectCourseTotal &#x3D; selectTotal;
-
+} &#x3D; adapter.getSelectors()
+*/
 </code></pre>
     </div>
 </div>

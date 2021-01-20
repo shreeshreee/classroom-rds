@@ -79,28 +79,36 @@ import { AuthGuard } from &#x27;./auth/guards/auth.guard&#x27;;
 import { LayoutComponent } from &#x27;./core/layout/layout.component&#x27;;
 import { ProfileComponent } from &#x27;./auth/containers/profile/profile.component&#x27;;
 import { AboutComponent } from &#x27;./shared/components/about/about.component&#x27;;
+import { CodeConductComponent } from &#x27;./shared/components/code-conduct/code-conduct.component&#x27;;
 import { HomeComponent } from &#x27;./shared/components/home/home.component&#x27;;
+import { LicenseComponent } from &#x27;./shared/components/license/license.component&#x27;;
 import { NotFoundComponent } from &#x27;./shared/components/not-found/not-found.component&#x27;;
 import { PrivacyPolicyComponent } from &#x27;./shared/components/privacy-policy/privacy-policy.component&#x27;;
+import { TermsComponent } from &#x27;./shared/components/terms/terms.component&#x27;;
 import { UnderConstructionComponent } from &#x27;./shared/components/under-construction/under-construction.component&#x27;;
-
+import * as fromCourse from &#x27;./store/course&#x27;
 const routes: Routes &#x3D; [{
   path: &#x27;&#x27;, component: LayoutComponent, children: [
     { path: &#x27;&#x27;, component: HomeComponent },
-    { path: &#x27;courses&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./courses/courses.module&#x27;).then(m &#x3D;&gt; m.CoursesModule)&quot;, canActivate: [AuthGuard]/* ,canActivate: [AuthGuard]  */ },
+    { path: pluralizedEntityName, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./courses/courses.module&#x27;).then(m &#x3D;&gt; m.CoursesModule)&quot;, canActivate: [AuthGuard]/* ,canActivate: [AuthGuard]  */ },
     { path: &#x27;profile&#x27;, component: ProfileComponent, canActivate: [AngularFireAuthGuard] },
     { path: &#x27;about&#x27;, component: AboutComponent },
     { path: &#x27;privacy-policy&#x27;, component: PrivacyPolicyComponent },
     { path: &#x27;not-found&#x27;, component: NotFoundComponent },
+    { path: &#x27;license&#x27;, component: LicenseComponent },
+    { path: &#x27;code-conduct&#x27;, component: CodeConductComponent },
+    { path: &#x27;terms&#x27;, component: TermsComponent },
     { path: &#x27;under-construction&#x27;, component: UnderConstructionComponent },
-    { path: &#x27;**&#x27;, redirectTo: &#x27;not-found&#x27; }
+    /* { path: &#x27;**&#x27;, redirectTo: &#x27;not-found&#x27; } */
   ]
 },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    relativeLinkResolution: &#x27;legacy&#x27;
+    //relativeLinkResolution: &#x27;legacy&#x27;,
+    //initialNavigation: &#x27;enabled&#x27;,
+    //enableTracing: false
   }
   )],
   exports: [RouterModule]
