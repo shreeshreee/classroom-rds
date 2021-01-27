@@ -11,28 +11,24 @@ import { filter, first, tap } from 'rxjs/operators';
 
 import { TeacherEntityService } from '../../../store/teacher/teacher-entity.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class TeachersResolver implements Resolve<boolean> {
 
   constructor(
     private teacherEntityService: TeacherEntityService,
   ) { }
-
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> {
-    return this.teacherEntityService.loaded$
+    return this.teacherEntityService.loading$
       .pipe(
-        tap(loaded => {
-          if (!loaded) {
-            const id =
-              this.teacherEntityService.getWithQuery(route.parent.params.courseId);
+        tap(loading => {
+          if (!loading) {
+            this.teacherEntityService.getWithQuery(route.paramMap.get('courseId'));
           }
         }),
-        filter(loaded => !!loaded),
+        filter(loading => !!loading),
         first()
       );
 

@@ -8,7 +8,7 @@ import { from, Observable, of } from 'rxjs';
 import { CoursesService } from '../../courses/services/course/courses.service';
 
 import * as fromStudent from './'
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class StudentDataService extends DefaultDataService<gapi.client.classroom.Student> {
   constructor(
     http: HttpClient,

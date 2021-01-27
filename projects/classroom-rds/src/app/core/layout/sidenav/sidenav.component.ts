@@ -37,7 +37,7 @@ export class SidenavComponent implements OnInit {
   linkText: boolean = false;
   classroomPages: Page[] = [
     { name: 'Inicio', route: ['/'], icon: faHome },
-    { name: 'Coursos', route: ['courses'], icon: faChalkboardTeacher },
+    { name: 'Coursos', route: ['/c'], icon: faChalkboardTeacher },
     { name: 'Profesores', route: ['teachers'], icon: faUserTie },
     { name: 'Alumnos', route: ['stundets'], icon: faUserGraduate },
   ]

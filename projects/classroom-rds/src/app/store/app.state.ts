@@ -4,16 +4,11 @@ import { routerReducer, RouterReducerState } from '@ngrx/router-store';
 import { environment } from '../../environments/environment';
 import * as fromauthActions from '../auth/state/auth.actions';
 import { AuthenticationState, authFeatureKey, authReducer } from '../auth/state/auth.reducer';
-import { coursesReducer, CoursesState } from '../courses/state/courses.reducer';
-
-import { pluralizedEntityName } from './course/state';
 export interface AppState {
-  [pluralizedEntityName]: CoursesState;
   [authFeatureKey]: AuthenticationState;
   router: RouterReducerState;
 }
 export const reducers: ActionReducerMap<AppState> = {
-  [pluralizedEntityName]: coursesReducer,
   [authFeatureKey]: authReducer,
   router: routerReducer,
 };

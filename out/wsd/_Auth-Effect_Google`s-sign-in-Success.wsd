@@ -60,7 +60,7 @@ interface "route.effects:: RouteEffects L" << (L,orchid) listen >> {
             action: [Auth Effect] Google`s sign-in Success
             ..
             Class: RouteEffects
-Property: gohome$
+Property: goroot$
             __
         }
         "[Auth Effect] Google`s sign-in Success" <.down. "route.effects:: RouteEffects L"

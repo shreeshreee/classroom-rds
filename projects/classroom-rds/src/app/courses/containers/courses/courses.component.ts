@@ -9,6 +9,7 @@ import { AnnouncementDialogComponent } from '../../components/announcement-dialo
 import { CourseDialogComponent } from '../../components/course-dialog/course-dialog.component';
 import { CoursesService } from '../../services/course/courses.service';
 import { CourseEntityService } from '../../../store/course/course-entity.service';
+
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
@@ -20,18 +21,20 @@ export class CoursesComponent implements OnInit {
   courses: gapi.client.classroom.Course[];
   courses$: Observable<gapi.client.classroom.Course[]>;
 
-  isLoading$: Observable<boolean>;
-  public loading: boolean;
-  public error$: Observable<boolean>;
-
+  /*  isLoading$: Observable<boolean>;
+   public loading: boolean;
+   public error$: Observable<boolean>;
+  */
   faPlus = faPlus;
   faListAlt = faListAlt;
   faBullhorn = faBullhorn;
   constructor(
     private dialog: MatDialog,
     private coursesService: CoursesService,
-    private courseEntityService: CourseEntityService
-  ) { }
+    private courseEntityService: CourseEntityService,
+  ) {
+
+  }
   ngOnInit(): void { }
   openCreateCourseDialog() {
     let course: gapi.client.classroom.Course = {};
@@ -62,7 +65,7 @@ export class CoursesComponent implements OnInit {
       if (result) {
         this.courseEntityService.keys$.subscribe((courseIds: string[]) => {
           courseIds.map(async (courseId: string) => {
-            const response = await this.coursesService.createSchoolAnnouncement(
+            const response = await this.coursesService.createAnnouncement(
               result.newAnnouncement as gapi.client.classroom.Announcement, courseId);
           });
         });

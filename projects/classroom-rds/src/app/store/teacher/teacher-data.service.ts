@@ -9,9 +9,7 @@ import { CoursesService } from '../../courses/services/course/courses.service';
 
 import * as fromTeacher from './';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class TeacherDataService extends DefaultDataService<gapi.client.classroom.Teacher> {
   constructor(
     http: HttpClient,
@@ -20,6 +18,7 @@ export class TeacherDataService extends DefaultDataService<gapi.client.classroom
   ) {
     super(fromTeacher.entityCollectionName, http, httpUrlGenerator);
   }
+
   getWithQuery(courseId: string): Observable<gapi.client.classroom.Teacher[]> {
     return from(this.coursesService.getTeachers(courseId));
   }

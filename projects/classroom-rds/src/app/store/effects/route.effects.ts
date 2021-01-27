@@ -9,13 +9,21 @@ import * as fromAuthActions from '../../auth/state/auth.actions';
 @Injectable()
 export class RouteEffects {
 
+  goroot$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(
+          fromAuthActions.signInSuccess),
+        tap(() => this.router.navigate(['/']))
+      ),
+    { dispatch: false }
+  );
   gohome$ = createEffect(
     () =>
       this.actions$.pipe(
         ofType(
-          fromAuthActions.signInSuccess,
           fromAuthActions.signOutCompleted),
-        tap(() => this.router.navigate(['/']))
+        tap(() => this.router.navigate(['/home']))
       ),
     { dispatch: false }
   );

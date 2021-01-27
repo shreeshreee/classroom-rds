@@ -64,6 +64,16 @@ Property: updateProfile$
             __
         }
         "[Auth Component] Authorization error" -down-> "fire.effects:: FireEffects D"
+
+interface "spinner.effects:: SpinnerEffects L" << (L,orchid) listen >> {
+            name: authError
+            action: [Auth Component] Authorization error
+            ..
+            Class: SpinnerEffects
+Property: spinneroff$
+            __
+        }
+        "[Auth Component] Authorization error" <.down. "spinner.effects:: SpinnerEffects L"
  
 
 @enduml

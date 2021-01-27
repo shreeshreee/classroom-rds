@@ -1,20 +1,12 @@
 <div class="course-content" *ngIf="!(isLoading$|async)">
-  <div class="mt-2" f>
-    <div class="d-flex align-items-center">
-      Se muestran {{dataSource.filteredData.length}} cursos.
-    </div>
-    <mat-form-field appearance="outline">
-      <mat-label>Estado del curso</mat-label>
-      <mat-select [(ngModel)]="selectedStates" (selectionChange)="applyFilter($event.value)" type="text"
-        placeholder="Todos" multiple>
-        <mat-option *ngFor="let key of keys" [value]="states[key]">
-          {{states[key]}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+  <mat-expansion-panel class="mat-elevation-z0 card border-info">
+    <mat-expansion-panel-header>
+      <mat-panel-title>Búsqueda...</mat-panel-title>
+      <mat-panel-description>(por nombre, status y fecha de creación)</mat-panel-description>
+    </mat-expansion-panel-header>
     <form [formGroup]="searchForm">
-      <div fxLayout="row wrap" fxLayoutAlign="space-around" fxLayout.lt-sm="column wrap">
-        <mat-form-field fxFlex="0 1 calc(30% - 5px)" fxFlex.lt-sm="100%" appearance="outline">
+      <div fxLayout="row flex" fxLayoutAlign="space-between stretch" fxLayoutAlign.lt-md="end" fxLayout.lt-md="column">
+        <mat-form-field class="my-n2" fxFlex="0 1 calc(33% - 5px)" fxFlex.lt-md="100%" appearance="outline">
           <mat-label>Busca una clase por nombre</mat-label>
           <input matInput type="search" class="dc-search" placeholder="Search Course" (keyup)="applyFilter()"
             formControlName="name" (click)="searching=true">
@@ -23,7 +15,16 @@
             <mat-icon *ngIf="searching">clear</mat-icon>
           </button>
         </mat-form-field>
-        <mat-form-field fxFlex="0 1 calc(30% - 5px)" fxFlex.lt-sm="100%" appearance="outline">
+        <mat-form-field class="my-n2" fxFlex="0 1 calc(33% - 5px)" fxFlex.lt-md="100%" appearance="outline">
+          <mat-label>Estado del curso</mat-label>
+          <mat-select [ngModelOptions]="{standalone: true}" [(ngModel)]="selectedStates"
+            (selectionChange)="applyFilter($event.value)" type="text" placeholder="Todos" multiple>
+            <mat-option *ngFor="let key of keys" [value]="states[key]">
+              {{states[key]}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="my-n2" fxFlex="0 1 calc(33% - 5px)" fxFlex.lt-md="100%" appearance="outline">
           <mat-label>Fecha de creación</mat-label>
           <input matInput formControlName="creationTime" [matDatepicker]="picker" (dateInput)="applyFilter()">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -31,7 +32,7 @@
         </mat-form-field>
       </div>
     </form>
-  </div>
+  </mat-expansion-panel>
   <div class="table-container">
     <mat-table class="full-width-table table-hover" matSort aria-label="Course work table">
       <ng-container matColumnDef="courseState">
@@ -101,14 +102,15 @@
       </ng-container> -->
 
       <mat-header-row *matHeaderRowDef="displayedColumns, sticky: true"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;" class="course-row" [routerLink]="[row.id]">
+      <mat-row *matRowDef="let row; columns: displayedColumns;" class="course-row" [routerLink]="[row.id]"
+        [routerLinkActive]="['active']">
       </mat-row>
       <!-- Row shown when there is no matching data.-->
-      <mat-footer-row *matFooterRowDef="!dataSource.filteredData.length ? ['noRecord'] : []" colSpan="3"
+      <mat-footer-row *matFooterRowDef="!dataSource.data.length ? ['noRecord'] : []" colSpan="3"
         style="text-align: center;">
       </mat-footer-row>
     </mat-table>
     <mat-paginator [ngStyle]="{'background-color':'inherit'}" #paginator [length]="dataSource.filteredData.length"
-      [pageSize]="5" [pageIndex]="0" [pageSizeOptions]="[5,10, 20, 50, 100]"></mat-paginator>
+      [pageSize]="10" [pageIndex]="0" [pageSizeOptions]="[5,10, 20, 50, 100]"></mat-paginator>
   </div>
 </div>

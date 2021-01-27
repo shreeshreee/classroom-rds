@@ -31,43 +31,6 @@
       "name": "authReducer"
     },
     {
-      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/courses/state/courses.reducer.ts",
-      "pos": 881,
-      "end": 1462,
-      "kind": 1004,
-      "kindText": "Reducer",
-      "state": {
-        "name": "CoursesState",
-        "properties": [
-          {
-            "name": "entities",
-            "type": "{ [id: string]: any; }"
-          },
-          {
-            "name": "isLoading",
-            "type": "boolean"
-          },
-          {
-            "name": "error",
-            "type": "any"
-          },
-          {
-            "name": "total",
-            "type": "number"
-          },
-          {
-            "name": "selectedCourseId",
-            "type": "string | number"
-          },
-          {
-            "name": "ids",
-            "type": "{}"
-          }
-        ]
-      },
-      "name": "coursesReducer"
-    },
-    {
       "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/users-rds/src/app/shared/store/user-profile/user-profile.reducer.ts",
       "pos": 270,
       "end": 1137,

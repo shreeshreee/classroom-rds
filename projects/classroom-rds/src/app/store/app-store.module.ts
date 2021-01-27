@@ -33,12 +33,14 @@ import { storeConfig } from './config/store-config';
     ),
     EntityDataModule.forRoot(fromEntity.entityConfig),
 
-    StoreRouterConnectingModule.forRoot(//{
-      //stateKey: 'router',
-      //routerState: RouterState.Full,
-      /* navigationActionTiming: NavigationActionTiming.PostActivation,
-      serializer: DefaultRouterStateSerializer */
-    /* } */),
+    StoreRouterConnectingModule.forRoot(
+      /*  {
+         stateKey: 'router',
+         routerState: RouterState.Full,
+         navigationActionTiming: NavigationActionTiming.PostActivation,
+         serializer: DefaultRouterStateSerializer
+       } */
+    ),
   ],
   providers: [
     NgrxToastService

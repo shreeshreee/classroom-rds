@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 import { CoursesService } from '../../courses/services/course/courses.service';
 
 import * as fromCourse from './';
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class CourseDataService extends DefaultDataService<gapi.client.classroom.Course> {
   constructor(
     http: HttpClient,
@@ -23,13 +23,13 @@ export class CourseDataService extends DefaultDataService<gapi.client.classroom.
       this.coursesService.getCourses()
     );
   }
-  getBykey(id: string): Observable<gapi.client.classroom.Course> {
-    return this.getById(id)
-      .pipe(
-        map(course => {
-          return course;
-        })
-      );
+  getByKey(courseId: string): Observable<gapi.client.classroom.Course> {
+    return this.getById(courseId)
+  }
+  add(course: gapi.client.classroom.Course): Observable<gapi.client.classroom.Course> {
+    return from(
+      this.coursesService.createCourse(course)
+    )
   }
 
   /* private mapcourse(course: gapi.client.classroom.Course): gapi.client.classroom.Course {

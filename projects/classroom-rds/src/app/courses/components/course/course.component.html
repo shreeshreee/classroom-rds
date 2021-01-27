@@ -1,53 +1,182 @@
-<div *ngIf="!(isLoading$|async); elseBlock">
-  <mat-card *ngIf="(course$|async) as course">
-    <app-course-info [course]="course" [owner]="owner$|async"></app-course-info>
-    <mat-card-actions fxLayout="row wrap" fxLayoutAlign="space-around center">
-      <div *ngIf="(students$|async) as students" fxLayout="column" fxLayoutAlign="center center">
-        <fa-icon mat-icon-button matTooltip="Alumnos del curso" matTooltipPosition="above" [icon]="faStudents"
-          size="2x">
-        </fa-icon>
-        <p matBadge="{{ students ? students.length :0}}" matBadgeColor="warn" matBadgePosition="after">Alumnos</p>
-      </div>
-      <div *ngIf="(courseWorks$|async) as courseWorks" fxLayout="column" fxLayoutAlign="center center">
-        <fa-icon mat-icon-button matTooltip="Consulta el trabajo de clase" matTooltipPosition="above"
-          [icon]="faFileSignature" size="2x">
-        </fa-icon>
-        <p matBadge="{{ courseWorks ? courseWorks.length : 0 }}" matBadgeColor="warn" matBadgePosition="before">
-          Actividades</p>
-      </div>
-      <div fxLayout="column" *ngIf="course.courseMaterialSets" fxLayoutAlign="center center">
-        <fa-icon mat-icon-button matTooltip="Consulta el trabajo de clase" matTooltipPosition="above"
-          [icon]="faFileSignature" size="2x">
-        </fa-icon>
-        <p matBadge="{{ course.courseMaterialSets.length ? course.courseMaterialSets.length : 0 }}" matBadgeColor="warn"
-          matBadgePosition="before">
-          Actividades</p>
-      </div>
-      <div fxLayout="column" fxLayoutAlign="center center">
-        <fa-icon class="px-1" [ngClass]="course.guardiansEnabled ? 'text-success' : 'text-danger'"
-          [icon]="course.guardiansEnabled ? faBell : faBellSlash " size="2x" matTooltip="{{
-              course.guardiansEnabled
-                ? 'Informe a tutores Activado'
-                : 'Informe a tutores Desactivado'
-            }}" matTooltipPosition="above">
-        </fa-icon>
-        <p>Tutores</p>
-      </div>
-      <div fxLayout="column" fxLayoutAlign="center center">
-        <fa-icon mat-button matTooltip="Maestros del curso" matTooltipPosition="above" [icon]="faTeachers" size="2x">
-        </fa-icon>
-        <p matBadge="{{ (teachers$|async) ? (teachers$|async).length : 0 }}" matBadgeColor="warn"
-          matBadgePosition="before">
-          Profesores
-        </p>
-      </div>
-    </mat-card-actions>
-  </mat-card>
-</div>
-<ng-template #elseBlock>
-  <div style="min-height: 50vh;" fxLayout="column" fxLayoutAlign="center center">
-    <mat-spinner strokeWidth="8" [diameter]="50">
-    </mat-spinner>
-    <span>Buscando clases...</span><br>
-  </div>
-</ng-template>
+<mat-accordion *ngIf="course$ | async as course">
+  <mat-expansion-panel class="mat-elevation-z0 card border-success">
+    <mat-expansion-panel-header>
+      <mat-panel-title>{{ course.name }}</mat-panel-title>
+      <mat-panel-description>{{ course.ownerId }}</mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutAlign="flex-start">
+      <mat-card
+        fxFlex="0 1 calc(50%)"
+        fxFlex.lt-sm="100%"
+        class="card border-success"
+      >
+        <mat-card-header>
+          <div mat-card-avatar>avatar</div>
+          <mat-card-title
+            >{{ course.room }}&nbsp;{{ course.section }}</mat-card-title
+          >
+          <mat-card-subtitle></mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ course.courseGroupEmail }}</p>
+          <p>{{ course.description }}</p>
+          <p>{{ course.descriptionHeading }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <div>
+            <fa-icon
+              class="px-1"
+              [ngClass]="
+                course.guardiansEnabled ? 'text-success' : 'text-danger'
+              "
+              [icon]="course.guardiansEnabled ? faBell : faBellSlash"
+              size="lg"
+              matTooltip="{{
+                course.guardiansEnabled
+                  ? 'Informe a tutores Activado'
+                  : 'Informe a tutores Desactivado'
+              }}"
+              matTooltipPosition="above"
+            >
+            </fa-icon>
+            Tutores
+          </div>
+        </mat-card-actions>
+      </mat-card>
+
+      <mat-card
+        fxFlex="0 1 calc(50%)"
+        fxFlex.lt-sm="100%"
+        class="card border-success"
+      >
+        <mat-card-header>
+          <mat-card-title>title</mat-card-title>
+          <mat-card-subtitle>subtitle</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content> </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Ok</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <mat-card class="card border-success m-0 text-black">
+      <mat-tab-group
+        dynamicHeight
+        #courseTabs
+        mat-stretch-tabs
+        class="w-100"
+        mat-align-tabs="center"
+        animationDuration="1000ms"
+      >
+        <mat-tab *ngIf="students$ | async as students">
+          <ng-template matTabLabel>
+            <span
+              [ngClass]="(isHandset$ | async) ? 'd-none' : ''"
+              matBadge="{{ students ? students.length : 0 }}"
+              matBadgeColor="warn"
+              matBadgePosition="above after"
+              matBadgeSize="medium"
+              [matBadgeHidden]="students.length == 0"
+              matTooltip="Alumnos del curso"
+              matTooltipPosition="above"
+            >
+              <fa-icon
+                [icon]="faUserGraduate"
+                [size]="(isHandset$ | async) ? '2x' : 'lg'"
+              >
+              </fa-icon>
+              &nbsp;Alumnos
+            </span>
+          </ng-template>
+          <app-course-students></app-course-students>
+        </mat-tab>
+
+        <mat-tab
+          *ngIf="teachers$ | async as teachers"
+          animationDuration="1000ms"
+        >
+          <ng-template matTabLabel>
+            <span
+              [ngClass]="(isHandset$ | async) ? 'd-none' : ''"
+              matBadge="{{ teachers ? teachers.length : 0 }}"
+              matBadgeColor="warn"
+              matBadgePosition="above after"
+              matBadgeSize="medium"
+              [matBadgeHidden]="teachers.length == 0"
+              matTooltip="Maestros del curso"
+              matTooltipPosition="above"
+            >
+              <fa-icon
+                [icon]="faUserTie"
+                [size]="(isHandset$ | async) ? '2x' : 'lg'"
+              >
+              </fa-icon>
+              &nbsp;Profesores</span
+            >
+          </ng-template>
+          <app-course-teachers></app-course-teachers>
+        </mat-tab>
+
+        <mat-tab
+          *ngIf="courseWorks$ | async as courseWorks"
+          animationDuration="1000ms"
+        >
+          <ng-template matTabLabel>
+            <span
+              [ngClass]="(isHandset$ | async) ? 'd-none' : ''"
+              [matBadge]="courseWorks ? courseWorks.length : 0"
+              matBadgeColor="warn"
+              matBadgePosition="above after"
+              matBadgeSize="medium"
+              [matBadgeHidden]="courseWorks.length == 0"
+            >
+              <fa-icon
+                matTooltip="Consulta el trabajo de clase"
+                matTooltipPosition="above"
+                [icon]="faBriefcase"
+                [size]="(isHandset$ | async) ? '2x' : 'lg'"
+              >
+              </fa-icon>
+              &nbsp;Actividades</span
+            >
+          </ng-template>
+          <app-course-work
+            [courseWorks]="courseWorks$ | async"
+          ></app-course-work>
+        </mat-tab>
+
+        <mat-tab
+          *ngIf="announcements$ | async as announcements"
+          animationDuration="1000ms"
+        >
+          <ng-template matTabLabel>
+            <span
+              [ngClass]="(isHandset$ | async) ? 'd-none' : ''"
+              [matBadge]="announcements ? announcements.length : 0"
+              matBadgeColor="warn"
+              matBadgeSize="medium"
+              matBadgePosition="above after"
+              [matBadgeHidden]="announcements.length == 0"
+            >
+              <fa-icon
+                matTooltip="Consulta el trabajo de clase"
+                matTooltipPosition="above"
+                [icon]="faBullhorn"
+                [size]="(isHandset$ | async) ? '2x' : 'lg'"
+              >
+              </fa-icon>
+              &nbsp;Avisos</span
+            >
+          </ng-template>
+          <ng-template matTabContent>
+            <app-course-announcements
+              [announcements]="announcements"
+            ></app-course-announcements>
+          </ng-template>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+  </mat-expansion-panel>
+</mat-accordion>

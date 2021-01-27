@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+import { resultMemoize } from '@ngrx/store';
+
 import { Course } from './../../models/course.model';
 import { environment } from './../../../../environments/environment';
 
@@ -39,7 +41,6 @@ export class CoursesService {
       // alert('loaded classroom');
     });
   }
-
   /**
   * Retrive an array of courses according to permissions access user logged in Google Classroom
   *
@@ -56,6 +57,14 @@ export class CoursesService {
       });
     return response.result.courses;
   }
+  async getCourse(courseId: string): Promise<gapi.client.classroom.Course> {
+    const response: gapi.client.Response<gapi.client.classroom.Course> =
+      await gapi.client.classroom.courses.get({
+        id: courseId,
+      });
+    return response.result;
+  }
+
   async getTeachers(courseId: string): Promise<gapi.client.classroom.Teacher[]> {
     const response: gapi.client.Response<gapi.client.classroom.ListTeachersResponse> =
       await gapi.client.classroom.courses.teachers.list({
@@ -112,165 +121,77 @@ export class CoursesService {
       });
     return response.result.topic;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-  async getFullCourses(studentId?: string, teacherId?: string, pageSize?: number, courseStates?: string[]) {
-    var pageToken = null;
-    var optionalArgs = {
-      courseStates: courseStates,
-      pageToken: pageToken,
-      pageSize: pageSize
-    };
-    while (true) {
-      const coursesResponse = this.getListCourses(studentId, teacherId, optionalArgs).then(courses => courses = courses);
-      pageToken = (await coursesResponse).nextPageToken;
-      return (await coursesResponse).courses.map(course => {
-        let fullCourse: Course = {
-          course: course,
-        };
-        this.getFullCourse(course.id, course.ownerId).then(
-          success => {
-            fullCourse.owner = success.ownerResponse.result;
-            fullCourse.students = success.studentsResponse.result.students;
-            fullCourse.teachers = success.teachersResponse.result.teachers;
-            fullCourse.courseWorks = success.courseWorkResponse.result.courseWork;
-          }
-        );
-        return fullCourse;
-      });
-      if (!pageToken) {
-        break;
-      }
-      //return coursesResponse
-    }
-
-  }
-  async getFullCourse(courseId: string, ownerId) {
-
-    const ownerResponse: gapi.client.Response<gapi.client.classroom.Teacher> =
-      await gapi.client.classroom.courses.teachers.get({ userId: ownerId, courseId: courseId });
-
-    const studentsResponse: gapi.client.Response<gapi.client.classroom.ListStudentsResponse> =
-      await gapi.client.classroom.courses.students.list({ courseId });
-
-    const teachersResponse: gapi.client.Response<gapi.client.classroom.ListTeachersResponse> =
-      await gapi.client.classroom.courses.teachers.list({ courseId });
-
-    const courseWorkResponse: gapi.client.Response<gapi.client.classroom.ListCourseWorkResponse> =
-      await gapi.client.classroom.courses.courseWork.list({ courseId });
-
-    return {
-      ownerResponse,
-      studentsResponse,
-      teachersResponse,
-      courseWorkResponse
-    };
-  }
-
-
   /**
-  * Retrive an array of courses according to permissions access user logged in Google Classroom
-  *
-  * @param studentId User Identifier from courses's list which is enrolled as student.
-  * @param teacherId User Identifier from courses's list which is enrolled as teacher.
-  * @param courseStates The course states from te courses to be query.
-  * @returns Course Array
-  */
-  async getListCourses(studentId?: string, teacherId?: string, optionalArgs?: any) {
-    const response: gapi.client.Response<gapi.client.classroom.ListCoursesResponse> =
-      await gapi.client.classroom.courses.list({
-        studentId: studentId,
-        teacherId: teacherId,
-        courseStates: optionalArgs.courseStates,
-        pageSize: optionalArgs.pageSize,
-        pageToken: optionalArgs.pageToken
+   * Create a courses in Google Classroom
+   *
+   * @param resource Course object to be created.
+   */
+  async createCourse(course: gapi.client.classroom.Course) {
+    const response: gapi.client.Response<gapi.client.classroom.Course> =
+      await gapi.client.classroom.courses.create({
+        resource: course
       });
     return response.result;
   }
-  async getCourseOwner(id: string, ownerId: string) {
-    const result: gapi.client.classroom.Teacher = await gapi.client.classroom.courses.teachers.get({ courseId: id, userId: ownerId })
-      .then(
-        (success: gapi.client.HttpRequestFulfilled<gapi.client.classroom.Teacher>) => {
-          return success.result;
-        },
-        (reason: gapi.client.HttpRequestRejected) => {
-          alert(`(${reason.status})\nError: ${reason.result['error'].message}`);
-          return null;
-        }
-      );
-    return result;
+  /**
+    * Make an announcement on a given course in Google Classroom
+    *
+    * @param courseId Identifier of course to be announce.
+    * @param announcement Announcement object to send.
+    */
+  async createAnnouncement(announcement: gapi.client.classroom.Announcement, courseId: string) {
+    const response: gapi.client.Response<gapi.client.classroom.Announcement> =
+      await gapi.client.classroom.courses.announcements.create({
+        courseId: courseId,
+        resource: announcement
+      });
+    return response.result;
   }
-  async listTeachersCourse(
-    cid: string,
-    pSize?: number,
-    pToken?: string
-  ) {
-    const params = {
-      courseId: cid || null,
-      pageSize: pSize || null,
-      pageToken: pToken || null
-    };
-
-
-    const teachers = await gapi.client.classroom.courses.teachers.list(params)
-      .then(res => {
-        return res.result.teachers;
+  /**
+  * Create adds a teacher on a course
+  * @param courseId
+  * @param email
+  */
+  async createTeacher(teacher: gapi.client.classroom.Teacher) {
+    const response: gapi.client.Response<gapi.client.classroom.Teacher> =
+      await gapi.client.classroom.courses.teachers.create({
+        resource: teacher,
+        courseId: teacher.courseId
       })
-    return teachers;
+    return response.result;
   }
   /**
-  * Create a courses in Google Classroom
-  *
-  * @param resource Course object to be created.
+  * Adds a student to a given course
+  * @param courseId
+  * @param email
   */
-  async createCourse(
-    course: gapi.client.classroom.Course
-  ) {
-    const result = await gapi.client.classroom.courses.create({ resource: course })
-      .then(
-        (success: gapi.client.HttpRequestFulfilled<gapi.client.classroom.Course>) => {
-          let course: gapi.client.classroom.Course = success.result;
-          return course;
-        },
-        (reason: gapi.client.HttpRequestRejected) => {
-          alert(`(${reason.status})\nError: ${reason.result['error'].message}`);
-          let course: gapi.client.classroom.Course = {};
-          return course;
-        }
-      );
-    return result;
-  }
-  /**
-  * Make an announcement on a given course in Google Classroom
-  *
-  * @param courseId Identifier of course to be announce.
-  * @param announcement Announcement object to send.
-  */
-  async createSchoolAnnouncement(announcement: gapi.client.classroom.Announcement, courseId: string) {
-    const result = await gapi.client.classroom.courses.announcements.create({ courseId, resource: announcement })
-      .then(
-        (success: gapi.client.HttpRequestFulfilled<gapi.client.classroom.Announcement>) => {
-          let announcement: gapi.client.classroom.Course = success.result;
-          return announcement;
-        },
-        (reason: gapi.client.HttpRequestRejected) => {
-          alert(`(${reason.status})\nError: ${reason.result['error'].message}`);
-          let announcement: gapi.client.classroom.Course = {};
-          return announcement;
-        }
-      );
-    return result;
+  async createStudent(student: gapi.client.classroom.Student) {
+    const response: gapi.client.Response<gapi.client.classroom.Student> =
+      await gapi.client.classroom.courses.students.create({
+        resource: student,
+        courseId: student.courseId
+      });
+    return response.result;
   }
 
+  /**
+   * Removes a teacher from a given course
+   * @param courseId
+   * @param email
+   */
+  async removeTeacher(courseId: string, email: string) {
+    let response: gapi.client.Response<gapi.client.classroom.Teacher> =
+      await gapi.client.classroom.courses.students.delete({ userId: email, courseId });
+    return response.result;
+  }
+  /**
+  * Removes a student from a given course
+  * @param courseId
+  * @param email
+  */
+  async removeStudent(courseId: string, email: string) {
+    const response: gapi.client.Response<gapi.client.classroom.Student> =
+      await gapi.client.classroom.courses.students.delete({ userId: email, courseId });
+    return response.result;
+  }
 }

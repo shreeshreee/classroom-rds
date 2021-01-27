@@ -150,7 +150,7 @@
                 },
                 {
                   "kindText": "PropertyDeclaration",
-                  "name": "gohome$"
+                  "name": "goroot$"
                 }
               ]
             },
@@ -471,6 +471,26 @@
                   "name": "updateProfile$"
                 }
               ]
+            },
+            {
+              "name": "authError",
+              "kind": 1003,
+              "kindText": "ActionReference",
+              "documentation": "",
+              "type": "ActionCreator<\"[Auth Component] Authorization error\", (props: { error: any; } & \"arrays are not allowed in action creators\") => { error: any; } & TypedAction<\"[Auth Component] Authorization error\">>",
+              "isCall": false,
+              "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/effects/spinner.effects.ts",
+              "fileName": "spinner.effects",
+              "declarationContext": [
+                {
+                  "kindText": "ClassDeclaration",
+                  "name": "SpinnerEffects"
+                },
+                {
+                  "kindText": "PropertyDeclaration",
+                  "name": "spinneroff$"
+                }
+              ]
             }
           ]
         },
@@ -637,275 +657,6 @@
                 {
                   "kindText": "PropertyDeclaration",
                   "name": "checkAdminRole$"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/courses/state/courses.reducer.ts",
-      "pos": 881,
-      "end": 1462,
-      "kind": 1004,
-      "kindText": "Reducer",
-      "state": {
-        "name": "CoursesState",
-        "properties": [
-          {
-            "name": "entities",
-            "type": "{ [id: string]: any; }"
-          },
-          {
-            "name": "isLoading",
-            "type": "boolean"
-          },
-          {
-            "name": "error",
-            "type": "any"
-          },
-          {
-            "name": "total",
-            "type": "number"
-          },
-          {
-            "name": "selectedCourseId",
-            "type": "string | number"
-          },
-          {
-            "name": "ids",
-            "type": "{}"
-          }
-        ]
-      },
-      "name": "coursesReducer",
-      "actions": [
-        {
-          "name": "[Courses] Load Courses Success",
-          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/courses/state/courses.actions.ts",
-          "pos": 372,
-          "end": 472,
-          "kind": 1002,
-          "kindText": "Action",
-          "createActionArgs": [
-            {
-              "name": "props",
-              "typeArguments": [
-                {
-                  "kind": 173,
-                  "kindText": "TypeLiteral",
-                  "properties": [
-                    {
-                      "name": "courses",
-                      "type": "gapi.client.classroom.Course[]"
-                    }
-                  ]
-                }
-              ],
-              "kind": 196,
-              "kindText": "CallExpression"
-            }
-          ],
-          "variable": "loadCoursesSuccess",
-          "references": [
-            {
-              "name": "loadCoursesSuccess",
-              "kind": 1003,
-              "kindText": "ActionReference",
-              "documentation": "",
-              "type": "ActionCreator<\"[Courses] Load Courses Success\", (props: { courses: {}; } & \"arrays are not allowed in action creators\") => { courses: {}; } & TypedAction<\"[Courses] Load Courses Success\">>",
-              "isCall": false,
-              "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/courses/state/courses.reducer.ts",
-              "fileName": "courses.reducer",
-              "declarationContext": [
-                {
-                  "kindText": "VariableDeclaration",
-                  "name": "coursesReducer"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "[Course] Loading Course Success",
-          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/courses/state/courses.actions.ts",
-          "pos": 706,
-          "end": 804,
-          "kind": 1002,
-          "kindText": "Action",
-          "createActionArgs": [
-            {
-              "name": "props",
-              "typeArguments": [
-                {
-                  "kind": 173,
-                  "kindText": "TypeLiteral",
-                  "properties": [
-                    {
-                      "name": "course",
-                      "type": "gapi.client.classroom.Course"
-                    }
-                  ]
-                }
-              ],
-              "kind": 196,
-              "kindText": "CallExpression"
-            }
-          ],
-          "variable": "loadCourseSuccess",
-          "references": [
-            {
-              "name": "loadCourseSuccess",
-              "kind": 1003,
-              "kindText": "ActionReference",
-              "documentation": "",
-              "type": "ActionCreator<\"[Course] Loading Course Success\", (props: { course: any; } & \"arrays are not allowed in action creators\") => { course: any; } & TypedAction<\"[Course] Loading Course Success\">>",
-              "isCall": false,
-              "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/courses/state/courses.reducer.ts",
-              "fileName": "courses.reducer",
-              "declarationContext": [
-                {
-                  "kindText": "VariableDeclaration",
-                  "name": "coursesReducer"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "[Course] Loading Course Fail",
-          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/courses/state/courses.actions.ts",
-          "pos": 836,
-          "end": 905,
-          "kind": 1002,
-          "kindText": "Action",
-          "createActionArgs": [
-            {
-              "name": "props",
-              "typeArguments": [
-                {
-                  "kind": 173,
-                  "kindText": "TypeLiteral",
-                  "properties": [
-                    {
-                      "name": "error",
-                      "type": "any"
-                    }
-                  ]
-                }
-              ],
-              "kind": 196,
-              "kindText": "CallExpression"
-            }
-          ],
-          "variable": "loadCourseFail",
-          "references": [
-            {
-              "name": "loadCourseFail",
-              "kind": 1003,
-              "kindText": "ActionReference",
-              "documentation": "",
-              "type": "ActionCreator<\"[Course] Loading Course Fail\", (props: { error: any; } & \"arrays are not allowed in action creators\") => { error: any; } & TypedAction<\"[Course] Loading Course Fail\">>",
-              "isCall": false,
-              "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/courses/state/courses.reducer.ts",
-              "fileName": "courses.reducer",
-              "declarationContext": [
-                {
-                  "kindText": "VariableDeclaration",
-                  "name": "coursesReducer"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "[Courses] Load Courses Fail",
-          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/courses/state/courses.actions.ts",
-          "pos": 505,
-          "end": 573,
-          "kind": 1002,
-          "kindText": "Action",
-          "createActionArgs": [
-            {
-              "name": "props",
-              "typeArguments": [
-                {
-                  "kind": 173,
-                  "kindText": "TypeLiteral",
-                  "properties": [
-                    {
-                      "name": "error",
-                      "type": "any"
-                    }
-                  ]
-                }
-              ],
-              "kind": 196,
-              "kindText": "CallExpression"
-            }
-          ],
-          "variable": "loadCoursesFail",
-          "references": [
-            {
-              "name": "loadCoursesFail",
-              "kind": 1003,
-              "kindText": "ActionReference",
-              "documentation": "",
-              "type": "ActionCreator<\"[Courses] Load Courses Fail\", (props: { error: any; } & \"arrays are not allowed in action creators\") => { error: any; } & TypedAction<\"[Courses] Load Courses Fail\">>",
-              "isCall": false,
-              "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/courses/state/courses.reducer.ts",
-              "fileName": "courses.reducer",
-              "declarationContext": [
-                {
-                  "kindText": "VariableDeclaration",
-                  "name": "coursesReducer"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "[Course] Select Course",
-          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/courses/state/courses.actions.ts",
-          "pos": 935,
-          "end": 1012,
-          "kind": 1002,
-          "kindText": "Action",
-          "createActionArgs": [
-            {
-              "name": "props",
-              "typeArguments": [
-                {
-                  "kind": 173,
-                  "kindText": "TypeLiteral",
-                  "properties": [
-                    {
-                      "name": "selectedCourseId",
-                      "type": "string"
-                    }
-                  ]
-                }
-              ],
-              "kind": 196,
-              "kindText": "CallExpression"
-            }
-          ],
-          "variable": "selectCourse",
-          "references": [
-            {
-              "name": "selectCourse",
-              "kind": 1003,
-              "kindText": "ActionReference",
-              "documentation": "",
-              "type": "ActionCreator<\"[Course] Select Course\", (props: { selectedCourseId: string; } & \"arrays are not allowed in action creators\") => { selectedCourseId: string; } & TypedAction<\"[Course] Select Course\">>",
-              "isCall": false,
-              "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/courses/state/courses.reducer.ts",
-              "fileName": "courses.reducer",
-              "declarationContext": [
-                {
-                  "kindText": "VariableDeclaration",
-                  "name": "coursesReducer"
                 }
               ]
             }

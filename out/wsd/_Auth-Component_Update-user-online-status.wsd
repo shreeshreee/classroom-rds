@@ -19,6 +19,16 @@ interface "[Auth Component] Update user online status" << (A,#FF7700) action >> 
         }
 
         
+interface "auth.effects:: AuthEffects D" << (D,orchid) dispatch >> {
+            name: updateOnlineStatus
+            action: [Auth Component] Update user online status
+            ..
+            Class: AuthEffects
+Property: signInSuccess$
+            __
+        }
+        "[Auth Component] Update user online status" -down-> "auth.effects:: AuthEffects D"
+
 interface "fire.effects:: FireEffects L" << (L,orchid) listen >> {
             name: updateOnlineStatus
             action: [Auth Component] Update user online status

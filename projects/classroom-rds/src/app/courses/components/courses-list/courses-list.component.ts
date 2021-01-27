@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, AfterViewInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
@@ -57,10 +58,8 @@ export class CoursesListComponent implements OnInit, AfterViewInit {
     private fb: FormBuilder
   ) {
     this.keys = Object.keys(this.states).filter(Number);
-    this.isLoading$ = this.courseEntityService.loading$;
     this.courseTotal$ = this.courseEntityService.count$
     this.courseEntityService.entities$.subscribe(courses => this.courses = courses);
-
   }
   ngOnInit(): void {
     this.searchFormInit();

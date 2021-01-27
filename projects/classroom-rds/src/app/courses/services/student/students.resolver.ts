@@ -12,23 +12,22 @@ import { StudentEntityService } from '../../../store/student/student-entity.serv
 
 @Injectable()
 export class StudentsResolver implements Resolve<boolean> {
-  courseId: string;
   constructor(
-    private studentEntityService: StudentEntityService,
+    private studentES: StudentEntityService,
   ) { }
 
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> {
-    return this.studentEntityService.loaded$
+    return this.studentES.loading$
       .pipe(
-        tap(loaded => {
-          if (!loaded) {
-            this.studentEntityService.getWithQuery(route.parent.params.courseId);
+        tap(loading => {
+          if (!loading) {
+            this.studentES.getWithQuery(route.paramMap.get('courseId'));
           }
         }),
-        filter(loaded => !!loaded),
+        filter(loading => !!loading),
         first()
       );
   }

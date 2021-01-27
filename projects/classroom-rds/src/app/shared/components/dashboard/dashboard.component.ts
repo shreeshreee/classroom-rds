@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
     {
       title: 'Classroom',
       description: 'Realiza funciones globales y particulares en Google Classroom',
-      route: 'courses/c',
+      route: 'c',
       imgUrl: 'assets/images/classroom-administrator.png',
     },
     {

@@ -1,0 +1,36 @@
+<mat-accordion [togglePosition]="'before'" dense>
+  <mat-expansion-panel *ngFor="let courseWork of courseWorks">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{courseWork.title}}
+      </mat-panel-title>
+      <mat-panel-description>
+        Fecha de entrega:
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>{{courseWork.description}}</p>
+
+    <mat-chip-list *ngIf="courseWork.materials!=null && courseWork.materials !=undefined; else elseBlock">
+      <mat-chip *ngFor="let material of courseWork.materials">
+        <a *ngIf="material.link as link" href="{{link.url}}">{{link.title}}</a>
+        <div *ngIf="material.driveFile as drive">
+          <img matChipAvatar src="{{drive.driveFile.thumbnailUrl}}">
+          <a href="{{drive.driveFile.alternateLink}}" target="_blank">{{drive.driveFile.title}}</a>
+        </div>
+        <div *ngIf="material.form as form">
+          <img matChipAvatar src="{{form.thumbnailUrl}}">
+          <a href="{{form.formUrl}}" target="_blank">{{form.title}}</a>
+        </div>
+      </mat-chip>
+    </mat-chip-list>
+    <ng-template #elseBlock>
+      <p>No se encontraron archivos adjuntos.</p>
+    </ng-template>
+
+
+    <mat-action-row>
+      <button mat-raised-button></button>
+      <button mat-raised-button></button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>

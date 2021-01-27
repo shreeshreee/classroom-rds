@@ -4,7 +4,7 @@ import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { UserProfile } from '../../../core/models/user-profile.model';
 
 export const entitySelectId = 'url';
-export const entityCollectionName = 'UserProfile;
+export const entityCollectionName = 'UserProfile';
 export const pluralizedEntityName = 'userprofiles';
 export const entityCollectionEndPoint = pluralizedEntityName;
 

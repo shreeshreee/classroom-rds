@@ -10,7 +10,7 @@
     width: 100%;
 
     mat-header-row {
-      height: 35px;
+      height: 50px;
     }
 
     .course-row:hover {
@@ -19,7 +19,7 @@
 
     .course-row.mat-footer-row,
     .course-row.mat-row {
-      height: 40px;
+      height: 30px;
       cursor: pointer;
     }
     mat-header-cell {

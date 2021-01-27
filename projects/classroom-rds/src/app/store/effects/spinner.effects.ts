@@ -35,7 +35,7 @@ export class SpinnerEffects {
           fromAppActions.loadAppSuccess,
           //fromCoursesActions.loadCoursesSuccess,
           //fromCoursesActions.loadCoursesFail,
-          //fromAuthActions.signOutCompleted,
+          fromAuthActions.authError,
           fromAuthActions.signInSuccess,
           fromAuthActions.signInFailure,
           fromAuthActions.updateProfileSuccess,

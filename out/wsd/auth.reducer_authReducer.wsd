@@ -60,7 +60,7 @@ interface "route.effects:: RouteEffects L" << (L,orchid) listen >> {
             action: [Auth Effect] Google`s sign-in Success
             ..
             Class: RouteEffects
-Property: gohome$
+Property: goroot$
             __
         }
         "[Auth Effect] Google`s sign-in Success" <.down. "route.effects:: RouteEffects L"
@@ -208,6 +208,16 @@ Property: updateProfile$
             __
         }
         "[Auth Component] Authorization error" -down-> "fire.effects:: FireEffects D"
+
+interface "spinner.effects:: SpinnerEffects L" << (L,orchid) listen >> {
+            name: authError
+            action: [Auth Component] Authorization error
+            ..
+            Class: SpinnerEffects
+Property: spinneroff$
+            __
+        }
+        "[Auth Component] Authorization error" <.down. "spinner.effects:: SpinnerEffects L"
 
 interface "[Auth Effect] Google`s sign-out request" << (A,#FF7700) action >> {
             variable: signOut

@@ -20,6 +20,9 @@ import { CoreModule } from './core/core.module';
 import { MaterialModule } from './modules/material.module';
 import { SharedModule } from './shared/shared.module';
 import { AppStoreModule } from './store/app-store.module';
+import { CoursesResolver } from './courses/services/course/courses.resolver';
+import { StudentsResolver } from './courses/services/student/students.resolver';
+import { TeachersResolver } from './courses/services/teacher/teachers.resolver';
 
 @NgModule({
   declarations: [
