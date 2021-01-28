@@ -1,5 +1,5 @@
-<mat-accordion [togglePosition]="'before'" dense>
-  <mat-expansion-panel *ngFor="let student of students$|async">
+<mat-accordion displayMode="flat" hideToggle>
+  <mat-expansion-panel *ngFor="let student of students$|async" class="card border-gray" [hideToggle]="true">
     <mat-expansion-panel-header>
       <mat-panel-title>
         {{student.profile.name.fullName}}
@@ -12,10 +12,5 @@
     <ng-template matExpansionPanelContent>
       Some deferred content
     </ng-template>
-    <mat-action-row>
-      <button mat-raised-button></button>
-      <button mat-raised-button></button>
-      <button mat-raised-button></button>
-    </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>

@@ -1,5 +1,6 @@
-<mat-accordion [togglePosition]="'before'">
-  <mat-expansion-panel *ngFor="let announcement of announcements">
+<mat-accordion displayMode="flat" [togglePosition]="'before'">
+  <mat-expansion-panel *ngFor="let announcement of announcements" class="mat-elevation-z0" (opened)="isExpanded = true"
+    (closed)="isExpanded = false">
     <mat-expansion-panel-header>
       <mat-panel-title class="text-truncated">
         {{ announcement.text }}
@@ -10,22 +11,18 @@
     </mat-expansion-panel-header>
     <ng-template matExpansionPanelContent>
       <p>{{ announcement.text }}</p>
-
-      <mat-chip-list
-        *ngIf="
-          announcement.materials != null && announcement.materials != undefined;
-          else elseBlock
-        "
-      >
+      <p> Publicado por: {{creator.name.fullName}}</p>
+      <mat-chip-list *ngIf="
+          announcement.materials != null && announcement.materials != undefined">
         <mat-chip *ngFor="let material of announcement.materials">
           <a *ngIf="material.link as link" href="{{ link.url }}">{{
             link.title
-          }}</a>
+            }}</a>
           <div *ngIf="material.driveFile as drive">
             <img matChipAvatar src="{{ drive.driveFile.thumbnailUrl }}" />
             <a href="{{ drive.driveFile.alternateLink }}" target="_blank">{{
               drive.driveFile.title
-            }}</a>
+              }}</a>
           </div>
           <div *ngIf="material.form as form">
             <img matChipAvatar src="{{ form.thumbnailUrl }}" />

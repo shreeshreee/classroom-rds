@@ -1,10 +1,12 @@
-import { EntityMetadataMap, PropsFilterFnFactory } from "@ngrx/data";
+import { EntityMetadataMap } from "@ngrx/data";
 
 import * as fromAnnouncement from './../announcement';
 import * as fromCourse from './../course';
 import * as fromCourseWork from './../course-work';
 import * as fromStudent from './../student';
 import * as fromTeacher from './../teacher';
+import * as fromUserProfile from './../user-profile';
+
 
 
 export const entityMetadata: EntityMetadataMap = {
@@ -40,6 +42,14 @@ export const entityMetadata: EntityMetadataMap = {
       optimisticUpdate: true,
     },
     selectId: (courseWork: gapi.client.classroom.CourseWork) => courseWork.id,
+  },
+  [fromUserProfile.entityCollectionName]: {
+    entityDispatcherOptions: {
+      optimisticAdd: true,
+      optimisticUpdate: true,
+      optimisticSaveEntities: true
+    },
+    selectId: (profile: gapi.client.classroom.UserProfile) => profile.id,
   },
   [fromAnnouncement.entityCollectionName]: {
     entityDispatcherOptions: {

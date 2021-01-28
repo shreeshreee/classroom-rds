@@ -8,9 +8,9 @@ import { map } from 'rxjs/operators';
 
 import { CoursesService } from '../../courses/services/course/courses.service';
 
-import * as fromUserProfile from './user-profile.state';
-@Injectable({ providedIn: 'root' })
-export class CourseDataService extends DefaultDataService<gapi.client.classroom.UserProfile> {
+import * as fromUserProfile from './';
+@Injectable()
+export class UserProfileDataService extends DefaultDataService<gapi.client.classroom.UserProfile> {
 
 
   constructor(
@@ -20,9 +20,9 @@ export class CourseDataService extends DefaultDataService<gapi.client.classroom.
   ) {
     super(fromUserProfile.entityCollectionName, http, httpUrlGenerator);
   }
-  get
 
-  /* private mapcourse(course: gapi.client.classroom.Course): gapi.client.classroom.Course {
-    return { ...course }
-  } */
+  getById(id: string): Observable<gapi.client.classroom.UserProfile> {
+    return from(this.coursesService.getUserProfile(id));
+  }
+
 }

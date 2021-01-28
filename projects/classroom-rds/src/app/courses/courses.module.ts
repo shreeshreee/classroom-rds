@@ -13,6 +13,7 @@ import * as fromCourse from './../store/course';
 import * as fromCourseWork from './../store/course-work';
 import * as fromStudent from './../store/student';
 import * as fromTeacher from './../store/teacher';
+import * as fromUserProfile from './../store/user-profile';
 import { AnnouncementDataService } from '../store/announcement/announcement-data.service';
 import { AnnouncementEntityService } from './../store/announcement/announcement-entity.service';
 import * as fromEntity from './../store/config/entity-metadata';
@@ -24,7 +25,8 @@ import { StudentDataService } from '../store/student/student-data.service';
 import { StudentEntityService } from '../store/student/student-entity.service';
 import { TeacherDataService } from './../store/teacher/teacher-data.service';
 import { TeacherEntityService } from './../store/teacher/teacher-entity.service';
-import { entityCollectionName } from './../../../../users-rds/src/app/shared/store/user-profile/user-profile.state';
+import { UserProfileDataService } from './../store/user-profile/user-profile-data.service';
+import { UserProfileEntityService } from './../store/user-profile/user-profile-entity.service';
 
 import { CoursesRoutingModule } from './courses-routing.module';
 
@@ -34,6 +36,7 @@ import { CourseAnnouncementsComponent } from './components/course-announcements/
 import { CourseDialogComponent } from './components/course-dialog/course-dialog.component';
 import { CourseStudentsComponent } from './components/course-students/course-students.component';
 import { CourseTeachersComponent } from './components/course-teachers/course-teachers.component';
+import { CourseWorkComponent } from './components/course-work/course-work.component';
 import { CourseComponent } from './components/course/course.component';
 import { CoursesListComponent } from './components/courses-list/courses-list.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
@@ -44,7 +47,7 @@ import { CoursesResolver } from './services/course/courses.resolver';
 import { CoursesService } from './services/course/courses.service';
 import { StudentsResolver } from './services/student/students.resolver';
 import { TeachersResolver } from './services/teacher/teachers.resolver';
-import { CourseWorkComponent } from './components/course-work/course-work.component';
+import { UserProfilesResolver } from './services/user-profile/user-profile.resolver';
 @NgModule({
   declarations: [
     CoursesComponent,
@@ -76,12 +79,14 @@ import { CourseWorkComponent } from './components/course-work/course-work.compon
     TeacherEntityService,
     AnnouncementEntityService,
     CourseWorkEntityService,
+    UserProfileEntityService,
     CourseDataService,
     StudentDataService,
     TeacherDataService,
     AnnouncementDataService,
     CourseWorkDataService,
-    CoursesResolver, StudentsResolver, TeachersResolver, AnnouncementResolver, CourseWorksResolver
+    UserProfileDataService,
+    CoursesResolver, StudentsResolver, TeachersResolver, AnnouncementResolver, CourseWorksResolver, UserProfilesResolver
   ]
 })
 export class CoursesModule {
@@ -95,12 +100,14 @@ export class CoursesModule {
     teacherEntityService: TeacherEntityService,
     announcementEntityService: AnnouncementEntityService,
     courseWorkEntityService: CourseWorkEntityService,
+    userProfileEntityService: UserProfileEntityService,
     entityDataService: EntityDataService,
     courseDataService: CourseDataService,
     studentDataService: StudentDataService,
     teacherDataService: TeacherDataService,
     announcementDataService: AnnouncementDataService,
-    courseWorkDataService: CourseWorkDataService
+    courseWorkDataService: CourseWorkDataService,
+    userProfileDataService: UserProfileDataService,
   ) {
     entityServices
       .registerEntityCollectionServices(
@@ -110,6 +117,7 @@ export class CoursesModule {
           teacherEntityService,
           announcementEntityService,
           courseWorkEntityService,
+          userProfileEntityService
         ]);
     eds
       .registerMetadataMap(fromEntity.entityMetadata);
@@ -123,6 +131,8 @@ export class CoursesModule {
       .registerService(fromCourseWork.entityCollectionName, courseWorkDataService);
     entityDataService
       .registerService(fromAnnouncement.entityCollectionName, announcementDataService);
+    entityDataService
+      .registerService(fromUserProfile.entityCollectionName, userProfileDataService);
 
 
   }

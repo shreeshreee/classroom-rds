@@ -1,13 +1,11 @@
 import {
   ActivatedRoute,
-  Router,
-  ActivatedRouteSnapshot,
+
 } from '@angular/router';
 import {
   Component,
   OnInit,
   ChangeDetectionStrategy,
-  Input,
 } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 
@@ -17,18 +15,23 @@ import {
   faBriefcase,
   faBullhorn,
   faFileSignature,
+  faUserCheck,
   faUserGraduate,
   faUserTie,
+  faUserTimes,
 } from '@fortawesome/free-solid-svg-icons';
+import { faEdit } from '@fortawesome/free-regular-svg-icons';
+import { faGoogleDrive } from '@fortawesome/free-brands-svg-icons';
 
-import { from, Observable, of } from 'rxjs';
-import { filter, first, map, shareReplay, take, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map, shareReplay, take } from 'rxjs/operators';
 
 import { AnnouncementEntityService } from './../../../store/announcement/announcement-entity.service';
 import { CourseWorkEntityService } from '../../../store/course-work/course-work-entity-service.service';
 import { CourseEntityService } from '../../../store/course/course-entity.service';
 import { StudentEntityService } from './../../../store/student/student-entity.service';
 import { TeacherEntityService } from './../../../store/teacher/teacher-entity.service';
+import { UserProfileEntityService } from './../../../store/user-profile/user-profile-entity.service';
 
 @Component({
   selector: 'app-course',
@@ -38,16 +41,10 @@ import { TeacherEntityService } from './../../../store/teacher/teacher-entity.se
 })
 export class CourseComponent implements OnInit {
   course$: Observable<gapi.client.classroom.Course>;
-
-  isOwenerLoaded$: Observable<boolean>;
-  isTeacherLoaded$: Observable<boolean>;
-  isStudentLoaded$: Observable<boolean>;
-  isTeachersLoading$: Observable<boolean>;
-  isStudentsLoading$: Observable<boolean>;
-  isAnnouncementLoading$: Observable<boolean>
   students$: Observable<gapi.client.classroom.Student[]>;
   courses$: Observable<gapi.client.classroom.Course[]>;
   teachers$: Observable<gapi.client.classroom.Teacher[]>;
+  /*   owner$: Observable<gapi.client.classroom.UserProfile>;*/
   owner$: Observable<gapi.client.classroom.Teacher>;
   courseWorks$: Observable<gapi.client.classroom.CourseWork[]>;
   announcements$: Observable<gapi.client.classroom.Announcement[]>;
@@ -62,11 +59,16 @@ export class CourseComponent implements OnInit {
   faUserTie = faUserTie;
   faBriefcase = faBriefcase;
   faBullhorn = faBullhorn;
+  faEdit = faEdit;
+  faGoogleDrive = faGoogleDrive;
+  faUserCheck = faUserCheck;
+  faUserTimes = faUserTimes;
   course: gapi.client.classroom.Course;
   teachers: gapi.client.classroom.Teacher[];
   students: gapi.client.classroom.Student[];
   owner: gapi.client.classroom.Teacher;
   isLoading$: Observable<boolean>;
+  isExpanded: boolean = true;
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
@@ -79,16 +81,17 @@ export class CourseComponent implements OnInit {
     private courseWorkEntityService: CourseWorkEntityService,
     private teacherEntityService: TeacherEntityService,
     private studentEntityService: StudentEntityService,
-    private announcementEntityService: AnnouncementEntityService
+    private announcementEntityService: AnnouncementEntityService,
+    private userProfileEntityService: UserProfileEntityService,
   ) {
-
-    //this.teacherEntityService.setLoaded(false);
-    //this.studentEntityService.setLoaded(false);
     this.courseId = this.route.snapshot.paramMap.get('courseId');
     this.course$ = this.courseEntityService.entities$.pipe(
-      map(courses => courses.find(course => course.id == this.courseId))
+      map(courses => {
+        this.course = courses.find(course => course.id == this.courseId);
+        this.ownerId = this.course.ownerId;
+        return courses.find(course => course.id == this.courseId);
+      })
     );
-
   }
   ngOnInit() {
     this.teachers$ = this.teacherEntityService.entities$.pipe(
@@ -96,7 +99,9 @@ export class CourseComponent implements OnInit {
         if (!teachers) {
           this.teacherEntityService.getWithQuery(this.courseId);
         }
-        return teachers.filter(x => x.courseId == this.courseId);
+        this.teachers = teachers.filter(x => x.courseId == this.courseId);
+        this.owner = this.teachers.find(x => x.userId == this.ownerId);
+        return this.teachers
       }),
     );
     this.announcements$ = this.announcementEntityService.entities$.pipe(

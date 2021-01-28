@@ -72,7 +72,7 @@ export class CoursesService {
       });
     return response.result.teachers;
   }
-  async getOwner(userId: string): Promise<gapi.client.classroom.UserProfile> {
+  async getUserProfile(userId: string): Promise<gapi.client.classroom.UserProfile> {
     const response: gapi.client.Response<gapi.client.classroom.UserProfile> =
       await gapi.client.classroom.userProfiles.get({
         userId: userId

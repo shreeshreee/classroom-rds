@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Observable } from 'rxjs';
 
+import { UserProfileEntityService } from './../../../store/user-profile/user-profile-entity.service';
+
 
 @Component({
   selector: 'app-course-work',
@@ -12,12 +14,13 @@ import { Observable } from 'rxjs';
 export class CourseWorkComponent implements OnInit {
   @Input() courseWorks: gapi.client.classroom.CourseWork[];
   creator: gapi.client.classroom.UserProfile;
-
+  panelOpenState: boolean = false;
   loading$: Observable<boolean>;
   courseWorks$: Observable<gapi.client.classroom.CourseWork[]>;
   courseId: string;
   constructor(
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void { }
 
