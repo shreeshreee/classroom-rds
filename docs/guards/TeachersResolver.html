@@ -105,7 +105,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">projects/classroom-rds/src/app/courses/services/teacher/teachers.resolver.ts:17</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">projects/classroom-rds/src/app/courses/services/teacher/teachers.resolver.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -170,8 +170,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="23"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/teacher/teachers.resolver.ts:23</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="20"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/teacher/teachers.resolver.ts:20</a></div>
                 </td>
             </tr>
 
@@ -248,28 +248,24 @@ import { filter, first, tap } from &#x27;rxjs/operators&#x27;;
 
 import { TeacherEntityService } from &#x27;../../../store/teacher/teacher-entity.service&#x27;;
 
-@Injectable({
-  providedIn: &#x27;root&#x27;
-})
+@Injectable()
 export class TeachersResolver implements Resolve&lt;boolean&gt; {
 
   constructor(
     private teacherEntityService: TeacherEntityService,
   ) { }
-
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable&lt;boolean&gt; {
-    return this.teacherEntityService.loaded$
+    return this.teacherEntityService.loading$
       .pipe(
-        tap(loaded &#x3D;&gt; {
-          if (!loaded) {
-            const id &#x3D;
-              this.teacherEntityService.getWithQuery(route.parent.params.courseId);
+        tap(loading &#x3D;&gt; {
+          if (!loading) {
+            this.teacherEntityService.getWithQuery(route.paramMap.get(&#x27;courseId&#x27;));
           }
         }),
-        filter(loaded &#x3D;&gt; !!loaded),
+        filter(loading &#x3D;&gt; !!loading),
         first()
       );
 

@@ -39,7 +39,7 @@
 
 <ol class="breadcrumb">
   <li>Inyectables</li>
-  <li>UserProfileEntityService</li>
+  <li>CourseWorkEntityService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -57,7 +57,7 @@
             <h3>Fichero</h3>
         </p>
         <p class="comment">
-            <code>projects/classroom-rds/src/app/store/user-profile/user-profile-entity.service.ts</code>
+            <code>projects/classroom-rds/src/app/store/course-work/course-work-entity-service.service.ts</code>
         </p>
 
 
@@ -69,33 +69,6 @@
             </p>
 
 
-            <section>
-    <h3 id="index">Índice</h3>
-    <table class="table table-sm table-bordered index-table">
-        <tbody>
-
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Métodos</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#getById">getById</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
 
             <section>
     <h3 id="constructor">Constructor</h3>
@@ -108,7 +81,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="10" class="link-to-prism">projects/classroom-rds/src/app/store/user-profile/user-profile-entity.service.ts:10</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="9" class="link-to-prism">projects/classroom-rds/src/app/store/course-work/course-work-entity-service.service.ts:9</a></div>
                             </td>
                         </tr>
 
@@ -146,82 +119,7 @@
         </table>
 </section>
 
-            <section>
-    
-    <h3 id="methods">
-        Métodos
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getById"></a>
-                    <span class="name">
-                        <b>
-                            getById
-                        </b>
-                        <a href="#getById"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
 
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="14"
-                            class="link-to-prism">projects/classroom-rds/src/app/store/user-profile/user-profile-entity.service.ts:14</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parámetros :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Nombre</td>
-                                    <td>Tipo</td>
-                                    <td>Opcional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>id</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Devuelve : </b>    <code>Observable&lt;gapi.client.classroom.UserProfile&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
 
     </div>
 
@@ -231,17 +129,17 @@
 
 import { EntityCollectionServiceBase, EntityCollectionServiceElementsFactory } from &#x27;@ngrx/data&#x27;;
 
-import { Observable } from &#x27;rxjs&#x27;;
-
-import * as fromUserProfile from &#x27;./&#x27;;
+import * as fromCourseWork from &#x27;./&#x27;;
 
 @Injectable()
-export class UserProfileEntityService extends EntityCollectionServiceBase&lt;gapi.client.classroom.UserProfile&gt; {
-  constructor(readonly serviceElementsFactory: EntityCollectionServiceElementsFactory) {
-    super(fromUserProfile.entityCollectionName, serviceElementsFactory);
-  }
-  getById(id: string): Observable&lt;gapi.client.classroom.UserProfile&gt; {
-    return this.getByKey(id);
+export class CourseWorkEntityService
+  extends EntityCollectionServiceBase&lt;gapi.client.classroom.CourseWork&gt; {
+
+  constructor(
+    serviceElementsFactory:
+      EntityCollectionServiceElementsFactory
+  ) {
+    super(fromCourseWork.entityCollectionName, serviceElementsFactory);
   }
 }
 </code></pre>
@@ -277,7 +175,7 @@ export class UserProfileEntityService extends EntityCollectionServiceBase&lt;gap
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'UserProfileEntityService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'CourseWorkEntityService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

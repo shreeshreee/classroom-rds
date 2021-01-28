@@ -62,6 +62,9 @@
                             <a href="#clearState" title="projects/users-rds/src/app/shared/store/reducers.ts"><b>clearState</b>&nbsp;&nbsp;&nbsp;(projects/.../reducers.ts)</a>
                         </li>
                         <li>
+                            <a href="#courseIdFilter" title="projects/classroom-rds/src/app/store/config/entity-metadata.ts"><b>courseIdFilter</b>&nbsp;&nbsp;&nbsp;(projects/.../entity-metadata.ts)</a>
+                        </li>
+                        <li>
                             <a href="#debug" title="projects/classroom-rds/src/app/store/app.state.ts"><b>debug</b>&nbsp;&nbsp;&nbsp;(projects/.../app.state.ts)</a>
                         </li>
                         <li>
@@ -86,13 +89,7 @@
                             <a href="#logout" title="projects/classroom-rds/src/app/store/app.state.ts"><b>logout</b>&nbsp;&nbsp;&nbsp;(projects/.../app.state.ts)</a>
                         </li>
                         <li>
-                            <a href="#nameFilter" title="projects/classroom-rds/src/app/store/config/entity-metadata.ts"><b>nameFilter</b>&nbsp;&nbsp;&nbsp;(projects/.../entity-metadata.ts)</a>
-                        </li>
-                        <li>
                             <a href="#nameFilter" title="projects/users-rds/src/app/shared/store/config/entity-metadata.ts"><b>nameFilter</b>&nbsp;&nbsp;&nbsp;(projects/.../entity-metadata.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#reducer" title="projects/classroom-rds/src/app/courses/state/courses.reducer.ts"><b>reducer</b>&nbsp;&nbsp;&nbsp;(projects/.../courses.reducer.ts)</a>
                         </li>
                         <li>
                             <a href="#reducer" title="projects/users-rds/src/app/shared/store/user-profile/user-profile.reducer.ts"><b>reducer</b>&nbsp;&nbsp;&nbsp;(projects/.../user-profile.reducer.ts)</a>
@@ -235,24 +232,24 @@
             </tr>
         </tbody>
     </table>
-</section>    <h3>projects/classroom-rds/src/app/store/app.state.ts</h3>
+</section>    <h3>projects/classroom-rds/src/app/store/config/entity-metadata.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="debug"></a>
+                    <a name="courseIdFilter"></a>
                     <span class="name">
                         <b>
-                            debug
+                            courseIdFilter
                         </b>
-                        <a href="#debug"><span class="icon ion-ios-link"></span></a>
+                        <a href="#courseIdFilter"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>debug(reducer)</code>
+<code>courseIdFilter(entities, courseId)</code>
                 </td>
             </tr>
 
@@ -273,7 +270,16 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>reducer</td>
+                                    <td>entities</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>courseId</td>
 
                                     <td>
                                         No
@@ -285,81 +291,12 @@
                         </table>
                     </div>
                     <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Devuelve : </b>        <code><a href="../miscellaneous/enumerations.html#State" target="_self" >ActionReducer&lt;AppState&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
                     </div>
                 </td>
             </tr>
         </tbody>
     </table>
     <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="logout"></a>
-                    <span class="name">
-                        <b>
-                            logout
-                        </b>
-                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>logout(reducer)</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parámetros :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Nombre</td>
-                                    <td>Opcional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>reducer</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Devuelve : </b>        <code><a href="../miscellaneous/enumerations.html#State" target="_self" >ActionReducer&lt;AppState, Action&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>    <h3>projects/classroom-rds/src/app/store/config/entity-metadata.ts</h3>
-    <section>
-    <h3></h3>    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
@@ -543,68 +480,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="nameFilter"></a>
-                    <span class="name">
-                        <b>
-                            nameFilter
-                        </b>
-                        <a href="#nameFilter"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>nameFilter(entities, search)</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parámetros :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Nombre</td>
-                                    <td>Opcional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>entities</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>search</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="sortByName"></a>
                     <span class="name">
                         <b>
@@ -661,6 +536,128 @@
                     </div>
                     <div class="io-description">
                         <b>Devuelve : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>projects/classroom-rds/src/app/store/app.state.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="debug"></a>
+                    <span class="name">
+                        <b>
+                            debug
+                        </b>
+                        <a href="#debug"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>debug(reducer)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>reducer</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="../miscellaneous/enumerations.html#State" target="_self" >ActionReducer&lt;AppState&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logout"></a>
+                    <span class="name">
+                        <b>
+                            logout
+                        </b>
+                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logout(reducer)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>reducer</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="../miscellaneous/enumerations.html#State" target="_self" >ActionReducer&lt;AppState, Action&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -928,70 +925,6 @@
                     </div>
                     <div class="io-description">
                         
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>    <h3>projects/classroom-rds/src/app/courses/state/courses.reducer.ts</h3>
-    <section>
-    <h3></h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="reducer"></a>
-                    <span class="name">
-                        <b>
-                            reducer
-                        </b>
-                        <a href="#reducer"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>reducer(state, action)</code>
-                </td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parámetros :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Nombre</td>
-                                    <td>Opcional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>state</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>action</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
                     </div>
                 </td>
             </tr>

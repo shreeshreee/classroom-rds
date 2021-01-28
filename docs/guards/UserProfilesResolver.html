@@ -28,7 +28,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content injectable">
+               <div class="content guard">
                    <div class="content-data">
 
 
@@ -37,9 +37,11 @@
 
 
 
+
+
 <ol class="breadcrumb">
-  <li>Inyectables</li>
-  <li>UserProfileEntityService</li>
+    <li>Guardias</li>
+    <li>UserProfilesResolver</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -52,24 +54,19 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
-        <p class="comment">
+        <div class="tab-pane fade active in" id="c-info">
+            <p class="comment">
             <h3>Fichero</h3>
-        </p>
-        <p class="comment">
-            <code>projects/classroom-rds/src/app/store/user-profile/user-profile-entity.service.ts</code>
-        </p>
-
-
-            <p class="comment">
-                <h3>Extiende</h3>
             </p>
             <p class="comment">
-                    <code>EntityCollectionServiceBase</code>
+                <code>projects/classroom-rds/src/app/courses/services/user-profile/user-profile.resolver.ts</code>
             </p>
 
 
-            <section>
+
+
+
+                <section>
     <h3 id="index">Índice</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -83,7 +80,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getById">getById</a>
+                                <a href="#resolve">resolve</a>
                             </li>
                         </ul>
                     </td>
@@ -97,18 +94,18 @@
     </table>
 </section>
 
-            <section>
+                <section>
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(serviceElementsFactory: EntityCollectionServiceElementsFactory)</code>
+<code>constructor(userProfileEntityService: <a href="../injectables/UserProfileEntityService.html">UserProfileEntityService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="10" class="link-to-prism">projects/classroom-rds/src/app/store/user-profile/user-profile-entity.service.ts:10</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">projects/classroom-rds/src/app/courses/services/user-profile/user-profile.resolver.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -126,10 +123,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>serviceElementsFactory</td>
+                                                        <td>userProfileEntityService</td>
                                                   
                                                         <td>
-                                                                    <code>EntityCollectionServiceElementsFactory</code>
+                                                                        <code><a href="../injectables/UserProfileEntityService.html" target="_self" >UserProfileEntityService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -146,7 +143,7 @@
         </table>
 </section>
 
-            <section>
+                <section>
     
     <h3 id="methods">
         Métodos
@@ -155,26 +152,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getById"></a>
+                    <a name="resolve"></a>
                     <span class="name">
                         <b>
-                            getById
+                            resolve
                         </b>
-                        <a href="#getById"><span class="icon ion-ios-link"></span></a>
+                        <a href="#resolve"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>resolve(route: <a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank">ActivatedRouteSnapshot</a>, state: <a href="../interfaces/State.html">RouterStateSnapshot</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="14"
-                            class="link-to-prism">projects/classroom-rds/src/app/store/user-profile/user-profile-entity.service.ts:14</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="20"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/user-profile/user-profile.resolver.ts:20</a></div>
                 </td>
             </tr>
 
@@ -194,9 +191,21 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>id</td>
+                                    <td>route</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                <code><a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank" >ActivatedRouteSnapshot</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>state</td>
+                                    <td>
+                                                <code><a href="../interfaces/State.html" target="_self" >RouterStateSnapshot</a></code>
                                     </td>
 
                                     <td>
@@ -211,7 +220,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Devuelve : </b>    <code>Observable&lt;gapi.client.classroom.UserProfile&gt;</code>
+                        <b>Devuelve : </b>    <code>Observable&lt;boolean&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -222,34 +231,49 @@
         </tbody>
     </table>
 </section>
+        </div>
 
-    </div>
 
+        <div class="tab-pane fade  tab-source-code" id="c-source">
+            <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import {
+  Router, Resolve,
+  RouterStateSnapshot,
+  ActivatedRouteSnapshot,
+  ActivatedRoute
+} from &#x27;@angular/router&#x27;;
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { Observable, of } from &#x27;rxjs&#x27;;
+import { filter, first, tap } from &#x27;rxjs/operators&#x27;;
 
-import { EntityCollectionServiceBase, EntityCollectionServiceElementsFactory } from &#x27;@ngrx/data&#x27;;
-
-import { Observable } from &#x27;rxjs&#x27;;
-
-import * as fromUserProfile from &#x27;./&#x27;;
+import { UserProfileEntityService } from &#x27;../../../store/user-profile/user-profile-entity.service&#x27;;
 
 @Injectable()
-export class UserProfileEntityService extends EntityCollectionServiceBase&lt;gapi.client.classroom.UserProfile&gt; {
-  constructor(readonly serviceElementsFactory: EntityCollectionServiceElementsFactory) {
-    super(fromUserProfile.entityCollectionName, serviceElementsFactory);
-  }
-  getById(id: string): Observable&lt;gapi.client.classroom.UserProfile&gt; {
-    return this.getByKey(id);
+export class UserProfilesResolver implements Resolve&lt;boolean&gt; {
+
+  constructor(
+    private userProfileEntityService: UserProfileEntityService,
+  ) { }
+  resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable&lt;boolean&gt; {
+    return this.userProfileEntityService.loading$
+      .pipe(
+        tap(loading &#x3D;&gt; {
+          if (!loading) {
+            this.userProfileEntityService.getWithQuery(route.paramMap.get(&#x27;courseId&#x27;));
+          }
+        }),
+        filter(loading &#x3D;&gt; !!loading),
+        first()
+      );
+
   }
 }
 </code></pre>
-    </div>
-
+        </div>
 </div>
-
-
 
 
 
@@ -276,8 +300,8 @@ export class UserProfileEntityService extends EntityCollectionServiceBase&lt;gap
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'UserProfileEntityService.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'guard';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserProfilesResolver.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

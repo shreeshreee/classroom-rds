@@ -36,7 +36,7 @@
 
 <ol class="breadcrumb">
   <li>Componentes</li>
-  <li>HomeComponent</li>
+  <li>UserCardComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,7 +62,7 @@
     <h3>Fichero</h3>
 </p>
 <p class="comment">
-    <code>projects/classroom-rds/src/app/shared/components/home/home.component.ts</code>
+    <code>projects/classroom-rds/src/app/courses/components/user-card/user-card.component.ts</code>
 </p>
 
 
@@ -80,6 +80,10 @@
     <table class="table table-sm table-hover">
         <tbody>
 
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
 
 
 
@@ -92,19 +96,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-home</code></td>
+                <td class="col-md-9"><code>app-user-card</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./home.component.scss</code></td>
+                <td class="col-md-9"><code>./user-card.component.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./home.component.html</code></td>
+                <td class="col-md-9"><code>./user-card.component.html</code></td>
             </tr>
 
 
@@ -122,20 +126,6 @@
     <h3 id="index">Índice</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Propiedades</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#isOnline$">isOnline$</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -152,6 +142,20 @@
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Entradas</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#user">user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -166,50 +170,43 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(store: <a href="../undefineds/State.html">Store<AppState></a>)</code>
+<code>constructor()</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="16" class="link-to-prism">projects/classroom-rds/src/app/shared/components/home/home.component.ts:16</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="10" class="link-to-prism">projects/classroom-rds/src/app/courses/components/user-card/user-card.component.ts:10</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parámetros :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Nombre</td>
-                                                    <td>Tipo</td>
-                                                <td>Opcional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>store</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../miscellaneous/enumerations.html#State" target="_self" >Store&lt;AppState&gt;</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
             </tbody>
         </table>
 </section>
 
+    <section>
+    <h3 id="inputs">Entradas</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="user"></a>
+                        <b>user</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>    <code>gapi.client.classroom.UserProfile</code>
 
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Definido en <a href="" data-line="10" class="link-to-prism">projects/classroom-rds/src/app/courses/components/user-card/user-card.component.ts:10</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -240,8 +237,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="20"
-                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/home/home.component.ts:20</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="13"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/components/user-card/user-card.component.ts:13</a></div>
                 </td>
             </tr>
 
@@ -258,79 +255,50 @@
         </tbody>
     </table>
 </section>
-    <section>
-    
-        <h3 id="inputs">
-            Propiedades
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="isOnline$"></a>
-                        <span class="name">
-                            <b>
-                            isOnline$</b>
-                            <a href="#isOnline$"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Tipo : </i>    <code>Observable&lt;boolean&gt;</code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="16" class="link-to-prism">projects/classroom-rds/src/app/shared/components/home/home.component.ts:16</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ChangeDetectionStrategy, Input } from &#x27;@angular/core&#x27;;
 
-import { select, Store } from &#x27;@ngrx/store&#x27;;
-
-import { Observable } from &#x27;rxjs&#x27;;
-
-import { AppState } from &#x27;../../../store/app.state&#x27;;
-import { User } from &#x27;../../../auth/models/user.model&#x27;;
-import * as fromAuthSelectors from &#x27;../../../auth/state/auth.selectors&#x27;;
 @Component({
-  selector: &#x27;app-home&#x27;,
-  templateUrl: &#x27;./home.component.html&#x27;,
-  styleUrls: [&#x27;./home.component.scss&#x27;]
+  selector: &#x27;app-user-card&#x27;,
+  templateUrl: &#x27;./user-card.component.html&#x27;,
+  styleUrls: [&#x27;./user-card.component.scss&#x27;],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent implements OnInit {
-  isOnline$: Observable&lt;boolean&gt;;
-  constructor(
-    private store: Store&lt;AppState&gt;,
-  ) { }
+export class UserCardComponent implements OnInit {
+  @Input() user: gapi.client.classroom.UserProfile;
+  constructor() { }
+
   ngOnInit(): void {
-    this.isOnline$ &#x3D; this.store.pipe(select(fromAuthSelectors.isLoggedIn));
   }
+
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;app-wellcome *ngIf&#x3D;&quot;!(isOnline$|async)&quot;&gt;&lt;/app-wellcome&gt;
-&lt;app-dashboard *ngIf&#x3D;&quot;(isOnline$|async)&quot;&gt;&lt;/app-dashboard&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;mat-card&gt;
+  &lt;mat-card-header&gt;
+    &lt;img mat-card-avatar [src]&#x3D;&quot;[user.photoUrl ? user.photoUrl : &#x27;assets/images/dummy-user.png&#x27;]&quot;&gt;
+    &lt;mat-card-title&gt;{{user.name.fullName}}&lt;/mat-card-title&gt;
+    &lt;mat-card-subtitle&gt;{{user.emailAddress}}&lt;/mat-card-subtitle&gt;
+  &lt;/mat-card-header&gt;
+  &lt;!-- &lt;mat-card-content&gt;
+
+  &lt;/mat-card-content&gt;
+  &lt;mat-card-actions&gt;
+    &lt;button mat-button&gt;Ok&lt;/button&gt;
+  &lt;/mat-card-actions&gt; --&gt;
+&lt;/mat-card&gt;
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./home.component.scss</code>
+                    <code>./user-card.component.scss</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss"></code></pre>
     </div>
@@ -360,10 +328,10 @@ export class HomeComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-wellcome *ngIf="!(isOnline$|async)"></app-wellcome><app-dashboard *ngIf="(isOnline$|async)"></app-dashboard></div>'
+        var COMPONENT_TEMPLATE = '<div><mat-card>  <mat-card-header>    <img mat-card-avatar [src]="[user.photoUrl ? user.photoUrl : \'assets/images/dummy-user.png\']">    <mat-card-title>{{user.name.fullName}}</mat-card-title>    <mat-card-subtitle>{{user.emailAddress}}</mat-card-subtitle>  </mat-card-header>  <!-- <mat-card-content>  </mat-card-content>  <mat-card-actions>    <button mat-button>Ok</button>  </mat-card-actions> --></mat-card></div>'
     var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthUserComponent', 'selector': 'app-auth-user'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainProfileComponent', 'selector': 'app-main-profile'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': 'app-snackbar'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
+    var ACTUAL_COMPONENT = {'name': 'UserCardComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -398,7 +366,7 @@ export class HomeComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'HomeComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserCardComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

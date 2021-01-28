@@ -36,7 +36,7 @@
 
 <ol class="breadcrumb">
   <li>Componentes</li>
-  <li>LoginDialogComponent</li>
+  <li>CourseAnnouncementsComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,7 +62,7 @@
     <h3>Fichero</h3>
 </p>
 <p class="comment">
-    <code>projects/classroom-rds/src/app/auth/components/login-dialog/login-dialog.component.ts</code>
+    <code>projects/classroom-rds/src/app/courses/components/course-announcements/course-announcements.component.ts</code>
 </p>
 
 
@@ -90,17 +90,21 @@
 
 
 
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-course-announcements</code></td>
+            </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./login-dialog.component.scss</code></td>
+                <td class="col-md-9"><code>./course-announcements.component.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./login-dialog.component.html</code></td>
+                <td class="col-md-9"><code>./course-announcements.component.html</code></td>
             </tr>
 
 
@@ -127,7 +131,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#faGoogle">faGoogle</a>
+                                <a href="#creator">creator</a>
+                            </li>
+                            <li>
+                                <a href="#isExpanded">isExpanded</a>
                             </li>
                         </ul>
                     </td>
@@ -145,12 +152,26 @@
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
                             <li>
-                                <a href="#onLogin">onLogin</a>
+                                <a href="#onExpand">onExpand</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Entradas</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#announcements">announcements</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -165,12 +186,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(store: <a href="../undefineds/State.html">Store<AppState></a>)</code>
+<code>constructor(userProfileEntityService: <a href="../injectables/UserProfileEntityService.html">UserProfileEntityService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">projects/classroom-rds/src/app/auth/components/login-dialog/login-dialog.component.ts:15</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-announcements/course-announcements.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -188,10 +209,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>store</td>
+                                                        <td>userProfileEntityService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../miscellaneous/enumerations.html#State" target="_self" >Store&lt;AppState&gt;</a></code>
+                                                                        <code><a href="../injectables/UserProfileEntityService.html" target="_self" >UserProfileEntityService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -208,7 +229,30 @@
         </table>
 </section>
 
+    <section>
+    <h3 id="inputs">Entradas</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="announcements"></a>
+                        <b>announcements</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>    <code>gapi.client.classroom.Announcement[]</code>
 
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Definido en <a href="" data-line="11" class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-announcements/course-announcements.component.ts:11</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -239,8 +283,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="21"
-                            class="link-to-prism">projects/classroom-rds/src/app/auth/components/login-dialog/login-dialog.component.ts:21</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="19"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-announcements/course-announcements.component.ts:19</a></div>
                 </td>
             </tr>
 
@@ -260,18 +304,18 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="onLogin"></a>
+                    <a name="onExpand"></a>
                     <span class="name">
                         <b>
-                            onLogin
+                            onExpand
                         </b>
-                        <a href="#onLogin"><span class="icon ion-ios-link"></span></a>
+                        <a href="#onExpand"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onLogin()</code>
+<code>onExpand(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -279,7 +323,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Definido en <a href="" data-line="23"
-                            class="link-to-prism">projects/classroom-rds/src/app/auth/components/login-dialog/login-dialog.component.ts:23</a></div>
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-announcements/course-announcements.component.ts:23</a></div>
                 </td>
             </tr>
 
@@ -288,8 +332,39 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>userId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
                         <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -305,22 +380,50 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="faGoogle"></a>
+                        <a name="creator"></a>
                         <span class="name">
                             <b>
-                            faGoogle</b>
-                            <a href="#faGoogle"><span class="icon ion-ios-link"></span></a>
+                            creator</b>
+                            <a href="#creator"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>faGoogle</code>
+                            <i>Tipo : </i>    <code>gapi.client.classroom.UserProfile</code>
+
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">projects/classroom-rds/src/app/auth/components/login-dialog/login-dialog.component.ts:15</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-announcements/course-announcements.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isExpanded"></a>
+                        <span class="name">
+                            <b>
+                            isExpanded</b>
+                            <a href="#isExpanded"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-announcements/course-announcements.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -333,54 +436,104 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnInit } from &#x27;@angular/core&#x27;;
 
-import { faGoogle } from &#x27;@fortawesome/free-brands-svg-icons&#x27;;
-
-import { Store } from &#x27;@ngrx/store&#x27;;
-
-import * as fromAuthActions from &#x27;./../../state/auth.actions&#x27;;
-import { AppState } from &#x27;./../../../store/app.state&#x27;;
+import { UserProfileEntityService } from &#x27;../../../store/user-profile/user-profile-entity.service&#x27;;
 
 @Component({
-  templateUrl: &#x27;./login-dialog.component.html&#x27;,
-  styleUrls: [&#x27;./login-dialog.component.scss&#x27;]
+  selector: &#x27;app-course-announcements&#x27;,
+  templateUrl: &#x27;./course-announcements.component.html&#x27;,
+  styleUrls: [&#x27;./course-announcements.component.scss&#x27;]
 })
-export class LoginDialogComponent implements OnInit {
-  faGoogle &#x3D; faGoogle;
-
+export class CourseAnnouncementsComponent implements OnInit {
+  @Input() announcements: gapi.client.classroom.Announcement[];
+  creator: gapi.client.classroom.UserProfile;
+  isExpanded: boolean;
   constructor(
-    private store: Store&lt;AppState&gt;
-  ) { }
+    private userProfileEntityService: UserProfileEntityService,
+  ) {
+  }
 
   ngOnInit(): void {
+
   }
-  onLogin() {
-    this.store.dispatch(
-      fromAuthActions.signIn()
-    );
+
+  onExpand(userId: string) {
+    this.userProfileEntityService.entities$.subscribe(users &#x3D;&gt; {
+      if (!users) {
+        this.userProfileEntityService.getByKey(userId)
+      }
+      this.creator &#x3D; users.find(x &#x3D;&gt; x.id &#x3D;&#x3D; userId);
+    });
+
   }
+  /* this.courseId &#x3D; this.route.snapshot.paramMap.get(&#x27;courseId&#x27;);
+  this.loading$ &#x3D; this.announcementEntityService.loading$;
+  this.announcements$ &#x3D; this.announcementEntityService.entities$
+    .pipe(
+      map(announcement &#x3D;&gt; {
+        if (!announcement) {
+          this.announcementEntityService.getWithQuery(this.courseId);
+        };
+        return announcement.filter(x &#x3D;&gt; x.courseId &#x3D;&#x3D;&#x3D; this.courseId);
+      })
+    ); */
 }
+
+
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div fxLayout&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;top center&quot;&gt;
-  &lt;h1 mat-dialog-title&gt;Inicio de sesión&lt;/h1&gt;
-  &lt;p mat-dialog-content&gt;Identificate con tu cuenta institucional&lt;/p&gt;
-  &lt;h2 mat-dialog-content&gt;@rafaeldiazserdan.net&lt;/h2&gt;
-  &lt;button mat-icon-button (click)&#x3D;&quot;onLogin()&quot;&gt;
-    &lt;!-- &lt;fa-icon [icon]&#x3D;&quot;faGoogle&quot;&gt;&lt;/fa-icon&gt; --&gt;
-    &lt;img class&#x3D;&quot;img-fluid&quot; src&#x3D;&quot;assets/images/google-logo.png&quot;&gt;
-  &lt;/button&gt;
-  &lt;h5&gt;Haz click aquí&lt;/h5&gt;
-&lt;/div&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;mat-accordion displayMode&#x3D;&quot;flat&quot; [togglePosition]&#x3D;&quot;&#x27;before&#x27;&quot;&gt;
+  &lt;mat-expansion-panel *ngFor&#x3D;&quot;let announcement of announcements&quot; class&#x3D;&quot;mat-elevation-z0&quot; (opened)&#x3D;&quot;isExpanded &#x3D; true&quot;
+    (closed)&#x3D;&quot;isExpanded &#x3D; false&quot;&gt;
+    &lt;mat-expansion-panel-header&gt;
+      &lt;mat-panel-title class&#x3D;&quot;text-truncated&quot;&gt;
+        {{ announcement.text }}
+      &lt;/mat-panel-title&gt;
+      &lt;mat-panel-description&gt;
+        {{ announcement.creationTime | date: &quot;medium&quot; }}
+      &lt;/mat-panel-description&gt;
+    &lt;/mat-expansion-panel-header&gt;
+    &lt;ng-template matExpansionPanelContent&gt;
+      &lt;p&gt;{{ announcement.text }}&lt;/p&gt;
+      &lt;p&gt; Publicado por: {{creator.name.fullName}}&lt;/p&gt;
+      &lt;mat-chip-list *ngIf&#x3D;&quot;
+          announcement.materials !&#x3D; null &amp;&amp; announcement.materials !&#x3D; undefined&quot;&gt;
+        &lt;mat-chip *ngFor&#x3D;&quot;let material of announcement.materials&quot;&gt;
+          &lt;a *ngIf&#x3D;&quot;material.link as link&quot; href&#x3D;&quot;{{ link.url }}&quot;&gt;{{
+            link.title
+            }}&lt;/a&gt;
+          &lt;div *ngIf&#x3D;&quot;material.driveFile as drive&quot;&gt;
+            &lt;img matChipAvatar src&#x3D;&quot;{{ drive.driveFile.thumbnailUrl }}&quot; /&gt;
+            &lt;a href&#x3D;&quot;{{ drive.driveFile.alternateLink }}&quot; target&#x3D;&quot;_blank&quot;&gt;{{
+              drive.driveFile.title
+              }}&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div *ngIf&#x3D;&quot;material.form as form&quot;&gt;
+            &lt;img matChipAvatar src&#x3D;&quot;{{ form.thumbnailUrl }}&quot; /&gt;
+            &lt;a href&#x3D;&quot;{{ form.formUrl }}&quot; target&#x3D;&quot;_blank&quot;&gt;{{ form.title }}&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/mat-chip&gt;
+      &lt;/mat-chip-list&gt;
+    &lt;/ng-template&gt;
+    &lt;ng-template #elseBlock&gt;
+      &lt;p&gt;No se encontraron archivos adjuntos.&lt;/p&gt;
+    &lt;/ng-template&gt;
+    &lt;mat-action-row&gt;
+      &lt;button mat-raised-button&gt;&lt;/button&gt;
+      &lt;button mat-raised-button&gt;&lt;/button&gt;
+      &lt;button mat-raised-button&gt;&lt;/button&gt;
+    &lt;/mat-action-row&gt;
+  &lt;/mat-expansion-panel&gt;
+&lt;/mat-accordion&gt;
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./login-dialog.component.scss</code>
+                    <code>./course-announcements.component.scss</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss"></code></pre>
     </div>
@@ -410,10 +563,10 @@ export class LoginDialogComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div fxLayout="column" fxLayoutAlign="top center">  <h1 mat-dialog-title>Inicio de sesión</h1>  <p mat-dialog-content>Identificate con tu cuenta institucional</p>  <h2 mat-dialog-content>@rafaeldiazserdan.net</h2>  <button mat-icon-button (click)="onLogin()">    <!-- <fa-icon [icon]="faGoogle"></fa-icon> -->    <img class="img-fluid" src="assets/images/google-logo.png">  </button>  <h5>Haz click aquí</h5></div></div>'
+        var COMPONENT_TEMPLATE = '<div><mat-accordion displayMode="flat" [togglePosition]="\'before\'">  <mat-expansion-panel *ngFor="let announcement of announcements" class="mat-elevation-z0" (opened)="isExpanded = true"    (closed)="isExpanded = false">    <mat-expansion-panel-header>      <mat-panel-title class="text-truncated">        {{ announcement.text }}      </mat-panel-title>      <mat-panel-description>        {{ announcement.creationTime | date: "medium" }}      </mat-panel-description>    </mat-expansion-panel-header>    <ng-template matExpansionPanelContent>      <p>{{ announcement.text }}</p>      <p> Publicado por: {{creator.name.fullName}}</p>      <mat-chip-list *ngIf="          announcement.materials != null && announcement.materials != undefined">        <mat-chip *ngFor="let material of announcement.materials">          <a *ngIf="material.link as link" href="{{ link.url }}">{{            link.title            }}</a>          <div *ngIf="material.driveFile as drive">            <img matChipAvatar src="{{ drive.driveFile.thumbnailUrl }}" />            <a href="{{ drive.driveFile.alternateLink }}" target="_blank">{{              drive.driveFile.title              }}</a>          </div>          <div *ngIf="material.form as form">            <img matChipAvatar src="{{ form.thumbnailUrl }}" />            <a href="{{ form.formUrl }}" target="_blank">{{ form.title }}</a>          </div>        </mat-chip>      </mat-chip-list>    </ng-template>    <ng-template #elseBlock>      <p>No se encontraron archivos adjuntos.</p>    </ng-template>    <mat-action-row>      <button mat-raised-button></button>      <button mat-raised-button></button>      <button mat-raised-button></button>    </mat-action-row>  </mat-expansion-panel></mat-accordion></div>'
     var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthUserComponent', 'selector': 'app-auth-user'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainProfileComponent', 'selector': 'app-main-profile'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': 'app-snackbar'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'LoginDialogComponent'};
+    var ACTUAL_COMPONENT = {'name': 'CourseAnnouncementsComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -448,7 +601,7 @@ export class LoginDialogComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'LoginDialogComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'CourseAnnouncementsComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

@@ -126,6 +126,29 @@
     <h3 id="index">Índice</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Propiedades</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#courseId">courseId</a>
+                            </li>
+                            <li>
+                                <a href="#isStudentsLoading$">isStudentsLoading$</a>
+                            </li>
+                            <li>
+                                <a href="#students">students</a>
+                            </li>
+                            <li>
+                                <a href="#students$">students$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -156,15 +179,57 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(studentEntityService: <a href="../injectables/StudentEntityService.html">StudentEntityService</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="9" class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-students/course-students.component.ts:9</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="19" class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-students/course-students.component.ts:19</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parámetros :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Nombre</td>
+                                                    <td>Tipo</td>
+                                                <td>Opcional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>studentEntityService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StudentEntityService.html" target="_self" >StudentEntityService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -200,8 +265,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="13"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-students/course-students.component.ts:13</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="27"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-students/course-students.component.ts:27</a></div>
                 </td>
             </tr>
 
@@ -218,12 +283,132 @@
         </tbody>
     </table>
 </section>
+    <section>
+    
+        <h3 id="inputs">
+            Propiedades
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="courseId"></a>
+                        <span class="name">
+                            <b>
+                            courseId</b>
+                            <a href="#courseId"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="19" class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-students/course-students.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isStudentsLoading$"></a>
+                        <span class="name">
+                            <b>
+                            isStudentsLoading$</b>
+                            <a href="#isStudentsLoading$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="16" class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-students/course-students.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="students"></a>
+                        <span class="name">
+                            <b>
+                            students</b>
+                            <a href="#students"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>    <code>gapi.client.classroom.Student[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="18" class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-students/course-students.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="students$"></a>
+                        <span class="name">
+                            <b>
+                            students$</b>
+                            <a href="#students$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>    <code>Observable&lt;gapi.client.classroom.Student[]&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-students/course-students.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ChangeDetectionStrategy } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+
+import { Observable } from &#x27;rxjs&#x27;;
+import { map } from &#x27;rxjs/operators&#x27;;
+
+import { StudentEntityService } from &#x27;../../../store/student/student-entity.service&#x27;;
 
 @Component({
   selector: &#x27;app-course-students&#x27;,
@@ -232,18 +417,53 @@
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CourseStudentsComponent implements OnInit {
+  isStudentsLoading$: Observable&lt;boolean&gt;;
+  students$: Observable&lt;gapi.client.classroom.Student[]&gt;;
+  students: gapi.client.classroom.Student[];
+  courseId: string;
 
-  constructor() { }
+  constructor(
+    private studentEntityService: StudentEntityService,
+    private route: ActivatedRoute,
+
+  ) { }
 
   ngOnInit(): void {
+    this.courseId &#x3D; this.route.snapshot.paramMap.get(&#x27;courseId&#x27;);
+    this.isStudentsLoading$ &#x3D; this.studentEntityService.loading$;
+    this.students$ &#x3D; this.studentEntityService.entities$
+      .pipe(
+        map(students &#x3D;&gt; {
+          if (!students) {
+            this.studentEntityService.getWithQuery(this.courseId);
+          };
+          return students.filter(x &#x3D;&gt; x.courseId &#x3D;&#x3D;&#x3D; this.courseId);
+        })
+      );
   }
-
 }
+
+
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;course-students works!&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;mat-accordion displayMode&#x3D;&quot;flat&quot; hideToggle&gt;
+  &lt;mat-expansion-panel *ngFor&#x3D;&quot;let student of students$|async&quot; class&#x3D;&quot;card border-gray&quot; [hideToggle]&#x3D;&quot;true&quot;&gt;
+    &lt;mat-expansion-panel-header&gt;
+      &lt;mat-panel-title&gt;
+        {{student.profile.name.fullName}}
+      &lt;/mat-panel-title&gt;
+      &lt;img mat-card-avatar src&#x3D;&quot;{{student.profile.photoUrl}}&quot;&gt;
+      &lt;mat-panel-description&gt;
+        {{student.profile.emailAddress}}
+      &lt;/mat-panel-description&gt;
+    &lt;/mat-expansion-panel-header&gt;
+    &lt;ng-template matExpansionPanelContent&gt;
+      Some deferred content
+    &lt;/ng-template&gt;
+  &lt;/mat-expansion-panel&gt;
+&lt;/mat-accordion&gt;
 </code></pre>
     </div>
 
@@ -279,8 +499,8 @@ export class CourseStudentsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>course-students works!</p></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthUserComponent', 'selector': 'app-auth-user'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CourseInfoComponent', 'selector': 'app-course-info'},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CoursesTableComponent', 'selector': 'app-course-table'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainProfileComponent', 'selector': 'app-main-profile'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': 'app-snackbar'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
+        var COMPONENT_TEMPLATE = '<div><mat-accordion displayMode="flat" hideToggle>  <mat-expansion-panel *ngFor="let student of students$|async" class="card border-gray" [hideToggle]="true">    <mat-expansion-panel-header>      <mat-panel-title>        {{student.profile.name.fullName}}      </mat-panel-title>      <img mat-card-avatar src="{{student.profile.photoUrl}}">      <mat-panel-description>        {{student.profile.emailAddress}}      </mat-panel-description>    </mat-expansion-panel-header>    <ng-template matExpansionPanelContent>      Some deferred content    </ng-template>  </mat-expansion-panel></mat-accordion></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthUserComponent', 'selector': 'app-auth-user'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainProfileComponent', 'selector': 'app-main-profile'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': 'app-snackbar'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CourseStudentsComponent'};
 </script>

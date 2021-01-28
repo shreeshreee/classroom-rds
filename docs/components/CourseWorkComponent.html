@@ -36,7 +36,7 @@
 
 <ol class="breadcrumb">
   <li>Componentes</li>
-  <li>FooterComponent</li>
+  <li>CourseWorkComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,7 +62,7 @@
     <h3>Fichero</h3>
 </p>
 <p class="comment">
-    <code>projects/classroom-rds/src/app/core/layout/footer/footer.component.ts</code>
+    <code>projects/classroom-rds/src/app/courses/components/course-work/course-work.component.ts</code>
 </p>
 
 
@@ -92,19 +92,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-footer</code></td>
+                <td class="col-md-9"><code>app-course-work</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./footer.component.scss</code></td>
+                <td class="col-md-9"><code>./course-work.component.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./footer.component.html</code></td>
+                <td class="col-md-9"><code>./course-work.component.html</code></td>
             </tr>
 
 
@@ -131,7 +131,19 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#socialSet">socialSet</a>
+                                <a href="#courseId">courseId</a>
+                            </li>
+                            <li>
+                                <a href="#courseWorks$">courseWorks$</a>
+                            </li>
+                            <li>
+                                <a href="#creator">creator</a>
+                            </li>
+                            <li>
+                                <a href="#loading$">loading$</a>
+                            </li>
+                            <li>
+                                <a href="#panelOpenState">panelOpenState</a>
                             </li>
                         </ul>
                     </td>
@@ -161,7 +173,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#isHandset$">isHandset$</a>
+                                <a href="#courseWorks">courseWorks</a>
                             </li>
                         </ul>
                     </td>
@@ -185,7 +197,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="30" class="link-to-prism">projects/classroom-rds/src/app/core/layout/footer/footer.component.ts:30</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="20" class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-work/course-work.component.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -199,19 +211,19 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="isHandset$"></a>
-                        <b>isHandset$</b>
+                        <a name="courseWorks"></a>
+                        <b>courseWorks</b>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Tipo : </i>    <code>Observable&lt;boolean&gt;</code>
+                        <i>Tipo : </i>        <code><a href="../classes/Course.html" target="_self" >gapi.client.classroom.CourseWork[]</a></code>
 
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">projects/classroom-rds/src/app/core/layout/footer/footer.component.ts:13</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-work/course-work.component.ts:15</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -247,8 +259,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="33"
-                            class="link-to-prism">projects/classroom-rds/src/app/core/layout/footer/footer.component.ts:33</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="25"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-work/course-work.component.ts:25</a></div>
                 </td>
             </tr>
 
@@ -274,44 +286,136 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="socialSet"></a>
+                        <a name="courseId"></a>
                         <span class="name">
                             <b>
-                            socialSet</b>
-                            <a href="#socialSet"><span class="icon ion-ios-link"></span></a>
+                            courseId</b>
+                            <a href="#courseId"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Tipo : </i>    <code>any[]</code>
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="20" class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-work/course-work.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="courseWorks$"></a>
+                        <span class="name">
+                            <b>
+                            courseWorks$</b>
+                            <a href="#courseWorks$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="../classes/Course.html" target="_self" >Observable&lt;gapi.client.classroom.CourseWork[]&gt;</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="19" class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-work/course-work.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="creator"></a>
+                        <span class="name">
+                            <b>
+                            creator</b>
+                            <a href="#creator"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>    <code>gapi.client.classroom.UserProfile</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="16" class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-work/course-work.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loading$"></a>
+                        <span class="name">
+                            <b>
+                            loading$</b>
+                            <a href="#loading$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="18" class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-work/course-work.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="panelOpenState"></a>
+                        <span class="name">
+                            <b>
+                            panelOpenState</b>
+                            <a href="#panelOpenState"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>[
-    {
-      name: &#x27;Github&#x27;,
-      icon: faGithub,
-      site: &#x27;https://github.com/jcmelchorp/classroom-rds&#x27;,
-    },
-    {
-      name: &#x27;Facebook&#x27;,
-      icon: faFacebook,
-      site: &#x27;https://www.facebook.com/RDSLaFallito&#x27;,
-    },
-    {
-      name: &#x27;Twitter&#x27;,
-      icon: faTwitter,
-      site: &#x27;https://twitter.com/Escuela_RDS&#x27;,
-    }
-  ]</code>
+                            <i>Valor por defecto : </i><code>false</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="14" class="link-to-prism">projects/classroom-rds/src/app/core/layout/footer/footer.component.ts:14</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">projects/classroom-rds/src/app/courses/components/course-work/course-work.component.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -325,77 +429,82 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnInit } from &#x27;@angular/core&#x27;;
-
-import { faFacebook, faGithub, faTwitter } from &#x27;@fortawesome/free-brands-svg-icons&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
 
 import { Observable } from &#x27;rxjs&#x27;;
 
-@Component({
-  selector: &#x27;app-footer&#x27;,
-  templateUrl: &#x27;./footer.component.html&#x27;,
-  styleUrls: [&#x27;./footer.component.scss&#x27;]
-})
-export class FooterComponent implements OnInit {
-  @Input() isHandset$: Observable&lt;boolean&gt;;
-  socialSet: any[] &#x3D; [
-    {
-      name: &#x27;Github&#x27;,
-      icon: faGithub,
-      site: &#x27;https://github.com/jcmelchorp/classroom-rds&#x27;,
-    },
-    {
-      name: &#x27;Facebook&#x27;,
-      icon: faFacebook,
-      site: &#x27;https://www.facebook.com/RDSLaFallito&#x27;,
-    },
-    {
-      name: &#x27;Twitter&#x27;,
-      icon: faTwitter,
-      site: &#x27;https://twitter.com/Escuela_RDS&#x27;,
-    }
-  ];
-  constructor() { }
+import { UserProfileEntityService } from &#x27;./../../../store/user-profile/user-profile-entity.service&#x27;;
 
-  ngOnInit(): void {
+
+@Component({
+  selector: &#x27;app-course-work&#x27;,
+  templateUrl: &#x27;./course-work.component.html&#x27;,
+  styleUrls: [&#x27;./course-work.component.scss&#x27;]
+})
+export class CourseWorkComponent implements OnInit {
+  @Input() courseWorks: gapi.client.classroom.CourseWork[];
+  creator: gapi.client.classroom.UserProfile;
+  panelOpenState: boolean &#x3D; false;
+  loading$: Observable&lt;boolean&gt;;
+  courseWorks$: Observable&lt;gapi.client.classroom.CourseWork[]&gt;;
+  courseId: string;
+  constructor(
+  ) {
   }
 
+  ngOnInit(): void { }
+
 }
+
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;footer&gt;
-  &lt;div class&#x3D;&quot;px-3&quot; fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;space-between center&quot;&gt;
-    &lt;div&gt;
-      &lt;h3 class&#x3D;&quot;pt-2 mat-h3 h3-responsive&quot;&gt;2021 &amp;copy; Escuela Rafael Díaz Serdán&lt;/h3&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
-      &lt;mat-list fxLayout&#x3D;&quot;row&quot; dense&gt;
-        &lt;a mat-list-item *ngFor&#x3D;&quot;let social of socialSet&quot; href&#x3D;&quot;{{social.site}}&quot; target&#x3D;&quot;_blank&quot;&gt;
-          &lt;fa-icon matListIcon matTooltip&#x3D;&quot;{{social.name}}&quot; [icon]&#x3D;&quot;social.icon&quot;&gt;&lt;/fa-icon&gt;
-        &lt;/a&gt;
-      &lt;/mat-list&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/footer&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;mat-accordion [togglePosition]&#x3D;&quot;&#x27;before&#x27;&quot; dense&gt;
+  &lt;mat-expansion-panel *ngFor&#x3D;&quot;let courseWork of courseWorks&quot; class&#x3D;&quot;mat-elevation-z0&quot; (opened)&#x3D;&quot;panelOpenState &#x3D; true&quot;
+    (closed)&#x3D;&quot;panelOpenState &#x3D; false&quot;&gt;
+    &lt;mat-expansion-panel-header&gt;
+      &lt;mat-panel-title&gt;
+        {{courseWork.title}}
+      &lt;/mat-panel-title&gt;
+      &lt;mat-panel-description&gt;
+        Fecha de entrega:
+      &lt;/mat-panel-description&gt;
+    &lt;/mat-expansion-panel-header&gt;
+    &lt;p&gt;{{courseWork.description}}&lt;/p&gt;
+
+    &lt;mat-chip-list *ngIf&#x3D;&quot;courseWork.materials!&#x3D;null &amp;&amp; courseWork.materials !&#x3D;undefined; else elseBlock&quot;&gt;
+      &lt;mat-chip *ngFor&#x3D;&quot;let material of courseWork.materials&quot;&gt;
+        &lt;a *ngIf&#x3D;&quot;material.link as link&quot; href&#x3D;&quot;{{link.url}}&quot;&gt;{{link.title}}&lt;/a&gt;
+        &lt;div *ngIf&#x3D;&quot;material.driveFile as drive&quot;&gt;
+          &lt;img matChipAvatar src&#x3D;&quot;{{drive.driveFile.thumbnailUrl}}&quot;&gt;
+          &lt;a href&#x3D;&quot;{{drive.driveFile.alternateLink}}&quot; target&#x3D;&quot;_blank&quot;&gt;{{drive.driveFile.title}}&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div *ngIf&#x3D;&quot;material.form as form&quot;&gt;
+          &lt;img matChipAvatar src&#x3D;&quot;{{form.thumbnailUrl}}&quot;&gt;
+          &lt;a href&#x3D;&quot;{{form.formUrl}}&quot; target&#x3D;&quot;_blank&quot;&gt;{{form.title}}&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/mat-chip&gt;
+    &lt;/mat-chip-list&gt;
+    &lt;ng-template #elseBlock&gt;
+      &lt;p&gt;No se encontraron archivos adjuntos.&lt;/p&gt;
+    &lt;/ng-template&gt;
+
+
+    &lt;mat-action-row&gt;
+      &lt;button mat-raised-button&gt;&lt;/button&gt;
+      &lt;button mat-raised-button&gt;&lt;/button&gt;
+    &lt;/mat-action-row&gt;
+  &lt;/mat-expansion-panel&gt;
+&lt;/mat-accordion&gt;
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./footer.component.scss</code>
+                    <code>./course-work.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-}
-.h3-responsive {
-  font-size: calc(0.5rem + 0.8vw);
-  font-weight: 300;
-}
-</code></pre>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -423,10 +532,10 @@ export class FooterComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><footer>  <div class="px-3" fxLayout="row" fxLayoutAlign="space-between center">    <div>      <h3 class="pt-2 mat-h3 h3-responsive">2021 &copy; Escuela Rafael Díaz Serdán</h3>    </div>    <div>      <mat-list fxLayout="row" dense>        <a mat-list-item *ngFor="let social of socialSet" href="{{social.site}}" target="_blank">          <fa-icon matListIcon matTooltip="{{social.name}}" [icon]="social.icon"></fa-icon>        </a>      </mat-list>    </div>  </div></footer></div>'
+        var COMPONENT_TEMPLATE = '<div><mat-accordion [togglePosition]="\'before\'" dense>  <mat-expansion-panel *ngFor="let courseWork of courseWorks" class="mat-elevation-z0" (opened)="panelOpenState = true"    (closed)="panelOpenState = false">    <mat-expansion-panel-header>      <mat-panel-title>        {{courseWork.title}}      </mat-panel-title>      <mat-panel-description>        Fecha de entrega:      </mat-panel-description>    </mat-expansion-panel-header>    <p>{{courseWork.description}}</p>    <mat-chip-list *ngIf="courseWork.materials!=null && courseWork.materials !=undefined; else elseBlock">      <mat-chip *ngFor="let material of courseWork.materials">        <a *ngIf="material.link as link" href="{{link.url}}">{{link.title}}</a>        <div *ngIf="material.driveFile as drive">          <img matChipAvatar src="{{drive.driveFile.thumbnailUrl}}">          <a href="{{drive.driveFile.alternateLink}}" target="_blank">{{drive.driveFile.title}}</a>        </div>        <div *ngIf="material.form as form">          <img matChipAvatar src="{{form.thumbnailUrl}}">          <a href="{{form.formUrl}}" target="_blank">{{form.title}}</a>        </div>      </mat-chip>    </mat-chip-list>    <ng-template #elseBlock>      <p>No se encontraron archivos adjuntos.</p>    </ng-template>    <mat-action-row>      <button mat-raised-button></button>      <button mat-raised-button></button>    </mat-action-row>  </mat-expansion-panel></mat-accordion></div>'
     var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthUserComponent', 'selector': 'app-auth-user'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainProfileComponent', 'selector': 'app-main-profile'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': 'app-snackbar'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'FooterComponent'};
+    var ACTUAL_COMPONENT = {'name': 'CourseWorkComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -461,7 +570,7 @@ export class FooterComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'FooterComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'CourseWorkComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

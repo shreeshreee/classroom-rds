@@ -261,7 +261,7 @@ import { from, Observable, of } from &#x27;rxjs&#x27;;
 import { CoursesService } from &#x27;../../courses/services/course/courses.service&#x27;;
 
 import * as fromStudent from &#x27;./&#x27;
-@Injectable({ providedIn: &#x27;root&#x27; })
+@Injectable()
 export class StudentDataService extends DefaultDataService&lt;gapi.client.classroom.Student&gt; {
   constructor(
     http: HttpClient,

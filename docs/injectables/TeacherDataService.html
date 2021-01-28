@@ -108,7 +108,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">projects/classroom-rds/src/app/store/teacher/teacher-data.service.ts:15</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">projects/classroom-rds/src/app/store/teacher/teacher-data.service.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -197,8 +197,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="23"
-                            class="link-to-prism">projects/classroom-rds/src/app/store/teacher/teacher-data.service.ts:23</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="22"
+                            class="link-to-prism">projects/classroom-rds/src/app/store/teacher/teacher-data.service.ts:22</a></div>
                 </td>
             </tr>
 
@@ -262,9 +262,7 @@ import { CoursesService } from &#x27;../../courses/services/course/courses.servi
 
 import * as fromTeacher from &#x27;./&#x27;;
 
-@Injectable({
-  providedIn: &#x27;root&#x27;
-})
+@Injectable()
 export class TeacherDataService extends DefaultDataService&lt;gapi.client.classroom.Teacher&gt; {
   constructor(
     http: HttpClient,
@@ -273,6 +271,7 @@ export class TeacherDataService extends DefaultDataService&lt;gapi.client.classr
   ) {
     super(fromTeacher.entityCollectionName, http, httpUrlGenerator);
   }
+
   getWithQuery(courseId: string): Observable&lt;gapi.client.classroom.Teacher[]&gt; {
     return from(this.coursesService.getTeachers(courseId));
   }

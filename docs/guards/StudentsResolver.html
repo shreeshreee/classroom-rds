@@ -70,20 +70,6 @@
     <h3 id="index">Índice</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Propiedades</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#courseId">courseId</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -114,12 +100,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(studentEntityService: <a href="../injectables/StudentEntityService.html">StudentEntityService</a>)</code>
+<code>constructor(studentES: <a href="../injectables/StudentEntityService.html">StudentEntityService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">projects/classroom-rds/src/app/courses/services/student/students.resolver.ts:15</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="14" class="link-to-prism">projects/classroom-rds/src/app/courses/services/student/students.resolver.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -137,7 +123,7 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>studentEntityService</td>
+                                                        <td>studentES</td>
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/StudentEntityService.html" target="_self" >StudentEntityService</a></code>
@@ -184,8 +170,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="20"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/student/students.resolver.ts:20</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="19"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/student/students.resolver.ts:19</a></div>
                 </td>
             </tr>
 
@@ -263,23 +249,22 @@ import { StudentEntityService } from &#x27;../../../store/student/student-entity
 
 @Injectable()
 export class StudentsResolver implements Resolve&lt;boolean&gt; {
-  courseId: string;
   constructor(
-    private studentEntityService: StudentEntityService,
+    private studentES: StudentEntityService,
   ) { }
 
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable&lt;boolean&gt; {
-    return this.studentEntityService.loaded$
+    return this.studentES.loading$
       .pipe(
-        tap(loaded &#x3D;&gt; {
-          if (!loaded) {
-            this.studentEntityService.getWithQuery(route.parent.params.courseId);
+        tap(loading &#x3D;&gt; {
+          if (!loading) {
+            this.studentES.getWithQuery(route.paramMap.get(&#x27;courseId&#x27;));
           }
         }),
-        filter(loaded &#x3D;&gt; !!loaded),
+        filter(loading &#x3D;&gt; !!loading),
         first()
       );
   }

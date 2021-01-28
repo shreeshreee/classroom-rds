@@ -39,7 +39,7 @@
 
 <ol class="breadcrumb">
   <li>Inyectables</li>
-  <li>UserProfileEntityService</li>
+  <li>AnnouncementDataService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -57,7 +57,7 @@
             <h3>Fichero</h3>
         </p>
         <p class="comment">
-            <code>projects/classroom-rds/src/app/store/user-profile/user-profile-entity.service.ts</code>
+            <code>projects/classroom-rds/src/app/store/announcement/announcement-data.service.ts</code>
         </p>
 
 
@@ -65,7 +65,7 @@
                 <h3>Extiende</h3>
             </p>
             <p class="comment">
-                    <code>EntityCollectionServiceBase</code>
+                    <code>DefaultDataService</code>
             </p>
 
 
@@ -83,7 +83,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getById">getById</a>
+                                <a href="#getWithQuery">getWithQuery</a>
                             </li>
                         </ul>
                     </td>
@@ -103,12 +103,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(serviceElementsFactory: EntityCollectionServiceElementsFactory)</code>
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, httpUrlGenerator: HttpUrlGenerator, coursesService: <a href="../injectables/CoursesService.html">CoursesService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="10" class="link-to-prism">projects/classroom-rds/src/app/store/user-profile/user-profile-entity.service.ts:10</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">projects/classroom-rds/src/app/store/announcement/announcement-data.service.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -126,10 +126,34 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>serviceElementsFactory</td>
+                                                        <td>http</td>
                                                   
                                                         <td>
-                                                                    <code>EntityCollectionServiceElementsFactory</code>
+                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>httpUrlGenerator</td>
+                                                  
+                                                        <td>
+                                                                    <code>HttpUrlGenerator</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>coursesService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CoursesService.html" target="_self" >CoursesService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -155,26 +179,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getById"></a>
+                    <a name="getWithQuery"></a>
                     <span class="name">
                         <b>
-                            getById
+                            getWithQuery
                         </b>
-                        <a href="#getById"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getWithQuery"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>getWithQuery(courseId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="14"
-                            class="link-to-prism">projects/classroom-rds/src/app/store/user-profile/user-profile-entity.service.ts:14</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="21"
+                            class="link-to-prism">projects/classroom-rds/src/app/store/announcement/announcement-data.service.ts:21</a></div>
                 </td>
             </tr>
 
@@ -194,7 +218,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>id</td>
+                                    <td>courseId</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
@@ -211,7 +235,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Devuelve : </b>    <code>Observable&lt;gapi.client.classroom.UserProfile&gt;</code>
+                        <b>Devuelve : </b>    <code>Observable&lt;gapi.client.classroom.Announcement[]&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -227,21 +251,30 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
 
-import { EntityCollectionServiceBase, EntityCollectionServiceElementsFactory } from &#x27;@ngrx/data&#x27;;
+import { DefaultDataService, HttpUrlGenerator } from &#x27;@ngrx/data&#x27;;
 
-import { Observable } from &#x27;rxjs&#x27;;
+import { from, Observable } from &#x27;rxjs&#x27;;
 
-import * as fromUserProfile from &#x27;./&#x27;;
-
-@Injectable()
-export class UserProfileEntityService extends EntityCollectionServiceBase&lt;gapi.client.classroom.UserProfile&gt; {
-  constructor(readonly serviceElementsFactory: EntityCollectionServiceElementsFactory) {
-    super(fromUserProfile.entityCollectionName, serviceElementsFactory);
+import { CoursesService } from &#x27;../../courses/services/course/courses.service&#x27;;
+import * as fromAnnouncement from &#x27;./&#x27;
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class AnnouncementDataService extends DefaultDataService&lt;gapi.client.classroom.Announcement&gt; {
+  constructor(
+    http: HttpClient,
+    httpUrlGenerator: HttpUrlGenerator,
+    private coursesService: CoursesService
+  ) {
+    super(fromAnnouncement.entityCollectionName, http, httpUrlGenerator);
   }
-  getById(id: string): Observable&lt;gapi.client.classroom.UserProfile&gt; {
-    return this.getByKey(id);
+  getWithQuery(courseId: string): Observable&lt;gapi.client.classroom.Announcement[]&gt; {
+    return from(
+      this.coursesService.getAnnouncements(courseId)
+    );
   }
 }
 </code></pre>
@@ -277,7 +310,7 @@ export class UserProfileEntityService extends EntityCollectionServiceBase&lt;gap
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'UserProfileEntityService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'AnnouncementDataService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
