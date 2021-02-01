@@ -6,7 +6,7 @@ import { DefaultDataService, HttpUrlGenerator } from '@ngrx/data';
 import { from, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { CoursesService } from '../../courses/services/course/courses.service';
+import { CoursesService } from './../../courses/services/course/courses.service';
 
 import * as fromUserProfile from './';
 @Injectable()

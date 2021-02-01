@@ -3,13 +3,9 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
 import { of, Observable, defer, from } from 'rxjs';
-import { switchMap, map, catchError, mergeMap, concatMap, tap } from 'rxjs/operators';
-
-import firebase from 'firebase/app';
-import 'firebase/auth';
+import { switchMap, map, catchError } from 'rxjs/operators';
 
 import * as fromAuthActions from '../auth.actions';
-import { AuthFireService } from '../../services';
 import { User } from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
 @Injectable()
@@ -87,7 +83,5 @@ export class AuthEffects {
   constructor(
     private actions$: Actions,
     private authService: AuthService,
-    private authFireService: AuthFireService,
-
   ) { }
 }

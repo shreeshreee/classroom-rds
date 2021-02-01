@@ -1,16 +1,12 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #leftSidenav class="sidenav" [@onSideNavChange]="sideNavState ? 'open' : 'close'" fixedInViewPort
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="'side'"
-    [opened]="(isHandset$ | async) === false" *ngIf="isOnline">
+    [attr.role]="isHandset ? 'dialog' : 'navigation'" [mode]="'side'" [opened]="isHandset == false" *ngIf="isOnline">
     <mat-nav-list fxLayout="column" fxLayoutAlign="space-between center">
-      <a mat-list-item [matMenuTriggerFor]="userMenu">
-        <img mat-card-avatar src="{{ (user.photoUrl)  ? user.photoUrl : '/assets/images/dummy-user.png'}}" />
-      </a>
       <a *ngFor="let page of classroomPages" mat-list-item [routerLink]="page.route" routerLinkActive="active">
         <fa-icon matListIcon [icon]="page.icon"></fa-icon>
         <span matLine [@animateText]="linkText ? 'show' : 'hide'">{{ page?.name }} </span>
       </a>
-      <a mat-list-item (click)="onSidenavToggle()" routerLinkActive="active">
+      <a mat-list-item (click)="onSidenavToggle()">
         <fa-icon matListIcon [icon]="faCompressAlt"></fa-icon>
       </a>
     </mat-nav-list>
@@ -21,17 +17,3 @@
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>
-<!-- Menu Items -->
-<mat-menu #userMenu="matMenu" fxLayoutAlign="right" xPosition="after">
-  <app-user mat-list-item *ngIf="isOnline && user" [routerLink]="['profile']" routerLinkActive="active"
-    [isOnline]="isOnline" [isAdmin]="isAdmin" [user]="user">
-  </app-user>
-  <div *ngIf="isOnline && isAdmin" mat-menu-item [routerLink]="['admin']">
-    <fa-icon matListIcon [icon]="faShieldAlt" size="lg"></fa-icon>
-    Administración
-  </div>
-  <div mat-menu-item *ngIf="isOnline" (click)="onSignOut()">
-    <fa-icon matListIcon [icon]="faSignOut" size="lg"></fa-icon>
-    Cerrar Sesión
-  </div>
-</mat-menu>

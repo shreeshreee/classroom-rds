@@ -2,14 +2,12 @@ import { Injectable } from '@angular/core';
 
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
-import { catchError, map, mergeMap, switchMap, tap } from 'rxjs/operators';
-import { from, of } from 'rxjs';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 import * as fromAppActions from './../actions/app.actions';
 import { AuthService } from './../../auth/services';
 import * as fromAuthActions from './../../auth/state/auth.actions';
-
-
 @Injectable()
 export class AppEffects {
   storeUser$ = createEffect(
@@ -62,6 +60,5 @@ export class AppEffects {
   constructor(
     private actions$: Actions,
     private authService: AuthService,
-
   ) { }
 }

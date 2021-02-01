@@ -5,7 +5,7 @@ import { DefaultDataService, HttpUrlGenerator } from '@ngrx/data';
 
 import { from, Observable } from 'rxjs';
 
-import { CoursesService } from '../../courses/services/course/courses.service';
+import { TeachersService } from './../../courses/services/teacher/teachers.service';
 
 import * as fromTeacher from './';
 
@@ -14,12 +14,15 @@ export class TeacherDataService extends DefaultDataService<gapi.client.classroom
   constructor(
     http: HttpClient,
     httpUrlGenerator: HttpUrlGenerator,
-    private coursesService: CoursesService
+    private teachersService: TeachersService
   ) {
     super(fromTeacher.entityCollectionName, http, httpUrlGenerator);
   }
 
   getWithQuery(courseId: string): Observable<gapi.client.classroom.Teacher[]> {
-    return from(this.coursesService.getTeachers(courseId));
+    return from(this.teachersService.getTeachers(courseId));
+  }
+  add(teacher: gapi.client.classroom.Teacher): Observable<gapi.client.classroom.Teacher> {
+    return from(this.teachersService.addTeacher(teacher.courseId, teacher.userId));
   }
 }

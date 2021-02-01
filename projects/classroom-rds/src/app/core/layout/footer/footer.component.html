@@ -5,8 +5,8 @@
     </div>
     <div>
       <mat-list fxLayout="row" dense>
-        <a mat-list-item *ngFor="let social of socialSet" href="{{social.site}}" target="_blank">
-          <fa-icon matListIcon matTooltip="{{social.name}}" [icon]="social.icon"></fa-icon>
+        <a mat-list-item *ngFor="let social of socialSet" [href]="social.site" target="_blank" rel="noopener">
+          <fa-icon matListIcon [matTooltip]="social.name" [icon]="social.icon"></fa-icon>
         </a>
       </mat-list>
     </div>

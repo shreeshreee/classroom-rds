@@ -1,4 +1,4 @@
-import { EntityMetadataMap } from "@ngrx/data";
+import { EntityMetadataMap } from '@ngrx/data';
 
 import * as fromAnnouncement from './../announcement';
 import * as fromCourse from './../course';
@@ -16,8 +16,6 @@ export const entityMetadata: EntityMetadataMap = {
       optimisticUpdate: true,
       optimisticSaveEntities: true
     },
-    //sortComparer: sortByName,
-    // filterFn: advancedFilter,
     selectId: (course: gapi.client.classroom.Course) => course.id,
 
   },
@@ -34,7 +32,6 @@ export const entityMetadata: EntityMetadataMap = {
       optimisticUpdate: true,
     },
     selectId: (teacher: gapi.client.classroom.Teacher) => teacher.userId,
-    //filterFn: courseIdFilter,
   },
   [fromCourseWork.entityCollectionName]: {
     entityDispatcherOptions: {
@@ -65,34 +62,15 @@ export const pluralNames = {
   [fromStudent.entityCollectionName]: fromStudent.pluralizedEntityName,
   [fromTeacher.entityCollectionName]: fromTeacher.pluralizedEntityName,
   [fromCourseWork.entityCollectionName]: fromCourseWork.pluralizedEntityName,
-  [fromAnnouncement.entityCollectionName]: fromAnnouncement.pluralizedEntityName
+  [fromAnnouncement.entityCollectionName]: fromAnnouncement.pluralizedEntityName,
+  [fromUserProfile.entityCollectionName]: fromUserProfile.pluralizedEntityName
 };
 
 export const entityConfig = {
   entityMetadata,
   pluralNames
 };
-function getStudentId(student: gapi.client.classroom.Student): string {
-  return student.userId;
-}
-function getTeacherId(student: gapi.client.classroom.Teacher): string {
-  return student.userId;
-}
-function getCourseId(course: gapi.client.classroom.Course): string {
-  return course.id;
-}
-// This creates the filter for ... filtering
-function courseIdFilter(entities: { id: string }[], courseId: string) {
-  return entities.filter(e => e.id === courseId);
-}
+
 export function sortByName(a: { name: string }, b: { name: string }): number {
   return a.name.localeCompare(b.name);
 }
-/* function advancedFilter(entities: gapi.client.classroom.Course[], pattern: string) {
-  return PropsFilterFnFactory<gapi.client.classroom.Course>([
-    'name',
-    'section',
-    'room',
-    'courseState'
-  ])(entities, pattern);
-} */

@@ -9,7 +9,6 @@ import { MaterialModule } from '../modules/material.module';
 
 import * as fromSharedComponents from './components';
 import * as fromSharedServices from './services';
-
 @NgModule({
   imports: [
     CommonModule,

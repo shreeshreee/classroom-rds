@@ -8,8 +8,6 @@ import { tap } from 'rxjs/operators';
 
 import * as fromAppActions from './../actions/app.actions';
 import * as fromAuthActions from './../../auth/state/auth.actions';
-/* import * as fromCoursesActions from './../../courses/state/courses.actions';
- */
 @Injectable()
 export class SpinnerEffects {
   spinneron$ = createEffect(
@@ -17,9 +15,7 @@ export class SpinnerEffects {
       this.actions$.pipe(
         ofType(
           fromAppActions.loadApp,
-          //fromCoursesActions.loadCourses,
           fromAuthActions.signIn,
-          //fromAuthActions.signOut,
           fromAuthActions.updateProfile,
         ),
         tap(() => this.spinner.show())
@@ -33,8 +29,6 @@ export class SpinnerEffects {
         ofType(
           fromAppActions.loadAppFail,
           fromAppActions.loadAppSuccess,
-          //fromCoursesActions.loadCoursesSuccess,
-          //fromCoursesActions.loadCoursesFail,
           fromAuthActions.authError,
           fromAuthActions.signInSuccess,
           fromAuthActions.signInFailure,

@@ -1,9 +1,9 @@
 import { Action, ActionReducer, ActionReducerMap, INIT, MetaReducer } from '@ngrx/store';
 import { routerReducer, RouterReducerState } from '@ngrx/router-store';
 
-import { environment } from '../../environments/environment';
-import * as fromauthActions from '../auth/state/auth.actions';
-import { AuthenticationState, authFeatureKey, authReducer } from '../auth/state/auth.reducer';
+import { environment } from './../../environments/environment';
+import * as fromAuthActions from './../auth/state/auth.actions';
+import { AuthenticationState, authFeatureKey, authReducer } from './../auth/state/auth.reducer';
 export interface AppState {
   [authFeatureKey]: AuthenticationState;
   router: RouterReducerState;
@@ -35,7 +35,7 @@ export function debug(
 
 export function logout(reducer: ActionReducer<AppState, Action>): ActionReducer<AppState, Action> {
   return (state, action) => {
-    if (action != null && action.type === fromauthActions.signOut.type) {
+    if (action != null && action.type === fromAuthActions.signOut.type) {
       return reducer(undefined, { type: INIT });
     }
     return reducer(state, action);

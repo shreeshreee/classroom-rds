@@ -1,11 +1,17 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit, Input } from '@angular/core';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
 import { MatDialog } from '@angular/material/dialog';
 
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { faBars, faSignInAlt, faShieldAlt, faSignOutAlt, faEllipsisV, faGlobe, faInfo } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBars,
+  faSignInAlt,
+  faShieldAlt,
+  faSignOutAlt,
+  faEllipsisV,
+  faGlobe,
+  faInfo
+} from '@fortawesome/free-solid-svg-icons';
 
 import { Store } from '@ngrx/store';
 
@@ -15,7 +21,7 @@ import { LayoutService } from '../layout.service';
 import { animateText } from '../../animations/animations';
 import { AppState } from '../../../store/app.state';
 import { User } from '../../../auth/models/user.model';
-import * as fromAuthActions from "../../../auth/state/auth.actions";
+import { signOut } from '../../../auth/state/auth.actions';
 import { LoginDialogComponent } from '../../../auth/components/login-dialog/login-dialog.component';
 
 @Component({
@@ -32,34 +38,25 @@ import { LoginDialogComponent } from '../../../auth/components/login-dialog/logi
     )]
 })
 export class HeaderComponent implements OnInit {
-  @Input() isHandset$: Observable<boolean>;
+  @Input() isHandset: boolean;
   @Input() user: User;
   @Input() isOnline: boolean;
   @Input() isAdmin: boolean;
-  basicProfile: gapi.auth2.BasicProfile;
   faBars = faBars;
   faSignIn = faSignInAlt;
   faEllipsisV = faEllipsisV;
+  faShieldAlt = faShieldAlt;
+  faSignOut = faSignOutAlt;
+
   faGlobe = faGlobe;
   faGoogle = faGoogle;
   faInfo = faInfo;
   linkText: boolean = false;
   constructor(
     private layoutService: LayoutService,
-    private store: Store<AppState>,
     private dialog: MatDialog,
-    iconRegistry: MatIconRegistry,
-    sanitizer: DomSanitizer
-  ) {
-    iconRegistry.addSvgIcon(
-      'en',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/flags/en.svg')
-    );
-    iconRegistry.addSvgIcon(
-      'es',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/flags/es.svg')
-    );
-  }
+    private store: Store<AppState>
+  ) { }
 
   ngOnInit() { }
   toggleSidenavLeft($event: any) {
@@ -68,5 +65,7 @@ export class HeaderComponent implements OnInit {
   onSignIn() {
     this.dialog.open(LoginDialogComponent, { height: '250px', width: '380px' });
   }
-
+  onSignOut() {
+    this.store.dispatch(signOut({ user: this.user }));
+  }
 }

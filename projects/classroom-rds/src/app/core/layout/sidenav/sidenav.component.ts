@@ -14,11 +14,7 @@ import { animateText, onMainContentChange, onSideNavChange } from '../../animati
 import { AppState } from '../../../store/app.state';
 import { User } from '../../../auth/models/user.model';
 import { signOut } from '../../../auth/state/auth.actions';
-interface Page {
-  route: string[];
-  name: string;
-  icon: IconDefinition;
-}
+import { NavLink } from '../../../shared/models/nav-link';
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
@@ -27,7 +23,7 @@ interface Page {
 })
 export class SidenavComponent implements OnInit {
   @ViewChild('leftSidenav') sidenavLeft: MatSidenav;
-  @Input() isHandset$: Observable<boolean>;
+  @Input() isHandset: boolean;
   @Input() isOnline: boolean;
   @Input() isAdmin: boolean;
   @Input() user: User;
@@ -35,16 +31,14 @@ export class SidenavComponent implements OnInit {
   sideNavState: boolean = false;
   onSideNavChange: boolean;
   linkText: boolean = false;
-  classroomPages: Page[] = [
+  classroomPages: NavLink[] = [
     { name: 'Inicio', route: ['/'], icon: faHome },
     { name: 'Coursos', route: ['/c'], icon: faChalkboardTeacher },
     { name: 'Profesores', route: ['teachers'], icon: faUserTie },
     { name: 'Alumnos', route: ['stundets'], icon: faUserGraduate },
-  ]
+  ];
   faCompressAlt = faCompressAlt;
   faUser = faUser;
-  faShieldAlt = faShieldAlt;
-  faSignOut = faSignOutAlt;
   faSchool = faSchool;
   faUserCog = faUserCog;
   faGoogle = faGoogle;
@@ -72,8 +66,5 @@ export class SidenavComponent implements OnInit {
     }, 100)
     this.layoutService.sideNavState$.next(this.sideNavState)
   }
-  onSignOut() {
-    this.store.dispatch(signOut({ user: this.user })
-    );
-  }
+
 }

@@ -4,9 +4,8 @@ import { select, Store } from '@ngrx/store';
 
 import { Observable } from 'rxjs';
 
-import { AppState } from '../../../store/app.state';
-import { User } from '../../../auth/models/user.model';
-import * as fromAuthSelectors from '../../../auth/state/auth.selectors';
+import { AppState } from './../../../store/app.state';
+import * as fromAuthSelectors from './../../../auth/state/auth.selectors';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

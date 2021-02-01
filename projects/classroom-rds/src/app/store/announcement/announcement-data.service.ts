@@ -7,9 +7,7 @@ import { from, Observable } from 'rxjs';
 
 import { CoursesService } from '../../courses/services/course/courses.service';
 import * as fromAnnouncement from './'
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AnnouncementDataService extends DefaultDataService<gapi.client.classroom.Announcement> {
   constructor(
     http: HttpClient,

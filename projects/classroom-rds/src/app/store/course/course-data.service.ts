@@ -4,9 +4,8 @@ import { Injectable } from '@angular/core';
 import { DefaultDataService, HttpUrlGenerator } from '@ngrx/data';
 
 import { from, Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
 
-import { CoursesService } from '../../courses/services/course/courses.service';
+import { CoursesService } from './../../courses/services/course/courses.service';
 
 import * as fromCourse from './';
 @Injectable()
@@ -31,8 +30,7 @@ export class CourseDataService extends DefaultDataService<gapi.client.classroom.
       this.coursesService.createCourse(course)
     )
   }
-
-  /* private mapcourse(course: gapi.client.classroom.Course): gapi.client.classroom.Course {
-    return { ...course }
-  } */
+  upsert(course: gapi.client.classroom.Course) {
+    return from(this.coursesService.updateCourse(course))
+  }
 }

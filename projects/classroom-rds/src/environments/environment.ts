@@ -37,7 +37,7 @@ export const environment = {
       // Administrar las listas de tus clases de Google Classroom
       'https://www.googleapis.com/auth/classroom.rosters',
       // Ver las listas de tus clases de Google Classroom
-      // 'https://www.googleapis.com/auth/classroom.rosters.readonly',
+      'https://www.googleapis.com/auth/classroom.rosters.readonly',
       // Ver las direcciones de correo electrónico de las personas de tus clases
       'https://www.googleapis.com/auth/classroom.profile.emails',
       // Ver las fotos de perfil de las personas de tus clases

@@ -1,16 +1,16 @@
 <div *ngIf="loading" style="min-height: 50vh;" fxLayout="column" fxLayoutAlign="center center">
-  <mat-spinner strokeWidth="10" [diameter]="100">
-  </mat-spinner>
-  <span>Cargando...</span><br>
+  <mat-spinner strokeWidth="10" [diameter]="100"> </mat-spinner>
+  <span>Cargando...</span>
 </div>
-<div fxLayout="column" fxFlexFill *ngIf="!loading">
-  <app-header [user]="(user$|async)" [isHandset$]="isHandset$" [isAdmin]="(isAdmin$|async)"
+<div *ngIf="!loading" fxLayout="column" fxFlexFill>
+  <app-header [user]="(user$|async)" [isHandset]="(isHandset$|async)" [isAdmin]="(isAdmin$|async)"
     [isOnline]="(isOnline$|async)">
   </app-header>
+
   <div fxFlex>
-    <app-sidenav [isHandset$]="isHandset$" [isOnline]="(isOnline$|async)" [user]="(user$|async)"
+    <app-sidenav [isHandset]="(isHandset$|async)" [isOnline]="(isOnline$|async)" [user]="(user$|async)"
       [isAdmin]="(isAdmin$|async)">
     </app-sidenav>
   </div>
-  <app-footer [isHandset$]="isHandset$" *ngIf="!(isOnline$|async)" fxFlexOffset="auto"></app-footer>
+  <app-footer [isHandset]="(isHandset$|async)" *ngIf="!(isOnline$|async)" fxFlexOffset="auto"></app-footer>
 </div>

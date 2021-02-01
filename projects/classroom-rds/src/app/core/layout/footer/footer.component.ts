@@ -2,15 +2,13 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { faFacebook, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
-import { Observable } from 'rxjs';
-
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  @Input() isHandset$: Observable<boolean>;
+  @Input() isHandset: boolean;
   socialSet: any[] = [
     {
       name: 'Github',

@@ -11,7 +11,6 @@ import { map, switchMap } from 'rxjs/operators';
 
 import { UpdatedUser, User } from './../models/user.model';
 
-import { AuthService } from './auth.service';
 @Injectable({
   providedIn: 'root'
 })

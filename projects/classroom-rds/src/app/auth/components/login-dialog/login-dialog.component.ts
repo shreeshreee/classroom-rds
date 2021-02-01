@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 import { Store } from '@ngrx/store';
@@ -13,8 +15,9 @@ import { AppState } from './../../../store/app.state';
 })
 export class LoginDialogComponent implements OnInit {
   faGoogle = faGoogle;
-
+  faTimes = faTimes;
   constructor(
+    private dialogRef: MatDialogRef<LoginDialogComponent>,
     private store: Store<AppState>
   ) { }
 
@@ -24,5 +27,8 @@ export class LoginDialogComponent implements OnInit {
     this.store.dispatch(
       fromAuthActions.signIn()
     );
+  }
+  close() {
+    this.dialogRef.close();
   }
 }

@@ -24,12 +24,10 @@
             "tsConfig": "projects/classroom-rds/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "projects/classroom-rds/src/assets",
-              "projects/classroom-rds/src/manifest.webmanifest"
+              "projects/classroom-rds/src/favicon.ico",
+              "projects/classroom-rds/src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap/scss/bootstrap.scss",
-              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "projects/classroom-rds/src/styles.scss"
             ],
             "scripts": []
@@ -60,9 +58,7 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ],
-              "serviceWorker": true,
-              "ngswConfigPath": "projects/classroom-rds/ngsw-config.json"
+              ]
             }
           }
         },
@@ -92,12 +88,9 @@
             "karmaConfig": "projects/classroom-rds/karma.conf.js",
             "assets": [
               "projects/classroom-rds/src/favicon.ico",
-              "projects/classroom-rds/src/assets",
-              "projects/classroom-rds/src/manifest.webmanifest"
+              "projects/classroom-rds/src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap/scss/bootstrap.scss",
-              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "projects/classroom-rds/src/styles.scss"
             ],
             "scripts": []
@@ -111,7 +104,9 @@
               "projects/classroom-rds/tsconfig.spec.json",
               "projects/classroom-rds/e2e/tsconfig.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {
@@ -125,172 +120,9 @@
               "devServerTarget": "classroom-rds:serve:production"
             }
           }
-        },
-        "deploy": {
-          "builder": "@angular/fire:deploy",
-          "options": {}
         }
       }
-    },
-    "users-rds": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
-      "root": "projects/users-rds",
-      "sourceRoot": "projects/users-rds/src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/users-rds/browser",
-            "index": "projects/users-rds/src/index.html",
-            "main": "projects/users-rds/src/main.ts",
-            "polyfills": "projects/users-rds/src/polyfills.ts",
-            "tsConfig": "projects/users-rds/tsconfig.app.json",
-            "aot": true,
-            "assets": [
-              "projects/users-rds/src/favicon.ico",
-              "projects/users-rds/src/assets"
-            ],
-            "styles": [
-              "./node_modules/bootstrap/scss/bootstrap.scss",
-              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
-              "projects/users-rds/src/styles.scss"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/users-rds/src/environments/environment.ts",
-                  "with": "projects/users-rds/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "users-rds:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "users-rds:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "users-rds:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/users-rds/src/test.ts",
-            "polyfills": "projects/users-rds/src/polyfills.ts",
-            "tsConfig": "projects/users-rds/tsconfig.spec.json",
-            "karmaConfig": "projects/users-rds/karma.conf.js",
-            "assets": [
-              "projects/users-rds/src/favicon.ico",
-              "projects/users-rds/src/assets"
-            ],
-            "styles": [
-              "./node_modules/bootstrap/scss/bootstrap.scss",
-              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
-              "projects/users-rds/src/styles.scss"
-            ],
-            "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/users-rds/tsconfig.app.json",
-              "projects/users-rds/tsconfig.spec.json",
-              "projects/users-rds/e2e/tsconfig.json",
-              "projects/users-rds/tsconfig.server.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/users-rds/e2e/protractor.conf.js",
-            "devServerTarget": "users-rds:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "users-rds:serve:production"
-            }
-          }
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/users-rds/server",
-            "main": "projects/users-rds/src/main.server.ts",
-            "tsConfig": "projects/users-rds/tsconfig.server.json"
-          },
-          "configurations": {
-            "production": {
-              "outputHashing": "media",
-              "fileReplacements": [
-                {
-                  "replace": "projects/users-rds/src/environments/environment.ts",
-                  "with": "projects/users-rds/src/environments/environment.prod.ts"
-                }
-              ],
-              "sourceMap": false,
-              "optimization": true
-            }
-          }
-        },
-        "app-shell": {
-          "builder": "@angular-devkit/build-angular:app-shell",
-          "options": {
-            "browserTarget": "users-rds:build",
-            "serverTarget": "users-rds:server",
-            "route": "shell"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "users-rds:build:production",
-              "serverTarget": "users-rds:server:production"
-            }
-          }
-        }
-      }
-    }
-  },
+    }},
   "cli": {
     "analytics": "11384632-5fa9-499b-99ce-82cdc30ab53c"
   },

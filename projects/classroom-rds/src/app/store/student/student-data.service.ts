@@ -3,9 +3,9 @@ import { Injectable } from '@angular/core';
 
 import { DefaultDataService, HttpUrlGenerator } from '@ngrx/data';
 
-import { from, Observable, of } from 'rxjs';
+import { from, Observable } from 'rxjs';
 
-import { CoursesService } from '../../courses/services/course/courses.service';
+import { CoursesService } from './../../courses/services/course/courses.service';
 
 import * as fromStudent from './'
 @Injectable()
