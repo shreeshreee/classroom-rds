@@ -1,0 +1,1014 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Google Classroom RDS Admin</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Google Classroom RDS Admin</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Escribe para buscar"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Componentes</li>
+  <li>SidenavComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>Fichero</h3>
+</p>
+<p class="comment">
+    <code>projects/classroom-rds/src/app/core/layout/sidenav/sidenav.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implementa</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Meta datos</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-sidenav</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./sidenav.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./sidenav.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Índice</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Propiedades</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#classroomPages">classroomPages</a>
+                            </li>
+                            <li>
+                                <a href="#faCompressAlt">faCompressAlt</a>
+                            </li>
+                            <li>
+                                <a href="#faGoogle">faGoogle</a>
+                            </li>
+                            <li>
+                                <a href="#faSchool">faSchool</a>
+                            </li>
+                            <li>
+                                <a href="#faUser">faUser</a>
+                            </li>
+                            <li>
+                                <a href="#faUserCog">faUserCog</a>
+                            </li>
+                            <li>
+                                <a href="#linkText">linkText</a>
+                            </li>
+                            <li>
+                                <a href="#onSideNavChange">onSideNavChange</a>
+                            </li>
+                            <li>
+                                <a href="#sidenavLeft">sidenavLeft</a>
+                            </li>
+                            <li>
+                                <a href="#sideNavState">sideNavState</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Métodos</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSidenavToggle">onSidenavToggle</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Entradas</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#isAdmin">isAdmin</a>
+                            </li>
+                            <li>
+                                <a href="#isHandset">isHandset</a>
+                            </li>
+                            <li>
+                                <a href="#isOnline">isOnline</a>
+                            </li>
+                            <li>
+                                <a href="#user">user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Salidas</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#routeUser">routeUser</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(layoutService: <a href="../injectables/LayoutService.html">LayoutService</a>, store: <a href="../interfaces/AppState.html">Store<AppState></a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="43" class="link-to-prism">projects/classroom-rds/src/app/core/layout/sidenav/sidenav.component.ts:43</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parámetros :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Nombre</td>
+                                                    <td>Tipo</td>
+                                                <td>Opcional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>layoutService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LayoutService.html" target="_self" >LayoutService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/AppState.html" target="_self" >Store&lt;AppState&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Entradas</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isAdmin"></a>
+                        <b>isAdmin</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Definido en <a href="" data-line="28" class="link-to-prism">projects/classroom-rds/src/app/core/layout/sidenav/sidenav.component.ts:28</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isHandset"></a>
+                        <b>isHandset</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Definido en <a href="" data-line="26" class="link-to-prism">projects/classroom-rds/src/app/core/layout/sidenav/sidenav.component.ts:26</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isOnline"></a>
+                        <b>isOnline</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Definido en <a href="" data-line="27" class="link-to-prism">projects/classroom-rds/src/app/core/layout/sidenav/sidenav.component.ts:27</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="user"></a>
+                        <b>user</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Definido en <a href="" data-line="29" class="link-to-prism">projects/classroom-rds/src/app/core/layout/sidenav/sidenav.component.ts:29</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Salidas</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="routeUser"></a>
+                        <b>routeUser</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="../interfaces/User.html" target="_self" >EventEmitter&lt;User&gt;</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Definido en <a href="" data-line="30" class="link-to-prism">projects/classroom-rds/src/app/core/layout/sidenav/sidenav.component.ts:30</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Métodos
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="54"
+                            class="link-to-prism">projects/classroom-rds/src/app/core/layout/sidenav/sidenav.component.ts:54</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSidenavToggle"></a>
+                    <span class="name">
+                        <b>
+                            onSidenavToggle
+                        </b>
+                        <a href="#onSidenavToggle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSidenavToggle()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="60"
+                            class="link-to-prism">projects/classroom-rds/src/app/core/layout/sidenav/sidenav.component.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Propiedades
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="classroomPages"></a>
+                        <span class="name">
+                            <b>
+                            classroomPages</b>
+                            <a href="#classroomPages"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>    <code>NavLink[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>[
+    { name: &#x27;Coursos&#x27;, route: &#x27;/c&#x27;, icon: faChalkboardTeacher },
+    { name: &#x27;Invitaciones&#x27;, route: &#x27;/i&#x27;, icon: faUserPlus },
+    { name: &#x27;Calificaciones&#x27;, route: &#x27;/g&#x27;, icon: faAward },
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="34" class="link-to-prism">projects/classroom-rds/src/app/core/layout/sidenav/sidenav.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="faCompressAlt"></a>
+                        <span class="name">
+                            <b>
+                            faCompressAlt</b>
+                            <a href="#faCompressAlt"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>faCompressAlt</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="39" class="link-to-prism">projects/classroom-rds/src/app/core/layout/sidenav/sidenav.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="faGoogle"></a>
+                        <span class="name">
+                            <b>
+                            faGoogle</b>
+                            <a href="#faGoogle"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>faGoogle</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="43" class="link-to-prism">projects/classroom-rds/src/app/core/layout/sidenav/sidenav.component.ts:43</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="faSchool"></a>
+                        <span class="name">
+                            <b>
+                            faSchool</b>
+                            <a href="#faSchool"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>faSchool</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="41" class="link-to-prism">projects/classroom-rds/src/app/core/layout/sidenav/sidenav.component.ts:41</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="faUser"></a>
+                        <span class="name">
+                            <b>
+                            faUser</b>
+                            <a href="#faUser"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>faUser</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="40" class="link-to-prism">projects/classroom-rds/src/app/core/layout/sidenav/sidenav.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="faUserCog"></a>
+                        <span class="name">
+                            <b>
+                            faUserCog</b>
+                            <a href="#faUserCog"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>faUserCog</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="42" class="link-to-prism">projects/classroom-rds/src/app/core/layout/sidenav/sidenav.component.ts:42</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="linkText"></a>
+                        <span class="name">
+                            <b>
+                            linkText</b>
+                            <a href="#linkText"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="33" class="link-to-prism">projects/classroom-rds/src/app/core/layout/sidenav/sidenav.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onSideNavChange"></a>
+                        <span class="name">
+                            <b>
+                            onSideNavChange</b>
+                            <a href="#onSideNavChange"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="32" class="link-to-prism">projects/classroom-rds/src/app/core/layout/sidenav/sidenav.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sidenavLeft"></a>
+                        <span class="name">
+                            <b>
+                            sidenavLeft</b>
+                            <a href="#sidenavLeft"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>    <code>MatSidenav</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decoradores : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;leftSidenav&#x27;)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="25" class="link-to-prism">projects/classroom-rds/src/app/core/layout/sidenav/sidenav.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sideNavState"></a>
+                        <span class="name">
+                            <b>
+                            sideNavState</b>
+                            <a href="#sideNavState"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="31" class="link-to-prism">projects/classroom-rds/src/app/core/layout/sidenav/sidenav.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from &#x27;@angular/core&#x27;;
+import { MatSidenav } from &#x27;@angular/material/sidenav&#x27;;
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from &#x27;@angular/router&#x27;;
+
+import { faGoogle } from &#x27;@fortawesome/free-brands-svg-icons&#x27;;
+import { faUser, faHome, faSchool, faChalkboardTeacher, faUserTie, faUserGraduate, faUserCog, IconDefinition, faCompressAlt, faSignOutAlt, faShieldAlt, faUserPlus, faAward } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
+
+import { Store } from &#x27;@ngrx/store&#x27;;
+
+import { Observable } from &#x27;rxjs&#x27;;
+
+import { LayoutService } from &#x27;./../layout.service&#x27;;
+import { animateText, onMainContentChange, onSideNavChange } from &#x27;../../animations/animations&#x27;;
+import { AppState } from &#x27;../../../store/app.state&#x27;;
+import { User } from &#x27;../../../auth/models/user.model&#x27;;
+import { signOut } from &#x27;../../../auth/state/auth.actions&#x27;;
+import { NavLink } from &#x27;../../../shared/models/nav-link&#x27;;
+@Component({
+  selector: &#x27;app-sidenav&#x27;,
+  templateUrl: &#x27;./sidenav.component.html&#x27;,
+  styleUrls: [&#x27;./sidenav.component.scss&#x27;],
+  animations: [onMainContentChange, onSideNavChange, animateText]
+})
+export class SidenavComponent implements OnInit {
+  @ViewChild(&#x27;leftSidenav&#x27;) sidenavLeft: MatSidenav;
+  @Input() isHandset: boolean;
+  @Input() isOnline: boolean;
+  @Input() isAdmin: boolean;
+  @Input() user: User;
+  @Output() routeUser: EventEmitter&lt;User&gt;;
+  sideNavState: boolean &#x3D; false;
+  onSideNavChange: boolean;
+  linkText: boolean &#x3D; false;
+  classroomPages: NavLink[] &#x3D; [
+    { name: &#x27;Coursos&#x27;, route: &#x27;/c&#x27;, icon: faChalkboardTeacher },
+    { name: &#x27;Invitaciones&#x27;, route: &#x27;/i&#x27;, icon: faUserPlus },
+    { name: &#x27;Calificaciones&#x27;, route: &#x27;/g&#x27;, icon: faAward },
+  ];
+  faCompressAlt &#x3D; faCompressAlt;
+  faUser &#x3D; faUser;
+  faSchool &#x3D; faSchool;
+  faUserCog &#x3D; faUserCog;
+  faGoogle &#x3D; faGoogle;
+
+  constructor(
+    private layoutService: LayoutService,
+    private store: Store&lt;AppState&gt;,
+  ) {
+    this.layoutService.toggleSidenavLeft.subscribe(() &#x3D;&gt; {
+      this.sidenavLeft.toggle();
+    });
+  }
+
+  ngOnInit(): void {
+    this.layoutService.sideNavState$.subscribe(res &#x3D;&gt; {
+      this.onSideNavChange &#x3D; res;
+    })
+  }
+
+  onSidenavToggle() {
+    this.sideNavState &#x3D; !this.sideNavState
+
+    setTimeout(() &#x3D;&gt; {
+      this.linkText &#x3D; this.sideNavState;
+    }, 100)
+    this.layoutService.sideNavState$.next(this.sideNavState)
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-sidenav-container class&#x3D;&quot;sidenav-container&quot;&gt;
+  &lt;mat-sidenav #leftSidenav class&#x3D;&quot;sidenav&quot; [@onSideNavChange]&#x3D;&quot;sideNavState ? &#x27;open&#x27; : &#x27;close&#x27;&quot; fixedInViewPort
+    [attr.role]&#x3D;&quot;isHandset ? &#x27;dialog&#x27; : &#x27;navigation&#x27;&quot; [mode]&#x3D;&quot;&#x27;side&#x27;&quot; [opened]&#x3D;&quot;isHandset &#x3D;&#x3D; false&quot; *ngIf&#x3D;&quot;isOnline&quot;&gt;
+    &lt;mat-nav-list fxLayout&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;space-between center&quot;&gt;
+      &lt;a *ngFor&#x3D;&quot;let page of classroomPages&quot; mat-list-item [routerLink]&#x3D;&quot;page.route&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;
+        &lt;fa-icon matListIcon [icon]&#x3D;&quot;page.icon&quot;&gt;&lt;/fa-icon&gt;
+        &lt;span matLine [@animateText]&#x3D;&quot;linkText ? &#x27;show&#x27; : &#x27;hide&#x27;&quot;&gt;{{ page?.name }} &lt;/span&gt;
+      &lt;/a&gt;
+      &lt;a mat-list-item (click)&#x3D;&quot;onSidenavToggle()&quot;&gt;
+        &lt;fa-icon matListIcon [icon]&#x3D;&quot;faCompressAlt&quot;&gt;&lt;/fa-icon&gt;
+      &lt;/a&gt;
+    &lt;/mat-nav-list&gt;
+  &lt;/mat-sidenav&gt;
+  &lt;mat-sidenav-content [@onMainContentChange]&#x3D;&quot;(onSideNavChange) ? &#x27;open&#x27;: &#x27;close&#x27;&quot;&gt;
+    &lt;main class&#x3D;&quot;main-container&quot;&gt;
+      &lt;router-outlet&gt;&lt;/router-outlet&gt;
+    &lt;/main&gt;
+  &lt;/mat-sidenav-content&gt;
+&lt;/mat-sidenav-container&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./sidenav.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"> .sidenav-container {
+  background-color: inherit;
+  height:100%;
+}
+
+.sidenav {
+  background-color:inherit;
+  border:none;
+}
+
+.img-google {
+  height: 50px;
+  width: auto;
+}
+.img-user {
+  border:2px solid green;
+}
+
+.sidenav-container {
+  height: calc(100vh - 100px);
+}
+.main-container {
+  min-height: calc(100vh - 100px);
+  width: 100%;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Leyenda</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Elemento Html</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Componente</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Elemento Html con directiva</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-sidenav-container class="sidenav-container">  <mat-sidenav #leftSidenav class="sidenav" [@onSideNavChange]="sideNavState ? \'open\' : \'close\'" fixedInViewPort    [attr.role]="isHandset ? \'dialog\' : \'navigation\'" [mode]="\'side\'" [opened]="isHandset == false" *ngIf="isOnline">    <mat-nav-list fxLayout="column" fxLayoutAlign="space-between center">      <a *ngFor="let page of classroomPages" mat-list-item [routerLink]="page.route" routerLinkActive="active">        <fa-icon matListIcon [icon]="page.icon"></fa-icon>        <span matLine [@animateText]="linkText ? \'show\' : \'hide\'">{{ page?.name }} </span>      </a>      <a mat-list-item (click)="onSidenavToggle()">        <fa-icon matListIcon [icon]="faCompressAlt"></fa-icon>      </a>    </mat-nav-list>  </mat-sidenav>  <mat-sidenav-content [@onMainContentChange]="(onSideNavChange) ? \'open\': \'close\'">    <main class="main-container">      <router-outlet></router-outlet>    </main>  </mat-sidenav-content></mat-sidenav-container></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainProfileComponent', 'selector': 'app-main-profile'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SidenavComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No hay resultados que coincidan "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SidenavComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

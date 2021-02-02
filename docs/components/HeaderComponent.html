@@ -1,0 +1,1084 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Google Classroom RDS Admin</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Google Classroom RDS Admin</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Escribe para buscar"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Componentes</li>
+  <li>HeaderComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>Fichero</h3>
+</p>
+<p class="comment">
+    <code>projects/classroom-rds/src/app/core/layout/header/header.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implementa</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Meta datos</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-header</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./header.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./header.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Índice</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Propiedades</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#faBars">faBars</a>
+                            </li>
+                            <li>
+                                <a href="#faEllipsisV">faEllipsisV</a>
+                            </li>
+                            <li>
+                                <a href="#faGlobe">faGlobe</a>
+                            </li>
+                            <li>
+                                <a href="#faGoogle">faGoogle</a>
+                            </li>
+                            <li>
+                                <a href="#faInfo">faInfo</a>
+                            </li>
+                            <li>
+                                <a href="#faShieldAlt">faShieldAlt</a>
+                            </li>
+                            <li>
+                                <a href="#faSignIn">faSignIn</a>
+                            </li>
+                            <li>
+                                <a href="#faSignOut">faSignOut</a>
+                            </li>
+                            <li>
+                                <a href="#linkText">linkText</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Métodos</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSignIn">onSignIn</a>
+                            </li>
+                            <li>
+                                <a href="#onSignOut">onSignOut</a>
+                            </li>
+                            <li>
+                                <a href="#toggleSidenavLeft">toggleSidenavLeft</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Entradas</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#isAdmin">isAdmin</a>
+                            </li>
+                            <li>
+                                <a href="#isHandset">isHandset</a>
+                            </li>
+                            <li>
+                                <a href="#isOnline">isOnline</a>
+                            </li>
+                            <li>
+                                <a href="#user">user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(layoutService: <a href="../injectables/LayoutService.html">LayoutService</a>, dialog: MatDialog, store: <a href="../interfaces/AppState.html">Store<AppState></a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="54" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:54</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parámetros :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Nombre</td>
+                                                    <td>Tipo</td>
+                                                <td>Opcional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>layoutService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LayoutService.html" target="_self" >LayoutService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/AppState.html" target="_self" >Store&lt;AppState&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Entradas</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isAdmin"></a>
+                        <b>isAdmin</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Definido en <a href="" data-line="44" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:44</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isHandset"></a>
+                        <b>isHandset</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Definido en <a href="" data-line="41" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:41</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isOnline"></a>
+                        <b>isOnline</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Definido en <a href="" data-line="43" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:43</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="user"></a>
+                        <b>user</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Definido en <a href="" data-line="42" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:42</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Métodos
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="61"
+                            class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:61</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSignIn"></a>
+                    <span class="name">
+                        <b>
+                            onSignIn
+                        </b>
+                        <a href="#onSignIn"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSignIn()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="65"
+                            class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:65</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSignOut"></a>
+                    <span class="name">
+                        <b>
+                            onSignOut
+                        </b>
+                        <a href="#onSignOut"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSignOut()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="68"
+                            class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:68</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleSidenavLeft"></a>
+                    <span class="name">
+                        <b>
+                            toggleSidenavLeft
+                        </b>
+                        <a href="#toggleSidenavLeft"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleSidenavLeft($event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="62"
+                            class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:62</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Propiedades
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="faBars"></a>
+                        <span class="name">
+                            <b>
+                            faBars</b>
+                            <a href="#faBars"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>faBars</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="45" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:45</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="faEllipsisV"></a>
+                        <span class="name">
+                            <b>
+                            faEllipsisV</b>
+                            <a href="#faEllipsisV"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>faEllipsisV</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="47" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:47</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="faGlobe"></a>
+                        <span class="name">
+                            <b>
+                            faGlobe</b>
+                            <a href="#faGlobe"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>faGlobe</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="51" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:51</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="faGoogle"></a>
+                        <span class="name">
+                            <b>
+                            faGoogle</b>
+                            <a href="#faGoogle"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>faGoogle</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="52" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:52</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="faInfo"></a>
+                        <span class="name">
+                            <b>
+                            faInfo</b>
+                            <a href="#faInfo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>faInfo</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="53" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:53</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="faShieldAlt"></a>
+                        <span class="name">
+                            <b>
+                            faShieldAlt</b>
+                            <a href="#faShieldAlt"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>faShieldAlt</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="48" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:48</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="faSignIn"></a>
+                        <span class="name">
+                            <b>
+                            faSignIn</b>
+                            <a href="#faSignIn"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>faSignInAlt</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="46" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:46</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="faSignOut"></a>
+                        <span class="name">
+                            <b>
+                            faSignOut</b>
+                            <a href="#faSignOut"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>faSignOutAlt</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="49" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:49</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="linkText"></a>
+                        <span class="name">
+                            <b>
+                            linkText</b>
+                            <a href="#linkText"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="54" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:54</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { animate, state, style, transition, trigger } from &#x27;@angular/animations&#x27;;
+import { Component, OnInit, Input } from &#x27;@angular/core&#x27;;
+import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
+
+import { faGoogle } from &#x27;@fortawesome/free-brands-svg-icons&#x27;;
+import {
+  faBars,
+  faSignInAlt,
+  faShieldAlt,
+  faSignOutAlt,
+  faEllipsisV,
+  faGlobe,
+  faInfo
+} from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
+
+import { Store } from &#x27;@ngrx/store&#x27;;
+
+import { Observable } from &#x27;rxjs&#x27;;
+
+import { LayoutService } from &#x27;../layout.service&#x27;;
+import { animateText } from &#x27;../../animations/animations&#x27;;
+import { AppState } from &#x27;../../../store/app.state&#x27;;
+import { User } from &#x27;../../../auth/models/user.model&#x27;;
+import { signOut } from &#x27;../../../auth/state/auth.actions&#x27;;
+import { LoginDialogComponent } from &#x27;../../../auth/components/login-dialog/login-dialog.component&#x27;;
+
+@Component({
+  selector: &#x27;app-header&#x27;,
+  templateUrl: &#x27;./header.component.html&#x27;,
+  styleUrls: [&#x27;./header.component.scss&#x27;],
+  animations: [animateText,
+    trigger(&#x27;fade&#x27;,
+      [
+        state(&#x27;void&#x27;, style({ opacity: 0 })),
+        transition(&#x27;:enter&#x27;, [animate(0)]),
+        transition(&#x27;:leave&#x27;, [animate(200)]),
+      ]
+    )]
+})
+export class HeaderComponent implements OnInit {
+  @Input() isHandset: boolean;
+  @Input() user: User;
+  @Input() isOnline: boolean;
+  @Input() isAdmin: boolean;
+  faBars &#x3D; faBars;
+  faSignIn &#x3D; faSignInAlt;
+  faEllipsisV &#x3D; faEllipsisV;
+  faShieldAlt &#x3D; faShieldAlt;
+  faSignOut &#x3D; faSignOutAlt;
+
+  faGlobe &#x3D; faGlobe;
+  faGoogle &#x3D; faGoogle;
+  faInfo &#x3D; faInfo;
+  linkText: boolean &#x3D; false;
+  constructor(
+    private layoutService: LayoutService,
+    private dialog: MatDialog,
+    private store: Store&lt;AppState&gt;
+  ) { }
+
+  ngOnInit() { }
+  toggleSidenavLeft($event: any) {
+    this.layoutService.toggleSidenavLeft.emit($event);
+  }
+  onSignIn() {
+    this.dialog.open(LoginDialogComponent, { height: &#x27;250px&#x27;, width: &#x27;380px&#x27; });
+  }
+  onSignOut() {
+    this.store.dispatch(signOut({ user: this.user }));
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-toolbar class&#x3D;&quot;animation fadeInOut border-bottom&quot;&gt;
+  &lt;mat-toolbar-row fxLayoutAlign&#x3D;&quot;space-between center&quot;&gt;
+    &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutGap&#x3D;&quot;20px&quot;&gt;
+      &lt;button *ngIf&#x3D;&quot;isHandset &amp;&amp; isOnline&quot; mat-icon-button (click)&#x3D;&quot;toggleSidenavLeft($event)&quot;&gt;
+        &lt;fa-icon [icon]&#x3D;&quot;faBars&quot;&gt;&lt;/fa-icon&gt;
+      &lt;/button&gt;
+      &lt;button mat-icon-button [routerLink]&#x3D;&quot;[&#x27;/&#x27;]&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;
+        &lt;img class&#x3D;&quot;img-fluid&quot; src&#x3D;&quot;/assets/icons/android-chrome-512x512.png&quot; /&gt;
+      &lt;/button&gt;
+      &lt;button mat-button [matMenuTriggerFor]&#x3D;&quot;infoMenu&quot;&gt;
+        Información
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;a *ngIf&#x3D;&quot;isOnline&quot; [matMenuTriggerFor]&#x3D;&quot;userMenu&quot;&gt;
+      &lt;img mat-card-avatar [src]&#x3D;&quot;[user.photoUrl ? user.photoUrl : &#x27;/assets/images/dummy-user.png&#x27;]&quot; /&gt;
+    &lt;/a&gt;
+    &lt;button *ngIf&#x3D;&quot;!isOnline&quot; mat-icon-button (click)&#x3D;&quot;onSignIn()&quot;&gt;
+      &lt;img class&#x3D;&quot;img-fluid&quot; src&#x3D;&quot;/assets/images/google-logo.svg&quot; /&gt;
+    &lt;/button&gt;
+  &lt;/mat-toolbar-row&gt;
+&lt;/mat-toolbar&gt;
+&lt;mat-menu #userMenu&#x3D;&quot;matMenu&quot; fxLayoutAlign&#x3D;&quot;right&quot;&gt;
+  &lt;ng-template matMenuContent&gt;
+    &lt;div mat-list-item *ngIf&#x3D;&quot;isOnline &amp;&amp; user&quot; [routerLink]&#x3D;&quot;[&#x27;profile&#x27;]&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;
+      &lt;app-user [isOnline]&#x3D;&quot;isOnline&quot; [isAdmin]&#x3D;&quot;isAdmin&quot; [user]&#x3D;&quot;user&quot;&gt; &lt;/app-user&gt;
+    &lt;/div&gt;
+    &lt;div mat-menu-item *ngIf&#x3D;&quot;isOnline &amp;&amp; isAdmin&quot; [routerLink]&#x3D;&quot;[&#x27;admin&#x27;]&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;
+      &lt;fa-icon matListIcon [icon]&#x3D;&quot;faShieldAlt&quot; size&#x3D;&quot;lg&quot;&gt;&lt;/fa-icon&gt;
+      &lt;span&gt;Administración&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div mat-menu-item *ngIf&#x3D;&quot;isOnline&quot; (click)&#x3D;&quot;onSignOut()&quot;&gt;
+      &lt;fa-icon matListIcon [icon]&#x3D;&quot;faSignOut&quot; size&#x3D;&quot;lg&quot;&gt;&lt;/fa-icon&gt;
+      &lt;span&gt;Cerrar Sesión&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/ng-template&gt;
+&lt;/mat-menu&gt;
+&lt;mat-menu #infoMenu&#x3D;&quot;matMenu&quot;&gt;
+  &lt;ng-template matMenuContent&gt;
+    &lt;div mat-menu-item [routerLink]&#x3D;&quot;[&#x27;/&#x27;]&quot; [matMenuTriggerFor]&#x3D;&quot;escuela&quot;&gt;Escuela&lt;/div&gt;
+    &lt;div mat-menu-item [matMenuTriggerFor]&#x3D;&quot;webapp&quot;&gt;Aplicación&lt;/div&gt;
+  &lt;/ng-template&gt;
+&lt;/mat-menu&gt;
+
+&lt;mat-menu #escuela&#x3D;&quot;matMenu&quot;&gt;
+  &lt;ng-template matMenuContent&gt;
+    &lt;div mat-menu-item [routerLink]&#x3D;&quot;[&#x27;about&#x27;]&quot;&gt;Quiénes somos&lt;/div&gt;
+    &lt;div mat-menu-item [matMenuTriggerFor]&#x3D;&quot;oferta&quot;&gt;Oferta educativa&lt;/div&gt;
+    &lt;div mat-menu-item&gt;Ubicación y contacto&lt;/div&gt;
+    &lt;div mat-menu-item&gt;Contacto&lt;/div&gt;
+  &lt;/ng-template&gt;
+&lt;/mat-menu&gt;
+
+&lt;mat-menu #webapp&#x3D;&quot;matMenu&quot;&gt;
+  &lt;ng-template matMenuContent&gt;
+    &lt;div mat-menu-item [routerLink]&#x3D;&quot;[&#x27;privacy-policy&#x27;]&quot;&gt;Políticas de privacidad&lt;/div&gt;
+    &lt;div mat-menu-item [routerLink]&#x3D;&quot;[&#x27;terms&#x27;]&quot;&gt;Términos de uso&lt;/div&gt;
+    &lt;div mat-menu-item [routerLink]&#x3D;&quot;[&#x27;license&#x27;]&quot;&gt;Licencia&lt;/div&gt;
+    &lt;div mat-menu-item [routerLink]&#x3D;&quot;[&#x27;code-conduct&#x27;]&quot;&gt;Código de conducta&lt;/div&gt;
+  &lt;/ng-template&gt;
+&lt;/mat-menu&gt;
+
+&lt;mat-menu #oferta&#x3D;&quot;matMenu&quot;&gt;
+  &lt;ng-template matMenuContent&gt;
+    &lt;div mat-menu-item&gt;Preescolar&lt;/div&gt;
+    &lt;div mat-menu-item&gt;Primaria&lt;/div&gt;
+    &lt;div mat-menu-item&gt;Secundaria&lt;/div&gt;
+  &lt;/ng-template&gt;
+&lt;/mat-menu&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./header.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.mat-toolbar{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: 50px!important;
+  height: 50px !important;
+  background-color:inherit;
+}
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Leyenda</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Elemento Html</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Componente</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Elemento Html con directiva</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-toolbar class="animation fadeInOut border-bottom">  <mat-toolbar-row fxLayoutAlign="space-between center">    <div fxLayout="row" fxLayoutGap="20px">      <button *ngIf="isHandset && isOnline" mat-icon-button (click)="toggleSidenavLeft($event)">        <fa-icon [icon]="faBars"></fa-icon>      </button>      <button mat-icon-button [routerLink]="[\'/\']" routerLinkActive="active">        <img class="img-fluid" src="/assets/icons/android-chrome-512x512.png" />      </button>      <button mat-button [matMenuTriggerFor]="infoMenu">        Información      </button>    </div>    <a *ngIf="isOnline" [matMenuTriggerFor]="userMenu">      <img mat-card-avatar [src]="[user.photoUrl ? user.photoUrl : \'/assets/images/dummy-user.png\']" />    </a>    <button *ngIf="!isOnline" mat-icon-button (click)="onSignIn()">      <img class="img-fluid" src="/assets/images/google-logo.svg" />    </button>  </mat-toolbar-row></mat-toolbar><mat-menu #userMenu="matMenu" fxLayoutAlign="right">  <ng-template matMenuContent>    <div mat-list-item *ngIf="isOnline && user" [routerLink]="[\'profile\']" routerLinkActive="active">      <app-user [isOnline]="isOnline" [isAdmin]="isAdmin" [user]="user"> </app-user>    </div>    <div mat-menu-item *ngIf="isOnline && isAdmin" [routerLink]="[\'admin\']" routerLinkActive="active">      <fa-icon matListIcon [icon]="faShieldAlt" size="lg"></fa-icon>      <span>Administración</span>    </div>    <div mat-menu-item *ngIf="isOnline" (click)="onSignOut()">      <fa-icon matListIcon [icon]="faSignOut" size="lg"></fa-icon>      <span>Cerrar Sesión</span>    </div>  </ng-template></mat-menu><mat-menu #infoMenu="matMenu">  <ng-template matMenuContent>    <div mat-menu-item [routerLink]="[\'/\']" [matMenuTriggerFor]="escuela">Escuela</div>    <div mat-menu-item [matMenuTriggerFor]="webapp">Aplicación</div>  </ng-template></mat-menu><mat-menu #escuela="matMenu">  <ng-template matMenuContent>    <div mat-menu-item [routerLink]="[\'about\']">Quiénes somos</div>    <div mat-menu-item [matMenuTriggerFor]="oferta">Oferta educativa</div>    <div mat-menu-item>Ubicación y contacto</div>    <div mat-menu-item>Contacto</div>  </ng-template></mat-menu><mat-menu #webapp="matMenu">  <ng-template matMenuContent>    <div mat-menu-item [routerLink]="[\'privacy-policy\']">Políticas de privacidad</div>    <div mat-menu-item [routerLink]="[\'terms\']">Términos de uso</div>    <div mat-menu-item [routerLink]="[\'license\']">Licencia</div>    <div mat-menu-item [routerLink]="[\'code-conduct\']">Código de conducta</div>  </ng-template></mat-menu><mat-menu #oferta="matMenu">  <ng-template matMenuContent>    <div mat-menu-item>Preescolar</div>    <div mat-menu-item>Primaria</div>    <div mat-menu-item>Secundaria</div>  </ng-template></mat-menu></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainProfileComponent', 'selector': 'app-main-profile'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'HeaderComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No hay resultados que coincidan "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'HeaderComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
