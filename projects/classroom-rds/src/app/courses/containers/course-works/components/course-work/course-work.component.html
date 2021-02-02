@@ -1,0 +1,17 @@
+<div *ngIf="isLoading$|async">
+  <mat-progress-bar mode="query" color="primary"> </mat-progress-bar>
+</div>
+<div *ngIf="(courseWorks$|async).length==0 && !(isLoading$|async)">
+  <mat-card class="text-center">
+    <fa-icon [icon]="faBlind"></fa-icon> se encontraron elementos.
+  </mat-card>
+</div>
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let courseWork of courseWorks$|async">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{courseWork.title}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+</mat-accordion>

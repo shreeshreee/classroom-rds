@@ -8,23 +8,24 @@ import {
 import { Observable, of } from 'rxjs';
 import { filter, first, map, tap } from 'rxjs/operators';
 
-import { StudentEntityService } from './../../../store/student/student-entity.service';
+import { CourseWorkEntityService } from '../../../../store/course-work/course-work-entity-service.service';
+
 
 @Injectable()
-export class StudentsResolver implements Resolve<boolean> {
+export class CourseWorksResolver implements Resolve<boolean> {
   constructor(
-    private studentES: StudentEntityService,
+    private courseWorkES: CourseWorkEntityService,
   ) { }
 
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> {
-    return this.studentES.loading$
+    return this.courseWorkES.loading$
       .pipe(
         tap(loading => {
           if (!loading) {
-            this.studentES.getWithQuery(route.parent.paramMap.get('courseId'));
+            this.courseWorkES.getWithQuery(route.parent.parent.paramMap.get('courseId'));
           }
         }),
         filter(loading => !!loading),

@@ -1,7 +1,8 @@
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 export interface NavLink {
-  route: string[];
+  route: string;
   name: string;
-  icon: IconDefinition;
+  icon?: IconDefinition;
+  index?: number;
 }

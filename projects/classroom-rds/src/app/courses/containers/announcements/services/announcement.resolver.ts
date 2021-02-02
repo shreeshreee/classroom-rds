@@ -5,10 +5,10 @@ import {
   ActivatedRouteSnapshot
 } from '@angular/router';
 
+import { AnnouncementEntityService } from '@rds-store/announcement/announcement-entity.service';
+
 import { Observable } from 'rxjs';
 import { filter, first, tap } from 'rxjs/operators';
-
-import { AnnouncementEntityService } from './../../../store/announcement/announcement-entity.service';
 
 @Injectable()
 export class AnnouncementResolver implements Resolve<boolean> {
@@ -24,7 +24,7 @@ export class AnnouncementResolver implements Resolve<boolean> {
       .pipe(
         tap(loading => {
           if (!loading) {
-            this.announcementES.getWithQuery(route.parent.paramMap.get('courseId'));
+            this.announcementES.getWithQuery(route.parent.parent.paramMap.get('courseId'));
           }
         }),
         filter(loading => !!loading),

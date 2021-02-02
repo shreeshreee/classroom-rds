@@ -3,12 +3,13 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { faBullhorn, faListAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
 
+import { CourseEntityService } from '@rds-store/course/course-entity.service';
+
 import { Observable } from 'rxjs';
 
-import { AnnouncementDialogComponent } from './../../components/announcement-dialog/announcement-dialog.component';
 import { CourseDialogComponent } from './../../components/course-dialog/course-dialog.component';
 import { CoursesService } from './../../services/course/courses.service';
-import { CourseEntityService } from './../../../store/course/course-entity.service';
+import { AnnouncementDialogComponent } from '../announcements/components/announcement-dialog/announcement-dialog.component';
 
 @Component({
   selector: 'app-courses',

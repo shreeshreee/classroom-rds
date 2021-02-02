@@ -17,6 +17,8 @@ import { CourseEntityService } from '../../../store/course/course-entity.service
   selector: 'app-courses-list',
   templateUrl: './courses-list.component.html',
   styleUrls: ['./courses-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+
 })
 export class CoursesListComponent implements OnInit, AfterViewInit {
   courses: gapi.client.classroom.Course[];

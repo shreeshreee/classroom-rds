@@ -1,13 +1,13 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material/chips';
 
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-import { CourseLevel, State } from '../../models/classroom.enum';
-import { Link } from '../../models/classroom.model';
+import { CourseLevel, State } from '../../../../models/classroom.enum';
+import { Link } from '../../../../models/classroom.model';
 
 @Component({
   templateUrl: './announcement-dialog.component.html',

@@ -1,27 +1,30 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { faBlind } from '@fortawesome/free-solid-svg-icons';
+
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { TeacherEntityService } from './../../../store/teacher/teacher-entity.service';
+import { TeacherEntityService } from '../../../../../store/teacher/teacher-entity.service';
 @Component({
   selector: 'app-course-teachers',
   templateUrl: './course-teachers.component.html',
   styleUrls: ['./course-teachers.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+
 })
 export class CourseTeachersComponent implements OnInit {
   teachers$: Observable<gapi.client.classroom.Teacher[]>;
   courseId: string;
-
+  isLoading$: Observable<boolean>;
+  faBlind = faBlind;
   constructor(
     private route: ActivatedRoute,
     private teacherEntityService: TeacherEntityService,
   ) {
-    this.courseId = this.route.snapshot.paramMap.get('courseId');
-  }
-
-  ngOnInit(): void {
+    this.isLoading$ = this.teacherEntityService.loading$;
+    this.courseId = this.route.parent.parent.snapshot.paramMap.get('courseId');
     this.teachers$ = this.teacherEntityService.entities$.pipe(
       map(teachers => {
         if (!teachers) {
@@ -30,6 +33,10 @@ export class CourseTeachersComponent implements OnInit {
         return teachers.filter(x => x.courseId == this.courseId);
       }),
     );
+  }
+
+  ngOnInit(): void {
+
   }
 
 

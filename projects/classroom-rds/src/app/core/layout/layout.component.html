@@ -1,12 +1,10 @@
-<div *ngIf="loading" style="min-height: 50vh;" fxLayout="column" fxLayoutAlign="center center">
-  <mat-spinner strokeWidth="10" [diameter]="100"> </mat-spinner>
-  <span>Cargando...</span>
-</div>
-<div *ngIf="!loading" fxLayout="column" fxFlexFill>
+<div fxLayout="column" fxFlexFill>
   <app-header [user]="(user$|async)" [isHandset]="(isHandset$|async)" [isAdmin]="(isAdmin$|async)"
     [isOnline]="(isOnline$|async)">
   </app-header>
-
+  <div *ngIf="loading" class="w-100">
+    <mat-progress-bar mode="query" color="primary"> </mat-progress-bar>
+  </div>
   <div fxFlex>
     <app-sidenav [isHandset]="(isHandset$|async)" [isOnline]="(isOnline$|async)" [user]="(user$|async)"
       [isAdmin]="(isAdmin$|async)">

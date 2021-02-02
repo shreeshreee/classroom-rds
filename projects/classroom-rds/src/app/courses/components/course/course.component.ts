@@ -1,5 +1,5 @@
 import {
-  ActivatedRoute,
+  ActivatedRoute, Router,
 
 } from '@angular/router';
 import {
@@ -8,6 +8,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 import {
   faAt,
@@ -41,6 +42,7 @@ import { TeacherEntityService } from './../../../store/teacher/teacher-entity.se
   selector: 'app-course',
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CourseComponent implements OnInit {
   isHandset$: Observable<boolean>;
@@ -65,13 +67,15 @@ export class CourseComponent implements OnInit {
   owner: gapi.client.classroom.Teacher;
   linkText: boolean = false;
   courseLinks: NavLink[] = [
-    { name: 'Alumnos', route: ['students'], icon: faUserGraduate },
-    { name: 'Profesores', route: ['teachers'], icon: faUserTie },
-    { name: 'Trabajos', route: ['courseworks'], icon: faBriefcase },
-    { name: 'Avisos', route: ['announcements'], icon: faBullhorn },
-  ]
+    { name: 'Profesores', route: 'teachers', icon: faUserTie },
+    { name: 'Alumnos', route: 'students', icon: faUserGraduate },
+    { name: 'Trabajos', route: 'courseworks', icon: faBriefcase },
+    { name: 'Avisos', route: 'announcements', icon: faBullhorn },
+  ];
+  activeLinkIndex = -1;
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private teacherEntityService: TeacherEntityService,
     private courseEntityService: CourseEntityService,
     private coursesService: CoursesService,
@@ -99,7 +103,9 @@ export class CourseComponent implements OnInit {
       );
   }
   ngOnInit() {
-    this.reload();
+    this.router.events.subscribe((res) => {
+      this.activeLinkIndex = this.courseLinks.indexOf(this.courseLinks.find(tab => tab.route === '.' + this.router.url));
+    });
   }
   reload() {
 

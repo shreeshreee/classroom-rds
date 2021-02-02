@@ -32,9 +32,9 @@ export class SidenavComponent implements OnInit {
   onSideNavChange: boolean;
   linkText: boolean = false;
   classroomPages: NavLink[] = [
-    { name: 'Coursos', route: ['/c'], icon: faChalkboardTeacher },
-    { name: 'Invitaciones', route: ['/i'], icon: faUserPlus },
-    { name: 'Calificaciones', route: ['/g'], icon: faAward },
+    { name: 'Coursos', route: '/c', icon: faChalkboardTeacher },
+    { name: 'Invitaciones', route: '/i', icon: faUserPlus },
+    { name: 'Calificaciones', route: '/g', icon: faAward },
   ];
   faCompressAlt = faCompressAlt;
   faUser = faUser;

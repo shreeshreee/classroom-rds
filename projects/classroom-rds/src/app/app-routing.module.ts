@@ -38,7 +38,8 @@ const routes: Routes = [{
   imports: [RouterModule.forRoot(routes, {
     //relativeLinkResolution: 'corrected',
     //initialNavigation: 'enabled',
-    //enableTracing: false,
+    // useHash: true
+    //enableTracing: true,
     //preloadingStrategy: PreloadAllModules
   }
   )],

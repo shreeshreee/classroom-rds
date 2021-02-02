@@ -6,10 +6,10 @@ import {
   ActivatedRoute
 } from '@angular/router';
 
+import { TeacherEntityService } from '@rds-store/teacher/teacher-entity.service';
+
 import { Observable, of } from 'rxjs';
 import { filter, first, tap } from 'rxjs/operators';
-
-import { TeacherEntityService } from './../../../store/teacher/teacher-entity.service';
 
 @Injectable()
 export class TeachersResolver implements Resolve<boolean> {
@@ -25,7 +25,7 @@ export class TeachersResolver implements Resolve<boolean> {
       .pipe(
         tap(loading => {
           if (!loading) {
-            this.teacherEntityService.getWithQuery(route.parent.paramMap.get('courseId'));
+            this.teacherEntityService.getWithQuery(route.parent.parent.paramMap.get('courseId'));
           }
         }),
         filter(loading => !!loading),

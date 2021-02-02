@@ -46,17 +46,13 @@
       Carpeta
     </a>
   </div>
-</div>
-
-<div class="py-2 card">
-  <mat-nav-list fxLayout="row wrap">
-    <a fxFlex *ngFor="let link of courseLinks" mat-list-item [routerLink]="link.route" [routerLinkActive]="['active']">
-      <fa-icon matListIcon [icon]="link.icon"></fa-icon>
-      <span *ngIf="!(isHandset$|async)" matLine>{{ link?.name }} </span>
-    </a>
-  </mat-nav-list>
-  <section>
+  <div class="py-2" style="height: 100vh">
+    <nav class="sticky-top" mat-tab-nav-bar mat-align-tabs="center">
+      <a mat-tab-link *ngFor="let link of courseLinks" [routerLink]="link.route" routerLinkActive
+        #rla="routerLinkActive" [active]="rla.isActive">
+        {{link.name}}
+      </a>
+    </nav>
     <router-outlet></router-outlet>
-  </section>
-
+  </div>
 </div>

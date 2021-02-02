@@ -5,7 +5,7 @@ import { DefaultDataService, HttpUrlGenerator } from '@ngrx/data';
 
 import { from, Observable } from 'rxjs';
 
-import { TeachersService } from './../../courses/services/teacher/teachers.service';
+import { TeachersService } from '../../courses/containers/teachers/services/teachers.service';
 
 import * as fromTeacher from './';
 
