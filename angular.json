@@ -24,11 +24,13 @@
             "tsConfig": "projects/classroom-rds/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "projects/classroom-rds/src/favicon.ico",
-              "projects/classroom-rds/src/assets"
+              "projects/classroom-rds/src/assets",
+              "projects/classroom-rds/src/manifest.webmanifest"
             ],
             "styles": [
-              "projects/classroom-rds/src/styles.scss"
+              "projects/classroom-rds/src/styles.scss",
+              "./node_modules/bootstrap/scss/bootstrap.scss",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
             ],
             "scripts": []
           },
@@ -58,7 +60,9 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "projects/classroom-rds/ngsw-config.json"
             }
           }
         },
@@ -87,10 +91,12 @@
             "tsConfig": "projects/classroom-rds/tsconfig.spec.json",
             "karmaConfig": "projects/classroom-rds/karma.conf.js",
             "assets": [
-              "projects/classroom-rds/src/favicon.ico",
-              "projects/classroom-rds/src/assets"
+              "projects/classroom-rds/src/assets",
+              "projects/classroom-rds/src/manifest.webmanifest"
             ],
             "styles": [
+              "./node_modules/bootstrap/scss/bootstrap.scss",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "projects/classroom-rds/src/styles.scss"
             ],
             "scripts": []
@@ -104,9 +110,7 @@
               "projects/classroom-rds/tsconfig.spec.json",
               "projects/classroom-rds/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -120,9 +124,14 @@
               "devServerTarget": "classroom-rds:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "cli": {
     "analytics": "11384632-5fa9-499b-99ce-82cdc30ab53c"
   },

@@ -1,0 +1,12 @@
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let announcement of announcements$|async">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ announcement.text }}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{ announcement.creationTime }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+</mat-accordion>

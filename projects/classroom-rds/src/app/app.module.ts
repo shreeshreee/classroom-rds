@@ -1,4 +1,3 @@
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -8,8 +7,6 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
-
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { NgxSpinnerModule } from 'ngx-spinner';
 
@@ -24,8 +21,11 @@ import { MaterialModule } from './modules/material.module';
 import { SharedModule } from './shared/shared.module';
 import { AppStoreModule } from './store/app-store.module';
 
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -35,8 +35,6 @@ import { AppStoreModule } from './store/app-store.module';
     AuthModule.forRoot(),
     CoreModule,
     MaterialModule,
-    FontAwesomeModule,
-    FlexLayoutModule,
     NgxSpinnerModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),

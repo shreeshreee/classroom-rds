@@ -3,7 +3,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from '@angular/router';
 
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { faUser, faHome, faSchool, faChalkboardTeacher, faUserTie, faUserGraduate, faUserCog, IconDefinition, faCompressAlt, faSignOutAlt, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faHome, faSchool, faChalkboardTeacher, faUserTie, faUserGraduate, faUserCog, IconDefinition, faCompressAlt, faSignOutAlt, faShieldAlt, faUserPlus, faAward } from '@fortawesome/free-solid-svg-icons';
 
 import { Store } from '@ngrx/store';
 
@@ -32,10 +32,9 @@ export class SidenavComponent implements OnInit {
   onSideNavChange: boolean;
   linkText: boolean = false;
   classroomPages: NavLink[] = [
-    { name: 'Inicio', route: ['/'], icon: faHome },
     { name: 'Coursos', route: ['/c'], icon: faChalkboardTeacher },
-    { name: 'Profesores', route: ['teachers'], icon: faUserTie },
-    { name: 'Alumnos', route: ['stundets'], icon: faUserGraduate },
+    { name: 'Invitaciones', route: ['/i'], icon: faUserPlus },
+    { name: 'Calificaciones', route: ['/g'], icon: faAward },
   ];
   faCompressAlt = faCompressAlt;
   faUser = faUser;

@@ -23,6 +23,6 @@ export class TeacherDataService extends DefaultDataService<gapi.client.classroom
     return from(this.teachersService.getTeachers(courseId));
   }
   add(teacher: gapi.client.classroom.Teacher): Observable<gapi.client.classroom.Teacher> {
-    return from(this.teachersService.addTeacher(teacher.courseId, teacher.userId));
+    return from(this.teachersService.addTeacher(teacher));
   }
 }

@@ -7,7 +7,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 import { environment } from '../../environments/environment';
+
 import { reducers } from './app.state';
+import { NgrxToastService } from './ngrx-toast.service';
 
 import * as fromEntity from './config/entity-metadata';
 import { registeredEffects } from './config/registered-effects';
@@ -31,6 +33,9 @@ import { storeConfig } from './config/store-config';
     ),
     EntityDataModule.forRoot(fromEntity.entityConfig),
     StoreRouterConnectingModule.forRoot(),
+  ],
+  providers: [
+    NgrxToastService
   ],
   exports: [
     StoreModule,

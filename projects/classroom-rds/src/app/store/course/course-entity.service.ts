@@ -9,5 +9,4 @@ export class CourseEntityService extends EntityCollectionServiceBase<gapi.client
   constructor(readonly serviceElementsFactory: EntityCollectionServiceElementsFactory) {
     super(fromCourse.entityCollectionName, serviceElementsFactory);
   }
-
 }

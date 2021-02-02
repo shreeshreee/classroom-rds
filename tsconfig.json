@@ -3,6 +3,26 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "paths": {
+      "~/*": [
+        "projects/classroom-rds/src/*"
+      ],
+      "@rds-shared/*": [
+        "projects/classroom-rds/src/app/shared/*"
+      ],
+      "@rds-core/*": [
+        "projects/classroom-rds/src/app/core/*"
+      ],
+      "@rds-auth/*": [
+        "projects/classroom-rds/src/app/auth*"
+      ],
+      "@rds-store/*": [
+        "projects/classroom-rds/src/app/store/*"
+      ],
+      "@rds-env/*": [
+        "projects/classroom-rds/src/environments/*"
+      ]
+    },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
