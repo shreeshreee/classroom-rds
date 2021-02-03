@@ -3,18 +3,21 @@
 </div>
 <div *ngIf="(announcements$|async).length==0 && !(isLoading$|async)">
   <mat-card class="text-center">
-    <fa-icon [icon]="faBlind"></fa-icon> se encontraron elementos.
+    <fa-icon [icon]="faBlind" size="lg"></fa-icon>No se encontraron elementos.
   </mat-card>
 </div>
 <mat-accordion>
-  <mat-expansion-panel *ngFor="let announcement of announcements$|async">
-    <mat-expansion-panel-header>
+  <mat-expansion-panel *ngFor="let announcement of announcements$|async" (opened)="getName(announcement.id)">
+    <mat-expansion-panel-header (click)="togglePanel()">
       <mat-panel-title>
         {{ announcement.text }}
       </mat-panel-title>
       <mat-panel-description>
-        {{ announcement.creationTime }}
+        {{ announcement.creationTime |date:'medium'}}
       </mat-panel-description>
     </mat-expansion-panel-header>
+    <div>
+      Creado por: {{creator$|async}}
+    </div>
   </mat-expansion-panel>
 </mat-accordion>

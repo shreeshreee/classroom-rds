@@ -1,3 +1,5 @@
+import { StudentSubmissionEntityService } from './../../../../../store/student-submission/student-submission-entity.service';
+import { TopicEntityService } from './../../../../../store/topic/topic-entity.service';
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -15,18 +17,19 @@ import { map } from 'rxjs/operators';
 })
 export class CourseWorkComponent implements OnInit {
   courseWorks$: Observable<gapi.client.classroom.CourseWork[]>;
+  topics$: Observable<gapi.client.classroom.Topic[]>;
+  courseTopics: gapi.client.classroom.Topic[];
   courseId: string;
   isLoading$: Observable<boolean>;
   faBlind = faBlind;
   constructor(
     private route: ActivatedRoute,
     private courseWorkEntityService: CourseWorkEntityService,
+    private topicEntityService: TopicEntityService,
+    private studentSubmissionEntityService: StudentSubmissionEntityService
   ) {
     this.isLoading$ = this.courseWorkEntityService.loading$;
     this.courseId = this.route.parent.parent.snapshot.paramMap.get('courseId');
-  }
-
-  ngOnInit(): void {
     this.courseWorks$ = this.courseWorkEntityService.entities$.pipe(
       map(courseWorks => {
         if (!courseWorks) {
@@ -35,6 +38,19 @@ export class CourseWorkComponent implements OnInit {
         return courseWorks.filter(x => x.courseId == this.courseId);
       })
     );
+    this.topics$ = this.topicEntityService.entities$.pipe(
+      map(topics => {
+        if (!topics) {
+          this.topicEntityService.getWithQuery(this.courseId);
+        }
+        this.courseTopics = topics.filter(x => x.courseId == this.courseId);
+        return this.courseTopics;
+      })
+    );
+  }
+
+  ngOnInit(): void {
+
   }
 }
 

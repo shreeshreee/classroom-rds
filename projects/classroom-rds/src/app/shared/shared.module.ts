@@ -9,6 +9,7 @@ import { MaterialModule } from '../modules/material.module';
 
 import * as fromSharedComponents from './components';
 import * as fromSharedServices from './services';
+import { RemoveConfirmComponent } from './components/remove-confirm/remove-confirm.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,7 @@ import * as fromSharedServices from './services';
     MaterialModule
   ],
   providers: [...fromSharedServices.sharedServices],
-  declarations: [...fromSharedComponents.sharedComponents],
+  declarations: [...fromSharedComponents.sharedComponents, RemoveConfirmComponent],
   exports: [...fromSharedComponents.sharedComponents]
 })
 export class SharedModule { }

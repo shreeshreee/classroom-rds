@@ -103,3 +103,7 @@ export interface Form {
   title: string;
   thumbnailUrl: string;
 }
+export interface ModifyIndividualStudentsOptions {
+  addStudentIds: string[];
+  removeStudentIds: string[];
+}

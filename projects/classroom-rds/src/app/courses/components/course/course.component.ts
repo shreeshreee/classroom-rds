@@ -38,6 +38,8 @@ import { NavLink } from '../../../shared/models/nav-link';
 import { CourseEntityService } from '../../../store/course/course-entity.service';
 import { TeacherEntityService } from './../../../store/teacher/teacher-entity.service';
 
+import { UserProfilesService } from '~/app/courses/services/user-profile/user-profiles.service';
+
 @Component({
   selector: 'app-course',
   templateUrl: './course.component.html',
@@ -79,6 +81,7 @@ export class CourseComponent implements OnInit {
     private teacherEntityService: TeacherEntityService,
     private courseEntityService: CourseEntityService,
     private coursesService: CoursesService,
+    private userProfilesService: UserProfilesService,
     private layoutService: LayoutService,
     private dialog: MatDialog,
   ) {
@@ -139,7 +142,7 @@ export class CourseComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(async result => {
       if (result) {
-        const profile = await this.coursesService.getUserProfile(result.mail);
+        const profile = await this.userProfilesService.getUserProfile(result.mail);
         const preTeacher: gapi.client.classroom.Invitation = {
           userId: result.mail,
           courseId: result.id,

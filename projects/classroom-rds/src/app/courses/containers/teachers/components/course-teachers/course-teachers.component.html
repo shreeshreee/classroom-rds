@@ -3,7 +3,7 @@
 </div>
 <div *ngIf="(teachers$|async).length==0 && !(isLoading$|async)">
   <mat-card class="text-center">
-    <fa-icon [icon]="faBlind"></fa-icon> se encontraron elementos.
+    <fa-icon [icon]="faBlind" size="lg"></fa-icon>No se encontraron elementos.
   </mat-card>
 </div>
 <mat-accordion>

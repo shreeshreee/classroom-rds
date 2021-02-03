@@ -5,20 +5,21 @@ import { DefaultDataService, HttpUrlGenerator } from '@ngrx/data';
 
 import { from, Observable } from 'rxjs';
 
-import { CoursesService } from '../../courses/services/course/courses.service';
+import { AnnouncementsService } from './../../courses/containers/announcements/services/announcements.service';
+
 import * as fromAnnouncement from './'
 @Injectable()
 export class AnnouncementDataService extends DefaultDataService<gapi.client.classroom.Announcement> {
   constructor(
     http: HttpClient,
     httpUrlGenerator: HttpUrlGenerator,
-    private coursesService: CoursesService
+    private announcementsService: AnnouncementsService
   ) {
     super(fromAnnouncement.entityCollectionName, http, httpUrlGenerator);
   }
   getWithQuery(courseId: string): Observable<gapi.client.classroom.Announcement[]> {
     return from(
-      this.coursesService.getAnnouncements(courseId)
+      this.announcementsService.getAnnouncements(courseId)
     );
   }
 }

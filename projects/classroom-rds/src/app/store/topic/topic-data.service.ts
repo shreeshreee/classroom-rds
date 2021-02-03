@@ -4,19 +4,23 @@ import { Injectable } from '@angular/core';
 import { DefaultDataService, HttpUrlGenerator } from '@ngrx/data';
 
 import { from, Observable } from 'rxjs';
-
-import * as fromCourseWork from './';
 import { CourseWorksService } from '~/app/courses/containers/course-works/services/course-works.service';
+
+import * as fromTopic from './';
 @Injectable()
-export class CourseWorkDataService extends DefaultDataService<gapi.client.classroom.CourseWork> {
+export class TopicDataService extends DefaultDataService<gapi.client.classroom.Topic> {
+
+
   constructor(
     http: HttpClient,
     httpUrlGenerator: HttpUrlGenerator,
     private courseWorksService: CourseWorksService
   ) {
-    super(fromCourseWork.entityCollectionName, http, httpUrlGenerator);
+    super(fromTopic.entityCollectionName, http, httpUrlGenerator);
   }
-  getWithQuery(courseId: string): Observable<gapi.client.classroom.CourseWork[]> {
-    return from(this.courseWorksService.getCourseWorks(courseId));
+
+  getWithQuery(courseId: string): Observable<gapi.client.classroom.Topic[]> {
+    return from(this.courseWorksService.getTopics(courseId));
   }
+
 }

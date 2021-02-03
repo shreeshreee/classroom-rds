@@ -7,6 +7,7 @@ import { CourseEntityService } from '@rds-store/course/course-entity.service';
 
 import { Observable } from 'rxjs';
 
+import { AnnouncementsService } from './../announcements/services/announcements.service';
 import { CourseDialogComponent } from './../../components/course-dialog/course-dialog.component';
 import { CoursesService } from './../../services/course/courses.service';
 import { AnnouncementDialogComponent } from '../announcements/components/announcement-dialog/announcement-dialog.component';
@@ -25,10 +26,11 @@ export class CoursesComponent implements OnInit {
   faBullhorn = faBullhorn;
   constructor(
     private dialog: MatDialog,
-    private coursesService: CoursesService,
+    private announcementsService: AnnouncementsService,
     private courseEntityService: CourseEntityService,
   ) { }
   ngOnInit(): void { }
+
   openCreateCourseDialog() {
     let course: gapi.client.classroom.Course = {};
     const dialogRef = this.dialog.open(CourseDialogComponent, {
@@ -58,7 +60,7 @@ export class CoursesComponent implements OnInit {
       if (result) {
         this.courseEntityService.keys$.subscribe((courseIds: string[]) => {
           courseIds.map(async (courseId: string) => {
-            const response = await this.coursesService.createAnnouncement(
+            const response = await this.announcementsService.createAnnouncement(
               result.newAnnouncement as gapi.client.classroom.Announcement, courseId);
           });
         });

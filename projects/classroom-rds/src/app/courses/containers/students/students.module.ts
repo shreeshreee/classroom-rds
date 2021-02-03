@@ -10,24 +10,27 @@ import * as fromEntity from '@rds-store/config/entity-metadata';
 import * as fromStudent from '@rds-store/student';
 
 import { MaterialModule } from './../../../modules/material.module';
+import { SharedModule } from './../../../shared/shared.module';
 
 import { StudentsRoutingModule } from './students-routing.module';
 
 import { StudentsResolver } from './services/students.resolver';
 import { CourseStudentsComponent } from './components/course-students/course-students.component';
+import { GuardiansListDialogComponent } from './components/guardians-list-dialog/guardians-list-dialog.component';
 import { StudentDataService } from '~/app/store/student/student-data.service';
 import { StudentEntityService } from '~/app/store/student/student-entity.service';
 
 
 @NgModule({
-  declarations: [CourseStudentsComponent],
+  declarations: [CourseStudentsComponent, GuardiansListDialogComponent],
   exports: [CourseStudentsComponent],
   imports: [
     CommonModule,
     StudentsRoutingModule,
     MaterialModule,
     FlexLayoutModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    SharedModule
   ],
   providers: [
     StudentEntityService,

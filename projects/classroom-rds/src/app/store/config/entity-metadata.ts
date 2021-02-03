@@ -1,12 +1,14 @@
 import { EntityMetadataMap } from '@ngrx/data';
 
-import * as fromAnnouncement from './../announcement';
-import * as fromCourse from './../course';
-import * as fromCourseWork from './../course-work';
-import * as fromStudent from './../student';
-import * as fromTeacher from './../teacher';
-import * as fromUserProfile from './../user-profile';
-
+import * as fromAnnouncement from '@rds-store/announcement';
+import * as fromCourse from '@rds-store/course';
+import * as fromCourseWork from '@rds-store/course-work';
+import * as fromGuardian from '@rds-store/guardian';
+import * as fromStudent from '@rds-store/student';
+import * as fromTeacher from '@rds-store/teacher';
+import * as fromTopic from '@rds-store/topic';
+import * as fromUserProfile from '@rds-store/user-profile';
+import * as fromStudentSubmission from '@rds-store/student-submission';
 
 
 export const entityMetadata: EntityMetadataMap = {
@@ -48,6 +50,14 @@ export const entityMetadata: EntityMetadataMap = {
     },
     selectId: (profile: gapi.client.classroom.UserProfile) => profile.id,
   },
+  [fromGuardian.entityCollectionName]: {
+    entityDispatcherOptions: {
+      optimisticAdd: true,
+      optimisticUpdate: true,
+      optimisticSaveEntities: true
+    },
+    selectId: (guardian: gapi.client.classroom.UserProfile) => guardian.id,
+  },
   [fromAnnouncement.entityCollectionName]: {
     entityDispatcherOptions: {
       optimisticAdd: true,
@@ -55,15 +65,34 @@ export const entityMetadata: EntityMetadataMap = {
       optimisticSaveEntities: true
     },
     selectId: (announcement: gapi.client.classroom.Announcement) => announcement.id,
+  },
+  [fromStudentSubmission.entityCollectionName]: {
+    entityDispatcherOptions: {
+      optimisticAdd: true,
+      optimisticUpdate: true,
+      optimisticSaveEntities: true
+    },
+    selectId: (studentSubmission: gapi.client.classroom.StudentSubmission) => studentSubmission.id,
+  },
+  [fromTopic.entityCollectionName]: {
+    entityDispatcherOptions: {
+      optimisticAdd: true,
+      optimisticUpdate: true,
+      optimisticSaveEntities: true
+    },
+    selectId: (topics: gapi.client.classroom.Topic) => topics.topicId,
   }
 };
 export const pluralNames = {
-  [fromCourse.entityCollectionName]: fromCourse.pluralizedEntityName,
-  [fromStudent.entityCollectionName]: fromStudent.pluralizedEntityName,
-  [fromTeacher.entityCollectionName]: fromTeacher.pluralizedEntityName,
-  [fromCourseWork.entityCollectionName]: fromCourseWork.pluralizedEntityName,
   [fromAnnouncement.entityCollectionName]: fromAnnouncement.pluralizedEntityName,
-  [fromUserProfile.entityCollectionName]: fromUserProfile.pluralizedEntityName
+  [fromCourse.entityCollectionName]: fromCourse.pluralizedEntityName,
+  [fromCourseWork.entityCollectionName]: fromCourseWork.pluralizedEntityName,
+  [fromGuardian.entityCollectionName]: fromGuardian.pluralizedEntityName,
+  [fromStudent.entityCollectionName]: fromStudent.pluralizedEntityName,
+  [fromStudentSubmission.entityCollectionName]: fromStudentSubmission.pluralizedEntityName,
+  [fromTeacher.entityCollectionName]: fromTeacher.pluralizedEntityName,
+  [fromTopic.entityCollectionName]: fromTopic.pluralizedEntityName,
+  [fromUserProfile.entityCollectionName]: fromUserProfile.pluralizedEntityName,
 };
 
 export const entityConfig = {

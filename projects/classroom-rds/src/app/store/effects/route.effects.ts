@@ -23,7 +23,7 @@ export class RouteEffects {
       this.actions$.pipe(
         ofType(
           fromAuthActions.signOutCompleted),
-        tap(() => this.router.navigate(['/home']))
+        tap(() => this.router.navigate(['/']))
       ),
     { dispatch: false }
   );

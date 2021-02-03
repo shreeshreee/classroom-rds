@@ -8,6 +8,8 @@ import { AnnouncementEntityService } from '@rds-store/announcement/announcement-
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { UserProfilesService } from '~/app/courses/services/user-profile/user-profiles.service';
+
 @Component({
   selector: 'app-course-announcements',
   templateUrl: './course-announcements.component.html',
@@ -17,13 +19,15 @@ import { map } from 'rxjs/operators';
 })
 export class CourseAnnouncementsComponent implements OnInit {
   announcements$: Observable<gapi.client.classroom.Announcement[]>;
-  creator: gapi.client.classroom.UserProfile;
+  creator$: Observable<string>;
   courseId: string;
   isLoading$: Observable<boolean>;
   faBlind = faBlind;
+  panelOpenState: boolean = false;
   constructor(
     private route: ActivatedRoute,
     private announcementEntityService: AnnouncementEntityService,
+    private userProfilesService: UserProfilesService
   ) {
     this.isLoading$ = this.announcementEntityService.loading$;
     this.courseId = this.route.parent.parent.snapshot.paramMap.get('courseId');
@@ -38,6 +42,13 @@ export class CourseAnnouncementsComponent implements OnInit {
         return announcements.filter(x => x.courseId == this.courseId);
       })
     );
+  }
+  async getName(id: string) {
+    const creator = await this.userProfilesService.getUserProfile(id);
+    this.creator$.pipe(map(() => creator.name.fullName));
+  }
+  togglePanel() {
+    this.panelOpenState = !this.panelOpenState
   }
 }
 

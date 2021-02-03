@@ -1,0 +1,8 @@
+<button mat-button class="text-danger" (click)="canDelete ? deleteElement() : prepareForDelete()">
+  <fa-icon [icon]="faUserSlash"></fa-icon>
+  <span *ngIf="canDelete">¿Deseas remover a este usuario del curso?</span>
+</button>
+
+<button *ngIf="canDelete" mat-button (click)="cancel()">
+  Cancelar
+</button>

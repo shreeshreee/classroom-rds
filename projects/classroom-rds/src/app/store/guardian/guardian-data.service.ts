@@ -6,21 +6,19 @@ import { DefaultDataService, HttpUrlGenerator } from '@ngrx/data';
 import { from, Observable } from 'rxjs';
 
 import { UserProfilesService } from '~/app/courses/services/user-profile/user-profiles.service';
-import * as fromUserProfile from './';
+import * as fromGuardian from './'
 @Injectable()
-export class UserProfileDataService extends DefaultDataService<gapi.client.classroom.UserProfile> {
-
-
+export class GuardianDataService extends DefaultDataService<gapi.client.classroom.Guardian> {
   constructor(
     http: HttpClient,
     httpUrlGenerator: HttpUrlGenerator,
     private userProfilesService: UserProfilesService
   ) {
-    super(fromUserProfile.entityCollectionName, http, httpUrlGenerator);
+    super(fromGuardian.entityCollectionName, http, httpUrlGenerator);
   }
-
-  getById(id: string): Observable<gapi.client.classroom.UserProfile> {
-    return from(this.userProfilesService.getUserProfile(id));
+  getWithQuery(studentId: string): Observable<gapi.client.classroom.Guardian[]> {
+    return from(
+      this.userProfilesService.getGuardians(studentId)
+    );
   }
-
 }
