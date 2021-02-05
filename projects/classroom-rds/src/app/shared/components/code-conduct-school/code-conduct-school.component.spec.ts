@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CodeConductComponent } from './code-conduct.component';
+import { CodeConductSchoolComponent } from './code-conduct-school.component';
 
-describe('CodeConductComponent', () => {
-  let component: CodeConductComponent;
-  let fixture: ComponentFixture<CodeConductComponent>;
+describe('CodeConductSchoolComponent', () => {
+  let component: CodeConductSchoolComponent;
+  let fixture: ComponentFixture<CodeConductSchoolComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CodeConductComponent ]
+      declarations: [ CodeConductSchoolComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CodeConductComponent);
+    fixture = TestBed.createComponent(CodeConductSchoolComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

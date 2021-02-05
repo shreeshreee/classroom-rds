@@ -27,7 +27,7 @@ import { LoginDialogComponent } from '../../../auth/components/login-dialog/logi
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  animations: [animateText,
+  animations: [
     trigger('fade',
       [
         state('void', style({ opacity: 0 })),

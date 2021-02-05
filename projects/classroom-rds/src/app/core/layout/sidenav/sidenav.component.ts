@@ -32,6 +32,11 @@ export class SidenavComponent implements OnInit {
   sideNavState: boolean = false;
   onSideNavChange: boolean;
   linkText: boolean = false;
+  alert: any = {
+    type: 'success',
+    msg: `Sigue <strong>en vivo</strong> la transmisión de la elaboración <strong>galletas</strong> del día del amor y la amistad. <strong>Pulsa esta notificación</strong>.`
+  };
+  dismissible = true;
   classroomPages: NavLink[] = [
     { name: 'Coursos', route: '/c', icon: faChalkboardTeacher },
     { name: 'Invitaciones', route: '/i', icon: faUserPlus },

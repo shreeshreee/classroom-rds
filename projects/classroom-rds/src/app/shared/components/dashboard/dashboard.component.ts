@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
     {
       title: 'Sistema de administración',
       description: 'Panel personalizado para la administración de Google Admin.',
-      route: 'admin',
+      route: 'under-construction',
       imgUrl: 'assets/images/system-administrator.png'
     },
     {
@@ -33,7 +33,7 @@ export class DashboardComponent implements OnInit {
     {
       title: 'Salones y grupos',
       description: 'Administra grados, grupos y horarios en la institución',
-      route: 'rooms',
+      route: 'under-construction',
       imgUrl: 'assets/images/schedule-administrator.png',
     },
   ];

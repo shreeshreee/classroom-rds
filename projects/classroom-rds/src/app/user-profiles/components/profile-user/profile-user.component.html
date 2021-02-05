@@ -1,6 +1,6 @@
 <mat-card class="mat-elevation-z10">
   <mat-card-content>
-    <div class="text-center">
+    <div class="text-right">
       <div style="margin-top: -60px">
         <img [src]="[(user.photoUrl)  ? user.photoUrl : '/assets/images/dummy-user.png']" height="96" width="96"
           class="rounded-circle" alt="avatar image" />
@@ -12,8 +12,7 @@
       <h4 class="mat-h4">{{ user.email }}</h4>
       <div fxLayout="column" fxLayoutGap="3px">
         <button class="btn btn-outline-info" mat-raised-button [routerLink]="['edit']" routerLinkActive="active">
-          <fa-icon [icon]="faUserEdit"></fa-icon> Editar
-          perfil
+          <fa-icon [icon]="faUserEdit"></fa-icon> Tus datos
         </button>
         <button class="btn btn-outline-success" mat-raised-button [routerLink]="['grades',queryParams]"
           routerLinkActive="active">

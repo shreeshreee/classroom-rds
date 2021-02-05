@@ -29,11 +29,6 @@ export class LayoutComponent {
   isTeacher$: Observable<boolean>;
   loading = false;
   faCookieBite = faCookieBite;
-  dismissible = true;
-  alert: any = {
-    type: 'success',
-    msg: `Sigue <strong>en vivo</strong> la transmisión de la elaboración <strong>galletas</strong> del día del amor y la amistad. <strong>Pulsa esta notificación</strong>.`
-  };
   constructor(
     private layoutService: LayoutService,
     private store: Store<AppState>,
@@ -42,7 +37,6 @@ export class LayoutComponent {
     this.router.events.subscribe((event: RouterEvent) => {
       this.navigationInterceptor(event)
     });
-
     const user: User = JSON.parse(localStorage.getItem('user'));
     if (user) {
       this.store.dispatch(signInSuccess({ user }));

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 
 import { UpdatedUser, User } from '@rds-auth/models/user.model';
 import { signOut } from '@rds-auth/state/auth.actions';
@@ -17,12 +17,19 @@ import { Observable } from 'rxjs';
   styleUrls: ['./user-profile.component.scss'],
 })
 export class UserProfileComponent implements OnInit {
-  user$: Observable<User | null>;
+  user$: Observable<User>;
+  isOnline$: Observable<boolean>;
+  isAdmin$: Observable<boolean>;
+  isTeacher$: Observable<boolean>;
 
   constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
-    this.user$ = this.store.select(fromAuthSelectors.selectUser);
+    this.user$ = this.store.pipe(select(fromAuthSelectors.selectUser));
+    this.isOnline$ = this.store.pipe(select(fromAuthSelectors.isLoggedIn));
+    this.user$ = this.store.pipe(select(fromAuthSelectors.selectUser));
+    this.isAdmin$ = this.store.pipe(select(fromAuthSelectors.isAdmin));
+    this.isTeacher$ = this.store.pipe(select(fromAuthSelectors.isTeacher));
   }
 
   updateProfile(userData: UpdatedUser) {

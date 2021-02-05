@@ -2,6 +2,16 @@
   width: 25%;
   height: auto;
 }
+
+.text-wrap-right {
+  float:right;
+  margin: 5px;
+}
+
+.text-wrap-left {
+  float:left;
+  margin: 5px;
+}
 .display-4-responsive {
   font-family: 'Fredoka One';
   font-size: calc(1rem + 3vw);

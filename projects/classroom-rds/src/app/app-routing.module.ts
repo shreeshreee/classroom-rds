@@ -4,6 +4,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { AuthGuard } from './auth/guards/auth.guard';
 import { LayoutComponent } from './core/layout/layout.component';
 import { AboutComponent } from './shared/components/about/about.component';
+import { CodeConductSchoolComponent } from './shared/components/code-conduct-school/code-conduct-school.component';
 import { CodeConductComponent } from './shared/components/code-conduct/code-conduct.component';
 import { GalletasComponent } from './shared/components/galletas/galletas.component';
 import { HomeComponent } from './shared/components/home/home.component';
@@ -29,6 +30,7 @@ const routes: Routes = [{
     { path: 'not-found', component: NotFoundComponent },
     { path: 'license', component: LicenseComponent },
     { path: 'code-conduct', component: CodeConductComponent },
+    { path: 'code-conduct-school', component: CodeConductSchoolComponent },
     { path: 'terms', component: TermsComponent },
     { path: 'under-construction', component: UnderConstructionComponent },
   ]

@@ -5,11 +5,6 @@
   <div *ngIf="loading" class="w-100">
     <mat-progress-bar mode="query" color="primary"> </mat-progress-bar>
   </div>
-
-  <alert #banner [type]="alert.type" (click)="banner.close()" [routerLink]="['galletas']" [dismissible]="dismissible">
-    <span [innerHtml]="(alert.msg)"></span>
-  </alert>
-
   <div fxFlex>
     <app-sidenav [isHandset]="(isHandset$|async)" [isOnline]="(isOnline$|async)" [user]="(user$|async)"
       [isAdmin]="(isAdmin$|async)" [isTeacher]="(isTeacher$|async)">

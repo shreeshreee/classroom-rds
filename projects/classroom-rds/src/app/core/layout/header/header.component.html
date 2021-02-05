@@ -1,21 +1,24 @@
-<mat-toolbar class="animation fadeInOut mat-elevation-z6">
+<mat-toolbar class="animation fadeInOut mat-toolbar mat-elevation-z15">
   <mat-toolbar-row fxLayoutAlign="space-between center">
-    <div fxLayout="row" fxLayoutGap="10px">
+    <div fxLayout="row" fxLayoutGap="5px">
       <button *ngIf="isHandset && isOnline" mat-icon-button (click)="toggleSidenavLeft($event)">
         <fa-icon [icon]="faBars"></fa-icon>
       </button>
-      <button mat-icon-button [routerLink]="['/']" routerLinkActive="active">
+      <button mat-icon-button [routerLink]="['/']">
         <img class="img-fluid" src="/assets/icons/android-chrome-512x512.png" />
       </button>
       <button mat-button [matMenuTriggerFor]="escuela">
         Escuela
       </button>
+      <button mat-button [matMenuTriggerFor]="webapp">
+        Aplicación
+      </button>
     </div>
     <a *ngIf="isOnline" [matMenuTriggerFor]="userMenu">
-      <img mat-card-avatar [src]="[user.photoUrl ? user.photoUrl : '/assets/images/dummy-user.png']" />
+      <img mat-card-avatar [src]="user.photoUrl ? user.photoUrl : 'assets/images/dummy-user.png'" />
     </a>
     <button *ngIf="!isOnline" mat-icon-button (click)="onSignIn()">
-      <img class="img-fluid" src="/assets/images/google-logo.svg" />
+      <img class="img-fluid" src="assets/images/google-logo.svg" />
     </button>
   </mat-toolbar-row>
 </mat-toolbar>
@@ -40,33 +43,39 @@
 </mat-menu>
 <mat-menu #infoMenu="matMenu">
   <ng-template matMenuContent>
-    <div mat-menu-item [routerLink]="['/']" [matMenuTriggerFor]="escuela">Escuela</div>
+    <div mat-menu-item [matMenuTriggerFor]="escuela">Escuela</div>
     <div mat-menu-item [matMenuTriggerFor]="webapp">Aplicación</div>
   </ng-template>
 </mat-menu>
 
 <mat-menu #escuela="matMenu">
   <ng-template matMenuContent>
-    <div mat-menu-item [routerLink]="['about']">Quiénes somos</div>
+    <div mat-menu-item [routerLink]="['about']" routerLinkActive="active">Quiénes somos</div>
     <div mat-menu-item [matMenuTriggerFor]="oferta">Oferta educativa</div>
-    <div mat-menu-item>Ubicación y contacto</div>
-    <div mat-menu-item>Contacto</div>
+    <div mat-menu-item [routerLink]="['under-construction']" routerLinkActive="active">Ubicación y contacto</div>
+    <div mat-menu-item [routerLink]="['under-construction']" routerLinkActive="active">Contacto</div>
   </ng-template>
 </mat-menu>
 
 <mat-menu #webapp="matMenu">
   <ng-template matMenuContent>
-    <div mat-menu-item [routerLink]="['privacy-policy']">Políticas de privacidad</div>
-    <div mat-menu-item [routerLink]="['terms']">Términos de uso</div>
-    <div mat-menu-item [routerLink]="['license']">Licencia</div>
-    <div mat-menu-item [routerLink]="['code-conduct']">Código de conducta</div>
+    <div mat-menu-item [matMenuTriggerFor]="conduct">Código de conducta</div>
+    <div mat-menu-item [routerLink]="['privacy-policy']" routerLinkActive="active">Políticas de privacidad</div>
+    <div mat-menu-item [routerLink]="['terms']" routerLinkActive="active">Términos de uso</div>
+    <div mat-menu-item [routerLink]="['license']" routerLinkActive="active">Licencia</div>
   </ng-template>
 </mat-menu>
 
+<mat-menu #conduct="matMenu">
+  <ng-template matMenuContent>
+    <div mat-menu-item [routerLink]="['code-conduct-school']" routerLinkActive="active">Para espacios académicos</div>
+    <div mat-menu-item [routerLink]="['code-conduct']" routerLinkActive="active">Para este sitio</div>
+  </ng-template>
+</mat-menu>
 <mat-menu #oferta="matMenu">
   <ng-template matMenuContent>
-    <div mat-menu-item>Preescolar</div>
-    <div mat-menu-item>Primaria</div>
-    <div mat-menu-item>Secundaria</div>
+    <div mat-menu-item [routerLink]="['under-construction']" routerLinkActive="active">Preescolar</div>
+    <div mat-menu-item [routerLink]="['under-construction']" routerLinkActive="active">Primaria</div>
+    <div mat-menu-item [routerLink]="['under-construction']" routerLinkActive="active">Secundaria</div>
   </ng-template>
 </mat-menu>

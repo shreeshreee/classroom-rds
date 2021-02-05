@@ -1,18 +1,25 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #leftSidenav class="sidenav" [@onSideNavChange]="sideNavState ? 'open' : 'close'" fixedInViewPort
     [attr.role]="isHandset ? 'dialog' : 'navigation'" [mode]="'side'" [opened]="isHandset == false" *ngIf="isOnline">
-    <mat-nav-list fxLayout="column" fxLayoutAlign="space-between center">
-      <a *ngFor="let page of classroomPages" mat-list-item [routerLink]="page.route" routerLinkActive="active">
-        <fa-icon matListIcon [icon]="page.icon"></fa-icon>
-        <span matLine [@animateText]="linkText ? 'show' : 'hide'">{{ page?.name }} </span>
-      </a>
-      <a mat-list-item (click)="onSidenavToggle()">
-        <fa-icon matListIcon [icon]="faCompressAlt"></fa-icon>
-      </a>
-    </mat-nav-list>
+    <div fxLayout="column" fxLayoutAlign="space-between start">
+      <mat-nav-list dense>
+        <a *ngFor="let page of classroomPages" mat-list-item [routerLink]="page.route" routerLinkActive="active">
+          <fa-icon matListIcon [icon]="page.icon"></fa-icon>
+          <span matLine [@animateText]="linkText ? 'show' : 'hide'">{{ page?.name }} </span>
+        </a>
+      </mat-nav-list>
+      <mat-nav-list dense>
+        <a mat-list-item (click)="onSidenavToggle()">
+          <fa-icon matListIcon [icon]="faCompressAlt"></fa-icon>
+        </a>
+      </mat-nav-list>
+    </div>
   </mat-sidenav>
   <mat-sidenav-content [@onMainContentChange]="(onSideNavChange) ? 'open': 'close'">
     <main class="main-container">
+      <alert #banner [type]="alert.type" (click)="banner.close()" [dismissible]="dismissible">
+        <span [routerLink]="['galletas']" [innerHtml]="(alert.msg)"></span>
+      </alert>
       <router-outlet></router-outlet>
     </main>
   </mat-sidenav-content>

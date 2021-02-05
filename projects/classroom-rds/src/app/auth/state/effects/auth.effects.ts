@@ -25,7 +25,7 @@ export class AuthEffects {
                 id: res.user.providerData[0].uid,
                 name: res.user.displayName,
                 email: res.user.email,
-                photoUrl: res.user.providerData[0].photoURL ? res.user.providerData[0].photoURL : res.user.photoURL,
+                photoUrl: res.user.photoURL ? res.user.photoURL : res.user.providerData[0].photoURL,
                 isNew: res.additionalUserInfo.isNewUser,
                 isVerified: res.user.emailVerified,
                 creationTime: res.user.metadata.creationTime,
