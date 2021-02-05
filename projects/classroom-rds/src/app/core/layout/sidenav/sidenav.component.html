@@ -16,7 +16,7 @@
     </div>
   </mat-sidenav>
   <mat-sidenav-content [@onMainContentChange]="(onSideNavChange) ? 'open': 'close'">
-    <main class="main-container">
+    <main class="pb-5 main-container">
       <alert #banner [type]="alert.type" (click)="banner.close()" [dismissible]="dismissible">
         <span [routerLink]="['galletas']" [innerHtml]="(alert.msg)"></span>
       </alert>

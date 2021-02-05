@@ -52,7 +52,7 @@
   <ng-template matMenuContent>
     <div mat-menu-item [routerLink]="['about']" routerLinkActive="active">Quiénes somos</div>
     <div mat-menu-item [matMenuTriggerFor]="oferta">Oferta educativa</div>
-    <div mat-menu-item [routerLink]="['under-construction']" routerLinkActive="active">Ubicación y contacto</div>
+    <div mat-menu-item [routerLink]="['location']" routerLinkActive="active">Ubicación y contacto</div>
     <div mat-menu-item [routerLink]="['under-construction']" routerLinkActive="active">Contacto</div>
   </ng-template>
 </mat-menu>
@@ -61,7 +61,7 @@
   <ng-template matMenuContent>
     <div mat-menu-item [matMenuTriggerFor]="conduct">Código de conducta</div>
     <div mat-menu-item [routerLink]="['privacy-policy']" routerLinkActive="active">Políticas de privacidad</div>
-    <div mat-menu-item [routerLink]="['terms']" routerLinkActive="active">Términos de uso</div>
+    <div mat-menu-item [routerLink]="['under-construction']" routerLinkActive="active">Términos de uso</div>
     <div mat-menu-item [routerLink]="['license']" routerLinkActive="active">Licencia</div>
   </ng-template>
 </mat-menu>
@@ -74,6 +74,7 @@
 </mat-menu>
 <mat-menu #oferta="matMenu">
   <ng-template matMenuContent>
+    <div mat-menu-item [routerLink]="['remote-learning']" routerLinkActive="active">Educación a distancia</div>
     <div mat-menu-item [routerLink]="['under-construction']" routerLinkActive="active">Preescolar</div>
     <div mat-menu-item [routerLink]="['under-construction']" routerLinkActive="active">Primaria</div>
     <div mat-menu-item [routerLink]="['under-construction']" routerLinkActive="active">Secundaria</div>

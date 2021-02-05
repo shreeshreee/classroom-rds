@@ -9,8 +9,10 @@ import { CodeConductComponent } from './shared/components/code-conduct/code-cond
 import { GalletasComponent } from './shared/components/galletas/galletas.component';
 import { HomeComponent } from './shared/components/home/home.component';
 import { LicenseComponent } from './shared/components/license/license.component';
+import { LocationComponent } from './shared/components/location/location.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { PrivacyPolicyComponent } from './shared/components/privacy-policy/privacy-policy.component';
+import { RemoteLearningComponent } from './shared/components/remote-learning/remote-learning.component';
 import { TermsComponent } from './shared/components/terms/terms.component';
 import { UnderConstructionComponent } from './shared/components/under-construction/under-construction.component';
 const routes: Routes = [{
@@ -26,8 +28,10 @@ const routes: Routes = [{
     },
     { path: 'galletas', component: GalletasComponent },
     { path: 'about', component: AboutComponent },
+    { path: 'remote-learning', component: RemoteLearningComponent },
     { path: 'privacy-policy', component: PrivacyPolicyComponent },
     { path: 'not-found', component: NotFoundComponent },
+    { path: 'location', component: LocationComponent },
     { path: 'license', component: LicenseComponent },
     { path: 'code-conduct', component: CodeConductComponent },
     { path: 'code-conduct-school', component: CodeConductSchoolComponent },
