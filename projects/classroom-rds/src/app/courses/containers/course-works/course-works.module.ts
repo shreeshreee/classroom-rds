@@ -6,13 +6,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { EntityDataService, EntityDefinitionService, EntityServices } from '@ngrx/data';
 
-import * as fromEntity from '@rds-store/config/entity-metadata';
 import * as fromCourseWork from '@rds-store/course-work';
 import * as fromStudentSubmission from '@rds-store/student-submission';
 import * as fromTopic from '@rds-store/topic';
-
-import { StudentSubmissionDataService } from './../../../store/student-submission/student-submission-data.service';
-import { StudentSubmissionEntityService } from './../../../store/student-submission/student-submission-entity.service';
+import { StudentSubmissionDataService } from '@rds-store/student-submission/student-submission-data.service';
+import { StudentSubmissionEntityService } from '@rds-store/student-submission/student-submission-entity.service';
+import { CourseWorkDataService } from '@rds-store/course-work/course-work-data-service.service';
+import { CourseWorkEntityService } from '@rds-store/course-work/course-work-entity-service.service';
+import { TopicDataService } from '@rds-store/topic/topic-data.service';
+import { TopicEntityService } from '@rds-store/topic/topic-entity.service';
 
 import { CourseWorksRoutingModule } from './course-works-routing.module';
 
@@ -21,10 +23,7 @@ import { StudentSubmissionsResolver } from './services/student-submissions.resol
 import { TopicsResolver } from './services/topics.resolver';
 import { CourseWorkComponent } from './components/course-work/course-work.component';
 import { MaterialModule } from '~/app/modules/material.module';
-import { CourseWorkDataService } from '~/app/store/course-work/course-work-data-service.service';
-import { CourseWorkEntityService } from '~/app/store/course-work/course-work-entity-service.service';
-import { TopicDataService } from '~/app/store/topic/topic-data.service';
-import { TopicEntityService } from '~/app/store/topic/topic-entity.service';
+import * as fromEntity from '~/app/store/app/config/entity-metadata';
 
 
 @NgModule({

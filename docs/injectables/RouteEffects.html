@@ -57,7 +57,7 @@
             <h3>Fichero</h3>
         </p>
         <p class="comment">
-            <code>projects/classroom-rds/src/app/store/effects/route.effects.ts</code>
+            <code>projects/classroom-rds/src/app/store/app/effects/route.effects.ts</code>
         </p>
 
 
@@ -105,7 +105,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="29" class="link-to-prism">projects/classroom-rds/src/app/store/effects/route.effects.ts:29</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="29" class="link-to-prism">projects/classroom-rds/src/app/store/app/effects/route.effects.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -180,7 +180,7 @@
       this.actions$.pipe(
         ofType(
           fromAuthActions.signOutCompleted),
-        tap(() &#x3D;&gt; this.router.navigate([&#x27;/home&#x27;]))
+        tap(() &#x3D;&gt; this.router.navigate([&#x27;/&#x27;]))
       ),
     { dispatch: false }
   )</code>
@@ -188,7 +188,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="21" class="link-to-prism">projects/classroom-rds/src/app/store/effects/route.effects.ts:21</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="21" class="link-to-prism">projects/classroom-rds/src/app/store/app/effects/route.effects.ts:21</a></div>
                             </td>
                         </tr>
 
@@ -222,7 +222,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">projects/classroom-rds/src/app/store/effects/route.effects.ts:12</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">projects/classroom-rds/src/app/store/app/effects/route.effects.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -240,9 +240,9 @@ import { Router } from &#x27;@angular/router&#x27;;
 
 import { Actions, createEffect, ofType } from &#x27;@ngrx/effects&#x27;;
 
-import { tap } from &#x27;rxjs/operators&#x27;;
+import * as fromAuthActions from &#x27;@rds-auth/state/auth.actions&#x27;;
 
-import * as fromAuthActions from &#x27;../../auth/state/auth.actions&#x27;;
+import { tap } from &#x27;rxjs/operators&#x27;;
 @Injectable()
 export class RouteEffects {
 
@@ -260,7 +260,7 @@ export class RouteEffects {
       this.actions$.pipe(
         ofType(
           fromAuthActions.signOutCompleted),
-        tap(() &#x3D;&gt; this.router.navigate([&#x27;/home&#x27;]))
+        tap(() &#x3D;&gt; this.router.navigate([&#x27;/&#x27;]))
       ),
     { dispatch: false }
   );

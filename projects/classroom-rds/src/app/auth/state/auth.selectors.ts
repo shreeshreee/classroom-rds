@@ -18,6 +18,10 @@ export const isAdmin = createSelector(
   selectAuthState,
   (state: AuthenticationState): boolean => state.isAdmin
 );
+export const isTeacher = createSelector(
+  selectAuthState,
+  (state: AuthenticationState): boolean => state.isTeacher
+);
 /*---------------------------------------------------------*/
 export const selectIsLoggedIn = createSelector(
   selectAuthState,

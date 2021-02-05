@@ -1,14 +1,14 @@
-<mat-toolbar class="animation fadeInOut border-bottom">
+<mat-toolbar class="animation fadeInOut mat-elevation-z6">
   <mat-toolbar-row fxLayoutAlign="space-between center">
-    <div fxLayout="row" fxLayoutGap="20px">
+    <div fxLayout="row" fxLayoutGap="10px">
       <button *ngIf="isHandset && isOnline" mat-icon-button (click)="toggleSidenavLeft($event)">
         <fa-icon [icon]="faBars"></fa-icon>
       </button>
       <button mat-icon-button [routerLink]="['/']" routerLinkActive="active">
         <img class="img-fluid" src="/assets/icons/android-chrome-512x512.png" />
       </button>
-      <button mat-button [matMenuTriggerFor]="infoMenu">
-        Información
+      <button mat-button [matMenuTriggerFor]="escuela">
+        Escuela
       </button>
     </div>
     <a *ngIf="isOnline" [matMenuTriggerFor]="userMenu">
@@ -21,12 +21,16 @@
 </mat-toolbar>
 <mat-menu #userMenu="matMenu" fxLayoutAlign="right">
   <ng-template matMenuContent>
-    <div mat-list-item *ngIf="isOnline && user" [routerLink]="['profile']" routerLinkActive="active">
+    <div mat-list-item *ngIf="isOnline && user" [routerLink]="['u']" routerLinkActive="active">
       <app-user [isOnline]="isOnline" [isAdmin]="isAdmin" [user]="user"> </app-user>
+    </div>
+    <div mat-menu-item *ngIf="isOnline && isTeacher" [routerLink]="['admin']" routerLinkActive="active">
+      <fa-icon matListIcon [icon]="faUserTie" size="lg"></fa-icon>
+      <span>Profesor</span>
     </div>
     <div mat-menu-item *ngIf="isOnline && isAdmin" [routerLink]="['admin']" routerLinkActive="active">
       <fa-icon matListIcon [icon]="faShieldAlt" size="lg"></fa-icon>
-      <span>Administración</span>
+      <span>Administrador</span>
     </div>
     <div mat-menu-item *ngIf="isOnline" (click)="onSignOut()">
       <fa-icon matListIcon [icon]="faSignOut" size="lg"></fa-icon>

@@ -89,6 +89,9 @@
                                         <a href="#isLoggedIn">isLoggedIn</a>
                                 </li>
                                 <li>
+                                        <a href="#isTeacher">isTeacher</a>
+                                </li>
+                                <li>
                                         <a href="#user">user</a>
                                 </li>
                             </ul>
@@ -193,6 +196,35 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
+                                        <a name="isTeacher"></a>
+                                        <span class="name"><b>isTeacher</b><a href="#isTeacher"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>isTeacher:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
                                         <a name="user"></a>
                                         <span class="name"><b>user</b><a href="#user"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
@@ -234,6 +266,7 @@ export interface AuthenticationState {
   user: User;
   isAdmin: boolean;
   isLoggedIn: boolean;
+  isTeacher: boolean;
   error: any;
 }
 
@@ -241,6 +274,7 @@ export const initialState: AuthenticationState &#x3D; {
   user: null,
   isAdmin: false,
   isLoggedIn: false,
+  isTeacher: false,
   error: null,
 };
 
@@ -287,7 +321,12 @@ export const authReducer &#x3D; createReducer&lt;AuthenticationState&gt;(
       ...state,
       isAdmin: action.isAdmin
     };
-
+  }),
+  on(fromAuthActions.updateTeachersRole, (state, action) &#x3D;&gt; {
+    return {
+      ...state,
+      isTeacher: action.isTeacher
+    };
   })
 );
 

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 
-import { environment } from './../../../../environments/environment';
-@Injectable({
-  providedIn: 'root'
-})
+import { QueryParams } from '@ngrx/data';
+
+import { environment } from '@rds-env/environment';
+@Injectable()
 export class CoursesService {
   constructor(
   ) {
@@ -45,12 +45,9 @@ export class CoursesService {
   * @param courseStates The course states from te courses to be query.
   * @returns Course Array
   */
-  async getCourses(pageSize?: number, courseStates?: string[]): Promise<gapi.client.classroom.Course[]> {
+  async getCourses(queryParams?: QueryParams): Promise<gapi.client.classroom.Course[]> {
     const response: gapi.client.Response<gapi.client.classroom.ListCoursesResponse> =
-      await gapi.client.classroom.courses.list({
-        courseStates: courseStates,
-        pageSize: pageSize
-      });
+      await gapi.client.classroom.courses.list({ ...queryParams });
     return response.result.courses;
   }
   async getCourse(courseId: string): Promise<gapi.client.classroom.Course> {

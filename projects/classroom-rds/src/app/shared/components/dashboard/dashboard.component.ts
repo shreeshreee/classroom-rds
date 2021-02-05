@@ -2,11 +2,12 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { Store, select } from '@ngrx/store';
 
-import { Observable } from 'rxjs';
+import { AppState } from '@rds-store/app.state';
 
-import { AppState } from '../../../store/app.state';
-import { User } from '../../../auth/models/user.model';
-import { selectUser } from '../../../auth/state/auth.selectors';
+import { User } from '@rds-auth/models/user.model';
+import { selectUser } from '@rds-auth/state/auth.selectors';
+
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',

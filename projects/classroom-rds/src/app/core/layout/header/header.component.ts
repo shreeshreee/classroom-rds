@@ -10,12 +10,11 @@ import {
   faSignOutAlt,
   faEllipsisV,
   faGlobe,
-  faInfo
+  faInfo,
+  faUserTie
 } from '@fortawesome/free-solid-svg-icons';
 
 import { Store } from '@ngrx/store';
-
-import { Observable } from 'rxjs';
 
 import { LayoutService } from '../layout.service';
 import { animateText } from '../../animations/animations';
@@ -42,12 +41,13 @@ export class HeaderComponent implements OnInit {
   @Input() user: User;
   @Input() isOnline: boolean;
   @Input() isAdmin: boolean;
+  @Input() isTeacher: boolean;
   faBars = faBars;
   faSignIn = faSignInAlt;
   faEllipsisV = faEllipsisV;
   faShieldAlt = faShieldAlt;
   faSignOut = faSignOutAlt;
-
+  faUserTie = faUserTie;
   faGlobe = faGlobe;
   faGoogle = faGoogle;
   faInfo = faInfo;

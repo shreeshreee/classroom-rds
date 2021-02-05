@@ -29,12 +29,10 @@ export class FireEffects {
         switchMap((action) =>
           this.authFireService.checkAdminRole(action.uid)
             .pipe(
-              map((isAdmin: boolean) => fromAuthActions.updateAdminRole({ isAdmin })),
-              catchError((err) => of(fromAuthActions.authError({ error: err })))
+              map((isAdmin: boolean) => fromAuthActions.updateAdminRole({ isAdmin }))
             )
         )
       ),
-    //{ dispatch: false }
   );
 
   updateProfile$ = createEffect(

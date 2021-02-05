@@ -78,10 +78,6 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#createAnnouncement">createAnnouncement</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Async</span>
                                 <a href="#createCourse">createCourse</a>
                             </li>
                             <li>
@@ -90,15 +86,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#createStudent">createStudent</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Async</span>
                                 <a href="#getAliases">getAliases</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#getAnnouncements">getAnnouncements</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
@@ -114,19 +102,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#getCourseWorks">getCourseWorks</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#getStudents">getStudents</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#getTopics">getTopics</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#getUserProfile">getUserProfile</a>
+                                <a href="#getInvitations">getInvitations</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
@@ -135,10 +111,6 @@
                             <li>
                                     <span class="modifier">Private</span>
                                 <a href="#hasAccessScopes">hasAccessScopes</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Async</span>
-                                <a href="#removeStudent">removeStudent</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
@@ -188,101 +160,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="createAnnouncement"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            createAnnouncement
-                        </b>
-                        <a href="#createAnnouncement"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>createAnnouncement(announcement: gapi.client.classroom.Announcement, courseId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="145"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:145</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Make an announcement on a given course in Google Classroom</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parámetros :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Nombre</td>
-                                    <td>Tipo</td>
-                                    <td>Opcional</td>
-                                    <td>Descripción</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>announcement</td>
-                                    <td>
-                                            <code>gapi.client.classroom.Announcement</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                    <td>
-                                        <p>Announcement object to send.</p>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>courseId</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                    <td>
-                                        <p>Identifier of course to be announce.</p>
-
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Devuelve : </b>    <code>{}</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="createCourse"></a>
                     <span class="name">
                         <b>
@@ -303,8 +180,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="119"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:119</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="84"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:84</a></div>
                 </td>
             </tr>
 
@@ -343,7 +220,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Devuelve : </b>    <code>{}</code>
+                        <b>Devuelve : </b>        <code><a href="../classes/Course.html" target="_self" >Promise&lt;gapi.client.classroom.Course&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -370,15 +247,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>createInvitation(invitation: gapi.client.classroom.Invitation)</code>
+                    <code>createInvitation(invitation: <a href="../anys/gapi.html">gapi.client.classroom.Invitation</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="189"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:189</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="119"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:119</a></div>
                 </td>
             </tr>
 
@@ -400,7 +277,7 @@
                                 <tr>
                                     <td>invitation</td>
                                     <td>
-                                            <code>gapi.client.classroom.Invitation</code>
+                                                <code><a href="../miscellaneous/variables.html#gapi" target="_self" >gapi.client.classroom.Invitation</a></code>
                                     </td>
 
                                     <td>
@@ -415,81 +292,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Devuelve : </b>    <code>{}</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="createStudent"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            createStudent
-                        </b>
-                        <a href="#createStudent"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>createStudent(student: gapi.client.classroom.Student)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="159"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:159</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Adds a student to a given course</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parámetros :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Nombre</td>
-                                    <td>Tipo</td>
-                                    <td>Opcional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>student</td>
-                                    <td>
-                                            <code>gapi.client.classroom.Student</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Devuelve : </b>    <code>{}</code>
+                        <b>Devuelve : </b>        <code><a href="../miscellaneous/variables.html#gapi" target="_self" >Promise&lt;gapi.client.classroom.Invitation&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -523,8 +326,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="100"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:100</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="71"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:71</a></div>
                 </td>
             </tr>
 
@@ -575,78 +378,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getAnnouncements"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            getAnnouncements
-                        </b>
-                        <a href="#getAnnouncements"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getAnnouncements(courseId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="93"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:93</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parámetros :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Nombre</td>
-                                    <td>Tipo</td>
-                                    <td>Opcional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>courseId</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Devuelve : </b>    <code>Promise&lt;gapi.client.classroom.Announcement[]&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="getCourse"></a>
                     <span class="name">
                         <b>
@@ -667,8 +398,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="56"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:56</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="53"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:53</a></div>
                 </td>
             </tr>
 
@@ -732,7 +463,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getCourses(pageSize?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, courseStates?: string[])</code>
+                    <code>getCourses(queryParams?: QueryParams)</code>
                 </td>
             </tr>
 
@@ -758,14 +489,13 @@
                                     <td>Nombre</td>
                                     <td>Tipo</td>
                                     <td>Opcional</td>
-                                    <td>Descripción</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>pageSize</td>
+                                    <td>queryParams</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            <code>QueryParams</code>
                                     </td>
 
                                     <td>
@@ -773,24 +503,6 @@
                                     </td>
 
 
-                                    <td>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>courseStates</td>
-                                    <td>
-                                            <code>string[]</code>
-                                    </td>
-
-                                    <td>
-                                        Si
-                                    </td>
-
-
-                                    <td>
-                                        <p>The course states from te courses to be query.</p>
-
-                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -833,8 +545,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="86"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:86</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="63"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:63</a></div>
                 </td>
             </tr>
 
@@ -885,244 +597,28 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getCourseWorks"></a>
+                    <a name="getInvitations"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Async</span>
-                            getCourseWorks
+                            getInvitations
                         </b>
-                        <a href="#getCourseWorks"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getInvitations"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getCourseWorks(courseId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    <code>getInvitations(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, courseId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="79"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:79</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parámetros :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Nombre</td>
-                                    <td>Tipo</td>
-                                    <td>Opcional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>courseId</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Devuelve : </b>        <code><a href="../classes/Course.html" target="_self" >Promise&lt;gapi.client.classroom.CourseWork[]&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getStudents"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            getStudents
-                        </b>
-                        <a href="#getStudents"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getStudents(courseId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="72"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:72</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parámetros :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Nombre</td>
-                                    <td>Tipo</td>
-                                    <td>Opcional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>courseId</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Devuelve : </b>    <code>Promise&lt;gapi.client.classroom.Student[]&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getTopics"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            getTopics
-                        </b>
-                        <a href="#getTopics"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getTopics(courseId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="107"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:107</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parámetros :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Nombre</td>
-                                    <td>Tipo</td>
-                                    <td>Opcional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>courseId</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Devuelve : </b>    <code>Promise&lt;gapi.client.classroom.Topic[]&gt;</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getUserProfile"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            getUserProfile
-                        </b>
-                        <a href="#getUserProfile"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getUserProfile(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="65"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:65</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="127"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:127</a></div>
                 </td>
             </tr>
 
@@ -1153,13 +649,25 @@
 
 
                                 </tr>
+                                <tr>
+                                    <td>courseId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Devuelve : </b>        <code><a href="../interfaces/User.html" target="_self" >Promise&lt;gapi.client.classroom.UserProfile&gt;</a></code>
+                        <b>Devuelve : </b>        <code><a href="../miscellaneous/variables.html#gapi" target="_self" >Promise&lt;gapi.client.classroom.Invitation[]&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -1227,7 +735,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>hasAccessScopes(googleAuth: gapi.auth2.GoogleAuth)</code>
+                    <code>hasAccessScopes(googleAuth: <a href="../anys/gapi.html">gapi.auth2.GoogleAuth</a>)</code>
                 </td>
             </tr>
 
@@ -1257,7 +765,7 @@
                                 <tr>
                                     <td>googleAuth</td>
                                     <td>
-                                            <code>gapi.auth2.GoogleAuth</code>
+                                                <code><a href="../miscellaneous/variables.html#gapi" target="_self" >gapi.auth2.GoogleAuth</a></code>
                                     </td>
 
                                     <td>
@@ -1273,92 +781,6 @@
                     </div>
                     <div class="io-description">
                         <b>Devuelve : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="removeStudent"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            removeStudent
-                        </b>
-                        <a href="#removeStudent"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>removeStudent(courseId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="183"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:183</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Removes a student from a given course</p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parámetros :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Nombre</td>
-                                    <td>Tipo</td>
-                                    <td>Opcional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>courseId</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>email</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Devuelve : </b>    <code>{}</code>
 
                     </div>
                     <div class="io-description">
@@ -1392,8 +814,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="173"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:173</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="112"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:112</a></div>
                 </td>
             </tr>
 
@@ -1444,7 +866,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Devuelve : </b>    <code>{}</code>
+                        <b>Devuelve : </b>        <code><a href="../miscellaneous/variables.html#gapi" target="_self" >Promise&lt;gapi.client.classroom.Teacher&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -1478,8 +900,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="131"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:131</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="96"
+                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/courses.service.ts:96</a></div>
                 </td>
             </tr>
 
@@ -1530,7 +952,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Devuelve : </b>    <code>{}</code>
+                        <b>Devuelve : </b>        <code><a href="../classes/Course.html" target="_self" >Promise&lt;gapi.client.classroom.Course&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -1548,10 +970,10 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 
-import { environment } from &#x27;./../../../../environments/environment&#x27;;
-@Injectable({
-  providedIn: &#x27;root&#x27;
-})
+import { QueryParams } from &#x27;@ngrx/data&#x27;;
+
+import { environment } from &#x27;@rds-env/environment&#x27;;
+@Injectable()
 export class CoursesService {
   constructor(
   ) {
@@ -1593,12 +1015,9 @@ export class CoursesService {
   * @param courseStates The course states from te courses to be query.
   * @returns Course Array
   */
-  async getCourses(pageSize?: number, courseStates?: string[]): Promise&lt;gapi.client.classroom.Course[]&gt; {
+  async getCourses(queryParams?: QueryParams): Promise&lt;gapi.client.classroom.Course[]&gt; {
     const response: gapi.client.Response&lt;gapi.client.classroom.ListCoursesResponse&gt; &#x3D;
-      await gapi.client.classroom.courses.list({
-        courseStates: courseStates,
-        pageSize: pageSize
-      });
+      await gapi.client.classroom.courses.list({ ...queryParams });
     return response.result.courses;
   }
   async getCourse(courseId: string): Promise&lt;gapi.client.classroom.Course&gt; {
@@ -1610,27 +1029,7 @@ export class CoursesService {
   }
 
 
-  async getUserProfile(userId: string): Promise&lt;gapi.client.classroom.UserProfile&gt; {
-    const response: gapi.client.Response&lt;gapi.client.classroom.UserProfile&gt; &#x3D;
-      await gapi.client.classroom.userProfiles.get({
-        userId: userId
-      });
-    return response.result;
-  }
-  async getStudents(courseId: string): Promise&lt;gapi.client.classroom.Student[]&gt; {
-    const response: gapi.client.Response&lt;gapi.client.classroom.ListStudentsResponse&gt; &#x3D;
-      await gapi.client.classroom.courses.students.list({
-        courseId: courseId,
-      });
-    return response.result.students;
-  }
-  async getCourseWorks(courseId: string): Promise&lt;gapi.client.classroom.CourseWork[]&gt; {
-    const response: gapi.client.Response&lt;gapi.client.classroom.ListCourseWorkResponse&gt; &#x3D;
-      await gapi.client.classroom.courses.courseWork.list({
-        courseId: courseId,
-      });
-    return response.result.courseWork;
-  }
+
   async getCourseWorkMaterials(courseId: string): Promise&lt;gapi.client.classroom.CourseWorkMaterial[]&gt; {
     const response: gapi.client.Response&lt;gapi.client.classroom.ListCourseWorkMaterialResponse&gt; &#x3D;
       await gapi.client.classroom.courses.courseWorkMaterials.list({
@@ -1638,13 +1037,7 @@ export class CoursesService {
       });
     return response.result.courseWorkMaterial;
   }
-  async getAnnouncements(courseId: string): Promise&lt;gapi.client.classroom.Announcement[]&gt; {
-    const response: gapi.client.Response&lt;gapi.client.classroom.ListAnnouncementsResponse&gt; &#x3D;
-      await gapi.client.classroom.courses.announcements.list({
-        courseId: courseId,
-      });
-    return response.result.announcements;
-  }
+
   async getAliases(courseId: string): Promise&lt;gapi.client.classroom.CourseAlias[]&gt; {
     const response: gapi.client.Response&lt;gapi.client.classroom.ListCourseAliasesResponse&gt; &#x3D;
       await gapi.client.classroom.courses.aliases.list({
@@ -1652,19 +1045,13 @@ export class CoursesService {
       });
     return response.result.aliases;
   }
-  async getTopics(courseId: string): Promise&lt;gapi.client.classroom.Topic[]&gt; {
-    const response: gapi.client.Response&lt;gapi.client.classroom.ListTopicResponse&gt; &#x3D;
-      await gapi.client.classroom.courses.topics.list({
-        courseId: courseId,
-      });
-    return response.result.topic;
-  }
+
   /**
    * Create a courses in Google Classroom
    *
    * @param resource Course object to be created.
    */
-  async createCourse(course: gapi.client.classroom.Course) {
+  async createCourse(course: gapi.client.classroom.Course): Promise&lt;gapi.client.classroom.Course&gt; {
     const response: gapi.client.Response&lt;gapi.client.classroom.Course&gt; &#x3D;
       await gapi.client.classroom.courses.create({
         resource: course
@@ -1676,7 +1063,7 @@ export class CoursesService {
    *
    * @param resource Course object to be created.
    */
-  async updateCourse(courseId: string | number, course: gapi.client.classroom.Course) {
+  async updateCourse(courseId: string | number, course: gapi.client.classroom.Course): Promise&lt;gapi.client.classroom.Course&gt; {
     const response: gapi.client.Response&lt;gapi.client.classroom.Course&gt; &#x3D;
       await gapi.client.classroom.courses.update({
         id: courseId.toString(),
@@ -1684,60 +1071,35 @@ export class CoursesService {
       });
     return response.result;
   }
-  /**
-    * Make an announcement on a given course in Google Classroom
-    *
-    * @param courseId Identifier of course to be announce.
-    * @param announcement Announcement object to send.
-    */
-  async createAnnouncement(announcement: gapi.client.classroom.Announcement, courseId: string) {
-    const response: gapi.client.Response&lt;gapi.client.classroom.Announcement&gt; &#x3D;
-      await gapi.client.classroom.courses.announcements.create({
-        courseId: courseId,
-        resource: announcement
-      });
-    return response.result;
-  }
 
-  /**
-  * Adds a student to a given course
-  * @param courseId
-  * @param email
-  */
-  async createStudent(student: gapi.client.classroom.Student) {
-    const response: gapi.client.Response&lt;gapi.client.classroom.Student&gt; &#x3D;
-      await gapi.client.classroom.courses.students.create({
-        resource: student,
-        courseId: student.courseId
-      });
-    return response.result;
-  }
+
 
   /**
    * Removes a teacher from a given course
    * @param courseId
    * @param email
    */
-  async removeTeacher(courseId: string, email: string) {
+  async removeTeacher(courseId: string, email: string): Promise&lt;gapi.client.classroom.Teacher&gt; {
     let response: gapi.client.Response&lt;gapi.client.classroom.Teacher&gt; &#x3D;
       await gapi.client.classroom.courses.students.delete({ userId: email, courseId });
     return response.result;
   }
-  /**
-  * Removes a student from a given course
-  * @param courseId
-  * @param email
-  */
-  async removeStudent(courseId: string, email: string) {
-    const response: gapi.client.Response&lt;gapi.client.classroom.Student&gt; &#x3D;
-      await gapi.client.classroom.courses.students.delete({ userId: email, courseId });
+
+
+  async createInvitation(invitation: gapi.client.classroom.Invitation): Promise&lt;gapi.client.classroom.Invitation&gt; {
+    const response: gapi.client.Response&lt;gapi.client.classroom.Invitation&gt; &#x3D;
+      await gapi.client.classroom.invitations.create({
+        resource: invitation
+      })
     return response.result;
   }
 
-  async createInvitation(invitation: gapi.client.classroom.Invitation) {
-    const response: gapi.client.Response&lt;gapi.client.classroom.Invitation&gt; &#x3D;
-      await gapi.client.classroom.invitations.create({ resource: invitation })
-    return response.result;
+  async getInvitations(userId: string, courseId: string): Promise&lt;gapi.client.classroom.Invitation[]&gt; {
+    const response: gapi.client.Response&lt;gapi.client.classroom.ListInvitationsResponse&gt; &#x3D;
+      await gapi.client.classroom.invitations.list({
+        userId: userId, courseId: courseId
+      })
+    return response.result.invitations;
   }
 }
 </code></pre>

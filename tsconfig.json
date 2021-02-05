@@ -14,7 +14,7 @@
         "projects/classroom-rds/src/app/core/*"
       ],
       "@rds-auth/*": [
-        "projects/classroom-rds/src/app/auth*"
+        "projects/classroom-rds/src/app/auth/*"
       ],
       "@rds-store/*": [
         "projects/classroom-rds/src/app/store/*"

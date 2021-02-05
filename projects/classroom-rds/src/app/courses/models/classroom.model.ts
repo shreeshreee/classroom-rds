@@ -107,3 +107,8 @@ export interface ModifyIndividualStudentsOptions {
   addStudentIds: string[];
   removeStudentIds: string[];
 }
+
+export interface RoleSelectorId {
+  studentId?: string;
+  teacherId?: string
+}

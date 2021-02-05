@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { DefaultDataService, HttpUrlGenerator } from '@ngrx/data';
+import { DefaultDataService, HttpUrlGenerator, QueryParams } from '@ngrx/data';
 import { Update } from '@ngrx/entity';
 
 import { from, Observable, of } from 'rxjs';
@@ -22,6 +22,10 @@ export class CourseDataService extends DefaultDataService<gapi.client.classroom.
     return from(
       this.coursesService.getCourses()
     );
+  }
+  getWithQuery(queryParams: QueryParams) {
+
+    return from(this.coursesService.getCourses(queryParams));
   }
   getByKey(courseId: string): Observable<gapi.client.classroom.Course> {
     return this.getById(courseId)

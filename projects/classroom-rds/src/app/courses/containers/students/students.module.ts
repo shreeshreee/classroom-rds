@@ -6,8 +6,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { EntityDataService, EntityDefinitionService, EntityServices } from '@ngrx/data';
 
-import * as fromEntity from '@rds-store/config/entity-metadata';
 import * as fromStudent from '@rds-store/student';
+import { StudentEntityService } from '@rds-store/student/student-entity.service';
+import { StudentDataService } from '@rds-store/student/student-data.service';
+import * as fromEntity from '@rds-store/app/config/entity-metadata';
 
 import { MaterialModule } from './../../../modules/material.module';
 import { SharedModule } from './../../../shared/shared.module';
@@ -17,8 +19,6 @@ import { StudentsRoutingModule } from './students-routing.module';
 import { StudentsResolver } from './services/students.resolver';
 import { CourseStudentsComponent } from './components/course-students/course-students.component';
 import { GuardiansListDialogComponent } from './components/guardians-list-dialog/guardians-list-dialog.component';
-import { StudentDataService } from '~/app/store/student/student-data.service';
-import { StudentEntityService } from '~/app/store/student/student-entity.service';
 
 
 @NgModule({

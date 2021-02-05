@@ -9,6 +9,7 @@ export interface AuthenticationState {
   user: User;
   isAdmin: boolean;
   isLoggedIn: boolean;
+  isTeacher: boolean;
   error: any;
 }
 
@@ -16,6 +17,7 @@ export const initialState: AuthenticationState = {
   user: null,
   isAdmin: false,
   isLoggedIn: false,
+  isTeacher: false,
   error: null,
 };
 
@@ -62,7 +64,12 @@ export const authReducer = createReducer<AuthenticationState>(
       ...state,
       isAdmin: action.isAdmin
     };
-
+  }),
+  on(fromAuthActions.updateTeachersRole, (state, action) => {
+    return {
+      ...state,
+      isTeacher: action.isTeacher
+    };
   })
 );
 

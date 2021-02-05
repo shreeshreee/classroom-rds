@@ -1,17 +1,17 @@
 <div class="px-5 py-3">
-  <div class="breadcrumb" *ngIf="(user$|async) as user">
-    <div fxLayout="row" fxLayoutAlign="left center">
+  <div *ngIf="(user$|async) as user">
+    <div class="" fxLayout="row" fxLayoutAlign="left center">
       <div>
         <!-- <img class="img-fluid" src="assets/images/rds-classroom.png" /> -->
       </div>
       <div>
         <p class="display-4 display-4-responsive"> Bienvenido </p>
-        <p class="h4 h2-responsive text-black-50"> {{user.name}}</p>
+        <p class="h4 h2-responsive text-dark-50"> {{user.name}}</p>
       </div>
     </div>
   </div>
   <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="10px" fxLayoutAlign="flex-start">
-    <mat-card *ngFor="let item of cards" class="mb-2" fxFlex="0 1 calc(33.3% - 10px)"
+    <mat-card *ngFor="let item of cards" class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)"
       fxFlex.lt-md="0 1 calc(50% - 10px)" fxFlex.lt-sm="100%" [routerLink]="[item.route]">
       <mat-card-header>
         <mat-card-title>

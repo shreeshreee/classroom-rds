@@ -171,7 +171,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">projects/classroom-rds/src/app/shared/components/home/home.component.ts:15</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="16" class="link-to-prism">projects/classroom-rds/src/app/shared/components/home/home.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -240,8 +240,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="19"
-                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/home/home.component.ts:19</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="22"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/home/home.component.ts:22</a></div>
                 </td>
             </tr>
 
@@ -283,7 +283,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">projects/classroom-rds/src/app/shared/components/home/home.component.ts:15</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="16" class="link-to-prism">projects/classroom-rds/src/app/shared/components/home/home.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -300,10 +300,11 @@
 
 import { select, Store } from &#x27;@ngrx/store&#x27;;
 
-import { Observable } from &#x27;rxjs&#x27;;
+import * as fromAuthSelectors from &#x27;@rds-auth/state/auth.selectors&#x27;;
 
-import { AppState } from &#x27;./../../../store/app.state&#x27;;
-import * as fromAuthSelectors from &#x27;./../../../auth/state/auth.selectors&#x27;;
+import { AppState } from &#x27;@rds-store/app.state&#x27;;
+
+import { Observable } from &#x27;rxjs&#x27;;
 @Component({
   selector: &#x27;app-home&#x27;,
   templateUrl: &#x27;./home.component.html&#x27;,
@@ -313,9 +314,11 @@ export class HomeComponent implements OnInit {
   isOnline$: Observable&lt;boolean&gt;;
   constructor(
     private store: Store&lt;AppState&gt;,
-  ) { }
-  ngOnInit(): void {
+  ) {
     this.isOnline$ &#x3D; this.store.pipe(select(fromAuthSelectors.isLoggedIn));
+  }
+  ngOnInit(): void {
+
   }
 }
 </code></pre>
@@ -360,7 +363,7 @@ export class HomeComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><app-wellcome *ngIf="!(isOnline$|async)"></app-wellcome><app-dashboard *ngIf="(isOnline$|async)"></app-dashboard></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainProfileComponent', 'selector': 'app-main-profile'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GalletasComponent', 'selector': 'app-galletas'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
 </script>

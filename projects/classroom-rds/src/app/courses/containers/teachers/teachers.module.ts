@@ -6,8 +6,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { EntityDefinitionService, EntityServices, EntityDataService } from '@ngrx/data';
 
-import * as fromEntity from '@rds-store/config/entity-metadata';
+import * as fromEntity from '@rds-store/app/config/entity-metadata';
 import * as fromTeacher from '@rds-store/teacher';
+import { TeacherDataService } from '@rds-store/teacher/teacher-data.service';
+import { TeacherEntityService } from '@rds-store/teacher/teacher-entity.service';
 
 import { TeachersRoutingModule } from './teachers-routing.module';
 
@@ -15,8 +17,6 @@ import { TeachersResolver } from './services/teachers.resolver';
 import { TeachersService } from './services/teachers.service';
 import { CourseTeachersComponent } from './components/course-teachers/course-teachers.component';
 import { MaterialModule } from '~/app/modules/material.module';
-import { TeacherDataService } from '~/app/store/teacher/teacher-data.service';
-import { TeacherEntityService } from '~/app/store/teacher/teacher-entity.service';
 
 @NgModule({
   declarations: [CourseTeachersComponent],

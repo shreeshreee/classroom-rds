@@ -8,7 +8,7 @@ import { AnnouncementEntityService } from '@rds-store/announcement/announcement-
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { UserProfilesService } from '~/app/courses/services/user-profile/user-profiles.service';
+import { UserProfilesService } from '~/app/user-profiles/services/user-profiles.service';
 
 @Component({
   selector: 'app-course-announcements',

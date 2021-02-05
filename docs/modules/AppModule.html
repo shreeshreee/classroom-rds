@@ -280,6 +280,8 @@ import { ServiceWorkerModule } from &#x27;@angular/service-worker&#x27;;
 
 import { NgxSpinnerModule } from &#x27;ngx-spinner&#x27;;
 
+import { AlertModule } from &#x27;ngx-bootstrap/alert&#x27;;
+
 import { environment } from &#x27;../environments/environment&#x27;;
 
 import { AppRoutingModule } from &#x27;./app-routing.module&#x27;;
@@ -303,6 +305,7 @@ import { AppStoreModule } from &#x27;./store/app-store.module&#x27;;
     AppStoreModule,
     SharedModule,
     AuthModule.forRoot(),
+    AlertModule.forRoot(),
     CoreModule,
     MaterialModule,
     NgxSpinnerModule,

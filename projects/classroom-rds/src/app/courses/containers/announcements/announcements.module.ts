@@ -7,7 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { EntityDataService, EntityDefinitionService, EntityServices } from '@ngrx/data';
 
-import * as fromEntity from '@rds-store/config/entity-metadata';
+import * as fromEntity from '@rds-store/app/config/entity-metadata';
 import * as fromAnnouncement from '@rds-store/announcement';
 import { AnnouncementDataService } from '@rds-store/announcement/announcement-data.service';
 import { AnnouncementEntityService } from '@rds-store/announcement/announcement-entity.service';

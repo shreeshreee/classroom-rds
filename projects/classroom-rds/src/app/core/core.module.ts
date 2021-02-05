@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { AlertModule } from 'ngx-bootstrap/alert';
+
 import { MaterialModule } from '../modules/material.module';
 import { SharedModule } from '../shared/shared.module';
 
@@ -28,6 +30,7 @@ import { SidenavComponent } from './layout/sidenav/sidenav.component';
     FontAwesomeModule,
     MaterialModule,
     SharedModule,
+    AlertModule
   ],
   providers: [LayoutService],
 })

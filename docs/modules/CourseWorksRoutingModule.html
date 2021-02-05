@@ -75,9 +75,18 @@
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 
 import { CourseWorksResolver } from &#x27;./services/course-works.resolver&#x27;;
+import { StudentSubmissionsResolver } from &#x27;./services/student-submissions.resolver&#x27;;
+import { TopicsResolver } from &#x27;./services/topics.resolver&#x27;;
 import { CourseWorkComponent } from &#x27;./components/course-work/course-work.component&#x27;;
 
-const routes: Routes &#x3D; [{ path: &#x27;&#x27;, component: CourseWorkComponent, resolve: { courseworks: CourseWorksResolver } }];
+const routes: Routes &#x3D; [
+  {
+    path: &#x27;&#x27;, component: CourseWorkComponent,
+    resolve: {
+      courseworks: CourseWorksResolver,
+      topics: TopicsResolver,
+    }
+  }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

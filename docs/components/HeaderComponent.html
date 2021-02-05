@@ -155,6 +155,9 @@
                                 <a href="#faSignOut">faSignOut</a>
                             </li>
                             <li>
+                                <a href="#faUserTie">faUserTie</a>
+                            </li>
+                            <li>
                                 <a href="#linkText">linkText</a>
                             </li>
                         </ul>
@@ -201,6 +204,9 @@
                             </li>
                             <li>
                                 <a href="#isOnline">isOnline</a>
+                            </li>
+                            <li>
+                                <a href="#isTeacher">isTeacher</a>
                             </li>
                             <li>
                                 <a href="#user">user</a>
@@ -307,7 +313,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Definido en <a href="" data-line="44" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:44</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="43" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:43</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -328,7 +334,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Definido en <a href="" data-line="41" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:41</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="40" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:40</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -349,7 +355,28 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Definido en <a href="" data-line="43" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:43</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="42" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:42</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isTeacher"></a>
+                        <b>isTeacher</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Definido en <a href="" data-line="44" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:44</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -370,7 +397,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Definido en <a href="" data-line="42" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:42</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="41" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:41</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -789,6 +816,32 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="faUserTie"></a>
+                        <span class="name">
+                            <b>
+                            faUserTie</b>
+                            <a href="#faUserTie"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>faUserTie</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="50" class="link-to-prism">projects/classroom-rds/src/app/core/layout/header/header.component.ts:50</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="linkText"></a>
                         <span class="name">
                             <b>
@@ -835,12 +888,11 @@ import {
   faSignOutAlt,
   faEllipsisV,
   faGlobe,
-  faInfo
+  faInfo,
+  faUserTie
 } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
 
 import { Store } from &#x27;@ngrx/store&#x27;;
-
-import { Observable } from &#x27;rxjs&#x27;;
 
 import { LayoutService } from &#x27;../layout.service&#x27;;
 import { animateText } from &#x27;../../animations/animations&#x27;;
@@ -867,12 +919,13 @@ export class HeaderComponent implements OnInit {
   @Input() user: User;
   @Input() isOnline: boolean;
   @Input() isAdmin: boolean;
+  @Input() isTeacher: boolean;
   faBars &#x3D; faBars;
   faSignIn &#x3D; faSignInAlt;
   faEllipsisV &#x3D; faEllipsisV;
   faShieldAlt &#x3D; faShieldAlt;
   faSignOut &#x3D; faSignOutAlt;
-
+  faUserTie &#x3D; faUserTie;
   faGlobe &#x3D; faGlobe;
   faGoogle &#x3D; faGoogle;
   faInfo &#x3D; faInfo;
@@ -898,17 +951,17 @@ export class HeaderComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;mat-toolbar class&#x3D;&quot;animation fadeInOut border-bottom&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;mat-toolbar class&#x3D;&quot;animation fadeInOut mat-elevation-z6&quot;&gt;
   &lt;mat-toolbar-row fxLayoutAlign&#x3D;&quot;space-between center&quot;&gt;
-    &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutGap&#x3D;&quot;20px&quot;&gt;
+    &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutGap&#x3D;&quot;10px&quot;&gt;
       &lt;button *ngIf&#x3D;&quot;isHandset &amp;&amp; isOnline&quot; mat-icon-button (click)&#x3D;&quot;toggleSidenavLeft($event)&quot;&gt;
         &lt;fa-icon [icon]&#x3D;&quot;faBars&quot;&gt;&lt;/fa-icon&gt;
       &lt;/button&gt;
       &lt;button mat-icon-button [routerLink]&#x3D;&quot;[&#x27;/&#x27;]&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;
         &lt;img class&#x3D;&quot;img-fluid&quot; src&#x3D;&quot;/assets/icons/android-chrome-512x512.png&quot; /&gt;
       &lt;/button&gt;
-      &lt;button mat-button [matMenuTriggerFor]&#x3D;&quot;infoMenu&quot;&gt;
-        Información
+      &lt;button mat-button [matMenuTriggerFor]&#x3D;&quot;escuela&quot;&gt;
+        Escuela
       &lt;/button&gt;
     &lt;/div&gt;
     &lt;a *ngIf&#x3D;&quot;isOnline&quot; [matMenuTriggerFor]&#x3D;&quot;userMenu&quot;&gt;
@@ -921,12 +974,16 @@ export class HeaderComponent implements OnInit {
 &lt;/mat-toolbar&gt;
 &lt;mat-menu #userMenu&#x3D;&quot;matMenu&quot; fxLayoutAlign&#x3D;&quot;right&quot;&gt;
   &lt;ng-template matMenuContent&gt;
-    &lt;div mat-list-item *ngIf&#x3D;&quot;isOnline &amp;&amp; user&quot; [routerLink]&#x3D;&quot;[&#x27;profile&#x27;]&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;
+    &lt;div mat-list-item *ngIf&#x3D;&quot;isOnline &amp;&amp; user&quot; [routerLink]&#x3D;&quot;[&#x27;u&#x27;]&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;
       &lt;app-user [isOnline]&#x3D;&quot;isOnline&quot; [isAdmin]&#x3D;&quot;isAdmin&quot; [user]&#x3D;&quot;user&quot;&gt; &lt;/app-user&gt;
+    &lt;/div&gt;
+    &lt;div mat-menu-item *ngIf&#x3D;&quot;isOnline &amp;&amp; isTeacher&quot; [routerLink]&#x3D;&quot;[&#x27;admin&#x27;]&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;
+      &lt;fa-icon matListIcon [icon]&#x3D;&quot;faUserTie&quot; size&#x3D;&quot;lg&quot;&gt;&lt;/fa-icon&gt;
+      &lt;span&gt;Profesor&lt;/span&gt;
     &lt;/div&gt;
     &lt;div mat-menu-item *ngIf&#x3D;&quot;isOnline &amp;&amp; isAdmin&quot; [routerLink]&#x3D;&quot;[&#x27;admin&#x27;]&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;
       &lt;fa-icon matListIcon [icon]&#x3D;&quot;faShieldAlt&quot; size&#x3D;&quot;lg&quot;&gt;&lt;/fa-icon&gt;
-      &lt;span&gt;Administración&lt;/span&gt;
+      &lt;span&gt;Administrador&lt;/span&gt;
     &lt;/div&gt;
     &lt;div mat-menu-item *ngIf&#x3D;&quot;isOnline&quot; (click)&#x3D;&quot;onSignOut()&quot;&gt;
       &lt;fa-icon matListIcon [icon]&#x3D;&quot;faSignOut&quot; size&#x3D;&quot;lg&quot;&gt;&lt;/fa-icon&gt;
@@ -979,7 +1036,7 @@ export class HeaderComponent implements OnInit {
   z-index: 100;
   min-height: 50px!important;
   height: 50px !important;
-  background-color:inherit;
+  background-color:transparent;
 }
 
 
@@ -1011,8 +1068,8 @@ export class HeaderComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-toolbar class="animation fadeInOut border-bottom">  <mat-toolbar-row fxLayoutAlign="space-between center">    <div fxLayout="row" fxLayoutGap="20px">      <button *ngIf="isHandset && isOnline" mat-icon-button (click)="toggleSidenavLeft($event)">        <fa-icon [icon]="faBars"></fa-icon>      </button>      <button mat-icon-button [routerLink]="[\'/\']" routerLinkActive="active">        <img class="img-fluid" src="/assets/icons/android-chrome-512x512.png" />      </button>      <button mat-button [matMenuTriggerFor]="infoMenu">        Información      </button>    </div>    <a *ngIf="isOnline" [matMenuTriggerFor]="userMenu">      <img mat-card-avatar [src]="[user.photoUrl ? user.photoUrl : \'/assets/images/dummy-user.png\']" />    </a>    <button *ngIf="!isOnline" mat-icon-button (click)="onSignIn()">      <img class="img-fluid" src="/assets/images/google-logo.svg" />    </button>  </mat-toolbar-row></mat-toolbar><mat-menu #userMenu="matMenu" fxLayoutAlign="right">  <ng-template matMenuContent>    <div mat-list-item *ngIf="isOnline && user" [routerLink]="[\'profile\']" routerLinkActive="active">      <app-user [isOnline]="isOnline" [isAdmin]="isAdmin" [user]="user"> </app-user>    </div>    <div mat-menu-item *ngIf="isOnline && isAdmin" [routerLink]="[\'admin\']" routerLinkActive="active">      <fa-icon matListIcon [icon]="faShieldAlt" size="lg"></fa-icon>      <span>Administración</span>    </div>    <div mat-menu-item *ngIf="isOnline" (click)="onSignOut()">      <fa-icon matListIcon [icon]="faSignOut" size="lg"></fa-icon>      <span>Cerrar Sesión</span>    </div>  </ng-template></mat-menu><mat-menu #infoMenu="matMenu">  <ng-template matMenuContent>    <div mat-menu-item [routerLink]="[\'/\']" [matMenuTriggerFor]="escuela">Escuela</div>    <div mat-menu-item [matMenuTriggerFor]="webapp">Aplicación</div>  </ng-template></mat-menu><mat-menu #escuela="matMenu">  <ng-template matMenuContent>    <div mat-menu-item [routerLink]="[\'about\']">Quiénes somos</div>    <div mat-menu-item [matMenuTriggerFor]="oferta">Oferta educativa</div>    <div mat-menu-item>Ubicación y contacto</div>    <div mat-menu-item>Contacto</div>  </ng-template></mat-menu><mat-menu #webapp="matMenu">  <ng-template matMenuContent>    <div mat-menu-item [routerLink]="[\'privacy-policy\']">Políticas de privacidad</div>    <div mat-menu-item [routerLink]="[\'terms\']">Términos de uso</div>    <div mat-menu-item [routerLink]="[\'license\']">Licencia</div>    <div mat-menu-item [routerLink]="[\'code-conduct\']">Código de conducta</div>  </ng-template></mat-menu><mat-menu #oferta="matMenu">  <ng-template matMenuContent>    <div mat-menu-item>Preescolar</div>    <div mat-menu-item>Primaria</div>    <div mat-menu-item>Secundaria</div>  </ng-template></mat-menu></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainProfileComponent', 'selector': 'app-main-profile'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
+        var COMPONENT_TEMPLATE = '<div><mat-toolbar class="animation fadeInOut mat-elevation-z6">  <mat-toolbar-row fxLayoutAlign="space-between center">    <div fxLayout="row" fxLayoutGap="10px">      <button *ngIf="isHandset && isOnline" mat-icon-button (click)="toggleSidenavLeft($event)">        <fa-icon [icon]="faBars"></fa-icon>      </button>      <button mat-icon-button [routerLink]="[\'/\']" routerLinkActive="active">        <img class="img-fluid" src="/assets/icons/android-chrome-512x512.png" />      </button>      <button mat-button [matMenuTriggerFor]="escuela">        Escuela      </button>    </div>    <a *ngIf="isOnline" [matMenuTriggerFor]="userMenu">      <img mat-card-avatar [src]="[user.photoUrl ? user.photoUrl : \'/assets/images/dummy-user.png\']" />    </a>    <button *ngIf="!isOnline" mat-icon-button (click)="onSignIn()">      <img class="img-fluid" src="/assets/images/google-logo.svg" />    </button>  </mat-toolbar-row></mat-toolbar><mat-menu #userMenu="matMenu" fxLayoutAlign="right">  <ng-template matMenuContent>    <div mat-list-item *ngIf="isOnline && user" [routerLink]="[\'u\']" routerLinkActive="active">      <app-user [isOnline]="isOnline" [isAdmin]="isAdmin" [user]="user"> </app-user>    </div>    <div mat-menu-item *ngIf="isOnline && isTeacher" [routerLink]="[\'admin\']" routerLinkActive="active">      <fa-icon matListIcon [icon]="faUserTie" size="lg"></fa-icon>      <span>Profesor</span>    </div>    <div mat-menu-item *ngIf="isOnline && isAdmin" [routerLink]="[\'admin\']" routerLinkActive="active">      <fa-icon matListIcon [icon]="faShieldAlt" size="lg"></fa-icon>      <span>Administrador</span>    </div>    <div mat-menu-item *ngIf="isOnline" (click)="onSignOut()">      <fa-icon matListIcon [icon]="faSignOut" size="lg"></fa-icon>      <span>Cerrar Sesión</span>    </div>  </ng-template></mat-menu><mat-menu #infoMenu="matMenu">  <ng-template matMenuContent>    <div mat-menu-item [routerLink]="[\'/\']" [matMenuTriggerFor]="escuela">Escuela</div>    <div mat-menu-item [matMenuTriggerFor]="webapp">Aplicación</div>  </ng-template></mat-menu><mat-menu #escuela="matMenu">  <ng-template matMenuContent>    <div mat-menu-item [routerLink]="[\'about\']">Quiénes somos</div>    <div mat-menu-item [matMenuTriggerFor]="oferta">Oferta educativa</div>    <div mat-menu-item>Ubicación y contacto</div>    <div mat-menu-item>Contacto</div>  </ng-template></mat-menu><mat-menu #webapp="matMenu">  <ng-template matMenuContent>    <div mat-menu-item [routerLink]="[\'privacy-policy\']">Políticas de privacidad</div>    <div mat-menu-item [routerLink]="[\'terms\']">Términos de uso</div>    <div mat-menu-item [routerLink]="[\'license\']">Licencia</div>    <div mat-menu-item [routerLink]="[\'code-conduct\']">Código de conducta</div>  </ng-template></mat-menu><mat-menu #oferta="matMenu">  <ng-template matMenuContent>    <div mat-menu-item>Preescolar</div>    <div mat-menu-item>Primaria</div>    <div mat-menu-item>Secundaria</div>  </ng-template></mat-menu></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GalletasComponent', 'selector': 'app-galletas'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HeaderComponent'};
 </script>

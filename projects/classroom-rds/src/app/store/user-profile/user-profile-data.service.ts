@@ -5,7 +5,7 @@ import { DefaultDataService, HttpUrlGenerator } from '@ngrx/data';
 
 import { from, Observable } from 'rxjs';
 
-import { UserProfilesService } from '~/app/courses/services/user-profile/user-profiles.service';
+import { UserProfilesService } from '~/app/user-profiles/services/user-profiles.service';
 import * as fromUserProfile from './';
 @Injectable()
 export class UserProfileDataService extends DefaultDataService<gapi.client.classroom.UserProfile> {

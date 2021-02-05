@@ -3,6 +3,7 @@ export interface User {
   isAdmin?: boolean;
   isOnline?: boolean;
   isVerified?: boolean;
+  isTeacher?: boolean;
   name?: string;
   email?: string;
   photoUrl?: string;

@@ -26,6 +26,7 @@ export class SidenavComponent implements OnInit {
   @Input() isHandset: boolean;
   @Input() isOnline: boolean;
   @Input() isAdmin: boolean;
+  @Input() isTeacher: boolean;
   @Input() user: User;
   @Output() routeUser: EventEmitter<User>;
   sideNavState: boolean = false;

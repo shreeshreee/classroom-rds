@@ -38,7 +38,7 @@ import { NavLink } from '../../../shared/models/nav-link';
 import { CourseEntityService } from '../../../store/course/course-entity.service';
 import { TeacherEntityService } from './../../../store/teacher/teacher-entity.service';
 
-import { UserProfilesService } from '~/app/courses/services/user-profile/user-profiles.service';
+import { UserProfilesService } from '~/app/user-profiles/services/user-profiles.service';
 
 @Component({
   selector: 'app-course',

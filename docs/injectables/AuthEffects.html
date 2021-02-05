@@ -111,7 +111,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="81" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:81</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="85" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:85</a></div>
                             </td>
                         </tr>
 
@@ -194,7 +194,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="79" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:79</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="83" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:83</a></div>
                             </td>
                         </tr>
 
@@ -226,7 +226,7 @@
                 id: res.user.providerData[0].uid,
                 name: res.user.displayName,
                 email: res.user.email,
-                photoUrl: res.user.photoURL,
+                photoUrl: res.user.providerData[0].photoURL ? res.user.providerData[0].photoURL : res.user.photoURL,
                 isNew: res.additionalUserInfo.isNewUser,
                 isVerified: res.user.emailVerified,
                 creationTime: res.user.metadata.creationTime,
@@ -255,7 +255,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="14" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:14</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -284,6 +284,7 @@
           return [
             fromAuthActions.updateOnlineStatus({ uid: action.user.uid, isOnline: true }),
             fromAuthActions.checkAdminRole({ uid: action.user.uid }),
+            fromAuthActions.checkTeacherRole({ id: action.user.id }),
           ];
         })
       ),
@@ -292,7 +293,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="51" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:51</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="54" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:54</a></div>
                             </td>
                         </tr>
 
@@ -331,7 +332,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="64" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:64</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="68" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:68</a></div>
                             </td>
                         </tr>
 
@@ -348,9 +349,12 @@
 
 import { Actions, createEffect, ofType } from &#x27;@ngrx/effects&#x27;;
 
+import { UserProfileEntityService } from &#x27;@rds-store/user-profile/user-profile-entity.service&#x27;;
+
 import { of, Observable, defer, from } from &#x27;rxjs&#x27;;
 import { switchMap, map, catchError } from &#x27;rxjs/operators&#x27;;
 
+import { checkTeacherRole } from &#x27;./../auth.actions&#x27;;
 import * as fromAuthActions from &#x27;../auth.actions&#x27;;
 import { User } from &#x27;../../models/user.model&#x27;;
 import { AuthService } from &#x27;../../services/auth.service&#x27;;
@@ -368,7 +372,7 @@ export class AuthEffects {
                 id: res.user.providerData[0].uid,
                 name: res.user.displayName,
                 email: res.user.email,
-                photoUrl: res.user.photoURL,
+                photoUrl: res.user.providerData[0].photoURL ? res.user.providerData[0].photoURL : res.user.photoURL,
                 isNew: res.additionalUserInfo.isNewUser,
                 isVerified: res.user.emailVerified,
                 creationTime: res.user.metadata.creationTime,
@@ -402,6 +406,7 @@ export class AuthEffects {
           return [
             fromAuthActions.updateOnlineStatus({ uid: action.user.uid, isOnline: true }),
             fromAuthActions.checkAdminRole({ uid: action.user.uid }),
+            fromAuthActions.checkTeacherRole({ id: action.user.id }),
           ];
         })
       ),

@@ -1,7 +1,6 @@
  .sidenav-container {
   background-color: inherit;
-  height:100%;
-}
+  height: calc(100vh - 200px);}
 
 .sidenav {
   background-color:inherit;
@@ -12,14 +11,9 @@
   height: 50px;
   width: auto;
 }
-.img-user {
-  border:2px solid green;
-}
 
-.sidenav-container {
-  height: calc(100vh - 100px);
-}
 .main-container {
-  min-height: calc(100vh - 100px);
   width: 100%;
+  min-height: calc(100vh - 200px);
+  //border:2px solid red
 }

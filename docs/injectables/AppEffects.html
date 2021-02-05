@@ -57,7 +57,7 @@
             <h3>Fichero</h3>
         </p>
         <p class="comment">
-            <code>projects/classroom-rds/src/app/store/effects/app.effects.ts</code>
+            <code>projects/classroom-rds/src/app/store/app/effects/app.effects.ts</code>
         </p>
 
 
@@ -108,7 +108,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="59" class="link-to-prism">projects/classroom-rds/src/app/store/effects/app.effects.ts:59</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="46" class="link-to-prism">projects/classroom-rds/src/app/store/app/effects/app.effects.ts:46</a></div>
                             </td>
                         </tr>
 
@@ -194,7 +194,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="48" class="link-to-prism">projects/classroom-rds/src/app/store/effects/app.effects.ts:48</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="35" class="link-to-prism">projects/classroom-rds/src/app/store/app/effects/app.effects.ts:35</a></div>
                             </td>
                         </tr>
 
@@ -229,7 +229,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="23" class="link-to-prism">projects/classroom-rds/src/app/store/effects/app.effects.ts:23</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="24" class="link-to-prism">projects/classroom-rds/src/app/store/app/effects/app.effects.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -264,7 +264,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">projects/classroom-rds/src/app/store/effects/app.effects.ts:13</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="14" class="link-to-prism">projects/classroom-rds/src/app/store/app/effects/app.effects.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -281,12 +281,13 @@
 
 import { Actions, createEffect, ofType } from &#x27;@ngrx/effects&#x27;;
 
+import { AuthService } from &#x27;@rds-auth/services&#x27;;
+import * as fromAuthActions from &#x27;@rds-auth/state/auth.actions&#x27;;
+
+import * as fromAppActions from &#x27;@rds-store/app/actions/app.actions&#x27;;
+
 import { catchError, map, switchMap, tap } from &#x27;rxjs/operators&#x27;;
 import { of } from &#x27;rxjs&#x27;;
-
-import * as fromAppActions from &#x27;./../actions/app.actions&#x27;;
-import { AuthService } from &#x27;./../../auth/services&#x27;;
-import * as fromAuthActions from &#x27;./../../auth/state/auth.actions&#x27;;
 @Injectable()
 export class AppEffects {
   storeUser$ &#x3D; createEffect(
@@ -310,20 +311,6 @@ export class AppEffects {
     { dispatch: false }
   );
 
-
-  /*  initClassroomClient$ &#x3D; createEffect(
-     () &#x3D;&gt;
-       this.actions$.pipe(
-         ofType(fromAppActions.loadApp),
-         switchMap(() &#x3D;&gt; from(this.googleApiService.initClient())
-           .pipe(
-             map((message) &#x3D;&gt;
-               fromAppActions.loadAppSuccess({ message })
-             )
-           )
-         )
-       ),
-   ); */
   loadApp$ &#x3D; createEffect(
     () &#x3D;&gt;
       this.actions$.pipe(

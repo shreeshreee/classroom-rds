@@ -2,9 +2,12 @@ import { Injectable } from '@angular/core';
 
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
+import { UserProfileEntityService } from '@rds-store/user-profile/user-profile-entity.service';
+
 import { of, Observable, defer, from } from 'rxjs';
 import { switchMap, map, catchError } from 'rxjs/operators';
 
+import { checkTeacherRole } from './../auth.actions';
 import * as fromAuthActions from '../auth.actions';
 import { User } from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
@@ -22,7 +25,7 @@ export class AuthEffects {
                 id: res.user.providerData[0].uid,
                 name: res.user.displayName,
                 email: res.user.email,
-                photoUrl: res.user.photoURL,
+                photoUrl: res.user.providerData[0].photoURL ? res.user.providerData[0].photoURL : res.user.photoURL,
                 isNew: res.additionalUserInfo.isNewUser,
                 isVerified: res.user.emailVerified,
                 creationTime: res.user.metadata.creationTime,
@@ -56,6 +59,7 @@ export class AuthEffects {
           return [
             fromAuthActions.updateOnlineStatus({ uid: action.user.uid, isOnline: true }),
             fromAuthActions.checkAdminRole({ uid: action.user.uid }),
+            fromAuthActions.checkTeacherRole({ id: action.user.id }),
           ];
         })
       ),

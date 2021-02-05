@@ -103,12 +103,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, httpUrlGenerator: HttpUrlGenerator, coursesService: <a href="../injectables/CoursesService.html">CoursesService</a>)</code>
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, httpUrlGenerator: HttpUrlGenerator, studentsService: <a href="../injectables/StudentsService.html">StudentsService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">projects/classroom-rds/src/app/store/student/student-data.service.ts:12</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">projects/classroom-rds/src/app/store/student/student-data.service.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -150,10 +150,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>coursesService</td>
+                                                        <td>studentsService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/CoursesService.html" target="_self" >CoursesService</a></code>
+                                                                        <code><a href="../injectables/StudentsService.html" target="_self" >StudentsService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -197,8 +197,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="20"
-                            class="link-to-prism">projects/classroom-rds/src/app/store/student/student-data.service.ts:20</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="21"
+                            class="link-to-prism">projects/classroom-rds/src/app/store/student/student-data.service.ts:21</a></div>
                 </td>
             </tr>
 
@@ -235,7 +235,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Devuelve : </b>    <code>Observable&lt;gapi.client.classroom.Student[]&gt;</code>
+                        <b>Devuelve : </b>        <code><a href="../miscellaneous/variables.html#gapi" target="_self" >Observable&lt;gapi.client.classroom.Student[]&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -258,7 +258,8 @@ import { DefaultDataService, HttpUrlGenerator } from &#x27;@ngrx/data&#x27;;
 
 import { from, Observable } from &#x27;rxjs&#x27;;
 
-import { CoursesService } from &#x27;./../../courses/services/course/courses.service&#x27;;
+import { StudentsService } from &#x27;./../../courses/containers/students/services/students.service&#x27;;
+
 
 import * as fromStudent from &#x27;./&#x27;
 @Injectable()
@@ -266,12 +267,12 @@ export class StudentDataService extends DefaultDataService&lt;gapi.client.classr
   constructor(
     http: HttpClient,
     httpUrlGenerator: HttpUrlGenerator,
-    private coursesService: CoursesService
+    private studentsService: StudentsService
   ) {
     super(fromStudent.entityCollectionName, http, httpUrlGenerator);
   }
   getWithQuery(courseId: string): Observable&lt;gapi.client.classroom.Student[]&gt; {
-    return from(this.coursesService.getStudents(courseId));
+    return from(this.studentsService.getStudents(courseId));
   }
 }
 </code></pre>

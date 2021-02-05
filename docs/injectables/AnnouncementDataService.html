@@ -103,12 +103,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, httpUrlGenerator: HttpUrlGenerator, coursesService: <a href="../injectables/CoursesService.html">CoursesService</a>)</code>
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, httpUrlGenerator: HttpUrlGenerator, announcementsService: <a href="../injectables/AnnouncementsService.html">AnnouncementsService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="11" class="link-to-prism">projects/classroom-rds/src/app/store/announcement/announcement-data.service.ts:11</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">projects/classroom-rds/src/app/store/announcement/announcement-data.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -150,10 +150,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>coursesService</td>
+                                                        <td>announcementsService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/CoursesService.html" target="_self" >CoursesService</a></code>
+                                                                        <code><a href="../injectables/AnnouncementsService.html" target="_self" >AnnouncementsService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -197,8 +197,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="19"
-                            class="link-to-prism">projects/classroom-rds/src/app/store/announcement/announcement-data.service.ts:19</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="20"
+                            class="link-to-prism">projects/classroom-rds/src/app/store/announcement/announcement-data.service.ts:20</a></div>
                 </td>
             </tr>
 
@@ -235,7 +235,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Devuelve : </b>    <code>Observable&lt;gapi.client.classroom.Announcement[]&gt;</code>
+                        <b>Devuelve : </b>        <code><a href="../miscellaneous/variables.html#gapi" target="_self" >Observable&lt;gapi.client.classroom.Announcement[]&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -258,20 +258,21 @@ import { DefaultDataService, HttpUrlGenerator } from &#x27;@ngrx/data&#x27;;
 
 import { from, Observable } from &#x27;rxjs&#x27;;
 
-import { CoursesService } from &#x27;../../courses/services/course/courses.service&#x27;;
+import { AnnouncementsService } from &#x27;./../../courses/containers/announcements/services/announcements.service&#x27;;
+
 import * as fromAnnouncement from &#x27;./&#x27;
 @Injectable()
 export class AnnouncementDataService extends DefaultDataService&lt;gapi.client.classroom.Announcement&gt; {
   constructor(
     http: HttpClient,
     httpUrlGenerator: HttpUrlGenerator,
-    private coursesService: CoursesService
+    private announcementsService: AnnouncementsService
   ) {
     super(fromAnnouncement.entityCollectionName, http, httpUrlGenerator);
   }
   getWithQuery(courseId: string): Observable&lt;gapi.client.classroom.Announcement[]&gt; {
     return from(
-      this.coursesService.getAnnouncements(courseId)
+      this.announcementsService.getAnnouncements(courseId)
     );
   }
 }

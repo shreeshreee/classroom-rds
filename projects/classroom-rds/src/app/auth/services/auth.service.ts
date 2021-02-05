@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 
+import { environment } from '@rds-env/environment';
+
 import { from, Observable, Subject, Subscription } from 'rxjs';
 
 import firebase from 'firebase/app';
 import 'firebase/auth';
-
-import { environment } from './../../../environments/environment';
 
 import { AuthFireService } from './auth-fire.service';
 //declare const gapi: any;
@@ -85,7 +85,6 @@ export class AuthService {
    */
   handleSignInClick() {
     return from(this.signIn());
-
   }
   async signIn() {
     const googleAuth: gapi.auth2.GoogleAuth = gapi.auth2.getAuthInstance();
@@ -111,6 +110,7 @@ export class AuthService {
       return null
     }
   }
+
 
 
   updateSigninStatus(user) {
