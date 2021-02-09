@@ -11,7 +11,5 @@ export class UserProfileEntityService extends EntityCollectionServiceBase<gapi.c
   constructor(readonly serviceElementsFactory: EntityCollectionServiceElementsFactory) {
     super(fromUserProfile.entityCollectionName, serviceElementsFactory);
   }
-  getById(id: string): Observable<gapi.client.classroom.UserProfile> {
-    return this.getByKey(id);
-  }
+
 }

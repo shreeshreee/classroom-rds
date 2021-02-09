@@ -3,9 +3,9 @@ import { Injectable } from '@angular/core';
 
 import { DefaultDataService, HttpUrlGenerator } from '@ngrx/data';
 
-import { from, Observable } from 'rxjs';
+import { UserProfilesService } from '@rds-classroom/user-profiles/services/user-profiles.service';
 
-import { UserProfilesService } from '~/app/user-profiles/services/user-profiles.service';
+import { from, Observable } from 'rxjs';
 import * as fromGuardian from './'
 @Injectable()
 export class GuardianDataService extends DefaultDataService<gapi.client.classroom.Guardian> {

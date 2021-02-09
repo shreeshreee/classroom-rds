@@ -1,4 +1,4 @@
-<mat-toolbar class="animation fadeInOut mat-toolbar mat-elevation-z15">
+<mat-toolbar class="animation fadeInOut mat-elevation-z8 sticky-top">
   <mat-toolbar-row fxLayoutAlign="space-between center">
     <div fxLayout="row" fxLayoutGap="5px">
       <button *ngIf="isHandset && isOnline" mat-icon-button (click)="toggleSidenavLeft($event)">
@@ -14,12 +14,14 @@
         Aplicación
       </button>
     </div>
-    <a *ngIf="isOnline" [matMenuTriggerFor]="userMenu">
-      <img mat-card-avatar [src]="user.photoUrl ? user.photoUrl : 'assets/images/dummy-user.png'" />
-    </a>
-    <button *ngIf="!isOnline" mat-icon-button (click)="onSignIn()">
-      <img class="img-fluid" src="assets/images/google-logo.svg" />
-    </button>
+    <div fxLayout="row" fxLayoutGap="5px">
+      <button *ngIf="isOnline" mat-icon-button [matMenuTriggerFor]="userMenu">
+        <img class="img-fluid rounded-circle" [src]="user.photoUrl" />
+      </button>
+      <button *ngIf="!isOnline" mat-icon-button (click)="onSignIn()">
+        <img class="img-fluid" src="assets/images/google-logo.svg" />
+      </button>
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-menu #userMenu="matMenu" fxLayoutAlign="right">
@@ -53,7 +55,6 @@
     <div mat-menu-item [routerLink]="['about']" routerLinkActive="active">Quiénes somos</div>
     <div mat-menu-item [matMenuTriggerFor]="oferta">Oferta educativa</div>
     <div mat-menu-item [routerLink]="['location']" routerLinkActive="active">Ubicación y contacto</div>
-    <div mat-menu-item [routerLink]="['under-construction']" routerLinkActive="active">Contacto</div>
   </ng-template>
 </mat-menu>
 
@@ -61,7 +62,6 @@
   <ng-template matMenuContent>
     <div mat-menu-item [matMenuTriggerFor]="conduct">Código de conducta</div>
     <div mat-menu-item [routerLink]="['privacy-policy']" routerLinkActive="active">Políticas de privacidad</div>
-    <div mat-menu-item [routerLink]="['under-construction']" routerLinkActive="active">Términos de uso</div>
     <div mat-menu-item [routerLink]="['license']" routerLinkActive="active">Licencia</div>
   </ng-template>
 </mat-menu>

@@ -14,6 +14,7 @@ import * as fromAuthEffects from '@rds-auth/state/effects';
 import { LoginDialogComponent } from '@rds-auth/components/login-dialog/login-dialog.component';
 
 import { MaterialModule } from '../modules/material.module';
+import { UserProfileEffects } from './../classroom/state/effects/user-profile.effects';
 
 @NgModule({
   imports: [
@@ -22,7 +23,7 @@ import { MaterialModule } from '../modules/material.module';
     FontAwesomeModule,
     MaterialModule,
     StoreModule.forFeature(fromAuthReducer.authFeatureKey, fromAuthReducer.authReducer),
-    EffectsModule.forFeature([fromAuthEffects.AuthEffects, fromAuthEffects.FireEffects]),
+    EffectsModule.forFeature(fromAuthEffects.authEffects),
   ],
   declarations: [LoginDialogComponent],
   exports: [LoginDialogComponent]

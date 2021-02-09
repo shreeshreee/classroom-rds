@@ -1,9 +1,10 @@
 import { Action, ActionReducer, ActionReducerMap, INIT, MetaReducer } from '@ngrx/store';
 import { routerReducer, RouterReducerState } from '@ngrx/router-store';
 
-import { environment } from './../../environments/environment';
-import * as fromAuthActions from './../auth/state/auth.actions';
-import { AuthenticationState, authFeatureKey, authReducer } from './../auth/state/auth.reducer';
+import { environment } from '@rds-env/environment';
+
+import { AuthenticationState, authFeatureKey, authReducer } from '@rds-auth/state/auth.reducer';
+import * as fromAuthActions from '@rds-auth/state/auth.actions';
 export interface AppState {
   [authFeatureKey]: AuthenticationState;
   router: RouterReducerState;

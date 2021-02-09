@@ -1,35 +1,31 @@
-<div class="px-2 pt-1">
-  <div class="img-container float-right">
-    <img src="assets/images/rds-personas.png" class="img-fluid" />
+<div class="p-5">
+  <div fxLayout="row wrap" fxLayoutAlign="space-between top">
+    <div fxFlex fxLayout="column" fxLayoutAlign="top start">
+      <p class="display-4 display-4-responsive">Educación a distancia</p>
+      <p class="h4 h4-responsive">en respuesta a tiempos de crisis</p>
+      <p class="h5 h5-responsive">Descarga de manuales para el manejo y prevencion de eventualidades en la modalidad de
+        educación a distancia
+      </p>
+    </div>
+    <div fxFlex="25%">
+      <carousel>
+        <slide *ngFor="let pict of picts; let index=index">
+          <img class="img-fluid" [src]="pict.path" alt="first slide" height="auto">
+        </slide>
+      </carousel>
+    </div>
   </div>
-  <div fxLayout="column" fxLayoutAlign="space-between center">
-    <p class="display-4 display-4-responsive">Educación a distancia</p>
-    <p class="h4 h2-responsive text-dark-50">en respuesta a tiempos de crisis</p>
-  </div>
-  <div fxLayout="row">
-    <img class="text-wrap-right img-fluid" width="30%" height="auto"
-      src="assets/scene/120896489_3353318561372251_3413422127144432972_o.jpg">
-    <img class="text-wrap-right img-fluid" width="30%" height="auto"
-      src="assets/scene/145554877_3674428962594541_6430858538444380710_o.jpg">
-    <img class="text-wrap-right img-fluid" width="30%" height="auto"
-      src="assets/scene/142807647_3651180938252677_2666928967365985320_o.jpg">
-    <img class="text-wrap-right img-fluid" width="30%" height="auto"
-      src="assets/scene/136731354_3609776659059772_5825083095735666824_o.jpg">
-  </div>
-  <div class="py-2">
-    <div class="card border-success mb-3" style="max-width: 540px;">
-      <div class="row g-0">
-        <div class="col-md-8">
-          <div class="card-body">
-            <h3 class="card-title">Manual de cuentas institucionales</h3>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
+  <div class="py-2" fxLayout="row wrap" fxLayoutGap="5px">
+    <div *ngFor="let infoManual of infographics" fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-md="0 1 calc(50% - 10px)"
+      fxFlex.lt-sm="100%">
+      <div class="card border-success" fxLayout="row wrap">
+        <div fxFlex="70%" class="card-body">
+          <h3 class="card-title">{{infoManual.title}}</h3>
+          <p class="card-text">{{infoManual.description}}</p>
+          <p class="card-text"><small class="text-muted">{{infoManual.size}}</small></p>
         </div>
-        <div class="col-md-4">
-          <img class="img-fluid img-thumbnail" src="assets/scene/tu-cuenta-institucional.png"
-            alt="Manual de cuentas institucionales">
+        <div fxFlex="30%">
+          <img class="img-fluid img-thumbnail" [src]="infoManual.file" alt="{{infoManual.title}}">
         </div>
       </div>
     </div>

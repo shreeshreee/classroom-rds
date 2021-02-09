@@ -12,7 +12,7 @@ export const selectAuthState = createFeatureSelector<AuthenticationState>(
 
 export const isLoggedIn = createSelector(
   selectAuthState,
-  auth => !!auth.user
+  (state: AuthenticationState): boolean => !!state.user
 );
 export const isAdmin = createSelector(
   selectAuthState,
@@ -21,11 +21,6 @@ export const isAdmin = createSelector(
 export const isTeacher = createSelector(
   selectAuthState,
   (state: AuthenticationState): boolean => state.isTeacher
-);
-/*---------------------------------------------------------*/
-export const selectIsLoggedIn = createSelector(
-  selectAuthState,
-  (state: AuthenticationState): boolean => state.user != null
 );
 export const selectUser = createSelector(
   selectAuthState,
@@ -36,3 +31,9 @@ export const getError = createSelector(
   selectAuthState,
   (state: AuthenticationState): any => state.error
 );
+
+/*---------------------------------------------------------*/
+/* export const selectIsLoggedIn = createSelector(
+  selectAuthState,
+  (state: AuthenticationState): boolean => state.user != null
+); */

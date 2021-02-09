@@ -10,17 +10,18 @@
       </mat-nav-list>
       <mat-nav-list dense>
         <a mat-list-item (click)="onSidenavToggle()">
-          <fa-icon matListIcon [icon]="faCompressAlt"></fa-icon>
+          <fa-icon matListIcon [icon]="sideNavState ? faCompressAlt : faExpandAlt"></fa-icon>
         </a>
       </mat-nav-list>
     </div>
   </mat-sidenav>
   <mat-sidenav-content [@onMainContentChange]="(onSideNavChange) ? 'open': 'close'">
-    <main class="pb-5 main-container">
+    <main class="pb-5 main-container overflow-auto">
       <alert #banner [type]="alert.type" (click)="banner.close()" [dismissible]="dismissible">
         <span [routerLink]="['galletas']" [innerHtml]="(alert.msg)"></span>
       </alert>
       <router-outlet></router-outlet>
     </main>
+    <app-footer [isHandset]="isHandset" *ngIf="!isOnline" fxFlexOffset="auto"></app-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>

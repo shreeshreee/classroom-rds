@@ -1,9 +1,0 @@
-<h2 class="mat-h1">Calificaciones</h2>
-<h5>Se muestran únicamente los cursos en donde estás inscrito como alumno. Si eres profesor y deseas acceder al panel de
-  calificaciones, dirígete a <a [routerLink]="['/c']">este enlace</a>.</h5>
-<ul class="list-group list-group-flush" *ngFor="let course of courses$|async">
-  <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-    {{course.name}}<span class=" badge bg-primary rounded-pill">14</span>
-  </li>
-
-</ul>

@@ -3,7 +3,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from '@angular/router';
 
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { faUser, faHome, faSchool, faChalkboardTeacher, faUserTie, faUserGraduate, faUserCog, IconDefinition, faCompressAlt, faSignOutAlt, faShieldAlt, faUserPlus, faAward } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faHome, faSchool, faChalkboardTeacher, faUserTie, faUserGraduate, faUserCog, IconDefinition, faCompressAlt, faSignOutAlt, faShieldAlt, faUserPlus, faAward, faExpandAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { Store } from '@ngrx/store';
 
@@ -34,15 +34,22 @@ export class SidenavComponent implements OnInit {
   linkText: boolean = false;
   alert: any = {
     type: 'success',
-    msg: `Sigue <strong>en vivo</strong> la transmisión de la elaboración <strong>galletas</strong> del día del amor y la amistad. <strong>Pulsa esta notificación</strong>.`
+    msg: `<div>
+    <h2>
+    Transmitiendo <strong>en vivo</strong>! Jueves 11 de Febrero, 9 am.
+    </h2>
+    Acompáñanos en la elaboración de <strong>galletas</strong> con motivo del día del amor y la amistad.
+    <strong>Pulsa esta notificación</strong>
+    </div>`
   };
   dismissible = true;
   classroomPages: NavLink[] = [
     { name: 'Coursos', route: '/c', icon: faChalkboardTeacher },
     { name: 'Invitaciones', route: '/i', icon: faUserPlus },
-    { name: 'Calificaciones', route: '/g', icon: faAward },
+    { name: 'Calificaciones', route: '/u', icon: faAward },
   ];
   faCompressAlt = faCompressAlt;
+  faExpandAlt = faExpandAlt;
   faUser = faUser;
   faSchool = faSchool;
   faUserCog = faUserCog;

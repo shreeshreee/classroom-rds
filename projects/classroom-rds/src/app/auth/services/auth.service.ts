@@ -46,7 +46,7 @@ export class AuthService {
       onerror: () =>
         // Handle loading error.
         alert('gapi.client failed to load!'),
-      timeout: 5000, // 5 seconds.
+      timeout: 15000, // 15 seconds.
       ontimeout: () =>
         // Handle timeout.
         alert('gapi.client could not load in a timely manner!')

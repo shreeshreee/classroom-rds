@@ -4,9 +4,9 @@ import { Injectable } from '@angular/core';
 import { DefaultDataService, HttpUrlGenerator, QueryParams } from '@ngrx/data';
 import { Update } from '@ngrx/entity';
 
-import { from, Observable, of } from 'rxjs';
+import { CoursesService } from '@rds-classroom/courses/services/courses.service';
 
-import { CoursesService } from './../../courses/services/course/courses.service';
+import { from, Observable, of } from 'rxjs';
 
 import * as fromCourse from './';
 @Injectable()

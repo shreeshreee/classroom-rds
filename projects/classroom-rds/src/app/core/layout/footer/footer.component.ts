@@ -10,11 +10,11 @@ import { faFacebook, faGithub, faTwitter } from '@fortawesome/free-brands-svg-ic
 export class FooterComponent implements OnInit {
   @Input() isHandset: boolean;
   socialSet: any[] = [
-    {
-      name: 'Github',
-      icon: faGithub,
-      site: 'https://github.com/jcmelchorp/classroom-rds',
-    },
+    /*  {
+       name: 'Github',
+       icon: faGithub,
+       site: 'https://github.com/jcmelchorp/classroom-rds',
+     }, */
     {
       name: 'Facebook',
       icon: faFacebook,

@@ -25,6 +25,7 @@
             "aot": true,
             "assets": [
               "projects/classroom-rds/src/assets",
+              "projects/classroom-rds/src/manifest.webmanifest",
               "projects/classroom-rds/src/manifest.webmanifest"
             ],
             "styles": [
@@ -92,6 +93,7 @@
             "karmaConfig": "projects/classroom-rds/karma.conf.js",
             "assets": [
               "projects/classroom-rds/src/assets",
+              "projects/classroom-rds/src/manifest.webmanifest",
               "projects/classroom-rds/src/manifest.webmanifest"
             ],
             "styles": [

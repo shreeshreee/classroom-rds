@@ -1,9 +1,8 @@
-import { RouteEffects, AppEffects, SpinnerEffects } from '../effects';
-import { DialogEffects } from '../effects/dialog.effects';
+import { RouteEffects, AppEffects, SpinnerEffects, DialogEffects } from '../effects';
 
 export const registeredEffects = [
   RouteEffects,
   AppEffects,
   SpinnerEffects,
-  DialogEffects
+  DialogEffects,
 ];

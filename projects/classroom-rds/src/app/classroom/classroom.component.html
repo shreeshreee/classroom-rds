@@ -1,0 +1,6 @@
+<div *ngIf="isLoading$|async" class="w-100">
+  <mat-progress-bar mode="query" color="primary"> </mat-progress-bar>
+</div>
+<div class="px-2 pt-1" *ngIf="(user$|async) as user">
+
+</div>

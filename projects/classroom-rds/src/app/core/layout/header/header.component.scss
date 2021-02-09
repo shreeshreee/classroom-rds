@@ -1,13 +1,12 @@
-.mat-toolbar{
-  position: sticky;
-  top: 0;
-  z-index: 100;
+@import './../../../../assets/themes/colors.scss';
+mat-toolbar{
+  z-index: 1000;
   min-height: 50px!important;
   height: 50px !important;
-  background-color:transparent;
+  background-color: white;
 }
 .active {
-  border-bottom: 2px solid #7cc6f8;
+  border-bottom: 2px solid $rds-logo-color;
 }
 
 

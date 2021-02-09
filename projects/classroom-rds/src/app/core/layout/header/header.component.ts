@@ -16,12 +16,13 @@ import {
 
 import { Store } from '@ngrx/store';
 
+import { AppState } from '@rds-store/app.state';
+
+import { User } from '@rds-auth/models/user.model';
+import { signOut } from '@rds-auth/state/auth.actions';
+import { LoginDialogComponent } from '@rds-auth/components/login-dialog/login-dialog.component';
+
 import { LayoutService } from '../layout.service';
-import { animateText } from '../../animations/animations';
-import { AppState } from '../../../store/app.state';
-import { User } from '../../../auth/models/user.model';
-import { signOut } from '../../../auth/state/auth.actions';
-import { LoginDialogComponent } from '../../../auth/components/login-dialog/login-dialog.component';
 
 @Component({
   selector: 'app-header',
@@ -63,7 +64,7 @@ export class HeaderComponent implements OnInit {
     this.layoutService.toggleSidenavLeft.emit($event);
   }
   onSignIn() {
-    this.dialog.open(LoginDialogComponent, { height: '250px', width: '380px' });
+    this.dialog.open(LoginDialogComponent, { height: '250px', width: '350px' });
   }
   onSignOut() {
     this.store.dispatch(signOut({ user: this.user }));

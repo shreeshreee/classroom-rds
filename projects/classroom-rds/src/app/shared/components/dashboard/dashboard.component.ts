@@ -6,9 +6,9 @@ import { AppState } from '@rds-store/app.state';
 
 import { User } from '@rds-auth/models/user.model';
 import { selectUser } from '@rds-auth/state/auth.selectors';
+import * as fromAuthActions from '@rds-auth/state/auth.actions';
 
 import { Observable } from 'rxjs';
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -44,5 +44,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.user$ = this.store.pipe(select(selectUser));
   }
-
+  optionsByRole(userId: string) {
+    this.store.dispatch(fromAuthActions.checkTeacherRole({ id: userId }));
+  }
 }

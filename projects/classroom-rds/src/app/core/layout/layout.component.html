@@ -2,7 +2,7 @@
   <app-header [user]="(user$|async)" [isHandset]="(isHandset$|async)" [isAdmin]="(isAdmin$|async)"
     [isTeacher]="(isTeacher$|async)" [isOnline]="(isOnline$|async)">
   </app-header>
-  <div *ngIf="loading" class="w-100">
+  <div *ngIf="loading">
     <mat-progress-bar mode="query" color="primary"> </mat-progress-bar>
   </div>
   <div fxFlex>
@@ -10,5 +10,5 @@
       [isAdmin]="(isAdmin$|async)" [isTeacher]="(isTeacher$|async)">
     </app-sidenav>
   </div>
-  <app-footer [isHandset]="(isHandset$|async)" *ngIf="!(isOnline$|async)" fxFlexOffset="auto"></app-footer>
+
 </div>

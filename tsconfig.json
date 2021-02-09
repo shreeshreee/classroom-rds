@@ -19,6 +19,9 @@
       "@rds-store/*": [
         "projects/classroom-rds/src/app/store/*"
       ],
+      "@rds-classroom/*": [
+        "projects/classroom-rds/src/app/classroom/*"
+      ],
       "@rds-env/*": [
         "projects/classroom-rds/src/environments/*"
       ]

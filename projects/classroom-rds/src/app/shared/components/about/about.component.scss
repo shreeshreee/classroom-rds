@@ -5,12 +5,16 @@
 
 .text-wrap-right {
   float:right;
-  margin: 5px;
+  margin: 10px;
+  max-width: 300px;
+
 }
 
 .text-wrap-left {
   float:left;
-  margin: 5px;
+  margin: 10px;
+  max-width: 300px;
+
 }
 .display-4-responsive {
   font-family: 'Fredoka One';
@@ -34,6 +38,6 @@
 
 .blockquote-responsive {
   font-size: calc(1rem + 1vw);
-  font-weight: 800;
+  font-weight: 200;
 
 }

@@ -51,7 +51,7 @@ export class SeoService {
     this.titleService.setTitle(title);
     this.metaService.addTags([
       {
-        name: 'keywords', content: 'ngrx angular-material gapi firebase-auth firebase-realtime-database angular-flex-layout ngx-bootstrap firestore fontawesome5 angular11 angular-pwa google-classroom'
+        name: 'keywords', content: 'escuela RDS Escuela Rafael Diaz Serdan educacion alumnos veracruz pierre faure montesory'
       },
       { name: 'description', content: description },
       { name: 'robots', content: 'index, follow' },
@@ -59,7 +59,7 @@ export class SeoService {
       { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' },
       { name: 'author', content: 'Julio César Melchor Pinto' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0, shrink-to-fit=no' },
-      { name: 'date', content: '2020-10-10', scheme: 'YYYY-MM-DD' },
+      { name: 'date', content: '2021-02-05', scheme: 'YYYY-MM-DD' },
       { name: 'application-name', content: title },
       { name: 'apple-mobile-web-app-status-bar', content: 'black-translucent' },
       { name: 'theme-color', content: '#1976d2' },
@@ -72,13 +72,13 @@ export class SeoService {
       { name: 'msapplication-wide310x150logo', content: 'assets/icons/mstile-icon-558-270.png' },
       // OpenGraph metatags
       { property: 'og:title', content: title },
-      { property: 'og:type', content: 'profile' },
-      { property: 'profile:first_name', content: 'Julio' },
-      { property: 'profile:last_name', content: 'Melchor' },
-      { property: 'profile:username', content: 'jcmelchorp' },
-      { property: 'profile:gender', content: 'male' },
+      { property: 'og:type', content: 'website' },
+      /*  { property: 'profile:first_name', content: 'Julio' },
+       { property: 'profile:last_name', content: 'Melchor' },
+       { property: 'profile:username', content: 'jcmelchorp' },
+       { property: 'profile:gender', content: 'male' }, */
       { property: 'og:site_name', content: title },
-      { property: 'og:url', content: 'https://fireclassroom.web.app' },
+      { property: 'og:url', content: 'http://rds.edu.mx' },
       { property: 'og:image:url', content: image },
       { property: 'og:image:secure_url', content: image, },
       { property: 'og:image:alt', content: 'Website view example' },

@@ -7,7 +7,7 @@ import { SeoService } from './shared/services';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'Classroom RDS Admin';
+  title = 'Escuela RDS';
   constructor(
     private seoService: SeoService,
   ) {
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
     this.seoService.titleInit();
     this.seoService.generateTags({
       title: this.title,
-      description: 'Angular web app for a school admin in Google Classroom.',
+      description: 'Portal de información y servicios escolares de la Escuela Rafael Díaz Serdán',
       image: 'assets/screenshots/screenshot02.png'
     });
 

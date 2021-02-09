@@ -11,6 +11,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { AlertModule } from 'ngx-bootstrap/alert';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 import { environment } from '../environments/environment';
 
@@ -36,6 +37,7 @@ import { AppStoreModule } from './store/app-store.module';
     SharedModule,
     AuthModule.forRoot(),
     AlertModule.forRoot(),
+    CarouselModule.forRoot(),
     CoreModule,
     MaterialModule,
     NgxSpinnerModule,

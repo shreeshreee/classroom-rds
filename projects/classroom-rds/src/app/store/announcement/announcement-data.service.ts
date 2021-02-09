@@ -3,9 +3,9 @@ import { Injectable } from '@angular/core';
 
 import { DefaultDataService, HttpUrlGenerator } from '@ngrx/data';
 
-import { from, Observable } from 'rxjs';
+import { AnnouncementsService } from '@rds-classroom/announcements/services/announcements.service';
 
-import { AnnouncementsService } from './../../courses/containers/announcements/services/announcements.service';
+import { from, Observable } from 'rxjs';
 
 import * as fromAnnouncement from './'
 @Injectable()
