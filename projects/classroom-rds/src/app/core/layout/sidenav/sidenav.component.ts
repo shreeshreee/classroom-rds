@@ -32,6 +32,16 @@ export class SidenavComponent implements OnInit {
   sideNavState: boolean = false;
   onSideNavChange: boolean;
   linkText: boolean = false;
+  faChalkboardTeacher = faChalkboardTeacher;
+  faUserPlus = faUserPlus;
+  faAward = faAward;
+  faCompressAlt = faCompressAlt;
+  faExpandAlt = faExpandAlt;
+  faUser = faUser;
+  faSchool = faSchool;
+  faUserCog = faUserCog;
+  faGoogle = faGoogle;
+
   alert: any = {
     type: 'success',
     msg: `<div>
@@ -43,17 +53,6 @@ export class SidenavComponent implements OnInit {
     </div>`
   };
   dismissible = true;
-  classroomPages: NavLink[] = [
-    { name: 'Coursos', route: '/c', icon: faChalkboardTeacher },
-    { name: 'Invitaciones', route: '/i', icon: faUserPlus },
-    { name: 'Calificaciones', route: '/u', icon: faAward },
-  ];
-  faCompressAlt = faCompressAlt;
-  faExpandAlt = faExpandAlt;
-  faUser = faUser;
-  faSchool = faSchool;
-  faUserCog = faUserCog;
-  faGoogle = faGoogle;
 
   constructor(
     private layoutService: LayoutService,

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Store, select } from '@ngrx/store';
@@ -16,7 +16,8 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-classroom',
   templateUrl: './classroom.component.html',
-  styleUrls: ['./classroom.component.scss']
+  styleUrls: ['./classroom.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ClassroomComponent implements OnInit {
   user$: Observable<User>;

@@ -2,7 +2,7 @@
 @import "./../../../../../assets/themes/colors.scss";
 .hide { display: none; }
 .table-container {
-  border: 1px solid $alto-color;
+
   //margin-top: 8px;
   mat-table {
     color: $deep-blue-color;
@@ -13,9 +13,7 @@
       height: 50px;
     }
 
-    .course-row:hover {
-      background-color: $off-water-color;
-    }
+
 
     .course-row.mat-footer-row,
     .course-row.mat-row {
@@ -23,13 +21,9 @@
       cursor: pointer;
     }
     mat-header-cell {
-      color: $blue-wood-color !important;
-      background-color: $catskill-white-color;
       letter-spacing: 0.3px;
     }
 
-    mat-cell {
-      color: $deep-blue-color;
-    }
+
   }
 }

@@ -1,6 +1,23 @@
-<div *ngIf="isLoading$|async" class="w-100">
+<!-- <div *ngIf="isLoading$|async" class="w-100">
   <mat-progress-bar mode="query" color="primary"> </mat-progress-bar>
-</div>
-<div class="px-2 pt-1" *ngIf="(user$|async) as user">
-
+</div> -->
+<div class="p-4" *ngIf="(user$|async) as user">
+  <div fxLayout="column" fxLayoutAlign="space-between start">
+    <p class="display-4 display-4-responsive"> Bienvenido </p>
+    <p class="h4 h4-responsive"> {{user.name}}</p>
+    <p class="h5 h5-responsive">Panel de acceso a servicios de información para estudiantes y profesores.
+    </p>
+  </div>
+  <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="10px" fxLayoutAlign="flex-start">
+    <mat-card *ngFor="let item of cards" class="mb-2 dashboard-cards mat-elevation-z5" fxFlex="0 1 calc(33.3% - 10px)"
+      fxFlex.lt-md="0 1 calc(50% - 10px)" fxFlex.lt-sm="100%" [routerLink]="[item.route]">
+      <mat-card-header>
+        <mat-card-title>
+          {{ item.title }}
+        </mat-card-title>
+        <mat-card-subtitle>{{ item.description }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="item.imgUrl" />
+    </mat-card>
+  </div>
 </div>

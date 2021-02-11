@@ -5,18 +5,7 @@
     <p class="h5 h5-responsive">Panel de acceso a servicios de información para estudiantes y profesores.
     </p>
   </div>
-  <!-- <button mat-raised-button [routerLink]="['/classroom']">Continuar</button> -->
-  <!-- <button mat-raised-button (click)="optionsByRole(user.id)">Continuar</button> -->
-  <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="10px" fxLayoutAlign="flex-start">
-    <mat-card *ngFor="let item of cards" class="mb-2 dashboard-cards mat-elevation-z5" fxFlex="0 1 calc(33.3% - 10px)"
-      fxFlex.lt-md="0 1 calc(50% - 10px)" fxFlex.lt-sm="100%" [routerLink]="[item.route]">
-      <mat-card-header>
-        <mat-card-title>
-          {{ item.title }}
-        </mat-card-title>
-        <mat-card-subtitle>{{ item.description }}</mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image [src]="item.imgUrl" />
-    </mat-card>
-  </div>
+  <button mat-raised-button [routerLink]="['/c']" [queryParams]="{ id: user.id }">Continuar</button>
+  <!-- <button mat-raised-button (click)=" optionsByRole(user.id)">Continuar</button> -->
+
 </div>

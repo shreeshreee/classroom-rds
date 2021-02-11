@@ -11,18 +11,18 @@ import { map, skipUntil, switchMap } from "rxjs/operators";
 @Injectable()
 export class UserProfileEffects {
 
-  checkTeacherRole$ = createEffect(
+  /* checkTeacherRole$ = createEffect(
     () =>
       this.actions$.pipe(
         ofType(fromAuthActions.checkTeacherRole),
         switchMap((action) =>
-          this.userProfilesService.checkTeacherRole(action.id)
+          this.authFire.checkTeacherRole(action.id)
             .pipe(
               map((isTeacher: boolean) => fromAuthActions.updateTeachersRole({ isTeacher }))
             )
         )
       )
-  );
+  ); */
 
   constructor(
     private actions$: Actions,

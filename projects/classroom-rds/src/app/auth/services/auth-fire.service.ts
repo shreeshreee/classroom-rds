@@ -22,7 +22,7 @@ export class AuthFireService {
     private afStore: AngularFirestore,
 
   ) {
-    this.user$ = this.afAuth.authState.pipe(
+    this.user$ = this.getAuthState().pipe(
       switchMap((user) => {
         if (user) {
           return this.afStore.collection<User>('users').doc<User>(`${user.providerData[0].uid}`).valueChanges();
@@ -31,6 +31,10 @@ export class AuthFireService {
         }
       })
     );
+  }
+
+  getAuthState(): Observable<firebase.User> {
+    return this.afAuth.authState;
   }
   signInWithCredential(credentials: firebase.auth.AuthCredential): Promise<firebase.auth.UserCredential> {
     return this.afAuth.signInWithCredential(credentials);
@@ -52,6 +56,7 @@ export class AuthFireService {
       isNew: user.isNew,
       isVerified: user.isVerified,
       isAdmin: false,
+      isTeacher: false,
       name: user.name,
       email: user.email,
       photoUrl: user.photoUrl,
@@ -64,6 +69,7 @@ export class AuthFireService {
         id: user.id,
         isAdmin: false,
         isOnline: true,
+        isTeacher: false
       })
     );
   }
@@ -81,6 +87,18 @@ export class AuthFireService {
     return val;
   }
 
+  checkTeacherRole(uid: string): Observable<boolean> {
+    const val = this.afDatabase.object<boolean>(`teachers/${uid}`).valueChanges()
+      .pipe(
+        map((isTeacher: boolean) => {
+          if (isTeacher) {
+            //this.addAdminPrivileges(uid);
+          }
+          return isTeacher;
+        })
+      );
+    return val;
+  }
   updateUser(userData: UpdatedUser) {
     // Sets user data to firestore on login
     this.afAuth.currentUser.then(async (upUser) => {

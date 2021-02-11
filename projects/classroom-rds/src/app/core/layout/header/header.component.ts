@@ -11,8 +11,9 @@ import {
   faEllipsisV,
   faGlobe,
   faInfo,
-  faUserTie
+  faUserTie,
 } from '@fortawesome/free-solid-svg-icons';
+import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
 
 import { Store } from '@ngrx/store';
 
@@ -22,7 +23,11 @@ import { User } from '@rds-auth/models/user.model';
 import { signOut } from '@rds-auth/state/auth.actions';
 import { LoginDialogComponent } from '@rds-auth/components/login-dialog/login-dialog.component';
 
+import { Observable } from 'rxjs';
+
 import { LayoutService } from '../layout.service';
+
+import { ThemeService } from '~/app/shared/services';
 
 @Component({
   selector: 'app-header',
@@ -52,14 +57,22 @@ export class HeaderComponent implements OnInit {
   faGlobe = faGlobe;
   faGoogle = faGoogle;
   faInfo = faInfo;
+  faSun = faSun;
+  faMoon = faMoon;
   linkText: boolean = false;
+  themes: string[];
+  isDarkTheme: Observable<boolean>;
+
   constructor(
     private layoutService: LayoutService,
     private dialog: MatDialog,
-    private store: Store<AppState>
+    private store: Store<AppState>,
+    private themeService: ThemeService
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.isDarkTheme = this.themeService.isDarkTheme;
+  }
   toggleSidenavLeft($event: any) {
     this.layoutService.toggleSidenavLeft.emit($event);
   }
@@ -68,5 +81,8 @@ export class HeaderComponent implements OnInit {
   }
   onSignOut() {
     this.store.dispatch(signOut({ user: this.user }));
+  }
+  toggleDarkTheme(checked: boolean) {
+    this.themeService.setDarkTheme(checked);
   }
 }

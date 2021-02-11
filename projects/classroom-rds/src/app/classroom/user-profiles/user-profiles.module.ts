@@ -8,7 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EntityDefinitionService, EntityServices, EntityDataService } from '@ngrx/data';
 
 import * as fromGuardian from '@rds-store/guardian';
-import * as fromCourse from '@rds-store/course';
+import * as fromUserProfile from '@rds-store/user-profile';
 import * as fromEntity from '@rds-store/app/config/entity-metadata';
 import { CourseDataService } from '@rds-store/course/course-data.service';
 import { CourseEntityService } from '@rds-store/course/course-entity.service';
@@ -79,6 +79,6 @@ export class UserProfilesModule {
     eds.registerMetadataMap(fromEntity.entityMetadata);
     /* entityDataService.registerService(fromCourse.entityCollectionName, courseDataService); */
     entityDataService.registerService(fromGuardian.entityCollectionName, guardianDataService);
-    entityDataService.registerService(fromCourse.entityCollectionName, userProfileDataService);
+    entityDataService.registerService(fromUserProfile.entityCollectionName, userProfileDataService);
   }
 }

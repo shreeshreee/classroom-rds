@@ -1,11 +1,11 @@
 <mat-toolbar class="animation fadeInOut mat-elevation-z8 sticky-top">
   <mat-toolbar-row fxLayoutAlign="space-between center">
     <div fxLayout="row" fxLayoutGap="5px">
-      <button *ngIf="isHandset && isOnline" mat-icon-button (click)="toggleSidenavLeft($event)">
+      <button *ngIf="isHandset && isOnline && isTeacher" mat-icon-button (click)="toggleSidenavLeft($event)">
         <fa-icon [icon]="faBars"></fa-icon>
       </button>
       <button mat-icon-button [routerLink]="['/']">
-        <img class="img-fluid" src="/assets/icons/android-chrome-512x512.png" />
+        <img class="img-fluid" src="assets/icons/android-chrome-512x512.png" />
       </button>
       <button mat-button [matMenuTriggerFor]="escuela">
         Escuela
@@ -15,8 +15,16 @@
       </button>
     </div>
     <div fxLayout="row" fxLayoutGap="5px">
+      <div fxLayout="row" fxLayoutGap="3px" fxLayoutAlign="stretch center">
+        <fa-icon [icon]="faSun" size="lg"></fa-icon>
+        <mat-slide-toggle [checked]="isDarkTheme | async" labelPosition="before"
+          (change)="toggleDarkTheme($event.checked)">
+        </mat-slide-toggle>
+        <fa-icon [icon]="faMoon" size="lg"></fa-icon>
+      </div>
       <button *ngIf="isOnline" mat-icon-button [matMenuTriggerFor]="userMenu">
-        <img class="img-fluid rounded-circle" [src]="user.photoUrl" />
+        <img class="img-fluid rounded-circle"
+          [src]="[user.photoUrl ? user.photoUrl : 'assets/images/dummy-user.png']" />
       </button>
       <button *ngIf="!isOnline" mat-icon-button (click)="onSignIn()">
         <img class="img-fluid" src="assets/images/google-logo.svg" />
@@ -26,14 +34,14 @@
 </mat-toolbar>
 <mat-menu #userMenu="matMenu" fxLayoutAlign="right">
   <ng-template matMenuContent>
-    <div mat-list-item *ngIf="isOnline && user" [routerLink]="['u']" routerLinkActive="active">
+    <div mat-list-item *ngIf="isOnline && user" [routerLink]="['c','u']" routerLinkActive="active">
       <app-user [isOnline]="isOnline" [isAdmin]="isAdmin" [user]="user"> </app-user>
     </div>
-    <div mat-menu-item *ngIf="isOnline && isTeacher" [routerLink]="['admin']" routerLinkActive="active">
+    <div mat-menu-item *ngIf="isOnline && isTeacher" [routerLink]="['under-construction']" routerLinkActive="active">
       <fa-icon matListIcon [icon]="faUserTie" size="lg"></fa-icon>
       <span>Profesor</span>
     </div>
-    <div mat-menu-item *ngIf="isOnline && isAdmin" [routerLink]="['admin']" routerLinkActive="active">
+    <div mat-menu-item *ngIf="isOnline && isAdmin" [routerLink]="['under-construction']" routerLinkActive="active">
       <fa-icon matListIcon [icon]="faShieldAlt" size="lg"></fa-icon>
       <span>Administrador</span>
     </div>

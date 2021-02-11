@@ -47,7 +47,7 @@ import { CoursesComponent } from './containers/courses/courses.component';
     CoursesListComponent,
     CourseUserDialogComponent
   ],
-  exports: [CoursesListComponent],
+  exports: [CoursesListComponent, CourseDialogComponent],
   imports: [
     CommonModule,
     CoursesRoutingModule,

@@ -3,9 +3,13 @@
     [attr.role]="isHandset ? 'dialog' : 'navigation'" [mode]="'side'" [opened]="isHandset == false" *ngIf="isOnline">
     <div fxLayout="column" fxLayoutAlign="space-between start">
       <mat-nav-list dense>
-        <a *ngFor="let page of classroomPages" mat-list-item [routerLink]="page.route" routerLinkActive="active">
-          <fa-icon matListIcon [icon]="page.icon"></fa-icon>
-          <span matLine [@animateText]="linkText ? 'show' : 'hide'">{{ page?.name }} </span>
+        <a *ngIf="isTeacher" mat-list-item [routerLink]="['clases']" routerLinkActive="active">
+          <fa-icon matListIcon [icon]="faChalkboardTeacher"></fa-icon>
+          <span matLine [@animateText]="linkText ? 'show' : 'hide'">Cursos</span>
+        </a>
+        <a *ngIf="isTeacher" mat-list-item [routerLink]="['/calificaciones']" routerLinkActive="active">
+          <fa-icon matListIcon [icon]="faAward"></fa-icon>
+          <span matLine [@animateText]="linkText ? 'show' : 'hide'">Caificaciones</span>
         </a>
       </mat-nav-list>
       <mat-nav-list dense>

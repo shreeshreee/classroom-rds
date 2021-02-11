@@ -19,6 +19,7 @@ const extractAccessToken = (_googleAuth: gapi.auth2.GoogleAuth) => {
 })
 export class AuthService {
   private _googleAuth: gapi.auth2.GoogleAuth;
+  private _googleUser: gapi.auth2.GoogleUser;
   private _accessToken: string;
   private autoSignInTimer: Subscription;
   set accessToken(value) {
@@ -35,7 +36,9 @@ export class AuthService {
   status$ = new Subject<boolean>();
   constructor(
     private authFireService: AuthFireService,
-  ) { }
+  ) {
+
+  }
 
   handleClientLoad() {
     // Load the API's client and auth2 modules.
@@ -87,9 +90,9 @@ export class AuthService {
     return from(this.signIn());
   }
   async signIn() {
-    const googleAuth: gapi.auth2.GoogleAuth = gapi.auth2.getAuthInstance();
-    const googleUser: gapi.auth2.GoogleUser = await googleAuth.signIn();
-    const authResponse: gapi.auth2.AuthResponse = googleUser.getAuthResponse();
+    this._googleAuth = gapi.auth2.getAuthInstance();
+    this._googleUser = await this._googleAuth.signIn();
+    const authResponse: gapi.auth2.AuthResponse = this._googleUser.getAuthResponse();
     const credential: firebase.auth.AuthCredential =
       firebase.auth.GoogleAuthProvider.credential(authResponse.id_token, authResponse.access_token);
     return this.authFireService.signInWithCredential(credential);

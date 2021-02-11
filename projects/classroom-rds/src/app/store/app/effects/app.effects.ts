@@ -11,10 +11,10 @@ import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 @Injectable()
 export class AppEffects {
-  storeUser$ = createEffect(
+  localStoreUser$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(fromAuthActions.signInSuccess),
+        ofType(fromAppActions.localStoreUser),
         tap((action) =>
           localStorage.setItem('user', JSON.stringify(action.user))
         )

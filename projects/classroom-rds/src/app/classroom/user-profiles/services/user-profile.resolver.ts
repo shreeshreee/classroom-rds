@@ -29,7 +29,7 @@ export class UserProfileResolver implements Resolve<boolean> {
       .pipe(
         tap(loading => {
           if (!loading) {
-            this.userProfileES.getWithQuery(route.paramMap.get('userId'));
+            this.userProfileES.getByKey(route.queryParamMap.get('id'));
           }
         }),
         filter(loading => !!loading),

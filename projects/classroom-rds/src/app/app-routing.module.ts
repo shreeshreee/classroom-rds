@@ -19,19 +19,10 @@ import { TermsComponent } from '@rds-shared/components/terms/terms.component';
 import { UnderConstructionComponent } from '@rds-shared/components/under-construction/under-construction.component';
 const routes: Routes = [{
   path: '', component: LayoutComponent, children: [
-    {
-      path: 'c', loadChildren: () =>
-        import('./classroom/classroom.module')
-          .then(m => m.ClassroomModule),
-      canActivate: [AuthGuard]
-    },
-    {
-      path: 'u', loadChildren: () =>
-        import('./classroom/user-profiles/user-profiles.module')
-          .then(m => m.UserProfilesModule),
-      canActivate: [AuthGuard]
-    },
-    { path: '', component: HomeComponent, pathMatch: 'full' },
+    { path: 'c', loadChildren: () => import('./classroom/classroom.module').then(m => m.ClassroomModule), canActivate: [AuthGuard] },
+    { path: 'calificaciones', loadChildren: () => import('./grades/grades.module').then(m => m.GradesModule), canActivate: [AuthGuard] },
+    { path: 'clases', loadChildren: () => import('./classroom/courses/courses.module').then(m => m.CoursesModule), canActivate: [AuthGuard] },
+    { path: '', component: HomeComponent },
     { path: 'galletas', component: GalletasComponent },
     { path: 'about', component: AboutComponent },
     { path: 'remote-learning', component: RemoteLearningComponent },
@@ -45,8 +36,8 @@ const routes: Routes = [{
     { path: 'under-construction', component: UnderConstructionComponent },
   ]
 },
-
-];
+/* { path: '**', redirectTo: '', pathMatch: 'full' } */]
+  ;
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

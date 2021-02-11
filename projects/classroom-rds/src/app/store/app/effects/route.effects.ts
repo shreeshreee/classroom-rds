@@ -27,6 +27,15 @@ export class RouteEffects {
       ),
     { dispatch: false }
   );
+  goprofile$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(
+          fromAuthActions.updateProfileSuccess),
+        tap(() => this.router.navigate(['/']))
+      ),
+    { dispatch: false }
+  );
   constructor(
     private actions$: Actions,
     private router: Router,

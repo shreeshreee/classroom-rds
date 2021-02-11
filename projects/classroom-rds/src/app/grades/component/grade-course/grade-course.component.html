@@ -1,0 +1,24 @@
+<div *ngIf="(loading$|async)" style="min-height: 300px;" fxLayout="column" fxLayoutAlign="center center">
+  <mat-spinner strokeWidth="3" [diameter]="50">
+  </mat-spinner>
+  <span>Buscando ...</span><br>
+</div>
+<div *ngIf="!(loading$|async)" style="min-height: 500px;" class="card border-success">
+  <h3 class="mat-h3 card-header">Lista de alumnos</h3>
+  <div class="card-body">
+    <p class="card-text">Escribe la calificación de cada estudiante y al terminar, presiona "enviar". </p>
+    <mat-list class="list-group" dense>
+      <div mat-list-item class="list-group-item d-flex justify-content-between align-items-center"
+        *ngFor="let grade of courseGrade">
+        {{grade.studentName}}
+        <mat-slider min="5" max="10" step="1" [(ngModel)]="grade.grade" [value]="grade.grade" [tickInterval]="1"
+          [thumbLabel]="true">
+        </mat-slider>
+      </div>
+    </mat-list>
+
+    <div class="card-footer text-muted">
+      <p>Promedio general: <span class="badge bg-light rounded-pill"></span></p>
+    </div>
+  </div>
+</div>

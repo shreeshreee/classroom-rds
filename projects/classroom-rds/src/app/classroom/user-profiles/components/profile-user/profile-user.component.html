@@ -1,5 +1,5 @@
 <mat-card class="mat-elevation-z5">
-  <mat-card-content>
+  <mat-card-content *ngIf="user">
     <div class="text-right">
       <div style="margin-top: -60px">
         <img [src]="[(user.photoUrl)  ? user.photoUrl : '/assets/images/dummy-user.png']" height="96" width="96"
@@ -9,8 +9,8 @@
         </fa-icon>
       </div>
       <h3 *ngIf="user.name" class="mat-h3 mt-2">{{ user.name }}</h3>
-      <h3 *ngIf="!user.name" class="mat-h3 mt-2">Usuario anónimo</h3>
-      <h4 class="mat-h4">{{ user.email }}</h4>
+      <h3 *ngIf="!user.name" class="mat-h3">Usuario anónimo</h3>
+      <h4 class="mat-h4 mt-n3">{{ user.email }}</h4>
       <div fxLayout="column" fxLayoutGap="3px">
         <button class="btn btn-outline-info" mat-raised-button [routerLink]="['edit']" routerLinkActive="active">
           <fa-icon [icon]="faUserEdit"></fa-icon> Tus datos
@@ -20,7 +20,6 @@
           <fa-icon [icon]="faAward"></fa-icon> Calificaciones
         </button>
         <button class="btn btn-outline-danger" mat-raised-button (click)="onLogout()">Cerrar sesión</button>
-
       </div>
     </div>
   </mat-card-content>

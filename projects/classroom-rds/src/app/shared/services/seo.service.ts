@@ -1,3 +1,4 @@
+import { SnackComponent } from './../components/snack/snack.component';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Title, Meta } from '@angular/platform-browser';
@@ -5,6 +6,7 @@ import { NavigationEnd, Router, ActivatedRoute } from '@angular/router';
 import { SwUpdate } from '@angular/service-worker';
 
 import { filter, map } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +19,8 @@ export class SeoService {
     private titleService: Title,
     private metaService: Meta,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private dialog: MatDialog
   ) { }
 
   titleInit() {
@@ -93,6 +96,12 @@ export class SeoService {
         this.snackBar.open(
           'Se han hecho cambios desde la última visita. Actualiza la página para continuar'
         );
+        const alert = await this.dialog.open(SnackComponent, {
+          data: {
+            header: `This app has been updated!`,
+            message: `Newer version of the app is available. It's a quick refresh away!`
+          }
+        });
       });
     }
   }

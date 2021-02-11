@@ -1,3 +1,4 @@
+import { ThemeService } from './../../shared/services/theme.service';
 import { Component } from '@angular/core';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from '@angular/router';
 
@@ -29,10 +30,12 @@ export class LayoutComponent {
   isTeacher$: Observable<boolean>;
   loading = false;
   faCookieBite = faCookieBite;
+  isDarkTheme: Observable<boolean>;
   constructor(
     private layoutService: LayoutService,
     private store: Store<AppState>,
     private router: Router,
+    private themeService: ThemeService,
   ) {
     this.router.events.subscribe((event: RouterEvent) => {
       this.navigationInterceptor(event)
@@ -50,36 +53,26 @@ export class LayoutComponent {
   }
   // Shows and hides the loading spinner during RouterEvent changes
   navigationInterceptor(event: RouterEvent): void {
-    if (event instanceof NavigationStart) {
-      this.loading = true
+    switch (true) {
+      case event instanceof NavigationStart: {
+        this.loading = true;
+        break;
+      }
+      case event instanceof NavigationEnd:
+      case event instanceof NavigationCancel:
+      case event instanceof NavigationError: {
+        this.loading = false;
+        break;
+      }
+      default: {
+        break;
+      }
+
     }
-    if (event instanceof NavigationEnd) {
-      this.loading = false
-    }
-    // Set loading state to false in both of the below events to hide the spinner in case a request fails
-    if (event instanceof NavigationCancel) {
-      this.loading = false
-    }
-    if (event instanceof NavigationError) {
-      this.loading = false
-    }
-    /* switch (true) {
-     case event instanceof NavigationStart: {
-       this.loading = true;
-       break;
-     }
-     case event instanceof NavigationEnd:
-     case event instanceof NavigationCancel:
-     case event instanceof NavigationError: {
-       this.loading = false;
-       break;
-     }
-     default: {
-       break;
-     }
-   }
- });*/
+
   }
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.isDarkTheme = this.themeService.isDarkTheme;
+  }
 
 }

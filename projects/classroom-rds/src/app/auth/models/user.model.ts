@@ -5,6 +5,8 @@ export interface User {
   isVerified?: boolean;
   isTeacher?: boolean;
   name?: string;
+  givenName?: string;
+  familyName?: string;
   email?: string;
   photoUrl?: string;
   creationTime?: string;

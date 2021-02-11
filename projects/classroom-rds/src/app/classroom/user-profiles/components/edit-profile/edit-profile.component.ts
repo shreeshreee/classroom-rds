@@ -7,6 +7,8 @@ import { UpdatedUser, User } from '@rds-auth/models/user.model';
 
 import { AppState } from '@rds-store/app.state';
 
+import * as fromAuthActions from '@rds-auth/state/auth.actions';
+
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -32,14 +34,15 @@ export class EditProfileComponent implements OnInit, OnDestroy {
     private store: Store<AppState>,
   ) {
     this.user$ = this.store.pipe(select(selectUser));
-  }
-
-  ngOnInit(): void {
     this.userSub = this.user$.subscribe(user => this.user = user)
     this.updateProfileForm = this.fb.group({
       fullName: new FormControl(this.user.name),
       photoUrl: new FormControl(this.user.photoUrl)
     });
+  }
+
+  ngOnInit(): void {
+
   }
   ngOnDestroy(): void {
     this.userSub.unsubscribe();
@@ -51,7 +54,7 @@ export class EditProfileComponent implements OnInit, OnDestroy {
       photoUrl: this.updateProfileForm.get('photoUrl').value,
       id: this.user.id
     };
-    this.profileUpdate.emit(newUser);
+    this.store.dispatch(fromAuthActions.updateProfile({ userData: newUser }));
   }
 
 }

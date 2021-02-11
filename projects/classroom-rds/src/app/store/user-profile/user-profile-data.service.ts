@@ -23,5 +23,4 @@ export class UserProfileDataService extends DefaultDataService<gapi.client.class
   getByQuery(id: string): Observable<gapi.client.classroom.UserProfile> {
     return from(this.userProfilesService.getUserProfile(id));
   }
-
 }

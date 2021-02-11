@@ -1,4 +1,4 @@
-<div fxLayout="column" fxFlexFill>
+<div [ngClass]="{'dark-theme': isDarkTheme | async}" fxLayout="column" fxFlexFill>
   <app-header [user]="(user$|async)" [isHandset]="(isHandset$|async)" [isAdmin]="(isAdmin$|async)"
     [isTeacher]="(isTeacher$|async)" [isOnline]="(isOnline$|async)">
   </app-header>
@@ -10,5 +10,4 @@
       [isAdmin]="(isAdmin$|async)" [isTeacher]="(isTeacher$|async)">
     </app-sidenav>
   </div>
-
 </div>
