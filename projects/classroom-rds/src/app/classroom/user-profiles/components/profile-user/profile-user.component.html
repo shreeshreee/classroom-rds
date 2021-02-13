@@ -1,8 +1,8 @@
 <mat-card class="mat-elevation-z5">
   <mat-card-content *ngIf="user">
     <div class="text-right">
-      <div style="margin-top: -60px">
-        <img [src]="[(user.photoUrl)  ? user.photoUrl : '/assets/images/dummy-user.png']" height="96" width="96"
+      <div style="margin-top: -40px">
+        <img [src]="[(user.photoUrl)  ? user.photoUrl : '/assets/images/dummy-user.png']" height="72" width="72"
           class="img-fluid rounded-circle" alt="avatar image" />
         <fa-icon class="float-center" [ngClass]="[user.isVerified ? 'text-success' : 'text-danger']"
           [icon]="user.isVerified ? faCheck : faTimes">

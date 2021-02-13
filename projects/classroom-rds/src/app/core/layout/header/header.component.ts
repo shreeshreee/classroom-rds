@@ -12,6 +12,8 @@ import {
   faGlobe,
   faInfo,
   faUserTie,
+  faCog,
+  faSlidersH
 } from '@fortawesome/free-solid-svg-icons';
 import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
 
@@ -57,21 +59,19 @@ export class HeaderComponent implements OnInit {
   faGlobe = faGlobe;
   faGoogle = faGoogle;
   faInfo = faInfo;
-  faSun = faSun;
-  faMoon = faMoon;
+
+  faCog = faCog;
+  faSlidersH = faSlidersH;
   linkText: boolean = false;
   themes: string[];
-  isDarkTheme: Observable<boolean>;
 
   constructor(
     private layoutService: LayoutService,
     private dialog: MatDialog,
     private store: Store<AppState>,
-    private themeService: ThemeService
   ) { }
 
   ngOnInit() {
-    this.isDarkTheme = this.themeService.isDarkTheme;
   }
   toggleSidenavLeft($event: any) {
     this.layoutService.toggleSidenavLeft.emit($event);
@@ -82,7 +82,5 @@ export class HeaderComponent implements OnInit {
   onSignOut() {
     this.store.dispatch(signOut({ user: this.user }));
   }
-  toggleDarkTheme(checked: boolean) {
-    this.themeService.setDarkTheme(checked);
-  }
+
 }

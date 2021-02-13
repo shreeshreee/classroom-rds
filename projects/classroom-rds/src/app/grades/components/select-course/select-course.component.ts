@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SelectCourseComponent implements OnInit {
-  @Input() courses$: Observable<gapi.client.classroom.Course[]>;
-  @Input() loading$: Observable<boolean>;
+  @Input() courses: gapi.client.classroom.Course[];
+  @Input() loading: boolean;
   constructor() { }
 
   ngOnInit(): void { }

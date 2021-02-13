@@ -19,19 +19,22 @@ export class RemoteLearningComponent implements OnInit {
   picts: any[] = [
     {
       path: 'assets/scene/120896489_3353318561372251_3413422127144432972_o.jpg',
-      altText: 'picture'
+      altText: 'picture',
     },
     {
       path: 'assets/scene/145554877_3674428962594541_6430858538444380710_o.jpg',
-      altText: 'picture'
+      altText: 'picture',
+
     },
     {
       path: 'assets/scene/142807647_3651180938252677_2666928967365985320_o.jpg',
-      altText: 'picture'
+      altText: 'picture',
+
     },
     {
       path: 'assets/scene/136731354_3609776659059772_5825083095735666824_o.jpg',
-      altText: 'picture'
+      altText: 'picture',
+
     },
   ];
 
@@ -39,37 +42,37 @@ export class RemoteLearningComponent implements OnInit {
     {
       file: 'assets/scene/tu-cuenta-institucional.png',
       title: 'Manual de cuentas institucionales',
-      description: '',
+      description: 'haz click en la imagen para descargar',
       size: ''
     },
     {
       file: 'assets/scene/social-distance.png',
       title: 'Medidas de distanciamiento social',
-      description: '',
+      description: 'haz click en la imagen para descargar',
       size: ''
     },
     {
       file: 'assets/scene/statement-template.png',
       title: 'Regreso a clases virtuales',
-      description: '',
+      description: 'haz click en la imagen para descargar',
       size: ''
     },
     {
       file: 'assets/scene/classroom01.png',
       title: 'Manual de Google Classroom',
-      description: '',
+      description: 'haz click en la imagen para descargar',
       size: ''
     },
     {
       file: 'assets/scene/tareas.png',
       title: 'Entrega de tareas',
-      description: '',
+      description: 'haz click en la imagen para descargar',
       size: ''
     },
     {
       file: 'assets/scene/ayuda.png',
       title: 'Línea de apoyo',
-      description: '',
+      description: 'haz click en la imagen para descargar',
       size: ''
     }
   ];

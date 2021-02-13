@@ -9,3 +9,10 @@ export interface StudentGrade {
   grade?: 5 | 6 | 7 | 8 | 9 | 10 | null;
   observations?: string;
 }
+export enum CourseRoles {
+  ADMIN,
+  OWNER,
+  TEACHER,
+  STUDENT,
+
+}

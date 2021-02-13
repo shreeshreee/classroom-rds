@@ -17,9 +17,12 @@ import { PrivacyPolicyComponent } from '@rds-shared/components/privacy-policy/pr
 import { RemoteLearningComponent } from '@rds-shared/components/remote-learning/remote-learning.component';
 import { TermsComponent } from '@rds-shared/components/terms/terms.component';
 import { UnderConstructionComponent } from '@rds-shared/components/under-construction/under-construction.component';
+
+import { ConfigurationComponent } from './core/layout/configuration/configuration.component';
 const routes: Routes = [{
   path: '', component: LayoutComponent, children: [
     { path: 'c', loadChildren: () => import('./classroom/classroom.module').then(m => m.ClassroomModule), canActivate: [AuthGuard] },
+    { path: 'pefil', loadChildren: () => import('./classroom/user-profiles/user-profiles.module').then(m => m.UserProfilesModule), canActivate: [AuthGuard] },
     { path: 'calificaciones', loadChildren: () => import('./grades/grades.module').then(m => m.GradesModule), canActivate: [AuthGuard] },
     { path: 'clases', loadChildren: () => import('./classroom/courses/courses.module').then(m => m.CoursesModule), canActivate: [AuthGuard] },
     { path: '', component: HomeComponent },
@@ -34,6 +37,8 @@ const routes: Routes = [{
     { path: 'code-conduct-school', component: CodeConductSchoolComponent },
     { path: 'terms', component: TermsComponent },
     { path: 'under-construction', component: UnderConstructionComponent },
+    { path: 'configuration', component: ConfigurationComponent },
+
   ]
 },
 /* { path: '**', redirectTo: '', pathMatch: 'full' } */]

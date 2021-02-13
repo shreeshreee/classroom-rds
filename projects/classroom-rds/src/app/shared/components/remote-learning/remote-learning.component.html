@@ -1,12 +1,18 @@
-<div class="p-5">
-  <div fxLayout="row wrap" fxLayoutAlign="space-between top">
-    <div fxFlex fxLayout="column" fxLayoutAlign="top start">
-      <p class="display-4 display-4-responsive">Educación a distancia</p>
-      <p class="h4 h4-responsive">en respuesta a tiempos de crisis</p>
-      <p class="h5 h5-responsive">Descarga de manuales para el manejo y prevencion de eventualidades en la modalidad de
-        educación a distancia
-      </p>
-    </div>
+<div class="px-2">
+  <div class="py-2">
+    <mat-card class="mat-elevation-z8">
+      <mat-card-header>
+        <img mat-card-avatar src="assets/images/rds-newlogo-transparent.png">
+        <mat-card-title class="view-title">Educación a distancia</mat-card-title>
+        <mat-card-subtitle class="view-subtitle">en respuesta a la emergencia sanitaria.<br>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        Descarga de manuales para el manejo y prevencion de eventualidades en la modalidad de educación a distancia
+      </mat-card-content>
+    </mat-card>
+
+
     <div fxFlex="25%">
       <carousel>
         <slide *ngFor="let pict of picts; let index=index">
@@ -25,7 +31,7 @@
           <p class="card-text"><small class="text-muted">{{infoManual.size}}</small></p>
         </div>
         <div fxFlex="30%">
-          <a [href]="">
+          <a [href]="infoManual.file" target="_blank" rel="noopener">
             <img class="img-fluid img-thumbnail" [src]="infoManual.file" alt="{{infoManual.title}}">
           </a>
         </div>

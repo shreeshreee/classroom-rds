@@ -9,7 +9,7 @@ import { StudentEntityService } from '@rds-store/student/student-entity.service'
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { StudentGrade } from './../../models/student-grade.model';
+import { StudentGrade } from '../../models/student-grade.model';
 
 @Component({
   selector: 'app-grade-course',
@@ -23,14 +23,13 @@ export class GradeCourseComponent implements OnInit {
   loading$: Observable<boolean>;
   faBlind = faBlind;
   eventGrade: StudentGrade;
-  courseGrade: StudentGrade[] = [];
+  courseGrade: StudentGrade[];
   constructor(
     private route: ActivatedRoute,
     private dialog: MatDialog,
     private studentEntityService: StudentEntityService,
   ) {
-    this.courseId = this.route.snapshot.paramMap.get('courseId');
-    console.log(this.courseId);
+    this.route.paramMap.subscribe(params => this.courseId = params.get('courseId'));
     this.loading$ = this.studentEntityService.loading$;
     this.students$ = this.studentEntityService.entities$.pipe(
       map(students => {
@@ -40,7 +39,9 @@ export class GradeCourseComponent implements OnInit {
         return students.filter(x => x.courseId == this.courseId);
       }),
     );
+
     this.students$.subscribe((students) => {
+      this.courseGrade = [];
       students.map(student => {
         return this.courseGrade.push({
           courseId: this.courseId,
@@ -49,8 +50,6 @@ export class GradeCourseComponent implements OnInit {
         });
       });
     });
-
-    console.log(this.courseGrade)
   }
   ngOnInit(): void {
 

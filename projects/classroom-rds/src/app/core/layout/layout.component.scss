@@ -1,1 +1,12 @@
+@import "./../../../assets/themes/colors.scss";
+.display-4-responsive {
+  color:$rds-logo-color;
+  font-size: calc(1rem + 3vw);
+  font-weight: 100;
+}
+.h4-responsive {
+  margin-top: -20px;
+  font-size: calc(0.5rem + 1.5vw);
+  font-weight: 100;
+}
 

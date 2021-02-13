@@ -3,27 +3,6 @@ mat-card::ng-deep.mat-card-header-text {
   width: 100%;
 }
 
-.flex-row {
-  > div {
-    flex: 50%;
-    border-radius: 10px;
-    padding: 10px;
-  }
-  > .outlook {
-    color: black;
-    background: rgba(0,0,0,0.1);
-  }
-  > .temp {
-    background: lightblue;
-    color: black;
-    margin-right: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
 .img-fluid {
   max-height: 120px;
 }
@@ -40,16 +19,15 @@ mat-card::ng-deep.mat-card-header-text {
   box-shadow: none;
 }
 
-.display-4-responsive {
+.view-title {
   color:$rds-logo-color;
-  font-size: calc(1rem + 3vw);
-  font-weight: 100;
+  font-size: calc(1rem + 1.5vw);
+  font-weight: 800;
 }
-.h4-responsive {
-  margin-top: -20px;
-  font-size: calc(0.5rem + 1.5vw);
-  font-weight: 100;
+.view-subtitle {
+  margin-top: -50px;
+  font-size: calc(0.5rem + 1vw);
+  font-weight: 400;
 }
-
 
 

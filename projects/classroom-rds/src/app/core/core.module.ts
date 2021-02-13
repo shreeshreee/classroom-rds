@@ -15,13 +15,15 @@ import { LayoutService } from './layout/layout.service';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { SidenavComponent } from './layout/sidenav/sidenav.component';
+import { ConfigurationComponent } from './layout/configuration/configuration.component';
 
 @NgModule({
   declarations: [
     LayoutComponent,
     HeaderComponent,
     SidenavComponent,
-    FooterComponent
+    FooterComponent,
+    ConfigurationComponent
   ],
   imports: [
     CommonModule,

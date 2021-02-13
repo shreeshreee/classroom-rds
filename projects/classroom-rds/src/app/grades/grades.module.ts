@@ -12,32 +12,38 @@ import * as fromUserProfile from '@rds-store/user-profile';
 import * as fromEntity from '@rds-store/app/config/entity-metadata';
 import * as fromTeacher from '@rds-store/teacher';
 import * as fromStudent from '@rds-store/student';
+import { CourseDataService } from '@rds-store/course/course-data.service';
+import { CourseEntityService } from '@rds-store/course/course-entity.service';
+import { StudentDataService } from '@rds-store/student/student-data.service';
+import { StudentEntityService } from '@rds-store/student/student-entity.service';
+import { TeacherDataService } from '@rds-store/teacher/teacher-data.service';
+import { TeacherEntityService } from '@rds-store/teacher/teacher-entity.service';
+
+import { CourseResolver } from '@rds-classroom/courses/resolvers/course.resolver';
+import { CoursesResolver } from '@rds-classroom/courses/resolvers/courses.resolver';
+import { CoursesService } from '@rds-classroom/courses/services/courses.service';
+import { StudentsResolver } from '@rds-classroom/students/services/students.resolver';
+import { TeachersResolver } from '@rds-classroom/teachers/services/teachers.resolver';
+import { TeachersService } from '@rds-classroom/teachers/services/teachers.service';
 
 import { MaterialModule } from './../modules/material.module';
-import { CourseDataService } from '../store/course/course-data.service';
-import { CourseEntityService } from '../store/course/course-entity.service';
-import { StudentDataService } from '../store/student/student-data.service';
-import { StudentEntityService } from '../store/student/student-entity.service';
-import { TeacherDataService } from './../store/teacher/teacher-data.service';
-import { TeacherEntityService } from '../store/teacher/teacher-entity.service';
-import { CourseResolver } from '../classroom/courses/resolvers/course.resolver';
-import { CoursesResolver } from '../classroom/courses/resolvers/courses.resolver';
-import { CoursesService } from '../classroom/courses/services/courses.service';
-import { StudentsResolver } from '../classroom/students/services/students.resolver';
-import { TeachersResolver } from '../classroom/teachers/services/teachers.resolver';
-import { TeachersService } from '../classroom/teachers/services/teachers.service';
+import { UserProfileDataService } from '../store/user-profile/user-profile-data.service';
+import { UserProfileEntityService } from '../store/user-profile/user-profile-entity.service';
+import { UserProfileResolver } from '../classroom/user-profiles/services/user-profile.resolver';
+import { UserProfilesService } from '../classroom/user-profiles/services/user-profiles.service';
 
 import { GradesRoutingModule } from './grades-routing.module';
-import { GradesComponent } from './grades.component';
 
 import { CoursesGradeResolver } from './resolvers/courses-grade.resolver';
 import { StudentsGradeResolver } from './resolvers/students-grade.resolver';
-import { GradeCourseComponent } from './component/grade-course/grade-course.component';
-import { SelectCourseComponent } from './component/select-course/select-course.component';
+import { GradeCourseComponent } from './components/grade-course/grade-course.component';
+import { GradesWellcomeComponent } from './components/grades-wellcome/grades-wellcome.component';
+import { SelectCourseComponent } from './components/select-course/select-course.component';
+import { GradesComponent } from './containers/grades/grades.component';
 
 
 @NgModule({
-  declarations: [GradesComponent, SelectCourseComponent, GradeCourseComponent],
+  declarations: [GradesComponent, SelectCourseComponent, GradeCourseComponent, GradesWellcomeComponent],
   imports: [
     CommonModule,
     GradesRoutingModule,
@@ -57,6 +63,10 @@ import { SelectCourseComponent } from './component/select-course/select-course.c
     TeacherEntityService,
     TeacherDataService,
     TeachersResolver,
+    UserProfilesService,
+    UserProfileResolver,
+    UserProfileEntityService,
+    UserProfileDataService,
     StudentEntityService,
     StudentDataService,
     StudentsGradeResolver,
@@ -76,11 +86,15 @@ export class GradesModule {
     teacherDataService: TeacherDataService,
     studentEntityService: StudentEntityService,
     studentDataService: StudentDataService,
+    userProfileEntityService: UserProfileEntityService,
+    userProfileDataService: UserProfileDataService,
   ) {
-    entityServices.registerEntityCollectionServices([studentEntityService, courseEntityService, teacherEntityService]);
+    entityServices.registerEntityCollectionServices([userProfileEntityService, studentEntityService, courseEntityService, teacherEntityService]);
     eds.registerMetadataMap(fromEntity.entityMetadata);
     entityDataService.registerService(fromCourse.entityCollectionName, courseDataService);
     entityDataService.registerService(fromTeacher.entityCollectionName, teacherDataService);
     entityDataService.registerService(fromStudent.entityCollectionName, studentDataService);
+    entityDataService.registerService(fromUserProfile.entityCollectionName, userProfileDataService);
+
   }
 }

@@ -1,19 +1,20 @@
-.display-4-responsive {
-  font-size: calc(1rem + 2vw);
-  font-weight: 100;
-}
+@import "./../../../../assets/themes/colors.scss";
 
-.h2-responsive {
-  margin-top: -20px;
-  font-size: calc(0.5rem + 1.5vw);
-  font-weight: 100;
+.view-title {
+  color:$rds-logo-color;
+  font-size: calc(1rem + 1.5vw);
+  font-weight: 800;
+}
+.view-subtitle {
+  margin-top: -50px;
+  font-size: calc(0.5rem + 1vw);
+  font-weight: 400;
 }
 .img-container {
-  width: 25%;
+  margin-top: -70px;
+  width: 15%;
   height: auto;
-}
-
-.text-wrap-right {
-  float:right;
-  margin: 5px;
+  position: static;
+  right:0;
+  top:0;
 }
