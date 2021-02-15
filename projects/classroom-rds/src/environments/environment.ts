@@ -4,6 +4,10 @@
 
 export const environment = {
   production: false,
+  characters: {
+    spreadsheetId: '1uq18UwoEeVS-PrrRyjXuBGx7y0D8anECSH-mX6gAduo',
+    worksheetId: 1,
+  },
   firebaseConfig: {
     apiKey: 'AIzaSyAlAPUXjpBlZY2WwatG1k6LOuAlGACD9gY',
     authDomain: 'classroom-rds.firebaseapp.com',
@@ -18,7 +22,7 @@ export const environment = {
     client_id: '667520930692-rc4oojvic7pog105i5todq0fb5pvntep.apps.googleusercontent.com',
     discoveryDocs: [
       'https://classroom.googleapis.com/$discovery/rest?version=v1',
-      //'https://admin.googleapis.com/$discovery/rest?version=directory_v1'
+      'https://admin.googleapis.com/$discovery/rest?version=directory_v1'
     ],
     scope: [
       'openid',
@@ -72,6 +76,89 @@ export const environment = {
       // 'https://www.googleapis.com/auth/classroom.topics.readonly',
       // Recibir notificaciones sobre tus datos de Google Classroom
       'https://www.googleapis.com/auth/classroom.push-notifications',
+    ].join(' '),
+    adminScopes: [
+      'https://www.googleapis.com/auth/cloud-platform',
+      // View and manage customer related information
+      'https://www.googleapis.com/auth/admin.directory.customer',
+
+      // View customer related information
+      'https://www.googleapis.com/auth/admin.directory.customer.readonly',
+
+      // View and manage your Chrome OS devices' metadata
+      'https://www.googleapis.com/auth/admin.directory.device.chromeos',
+
+      // View your Chrome OS devices' metadata
+      'https://www.googleapis.com/auth/admin.directory.device.chromeos.readonly',
+
+      // View and manage your mobile devices' metadata
+      'https://www.googleapis.com/auth/admin.directory.device.mobile',
+
+      // Manage your mobile devices by performing administrative tasks
+      'https://www.googleapis.com/auth/admin.directory.device.mobile.action',
+
+      // View your mobile devices' metadata
+      'https://www.googleapis.com/auth/admin.directory.device.mobile.readonly',
+
+      // View and manage the provisioning of domains for your customers
+      'https://www.googleapis.com/auth/admin.directory.domain',
+
+      // View domains related to your customers
+      'https://www.googleapis.com/auth/admin.directory.domain.readonly',
+
+      // View and manage the provisioning of groups on your domain
+      'https://www.googleapis.com/auth/admin.directory.group',
+
+      // View and manage group subscriptions on your domain
+      'https://www.googleapis.com/auth/admin.directory.group.member',
+
+      // View group subscriptions on your domain
+      'https://www.googleapis.com/auth/admin.directory.group.member.readonly',
+
+      // View groups on your domain
+      'https://www.googleapis.com/auth/admin.directory.group.readonly',
+
+      // View and manage notifications received on your domain
+      'https://www.googleapis.com/auth/admin.directory.notifications',
+
+      // View and manage organization units on your domain
+      'https://www.googleapis.com/auth/admin.directory.orgunit',
+
+      // View organization units on your domain
+      'https://www.googleapis.com/auth/admin.directory.orgunit.readonly',
+
+      // View and manage the provisioning of calendar resources on your domain
+      'https://www.googleapis.com/auth/admin.directory.resource.calendar',
+
+      // View calendar resources on your domain
+      'https://www.googleapis.com/auth/admin.directory.resource.calendar.readonly',
+
+      // Manage delegated admin roles for your domain
+      'https://www.googleapis.com/auth/admin.directory.rolemanagement',
+
+      // View delegated admin roles for your domain
+      'https://www.googleapis.com/auth/admin.directory.rolemanagement.readonly',
+
+      // View and manage the provisioning of users on your domain
+      'https://www.googleapis.com/auth/admin.directory.user',
+
+      // View and manage user aliases on your domain
+      'https://www.googleapis.com/auth/admin.directory.user.alias',
+
+      // View user aliases on your domain
+      'https://www.googleapis.com/auth/admin.directory.user.alias.readonly',
+
+      // View users on your domain
+      'https://www.googleapis.com/auth/admin.directory.user.readonly',
+
+      // Manage data access permissions for users on your domain
+      'https://www.googleapis.com/auth/admin.directory.user.security',
+
+      // View and manage the provisioning of user schemas on your domain
+      'https://www.googleapis.com/auth/admin.directory.userschema',
+
+      // View user schemas on your domain
+      'https://www.googleapis.com/auth/admin.directory.userschema.readonly',
     ].join(' '),
   }
 };

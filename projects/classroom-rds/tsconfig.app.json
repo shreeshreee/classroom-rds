@@ -7,7 +7,8 @@
       "gapi",
       "gapi.auth2",
       "gapi.client",
-      "gapi.client.classroom"
+      "gapi.client.classroom",
+      "gapi.client.admin"
     ]
   },
   "files": [

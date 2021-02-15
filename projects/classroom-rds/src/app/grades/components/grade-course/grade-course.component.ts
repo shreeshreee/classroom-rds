@@ -6,10 +6,13 @@ import { faBlind } from '@fortawesome/free-solid-svg-icons';
 
 import { StudentEntityService } from '@rds-store/student/student-entity.service';
 
+import { GoogleSheetsDbService } from 'ng-google-sheets-db';
+
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from '~/environments/environment';
 
-import { StudentGrade } from '../../models/student-grade.model';
+import { StudentGrade, studentGradeAttributesMapping, } from '../../models/student-grade.model';
 
 @Component({
   selector: 'app-grade-course',
@@ -24,10 +27,13 @@ export class GradeCourseComponent implements OnInit {
   faBlind = faBlind;
   eventGrade: StudentGrade;
   courseGrade: StudentGrade[];
+  characters$: Observable<StudentGrade[]>
+
   constructor(
     private route: ActivatedRoute,
     private dialog: MatDialog,
     private studentEntityService: StudentEntityService,
+    private googleSheetsDbService: GoogleSheetsDbService
   ) {
     this.route.paramMap.subscribe(params => this.courseId = params.get('courseId'));
     this.loading$ = this.studentEntityService.loading$;
@@ -43,15 +49,12 @@ export class GradeCourseComponent implements OnInit {
     this.students$.subscribe((students) => {
       this.courseGrade = [];
       students.map(student => {
-        return this.courseGrade.push({
-          courseId: this.courseId,
-          studentId: student.userId,
-          studentName: student.profile.name.fullName,
-        });
+
       });
     });
   }
   ngOnInit(): void {
-
+    this.characters$ = this.googleSheetsDbService.getActive<StudentGrade>(
+      environment.characters.spreadsheetId, environment.characters.worksheetId, studentGradeAttributesMapping, 'Active');
   }
 }

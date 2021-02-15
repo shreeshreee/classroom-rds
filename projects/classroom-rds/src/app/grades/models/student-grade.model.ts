@@ -1,12 +1,17 @@
 export interface StudentGrade {
   id?: string;
-  courseId: string;
-  studentId: string;
-  studentName?: string;
+  course: {
+    id: string;
+    name: string;
+  },
+  student: {
+    id: string;
+    name: string
+  },
   evaluationYear?: string;
-  evaluationType?: 'Parcial' | 'Trimestral' | 'Final' | '';
-  evaluationUnit?: 0 | 1 | 2 | 3 | null;
-  grade?: 5 | 6 | 7 | 8 | 9 | 10 | null;
+  evaluationType?: string;
+  evaluationUnit?: number;
+  grade?: number;
   observations?: string;
 }
 export enum CourseRoles {
@@ -14,5 +19,23 @@ export enum CourseRoles {
   OWNER,
   TEACHER,
   STUDENT,
-
 }
+export const studentGradeAttributesMapping = {
+  id: 'Id',
+  course: {
+    _prefix: 'Materia',
+    id: 'Id',
+    name: 'Nombre'
+  },
+  student: {
+    _prefix: 'Alumno',
+    id: 'Id',
+    name: 'Nombre'
+  },
+  evaluationYear: 'Ciclo escolar',
+  evaluationType: 'Tipo de evaluación',
+  evaluationUnit: 'Unidad',
+  grade: 'Calificación',
+  observations: 'Observaciones',
+};
+

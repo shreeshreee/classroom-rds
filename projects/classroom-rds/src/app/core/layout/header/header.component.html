@@ -28,13 +28,13 @@
 <mat-menu #userMenu="matMenu" fxLayoutAlign="right">
   <ng-template matMenuContent>
     <div mat-list-item *ngIf="isOnline && user" [routerLink]="['perfil']" routerLinkActive="active">
-      <app-user [isOnline]="isOnline" [isAdmin]="isAdmin" [user]="user"> </app-user>
+      <app-user-card [isOnline]="isOnline" [isAdmin]="isAdmin" [user]="user"> </app-user-card>
     </div>
     <div mat-menu-item *ngIf="isOnline && isTeacher" [routerLink]="['under-construction']" routerLinkActive="active">
       <fa-icon matListIcon [icon]="faUserTie" size="lg"></fa-icon>
       <span>&nbsp;Profesor</span>
     </div>
-    <div mat-menu-item *ngIf="isOnline && isAdmin" [routerLink]="['under-construction']" routerLinkActive="active">
+    <div mat-menu-item *ngIf="isOnline && isAdmin" [routerLink]="['admin']" routerLinkActive="active">
       <fa-icon matListIcon [icon]="faShieldAlt" size="lg"></fa-icon>
       <span>&nbsp;Administrador</span>
     </div>

@@ -19,6 +19,12 @@ export class DashboardComponent implements OnInit {
   /** Based on the screen size, switch from standard to one column per row */
   cards = [
     {
+      title: 'Información Académica',
+      description: 'Accede a toda tu información como alumno.',
+      route: 'user',
+      imgUrl: 'assets/images/assignment-grades2.png'
+    },
+    {
       title: 'Sistema de calificaciones',
       description: 'Accede a la información de tus calificaciones si eres alumno, o califica a tus alumnos en todas las materias que impartes si eres profesor.',
       route: 'calificaciones',
@@ -35,12 +41,6 @@ export class DashboardComponent implements OnInit {
       description: 'Administra grados, grupos y horarios en la institución',
       route: 'under-construction',
       imgUrl: 'assets/images/schedule-administrator.png',
-    },
-    {
-      title: 'Sistema de administración',
-      description: 'Panel personalizado para la administración de Google Admin.',
-      route: 'under-construction',
-      imgUrl: 'assets/images/system-administrator.png'
     },
   ];
   constructor(

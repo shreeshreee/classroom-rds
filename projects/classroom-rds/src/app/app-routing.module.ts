@@ -22,9 +22,12 @@ import { ConfigurationComponent } from './core/layout/configuration/configuratio
 const routes: Routes = [{
   path: '', component: LayoutComponent, children: [
     { path: 'c', loadChildren: () => import('./classroom/classroom.module').then(m => m.ClassroomModule), canActivate: [AuthGuard] },
-    { path: 'pefil', loadChildren: () => import('./classroom/user-profiles/user-profiles.module').then(m => m.UserProfilesModule), canActivate: [AuthGuard] },
+    { path: 'perfil', loadChildren: () => import('./classroom/user-profiles/user-profiles.module').then(m => m.UserProfilesModule), canActivate: [AuthGuard] },
     { path: 'calificaciones', loadChildren: () => import('./grades/grades.module').then(m => m.GradesModule), canActivate: [AuthGuard] },
     { path: 'clases', loadChildren: () => import('./classroom/courses/courses.module').then(m => m.CoursesModule), canActivate: [AuthGuard] },
+    { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule), canActivate: [AuthGuard] },
+    { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivate: [AuthGuard] },
+
     { path: '', component: HomeComponent },
     { path: 'galletas', component: GalletasComponent },
     { path: 'about', component: AboutComponent },

@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
@@ -26,6 +27,8 @@ import { StudentsResolver } from '@rds-classroom/students/services/students.reso
 import { TeachersResolver } from '@rds-classroom/teachers/services/teachers.resolver';
 import { TeachersService } from '@rds-classroom/teachers/services/teachers.service';
 
+import { GoogleSheetsDbService } from 'ng-google-sheets-db';
+
 import { MaterialModule } from './../modules/material.module';
 import { UserProfileDataService } from '../store/user-profile/user-profile-data.service';
 import { UserProfileEntityService } from '../store/user-profile/user-profile-entity.service';
@@ -47,6 +50,7 @@ import { GradesComponent } from './containers/grades/grades.component';
   imports: [
     CommonModule,
     GradesRoutingModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
@@ -54,6 +58,7 @@ import { GradesComponent } from './containers/grades/grades.component';
     FlexLayoutModule
   ],
   providers: [
+    GoogleSheetsDbService,
     CoursesService,
     CourseEntityService,
     CourseDataService,

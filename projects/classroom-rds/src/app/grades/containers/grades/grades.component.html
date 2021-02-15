@@ -10,15 +10,15 @@
     <mat-card-actions align="end">
       <div fxLayout="row" fxLayoutAlign="space-around center">
         <button mat-button (click)="openAddUserDialog()">
-          <fa-icon class="text-success" [icon]="faUserPlus" size="lg"></fa-icon>
+          <fa-icon class="text-primary" [icon]="faUserPlus" size="lg"></fa-icon>
           <span class="d-none d-sm-inline-block">&nbsp;Inscribir alumno</span>
         </button>
         <button mat-button (click)="openCreateAnnouncementDialog()">
-          <fa-icon class="text-success" [icon]="faBullhorn" size="lg"></fa-icon>
+          <fa-icon class="text-primary" [icon]="faBullhorn" size="lg"></fa-icon>
           <span class="d-none d-sm-inline-block">&nbsp;Anuncio</span>
         </button>
-        <button mat-button (click)="openCreateCourseDialog()" size="lg">
-          <fa-icon class="text-success" [icon]="faPlus"></fa-icon>
+        <button mat-button (click)="openCreateCourseDialog()">
+          <fa-icon class="text-primary" [icon]="faPlus" size="lg"></fa-icon>
           <span class="d-none d-sm-inline-block">&nbsp;Nueva clase</span>
         </button>
       </div>
@@ -27,7 +27,7 @@
   <div class="py-4">
     <form [formGroup]="selectRoleForm" (ngSubmit)="onChangeSelection()">
       <mat-radio-group fxLayout="row wrap" fxLayoutAlign="start center" name="selectedRole"
-        (change)="onChangeSelection()" formControlName="selectedRole">
+        (change)="onChangeSelection()" color="primary" formControlName="selectedRole">
         <label>Soy: </label>
         <mat-radio-button *ngIf="isAdmin$|async" class="mx-2" value="ADMIN">
           Administrador
@@ -42,7 +42,7 @@
           Alumno
         </mat-radio-button>
       </mat-radio-group>
-      <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+      <div *ngIf="isAdmin$|async" fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
         <mat-form-field appearance="outline">
           <mat-label>Estado del curso</mat-label>
           <mat-select formControlName="selectedStates" (change)="onChangeSelection()" placeholder="Selecciona el estado"
@@ -50,7 +50,7 @@
             <mat-option *ngFor=" let key of keys" [value]="eStates[key]">{{eStates[key]}}</mat-option>
           </mat-select>
         </mat-form-field>
-        <button mat-raised-button type="submit" (click)="onChangeSelection()">Buscar</button>
+        <button mat-raised-button color="primary" type="submit" (click)="onChangeSelection()">Buscar</button>
       </div>
     </form>
     <app-select-course [courses]="courses$|async" [loading]="loading$|async"></app-select-course>

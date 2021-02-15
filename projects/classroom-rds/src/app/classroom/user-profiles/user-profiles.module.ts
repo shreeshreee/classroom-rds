@@ -27,8 +27,6 @@ import { UserProfileResolver } from './services/user-profile.resolver';
 import { UserProfilesService } from './services/user-profiles.service';
 import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 import { ProfileUserComponent } from './components/profile-user/profile-user.component';
-import { UserGradesComponent } from './components/user-grades/user-grades.component';
-import { UserHomeComponent } from './components/user-home/user-home.component';
 import { UserProfileComponent } from './containers/user-profile/user-profile.component';
 
 @NgModule({
@@ -36,8 +34,6 @@ import { UserProfileComponent } from './containers/user-profile/user-profile.com
     EditProfileComponent,
     ProfileUserComponent,
     UserProfileComponent,
-    UserGradesComponent,
-    UserHomeComponent
   ],
   imports: [
     CommonModule,

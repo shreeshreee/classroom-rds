@@ -9,9 +9,9 @@ import { GradesComponent } from './containers/grades/grades.component';
 
 const routes: Routes = [
   {
-    path: '', component: GradesComponent, resolve: { courses: CoursesGradeResolver }, children: [
+    path: '', component: GradesComponent, children: [
       { path: '', component: GradesWellcomeComponent },
-      { path: ':courseId', component: GradeCourseComponent, resolve: { students: StudentsGradeResolver } }
+      { path: 'student', component: GradeCourseComponent }
     ]
   },
 ];

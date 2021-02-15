@@ -30,7 +30,7 @@ export class FireEffects {
       this.actions$.pipe(
         ofType(fromAuthActions.checkAdminRole),
         switchMap((action) =>
-          this.authFireService.checkAdminRole(action.uid)
+          this.authFireService.checkAdminRole(action.id)
             .pipe(
               map((isAdmin: boolean) => fromAuthActions.updateAdminRole({ isAdmin }))
             )

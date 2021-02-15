@@ -64,8 +64,8 @@ export class AuthEffects {
         switchMap((action) => {
           return [
             fromAuthActions.updateOnlineStatus({ uid: action.user.uid, isOnline: true }),
-            fromAuthActions.checkAdminRole({ uid: action.user.uid }),
-            fromAuthActions.checkTeacherRole({ id: action.user.uid }),
+            fromAuthActions.checkAdminRole({ id: action.user.id }),
+            fromAuthActions.checkTeacherRole({ id: action.user.id }),
             fromAppActions.localStoreUser({ user: action.user })
           ];
         })

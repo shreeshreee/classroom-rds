@@ -1,5 +1,6 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
+@import "./colors.scss";
 @import "~@angular/material/theming";
 $custom-typography: mat-typography-config($font-family: "montserrat");
 @include mat-core($custom-typography);
@@ -7,7 +8,7 @@ $custom-typography: mat-typography-config($font-family: "montserrat");
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 
-$light-primary: mat-palette($mat-green);
+$light-primary: mat-palette($mat-blue);
 $light-accent: mat-palette($mat-brown, A200, A400, A900);
 // The warn palette is optional (defaults to red).
 $light-warn: mat-palette($mat-deep-orange);

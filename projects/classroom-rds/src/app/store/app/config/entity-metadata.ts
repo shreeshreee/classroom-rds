@@ -1,5 +1,7 @@
 import { EntityMetadataMap } from '@ngrx/data';
 
+import { UserDomain } from '@rds-admin/models/users.model';
+
 import * as fromAnnouncement from '@rds-store/announcement';
 import * as fromCourse from '@rds-store/course';
 import * as fromCourseWork from '@rds-store/course-work';
@@ -8,6 +10,9 @@ import * as fromStudent from '@rds-store/student';
 import * as fromTeacher from '@rds-store/teacher';
 import * as fromTopic from '@rds-store/topic';
 import * as fromUserProfile from '@rds-store/user-profile';
+
+import * as fromUserDomain from '@rds-admin/state';
+
 import * as fromStudentSubmission from '@rds-store/student-submission';
 
 
@@ -41,6 +46,14 @@ export const entityMetadata: EntityMetadataMap = {
       optimisticUpdate: true,
     },
     selectId: (courseWork: gapi.client.classroom.CourseWork) => courseWork.id,
+  },
+  [fromUserDomain.entityCollectionName]: {
+    entityDispatcherOptions: {
+      optimisticAdd: true,
+      optimisticUpdate: true,
+      optimisticSaveEntities: true
+    },
+
   },
   [fromUserProfile.entityCollectionName]: {
     entityDispatcherOptions: {
@@ -93,6 +106,7 @@ export const pluralNames = {
   [fromTeacher.entityCollectionName]: fromTeacher.pluralizedEntityName,
   [fromTopic.entityCollectionName]: fromTopic.pluralizedEntityName,
   [fromUserProfile.entityCollectionName]: fromUserProfile.pluralizedEntityName,
+  [fromUserDomain.entityCollectionName]: fromUserDomain.pluralizedEntityName,
 };
 
 export const entityConfig = {

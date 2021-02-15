@@ -5,7 +5,7 @@ import { User, UpdatedUser } from '../models/user.model';
 export const addAdminPrivileges = createAction('[Auth Component] Add user admin privileges', props<{ uid: string }>());
 export const adminError = createAction('[Auth Component] Check user admin error', props<{ error: any }>());
 export const authError = createAction('[Auth Component] Authorization error', props<{ error: any }>());
-export const checkAdminRole = createAction('[Auth Effect] Check admin role', props<{ uid: string }>());
+export const checkAdminRole = createAction('[Auth Effect] Check admin role', props<{ id: string }>());
 export const checkUser = createAction('[Auth Effect] Check current user',);
 export const getUser = createAction('[Auth Effect] Get current user');
 export const removeAdminPrivileges = createAction('[Auth Component] Remove user admin privileges', props<{ uid: string }>());

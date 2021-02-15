@@ -18,7 +18,7 @@ import { SecundariaComponent } from './secundaria/secundaria.component';
 import { SnackComponent } from './snack/snack.component';
 import { TermsComponent } from './terms/terms.component';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
-import { UserComponent } from './user/user.component';
+import { UserCardComponent } from './user-card/user-card.component';
 import { WellcomeComponent } from './wellcome/wellcome.component';
 // start:ng42.barrel
 
@@ -36,7 +36,7 @@ export const sharedComponents: any[] = [
   SnackComponent,
   TermsComponent,
   UnderConstructionComponent,
-  UserComponent,
+  UserCardComponent,
   WellcomeComponent,
   RemoveConfirmComponent,
   GalletasComponent,
@@ -67,7 +67,7 @@ export * from './remove-confirm/remove-confirm.component';
 export * from './secundaria/secundaria.component';
 export * from './snack/snack.component';
 export * from './under-construction/under-construction.component';
-export * from './user/user.component';
+export * from './user-card/user-card.component';
 export * from './wellcome/wellcome.component';
 export * from './terms/terms.component';
 

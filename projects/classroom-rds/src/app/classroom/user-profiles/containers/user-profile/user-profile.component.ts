@@ -27,7 +27,6 @@ export class UserProfileComponent implements OnInit {
   ngOnInit() {
     this.user$ = this.store.pipe(select(fromAuthSelectors.selectUser));
     this.isOnline$ = this.store.pipe(select(fromAuthSelectors.isLoggedIn));
-    this.user$ = this.store.pipe(select(fromAuthSelectors.selectUser));
     this.isAdmin$ = this.store.pipe(select(fromAuthSelectors.isAdmin));
     this.isTeacher$ = this.store.pipe(select(fromAuthSelectors.isTeacher));
   }

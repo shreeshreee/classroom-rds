@@ -10,6 +10,7 @@ import { from, Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 
 import { UpdatedUser, User } from './../models/user.model';
+import { isAdmin, isTeacher } from './../state/auth.selectors';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +26,7 @@ export class AuthFireService {
     this.user$ = this.getAuthState().pipe(
       switchMap((user) => {
         if (user) {
-          return this.afStore.collection<User>('users').doc<User>(`${user.providerData[0].uid}`).valueChanges();
+          return this.afStore.collection('users').doc(`${user.providerData[0].uid}`).valueChanges();
         } else {
           return of(null);
         }
@@ -53,51 +54,33 @@ export class AuthFireService {
     const key = user.id;
     console.log(key);
     return this.afStore.collection('users').doc(key).set({
-      isNew: user.isNew,
       isVerified: user.isVerified,
-      isAdmin: false,
-      isTeacher: false,
-      name: user.name,
-      email: user.email,
-      photoUrl: user.photoUrl,
-      creationTime: user.creationTime,
-      lastLogin: user.lastLogin,
       uid: user.uid,
-      id: user.id,
-    }).then(
+    }, { merge: true }).then(
       () => this.afDatabase.object(`users/${user.uid}`).set({
         id: user.id,
-        isAdmin: false,
         isOnline: true,
         isTeacher: false
       })
     );
   }
 
-  checkAdminRole(uid: string): Observable<boolean> {
-    const val = this.afDatabase.object<boolean>(`admins/${uid}`).valueChanges()
-      .pipe(
-        map((isAdmin: boolean) => {
-          if (isAdmin) {
-            this.addAdminPrivileges(uid);
-          }
-          return isAdmin;
-        })
-      );
-    return val;
+  checkAdminRole(id: string): Observable<boolean> {
+    const val = this.afStore.doc<User>('users/' + id);
+    let isAdmin: Observable<boolean> = val.snapshotChanges().pipe(map(user => {
+      let userData = user.payload.data();
+      return userData.isAdmin;
+    }))
+    return isAdmin;
   }
 
-  checkTeacherRole(uid: string): Observable<boolean> {
-    const val = this.afDatabase.object<boolean>(`teachers/${uid}`).valueChanges()
-      .pipe(
-        map((isTeacher: boolean) => {
-          if (isTeacher) {
-            //this.addAdminPrivileges(uid);
-          }
-          return isTeacher;
-        })
-      );
-    return val;
+  checkTeacherRole(id: string): Observable<boolean> {
+    const val = this.afStore.doc<User>('users/' + id);
+    let isTeacher: Observable<boolean> = val.snapshotChanges().pipe(map(user => {
+      let userData = user.payload.data();
+      return userData.isTeacher;
+    }))
+    return isTeacher;
   }
   updateUser(userData: UpdatedUser) {
     // Sets user data to firestore on login

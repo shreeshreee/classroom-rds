@@ -1,0 +1,8 @@
+<div class="py-2">
+  <div style="min-height: 50vh" *ngIf="!user" fxLayout="column" fxLayoutAlign="center center">
+    <mat-spinner strokeWidth="3" [diameter]="50"> </mat-spinner>
+    <span>Buscando usuario...</span><br />
+  </div>
+  <p>user-details works!</p>
+  <div>{{user|json}}</div>
+</div>
