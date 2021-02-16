@@ -1,3 +1,4 @@
+import { GroupsResolver } from './services/groups.resolver';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -11,7 +12,7 @@ const routes: Routes = [{
     { path: '', component: AdminWellcomeComponent },
     { path: 'users', component: UsersComponent, resolve: { users: UserDomainsResolver } },
     { path: 'users/:userId', component: UserDetailsComponent },
-    { path: 'groups', component: GroupsComponent }
+    { path: 'groups', component: GroupsComponent, resolve: { groups: GroupsResolver } }
 
   ]
 }];

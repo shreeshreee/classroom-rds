@@ -1,36 +1,3 @@
-<div fxLayout="row" fxLayoutAlign="space-around top">
-  <div fxFlex cdkDropList cdkDropListOrientation="vertical" #groupList="cdkDropList" class="p-2 groups"
-    (cdkDropListDropped)="drop($event)">
-    <div class="group-button">
-      <button mat-raised-button color="accent" cdkDragDisabled (click)="openGroupDialog()">
-        Nuevo Grupo
-      </button>
-    </div>
-    <app-group cdkDrag *ngFor="let group of groups; trackBy: trackByFunction" [group]="group">
-      <ng-container buttons>
-        <mat-icon cdkDragHandle class="handle">drag_indicator</mat-icon>
-        <mat-icon mat-button (click)="openGroupDialog(group)">edit</mat-icon>
-      </ng-container>
-
-      <ng-container container>
-        <div class="students" cdkDropList cdkDropListOrientation="vertical" [cdkDropListData]="group.students"
-          #students="cdkDropList" (cdkDropListDropped)="studentDrop($event)"
-          [cdkDropListConnectedTo]="[unassignedList]">
-          <div class="students-placeholder">
-            placeholder
-          </div>
-          <div class="inner-card" cdkDrag *ngFor="let student of group.students; let i = index">
-            <mat-card> {{ student.name.fullName }} </mat-card>
-          </div>
-        </div>
-      </ng-container>
-    </app-group>
-  </div>
-  <div fxFlex #unassignedList="cdkDropList" [cdkDropListData]="users" [cdkDropListConnectedTo]="[students]"
-    *ngIf="users" cdkDropList cdkDropListOrientation="vertical" class="p-2 users">
-    <mat-card>
-      <h4>Usuarios sin grupo</h4>
-    </mat-card>
-    <app-users-groups [users]="users"></app-users-groups>
-  </div>
+<div class="pt-2" *ngIf="loaded$|async">
+  <app-group-table [data]="groups$|async"></app-group-table>
 </div>

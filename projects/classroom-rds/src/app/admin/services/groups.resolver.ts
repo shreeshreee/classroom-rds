@@ -3,22 +3,22 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/r
 
 import { Observable } from 'rxjs';
 import { filter, first, map, tap } from 'rxjs/operators';
+import { GroupEntityService } from '../state/group/group-entity.service';
 
-import { UserDomainEntityService } from '../state/user-domain/user-domain-entity.service';
 
 @Injectable()
-export class UserDomainsResolver implements Resolve<boolean> {
+export class GroupsResolver implements Resolve<boolean> {
 
-  constructor(private userDomainEntityService: UserDomainEntityService) { }
+  constructor(private groupEntityService: GroupEntityService) { }
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> {
-    return this.userDomainEntityService.loaded$
+    return this.groupEntityService.loaded$
       .pipe(
         tap(loaded => {
           if (!loaded) {
-            this.userDomainEntityService.getAll();
+            this.groupEntityService.getAll();
           }
         }),
         filter(loaded => !!loaded),

@@ -3,7 +3,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from '@angular/router';
 
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { faUser, faHome, faSchool, faChalkboardTeacher, faUserTie, faUserGraduate, faUserCog, IconDefinition, faCompressAlt, faSignOutAlt, faShieldAlt, faUserPlus, faAward, faExpandAlt } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faHome, faSchool, faChalkboardTeacher, faUserTie, faUserGraduate, faUserCog, IconDefinition, faCompressAlt, faSignOutAlt, faShieldAlt, faUserPlus, faAward, faExpandAlt, faUserShield } from '@fortawesome/free-solid-svg-icons';
 
 import { Store } from '@ngrx/store';
 
@@ -37,6 +37,7 @@ export class SidenavComponent implements OnInit {
   faAward = faAward;
   faCompressAlt = faCompressAlt;
   faExpandAlt = faExpandAlt;
+  faUserShield = faUserShield;
   faUser = faUser;
   faSchool = faSchool;
   faUserCog = faUserCog;

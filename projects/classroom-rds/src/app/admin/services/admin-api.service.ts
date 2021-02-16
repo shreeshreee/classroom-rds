@@ -4,6 +4,8 @@ import { UserDomain, UserResponse } from '@rds-admin/models/users.model';
 
 import { environment } from '@rds-env/environment';
 
+import { GroupResponse } from './../models/users.model';
+
 declare var gapi: any;
 @Injectable()
 export class AdminApiService {
@@ -27,39 +29,6 @@ export class AdminApiService {
       });
     }
   }
-  async listUsers(userType: string) {
-    const profiles: gapi.client.classroom.UserProfile[] = [];
-    let request: gapi.client.HttpRequest<UserDomain[]>;
-    try {
-      request = await gapi.client.directory.users.list({
-        domain: 'rafaeldiazserdan.net',
-        query: `orgUnitPath=/Dirección/${userType}`,
-      }).then(
-        (response: gapi.client.HttpRequestFulfilled<any>) => {
-          return response;
-        },
-        (reason: gapi.client.HttpRequestRejected) => {
-          alert(reason.result.error.message);
-          return reason;
-        },
-
-      );
-    } catch (e) {
-      console.log(e);
-    } finally {
-      const result = JSON.parse((await request).body);
-      if (result.users) {
-        result.users.map(async element => {
-          const userResponse = await gapi.client.classroom.userProfiles.get({ userId: element.id }).then(user => {
-            return user.result;
-          });
-          profiles.push(userResponse);
-          return userResponse;
-        })
-      }
-    }
-    return profiles;
-  }
 
   async listAllUsers() {
     const response: gapi.client.Response<UserResponse> = await gapi.client.directory.users.list({
@@ -67,7 +36,6 @@ export class AdminApiService {
       orderBy: 'FAMILY_NAME',
       maxResults: 500,
     });
-    console.log(response.result)
     return response.result.users;
   }
 
@@ -79,6 +47,13 @@ export class AdminApiService {
       return resp.result;
     });
     return user;
+  }
+
+  async getGroups() {
+    const response: gapi.client.Response<GroupResponse> = await gapi.client.directory.groups.list({
+      domain: 'rafaeldiazserdan.net',
+    });
+    return response.result.groups;
   }
 
   async createSchoolAnnouncement(announcement: gapi.client.classroom.Announcement, courseId: string) {

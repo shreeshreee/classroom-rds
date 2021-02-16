@@ -69,24 +69,40 @@ export interface UserName {
 export interface Permission {
   permission: string;
 }
-export interface Group {
-  id?: string;
-  priority?: number;
-  name?: string;
-  grade?: number;
-  level?: CourseLevel;
-  teachers?: UserDomain[];
-  students?: UserDomain[];
-}
+
 
 export interface UserStudent {
   id?: string;
-  priority?: number,
+  priority?: number;
   name: UserName;
 }
 
 export interface UserTeacher {
   id?: string;
-  priority?: number,
+  priority?: number;
   name: UserName;
+}
+export interface Group {
+  id: string;
+  priority?: number;
+  grade?: string;
+  level?: CourseLevel;
+  teachers?: UserDomain[];
+  students?: UserDomain[];
+  email: string;
+  name: string;
+  description: string;
+  adminCreated: boolean;
+  directMembersCount: string;
+  kind: string;
+  etag: string;
+  aliases: string[];
+  nonEditableAliases: string[];
+}
+
+export interface GroupResponse {
+  groups: Group[];
+  etag: string;
+  kind: string;
+  nextPageToken: string;
 }

@@ -3,7 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
 
-import { UserDomain } from '@rds-admin/models/users.model';
+import { Group, UserDomain } from '@rds-admin/models/users.model';
 
 import { from, Observable, of } from 'rxjs';
 
@@ -52,8 +52,12 @@ export class AdminFireService {
 
   async createUser(user: UserDomain) {
     const key = user.id;
-    console.log(key);
     return await this.afStore.collection('users').doc(key).set(user, { merge: true });
   }
 
+  async createGroup(group: Group) {
+    const key = group.id;
+    console.log(group.name)
+    return await this.afStore.collection('groups').doc(key).set(group, { merge: true });
+  }
 }

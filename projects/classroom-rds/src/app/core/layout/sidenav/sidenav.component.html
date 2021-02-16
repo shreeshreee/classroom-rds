@@ -7,9 +7,17 @@
           <fa-icon matListIcon [icon]="faChalkboardTeacher"></fa-icon>
           <span matLine [@animateText]="linkText ? 'show' : 'hide'">Cursos</span>
         </a>
-        <a mat-list-item [routerLink]="['/school-grades']" routerLinkActive="active">
+        <a mat-list-item [routerLink]="['/calificaciones']" routerLinkActive="active">
           <fa-icon matListIcon [icon]="faAward"></fa-icon>
           <span matLine [@animateText]="linkText ? 'show' : 'hide'">Caificaciones</span>
+        </a>
+        <a mat-list-item [routerLink]="['/user']" routerLinkActive="active">
+          <fa-icon matListIcon [icon]="faUserPlus"></fa-icon>
+          <span matLine [@animateText]="linkText ? 'show' : 'hide'">Informacion de usuario</span>
+        </a>
+        <a mat-list-item [routerLink]="['/admin']" routerLinkActive="active">
+          <fa-icon matListIcon [icon]="faUserShield"></fa-icon>
+          <span matLine [@animateText]="linkText ? 'show' : 'hide'">Administrador</span>
         </a>
       </mat-nav-list>
       <mat-nav-list dense>

@@ -5,7 +5,7 @@ import { UserDomain } from '@rds-admin/models/users.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { UserDomainEntityService } from '../../state/user-domain-entity.service';
+import { UserDomainEntityService } from '../../state/user-domain/user-domain-entity.service';
 
 
 @Component({
