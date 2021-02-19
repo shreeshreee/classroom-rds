@@ -1,9 +1,11 @@
-import { Group } from './../../models/users.model';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+
+import { GroupEntityService } from '@rds-admin/state/group/group-entity.service';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { GroupEntityService } from '../../state/group/group-entity.service';
+
+import { Group } from '~/app/admin/models/users-domain.model';
 
 @Component({
   selector: 'app-groups',

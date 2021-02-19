@@ -34,7 +34,7 @@ export class EditProfileComponent implements OnInit, OnDestroy {
     private store: Store<AppState>,
   ) {
     this.user$ = this.store.pipe(select(selectUser));
-    this.userSub = this.user$.subscribe(user => this.user = user)
+    this.userSub = this.user$.subscribe(user => this.user = user);
     this.updateProfileForm = this.fb.group({
       fullName: new FormControl(this.user.name),
       photoUrl: new FormControl(this.user.photoUrl)

@@ -23,7 +23,6 @@ export class UserComponent implements OnInit {
   ) {
     this.user$ = this.store.pipe(select(selectUser));
   }
-
   ngOnInit(): void {
   }
   logoutUser(user: User) {

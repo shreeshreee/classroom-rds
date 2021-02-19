@@ -1,0 +1,31 @@
+<mat-table [dataSource]="dataSource" class="d-block" matSort aria-label="Elements">
+  <!-- Id Column -->
+  <ng-container matColumnDef="courseName">
+    <mat-header-cell [ngClass]="'w-75'" *matHeaderCellDef mat-sort-header>Materia</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{row.courseName}}</mat-cell>
+    <mat-footer-cell *matFooterCellDef> Promedio: </mat-footer-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="unidad1">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Unidad 1</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{row.unidad1==0?'-':row.unidad1}}</mat-cell>
+    <mat-footer-cell *matFooterCellDef> </mat-footer-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="unidad2">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Unidad 2</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{row.unidad2==0?'-':row.unidad2}}</mat-cell>
+    <mat-footer-cell *matFooterCellDef> </mat-footer-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="unidad3">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Unidad 3</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{row.unidad3==0?'-':row.unidad3}}</mat-cell>
+    <mat-footer-cell *matFooterCellDef> </mat-footer-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  <mat-footer-row *matFooterRowDef="displayedColumns"></mat-footer-row>
+</mat-table>

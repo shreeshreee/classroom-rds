@@ -7,7 +7,7 @@ import { AddUserGroupComponent } from '@rds-admin/components/add-user-group/add-
 
 import { AppState } from '@rds-store/app.state';
 
-import { Group, UserStudent } from '@rds-admin/models/users.model';
+import { Group, UserStudent } from '~/app/admin/models/users-domain.model';
 
 @Component({
   selector: 'app-group',

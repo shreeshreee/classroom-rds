@@ -1,17 +1,19 @@
 export interface User {
-  isNew?: boolean;
-  isAdmin?: boolean;
-  isOnline?: boolean;
-  isVerified?: boolean;
-  isTeacher?: boolean;
-  name?: string;
-  givenName?: string;
-  familyName?: string;
-  email?: string;
-  photoUrl?: string;
   creationTime?: string;
-  lastLogin?: string;
+  dayOfBirth?: Date;
+  email?: string;
+  familyName?: string;
+  givenName?: string;
   id?: string;
+  isAdmin?: boolean;
+  isNew?: boolean;
+  isOnline?: boolean;
+  isTeacher?: boolean;
+  isVerified?: boolean;
+  lastLogin?: string;
+  name?: string;
+  permissions?: any;
+  photoUrl?: string;
   uid?: string;
 }
 

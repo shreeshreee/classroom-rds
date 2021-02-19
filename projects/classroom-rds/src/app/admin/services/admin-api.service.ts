@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
-import { UserDomain, UserResponse } from '@rds-admin/models/users.model';
-
 import { environment } from '@rds-env/environment';
 
-import { GroupResponse } from './../models/users.model';
+import { GroupResponse } from '../models/users-domain.model';
+
+import { UserDomain, UserResponse } from '~/app/admin/models/users-domain.model';
 
 declare var gapi: any;
 @Injectable()

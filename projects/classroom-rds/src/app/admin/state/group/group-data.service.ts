@@ -6,9 +6,9 @@ import { DefaultDataService, HttpUrlGenerator } from '@ngrx/data';
 import { Observable, from } from 'rxjs';
 
 import { AdminApiService } from './../../services';
+import { Group } from '../../models/users-domain.model';
 
 import * as fromGroup from './';
-import { Group } from '../../models/users.model';
 @Injectable()
 export class GroupDataService extends DefaultDataService<Group>  {
 

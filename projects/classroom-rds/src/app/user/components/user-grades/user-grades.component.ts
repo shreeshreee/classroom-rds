@@ -1,8 +1,5 @@
-import { Grades, gradesAttributesMapping } from './../../models/grades.model';
-import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 
-import { QueryParams } from '@ngrx/data';
 import { select, Store } from '@ngrx/store';
 
 import { AppState } from '@rds-store/app.state';
@@ -10,12 +7,11 @@ import { AppState } from '@rds-store/app.state';
 import { User } from '@rds-auth/models/user.model';
 import { selectUser } from '@rds-auth/state/auth.selectors';
 
-import { environment } from '@rds-env/environment';
+import { map } from 'rxjs/operators';
+import { Observable, Subscription } from 'rxjs';
 
-import { map, filter } from 'rxjs/operators';
-import { Observable } from 'rxjs';
-
-import { GoogleSheetsDbService } from 'ng-google-sheets-db';
+import { Score } from '../../models/grades.model';
+import { UserScoresService } from './../../services/user-scores.service';
 
 @Component({
   selector: 'app-user-grades',
@@ -25,19 +21,23 @@ import { GoogleSheetsDbService } from 'ng-google-sheets-db';
 })
 export class UserGradesComponent implements OnInit {
   user$: Observable<User>;
-  characters$: Observable<Grades[]>;
-  userGrade$: Observable<Grades>;
+  user: User;
   userName: string;
+  userSub: Subscription;
+  scores: Observable<Score[]>;
   constructor(
     private store: Store<AppState>,
-    private googleSheetsDbService: GoogleSheetsDbService
-
+    private scoreServices: UserScoresService
   ) {
-    this.store.select(selectUser).subscribe(user => this.userName = user.name);
+    this.user$ = this.store.select(selectUser);
   }
+
   ngOnInit(): void {
-    this.userGrade$ = this.googleSheetsDbService.getActive<Grades>(
-      environment.characters.spreadsheetId, environment.characters.worksheetId, gradesAttributesMapping, 'Active').pipe(map(grade => grade.find(x => x.name == this.userName)));
+    this.user$.subscribe(user => {
+      console.log(this.user)
+
+      this.scores = this.scoreServices.getScores(user.id);
+    });
   }
 
 }

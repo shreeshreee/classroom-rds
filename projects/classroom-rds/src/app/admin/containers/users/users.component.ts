@@ -1,11 +1,11 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
-import { UserDomain } from '@rds-admin/models/users.model';
+import { UserDomainEntityService } from '@rds-admin/state/user-domain/user-domain-entity.service';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { UserDomainEntityService } from '../../state/user-domain/user-domain-entity.service';
+import { UserDomain } from '~/app/admin/models/users-domain.model';
 
 
 @Component({

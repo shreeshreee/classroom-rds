@@ -1,7 +1,5 @@
 import { EntityMetadataMap } from '@ngrx/data';
 
-import { UserDomain } from '@rds-admin/models/users.model';
-
 import * as fromAnnouncement from '@rds-store/announcement';
 import * as fromCourse from '@rds-store/course';
 import * as fromCourseWork from '@rds-store/course-work';
@@ -15,6 +13,8 @@ import * as fromUserDomain from '@rds-admin/state/user-domain';
 import * as fromGroup from '@rds-admin/state/group';
 
 import * as fromStudentSubmission from '@rds-store/student-submission';
+
+import { UserDomain } from '~/app/admin/models/users-domain.model';
 
 
 export const entityMetadata: EntityMetadataMap = {

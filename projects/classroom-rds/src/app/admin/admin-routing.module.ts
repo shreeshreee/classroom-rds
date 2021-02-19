@@ -1,10 +1,13 @@
-import { GroupsResolver } from './services/groups.resolver';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminComponent, GroupsComponent, UsersComponent } from '@rds-admin/containers';
-import { AdminWellcomeComponent, UserDetailsComponent } from '@rds-admin/components';
 
+import { UserDetailsComponent } from '../user/components/user-details/user-details.component';
+
+import { AdminWellcomeComponent } from './components';
+
+import { GroupsResolver } from './services/groups.resolver';
 import { UserDomainsResolver } from './services/user-domains.resolver';
 
 const routes: Routes = [{

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
-import { UserDomain } from '@rds-admin/models/users.model';
+import { UserDomain } from '~/app/admin/models/users-domain.model';
 
 @Component({
   selector: 'app-users-groups',

@@ -3,7 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
 
-import { Group, UserDomain } from '@rds-admin/models/users.model';
+import { User } from '@rds-auth/models/user.model';
 
 import { from, Observable, of } from 'rxjs';
 
@@ -12,7 +12,7 @@ import 'firebase/auth';
 
 import { switchMap } from 'rxjs/operators';
 
-import { User } from '~/app/auth/models/user.model';
+import { Group, UserDomain } from '~/app/admin/models/users-domain.model';
 @Injectable()
 export class AdminFireService {
   user$: Observable<firebase.User>;

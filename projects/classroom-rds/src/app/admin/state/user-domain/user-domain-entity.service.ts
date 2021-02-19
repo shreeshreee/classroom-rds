@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { EntityCollectionServiceBase, EntityCollectionServiceElementsFactory } from '@ngrx/data';
 
-import { UserDomain } from '@rds-admin/models/users.model';
-
+import { UserDomain } from '~/app/admin/models/users-domain.model';
 import * as fromUserDomain from './';
 
 @Injectable()

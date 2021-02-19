@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { DefaultDataService, HttpUrlGenerator } from '@ngrx/data';
+import { DefaultDataService, HttpUrlGenerator, QueryParams } from '@ngrx/data';
+
+import { AdminApiService } from '@rds-admin/services';
+import { AdminFireService } from '@rds-admin/services/admin-fire.service';
 
 import { Observable, from } from 'rxjs';
 
-import { AdminApiService } from './../../services';
-import { UserDomain } from './../../models/users.model';
-import { AdminFireService } from './../../services/admin-fire.service';
-
+import { UserDomain } from '~/app/admin/models/users-domain.model';
 import * as fromUserDomain from './';
 @Injectable()
 export class UserDomainDataService extends DefaultDataService<UserDomain>  {
@@ -23,5 +23,8 @@ export class UserDomainDataService extends DefaultDataService<UserDomain>  {
   }
   getAll(): Observable<UserDomain[]> {
     return from(this.adminApiService.listAllUsers());
+  }
+  getByKey(userId: string): Observable<UserDomain> {
+    return
   }
 }

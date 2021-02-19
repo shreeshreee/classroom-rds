@@ -9,7 +9,8 @@ import { faBan, faExclamation, faTimes, faUserGraduate, faUserTie, faCheck, faSc
 import { faEdit } from '@fortawesome/free-regular-svg-icons';
 
 import { AdminFireService } from '@rds-admin/services/admin-fire.service';
-import { UserDomain } from '@rds-admin/models/users.model';
+
+import { UserDomain } from '~/app/admin/models/users-domain.model';
 
 const { keys } = Object;
 const SELECTED_SLICE_KEY = 'SELECTED_SLICE_KEY';

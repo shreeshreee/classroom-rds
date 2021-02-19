@@ -1,4 +1,3 @@
-import { Group } from '@rds-admin/models/users.model';
 import { Component, Input, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -6,7 +5,8 @@ import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { FormGroup } from '@angular/forms';
 
 import { AdminFireService } from '@rds-admin/services';
-import { CourseLevel } from '~/app/classroom/models/classroom.enum';
+
+import { Group } from '~/app/admin/models/users-domain.model';
 
 
 @Component({

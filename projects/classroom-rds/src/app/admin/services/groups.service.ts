@@ -3,15 +3,15 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
 
+import { AuthFireService } from '@rds-auth/services';
+
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 
 import { of } from 'rxjs';
 
-import { Group, UserStudent } from '../models/users.model';
-
-import { AuthFireService } from '~/app/auth/services';
+import { Group, UserStudent } from '../models/users-domain.model';
 
 @Injectable({ providedIn: "root" })
 export class GroupsService {
