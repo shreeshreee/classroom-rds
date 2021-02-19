@@ -3,25 +3,25 @@
     [attr.role]="isHandset ? 'dialog' : 'navigation'" [mode]="'side'" [opened]="isHandset == false" *ngIf="isOnline">
     <div fxLayout="column" fxLayoutAlign="space-between start">
       <mat-nav-list dense>
-        <mat-list-item [routerLink]="['/clases']" routerLinkActive="active">
+        <mat-list-item [routerLink]="['/clases']" routerLinkActive="active" appMaterialElevation>
           <fa-icon matListIcon [icon]="faChalkboardTeacher"></fa-icon>
           <span matLine [@animateText]="linkText ? 'show' : 'hide'">Cursos</span>
         </mat-list-item>
-        <mat-list-item [routerLink]="['/calificaciones']" routerLinkActive="active">
+        <mat-list-item [routerLink]="['/calificaciones']" routerLinkActive="active" appMaterialElevation>
           <fa-icon matListIcon [icon]="faAward"></fa-icon>
           <span matLine [@animateText]="linkText ? 'show' : 'hide'">Caificaciones</span>
         </mat-list-item>
-        <mat-list-item [routerLink]="['/user']" routerLinkActive="active">
+        <mat-list-item [routerLink]="['/user']" routerLinkActive="active" appMaterialElevation>
           <fa-icon matListIcon [icon]="faUserPlus"></fa-icon>
           <span matLine [@animateText]="linkText ? 'show' : 'hide'">Informacion de usuario</span>
         </mat-list-item>
-        <mat-list-item [routerLink]="['/admin']" routerLinkActive="active">
+        <mat-list-item [routerLink]="['/admin']" routerLinkActive="active" appMaterialElevation>
           <fa-icon matListIcon [icon]="faUserShield"></fa-icon>
           <span matLine [@animateText]="linkText ? 'show' : 'hide'">Administrador</span>
         </mat-list-item>
       </mat-nav-list>
       <mat-nav-list dense>
-        <mat-list-item (click)="onSidenavToggle()">
+        <mat-list-item (click)="onSidenavToggle()" appMaterialElevation>
           <fa-icon matListIcon [icon]="sideNavState ? faCompressAlt : faExpandAlt"></fa-icon>
         </mat-list-item>
       </mat-nav-list>

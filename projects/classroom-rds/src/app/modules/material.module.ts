@@ -43,8 +43,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
+import { MaterialElevationDirective } from './material-elevation.directive';
+
 @NgModule({
+  declarations: [MaterialElevationDirective],
   exports: [
+    MaterialElevationDirective,
     A11yModule,
     DragDropModule,
     LayoutModule,

@@ -14,6 +14,8 @@ import { ThemeService } from './shared/services/theme.service';
 export class AppComponent implements OnInit {
   isDarkTheme: Observable<boolean>;
   isDark: boolean;
+  defaultElevation = 0;
+  raisedElevation = 12;
   title = 'Escuela RDS';
   constructor(
     private themeService: ThemeService,
