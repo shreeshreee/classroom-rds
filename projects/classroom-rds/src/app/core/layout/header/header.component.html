@@ -27,18 +27,19 @@
 </mat-toolbar>
 <mat-menu #userMenu="matMenu" fxLayoutAlign="right">
   <ng-template matMenuContent>
-    <div mat-list-item *ngIf="isOnline && user" [routerLink]="['perfil']" routerLinkActive="active">
+    <div mat-list-item *ngIf="isOnline && user" [routerLink]="['user']" appMaterialElevation>
       <app-user-card [isOnline]="isOnline" [isAdmin]="isAdmin" [user]="user"> </app-user-card>
     </div>
-    <div mat-menu-item *ngIf="isOnline && isTeacher" [routerLink]="['under-construction']" routerLinkActive="active">
+    <div mat-menu-item *ngIf="isOnline && isTeacher" [routerLink]="['clases']" appMaterialElevation>
       <fa-icon matListIcon [icon]="faUserTie" size="lg"></fa-icon>
       <span>&nbsp;Profesor</span>
     </div>
-    <div mat-menu-item *ngIf="isOnline && isAdmin" [routerLink]="['admin']" routerLinkActive="active">
+    <div mat-menu-item *ngIf="isOnline && isAdmin" [routerLink]="['admin']" appMaterialElevation>
       <fa-icon matListIcon [icon]="faShieldAlt" size="lg"></fa-icon>
       <span>&nbsp;Administrador</span>
     </div>
-    <div mat-menu-item *ngIf="isOnline" [routerLink]="['configuration']" routerLinkActive="active">
+    <div mat-menu-item *ngIf="isOnline" (click)="openConfigDialog()" appMaterialElevation
+      [defaultElevation]="defaultElevation" raisedElevation="16">
       <fa-icon matListIcon [icon]="faSlidersH" size="lg"></fa-icon>
       <span>&nbsp;Configuración</span>
     </div>

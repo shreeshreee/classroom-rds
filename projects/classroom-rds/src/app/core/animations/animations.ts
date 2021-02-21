@@ -4,7 +4,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export const onSideNavChange = trigger('onSideNavChange', [
   state('close',
     style({
-      'min-width': '50px',
+      'min-width': '60px',
     })
   ),
   state('open',
@@ -20,7 +20,7 @@ export const onSideNavChange = trigger('onSideNavChange', [
 export const onMainContentChange = trigger('onMainContentChange', [
   state('close',
     style({
-      'margin-left': '50px'
+      'margin-left': '60px'
     })
   ),
   state('open',

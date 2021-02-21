@@ -28,6 +28,7 @@ import { LoginDialogComponent } from '@rds-auth/components/login-dialog/login-di
 import { Observable } from 'rxjs';
 
 import { LayoutService } from '../layout.service';
+import { ConfigComponent } from '../config/config.component';
 
 import { ThemeService } from '~/app/shared/services';
 
@@ -69,9 +70,11 @@ export class HeaderComponent implements OnInit {
     private layoutService: LayoutService,
     private dialog: MatDialog,
     private store: Store<AppState>,
+    private themeService: ThemeService
   ) { }
 
   ngOnInit() {
+    this.themeService.isDarkTheme;
   }
   toggleSidenavLeft($event: any) {
     this.layoutService.toggleSidenavLeft.emit($event);
@@ -82,5 +85,7 @@ export class HeaderComponent implements OnInit {
   onSignOut() {
     this.store.dispatch(signOut({ user: this.user }));
   }
-
+  openConfigDialog() {
+    const dialogRef = this.dialog.open(ConfigComponent, { width: '300px', data: { checked: this.themeService.isDarkTheme } });
+  }
 }

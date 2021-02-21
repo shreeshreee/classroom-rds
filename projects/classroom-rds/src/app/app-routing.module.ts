@@ -18,17 +18,18 @@ import { RemoteLearningComponent } from '@rds-shared/components/remote-learning/
 import { TermsComponent } from '@rds-shared/components/terms/terms.component';
 import { UnderConstructionComponent } from '@rds-shared/components/under-construction/under-construction.component';
 
+import { ConfigComponent } from './core/layout/config/config.component';
 import { ConfigurationComponent } from './core/layout/configuration/configuration.component';
 const routes: Routes = [{
   path: '', component: LayoutComponent, children: [
+    { path: '', component: HomeComponent },
+    { path: 'config', component: ConfigComponent },
     { path: 'c', loadChildren: () => import('./classroom/classroom.module').then(m => m.ClassroomModule), canActivate: [AuthGuard] },
     { path: 'perfil', loadChildren: () => import('./classroom/user-profiles/user-profiles.module').then(m => m.UserProfilesModule), canActivate: [AuthGuard] },
     { path: 'calificaciones', loadChildren: () => import('./grades/grades.module').then(m => m.GradesModule), canActivate: [AuthGuard] },
     { path: 'clases', loadChildren: () => import('./classroom/courses/courses.module').then(m => m.CoursesModule), canActivate: [AuthGuard] },
     { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule), canActivate: [AuthGuard] },
     { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivate: [AuthGuard] },
-
-    { path: '', component: HomeComponent },
     { path: 'galletas', component: GalletasComponent },
     { path: 'about', component: AboutComponent },
     { path: 'remote-learning', component: RemoteLearningComponent },
@@ -41,10 +42,8 @@ const routes: Routes = [{
     { path: 'terms', component: TermsComponent },
     { path: 'under-construction', component: UnderConstructionComponent },
     { path: 'configuration', component: ConfigurationComponent },
-
   ]
-},
-/* { path: '**', redirectTo: '', pathMatch: 'full' } */]
+}]
   ;
 
 @NgModule({

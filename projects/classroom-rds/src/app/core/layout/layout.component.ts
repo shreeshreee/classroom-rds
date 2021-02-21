@@ -1,6 +1,6 @@
-import { ThemeService } from './../../shared/services/theme.service';
 import { Component } from '@angular/core';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 
 import { faCookieBite } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,7 +16,11 @@ import { loadApp } from '@rds-store/app/actions/app.actions';
 
 import { Observable } from 'rxjs';
 
+import { ThemeService } from './../../shared/services/theme.service';
+
 import { LayoutService } from './layout.service';
+
+import { ConfigComponent } from './config/config.component';
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
@@ -36,6 +40,7 @@ export class LayoutComponent {
     private store: Store<AppState>,
     private router: Router,
     private themeService: ThemeService,
+    private dialog: MatDialog,
   ) {
     this.router.events.subscribe((event: RouterEvent) => {
       this.navigationInterceptor(event)
@@ -67,12 +72,9 @@ export class LayoutComponent {
       default: {
         break;
       }
-
     }
-
   }
   ngOnInit(): void {
     this.isDarkTheme = this.themeService.isDarkTheme;
   }
-
 }

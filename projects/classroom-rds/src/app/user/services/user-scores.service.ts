@@ -3,16 +3,17 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
+import { UserDomain } from '@rds-admin/models/users-domain.model';
+
+import { User } from '@rds-auth/models/user.model';
+
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import { from, Observable, of } from 'rxjs';
 import { concatMap, map, switchMap } from 'rxjs/operators';
 
-import { Score } from './../models/grades.model';
-
-import { UserDomain } from '~/app/admin/models/users-domain.model';
-import { UpdatedUser, User } from '~/app/auth/models/user.model';
+import { Score } from '../models/score.model';
 
 @Injectable()
 export class UserScoresService {
@@ -40,6 +41,9 @@ export class UserScoresService {
 
   getScores(id: string) {
     return this.afDatabase.object<Score[]>(`scores/${id}`).valueChanges();
+  }
+  getUserDomain(userId: string): Observable<UserDomain> {
+    return this.afStore.collection<UserDomain>('users').doc(`${userId}`).valueChanges();
   }
   updateUser(userData: User) {
     // Sets user data to firestore on login

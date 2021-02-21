@@ -16,7 +16,8 @@
   <div class="pt-2">
     <div fxLayout="row flex" fxLayout.lt-md="column" fxLayoutGap="10px" fxLayoutAlign="space-around stretch">
       <div fxFlex="0 1 calc(35% - 5px)" fxFlex.lt-md="100%">
-        <app-user-menu [user]="user$ | async" (logout)="logoutUser($event)"></app-user-menu>
+        <app-user-menu [user]="(userDto|async)" [isAdmin]="(isAdmin$|async)" [isTeacher]="(isTeacher$|async)"
+          [isOnline]="(isOnline$|async)" (logout)="logoutUser($event)"></app-user-menu>
       </div>
       <div fxFlex="0 1 calc(65% - 5px)" fxFlex.lt-md="100%">
         <router-outlet></router-outlet>

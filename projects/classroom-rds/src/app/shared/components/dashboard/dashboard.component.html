@@ -8,7 +8,7 @@
         </mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        Panel de acceso a servicios de información para estudiantes y profesores.
+        <span class="fs-1">Panel de acceso a servicios de información para estudiantes y profesores.</span>
       </mat-card-content>
     </mat-card>
   </div>
@@ -20,7 +20,9 @@
         <mat-card-title>
           {{ item.title }}
         </mat-card-title>
-        <mat-card-subtitle>{{ item.description }}</mat-card-subtitle>
+        <mat-card-subtitle>
+          <p><small class="lh-sm">{{ item.description }}</small></p>
+        </mat-card-subtitle>
       </mat-card-header>
       <img mat-card-image [src]="item.imgUrl" />
     </mat-card>

@@ -6,10 +6,17 @@ import { User } from '@rds-auth/models/user.model';
 
 import { AppState } from '@rds-store/app.state';
 
-import { selectUser } from '@rds-auth/state/auth.selectors';
+import { isAdmin, isLoggedIn, isTeacher, selectUser } from '@rds-auth/state/auth.selectors';
 import { signOut } from '@rds-auth/state/auth.actions';
 
-import { Observable } from 'rxjs';
+import { from, merge, Observable, of, Subscription } from 'rxjs';
+import { mergeMap, concatMap, map, switchMap } from 'rxjs/operators';
+
+import { UserDto } from '../../models/user-dto';
+import { UserScoresService } from './../../services/user-scores.service';
+
+import { UserDomain } from '~/app/admin/models/users-domain.model';
+import { ActivatedRoute, Data } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -18,10 +25,57 @@ import { Observable } from 'rxjs';
 })
 export class UserComponent implements OnInit {
   user$: Observable<User>;
+  userId: string;
+  user: User;
+  isOnline$: Observable<boolean>;
+  isAdmin$: Observable<boolean>;
+  isTeacher$: Observable<boolean>;
+  userDomain: Observable<UserDomain>;
+  userDto: Observable<UserDto>;
+  userSub: Subscription;
+  loading = false;
   constructor(
-    private store: Store<AppState>
+    private store: Store<AppState>,
+    private router: ActivatedRoute,
+    private userScoreService: UserScoresService
   ) {
-    this.user$ = this.store.pipe(select(selectUser));
+    this.store.select(selectUser).subscribe(user => {
+      this.user = user
+    });
+    this.isOnline$ = store.pipe(select(isLoggedIn));
+    this.isAdmin$ = store.pipe(select(isAdmin));
+    this.isTeacher$ = store.pipe(select(isTeacher));
+    //this.router.snapshot.paramMap.get('userId')
+    //router.data.subscribe(data => this.userDto = data);
+    this.userDto = this.userScoreService.getUserDomain(this.user.id)
+      .pipe(
+        map(data => {
+          let dto: UserDto = {
+            addresses: data.addresses,
+            creationTime: data.creationTime,
+            emails: data.emails,
+            gender: data.gender,
+            id: this.user.id,
+            isAdmin: data.isAdmin,
+            isTeacher: this.user.isTeacher,
+            isNew: this.user.isNew,
+            isOnline: this.user.isOnline,
+            isVerified: this.user.isVerified,
+            lastLoginTime: data.lastLoginTime,
+            name: data.name,
+            notes: data.notes,
+            phones: data.phones,
+            photoUrl: this.user.photoUrl,
+            primaryEmail: data.primaryEmail,
+            suspended: data.suspended,
+            suspensionReason: data.suspensionReason,
+            thumbnailPhotoUrl: data.thumbnailPhotoUrl,
+            uid: this.user.uid
+          }
+          return dto;
+        })
+      );
+
   }
   ngOnInit(): void {
   }

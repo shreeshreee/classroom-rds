@@ -1,5 +1,8 @@
 import { Component, ChangeDetectionStrategy, Output, EventEmitter, AfterViewInit, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+
+import { faIdBadge } from '@fortawesome/free-regular-svg-icons';
 
 import { select, Store } from '@ngrx/store';
 
@@ -13,6 +16,9 @@ import { UserDomain } from '@rds-admin/models/users-domain.model';
 import { Observable, Subscription } from 'rxjs';
 import { map, concatMap } from 'rxjs/operators';
 
+import { PhonesType } from './../../models/user-dto';
+import { UserDto } from '../../models/user-dto';
+
 @Component({
   selector: 'app-user-details',
   templateUrl: './user-details.component.html',
@@ -23,9 +29,10 @@ export class UserDetailsComponent implements OnInit {
   @Output() updatedUser = new EventEmitter<any>();
   userDetailsForm: FormGroup;
   user$: Observable<User>;
-  user: User;
+  user: any;
+  raisedElev: number = 10;
   hasUnitNumber = false;
-
+  faIdBadge = faIdBadge;
   states = [
     { clave: 'Ags', nombre: 'Aguascalientes' },
     { clave: 'Bc', nombre: 'Baja California' },
@@ -60,25 +67,27 @@ export class UserDetailsComponent implements OnInit {
     { clave: 'Yuc', nombre: 'Yucatan' },
     { clave: 'Zac', nombre: 'Zacatecas' }
   ];
+  phoneKeys;
+  phones: PhonesType;
   userSub: Subscription;
   constructor(
     private fb: FormBuilder,
     private store: Store<AppState>,
+    private route: ActivatedRoute
   ) {
-    this.user$ = this.store.pipe(select(selectUser));
-    this.userSub = this.user$.subscribe(user => this.user = user)
-
-    this.initForm();
+    route.queryParamMap.subscribe(params => this.user = params.get('user'))
+    //this.phoneKeys = Object.keys(this.phones).filter(Number);
+    this.initForm(this.user);
   }
   ngOnInit(): void {
 
   }
-  initForm(defaultUser?: UserDomain) {
+  initForm(defaultUser?: UserDto) {
     this.userDetailsForm = this.fb.group({
       dayOfBirth: new FormControl(''),
       addressLine: new FormControl(''),
       postalCode: new FormControl(''),
-      photoUrl: new FormControl(''),
+      photoUrl: new FormControl(defaultUser.thumbnailPhotoUrl),
       city: new FormControl(''),
       state: new FormControl(''),
       country: new FormControl(''),
@@ -88,7 +97,7 @@ export class UserDetailsComponent implements OnInit {
 
   }
   onSubmit() {
-    alert('Thanks!');
+    alert('Todavia no estamos listos para actualizar tu información por esta via. Contácta a la dirección escolar para más detalles');
   }
   updateUser() {
     this.updatedUser.emit(this.user$);

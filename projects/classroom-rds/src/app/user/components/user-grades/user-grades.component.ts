@@ -10,7 +10,7 @@ import { selectUser } from '@rds-auth/state/auth.selectors';
 import { map } from 'rxjs/operators';
 import { Observable, Subscription } from 'rxjs';
 
-import { Score } from '../../models/grades.model';
+import { Score } from '../../models/score.model';
 import { UserScoresService } from './../../services/user-scores.service';
 
 @Component({

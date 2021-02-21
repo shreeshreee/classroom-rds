@@ -7,7 +7,6 @@ import { CourseEntityService } from '@rds-store/course/course-entity.service';
 
 import { Observable } from 'rxjs';
 
-import { CoursesService } from '../../services/courses.service';
 import { CourseDialogComponent } from '../../components/course-dialog/course-dialog.component';
 import { AnnouncementsService } from '../../../announcements/services/announcements.service';
 import { AnnouncementDialogComponent } from '../../../announcements/components/announcement-dialog/announcement-dialog.component';

@@ -2,26 +2,28 @@
   <mat-card-content *ngIf="user">
     <div class="text-right">
       <div style="margin-top: -40px">
-        <img [src]="[(user.photoUrl)  ? user.photoUrl : '/assets/images/dummy-user.png']" height="72" width="72"
+        <img [src]="[user.photoUrl ? user.photoUrl : 'assets/images/dummy-user.png']" height="72" width="72"
           class="img-fluid rounded-circle" alt="avatar image" />
         <fa-icon class="float-center" [ngClass]="[user.isVerified ? 'text-success' : 'text-danger']"
           [icon]="user.isVerified ? faCheck : faTimes">
         </fa-icon>
       </div>
-      <h3 *ngIf="user.name" class="mat-h3 mt-2">{{ user.name }}</h3>
+      <h3 *ngIf="user.name" class="mat-h3 mt-2">{{ user.name.fullName }}</h3>
       <h3 *ngIf="!user.name" class="mat-h3">Usuario anónimo</h3>
-      <h4 class="mat-h4 mt-n3">{{ user.email }}</h4>
-      <div fxLayout="column" fxLayoutGap="3px">
-        <button class="btn btn-outline-info" mat-raised-button [routerLink]="['details']" routerLinkActive="active">
+      <h4 class="mat-h4 mt-n3">{{ user.primaryEmail }}</h4>
+      <mat-list class="list-group">
+        <mat-list-item class="list-group-item d-flex justify-content-between align-items-center"
+          [routerLink]="['details']" [queryParams]="{ user:user }" routerLinkActive="active">
           <fa-icon [icon]="faUserEdit"></fa-icon>&nbsp;Tus datos
-        </button>
-        <button class="btn btn-outline-success" mat-raised-button [routerLink]="['grades']" routerLinkActive="active">
+        </mat-list-item>
+        <mat-list-item class="list-group-item d-flex justify-content-between align-items-center"
+          [routerLink]="['grades']" routerLinkActive="active">
           <fa-icon [icon]="faAward"></fa-icon>&nbsp;Calificaciones
-        </button>
-        <button class="btn btn-outline-danger" mat-raised-button (click)="onLogout()">
+        </mat-list-item>
+        <mat-list-item class="list-group-item d-flex justify-content-between align-items-center" (click)="onLogout()">
           <fa-icon [icon]="faSignOutAlt"></fa-icon>&nbsp;Cerrar sesión
-        </button>
-      </div>
+        </mat-list-item>
+      </mat-list>
     </div>
   </mat-card-content>
 </mat-card>

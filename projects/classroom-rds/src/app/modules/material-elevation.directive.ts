@@ -1,5 +1,4 @@
 import { Directive, ElementRef, HostListener, Input, Renderer2, OnChanges, SimpleChanges } from '@angular/core';
-
 @Directive({
   selector: '[appMaterialElevation]'
 })
@@ -9,7 +8,7 @@ export class MaterialElevationDirective implements OnChanges {
   defaultElevation = 0;
 
   @Input()
-  raisedElevation = 12;
+  raisedElevation = 2;
 
   constructor(
     private element: ElementRef,

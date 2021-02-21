@@ -1,6 +1,5 @@
 export interface User {
   creationTime?: string;
-  dayOfBirth?: Date;
   email?: string;
   familyName?: string;
   givenName?: string;

@@ -10,19 +10,19 @@
   <ng-container matColumnDef="unidad1">
     <mat-header-cell *matHeaderCellDef mat-sort-header>Unidad 1</mat-header-cell>
     <mat-cell *matCellDef="let row">{{row.unidad1==0?'-':row.unidad1}}</mat-cell>
-    <mat-footer-cell *matFooterCellDef> </mat-footer-cell>
+    <mat-footer-cell *matFooterCellDef> {{getAverage()[0]|number}} </mat-footer-cell>
   </ng-container>
 
   <ng-container matColumnDef="unidad2">
     <mat-header-cell *matHeaderCellDef mat-sort-header>Unidad 2</mat-header-cell>
     <mat-cell *matCellDef="let row">{{row.unidad2==0?'-':row.unidad2}}</mat-cell>
-    <mat-footer-cell *matFooterCellDef> </mat-footer-cell>
+    <mat-footer-cell *matFooterCellDef> {{getAverage()[1]|number}} </mat-footer-cell>
   </ng-container>
 
   <ng-container matColumnDef="unidad3">
     <mat-header-cell *matHeaderCellDef mat-sort-header>Unidad 3</mat-header-cell>
     <mat-cell *matCellDef="let row">{{row.unidad3==0?'-':row.unidad3}}</mat-cell>
-    <mat-footer-cell *matFooterCellDef> </mat-footer-cell>
+    <mat-footer-cell *matFooterCellDef> {{getAverage()[2]|number}}</mat-footer-cell>
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

@@ -1,0 +1,16 @@
+<div fxLayout="row wrap" fxLayoutAlign="space-between center">
+  <h2 mat-dialog-title>Configuración</h2>
+  <fa-icon mat-icon-button [icon]="faTimes" size="lg" (click)="close()" [matDialogClose]=""></fa-icon>
+</div>
+<mat-dialog-content>
+  <mat-card>
+    <div fxLayout="row" fxLayoutAlign="start top" fxLayoutGap="10px">
+      <mat-slide-toggle [checked]="isDarkTheme | async" labelPosition="before"
+        (change)="toggleDarkTheme($event.checked)">
+      </mat-slide-toggle>
+      <fa-icon [icon]="(isDarkTheme | async)?faMoon:faSun" size="lg"></fa-icon>
+      <div>Modo {{(isDarkTheme | async)?'nocturno':'diurno'}}</div>
+    </div>
+    <small>Disminuye la intensidad de luz emitida por la pantalla al utilizar una interfaz de color negro.</small>
+  </mat-card>
+</mat-dialog-content>

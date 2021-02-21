@@ -24,23 +24,23 @@ export class DashboardComponent implements OnInit {
       route: 'user',
       imgUrl: 'assets/images/assignment-grades2.png'
     },
-    {
+    /* {
       title: 'Sistema de calificaciones',
       description: 'Accede a la información de tus calificaciones si eres alumno, o califica a tus alumnos en todas las materias que impartes si eres profesor.',
       route: 'calificaciones',
       imgUrl: 'assets/images/assignment-grades2.png'
+    }, */
+    {
+      title: 'Salones y grupos',
+      description: 'Administra grados, grupos y horarios en la institución',
+      route: 'under-construction',
+      imgUrl: 'assets/images/schedule-administrator.png',
     },
     {
       title: 'Classroom',
       description: 'Consulta la información de tus clases si eres alumno, o modifica y actualiza la información si eres profesor o administrador.',
       route: 'clases',
       imgUrl: 'assets/images/classroom-administrator.png',
-    },
-    {
-      title: 'Salones y grupos',
-      description: 'Administra grados, grupos y horarios en la institución',
-      route: 'under-construction',
-      imgUrl: 'assets/images/schedule-administrator.png',
     },
   ];
   constructor(

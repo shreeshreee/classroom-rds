@@ -16,6 +16,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { SidenavComponent } from './layout/sidenav/sidenav.component';
 import { ConfigurationComponent } from './layout/configuration/configuration.component';
+import { ConfigComponent } from './layout/config/config.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ConfigurationComponent } from './layout/configuration/configuration.com
     HeaderComponent,
     SidenavComponent,
     FooterComponent,
-    ConfigurationComponent
+    ConfigurationComponent,
+    ConfigComponent
   ],
   imports: [
     CommonModule,
