@@ -24,7 +24,7 @@ const routes: Routes = [{
   path: '', component: LayoutComponent, children: [
     { path: '', component: HomeComponent },
     { path: 'config', component: ConfigComponent },
-    { path: 'c', loadChildren: () => import('./classroom/classroom.module').then(m => m.ClassroomModule), canActivate: [AuthGuard] },
+    { path: 'classroom', loadChildren: () => import('./classroom/classroom.module').then(m => m.ClassroomModule), canActivate: [AuthGuard] },
     { path: 'perfil', loadChildren: () => import('./classroom/user-profiles/user-profiles.module').then(m => m.UserProfilesModule), canActivate: [AuthGuard] },
     { path: 'calificaciones', loadChildren: () => import('./grades/grades.module').then(m => m.GradesModule), canActivate: [AuthGuard] },
     { path: 'clases', loadChildren: () => import('./classroom/courses/courses.module').then(m => m.CoursesModule), canActivate: [AuthGuard] },

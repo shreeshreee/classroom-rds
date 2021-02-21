@@ -3,7 +3,7 @@
     [attr.role]="isHandset ? 'dialog' : 'navigation'" [mode]="'side'" [opened]="isHandset == false" *ngIf="isOnline">
     <div fxLayout="column" fxLayoutAlign="space-between start">
       <mat-nav-list dense>
-        <mat-list-item [routerLink]="['/clases']" routerLinkActive="active">
+        <mat-list-item [routerLink]="['classroom','clases']" routerLinkActive="active">
           <fa-icon matListIcon [icon]="faChalkboardTeacher"></fa-icon>
           <span matLine [@animateText]="linkText ? 'show' : 'hide'">Cursos</span>
         </mat-list-item>
