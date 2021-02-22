@@ -55,7 +55,7 @@
             <h3>Fichero</h3>
         </p>
         <p class="comment">
-            <code>projects/classroom-rds/src/app/courses/courses-routing.module.ts</code>
+            <code>projects/classroom-rds/src/app/classroom/courses/courses-routing.module.ts</code>
         </p>
 
 
@@ -74,13 +74,13 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
 
-import { WellcomeComponent } from &#x27;./../shared/components/wellcome/wellcome.component&#x27;;
+import { WellcomeComponent } from &#x27;@rds-shared/components/wellcome/wellcome.component&#x27;;
 
+import { CourseResolver } from &#x27;./resolvers/course.resolver&#x27;;
+import { CoursesResolver } from &#x27;./resolvers/courses.resolver&#x27;;
 import { CourseComponent } from &#x27;./components/course/course.component&#x27;;
 import { CoursesListComponent } from &#x27;./components/courses-list/courses-list.component&#x27;;
 import { CoursesComponent } from &#x27;./containers/courses/courses.component&#x27;;
-import { CourseResolver } from &#x27;./services/course/course.resolver&#x27;;
-import { CoursesResolver } from &#x27;./services/course/courses.resolver&#x27;;
 
 
 const routes: Routes &#x3D; [
@@ -91,16 +91,16 @@ const routes: Routes &#x3D; [
         path: &#x27;:courseId&#x27;, component: CourseComponent, resolve: { course: CourseResolver }, children: [
           { path: &#x27;&#x27;, component: WellcomeComponent },
           {
-            path: &#x27;students&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./containers/students/students.module&#x27;).then(m &#x3D;&gt; m.StudentsModule)&quot;
+            path: &#x27;students&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;../students/students.module&#x27;).then(m &#x3D;&gt; m.StudentsModule)&quot;
           },
           {
-            path: &#x27;teachers&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./containers/teachers/teachers.module&#x27;).then(m &#x3D;&gt; m.TeachersModule)&quot;
+            path: &#x27;teachers&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;../teachers/teachers.module&#x27;).then(m &#x3D;&gt; m.TeachersModule)&quot;
           },
           {
-            path: &#x27;courseworks&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./containers/course-works/course-works.module&#x27;).then(m &#x3D;&gt; m.CourseWorksModule)&quot;
+            path: &#x27;courseworks&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;../course-works/course-works.module&#x27;).then(m &#x3D;&gt; m.CourseWorksModule)&quot;
           },
           {
-            path: &#x27;announcements&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./containers/announcements/announcements.module&#x27;).then(m &#x3D;&gt; m.AnnouncementsModule)&quot;
+            path: &#x27;announcements&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;../announcements/announcements.module&#x27;).then(m &#x3D;&gt; m.AnnouncementsModule)&quot;
           },
         ]
       },

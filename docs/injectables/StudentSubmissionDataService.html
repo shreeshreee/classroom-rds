@@ -108,7 +108,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="8" class="link-to-prism">projects/classroom-rds/src/app/store/student-submission/student-submission-data.service.ts:8</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">projects/classroom-rds/src/app/store/student-submission/student-submission-data.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -197,8 +197,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="16"
-                            class="link-to-prism">projects/classroom-rds/src/app/store/student-submission/student-submission-data.service.ts:16</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="20"
+                            class="link-to-prism">projects/classroom-rds/src/app/store/student-submission/student-submission-data.service.ts:20</a></div>
                 </td>
             </tr>
 
@@ -253,10 +253,14 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
+
 import { DefaultDataService, HttpUrlGenerator } from &#x27;@ngrx/data&#x27;;
+
+import { CourseWorksService } from &#x27;@rds-classroom/course-works/services/course-works.service&#x27;;
+
 import { from, Observable } from &#x27;rxjs&#x27;;
-import * as fromAlias from &#x27;.&#x27;
-import { CourseWorksService } from &#x27;~/app/courses/containers/course-works/services/course-works.service&#x27;;
+import * as fromStudentSubmission from &#x27;./&#x27;
+
 @Injectable()
 export class StudentSubmissionDataService extends DefaultDataService&lt;gapi.client.classroom.StudentSubmission&gt; {
   constructor(
@@ -264,7 +268,7 @@ export class StudentSubmissionDataService extends DefaultDataService&lt;gapi.cli
     httpUrlGenerator: HttpUrlGenerator,
     private courseWroksService: CourseWorksService,
   ) {
-    super(fromAlias.entityCollectionName, http, httpUrlGenerator);
+    super(fromStudentSubmission.entityCollectionName, http, httpUrlGenerator);
   }
   getWithQuery(queryParams: { courseId, courseWorkId }): Observable&lt;gapi.client.classroom.StudentSubmission[]&gt; {
     return from(

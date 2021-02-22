@@ -235,7 +235,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Devuelve : </b>        <code><a href="../miscellaneous/variables.html#gapi" target="_self" >Observable&lt;gapi.client.classroom.Guardian[]&gt;</a></code>
+                        <b>Devuelve : </b>    <code>Observable&lt;gapi.client.classroom.Guardian[]&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -256,9 +256,9 @@ import { Injectable } from &#x27;@angular/core&#x27;;
 
 import { DefaultDataService, HttpUrlGenerator } from &#x27;@ngrx/data&#x27;;
 
-import { from, Observable } from &#x27;rxjs&#x27;;
+import { UserProfilesService } from &#x27;@rds-classroom/user-profiles/services/user-profiles.service&#x27;;
 
-import { UserProfilesService } from &#x27;~/app/user-profiles/services/user-profiles.service&#x27;;
+import { from, Observable } from &#x27;rxjs&#x27;;
 import * as fromGuardian from &#x27;./&#x27;
 @Injectable()
 export class GuardianDataService extends DefaultDataService&lt;gapi.client.classroom.Guardian&gt; {

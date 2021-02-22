@@ -114,12 +114,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(swUpdate: <a href="https://angular.io/api/service-worker/SwUpdate" target="_blank">SwUpdate</a>, snackBar: MatSnackBar, titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, metaService: <a href="https://angular.io/api/platform-browser/Meta" target="_blank">Meta</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, activatedRoute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>)</code>
+<code>constructor(swUpdate: <a href="https://angular.io/api/service-worker/SwUpdate" target="_blank">SwUpdate</a>, snackBar: MatSnackBar, titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, metaService: <a href="https://angular.io/api/platform-browser/Meta" target="_blank">Meta</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, activatedRoute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, dialog: MatDialog)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">projects/classroom-rds/src/app/shared/services/seo.service.ts:13</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">projects/classroom-rds/src/app/shared/services/seo.service.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -208,6 +208,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -244,8 +256,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="46"
-                            class="link-to-prism">projects/classroom-rds/src/app/shared/services/seo.service.ts:46</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="49"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/services/seo.service.ts:49</a></div>
                 </td>
             </tr>
 
@@ -309,8 +321,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="23"
-                            class="link-to-prism">projects/classroom-rds/src/app/shared/services/seo.service.ts:23</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="26"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/services/seo.service.ts:26</a></div>
                 </td>
             </tr>
 
@@ -352,7 +364,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">projects/classroom-rds/src/app/shared/services/seo.service.ts:13</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">projects/classroom-rds/src/app/shared/services/seo.service.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -365,13 +377,15 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { SnackComponent } from &#x27;./../components/snack/snack.component&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
 import { MatSnackBar } from &#x27;@angular/material/snack-bar&#x27;;
 import { Title, Meta } from &#x27;@angular/platform-browser&#x27;;
 import { NavigationEnd, Router, ActivatedRoute } from &#x27;@angular/router&#x27;;
 import { SwUpdate } from &#x27;@angular/service-worker&#x27;;
 
 import { filter, map } from &#x27;rxjs/operators&#x27;;
+import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;,
@@ -384,7 +398,8 @@ export class SeoService {
     private titleService: Title,
     private metaService: Meta,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private dialog: MatDialog
   ) { }
 
   titleInit() {
@@ -418,7 +433,7 @@ export class SeoService {
     this.titleService.setTitle(title);
     this.metaService.addTags([
       {
-        name: &#x27;keywords&#x27;, content: &#x27;ngrx angular-material gapi firebase-auth firebase-realtime-database angular-flex-layout ngx-bootstrap firestore fontawesome5 angular11 angular-pwa google-classroom&#x27;
+        name: &#x27;keywords&#x27;, content: &#x27;escuela RDS Escuela Rafael Diaz Serdan educacion alumnos veracruz pierre faure montesory&#x27;
       },
       { name: &#x27;description&#x27;, content: description },
       { name: &#x27;robots&#x27;, content: &#x27;index, follow&#x27; },
@@ -426,7 +441,7 @@ export class SeoService {
       { httpEquiv: &#x27;X-UA-Compatible&#x27;, content: &#x27;IE&#x3D;edge&#x27; },
       { name: &#x27;author&#x27;, content: &#x27;Julio César Melchor Pinto&#x27; },
       { name: &#x27;viewport&#x27;, content: &#x27;width&#x3D;device-width, initial-scale&#x3D;1.0, shrink-to-fit&#x3D;no&#x27; },
-      { name: &#x27;date&#x27;, content: &#x27;2020-10-10&#x27;, scheme: &#x27;YYYY-MM-DD&#x27; },
+      { name: &#x27;date&#x27;, content: &#x27;2021-02-05&#x27;, scheme: &#x27;YYYY-MM-DD&#x27; },
       { name: &#x27;application-name&#x27;, content: title },
       { name: &#x27;apple-mobile-web-app-status-bar&#x27;, content: &#x27;black-translucent&#x27; },
       { name: &#x27;theme-color&#x27;, content: &#x27;#1976d2&#x27; },
@@ -439,13 +454,13 @@ export class SeoService {
       { name: &#x27;msapplication-wide310x150logo&#x27;, content: &#x27;assets/icons/mstile-icon-558-270.png&#x27; },
       // OpenGraph metatags
       { property: &#x27;og:title&#x27;, content: title },
-      { property: &#x27;og:type&#x27;, content: &#x27;profile&#x27; },
-      { property: &#x27;profile:first_name&#x27;, content: &#x27;Julio&#x27; },
-      { property: &#x27;profile:last_name&#x27;, content: &#x27;Melchor&#x27; },
-      { property: &#x27;profile:username&#x27;, content: &#x27;jcmelchorp&#x27; },
-      { property: &#x27;profile:gender&#x27;, content: &#x27;male&#x27; },
+      { property: &#x27;og:type&#x27;, content: &#x27;website&#x27; },
+      /*  { property: &#x27;profile:first_name&#x27;, content: &#x27;Julio&#x27; },
+       { property: &#x27;profile:last_name&#x27;, content: &#x27;Melchor&#x27; },
+       { property: &#x27;profile:username&#x27;, content: &#x27;jcmelchorp&#x27; },
+       { property: &#x27;profile:gender&#x27;, content: &#x27;male&#x27; }, */
       { property: &#x27;og:site_name&#x27;, content: title },
-      { property: &#x27;og:url&#x27;, content: &#x27;https://fireclassroom.web.app&#x27; },
+      { property: &#x27;og:url&#x27;, content: &#x27;http://rds.edu.mx&#x27; },
       { property: &#x27;og:image:url&#x27;, content: image },
       { property: &#x27;og:image:secure_url&#x27;, content: image, },
       { property: &#x27;og:image:alt&#x27;, content: &#x27;Website view example&#x27; },
@@ -460,6 +475,12 @@ export class SeoService {
         this.snackBar.open(
           &#x27;Se han hecho cambios desde la última visita. Actualiza la página para continuar&#x27;
         );
+        const alert &#x3D; await this.dialog.open(SnackComponent, {
+          data: {
+            header: &#x60;This app has been updated!&#x60;,
+            message: &#x60;Newer version of the app is available. It&#x27;s a quick refresh away!&#x60;
+          }
+        });
       });
     }
   }

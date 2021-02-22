@@ -69,33 +69,6 @@
             </p>
 
 
-            <section>
-    <h3 id="index">Índice</h3>
-    <table class="table table-sm table-bordered index-table">
-        <tbody>
-
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Métodos</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#getById">getById</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
 
             <section>
     <h3 id="constructor">Constructor</h3>
@@ -146,82 +119,7 @@
         </table>
 </section>
 
-            <section>
-    
-    <h3 id="methods">
-        Métodos
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getById"></a>
-                    <span class="name">
-                        <b>
-                            getById
-                        </b>
-                        <a href="#getById"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
 
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="14"
-                            class="link-to-prism">projects/classroom-rds/src/app/store/user-profile/user-profile-entity.service.ts:14</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parámetros :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Nombre</td>
-                                    <td>Tipo</td>
-                                    <td>Opcional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>id</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Devuelve : </b>        <code><a href="../interfaces/User.html" target="_self" >Observable&lt;gapi.client.classroom.UserProfile&gt;</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
 
     </div>
 
@@ -240,9 +138,7 @@ export class UserProfileEntityService extends EntityCollectionServiceBase&lt;gap
   constructor(readonly serviceElementsFactory: EntityCollectionServiceElementsFactory) {
     super(fromUserProfile.entityCollectionName, serviceElementsFactory);
   }
-  getById(id: string): Observable&lt;gapi.client.classroom.UserProfile&gt; {
-    return this.getByKey(id);
-  }
+
 }
 </code></pre>
     </div>

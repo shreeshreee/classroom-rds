@@ -108,7 +108,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="11" class="link-to-prism">projects/classroom-rds/src/app/store/course-work/course-work-data-service.service.ts:11</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">projects/classroom-rds/src/app/store/course-work/course-work-data-service.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -197,8 +197,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="19"
-                            class="link-to-prism">projects/classroom-rds/src/app/store/course-work/course-work-data-service.service.ts:19</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="20"
+                            class="link-to-prism">projects/classroom-rds/src/app/store/course-work/course-work-data-service.service.ts:20</a></div>
                 </td>
             </tr>
 
@@ -235,7 +235,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Devuelve : </b>        <code><a href="../classes/Course.html" target="_self" >Observable&lt;gapi.client.classroom.CourseWork[]&gt;</a></code>
+                        <b>Devuelve : </b>    <code>Observable&lt;gapi.client.classroom.CourseWork[]&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -256,10 +256,11 @@ import { Injectable } from &#x27;@angular/core&#x27;;
 
 import { DefaultDataService, HttpUrlGenerator } from &#x27;@ngrx/data&#x27;;
 
+import { CourseWorksService } from &#x27;@rds-classroom/course-works/services/course-works.service&#x27;;
+
 import { from, Observable } from &#x27;rxjs&#x27;;
 
 import * as fromCourseWork from &#x27;./&#x27;;
-import { CourseWorksService } from &#x27;~/app/courses/containers/course-works/services/course-works.service&#x27;;
 @Injectable()
 export class CourseWorkDataService extends DefaultDataService&lt;gapi.client.classroom.CourseWork&gt; {
   constructor(

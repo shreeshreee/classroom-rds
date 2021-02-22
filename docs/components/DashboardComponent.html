@@ -151,6 +151,9 @@
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
+                            <li>
+                                <a href="#optionsByRole">optionsByRole</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -174,7 +177,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="39" class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:39</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="45" class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:45</a></div>
                             </td>
                         </tr>
 
@@ -243,8 +246,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="44"
-                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:44</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="50"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:50</a></div>
                 </td>
             </tr>
 
@@ -255,6 +258,76 @@
                     <div class="io-description">
                         <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="optionsByRole"></a>
+                    <span class="name">
+                        <b>
+                            optionsByRole
+                        </b>
+                        <a href="#optionsByRole"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>optionsByRole(userId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="53"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:53</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>userId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -288,22 +361,28 @@
                         <td class="col-md-4">
                             <i>Valor por defecto : </i><code>[
     {
-      title: &#x27;Sistema de administración&#x27;,
-      description: &#x27;Panel personalizado para la administración de Google Admin.&#x27;,
-      route: &#x27;admin&#x27;,
-      imgUrl: &#x27;assets/images/system-administrator.png&#x27;
+      title: &#x27;Información Académica&#x27;,
+      description: &#x27;Accede a toda tu información como alumno.&#x27;,
+      route: &#x27;user&#x27;,
+      imgUrl: &#x27;assets/images/assignment-grades2.png&#x27;
     },
-    {
-      title: &#x27;Classroom&#x27;,
-      description: &#x27;Realiza funciones globales y particulares en Google Classroom&#x27;,
-      route: &#x27;c&#x27;,
-      imgUrl: &#x27;assets/images/classroom-administrator.png&#x27;,
-    },
+    /* {
+      title: &#x27;Sistema de calificaciones&#x27;,
+      description: &#x27;Accede a la información de tus calificaciones si eres alumno, o califica a tus alumnos en todas las materias que impartes si eres profesor.&#x27;,
+      route: &#x27;calificaciones&#x27;,
+      imgUrl: &#x27;assets/images/assignment-grades2.png&#x27;
+    }, */
     {
       title: &#x27;Salones y grupos&#x27;,
       description: &#x27;Administra grados, grupos y horarios en la institución&#x27;,
-      route: &#x27;rooms&#x27;,
+      route: &#x27;under-construction&#x27;,
       imgUrl: &#x27;assets/images/schedule-administrator.png&#x27;,
+    },
+    {
+      title: &#x27;Classroom&#x27;,
+      description: &#x27;Consulta la información de tus clases si eres alumno, o modifica y actualiza la información si eres profesor o administrador.&#x27;,
+      route: &#x27;clases&#x27;,
+      imgUrl: &#x27;assets/images/classroom-administrator.png&#x27;,
     },
   ]</code>
                         </td>
@@ -364,9 +443,9 @@ import { AppState } from &#x27;@rds-store/app.state&#x27;;
 
 import { User } from &#x27;@rds-auth/models/user.model&#x27;;
 import { selectUser } from &#x27;@rds-auth/state/auth.selectors&#x27;;
+import * as fromAuthActions from &#x27;@rds-auth/state/auth.actions&#x27;;
 
 import { Observable } from &#x27;rxjs&#x27;;
-
 @Component({
   selector: &#x27;app-dashboard&#x27;,
   templateUrl: &#x27;./dashboard.component.html&#x27;,
@@ -377,22 +456,28 @@ export class DashboardComponent implements OnInit {
   /** Based on the screen size, switch from standard to one column per row */
   cards &#x3D; [
     {
-      title: &#x27;Sistema de administración&#x27;,
-      description: &#x27;Panel personalizado para la administración de Google Admin.&#x27;,
-      route: &#x27;admin&#x27;,
-      imgUrl: &#x27;assets/images/system-administrator.png&#x27;
+      title: &#x27;Información Académica&#x27;,
+      description: &#x27;Accede a toda tu información como alumno.&#x27;,
+      route: &#x27;user&#x27;,
+      imgUrl: &#x27;assets/images/assignment-grades2.png&#x27;
     },
-    {
-      title: &#x27;Classroom&#x27;,
-      description: &#x27;Realiza funciones globales y particulares en Google Classroom&#x27;,
-      route: &#x27;c&#x27;,
-      imgUrl: &#x27;assets/images/classroom-administrator.png&#x27;,
-    },
+    /* {
+      title: &#x27;Sistema de calificaciones&#x27;,
+      description: &#x27;Accede a la información de tus calificaciones si eres alumno, o califica a tus alumnos en todas las materias que impartes si eres profesor.&#x27;,
+      route: &#x27;calificaciones&#x27;,
+      imgUrl: &#x27;assets/images/assignment-grades2.png&#x27;
+    }, */
     {
       title: &#x27;Salones y grupos&#x27;,
       description: &#x27;Administra grados, grupos y horarios en la institución&#x27;,
-      route: &#x27;rooms&#x27;,
+      route: &#x27;under-construction&#x27;,
       imgUrl: &#x27;assets/images/schedule-administrator.png&#x27;,
+    },
+    {
+      title: &#x27;Classroom&#x27;,
+      description: &#x27;Consulta la información de tus clases si eres alumno, o modifica y actualiza la información si eres profesor o administrador.&#x27;,
+      route: &#x27;clases&#x27;,
+      imgUrl: &#x27;assets/images/classroom-administrator.png&#x27;,
     },
   ];
   constructor(
@@ -402,36 +487,44 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.user$ &#x3D; this.store.pipe(select(selectUser));
   }
-
+  optionsByRole(userId: string) {
+    this.store.dispatch(fromAuthActions.checkTeacherRole({ id: userId }));
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;px-5 py-3&quot;&gt;
-  &lt;div *ngIf&#x3D;&quot;(user$|async) as user&quot;&gt;
-    &lt;div class&#x3D;&quot;&quot; fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;left center&quot;&gt;
-      &lt;div&gt;
-        &lt;!-- &lt;img class&#x3D;&quot;img-fluid&quot; src&#x3D;&quot;assets/images/rds-classroom.png&quot; /&gt; --&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-        &lt;p class&#x3D;&quot;display-4 display-4-responsive&quot;&gt; Bienvenido &lt;/p&gt;
-        &lt;p class&#x3D;&quot;h4 h2-responsive text-dark-50&quot;&gt; {{user.name}}&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;px-2&quot; *ngIf&#x3D;&quot;(user$|async) as user&quot;&gt;
+  &lt;div class&#x3D;&quot;py-2&quot;&gt;
+    &lt;mat-card&gt;
+      &lt;mat-card-header&gt;
+        &lt;img mat-card-avatar src&#x3D;&quot;assets/images/rds-newlogo-transparent.png&quot;&gt;
+        &lt;mat-card-title class&#x3D;&quot;view-title&quot;&gt;Bienvenido&lt;/mat-card-title&gt;
+        &lt;mat-card-subtitle class&#x3D;&quot;view-subtitle&quot;&gt;{{user.name}}&lt;br&gt;
+        &lt;/mat-card-subtitle&gt;
+      &lt;/mat-card-header&gt;
+      &lt;mat-card-content&gt;
+        &lt;span class&#x3D;&quot;fs-1&quot;&gt;Panel de acceso a servicios de información para estudiantes y profesores.&lt;/span&gt;
+      &lt;/mat-card-content&gt;
+    &lt;/mat-card&gt;
   &lt;/div&gt;
+
   &lt;div fxLayout&#x3D;&quot;row wrap&quot; fxLayout.lt-sm&#x3D;&quot;column&quot; fxLayoutGap&#x3D;&quot;10px&quot; fxLayoutAlign&#x3D;&quot;flex-start&quot;&gt;
     &lt;mat-card *ngFor&#x3D;&quot;let item of cards&quot; class&#x3D;&quot;mb-2 dashboard-cards&quot; fxFlex&#x3D;&quot;0 1 calc(33.3% - 10px)&quot;
-      fxFlex.lt-md&#x3D;&quot;0 1 calc(50% - 10px)&quot; fxFlex.lt-sm&#x3D;&quot;100%&quot; [routerLink]&#x3D;&quot;[item.route]&quot;&gt;
+      fxFlex.lt-lg&#x3D;&quot;0 1 calc(50% - 10px)&quot; fxFlex.lt-sm&#x3D;&quot;100%&quot; [routerLink]&#x3D;&quot;[item.route]&quot; appMaterialElevation&gt;
       &lt;mat-card-header&gt;
         &lt;mat-card-title&gt;
           {{ item.title }}
         &lt;/mat-card-title&gt;
-        &lt;mat-card-subtitle&gt;{{ item.description }}&lt;/mat-card-subtitle&gt;
+        &lt;mat-card-subtitle&gt;
+          &lt;p&gt;&lt;small class&#x3D;&quot;lh-sm&quot;&gt;{{ item.description }}&lt;/small&gt;&lt;/p&gt;
+        &lt;/mat-card-subtitle&gt;
       &lt;/mat-card-header&gt;
       &lt;img mat-card-image [src]&#x3D;&quot;item.imgUrl&quot; /&gt;
     &lt;/mat-card&gt;
   &lt;/div&gt;
+
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -440,7 +533,40 @@ export class DashboardComponent implements OnInit {
                 <p class="comment">
                     <code>./dashboard.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">@import &quot;./../../../../assets/themes/colors.scss&quot;;
+mat-card::ng-deep.mat-card-header-text {
+  width: 100%;
+}
+
+.img-fluid {
+  max-height: 120px;
+}
+
+.dashboard-card {
+  position: absolute;
+  height: fit-content;
+  width: auto;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  //border: 1px solid gray;
+  box-shadow: none;
+}
+
+.view-title {
+  color:$rds-logo-color;
+  font-size: calc(1rem + 1.5vw);
+  font-weight: 800;
+}
+.view-subtitle {
+  margin-top: -50px;
+  font-size: calc(0.5rem + 1vw);
+  font-weight: 400;
+}
+
+
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -468,9 +594,9 @@ export class DashboardComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="px-5 py-3">  <div *ngIf="(user$|async) as user">    <div class="" fxLayout="row" fxLayoutAlign="left center">      <div>        <!-- <img class="img-fluid" src="assets/images/rds-classroom.png" /> -->      </div>      <div>        <p class="display-4 display-4-responsive"> Bienvenido </p>        <p class="h4 h2-responsive text-dark-50"> {{user.name}}</p>      </div>    </div>  </div>  <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="10px" fxLayoutAlign="flex-start">    <mat-card *ngFor="let item of cards" class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)"      fxFlex.lt-md="0 1 calc(50% - 10px)" fxFlex.lt-sm="100%" [routerLink]="[item.route]">      <mat-card-header>        <mat-card-title>          {{ item.title }}        </mat-card-title>        <mat-card-subtitle>{{ item.description }}</mat-card-subtitle>      </mat-card-header>      <img mat-card-image [src]="item.imgUrl" />    </mat-card>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GalletasComponent', 'selector': 'app-galletas'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
-    var DIRECTIVES = [];
+        var COMPONENT_TEMPLATE = '<div><div class="px-2" *ngIf="(user$|async) as user">  <div class="py-2">    <mat-card>      <mat-card-header>        <img mat-card-avatar src="assets/images/rds-newlogo-transparent.png">        <mat-card-title class="view-title">Bienvenido</mat-card-title>        <mat-card-subtitle class="view-subtitle">{{user.name}}<br>        </mat-card-subtitle>      </mat-card-header>      <mat-card-content>        <span class="fs-1">Panel de acceso a servicios de información para estudiantes y profesores.</span>      </mat-card-content>    </mat-card>  </div>  <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="10px" fxLayoutAlign="flex-start">    <mat-card *ngFor="let item of cards" class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)"      fxFlex.lt-lg="0 1 calc(50% - 10px)" fxFlex.lt-sm="100%" [routerLink]="[item.route]" appMaterialElevation>      <mat-card-header>        <mat-card-title>          {{ item.title }}        </mat-card-title>        <mat-card-subtitle>          <p><small class="lh-sm">{{ item.description }}</small></p>        </mat-card-subtitle>      </mat-card-header>      <img mat-card-image [src]="item.imgUrl" />    </mat-card>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'ConfigurationComponent', 'selector': 'app-configuration'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GalletasComponent', 'selector': 'app-galletas'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
+    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'}];
     var ACTUAL_COMPONENT = {'name': 'DashboardComponent'};
 </script>
 <script src="../js/tree.js"></script>

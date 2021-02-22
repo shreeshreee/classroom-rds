@@ -277,19 +277,25 @@ export class LogoComponent implements OnInit {
                 <p class="comment">
                     <code>./logo.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">h1 span {
+                <pre class="line-numbers"><code class="language-scss">@import &quot;./../../../../assets/themes/colors.scss&quot;;
+h1 span {
   font-family: &#x27;Fredoka One&#x27; ;
   font-size: 1.8em;
   height: 200px;
   position: absolute;
   width: 30px;
   transform-origin: bottom center;
-  color:#0063a3;
-  @media (max-width: 960px) {
+  color:$rds-logo-color;
+  @media (min-width: 768px) and (max-width: 991.98px) {
     height: 150px;
     font-size: 1.3em;
     width: 20px;
   }
+  @media (max-width: 767.98px) {
+    height: 100px;
+    font-size: 0.8em;
+    width: 10px;
+   }
 }
 .img-casa {
   position: absolute;
@@ -297,11 +303,16 @@ export class LogoComponent implements OnInit {
   width: auto;
   margin-top: 70px;
   margin-left:-70px;
-  @media (max-width: 960px) {
+  @media (min-width: 768px) and (max-width: 991.98px) {
     height: 140px;
     margin-left: -50px;
     margin-top: 50px;
   }
+  @media (max-width: 767.98px) {
+    height: 80px;
+    margin-left: -35px;
+    margin-top: 40px;
+   }
 }
 .img-personas {
   position: absolute;
@@ -309,11 +320,16 @@ export class LogoComponent implements OnInit {
   width: auto;
   margin-top: 190px;
   margin-left: -180px;
-  @media (max-width: 960px) {
+  @media (min-width: 768px) and (max-width: 991.98px) {
     height: 170px;
     margin-left: -140px;
     margin-top: 140px;
   }
+  @media (max-width: 767.98px) {
+    height: 110px;
+    margin-left: -90px;
+    margin-top: 90px;
+   }
 }
 
 .char01 { transform: rotate(300deg); }
@@ -371,8 +387,8 @@ export class LogoComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div>  <h1>    <span class="char01">E</span>    <span class="char02">s</span>    <span class="char03">c</span>    <span class="char04">u</span>    <span class="char05">e</span>    <span class="char06">l</span>    <span class="char07">a</span>    <span class="char08"></span>    <span class="char09">R</span>    <span class="char10">a</span>    <span class="char11">f</span>    <span class="char12">a</span>    <span class="char13">e</span>    <span class="char14">l</span>    <span class="char15"></span>    <span class="char16">D</span>    <span class="char17">í</span>    <span class="char18">a</span>    <span class="char19">z</span>    <span class="char20"></span>    <span class="char21">S</span>    <span class="char22">e</span>    <span class="char23">r</span>    <span class="char24">d</span>    <span class="char25">á</span>    <span class="char26">n</span>  </h1>  <img class="img-casa" src="assets/images/rds-house-words.png" />  <img class="img-personas" src="assets/images/rds-personas.png" /></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GalletasComponent', 'selector': 'app-galletas'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
-    var DIRECTIVES = [];
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'ConfigurationComponent', 'selector': 'app-configuration'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GalletasComponent', 'selector': 'app-galletas'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
+    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'}];
     var ACTUAL_COMPONENT = {'name': 'LogoComponent'};
 </script>
 <script src="../js/tree.js"></script>

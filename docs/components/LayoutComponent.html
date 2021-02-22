@@ -125,16 +125,13 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#alert">alert</a>
-                            </li>
-                            <li>
-                                <a href="#dismissible">dismissible</a>
-                            </li>
-                            <li>
                                 <a href="#faCookieBite">faCookieBite</a>
                             </li>
                             <li>
                                 <a href="#isAdmin$">isAdmin$</a>
+                            </li>
+                            <li>
+                                <a href="#isDarkTheme">isDarkTheme</a>
                             </li>
                             <li>
                                 <a href="#isHandset$">isHandset$</a>
@@ -187,12 +184,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(layoutService: <a href="../injectables/LayoutService.html">LayoutService</a>, store: <a href="../interfaces/AppState.html">Store<AppState></a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(layoutService: <a href="../injectables/LayoutService.html">LayoutService</a>, store: <a href="../interfaces/AppState.html">Store<AppState></a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, themeService: <a href="../injectables/ThemeService.html">ThemeService</a>, dialog: MatDialog)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="36" class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:36</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="37" class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:37</a></div>
                             </td>
                         </tr>
 
@@ -245,6 +242,30 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>themeService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ThemeService.html" target="_self" >ThemeService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -285,8 +306,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="58"
-                            class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:58</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="60"
+                            class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:60</a></div>
                 </td>
             </tr>
 
@@ -355,8 +376,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="89"
-                            class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:89</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="77"
+                            class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:77</a></div>
                 </td>
             </tr>
 
@@ -382,67 +403,6 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="alert"></a>
-                        <span class="name">
-                            <b>
-                            alert</b>
-                            <a href="#alert"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Tipo : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>{
-    type: &#x27;success&#x27;,
-    msg: &#x60;Sigue &lt;strong&gt;en vivo&lt;/strong&gt; la transmisión de la elaboración &lt;strong&gt;galletas&lt;/strong&gt; del día del amor y la amistad. &lt;strong&gt;Pulsa esta notificación&lt;/strong&gt;.&#x60;
-  }</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="33" class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:33</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="dismissible"></a>
-                        <span class="name">
-                            <b>
-                            dismissible</b>
-                            <a href="#dismissible"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>true</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="32" class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:32</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="faCookieBite"></a>
                         <span class="name">
                             <b>
@@ -458,7 +418,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="31" class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:31</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="36" class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:36</a></div>
                             </td>
                         </tr>
 
@@ -485,7 +445,34 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="28" class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:28</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="33" class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isDarkTheme"></a>
+                        <span class="name">
+                            <b>
+                            isDarkTheme</b>
+                            <a href="#isDarkTheme"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="37" class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:37</a></div>
                             </td>
                         </tr>
 
@@ -512,7 +499,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="25" class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:25</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="30" class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -539,7 +526,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="27" class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:27</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="32" class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -566,7 +553,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="29" class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:29</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="34" class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:34</a></div>
                             </td>
                         </tr>
 
@@ -592,7 +579,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="30" class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:30</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="35" class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:35</a></div>
                             </td>
                         </tr>
 
@@ -619,7 +606,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="26" class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:26</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="31" class="link-to-prism">projects/classroom-rds/src/app/core/layout/layout.component.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -634,6 +621,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from &#x27;@angular/router&#x27;;
+import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
 
 import { faCookieBite } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
 
@@ -649,7 +637,11 @@ import { loadApp } from &#x27;@rds-store/app/actions/app.actions&#x27;;
 
 import { Observable } from &#x27;rxjs&#x27;;
 
+import { ThemeService } from &#x27;./../../shared/services/theme.service&#x27;;
+
 import { LayoutService } from &#x27;./layout.service&#x27;;
+
+import { ConfigComponent } from &#x27;./config/config.component&#x27;;
 @Component({
   selector: &#x27;app-layout&#x27;,
   templateUrl: &#x27;./layout.component.html&#x27;,
@@ -663,20 +655,17 @@ export class LayoutComponent {
   isTeacher$: Observable&lt;boolean&gt;;
   loading &#x3D; false;
   faCookieBite &#x3D; faCookieBite;
-  dismissible &#x3D; true;
-  alert: any &#x3D; {
-    type: &#x27;success&#x27;,
-    msg: &#x60;Sigue &lt;strong&gt;en vivo&lt;/strong&gt; la transmisión de la elaboración &lt;strong&gt;galletas&lt;/strong&gt; del día del amor y la amistad. &lt;strong&gt;Pulsa esta notificación&lt;/strong&gt;.&#x60;
-  };
+  isDarkTheme: Observable&lt;boolean&gt;;
   constructor(
     private layoutService: LayoutService,
     private store: Store&lt;AppState&gt;,
     private router: Router,
+    private themeService: ThemeService,
+    private dialog: MatDialog,
   ) {
     this.router.events.subscribe((event: RouterEvent) &#x3D;&gt; {
       this.navigationInterceptor(event)
     });
-
     const user: User &#x3D; JSON.parse(localStorage.getItem(&#x27;user&#x27;));
     if (user) {
       this.store.dispatch(signInSuccess({ user }));
@@ -690,61 +679,42 @@ export class LayoutComponent {
   }
   // Shows and hides the loading spinner during RouterEvent changes
   navigationInterceptor(event: RouterEvent): void {
-    if (event instanceof NavigationStart) {
-      this.loading &#x3D; true
+    switch (true) {
+      case event instanceof NavigationStart: {
+        this.loading &#x3D; true;
+        break;
+      }
+      case event instanceof NavigationEnd:
+      case event instanceof NavigationCancel:
+      case event instanceof NavigationError: {
+        this.loading &#x3D; false;
+        break;
+      }
+      default: {
+        break;
+      }
     }
-    if (event instanceof NavigationEnd) {
-      this.loading &#x3D; false
-    }
-    // Set loading state to false in both of the below events to hide the spinner in case a request fails
-    if (event instanceof NavigationCancel) {
-      this.loading &#x3D; false
-    }
-    if (event instanceof NavigationError) {
-      this.loading &#x3D; false
-    }
-    /* switch (true) {
-     case event instanceof NavigationStart: {
-       this.loading &#x3D; true;
-       break;
-     }
-     case event instanceof NavigationEnd:
-     case event instanceof NavigationCancel:
-     case event instanceof NavigationError: {
-       this.loading &#x3D; false;
-       break;
-     }
-     default: {
-       break;
-     }
-   }
- });*/
   }
-  ngOnInit(): void { }
-
+  ngOnInit(): void {
+    this.isDarkTheme &#x3D; this.themeService.isDarkTheme;
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div fxLayout&#x3D;&quot;column&quot; fxFlexFill&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div [ngClass]&#x3D;&quot;{&#x27;dark-theme&#x27;: isDarkTheme | async}&quot; fxLayout&#x3D;&quot;column&quot; fxFlexFill&gt;
   &lt;app-header [user]&#x3D;&quot;(user$|async)&quot; [isHandset]&#x3D;&quot;(isHandset$|async)&quot; [isAdmin]&#x3D;&quot;(isAdmin$|async)&quot;
     [isTeacher]&#x3D;&quot;(isTeacher$|async)&quot; [isOnline]&#x3D;&quot;(isOnline$|async)&quot;&gt;
   &lt;/app-header&gt;
-  &lt;div *ngIf&#x3D;&quot;loading&quot; class&#x3D;&quot;w-100&quot;&gt;
+  &lt;div *ngIf&#x3D;&quot;loading&quot;&gt;
     &lt;mat-progress-bar mode&#x3D;&quot;query&quot; color&#x3D;&quot;primary&quot;&gt; &lt;/mat-progress-bar&gt;
   &lt;/div&gt;
-
-  &lt;alert #banner [type]&#x3D;&quot;alert.type&quot; (click)&#x3D;&quot;banner.close()&quot; [routerLink]&#x3D;&quot;[&#x27;galletas&#x27;]&quot; [dismissible]&#x3D;&quot;dismissible&quot;&gt;
-    &lt;span [innerHtml]&#x3D;&quot;(alert.msg)&quot;&gt;&lt;/span&gt;
-  &lt;/alert&gt;
-
   &lt;div fxFlex&gt;
     &lt;app-sidenav [isHandset]&#x3D;&quot;(isHandset$|async)&quot; [isOnline]&#x3D;&quot;(isOnline$|async)&quot; [user]&#x3D;&quot;(user$|async)&quot;
       [isAdmin]&#x3D;&quot;(isAdmin$|async)&quot; [isTeacher]&#x3D;&quot;(isTeacher$|async)&quot;&gt;
     &lt;/app-sidenav&gt;
   &lt;/div&gt;
-  &lt;app-footer [isHandset]&#x3D;&quot;(isHandset$|async)&quot; *ngIf&#x3D;&quot;!(isOnline$|async)&quot; fxFlexOffset&#x3D;&quot;auto&quot;&gt;&lt;/app-footer&gt;
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -753,7 +723,18 @@ export class LayoutComponent {
                 <p class="comment">
                     <code>./layout.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">
+                <pre class="line-numbers"><code class="language-scss">@import &quot;./../../../assets/themes/colors.scss&quot;;
+.display-4-responsive {
+  color:$rds-logo-color;
+  font-size: calc(1rem + 3vw);
+  font-weight: 100;
+}
+.h4-responsive {
+  margin-top: -20px;
+  font-size: calc(0.5rem + 1.5vw);
+  font-weight: 100;
+}
+
 </code></pre>
     </div>
 
@@ -782,9 +763,9 @@ export class LayoutComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div fxLayout="column" fxFlexFill>  <app-header [user]="(user$|async)" [isHandset]="(isHandset$|async)" [isAdmin]="(isAdmin$|async)"    [isTeacher]="(isTeacher$|async)" [isOnline]="(isOnline$|async)">  </app-header>  <div *ngIf="loading" class="w-100">    <mat-progress-bar mode="query" color="primary"> </mat-progress-bar>  </div>  <alert #banner [type]="alert.type" (click)="banner.close()" [routerLink]="[\'galletas\']" [dismissible]="dismissible">    <span [innerHtml]="(alert.msg)"></span>  </alert>  <div fxFlex>    <app-sidenav [isHandset]="(isHandset$|async)" [isOnline]="(isOnline$|async)" [user]="(user$|async)"      [isAdmin]="(isAdmin$|async)" [isTeacher]="(isTeacher$|async)">    </app-sidenav>  </div>  <app-footer [isHandset]="(isHandset$|async)" *ngIf="!(isOnline$|async)" fxFlexOffset="auto"></app-footer></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GalletasComponent', 'selector': 'app-galletas'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
-    var DIRECTIVES = [];
+        var COMPONENT_TEMPLATE = '<div><div [ngClass]="{\'dark-theme\': isDarkTheme | async}" fxLayout="column" fxFlexFill>  <app-header [user]="(user$|async)" [isHandset]="(isHandset$|async)" [isAdmin]="(isAdmin$|async)"    [isTeacher]="(isTeacher$|async)" [isOnline]="(isOnline$|async)">  </app-header>  <div *ngIf="loading">    <mat-progress-bar mode="query" color="primary"> </mat-progress-bar>  </div>  <div fxFlex>    <app-sidenav [isHandset]="(isHandset$|async)" [isOnline]="(isOnline$|async)" [user]="(user$|async)"      [isAdmin]="(isAdmin$|async)" [isTeacher]="(isTeacher$|async)">    </app-sidenav>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'ConfigurationComponent', 'selector': 'app-configuration'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GalletasComponent', 'selector': 'app-galletas'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
+    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'}];
     var ACTUAL_COMPONENT = {'name': 'LayoutComponent'};
 </script>
 <script src="../js/tree.js"></script>

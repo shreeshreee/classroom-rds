@@ -76,6 +76,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#getUser$">getUser$</a>
+                            </li>
+                            <li>
                                 <a href="#init$">init$</a>
                             </li>
                             <li>
@@ -106,12 +109,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(actions$: Actions, authService: <a href="../injectables/AuthService.html">AuthService</a>)</code>
+<code>constructor(actions$: Actions, authService: <a href="../injectables/AuthService.html">AuthService</a>, authFireService: <a href="../injectables/AuthFireService.html">AuthFireService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="85" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:85</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="130" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:130</a></div>
                             </td>
                         </tr>
 
@@ -152,6 +155,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>authFireService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthFireService.html" target="_self" >AuthFireService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -167,6 +182,67 @@
         <h3 id="inputs">
             Propiedades
         </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getUser$"></a>
+                        <span class="name">
+                            <b>
+                            getUser$</b>
+                            <a href="#getUser$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>createEffect(
+    () &#x3D;&gt;
+      this.actions$.pipe(
+        ofType(fromAuthActions.getUser),
+        switchMap(() &#x3D;&gt; this.authFireService.user$
+          .pipe(
+            take(1),
+            map((authData: any) &#x3D;&gt; {
+              if (authData) {
+                //console.log(authData)
+                const user &#x3D; {
+                  id: authData.user.providerData[0].uid,
+                  name: authData.user.displayName,
+                  givenName: authData.additionalUserInfo.profile.given_name,
+                  familyName: authData.additionalUserInfo.family_name,
+                  email: authData.user.email,
+                  photoUrl: authData.user.photoURL,
+                  isTeacher: authData.isTeacher,
+                  isAdmin: authData.isAdmin,
+                  isNew: authData.additionalUserInfo.isNewUser,
+                  isVerified: authData.user.emailVerified,
+                  creationTime: authData.user.metadata.creationTime,
+                  lastLogin: authData.user.metadata.lastSignInTime,
+                  uid: authData.user.uid
+                };
+                return fromAuthActions.signInSuccess({ user });
+              } else {
+                return fromAuthActions.signInFailure({ error: authData });
+
+              }
+            }),
+            catchError((error) &#x3D;&gt; of(fromAuthActions.authError({ error })))
+          )
+        )
+      ),
+  )</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="90" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:90</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -194,7 +270,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="83" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:83</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="128" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:128</a></div>
                             </td>
                         </tr>
 
@@ -222,11 +298,14 @@
         switchMap(() &#x3D;&gt; this.authService.handleSignInClick()
           .pipe(
             map((res) &#x3D;&gt; {
+              //console.log(res)
               return {
                 id: res.user.providerData[0].uid,
                 name: res.user.displayName,
+                //givenName: res.additionalUserInfo.profile.given_name,
+                //familyName: res.additionalUserInfo.family_name,
                 email: res.user.email,
-                photoUrl: res.user.providerData[0].photoURL ? res.user.providerData[0].photoURL : res.user.photoURL,
+                photoUrl: (res.user.photoURL) ? (res.user.photoURL) : res.user.providerData[0].photoURL,
                 isNew: res.additionalUserInfo.isNewUser,
                 isVerified: res.user.emailVerified,
                 creationTime: res.user.metadata.creationTime,
@@ -255,7 +334,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:17</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="20" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -283,8 +362,9 @@
         switchMap((action) &#x3D;&gt; {
           return [
             fromAuthActions.updateOnlineStatus({ uid: action.user.uid, isOnline: true }),
-            fromAuthActions.checkAdminRole({ uid: action.user.uid }),
+            fromAuthActions.checkAdminRole({ id: action.user.id }),
             fromAuthActions.checkTeacherRole({ id: action.user.id }),
+            fromAppActions.localStoreUser({ user: action.user })
           ];
         })
       ),
@@ -293,7 +373,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="54" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:54</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="60" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:60</a></div>
                             </td>
                         </tr>
 
@@ -332,7 +412,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="68" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:68</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="75" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:75</a></div>
                             </td>
                         </tr>
 
@@ -350,12 +430,15 @@
 import { Actions, createEffect, ofType } from &#x27;@ngrx/effects&#x27;;
 
 import { UserProfileEntityService } from &#x27;@rds-store/user-profile/user-profile-entity.service&#x27;;
+import * as fromAppActions from &#x27;@rds-store/app/actions/app.actions&#x27;;
 
 import { of, Observable, defer, from } from &#x27;rxjs&#x27;;
-import { switchMap, map, catchError } from &#x27;rxjs/operators&#x27;;
+import { switchMap, map, catchError, take } from &#x27;rxjs/operators&#x27;;
 
 import { checkTeacherRole } from &#x27;./../auth.actions&#x27;;
 import * as fromAuthActions from &#x27;../auth.actions&#x27;;
+import { isTeacher, isAdmin } from &#x27;./../auth.selectors&#x27;;
+import { AuthFireService } from &#x27;../../services&#x27;;
 import { User } from &#x27;../../models/user.model&#x27;;
 import { AuthService } from &#x27;../../services/auth.service&#x27;;
 @Injectable()
@@ -368,11 +451,14 @@ export class AuthEffects {
         switchMap(() &#x3D;&gt; this.authService.handleSignInClick()
           .pipe(
             map((res) &#x3D;&gt; {
+              //console.log(res)
               return {
                 id: res.user.providerData[0].uid,
                 name: res.user.displayName,
+                //givenName: res.additionalUserInfo.profile.given_name,
+                //familyName: res.additionalUserInfo.family_name,
                 email: res.user.email,
-                photoUrl: res.user.providerData[0].photoURL ? res.user.providerData[0].photoURL : res.user.photoURL,
+                photoUrl: (res.user.photoURL) ? (res.user.photoURL) : res.user.providerData[0].photoURL,
                 isNew: res.additionalUserInfo.isNewUser,
                 isVerified: res.user.emailVerified,
                 creationTime: res.user.metadata.creationTime,
@@ -405,8 +491,9 @@ export class AuthEffects {
         switchMap((action) &#x3D;&gt; {
           return [
             fromAuthActions.updateOnlineStatus({ uid: action.user.uid, isOnline: true }),
-            fromAuthActions.checkAdminRole({ uid: action.user.uid }),
+            fromAuthActions.checkAdminRole({ id: action.user.id }),
             fromAuthActions.checkTeacherRole({ id: action.user.id }),
+            fromAppActions.localStoreUser({ user: action.user })
           ];
         })
       ),
@@ -427,6 +514,44 @@ export class AuthEffects {
     //{ dispatch: false }
   );
 
+  getUser$ &#x3D; createEffect(
+    () &#x3D;&gt;
+      this.actions$.pipe(
+        ofType(fromAuthActions.getUser),
+        switchMap(() &#x3D;&gt; this.authFireService.user$
+          .pipe(
+            take(1),
+            map((authData: any) &#x3D;&gt; {
+              if (authData) {
+                //console.log(authData)
+                const user &#x3D; {
+                  id: authData.user.providerData[0].uid,
+                  name: authData.user.displayName,
+                  givenName: authData.additionalUserInfo.profile.given_name,
+                  familyName: authData.additionalUserInfo.family_name,
+                  email: authData.user.email,
+                  photoUrl: authData.user.photoURL,
+                  isTeacher: authData.isTeacher,
+                  isAdmin: authData.isAdmin,
+                  isNew: authData.additionalUserInfo.isNewUser,
+                  isVerified: authData.user.emailVerified,
+                  creationTime: authData.user.metadata.creationTime,
+                  lastLogin: authData.user.metadata.lastSignInTime,
+                  uid: authData.user.uid
+                };
+                return fromAuthActions.signInSuccess({ user });
+              } else {
+                return fromAuthActions.signInFailure({ error: authData });
+
+              }
+            }),
+            catchError((error) &#x3D;&gt; of(fromAuthActions.authError({ error })))
+          )
+        )
+      ),
+  );
+
+
   init$: Observable&lt;any&gt; &#x3D; defer(() &#x3D;&gt; {
     return of(fromAuthActions.getUser());
   });
@@ -434,6 +559,7 @@ export class AuthEffects {
   constructor(
     private actions$: Actions,
     private authService: AuthService,
+    private authFireService: AuthFireService,
   ) { }
 }
 </code></pre>

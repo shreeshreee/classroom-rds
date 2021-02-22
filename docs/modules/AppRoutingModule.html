@@ -72,40 +72,52 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
-import { Routes, RouterModule, PreloadAllModules } from &#x27;@angular/router&#x27;;
+import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
 
-import { AuthGuard } from &#x27;./auth/guards/auth.guard&#x27;;
-import { LayoutComponent } from &#x27;./core/layout/layout.component&#x27;;
-import { AboutComponent } from &#x27;./shared/components/about/about.component&#x27;;
-import { CodeConductComponent } from &#x27;./shared/components/code-conduct/code-conduct.component&#x27;;
-import { GalletasComponent } from &#x27;./shared/components/galletas/galletas.component&#x27;;
-import { HomeComponent } from &#x27;./shared/components/home/home.component&#x27;;
-import { LicenseComponent } from &#x27;./shared/components/license/license.component&#x27;;
-import { NotFoundComponent } from &#x27;./shared/components/not-found/not-found.component&#x27;;
-import { PrivacyPolicyComponent } from &#x27;./shared/components/privacy-policy/privacy-policy.component&#x27;;
-import { TermsComponent } from &#x27;./shared/components/terms/terms.component&#x27;;
-import { UnderConstructionComponent } from &#x27;./shared/components/under-construction/under-construction.component&#x27;;
+import { AuthGuard } from &#x27;@rds-auth/guards/auth.guard&#x27;;
+
+import { LayoutComponent } from &#x27;@rds-core/layout/layout.component&#x27;;
+
+import { AboutComponent } from &#x27;@rds-shared/components/about/about.component&#x27;;
+import { CodeConductSchoolComponent } from &#x27;@rds-shared/components/code-conduct-school/code-conduct-school.component&#x27;;
+import { CodeConductComponent } from &#x27;@rds-shared/components/code-conduct/code-conduct.component&#x27;;
+import { GalletasComponent } from &#x27;@rds-shared/components/galletas/galletas.component&#x27;;
+import { HomeComponent } from &#x27;@rds-shared/components/home/home.component&#x27;;
+import { LicenseComponent } from &#x27;@rds-shared/components/license/license.component&#x27;;
+import { LocationComponent } from &#x27;@rds-shared/components/location/location.component&#x27;;
+import { NotFoundComponent } from &#x27;@rds-shared/components/not-found/not-found.component&#x27;;
+import { PrivacyPolicyComponent } from &#x27;@rds-shared/components/privacy-policy/privacy-policy.component&#x27;;
+import { RemoteLearningComponent } from &#x27;@rds-shared/components/remote-learning/remote-learning.component&#x27;;
+import { TermsComponent } from &#x27;@rds-shared/components/terms/terms.component&#x27;;
+import { UnderConstructionComponent } from &#x27;@rds-shared/components/under-construction/under-construction.component&#x27;;
+
+import { ConfigComponent } from &#x27;./core/layout/config/config.component&#x27;;
+import { ConfigurationComponent } from &#x27;./core/layout/configuration/configuration.component&#x27;;
 const routes: Routes &#x3D; [{
   path: &#x27;&#x27;, component: LayoutComponent, children: [
     { path: &#x27;&#x27;, component: HomeComponent },
-    {
-      path: &#x27;c&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./courses/courses.module&#x27;).then(m &#x3D;&gt; m.CoursesModule)&quot;,
-      canActivate: [AuthGuard]
-    },
-    {
-      path: &#x27;u&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./user-profiles/user-profiles.module&#x27;).then(m &#x3D;&gt; m.UserProfilesModule)&quot;,
-      canActivate: [AuthGuard]
-    },
+    { path: &#x27;config&#x27;, component: ConfigComponent },
+    { path: &#x27;classroom&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./classroom/classroom.module&#x27;).then(m &#x3D;&gt; m.ClassroomModule)&quot;, canActivate: [AuthGuard] },
+    { path: &#x27;perfil&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./classroom/user-profiles/user-profiles.module&#x27;).then(m &#x3D;&gt; m.UserProfilesModule)&quot;, canActivate: [AuthGuard] },
+    { path: &#x27;calificaciones&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./grades/grades.module&#x27;).then(m &#x3D;&gt; m.GradesModule)&quot;, canActivate: [AuthGuard] },
+    { path: &#x27;clases&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./classroom/courses/courses.module&#x27;).then(m &#x3D;&gt; m.CoursesModule)&quot;, canActivate: [AuthGuard] },
+    { path: &#x27;user&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./user/user.module&#x27;).then(m &#x3D;&gt; m.UserModule)&quot;, canActivate: [AuthGuard] },
+    { path: &#x27;admin&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./admin/admin.module&#x27;).then(m &#x3D;&gt; m.AdminModule)&quot;, canActivate: [AuthGuard] },
     { path: &#x27;galletas&#x27;, component: GalletasComponent },
     { path: &#x27;about&#x27;, component: AboutComponent },
+    { path: &#x27;remote-learning&#x27;, component: RemoteLearningComponent },
     { path: &#x27;privacy-policy&#x27;, component: PrivacyPolicyComponent },
     { path: &#x27;not-found&#x27;, component: NotFoundComponent },
+    { path: &#x27;location&#x27;, component: LocationComponent },
     { path: &#x27;license&#x27;, component: LicenseComponent },
     { path: &#x27;code-conduct&#x27;, component: CodeConductComponent },
+    { path: &#x27;code-conduct-school&#x27;, component: CodeConductSchoolComponent },
     { path: &#x27;terms&#x27;, component: TermsComponent },
     { path: &#x27;under-construction&#x27;, component: UnderConstructionComponent },
+    { path: &#x27;configuration&#x27;, component: ConfigurationComponent },
   ]
-}];
+}]
+  ;
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

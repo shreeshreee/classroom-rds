@@ -127,6 +127,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#faDoor">faDoor</a>
+                            </li>
+                            <li>
                                 <a href="#faGoogle">faGoogle</a>
                             </li>
                             <li>
@@ -176,7 +179,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="18" class="link-to-prism">projects/classroom-rds/src/app/auth/components/login-dialog/login-dialog.component.ts:18</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="21" class="link-to-prism">projects/classroom-rds/src/app/auth/components/login-dialog/login-dialog.component.ts:21</a></div>
                             </td>
                         </tr>
 
@@ -257,8 +260,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="31"
-                            class="link-to-prism">projects/classroom-rds/src/app/auth/components/login-dialog/login-dialog.component.ts:31</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="35"
+                            class="link-to-prism">projects/classroom-rds/src/app/auth/components/login-dialog/login-dialog.component.ts:35</a></div>
                 </td>
             </tr>
 
@@ -296,8 +299,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="24"
-                            class="link-to-prism">projects/classroom-rds/src/app/auth/components/login-dialog/login-dialog.component.ts:24</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="27"
+                            class="link-to-prism">projects/classroom-rds/src/app/auth/components/login-dialog/login-dialog.component.ts:27</a></div>
                 </td>
             </tr>
 
@@ -335,8 +338,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="26"
-                            class="link-to-prism">projects/classroom-rds/src/app/auth/components/login-dialog/login-dialog.component.ts:26</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="29"
+                            class="link-to-prism">projects/classroom-rds/src/app/auth/components/login-dialog/login-dialog.component.ts:29</a></div>
                 </td>
             </tr>
 
@@ -362,6 +365,32 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="faDoor"></a>
+                        <span class="name">
+                            <b>
+                            faDoor</b>
+                            <a href="#faDoor"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>faDoorOpen</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="21" class="link-to-prism">projects/classroom-rds/src/app/auth/components/login-dialog/login-dialog.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="faGoogle"></a>
                         <span class="name">
                             <b>
@@ -377,7 +406,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">projects/classroom-rds/src/app/auth/components/login-dialog/login-dialog.component.ts:17</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="19" class="link-to-prism">projects/classroom-rds/src/app/auth/components/login-dialog/login-dialog.component.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -403,7 +432,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="18" class="link-to-prism">projects/classroom-rds/src/app/auth/components/login-dialog/login-dialog.component.ts:18</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="20" class="link-to-prism">projects/classroom-rds/src/app/auth/components/login-dialog/login-dialog.component.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -416,16 +445,18 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
 import { MatDialogRef } from &#x27;@angular/material/dialog&#x27;;
 
-import { faTimes } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
+import { faDoorClosed, faDoorOpen, faIcons, faTimes } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
 import { faGoogle } from &#x27;@fortawesome/free-brands-svg-icons&#x27;;
+import { FaIconComponent, FaLayersComponent } from &#x27;@fortawesome/angular-fontawesome&#x27;;
 
 import { Store } from &#x27;@ngrx/store&#x27;;
 
-import * as fromAuthActions from &#x27;./../../state/auth.actions&#x27;;
-import { AppState } from &#x27;./../../../store/app.state&#x27;;
+import * as fromAuthActions from &#x27;@rds-auth/state/auth.actions&#x27;;
+
+import { AppState } from &#x27;@rds-store/app.state&#x27;;
 
 @Component({
   templateUrl: &#x27;./login-dialog.component.html&#x27;,
@@ -434,6 +465,7 @@ import { AppState } from &#x27;./../../../store/app.state&#x27;;
 export class LoginDialogComponent implements OnInit {
   faGoogle &#x3D; faGoogle;
   faTimes &#x3D; faTimes;
+  faDoor &#x3D; faDoorOpen;
   constructor(
     private dialogRef: MatDialogRef&lt;LoginDialogComponent&gt;,
     private store: Store&lt;AppState&gt;
@@ -442,6 +474,7 @@ export class LoginDialogComponent implements OnInit {
   ngOnInit(): void {
   }
   onLogin() {
+    this.faDoor &#x3D; faDoorClosed;
     this.store.dispatch(
       fromAuthActions.signIn()
     );
@@ -454,18 +487,28 @@ export class LoginDialogComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div fxLayout&#x3D;&quot;row wrap&quot; fxLayoutAlign&#x3D;&quot;space-between center&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div fxLayout&#x3D;&quot;row wrap&quot; fxLayoutAlign&#x3D;&quot;space-between top&quot;&gt;
   &lt;h1 mat-dialog-title&gt;Inicio de sesión&lt;/h1&gt;
   &lt;fa-icon mat-icon-button [icon]&#x3D;&quot;faTimes&quot; size&#x3D;&quot;lg&quot; (click)&#x3D;&quot;close()&quot; matDialogClose&gt;&lt;/fa-icon&gt;
 &lt;/div&gt;
 &lt;mat-dialog-content fxLayout&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;center center&quot;&gt;
-  &lt;p&gt;Identificate con tu cuenta institucional&lt;/p&gt;
-  &lt;h2&gt;@rafaeldiazserdan.net&lt;/h2&gt;
-  &lt;button mat-icon-button (click)&#x3D;&quot;onLogin()&quot;&gt;
-    &lt;img class&#x3D;&quot;img-fluid&quot; src&#x3D;&quot;assets/images/google-logo.png&quot; /&gt;
-  &lt;/button&gt;
-  &lt;h5&gt;Haz click aquí&lt;/h5&gt;
+  &lt;p class&#x3D;&quot;text-justify&quot;&gt;Para ingresar a los servicios académicos institucionales,
+    identifícate con tu cuenta escolar.
+  &lt;/p&gt;
+
 &lt;/mat-dialog-content&gt;
+&lt;mat-dialog-actions align&#x3D;&quot;center&quot;&gt;
+  &lt;div fxLayout&#x3D;&quot;row wrap&quot; fxLayoutGap&#x3D;&quot;10px&quot;&gt;
+    &lt;div mat-raised-button fxLayout&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;space-around center&quot;&gt;
+      &lt;fa-icon class&#x3D;&quot;login-button&quot; mat-icon-button (click)&#x3D;&quot;onLogin()&quot; size&#x3D;&quot;3x&quot; [icon]&#x3D;&quot;faDoor&quot;&gt;&lt;/fa-icon&gt;
+      &lt;h5&gt;Ingresar&lt;/h5&gt;
+    &lt;/div&gt;
+    &lt;div fxLayout&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;center start&quot;&gt;
+      &lt;h2 class&#x3D;&quot;my-n2&quot;&gt;rafaeldiazserdan.net&lt;/h2&gt;
+      &lt;h2&gt;rds.edu.mx&lt;/h2&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/mat-dialog-actions&gt;
 </code></pre>
     </div>
 
@@ -473,7 +516,16 @@ export class LoginDialogComponent implements OnInit {
                 <p class="comment">
                     <code>./login-dialog.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;./../../../../assets/themes/colors.scss&#x27;;
+.login-button {
+  color:$rds-logo-color;
+}
+/* .button-bg {
+  background-image: url(&quot;./../../../../assets/images/rds-house-words.png&quot;);
+
+} */
+
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -501,9 +553,9 @@ export class LoginDialogComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div fxLayout="row wrap" fxLayoutAlign="space-between center">  <h1 mat-dialog-title>Inicio de sesión</h1>  <fa-icon mat-icon-button [icon]="faTimes" size="lg" (click)="close()" matDialogClose></fa-icon></div><mat-dialog-content fxLayout="column" fxLayoutAlign="center center">  <p>Identificate con tu cuenta institucional</p>  <h2>@rafaeldiazserdan.net</h2>  <button mat-icon-button (click)="onLogin()">    <img class="img-fluid" src="assets/images/google-logo.png" />  </button>  <h5>Haz click aquí</h5></mat-dialog-content></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GalletasComponent', 'selector': 'app-galletas'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
-    var DIRECTIVES = [];
+        var COMPONENT_TEMPLATE = '<div><div fxLayout="row wrap" fxLayoutAlign="space-between top">  <h1 mat-dialog-title>Inicio de sesión</h1>  <fa-icon mat-icon-button [icon]="faTimes" size="lg" (click)="close()" matDialogClose></fa-icon></div><mat-dialog-content fxLayout="column" fxLayoutAlign="center center">  <p class="text-justify">Para ingresar a los servicios académicos institucionales,    identifícate con tu cuenta escolar.  </p></mat-dialog-content><mat-dialog-actions align="center">  <div fxLayout="row wrap" fxLayoutGap="10px">    <div mat-raised-button fxLayout="column" fxLayoutAlign="space-around center">      <fa-icon class="login-button" mat-icon-button (click)="onLogin()" size="3x" [icon]="faDoor"></fa-icon>      <h5>Ingresar</h5>    </div>    <div fxLayout="column" fxLayoutAlign="center start">      <h2 class="my-n2">rafaeldiazserdan.net</h2>      <h2>rds.edu.mx</h2>    </div>  </div></mat-dialog-actions></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'ConfigurationComponent', 'selector': 'app-configuration'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GalletasComponent', 'selector': 'app-galletas'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
+    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'}];
     var ACTUAL_COMPONENT = {'name': 'LoginDialogComponent'};
 </script>
 <script src="../js/tree.js"></script>

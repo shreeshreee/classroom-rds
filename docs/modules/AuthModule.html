@@ -66,10 +66,6 @@
 <title>cluster_AuthModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="91,-70 91,-268 405,-268 405,-70 91,-70"/>
 </g>
-<g id="clust5" class="cluster">
-<title>cluster_AuthModule_exports</title>
-<polygon fill="none" stroke="black" points="162,-208 162,-260 334,-260 334,-208 162,-208"/>
-</g>
 <g id="clust2" class="cluster">
 <title>cluster_AuthModule_declarations</title>
 <polygon fill="none" stroke="black" points="229,-78 229,-130 397,-130 397,-78 229,-78"/>
@@ -77,6 +73,10 @@
 <g id="clust4" class="cluster">
 <title>cluster_AuthModule_imports</title>
 <polygon fill="none" stroke="black" points="99,-78 99,-130 221,-130 221,-78 99,-78"/>
+</g>
+<g id="clust5" class="cluster">
+<title>cluster_AuthModule_exports</title>
+<polygon fill="none" stroke="black" points="162,-208 162,-260 334,-260 334,-208 162,-208"/>
 </g>
 <!-- LoginDialogComponent -->
 <g id="node1" class="node">
@@ -263,7 +263,7 @@ import { MaterialModule } from &#x27;../modules/material.module&#x27;;
     FontAwesomeModule,
     MaterialModule,
     StoreModule.forFeature(fromAuthReducer.authFeatureKey, fromAuthReducer.authReducer),
-    EffectsModule.forFeature([fromAuthEffects.AuthEffects, fromAuthEffects.FireEffects]),
+    EffectsModule.forFeature(fromAuthEffects.authEffects),
   ],
   declarations: [LoginDialogComponent],
   exports: [LoginDialogComponent]

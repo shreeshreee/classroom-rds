@@ -79,6 +79,9 @@
                                 <a href="#checkAdminRole$">checkAdminRole$</a>
                             </li>
                             <li>
+                                <a href="#checkTeacherRole$">checkTeacherRole$</a>
+                            </li>
+                            <li>
                                 <a href="#saveUser$">saveUser$</a>
                             </li>
                             <li>
@@ -111,7 +114,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="74" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:74</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="92" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:92</a></div>
                             </td>
                         </tr>
 
@@ -186,7 +189,7 @@
       this.actions$.pipe(
         ofType(fromAuthActions.checkAdminRole),
         switchMap((action) &#x3D;&gt;
-          this.authFireService.checkAdminRole(action.uid)
+          this.authFireService.checkAdminRole(action.id)
             .pipe(
               map((isAdmin: boolean) &#x3D;&gt; fromAuthActions.updateAdminRole({ isAdmin }))
             )
@@ -197,7 +200,44 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="25" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:25</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="28" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="checkTeacherRole$"></a>
+                        <span class="name">
+                            <b>
+                            checkTeacherRole$</b>
+                            <a href="#checkTeacherRole$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>createEffect(
+    () &#x3D;&gt;
+      this.actions$.pipe(
+        ofType(fromAuthActions.checkTeacherRole),
+        switchMap((action) &#x3D;&gt;
+          this.authFireService.checkTeacherRole(action.id)
+            .pipe(
+              map((isTeacher: boolean) &#x3D;&gt; fromAuthActions.updateTeachersRole({ isTeacher }))
+            )
+        )
+      )
+  )</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="41" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:41</a></div>
                             </td>
                         </tr>
 
@@ -232,7 +272,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="14" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:14</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -267,7 +307,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="65" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:65</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="83" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:83</a></div>
                             </td>
                         </tr>
 
@@ -296,13 +336,14 @@
           this.authFireService.updateUser(action.userData)
             .pipe(
               map(() &#x3D;&gt; {
-                const currentUser: any &#x3D; this.authFireService.user$;
+                const currentUser: any &#x3D; this.authFireService.getAuthState();
                 const updatedUser: User &#x3D; {
                   id: currentUser.id,
                   uid: currentUser.uid,
                   name: currentUser.name,
                   email: currentUser.email,
                   photoUrl: currentUser.photoURL,
+                  isTeacher: currentUser.isTeacher,
                   isAdmin: currentUser.isAdmin,
                   isOnline: currentUser.isOnline,
                   isNew: currentUser.isNew,
@@ -318,7 +359,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="38" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:38</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="55" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:55</a></div>
                             </td>
                         </tr>
 
@@ -335,10 +376,13 @@
 
 import { Actions, createEffect, ofType } from &#x27;@ngrx/effects&#x27;;
 
+import { AuthService } from &#x27;@rds-auth/services&#x27;;
+
 import { of } from &#x27;rxjs&#x27;;
 import { catchError, map, switchMap, tap } from &#x27;rxjs/operators&#x27;;
 
 import * as fromAuthActions from &#x27;../auth.actions&#x27;;
+import { isTeacher } from &#x27;./../auth.selectors&#x27;;
 import { User } from &#x27;../../models/user.model&#x27;;
 import { AuthFireService } from &#x27;../../services/auth-fire.service&#x27;;
 @Injectable()
@@ -360,13 +404,27 @@ export class FireEffects {
       this.actions$.pipe(
         ofType(fromAuthActions.checkAdminRole),
         switchMap((action) &#x3D;&gt;
-          this.authFireService.checkAdminRole(action.uid)
+          this.authFireService.checkAdminRole(action.id)
             .pipe(
               map((isAdmin: boolean) &#x3D;&gt; fromAuthActions.updateAdminRole({ isAdmin }))
             )
         )
       ),
   );
+
+  checkTeacherRole$ &#x3D; createEffect(
+    () &#x3D;&gt;
+      this.actions$.pipe(
+        ofType(fromAuthActions.checkTeacherRole),
+        switchMap((action) &#x3D;&gt;
+          this.authFireService.checkTeacherRole(action.id)
+            .pipe(
+              map((isTeacher: boolean) &#x3D;&gt; fromAuthActions.updateTeachersRole({ isTeacher }))
+            )
+        )
+      )
+  );
+
 
   updateProfile$ &#x3D; createEffect(
     () &#x3D;&gt;
@@ -376,13 +434,14 @@ export class FireEffects {
           this.authFireService.updateUser(action.userData)
             .pipe(
               map(() &#x3D;&gt; {
-                const currentUser: any &#x3D; this.authFireService.user$;
+                const currentUser: any &#x3D; this.authFireService.getAuthState();
                 const updatedUser: User &#x3D; {
                   id: currentUser.id,
                   uid: currentUser.uid,
                   name: currentUser.name,
                   email: currentUser.email,
                   photoUrl: currentUser.photoURL,
+                  isTeacher: currentUser.isTeacher,
                   isAdmin: currentUser.isAdmin,
                   isOnline: currentUser.isOnline,
                   isNew: currentUser.isNew,

@@ -57,39 +57,12 @@
             <h3>Fichero</h3>
         </p>
         <p class="comment">
-            <code>projects/classroom-rds/src/app/user-profiles/state/effects/user-profile.effects.ts</code>
+            <code>projects/classroom-rds/src/app/classroom/state/effects/user-profile.effects.ts</code>
         </p>
 
 
 
 
-            <section>
-    <h3 id="index">Índice</h3>
-    <table class="table table-sm table-bordered index-table">
-        <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Propiedades</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#checkTeacherRole$">checkTeacherRole$</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
 
             <section>
     <h3 id="constructor">Constructor</h3>
@@ -102,7 +75,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="26" class="link-to-prism">projects/classroom-rds/src/app/user-profiles/state/effects/user-profile.effects.ts:26</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">projects/classroom-rds/src/app/classroom/state/effects/user-profile.effects.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -153,80 +126,36 @@
 </section>
 
 
-            <section>
-    
-        <h3 id="inputs">
-            Propiedades
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="checkTeacherRole$"></a>
-                        <span class="name">
-                            <b>
-                            checkTeacherRole$</b>
-                            <a href="#checkTeacherRole$"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>createEffect(
-    () &#x3D;&gt;
-      this.actions$.pipe(
-        ofType(fromAuthActions.checkTeacherRole),
-        switchMap((action) &#x3D;&gt;
-          this.userProfilesService.checkTeacherRole(action.id)
-            .pipe(
-              map((isTeacher: boolean) &#x3D;&gt; fromAuthActions.updateTeachersRole({ isTeacher }))
-            )
-        )
-      )
-  )</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">projects/classroom-rds/src/app/user-profiles/state/effects/user-profile.effects.ts:15</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-</section>
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable, Optional } from &quot;@angular/core&quot;;
 
 import { Actions, createEffect, ofType } from &quot;@ngrx/effects&quot;;
 
 import * as fromAuthActions from &#x27;@rds-auth/state/auth.actions&#x27;;
 
-import { from, of } from &quot;rxjs&quot;;
-import { catchError, map, switchMap, tap } from &quot;rxjs/operators&quot;;
+import { UserProfilesService } from &#x27;@rds-classroom/user-profiles/services/user-profiles.service&#x27;;
 
-import { UserProfilesService } from &#x27;../../services/user-profiles.service&#x27;;
+import { map, skipUntil, switchMap } from &quot;rxjs/operators&quot;;
 
 @Injectable()
 export class UserProfileEffects {
 
-  checkTeacherRole$ &#x3D; createEffect(
+  /* checkTeacherRole$ &#x3D; createEffect(
     () &#x3D;&gt;
       this.actions$.pipe(
         ofType(fromAuthActions.checkTeacherRole),
         switchMap((action) &#x3D;&gt;
-          this.userProfilesService.checkTeacherRole(action.id)
+          this.authFire.checkTeacherRole(action.id)
             .pipe(
               map((isTeacher: boolean) &#x3D;&gt; fromAuthActions.updateTeachersRole({ isTeacher }))
             )
         )
       )
-  );
+  ); */
 
   constructor(
     private actions$: Actions,

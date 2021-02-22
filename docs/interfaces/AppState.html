@@ -162,9 +162,10 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Action, ActionReducer, ActionReducerMap, INIT, MetaReducer } from &#x27;@ngrx/store&#x27;;
 import { routerReducer, RouterReducerState } from &#x27;@ngrx/router-store&#x27;;
 
-import { environment } from &#x27;./../../environments/environment&#x27;;
-import * as fromAuthActions from &#x27;./../auth/state/auth.actions&#x27;;
-import { AuthenticationState, authFeatureKey, authReducer } from &#x27;./../auth/state/auth.reducer&#x27;;
+import { environment } from &#x27;@rds-env/environment&#x27;;
+
+import { AuthenticationState, authFeatureKey, authReducer } from &#x27;@rds-auth/state/auth.reducer&#x27;;
+import * as fromAuthActions from &#x27;@rds-auth/state/auth.actions&#x27;;
 export interface AppState {
   [authFeatureKey]: AuthenticationState;
   router: RouterReducerState;

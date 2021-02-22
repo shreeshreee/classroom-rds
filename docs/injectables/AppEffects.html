@@ -79,10 +79,10 @@
                                 <a href="#loadApp$">loadApp$</a>
                             </li>
                             <li>
-                                <a href="#removeUser$">removeUser$</a>
+                                <a href="#localStoreUser$">localStoreUser$</a>
                             </li>
                             <li>
-                                <a href="#storeUser$">storeUser$</a>
+                                <a href="#removeUser$">removeUser$</a>
                             </li>
                         </ul>
                     </td>
@@ -205,6 +205,41 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="localStoreUser$"></a>
+                        <span class="name">
+                            <b>
+                            localStoreUser$</b>
+                            <a href="#localStoreUser$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>createEffect(
+    () &#x3D;&gt;
+      this.actions$.pipe(
+        ofType(fromAppActions.localStoreUser),
+        tap((action) &#x3D;&gt;
+          localStorage.setItem(&#x27;user&#x27;, JSON.stringify(action.user))
+        )
+      ),
+    { dispatch: false }
+  )</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="14" class="link-to-prism">projects/classroom-rds/src/app/store/app/effects/app.effects.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="removeUser$"></a>
                         <span class="name">
                             <b>
@@ -236,41 +271,6 @@
 
             </tbody>
         </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="storeUser$"></a>
-                        <span class="name">
-                            <b>
-                            storeUser$</b>
-                            <a href="#storeUser$"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>createEffect(
-    () &#x3D;&gt;
-      this.actions$.pipe(
-        ofType(fromAuthActions.signInSuccess),
-        tap((action) &#x3D;&gt;
-          localStorage.setItem(&#x27;user&#x27;, JSON.stringify(action.user))
-        )
-      ),
-    { dispatch: false }
-  )</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="14" class="link-to-prism">projects/classroom-rds/src/app/store/app/effects/app.effects.ts:14</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
 </section>
 
     </div>
@@ -290,10 +290,10 @@ import { catchError, map, switchMap, tap } from &#x27;rxjs/operators&#x27;;
 import { of } from &#x27;rxjs&#x27;;
 @Injectable()
 export class AppEffects {
-  storeUser$ &#x3D; createEffect(
+  localStoreUser$ &#x3D; createEffect(
     () &#x3D;&gt;
       this.actions$.pipe(
-        ofType(fromAuthActions.signInSuccess),
+        ofType(fromAppActions.localStoreUser),
         tap((action) &#x3D;&gt;
           localStorage.setItem(&#x27;user&#x27;, JSON.stringify(action.user))
         )

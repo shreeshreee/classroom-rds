@@ -59,7 +59,7 @@
             <h3>Fichero</h3>
             </p>
             <p class="comment">
-                <code>projects/classroom-rds/src/app/courses/services/course/course.resolver.ts</code>
+                <code>projects/classroom-rds/src/app/classroom/courses/resolvers/course.resolver.ts</code>
             </p>
 
 
@@ -105,7 +105,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="10" class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/course.resolver.ts:10</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="10" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/resolvers/course.resolver.ts:10</a></div>
                             </td>
                         </tr>
 
@@ -171,7 +171,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Definido en <a href="" data-line="13"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/course/course.resolver.ts:13</a></div>
+                            class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/resolvers/course.resolver.ts:13</a></div>
                 </td>
             </tr>
 
@@ -238,10 +238,10 @@
             <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from &#x27;@angular/router&#x27;;
 
+import { TeacherEntityService } from &#x27;@rds-store/teacher/teacher-entity.service&#x27;;
+
 import { Observable } from &#x27;rxjs&#x27;;
 import { filter, first, tap } from &#x27;rxjs/operators&#x27;;
-
-import { TeacherEntityService } from &#x27;./../../../store/teacher/teacher-entity.service&#x27;;
 
 @Injectable()
 export class CourseResolver implements Resolve&lt;boolean&gt; {

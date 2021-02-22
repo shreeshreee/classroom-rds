@@ -59,7 +59,7 @@
             <h3>Fichero</h3>
             </p>
             <p class="comment">
-                <code>projects/classroom-rds/src/app/courses/services/user-profile/guardians.resolver.ts</code>
+                <code>projects/classroom-rds/src/app/classroom/courses/resolvers/guardians.resolver.ts</code>
             </p>
 
 
@@ -105,7 +105,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="14" class="link-to-prism">projects/classroom-rds/src/app/courses/services/user-profile/guardians.resolver.ts:14</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/resolvers/guardians.resolver.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -170,8 +170,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="19"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/services/user-profile/guardians.resolver.ts:19</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="20"
+                            class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/resolvers/guardians.resolver.ts:20</a></div>
                 </td>
             </tr>
 
@@ -235,13 +235,14 @@
 
 
         <div class="tab-pane fade  tab-source-code" id="c-source">
-            <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { GuardianEntityService } from &#x27;./../../../store/guardian/guardian-entity.service&#x27;;
-import { Injectable } from &#x27;@angular/core&#x27;;
+            <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import {
   Resolve,
   RouterStateSnapshot,
   ActivatedRouteSnapshot,
 } from &#x27;@angular/router&#x27;;
+
+import { GuardianEntityService } from &#x27;@rds-store/guardian/guardian-entity.service&#x27;;
 
 import { Observable, of } from &#x27;rxjs&#x27;;
 import { filter, first, tap } from &#x27;rxjs/operators&#x27;;

@@ -235,7 +235,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Devuelve : </b>        <code><a href="../miscellaneous/variables.html#gapi" target="_self" >Observable&lt;gapi.client.classroom.Announcement[]&gt;</a></code>
+                        <b>Devuelve : </b>    <code>Observable&lt;gapi.client.classroom.Announcement[]&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -256,9 +256,9 @@ import { Injectable } from &#x27;@angular/core&#x27;;
 
 import { DefaultDataService, HttpUrlGenerator } from &#x27;@ngrx/data&#x27;;
 
-import { from, Observable } from &#x27;rxjs&#x27;;
+import { AnnouncementsService } from &#x27;@rds-classroom/announcements/services/announcements.service&#x27;;
 
-import { AnnouncementsService } from &#x27;./../../courses/containers/announcements/services/announcements.service&#x27;;
+import { from, Observable } from &#x27;rxjs&#x27;;
 
 import * as fromAnnouncement from &#x27;./&#x27;
 @Injectable()

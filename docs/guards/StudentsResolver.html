@@ -59,7 +59,7 @@
             <h3>Fichero</h3>
             </p>
             <p class="comment">
-                <code>projects/classroom-rds/src/app/courses/containers/students/services/students.resolver.ts</code>
+                <code>projects/classroom-rds/src/app/classroom/students/services/students.resolver.ts</code>
             </p>
 
 
@@ -105,7 +105,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="14" class="link-to-prism">projects/classroom-rds/src/app/courses/containers/students/services/students.resolver.ts:14</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="14" class="link-to-prism">projects/classroom-rds/src/app/classroom/students/services/students.resolver.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -171,7 +171,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Definido en <a href="" data-line="19"
-                            class="link-to-prism">projects/classroom-rds/src/app/courses/containers/students/services/students.resolver.ts:19</a></div>
+                            class="link-to-prism">projects/classroom-rds/src/app/classroom/students/services/students.resolver.ts:19</a></div>
                 </td>
             </tr>
 
@@ -242,10 +242,10 @@ import {
   ActivatedRouteSnapshot
 } from &#x27;@angular/router&#x27;;
 
+import { StudentEntityService } from &#x27;@rds-store/student/student-entity.service&#x27;;
+
 import { Observable, of } from &#x27;rxjs&#x27;;
 import { filter, first, map, tap } from &#x27;rxjs/operators&#x27;;
-
-import { StudentEntityService } from &#x27;../../../../store/student/student-entity.service&#x27;;
 
 @Injectable()
 export class StudentsResolver implements Resolve&lt;boolean&gt; {

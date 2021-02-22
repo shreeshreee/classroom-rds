@@ -89,6 +89,14 @@
                                 </li>
                                 <li>
                                             <span class="modifier">Opcional</span>
+                                        <a href="#familyName">familyName</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Opcional</span>
+                                        <a href="#givenName">givenName</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Opcional</span>
                                         <a href="#id">id</a>
                                 </li>
                                 <li>
@@ -118,6 +126,10 @@
                                 <li>
                                             <span class="modifier">Opcional</span>
                                         <a href="#name">name</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Opcional</span>
+                                        <a href="#permissions">permissions</a>
                                 </li>
                                 <li>
                                             <span class="modifier">Opcional</span>
@@ -183,6 +195,74 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <code>email:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="familyName"></a>
+                                        <span class="name"><b>familyName</b><a href="#familyName"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>familyName:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="givenName"></a>
+                                        <span class="name"><b>givenName</b><a href="#givenName"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>givenName:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -482,6 +562,40 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
+                                        <a name="permissions"></a>
+                                        <span class="name"><b>permissions</b><a href="#permissions"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>permissions:         <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
                                         <a name="photoUrl"></a>
                                         <span class="name"><b>photoUrl</b><a href="#photoUrl"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
@@ -552,17 +666,20 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface User {
-  isNew?: boolean;
-  isAdmin?: boolean;
-  isOnline?: boolean;
-  isVerified?: boolean;
-  isTeacher?: boolean;
-  name?: string;
-  email?: string;
-  photoUrl?: string;
   creationTime?: string;
-  lastLogin?: string;
+  email?: string;
+  familyName?: string;
+  givenName?: string;
   id?: string;
+  isAdmin?: boolean;
+  isNew?: boolean;
+  isOnline?: boolean;
+  isTeacher?: boolean;
+  isVerified?: boolean;
+  lastLogin?: string;
+  name?: string;
+  permissions?: any;
+  photoUrl?: string;
   uid?: string;
 }
 

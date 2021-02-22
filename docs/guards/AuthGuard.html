@@ -105,7 +105,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">projects/classroom-rds/src/app/auth/guards/auth.guard.ts:13</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="14" class="link-to-prism">projects/classroom-rds/src/app/auth/guards/auth.guard.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -182,8 +182,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="18"
-                            class="link-to-prism">projects/classroom-rds/src/app/auth/guards/auth.guard.ts:18</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="19"
+                            class="link-to-prism">projects/classroom-rds/src/app/auth/guards/auth.guard.ts:19</a></div>
                 </td>
             </tr>
 
@@ -252,11 +252,12 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Rout
 
 import { select, Store } from &#x27;@ngrx/store&#x27;;
 
+import { AppState } from &#x27;@rds-store/app.state&#x27;;
+
 import { Observable, of } from &#x27;rxjs&#x27;;
 import { tap } from &#x27;rxjs/operators&#x27;;
 
 import { isLoggedIn } from &#x27;../state/auth.selectors&#x27;;
-import { AppState } from &#x27;./../../store/app.state&#x27;;
 
 @Injectable()
 export class AuthGuard implements CanActivate {

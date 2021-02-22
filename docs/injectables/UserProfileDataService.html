@@ -83,7 +83,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getById">getById</a>
+                                <a href="#getByQuery">getByQuery</a>
                             </li>
                         </ul>
                     </td>
@@ -108,7 +108,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="11" class="link-to-prism">projects/classroom-rds/src/app/store/user-profile/user-profile-data.service.ts:11</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">projects/classroom-rds/src/app/store/user-profile/user-profile-data.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -179,26 +179,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getById"></a>
+                    <a name="getByQuery"></a>
                     <span class="name">
                         <b>
-                            getById
+                            getByQuery
                         </b>
-                        <a href="#getById"><span class="icon ion-ios-link"></span></a>
+                        <a href="#getByQuery"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>getByQuery(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="22"
-                            class="link-to-prism">projects/classroom-rds/src/app/store/user-profile/user-profile-data.service.ts:22</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="23"
+                            class="link-to-prism">projects/classroom-rds/src/app/store/user-profile/user-profile-data.service.ts:23</a></div>
                 </td>
             </tr>
 
@@ -256,9 +256,10 @@ import { Injectable } from &#x27;@angular/core&#x27;;
 
 import { DefaultDataService, HttpUrlGenerator } from &#x27;@ngrx/data&#x27;;
 
+import { UserProfilesService } from &#x27;@rds-classroom/user-profiles/services/user-profiles.service&#x27;;
+
 import { from, Observable } from &#x27;rxjs&#x27;;
 
-import { UserProfilesService } from &#x27;~/app/user-profiles/services/user-profiles.service&#x27;;
 import * as fromUserProfile from &#x27;./&#x27;;
 @Injectable()
 export class UserProfileDataService extends DefaultDataService&lt;gapi.client.classroom.UserProfile&gt; {
@@ -272,10 +273,9 @@ export class UserProfileDataService extends DefaultDataService&lt;gapi.client.cl
     super(fromUserProfile.entityCollectionName, http, httpUrlGenerator);
   }
 
-  getById(id: string): Observable&lt;gapi.client.classroom.UserProfile&gt; {
+  getByQuery(id: string): Observable&lt;gapi.client.classroom.UserProfile&gt; {
     return from(this.userProfilesService.getUserProfile(id));
   }
-
 }
 </code></pre>
     </div>
