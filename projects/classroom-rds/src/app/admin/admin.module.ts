@@ -31,12 +31,14 @@ import { UserDomainDataService } from './state/user-domain/user-domain-data.serv
 import { UserDomainEntityService } from './state/user-domain/user-domain-entity.service';
 import { MaterialModule } from '~/app/modules/material.module';
 import { GroupTableComponent } from './components/group-table/group-table.component';
+import { SchoolComponent } from './containers/school/school.component';
 
 @NgModule({
   declarations: [
     fromAdminComponents.adminComponents,
     fromAdminContainers.adminContainers,
-    GroupTableComponent
+    GroupTableComponent,
+    SchoolComponent
   ],
   imports: [
     CommonModule,

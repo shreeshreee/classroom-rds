@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+import { QueryParams } from '@ngrx/data';
+
 import { environment } from '@rds-env/environment';
 
 import { GroupResponse } from '../models/users-domain.model';
@@ -16,7 +18,7 @@ export class AdminApiService {
     const isAuthorized = googleUser.hasGrantedScopes(environment.gapiClientConfig.adminScopes);
     if (!isAuthorized) {
       const option: gapi.auth2.SigninOptionsBuilder = new gapi.auth2.SigninOptionsBuilder();
-      option.setScope(environment.gapiClientConfig.classroomScopes);
+      option.setScope(environment.gapiClientConfig.adminScopes);
       googleUser.grant(option).then(
         (success) => {
           //alert(JSON.stringify({ message: "success", value: success }));
@@ -33,7 +35,17 @@ export class AdminApiService {
   async listAllUsers() {
     const response: gapi.client.Response<UserResponse> = await gapi.client.directory.users.list({
       domain: 'rafaeldiazserdan.net',
-      orderBy: 'FAMILY_NAME',
+      orderBy: 'familyName',
+      maxResults: 500,
+    });
+    return response.result.users;
+  }
+
+  async getStudents(queryParams: QueryParams) {
+    const response: gapi.client.Response<UserResponse> = await gapi.client.directory.users.list({
+      domain: 'rafaeldiazserdan.net',
+      orderBy: 'familyName',
+      orgPath: 'Dirección/Alumnos/' + queryParams.level + '/' + queryParams.grade,
       maxResults: 500,
     });
     return response.result.users;

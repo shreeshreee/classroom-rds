@@ -273,6 +273,16 @@ export interface UserDomain {
   }];
 }
 
+export interface UserPhoto {
+  id: string,
+  primaryEmail: string,
+  kind: string,
+  etag: string,
+  photoData: string,
+  mimeType: string,
+  width: number,
+  height: number
+}
 export interface UserResponse {
   users: UserDomain[];
   etag: string;
@@ -325,4 +335,20 @@ export interface GroupResponse {
   etag: string;
   kind: string;
   nextPageToken: string;
+}
+
+export enum SchoolLevel {
+  /* "1° de Preescolar",
+  "2° de Preescolar",
+  "3° de Preescolar", */
+  "Preescolar",
+  "1° de Primaria",
+  "2° de Primaria",
+  "3° de Primaria",
+  "4° de Primaria",
+  "5° de Primaria",
+  "6° de Primaria",
+  "1° de Secundaria",
+  "2° de Secundaria",
+  "3° de Secundaria",
 }

@@ -13,7 +13,7 @@ import { of } from 'rxjs';
 
 import { Group, UserStudent } from '../models/users-domain.model';
 
-@Injectable({ providedIn: "root" })
+@Injectable()
 export class GroupsService {
   user$;
   constructor(

@@ -1,0 +1,31 @@
+<div class="p-2">
+  <div class="py-2 d-block" fxLayout="row wrap" fxLayoutGap="5px">
+    <mat-form-field appearance="outline">
+      <mat-label>Nivel</mat-label>
+      <mat-select [(ngModel)]="level" placeholder="Selecciona el nivel escolar" (change)="onLevelelection($event.key)">
+        <mat-option *ngFor="let ckey of clevelKeys" [value]="clevels[ckey]">
+          {{clevels[ckey]}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Estado</mat-label>
+      <mat-select [(ngModel)]="grade" placeholder="Selecciona el estado" (change)="onGradeSelection($event.key)">
+        <mat-option *ngFor="let skey of slevelKeys" [value]="slevels[skey]">
+          {{slevels[skey]}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button (click)="onSearch()">Buscar</button>
+  </div>
+</div>
+<mat-accordion *ngIf="loaded$" toggle>
+  <mat-expansion-panel *ngFor="let user of users$|async" appMaterialElevation [raisedElevation]="raisedElev">
+    <mat-expansion-panel-header>
+      <img class="img-small rounded-circle" src="{{user.thu}}">
+      <mat-panel-title>{{user.name.fullName}}</mat-panel-title>
+      <mat-panel-description>{{user.primaryEmail}}</mat-panel-description>
+    </mat-expansion-panel-header>
+    {{user|json}}
+  </mat-expansion-panel>
+</mat-accordion>

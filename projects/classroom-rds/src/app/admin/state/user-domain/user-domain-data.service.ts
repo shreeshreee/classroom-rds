@@ -24,6 +24,9 @@ export class UserDomainDataService extends DefaultDataService<UserDomain>  {
   getAll(): Observable<UserDomain[]> {
     return from(this.adminApiService.listAllUsers());
   }
+  getWithQuery(queryParams: QueryParams) {
+    return from(this.adminApiService.getStudents(queryParams));
+  }
   getByKey(userId: string): Observable<UserDomain> {
     return
   }

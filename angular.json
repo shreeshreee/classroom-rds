@@ -25,11 +25,11 @@
             "aot": true,
             "assets": [
               "projects/classroom-rds/src/assets",
-              "projects/classroom-rds/src/manifest.webmanifest",
               "projects/classroom-rds/src/manifest.webmanifest"
             ],
             "styles": [
               "projects/classroom-rds/src/styles.scss",
+              "projects/classroom-rds/src/assets/themes/colors.scss",
               "./node_modules/bootstrap/scss/bootstrap.scss",
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
             ],
@@ -93,11 +93,11 @@
             "karmaConfig": "projects/classroom-rds/karma.conf.js",
             "assets": [
               "projects/classroom-rds/src/assets",
-              "projects/classroom-rds/src/manifest.webmanifest",
               "projects/classroom-rds/src/manifest.webmanifest"
             ],
             "styles": [
               "./node_modules/bootstrap/scss/bootstrap.scss",
+              "projects/classroom-rds/src/assets/themes/colors.scss",
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "projects/classroom-rds/src/styles.scss"
             ],
