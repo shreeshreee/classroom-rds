@@ -24,131 +24,131 @@
 <title>cluster_ClassroomModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-70 8,-268 1189,-268 1189,-70 8,-70"/>
 </g>
+<g id="clust4" class="cluster">
+<title>cluster_ClassroomModule_imports</title>
+<polygon fill="none" stroke="black" points="182,-78 182,-130 1181,-130 1181,-78 182,-78"/>
+</g>
 <g id="clust5" class="cluster">
 <title>cluster_ClassroomModule_exports</title>
-<polygon fill="none" stroke="black" points="461,-208 461,-260 621,-260 621,-208 461,-208"/>
+<polygon fill="none" stroke="black" points="502,-208 502,-260 662,-260 662,-208 502,-208"/>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_ClassroomModule_declarations</title>
-<polygon fill="none" stroke="black" points="1023,-78 1023,-130 1181,-130 1181,-78 1023,-78"/>
-</g>
-<g id="clust4" class="cluster">
-<title>cluster_ClassroomModule_imports</title>
-<polygon fill="none" stroke="black" points="16,-78 16,-130 1015,-130 1015,-78 16,-78"/>
+<polygon fill="none" stroke="black" points="16,-78 16,-130 174,-130 174,-78 16,-78"/>
 </g>
 <!-- ClassroomComponent -->
 <g id="node1" class="node">
 <title>ClassroomComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="1172.71,-122 1031.29,-122 1031.29,-86 1172.71,-86 1172.71,-122"/>
-<text text-anchor="middle" x="1102" y="-99.8" font-family="Times,serif" font-size="14.00">ClassroomComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="165.71,-122 24.29,-122 24.29,-86 165.71,-86 165.71,-122"/>
+<text text-anchor="middle" x="95" y="-99.8" font-family="Times,serif" font-size="14.00">ClassroomComponent</text>
 </g>
 <!-- ClassroomModule -->
 <g id="node2" class="node">
 <title>ClassroomModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="600.93,-187 597.93,-191 576.93,-191 573.93,-187 481.07,-187 481.07,-151 600.93,-151 600.93,-187"/>
-<text text-anchor="middle" x="541" y="-164.8" font-family="Times,serif" font-size="14.00">ClassroomModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="641.93,-187 638.93,-191 617.93,-191 614.93,-187 522.07,-187 522.07,-151 641.93,-151 641.93,-187"/>
+<text text-anchor="middle" x="582" y="-164.8" font-family="Times,serif" font-size="14.00">ClassroomModule</text>
 </g>
 <!-- ClassroomComponent&#45;&gt;ClassroomModule -->
 <g id="edge1" class="edge">
 <title>ClassroomComponent&#45;&gt;ClassroomModule</title>
-<path fill="none" stroke="black" d="M1102,-122.29C1102,-144.21 1102,-178 1102,-178 1102,-178 610.77,-178 610.77,-178"/>
-<polygon fill="black" stroke="black" points="610.77,-174.5 600.77,-178 610.77,-181.5 610.77,-174.5"/>
+<path fill="none" stroke="black" d="M95,-122.29C95,-144.21 95,-178 95,-178 95,-178 511.8,-178 511.8,-178"/>
+<polygon fill="black" stroke="black" points="511.8,-181.5 521.8,-178 511.8,-174.5 511.8,-181.5"/>
 </g>
 <!-- ClassroomComponent  -->
 <g id="node10" class="node">
 <title>ClassroomComponent </title>
-<polygon fill="#fb8072" stroke="black" points="613.21,-252 468.79,-252 468.79,-216 613.21,-216 613.21,-252"/>
-<text text-anchor="middle" x="541" y="-229.8" font-family="Times,serif" font-size="14.00">ClassroomComponent </text>
+<polygon fill="#fb8072" stroke="black" points="654.21,-252 509.79,-252 509.79,-216 654.21,-216 654.21,-252"/>
+<text text-anchor="middle" x="582" y="-229.8" font-family="Times,serif" font-size="14.00">ClassroomComponent </text>
 </g>
 <!-- ClassroomModule&#45;&gt;ClassroomComponent  -->
 <g id="edge9" class="edge">
 <title>ClassroomModule&#45;&gt;ClassroomComponent </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M541,-187.11C541,-187.11 541,-205.99 541,-205.99"/>
-<polygon fill="black" stroke="black" points="537.5,-205.99 541,-215.99 544.5,-205.99 537.5,-205.99"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M582,-187.11C582,-187.11 582,-205.99 582,-205.99"/>
+<polygon fill="black" stroke="black" points="578.5,-205.99 582,-215.99 585.5,-205.99 578.5,-205.99"/>
 </g>
 <!-- AnnouncementsModule -->
 <g id="node3" class="node">
 <title>AnnouncementsModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="1007.03,-122 1004.03,-126 983.03,-126 980.03,-122 856.97,-122 856.97,-86 1007.03,-86 1007.03,-122"/>
-<text text-anchor="middle" x="932" y="-99.8" font-family="Times,serif" font-size="14.00">AnnouncementsModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="1173.03,-122 1170.03,-126 1149.03,-126 1146.03,-122 1022.97,-122 1022.97,-86 1173.03,-86 1173.03,-122"/>
+<text text-anchor="middle" x="1098" y="-99.8" font-family="Times,serif" font-size="14.00">AnnouncementsModule</text>
 </g>
 <!-- AnnouncementsModule&#45;&gt;ClassroomModule -->
 <g id="edge2" class="edge">
 <title>AnnouncementsModule&#45;&gt;ClassroomModule</title>
-<path fill="none" stroke="black" d="M932,-122.11C932,-141.34 932,-169 932,-169 932,-169 610.81,-169 610.81,-169"/>
-<polygon fill="black" stroke="black" points="610.81,-165.5 600.81,-169 610.81,-172.5 610.81,-165.5"/>
+<path fill="none" stroke="black" d="M1098,-122.29C1098,-144.21 1098,-178 1098,-178 1098,-178 651.95,-178 651.95,-178"/>
+<polygon fill="black" stroke="black" points="651.95,-174.5 641.95,-178 651.95,-181.5 651.95,-174.5"/>
 </g>
 <!-- ClassroomRoutingModule -->
 <g id="node4" class="node">
 <title>ClassroomRoutingModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="838.05,-122 835.05,-126 814.05,-126 811.05,-122 673.95,-122 673.95,-86 838.05,-86 838.05,-122"/>
-<text text-anchor="middle" x="756" y="-99.8" font-family="Times,serif" font-size="14.00">ClassroomRoutingModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="1004.05,-122 1001.05,-126 980.05,-126 977.05,-122 839.95,-122 839.95,-86 1004.05,-86 1004.05,-122"/>
+<text text-anchor="middle" x="922" y="-99.8" font-family="Times,serif" font-size="14.00">ClassroomRoutingModule</text>
 </g>
 <!-- ClassroomRoutingModule&#45;&gt;ClassroomModule -->
 <g id="edge3" class="edge">
 <title>ClassroomRoutingModule&#45;&gt;ClassroomModule</title>
-<path fill="none" stroke="black" d="M756,-122.03C756,-138.4 756,-160 756,-160 756,-160 610.89,-160 610.89,-160"/>
-<polygon fill="black" stroke="black" points="610.89,-156.5 600.89,-160 610.89,-163.5 610.89,-156.5"/>
+<path fill="none" stroke="black" d="M922,-122.11C922,-141.34 922,-169 922,-169 922,-169 652,-169 652,-169"/>
+<polygon fill="black" stroke="black" points="652,-165.5 642,-169 652,-172.5 652,-165.5"/>
 </g>
 <!-- CoursesModule -->
 <g id="node5" class="node">
 <title>CoursesModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="655.15,-122 652.15,-126 631.15,-126 628.15,-122 550.85,-122 550.85,-86 655.15,-86 655.15,-122"/>
-<text text-anchor="middle" x="603" y="-99.8" font-family="Times,serif" font-size="14.00">CoursesModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="821.15,-122 818.15,-126 797.15,-126 794.15,-122 716.85,-122 716.85,-86 821.15,-86 821.15,-122"/>
+<text text-anchor="middle" x="769" y="-99.8" font-family="Times,serif" font-size="14.00">CoursesModule</text>
 </g>
 <!-- CoursesModule&#45;&gt;ClassroomModule -->
 <g id="edge4" class="edge">
 <title>CoursesModule&#45;&gt;ClassroomModule</title>
-<path fill="none" stroke="black" d="M575.7,-122.11C575.7,-122.11 575.7,-140.99 575.7,-140.99"/>
-<polygon fill="black" stroke="black" points="572.2,-140.99 575.7,-150.99 579.2,-140.99 572.2,-140.99"/>
+<path fill="none" stroke="black" d="M769,-122.03C769,-138.4 769,-160 769,-160 769,-160 651.94,-160 651.94,-160"/>
+<polygon fill="black" stroke="black" points="651.94,-156.5 641.94,-160 651.94,-163.5 651.94,-156.5"/>
 </g>
 <!-- MaterialModule -->
 <g id="node6" class="node">
 <title>MaterialModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="532.47,-122 529.47,-126 508.47,-126 505.47,-122 425.53,-122 425.53,-86 532.47,-86 532.47,-122"/>
-<text text-anchor="middle" x="479" y="-99.8" font-family="Times,serif" font-size="14.00">MaterialModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="698.47,-122 695.47,-126 674.47,-126 671.47,-122 591.53,-122 591.53,-86 698.47,-86 698.47,-122"/>
+<text text-anchor="middle" x="645" y="-99.8" font-family="Times,serif" font-size="14.00">MaterialModule</text>
 </g>
 <!-- MaterialModule&#45;&gt;ClassroomModule -->
 <g id="edge5" class="edge">
 <title>MaterialModule&#45;&gt;ClassroomModule</title>
-<path fill="none" stroke="black" d="M506.88,-122.11C506.88,-122.11 506.88,-140.99 506.88,-140.99"/>
-<polygon fill="black" stroke="black" points="503.38,-140.99 506.88,-150.99 510.38,-140.99 503.38,-140.99"/>
+<path fill="none" stroke="black" d="M616.62,-122.11C616.62,-122.11 616.62,-140.99 616.62,-140.99"/>
+<polygon fill="black" stroke="black" points="613.12,-140.99 616.62,-150.99 620.12,-140.99 613.12,-140.99"/>
 </g>
 <!-- StudentsModule -->
 <g id="node7" class="node">
 <title>StudentsModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="407.77,-122 404.77,-126 383.77,-126 380.77,-122 300.23,-122 300.23,-86 407.77,-86 407.77,-122"/>
-<text text-anchor="middle" x="354" y="-99.8" font-family="Times,serif" font-size="14.00">StudentsModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="573.77,-122 570.77,-126 549.77,-126 546.77,-122 466.23,-122 466.23,-86 573.77,-86 573.77,-122"/>
+<text text-anchor="middle" x="520" y="-99.8" font-family="Times,serif" font-size="14.00">StudentsModule</text>
 </g>
 <!-- StudentsModule&#45;&gt;ClassroomModule -->
 <g id="edge6" class="edge">
 <title>StudentsModule&#45;&gt;ClassroomModule</title>
-<path fill="none" stroke="black" d="M354,-122.03C354,-138.4 354,-160 354,-160 354,-160 471.06,-160 471.06,-160"/>
-<polygon fill="black" stroke="black" points="471.06,-163.5 481.06,-160 471.06,-156.5 471.06,-163.5"/>
+<path fill="none" stroke="black" d="M548.09,-122.11C548.09,-122.11 548.09,-140.99 548.09,-140.99"/>
+<polygon fill="black" stroke="black" points="544.59,-140.99 548.09,-150.99 551.59,-140.99 544.59,-140.99"/>
 </g>
 <!-- TeachersModule -->
 <g id="node8" class="node">
 <title>TeachersModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="282.07,-122 279.07,-126 258.07,-126 255.07,-122 171.93,-122 171.93,-86 282.07,-86 282.07,-122"/>
-<text text-anchor="middle" x="227" y="-99.8" font-family="Times,serif" font-size="14.00">TeachersModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="448.07,-122 445.07,-126 424.07,-126 421.07,-122 337.93,-122 337.93,-86 448.07,-86 448.07,-122"/>
+<text text-anchor="middle" x="393" y="-99.8" font-family="Times,serif" font-size="14.00">TeachersModule</text>
 </g>
 <!-- TeachersModule&#45;&gt;ClassroomModule -->
 <g id="edge7" class="edge">
 <title>TeachersModule&#45;&gt;ClassroomModule</title>
-<path fill="none" stroke="black" d="M227,-122.11C227,-141.34 227,-169 227,-169 227,-169 471.2,-169 471.2,-169"/>
-<polygon fill="black" stroke="black" points="471.2,-172.5 481.2,-169 471.2,-165.5 471.2,-172.5"/>
+<path fill="none" stroke="black" d="M393,-122.03C393,-138.4 393,-160 393,-160 393,-160 512.2,-160 512.2,-160"/>
+<polygon fill="black" stroke="black" points="512.2,-163.5 522.2,-160 512.2,-156.5 512.2,-163.5"/>
 </g>
 <!-- UserProfilesModule -->
 <g id="node9" class="node">
 <title>UserProfilesModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="153.52,-122 150.52,-126 129.52,-126 126.52,-122 24.48,-122 24.48,-86 153.52,-86 153.52,-122"/>
-<text text-anchor="middle" x="89" y="-99.8" font-family="Times,serif" font-size="14.00">UserProfilesModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="319.52,-122 316.52,-126 295.52,-126 292.52,-122 190.48,-122 190.48,-86 319.52,-86 319.52,-122"/>
+<text text-anchor="middle" x="255" y="-99.8" font-family="Times,serif" font-size="14.00">UserProfilesModule</text>
 </g>
 <!-- UserProfilesModule&#45;&gt;ClassroomModule -->
 <g id="edge8" class="edge">
 <title>UserProfilesModule&#45;&gt;ClassroomModule</title>
-<path fill="none" stroke="black" d="M89,-122.29C89,-144.21 89,-178 89,-178 89,-178 470.98,-178 470.98,-178"/>
-<polygon fill="black" stroke="black" points="470.98,-181.5 480.98,-178 470.98,-174.5 470.98,-181.5"/>
+<path fill="none" stroke="black" d="M255,-122.11C255,-141.34 255,-169 255,-169 255,-169 512.02,-169 512.02,-169"/>
+<polygon fill="black" stroke="black" points="512.02,-172.5 522.02,-169 512.02,-165.5 512.02,-172.5"/>
 </g>
 </g>
 </svg>

@@ -1,22 +1,49 @@
-.full-width-table {
+table {
   width: 100%;
 }
-.mat-column-courseName {
-  flex: 0 0 40% !important;
-  min-width: 104px !important;
+
+.strong-footer {
+  font-weight: 600;
 }
-.mat-column-unidad1 {
-  flex: 0 0 20% !important;
-  min-width: 50px !important;
+tr.example-detail-row {
+  height: 0;
 }
-.mat-column-unidad2 {
-  flex: 0 0 20% !important;
-  min-width: 50px !important;
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: #f5f5f5;
 }
-.mat-column-unidad3 {
-  flex: 0 0 20% !important;
-  min-width: 50px !important;
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
 }
-.mat-sort-header-container {
-  align-items: center;
+
+.example-element-row td {
+  border-bottom-width:0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+.example-element-diagram {
+  min-width: 80px;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 5px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
 }

@@ -618,13 +618,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/UserModule.html" data-type="entity-link">UserModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-UserModule-6601baecc12da9565ba65de294bc3832"' : 'data-target="#xs-components-links-module-UserModule-6601baecc12da9565ba65de294bc3832"' }>
+                                            'data-target="#components-links-module-UserModule-9b667911ad7e8500a38145c96f084f47"' : 'data-target="#xs-components-links-module-UserModule-9b667911ad7e8500a38145c96f084f47"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Componentes</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-UserModule-6601baecc12da9565ba65de294bc3832"' :
-                                            'id="xs-components-links-module-UserModule-6601baecc12da9565ba65de294bc3832"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-UserModule-9b667911ad7e8500a38145c96f084f47"' :
+                                            'id="xs-components-links-module-UserModule-9b667911ad7e8500a38145c96f084f47"' }>
                                             <li class="link">
                                                 <a href="components/GradesTableComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">GradesTableComponent</a>
@@ -653,13 +653,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-UserModule-6601baecc12da9565ba65de294bc3832"' : 'data-target="#xs-injectables-links-module-UserModule-6601baecc12da9565ba65de294bc3832"' }>
+                                        'data-target="#injectables-links-module-UserModule-9b667911ad7e8500a38145c96f084f47"' : 'data-target="#xs-injectables-links-module-UserModule-9b667911ad7e8500a38145c96f084f47"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Inyectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-UserModule-6601baecc12da9565ba65de294bc3832"' :
-                                        'id="xs-injectables-links-module-UserModule-6601baecc12da9565ba65de294bc3832"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-UserModule-9b667911ad7e8500a38145c96f084f47"' :
+                                        'id="xs-injectables-links-module-UserModule-9b667911ad7e8500a38145c96f084f47"' }>
                                         <li class="link">
                                             <a href="injectables/UserScoresService.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>UserScoresService</a>

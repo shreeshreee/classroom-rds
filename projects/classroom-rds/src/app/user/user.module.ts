@@ -1,4 +1,3 @@
-import { UserResolver } from './resolvers/user.resolver';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -10,6 +9,7 @@ import { MaterialModule } from './../modules/material.module';
 
 import { UserRoutingModule } from './user-routing.module';
 
+import { UserResolver } from './resolvers/user.resolver';
 import { UserScoresService } from './services/user-scores.service';
 import { GradesTableComponent } from './components/grades-table/grades-table.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';

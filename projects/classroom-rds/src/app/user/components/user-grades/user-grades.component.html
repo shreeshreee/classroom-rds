@@ -5,10 +5,12 @@
 </div>
 <mat-card *ngIf="(scores|async) as scores">
   <mat-card-content class="card border-primary m-n2">
-    <h2 class="mat-h2 card-header">Calificaciones</h2>
+    <h1 class="mat-h2 card-header">Calificaciones &nbsp;<small class="text-muted">Ciclo escolar
+        2020-21</small></h1>
     <div class="card-body">
-      <p class="card-text">Se muestran únicamente los cursos en donde estás inscrito como alumno.
-      </p>
+      <h3 class="h3 card-title"></h3>
+      <p class="card-text">Fecha y hora de consulta: {{today|date:'medium'}}</p>
+      <p class="card-text">Selecciona una materia para conocer sus observaciones:</p>
       <div>
         <app-grades-table [data]="scores"></app-grades-table>
       </div>

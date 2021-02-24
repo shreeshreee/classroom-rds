@@ -20,12 +20,15 @@ export class SchoolComponent implements OnInit {
   loaded$: Observable<boolean>;
   level: string;
   grade: string;
+  fullName: string;
   clevelKeys;
   clevels = CourseLevel;
   slevelKeys;
   slevels = SchoolLevel;
   queryParams: QueryParams;
   raisedElev = 8;
+  searching: boolean = false;
+
   constructor(
     private userDomainEntityService: UserDomainEntityService,
   ) {
@@ -35,8 +38,9 @@ export class SchoolComponent implements OnInit {
     this.level = "Primaria";
     this.grade = "1° de Primaria";
     this.queryParams = { level: this.level, grade: this.grade };
-
   }
+
+
 
   ngOnInit(): void {
     this.queryParams = { level: this.level, grade: this.grade }

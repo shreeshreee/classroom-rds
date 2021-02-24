@@ -1,31 +1,104 @@
-<mat-table [dataSource]="dataSource" class="d-block" matSort aria-label="Elements">
+<table mat-table [dataSource]="data" multiTemplateDataRows>
   <!-- Id Column -->
   <ng-container matColumnDef="courseName">
-    <mat-header-cell [ngClass]="'w-75'" *matHeaderCellDef mat-sort-header>Materia</mat-header-cell>
-    <mat-cell *matCellDef="let row">{{row.courseName}}</mat-cell>
-    <mat-footer-cell *matFooterCellDef> Promedio: </mat-footer-cell>
+    <th mat-header-cell *matHeaderCellDef>Materia</th>
+    <td mat-cell *matCellDef="let element">{{element.courseName}}</td>
+    <td mat-footer-cell *matFooterCellDef> Promedio: </td>
   </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="unidad1">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Unidad 1</mat-header-cell>
-    <mat-cell *matCellDef="let row">{{row.unidad1==0?'-':row.unidad1}}</mat-cell>
-    <mat-footer-cell *matFooterCellDef> {{getAverage()[0]|number}} </mat-footer-cell>
+    <th mat-header-cell *matHeaderCellDef>Unidad 1</th>
+    <td mat-cell *matCellDef="let element">{{element.unidad1==0?'-':element.unidad1}} </td>
+    <td mat-footer-cell *matFooterCellDef> {{getAverage()[0]|number}} </td>
+
   </ng-container>
 
   <ng-container matColumnDef="unidad2">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Unidad 2</mat-header-cell>
-    <mat-cell *matCellDef="let row">{{row.unidad2==0?'-':row.unidad2}}</mat-cell>
-    <mat-footer-cell *matFooterCellDef> {{getAverage()[1]|number}} </mat-footer-cell>
+    <th mat-header-cell *matHeaderCellDef>Unidad 2</th>
+    <td mat-cell *matCellDef="let element">{{element.unidad2==0?'-':element.unidad2}}</td>
+    <td mat-footer-cell *matFooterCellDef> {{getAverage()[1]|number}} </td>
+
   </ng-container>
 
   <ng-container matColumnDef="unidad3">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Unidad 3</mat-header-cell>
-    <mat-cell *matCellDef="let row">{{row.unidad3==0?'-':row.unidad3}}</mat-cell>
-    <mat-footer-cell *matFooterCellDef> {{getAverage()[2]|number}}</mat-footer-cell>
+    <th mat-header-cell *matHeaderCellDef>Unidad 3</th>
+    <td mat-cell *matCellDef="let element">{{element.unidad3==0?'-':element.unidad3}}</td>
+    <td mat-footer-cell *matFooterCellDef> {{getAverage()[2]|number}}</td>
+
   </ng-container>
 
-  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  <mat-footer-row *matFooterRowDef="displayedColumns"></mat-footer-row>
-</mat-table>
+  <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+  <ng-container matColumnDef="expandedDetail">
+    <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.lenght">
+      <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+        <div class="example-element-description">
+          Observaciones:
+          <div>Unidad 1: {{element.observation1}} </div>
+          <div>Unidad 2: {{element.observation2}} </div>
+          <div>Unidad 3: {{element.observation3}} </div>
+        </div>
+      </div>
+    </td>
+    <td mat-footer-cell *matFooterCellDef> </td>
+  </ng-container>
+
+
+  <!-- set footer for total amount-->
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row class="example-element-row" *matRowDef="let element; columns: displayedColumns;"
+    [class.example-expanded-row]="expandedElement === element" (click)="expandedElement = element"></tr>
+  <tr mat-row class="example-detail-row" *matRowDef="let row; columns: ['expandedDetail']"></tr>
+  <tr mat-footer-row class="strong-footer" *matFooterRowDef="displayedColumns"></tr>
+</table>
+
+<div class="p-3">Materias Optativas:
+  <p>
+    <small>Estas materias no estan incluidas en el promedio de la boleta oficial de la SEP. Sin embargo, son un
+      requisito
+      necesario para cubrir la cantidad de horas asignadas en la carga de trabajo por semana.</small>
+  </p>
+</div>
+
+<table mat-table [dataSource]="extraData" multiTemplateDataRows>
+  <!-- Id Column -->
+  <ng-container matColumnDef="courseName">
+    <th mat-header-cell *matHeaderCellDef>Materia</th>
+    <td mat-cell *matCellDef="let element">{{element.courseName}}</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="unidad1">
+    <th mat-header-cell *matHeaderCellDef>Unidad 1</th>
+    <td mat-cell *matCellDef="let element">{{element.unidad1==0?'-':element.unidad1}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="unidad2">
+    <th mat-header-cell *matHeaderCellDef>Unidad 2</th>
+    <td mat-cell *matCellDef="let element">{{element.unidad2==0?'-':element.unidad2}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="unidad3">
+    <th mat-header-cell *matHeaderCellDef>Unidad 3</th>
+    <td mat-cell *matCellDef="let element">{{element.unidad3==0?'-':element.unidad3}}</td>
+  </ng-container>
+
+  <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+  <ng-container matColumnDef="expandedDetail">
+    <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.lenght">
+      <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+        <div class="example-element-description">
+          Observaciones:
+          <div>{{element.observation1}} </div>
+          <div>{{element.observation2}} </div>
+          <div>{{element.observation3}} </div>
+        </div>
+      </div>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row class="example-element-row" *matRowDef="let element; columns: displayedColumns;"
+    [class.example-expanded-row]="expandedElement === element" (click)="expandedElement = element"></tr>
+  <tr mat-row class="example-detail-row" *matRowDef="let row; columns: ['expandedDetail']"></tr>
+</table>

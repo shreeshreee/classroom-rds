@@ -24,159 +24,159 @@
 <title>cluster_CourseWorksModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-70 8,-268 2158,-268 2158,-70 8,-70"/>
 </g>
-<g id="clust5" class="cluster">
-<title>cluster_CourseWorksModule_exports</title>
-<polygon fill="none" stroke="black" points="833,-208 833,-260 1005,-260 1005,-208 833,-208"/>
-</g>
-<g id="clust7" class="cluster">
-<title>cluster_CourseWorksModule_providers</title>
-<polygon fill="none" stroke="black" points="522,-78 522,-130 2150,-130 2150,-78 522,-78"/>
-</g>
 <g id="clust2" class="cluster">
 <title>cluster_CourseWorksModule_declarations</title>
-<polygon fill="none" stroke="black" points="346,-78 346,-130 514,-130 514,-78 346,-78"/>
+<polygon fill="none" stroke="black" points="1982,-78 1982,-130 2150,-130 2150,-78 1982,-78"/>
 </g>
 <g id="clust4" class="cluster">
 <title>cluster_CourseWorksModule_imports</title>
-<polygon fill="none" stroke="black" points="16,-78 16,-130 338,-130 338,-78 16,-78"/>
+<polygon fill="none" stroke="black" points="1652,-78 1652,-130 1974,-130 1974,-78 1652,-78"/>
+</g>
+<g id="clust5" class="cluster">
+<title>cluster_CourseWorksModule_exports</title>
+<polygon fill="none" stroke="black" points="1091,-208 1091,-260 1263,-260 1263,-208 1091,-208"/>
+</g>
+<g id="clust7" class="cluster">
+<title>cluster_CourseWorksModule_providers</title>
+<polygon fill="none" stroke="black" points="16,-78 16,-130 1644,-130 1644,-78 16,-78"/>
 </g>
 <!-- CourseWorkComponent -->
 <g id="node1" class="node">
 <title>CourseWorkComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="506.36,-122 353.64,-122 353.64,-86 506.36,-86 506.36,-122"/>
-<text text-anchor="middle" x="430" y="-99.8" font-family="Times,serif" font-size="14.00">CourseWorkComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="2142.36,-122 1989.64,-122 1989.64,-86 2142.36,-86 2142.36,-122"/>
+<text text-anchor="middle" x="2066" y="-99.8" font-family="Times,serif" font-size="14.00">CourseWorkComponent</text>
 </g>
 <!-- CourseWorksModule -->
 <g id="node2" class="node">
 <title>CourseWorksModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="987.03,-187 984.03,-191 963.03,-191 960.03,-187 850.97,-187 850.97,-151 987.03,-151 987.03,-187"/>
-<text text-anchor="middle" x="919" y="-164.8" font-family="Times,serif" font-size="14.00">CourseWorksModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="1245.03,-187 1242.03,-191 1221.03,-191 1218.03,-187 1108.97,-187 1108.97,-151 1245.03,-151 1245.03,-187"/>
+<text text-anchor="middle" x="1177" y="-164.8" font-family="Times,serif" font-size="14.00">CourseWorksModule</text>
 </g>
 <!-- CourseWorkComponent&#45;&gt;CourseWorksModule -->
 <g id="edge1" class="edge">
 <title>CourseWorkComponent&#45;&gt;CourseWorksModule</title>
-<path fill="none" stroke="black" d="M430,-122.27C430,-140.56 430,-166 430,-166 430,-166 840.75,-166 840.75,-166"/>
-<polygon fill="black" stroke="black" points="840.75,-169.5 850.75,-166 840.75,-162.5 840.75,-169.5"/>
+<path fill="none" stroke="black" d="M2066,-122.01C2066,-144.49 2066,-180 2066,-180 2066,-180 1255.28,-180 1255.28,-180"/>
+<polygon fill="black" stroke="black" points="1255.28,-176.5 1245.28,-180 1255.28,-183.5 1255.28,-176.5"/>
 </g>
 <!-- CourseWorkComponent  -->
 <g id="node5" class="node">
 <title>CourseWorkComponent </title>
-<polygon fill="#fb8072" stroke="black" points="997.36,-252 840.64,-252 840.64,-216 997.36,-216 997.36,-252"/>
-<text text-anchor="middle" x="919" y="-229.8" font-family="Times,serif" font-size="14.00">CourseWorkComponent </text>
+<polygon fill="#fb8072" stroke="black" points="1255.36,-252 1098.64,-252 1098.64,-216 1255.36,-216 1255.36,-252"/>
+<text text-anchor="middle" x="1177" y="-229.8" font-family="Times,serif" font-size="14.00">CourseWorkComponent </text>
 </g>
 <!-- CourseWorksModule&#45;&gt;CourseWorkComponent  -->
 <g id="edge4" class="edge">
 <title>CourseWorksModule&#45;&gt;CourseWorkComponent </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M919,-187.11C919,-187.11 919,-205.99 919,-205.99"/>
-<polygon fill="black" stroke="black" points="915.5,-205.99 919,-215.99 922.5,-205.99 915.5,-205.99"/>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M1177,-187.11C1177,-187.11 1177,-205.99 1177,-205.99"/>
+<polygon fill="black" stroke="black" points="1173.5,-205.99 1177,-215.99 1180.5,-205.99 1173.5,-205.99"/>
 </g>
 <!-- CourseWorksRoutingModule -->
 <g id="node3" class="node">
 <title>CourseWorksRoutingModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="329.64,-122 326.64,-126 305.64,-126 302.64,-122 148.36,-122 148.36,-86 329.64,-86 329.64,-122"/>
-<text text-anchor="middle" x="239" y="-99.8" font-family="Times,serif" font-size="14.00">CourseWorksRoutingModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="1965.64,-122 1962.64,-126 1941.64,-126 1938.64,-122 1784.36,-122 1784.36,-86 1965.64,-86 1965.64,-122"/>
+<text text-anchor="middle" x="1875" y="-99.8" font-family="Times,serif" font-size="14.00">CourseWorksRoutingModule</text>
 </g>
 <!-- CourseWorksRoutingModule&#45;&gt;CourseWorksModule -->
 <g id="edge2" class="edge">
 <title>CourseWorksRoutingModule&#45;&gt;CourseWorksModule</title>
-<path fill="none" stroke="black" d="M239,-122.13C239,-142.57 239,-173 239,-173 239,-173 840.69,-173 840.69,-173"/>
-<polygon fill="black" stroke="black" points="840.69,-176.5 850.69,-173 840.69,-169.5 840.69,-176.5"/>
+<path fill="none" stroke="black" d="M1875,-122.13C1875,-142.57 1875,-173 1875,-173 1875,-173 1255.2,-173 1255.2,-173"/>
+<polygon fill="black" stroke="black" points="1255.2,-169.5 1245.2,-173 1255.2,-176.5 1255.2,-169.5"/>
 </g>
 <!-- MaterialModule -->
 <g id="node4" class="node">
 <title>MaterialModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="130.47,-122 127.47,-126 106.47,-126 103.47,-122 23.53,-122 23.53,-86 130.47,-86 130.47,-122"/>
-<text text-anchor="middle" x="77" y="-99.8" font-family="Times,serif" font-size="14.00">MaterialModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="1766.47,-122 1763.47,-126 1742.47,-126 1739.47,-122 1659.53,-122 1659.53,-86 1766.47,-86 1766.47,-122"/>
+<text text-anchor="middle" x="1713" y="-99.8" font-family="Times,serif" font-size="14.00">MaterialModule</text>
 </g>
 <!-- MaterialModule&#45;&gt;CourseWorksModule -->
 <g id="edge3" class="edge">
 <title>MaterialModule&#45;&gt;CourseWorksModule</title>
-<path fill="none" stroke="black" d="M77,-122.01C77,-144.49 77,-180 77,-180 77,-180 840.81,-180 840.81,-180"/>
-<polygon fill="black" stroke="black" points="840.81,-183.5 850.81,-180 840.81,-176.5 840.81,-183.5"/>
+<path fill="none" stroke="black" d="M1713,-122.27C1713,-140.56 1713,-166 1713,-166 1713,-166 1255.16,-166 1255.16,-166"/>
+<polygon fill="black" stroke="black" points="1255.16,-162.5 1245.16,-166 1255.16,-169.5 1255.16,-162.5"/>
 </g>
 <!-- CourseWorkDataService -->
 <g id="node6" class="node">
 <title>CourseWorkDataService</title>
-<ellipse fill="#fdb462" stroke="black" cx="2034" cy="-104" rx="107.62" ry="18"/>
-<text text-anchor="middle" x="2034" y="-99.8" font-family="Times,serif" font-size="14.00">CourseWorkDataService</text>
+<ellipse fill="#fdb462" stroke="black" cx="1528" cy="-104" rx="107.62" ry="18"/>
+<text text-anchor="middle" x="1528" y="-99.8" font-family="Times,serif" font-size="14.00">CourseWorkDataService</text>
 </g>
 <!-- CourseWorkDataService&#45;&gt;CourseWorksModule -->
 <g id="edge5" class="edge">
 <title>CourseWorkDataService&#45;&gt;CourseWorksModule</title>
-<path fill="none" stroke="black" d="M2034,-122.01C2034,-144.49 2034,-180 2034,-180 2034,-180 997.07,-180 997.07,-180"/>
-<polygon fill="black" stroke="black" points="997.07,-176.5 987.07,-180 997.07,-183.5 997.07,-176.5"/>
+<path fill="none" stroke="black" d="M1528,-122.01C1528,-138.05 1528,-159 1528,-159 1528,-159 1255.09,-159 1255.09,-159"/>
+<polygon fill="black" stroke="black" points="1255.09,-155.5 1245.09,-159 1255.09,-162.5 1255.09,-155.5"/>
 </g>
 <!-- CourseWorkEntityService -->
 <g id="node7" class="node">
 <title>CourseWorkEntityService</title>
-<ellipse fill="#fdb462" stroke="black" cx="1795" cy="-104" rx="112.88" ry="18"/>
-<text text-anchor="middle" x="1795" y="-99.8" font-family="Times,serif" font-size="14.00">CourseWorkEntityService</text>
+<ellipse fill="#fdb462" stroke="black" cx="1289" cy="-104" rx="112.88" ry="18"/>
+<text text-anchor="middle" x="1289" y="-99.8" font-family="Times,serif" font-size="14.00">CourseWorkEntityService</text>
 </g>
 <!-- CourseWorkEntityService&#45;&gt;CourseWorksModule -->
 <g id="edge6" class="edge">
 <title>CourseWorkEntityService&#45;&gt;CourseWorksModule</title>
-<path fill="none" stroke="black" d="M1795,-122.13C1795,-142.57 1795,-173 1795,-173 1795,-173 997.37,-173 997.37,-173"/>
-<polygon fill="black" stroke="black" points="997.37,-169.5 987.37,-173 997.37,-176.5 997.37,-169.5"/>
+<path fill="none" stroke="black" d="M1210.66,-117.15C1210.66,-117.15 1210.66,-140.69 1210.66,-140.69"/>
+<polygon fill="black" stroke="black" points="1207.16,-140.69 1210.66,-150.69 1214.16,-140.69 1207.16,-140.69"/>
 </g>
 <!-- CourseWorksService -->
 <g id="node8" class="node">
 <title>CourseWorksService</title>
-<ellipse fill="#fdb462" stroke="black" cx="1571" cy="-104" rx="93.18" ry="18"/>
-<text text-anchor="middle" x="1571" y="-99.8" font-family="Times,serif" font-size="14.00">CourseWorksService</text>
+<ellipse fill="#fdb462" stroke="black" cx="1065" cy="-104" rx="93.18" ry="18"/>
+<text text-anchor="middle" x="1065" y="-99.8" font-family="Times,serif" font-size="14.00">CourseWorksService</text>
 </g>
 <!-- CourseWorksService&#45;&gt;CourseWorksModule -->
 <g id="edge7" class="edge">
 <title>CourseWorksService&#45;&gt;CourseWorksModule</title>
-<path fill="none" stroke="black" d="M1571,-122.27C1571,-140.56 1571,-166 1571,-166 1571,-166 997.24,-166 997.24,-166"/>
-<polygon fill="black" stroke="black" points="997.24,-162.5 987.24,-166 997.24,-169.5 997.24,-162.5"/>
+<path fill="none" stroke="black" d="M1133.41,-116.23C1133.41,-116.23 1133.41,-140.68 1133.41,-140.68"/>
+<polygon fill="black" stroke="black" points="1129.91,-140.68 1133.41,-150.68 1136.91,-140.68 1129.91,-140.68"/>
 </g>
 <!-- StudentSubmissionDataService -->
 <g id="node9" class="node">
 <title>StudentSubmissionDataService</title>
-<ellipse fill="#fdb462" stroke="black" cx="1327" cy="-104" rx="132.6" ry="18"/>
-<text text-anchor="middle" x="1327" y="-99.8" font-family="Times,serif" font-size="14.00">StudentSubmissionDataService</text>
+<ellipse fill="#fdb462" stroke="black" cx="821" cy="-104" rx="132.6" ry="18"/>
+<text text-anchor="middle" x="821" y="-99.8" font-family="Times,serif" font-size="14.00">StudentSubmissionDataService</text>
 </g>
 <!-- StudentSubmissionDataService&#45;&gt;CourseWorksModule -->
 <g id="edge8" class="edge">
 <title>StudentSubmissionDataService&#45;&gt;CourseWorksModule</title>
-<path fill="none" stroke="black" d="M1327,-122.01C1327,-138.05 1327,-159 1327,-159 1327,-159 997.29,-159 997.29,-159"/>
-<polygon fill="black" stroke="black" points="997.29,-155.5 987.29,-159 997.29,-162.5 997.29,-155.5"/>
+<path fill="none" stroke="black" d="M821,-122.01C821,-138.05 821,-159 821,-159 821,-159 1098.78,-159 1098.78,-159"/>
+<polygon fill="black" stroke="black" points="1098.78,-162.5 1108.78,-159 1098.78,-155.5 1098.78,-162.5"/>
 </g>
 <!-- StudentSubmissionEntityService -->
 <g id="node10" class="node">
 <title>StudentSubmissionEntityService</title>
-<ellipse fill="#fdb462" stroke="black" cx="1038" cy="-104" rx="138.36" ry="18"/>
-<text text-anchor="middle" x="1038" y="-99.8" font-family="Times,serif" font-size="14.00">StudentSubmissionEntityService</text>
+<ellipse fill="#fdb462" stroke="black" cx="532" cy="-104" rx="138.36" ry="18"/>
+<text text-anchor="middle" x="532" y="-99.8" font-family="Times,serif" font-size="14.00">StudentSubmissionEntityService</text>
 </g>
 <!-- StudentSubmissionEntityService&#45;&gt;CourseWorksModule -->
 <g id="edge9" class="edge">
 <title>StudentSubmissionEntityService&#45;&gt;CourseWorksModule</title>
-<path fill="none" stroke="black" d="M943.54,-117.15C943.54,-117.15 943.54,-140.69 943.54,-140.69"/>
-<polygon fill="black" stroke="black" points="940.04,-140.69 943.54,-150.69 947.04,-140.69 940.04,-140.69"/>
+<path fill="none" stroke="black" d="M532,-122.27C532,-140.56 532,-166 532,-166 532,-166 1098.89,-166 1098.89,-166"/>
+<polygon fill="black" stroke="black" points="1098.89,-169.5 1108.89,-166 1098.89,-162.5 1098.89,-169.5"/>
 </g>
 <!-- TopicDataService -->
 <g id="node11" class="node">
 <title>TopicDataService</title>
-<ellipse fill="#fdb462" stroke="black" cx="801" cy="-104" rx="80.99" ry="18"/>
-<text text-anchor="middle" x="801" y="-99.8" font-family="Times,serif" font-size="14.00">TopicDataService</text>
+<ellipse fill="#fdb462" stroke="black" cx="295" cy="-104" rx="80.99" ry="18"/>
+<text text-anchor="middle" x="295" y="-99.8" font-family="Times,serif" font-size="14.00">TopicDataService</text>
 </g>
 <!-- TopicDataService&#45;&gt;CourseWorksModule -->
 <g id="edge10" class="edge">
 <title>TopicDataService&#45;&gt;CourseWorksModule</title>
-<path fill="none" stroke="black" d="M866.24,-114.73C866.24,-114.73 866.24,-140.87 866.24,-140.87"/>
-<polygon fill="black" stroke="black" points="862.74,-140.87 866.24,-150.87 869.74,-140.87 862.74,-140.87"/>
+<path fill="none" stroke="black" d="M295,-122.13C295,-142.57 295,-173 295,-173 295,-173 1098.89,-173 1098.89,-173"/>
+<polygon fill="black" stroke="black" points="1098.89,-176.5 1108.89,-173 1098.89,-169.5 1098.89,-176.5"/>
 </g>
 <!-- TopicEntityService -->
 <g id="node12" class="node">
 <title>TopicEntityService</title>
-<ellipse fill="#fdb462" stroke="black" cx="616" cy="-104" rx="86.25" ry="18"/>
-<text text-anchor="middle" x="616" y="-99.8" font-family="Times,serif" font-size="14.00">TopicEntityService</text>
+<ellipse fill="#fdb462" stroke="black" cx="110" cy="-104" rx="86.25" ry="18"/>
+<text text-anchor="middle" x="110" y="-99.8" font-family="Times,serif" font-size="14.00">TopicEntityService</text>
 </g>
 <!-- TopicEntityService&#45;&gt;CourseWorksModule -->
 <g id="edge11" class="edge">
 <title>TopicEntityService&#45;&gt;CourseWorksModule</title>
-<path fill="none" stroke="black" d="M616,-122.01C616,-138.05 616,-159 616,-159 616,-159 840.62,-159 840.62,-159"/>
-<polygon fill="black" stroke="black" points="840.62,-162.5 850.62,-159 840.62,-155.5 840.62,-162.5"/>
+<path fill="none" stroke="black" d="M110,-122.01C110,-144.49 110,-180 110,-180 110,-180 1098.63,-180 1098.63,-180"/>
+<polygon fill="black" stroke="black" points="1098.63,-183.5 1108.63,-180 1098.63,-176.5 1098.63,-183.5"/>
 </g>
 </g>
 </svg>

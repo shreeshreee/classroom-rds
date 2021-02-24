@@ -25,6 +25,7 @@ export class UserGradesComponent implements OnInit {
   userName: string;
   userSub: Subscription;
   scores: Observable<Score[]>;
+  today: Date = new Date();
   constructor(
     private store: Store<AppState>,
     private scoreServices: UserScoresService
