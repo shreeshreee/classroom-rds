@@ -11,19 +11,21 @@
       <h3 *ngIf="user.name" class="mat-h3 mt-2">{{ user.name.fullName }}</h3>
       <h3 *ngIf="!user.name" class="mat-h3">Usuario anónimo</h3>
       <h4 class="mat-h4 mt-n3">{{ user.primaryEmail }}</h4>
-      <mat-list class="list-group">
-        <mat-list-item class="list-group-item d-flex justify-content-between align-items-center"
-          [routerLink]="['details']" [queryParams]="{ user:user }" routerLinkActive="active">
-          <fa-icon [icon]="faUserEdit"></fa-icon>&nbsp;Tus datos
-        </mat-list-item>
-        <mat-list-item class="list-group-item d-flex justify-content-between align-items-center"
-          [routerLink]="['grades']" routerLinkActive="active">
-          <fa-icon [icon]="faAward"></fa-icon>&nbsp;Calificaciones
-        </mat-list-item>
-        <mat-list-item class="list-group-item d-flex justify-content-between align-items-center" (click)="onLogout()">
-          <fa-icon [icon]="faSignOutAlt"></fa-icon>&nbsp;Cerrar sesión
-        </mat-list-item>
-      </mat-list>
+
+      <button mat-button [routerLink]="['details']" routerLinkActive="active" appMaterialElevation>
+        <fa-icon [icon]="faUserEdit"></fa-icon>&nbsp;Tus datos
+      </button>
+      <button mat-button [routerLink]="['grades']" routerLinkActive="active" appMaterialElevation>
+        <fa-icon [icon]="faAward"></fa-icon>&nbsp;Calificaciones
+      </button>
+      <button mat-button (click)="canLogout ? onLogout() : prepareForLogout()" appMaterialElevation>
+        <fa-icon [icon]="faSignOutAlt" *ngIf="!canLogout"></fa-icon>&nbsp;<span *ngIf="!canLogout">Cerrar sesión</span>
+        <span class="text-danger" *ngIf="canLogout">¿Deseas salir?</span>
+      </button>
+      <button *ngIf="canLogout" mat-button (click)="cancel()">
+        Cancelar
+      </button>
+
     </div>
   </mat-card-content>
 </mat-card>

@@ -73,11 +73,11 @@ export class UserDetailsComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private store: Store<AppState>,
-    private route: ActivatedRoute
   ) {
-    route.queryParamMap.subscribe(params => this.user = params.get('user'))
-    //this.phoneKeys = Object.keys(this.phones).filter(Number);
-    this.initForm(this.user);
+    this.userSub = this.store.select(selectUser).subscribe(user => {
+      //this.phoneKeys = Object.keys(this.phones).filter(Number);
+      this.initForm();
+    });
   }
   ngOnInit(): void {
 
@@ -87,7 +87,7 @@ export class UserDetailsComponent implements OnInit {
       dayOfBirth: new FormControl(''),
       addressLine: new FormControl(''),
       postalCode: new FormControl(''),
-      photoUrl: new FormControl(defaultUser.thumbnailPhotoUrl),
+      photoUrl: new FormControl(''),
       city: new FormControl(''),
       state: new FormControl(''),
       country: new FormControl(''),

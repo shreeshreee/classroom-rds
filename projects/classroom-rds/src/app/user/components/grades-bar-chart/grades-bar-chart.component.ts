@@ -43,10 +43,14 @@ export class GradesBarChartComponent implements OnInit {
   ) { } */
 
   ngOnInit(): void {
+    let final: number[] = [];
     const nameArray: string[] = this.data.map(score => score.courseName);
     const data1: number[] = this.data.map(score => +score.unidad1);
     const data2: number[] = this.data.map(score => +score.unidad2);
     const data3: number[] = this.data.map(score => +score.unidad3);
+    for (let i = 0; i < +nameArray.length; i++) {
+      final[i] = Math.round(10 * (+data1[i] + data2[i] + data3[i]) / 3) / 10;
+    }
 
     this.barChartLabels = nameArray;
     this.barChartData = [
@@ -56,14 +60,14 @@ export class GradesBarChartComponent implements OnInit {
         borderJoinStyle: 'round',
 
       },
-      /*  {
-         data: finalScore,
-         label: 'Line Dataset',
-         // Changes this dataset to become a line
-         type: 'line'
-       }, */
       { data: data2, label: 'Unidad 2' },
       { data: data3, label: 'Unidad 3' },
+      {
+        data: final,
+        label: 'Promedio final',
+        // Changes this dataset to become a line
+        type: 'line'
+      },
 
     ];
   }

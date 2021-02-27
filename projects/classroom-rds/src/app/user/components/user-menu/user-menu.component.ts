@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output
 
 import { faAward, faUserEdit, faSignOutAlt, faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-
 import { UserDomain } from '@rds-admin/models/users-domain.model';
+
 import { UserDto } from '../../models/user-dto';
 
 @Component({
@@ -24,6 +24,7 @@ export class UserMenuComponent implements OnInit {
   faSignOutAlt = faSignOutAlt;
   faCheck = faCheck;
   faTimes = faTimes;
+  canLogout: boolean;
   constructor() { }
 
   ngOnInit(): void {
@@ -32,5 +33,14 @@ export class UserMenuComponent implements OnInit {
   }
   onLogout(): void {
     this.logout.emit(this.user);
+    this.canLogout = false;
   }
+  cancel(): void {
+    this.canLogout = false;
+  }
+  prepareForLogout(): void {
+    this.canLogout = true;
+  }
+
+
 }
