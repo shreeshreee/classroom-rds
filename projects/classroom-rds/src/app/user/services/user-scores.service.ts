@@ -11,7 +11,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import { from, Observable, of } from 'rxjs';
-import { concatMap, map, switchMap } from 'rxjs/operators';
+import { concatMap, map, switchMap, tap } from 'rxjs/operators';
 
 import { Score } from '../models/score.model';
 

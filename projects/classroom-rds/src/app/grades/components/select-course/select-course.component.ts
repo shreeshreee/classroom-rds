@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { GoogleSheetsDbService } from 'ng-google-sheets-db';
+
+import { environment } from '@rds-env/environment';
 
 import { Observable } from 'rxjs';
-import { environment } from '@rds-env/environment';
+
 import { StudentGrade, studentGradeAttributesMapping } from '../../models/student-grade.model';
 
 @Component({
@@ -15,11 +16,9 @@ export class SelectCourseComponent implements OnInit {
   @Input() courses: gapi.client.classroom.Course[];
   @Input() loading: boolean;
   characters$: Observable<StudentGrade[]>
-  constructor(private googleSheetsDbService: GoogleSheetsDbService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.characters$ = this.googleSheetsDbService.getActive<StudentGrade>(
-      environment.characters.spreadsheetId, environment.characters.worksheetId, studentGradeAttributesMapping, 'Active');
-  }
 
+  }
 }

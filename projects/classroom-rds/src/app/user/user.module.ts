@@ -5,11 +5,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { ChartsModule } from 'ng2-charts';
+
 import { MaterialModule } from './../modules/material.module';
 
 import { UserRoutingModule } from './user-routing.module';
 
-import { UserResolver } from './resolvers/user.resolver';
 import { UserScoresService } from './services/user-scores.service';
 import { GradesTableComponent } from './components/grades-table/grades-table.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
@@ -17,8 +18,7 @@ import { UserGradesComponent } from './components/user-grades/user-grades.compon
 import { UserHomeComponent } from './components/user-home/user-home.component';
 import { UserMenuComponent } from './components/user-menu/user-menu.component';
 import { UserComponent } from './containers/user/user.component';
-
-
+import { GradesBarChartComponent } from './components/grades-bar-chart/grades-bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import { UserComponent } from './containers/user/user.component';
     UserHomeComponent,
     UserGradesComponent,
     UserDetailsComponent,
-    GradesTableComponent
+    GradesTableComponent,
+    GradesBarChartComponent
   ],
   imports: [
     CommonModule,
@@ -37,6 +38,7 @@ import { UserComponent } from './containers/user/user.component';
     MaterialModule,
     FontAwesomeModule,
     FlexLayoutModule,
+    ChartsModule
   ],
   providers: [
     UserScoresService,

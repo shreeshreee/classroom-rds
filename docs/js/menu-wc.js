@@ -421,13 +421,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/GradesModule.html" data-type="entity-link">GradesModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-GradesModule-6ca092efe964148919746e1bd2fc72ea"' : 'data-target="#xs-components-links-module-GradesModule-6ca092efe964148919746e1bd2fc72ea"' }>
+                                            'data-target="#components-links-module-GradesModule-af38ccc625314c27112c040811aab514"' : 'data-target="#xs-components-links-module-GradesModule-af38ccc625314c27112c040811aab514"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Componentes</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-GradesModule-6ca092efe964148919746e1bd2fc72ea"' :
-                                            'id="xs-components-links-module-GradesModule-6ca092efe964148919746e1bd2fc72ea"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-GradesModule-af38ccc625314c27112c040811aab514"' :
+                                            'id="xs-components-links-module-GradesModule-af38ccc625314c27112c040811aab514"' }>
                                             <li class="link">
                                                 <a href="components/GradeCourseComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">GradeCourseComponent</a>
@@ -448,13 +448,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-GradesModule-6ca092efe964148919746e1bd2fc72ea"' : 'data-target="#xs-injectables-links-module-GradesModule-6ca092efe964148919746e1bd2fc72ea"' }>
+                                        'data-target="#injectables-links-module-GradesModule-af38ccc625314c27112c040811aab514"' : 'data-target="#xs-injectables-links-module-GradesModule-af38ccc625314c27112c040811aab514"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Inyectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-GradesModule-6ca092efe964148919746e1bd2fc72ea"' :
-                                        'id="xs-injectables-links-module-GradesModule-6ca092efe964148919746e1bd2fc72ea"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-GradesModule-af38ccc625314c27112c040811aab514"' :
+                                        'id="xs-injectables-links-module-GradesModule-af38ccc625314c27112c040811aab514"' }>
                                         <li class="link">
                                             <a href="injectables/CourseDataService.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>CourseDataService</a>
@@ -618,13 +618,17 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/UserModule.html" data-type="entity-link">UserModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-UserModule-9b667911ad7e8500a38145c96f084f47"' : 'data-target="#xs-components-links-module-UserModule-9b667911ad7e8500a38145c96f084f47"' }>
+                                            'data-target="#components-links-module-UserModule-7945921d104dd0b0c646743cca76149c"' : 'data-target="#xs-components-links-module-UserModule-7945921d104dd0b0c646743cca76149c"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Componentes</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-UserModule-9b667911ad7e8500a38145c96f084f47"' :
-                                            'id="xs-components-links-module-UserModule-9b667911ad7e8500a38145c96f084f47"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-UserModule-7945921d104dd0b0c646743cca76149c"' :
+                                            'id="xs-components-links-module-UserModule-7945921d104dd0b0c646743cca76149c"' }>
+                                            <li class="link">
+                                                <a href="components/GradesBarChartComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">GradesBarChartComponent</a>
+                                            </li>
                                             <li class="link">
                                                 <a href="components/GradesTableComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">GradesTableComponent</a>
@@ -653,13 +657,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-UserModule-9b667911ad7e8500a38145c96f084f47"' : 'data-target="#xs-injectables-links-module-UserModule-9b667911ad7e8500a38145c96f084f47"' }>
+                                        'data-target="#injectables-links-module-UserModule-7945921d104dd0b0c646743cca76149c"' : 'data-target="#xs-injectables-links-module-UserModule-7945921d104dd0b0c646743cca76149c"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Inyectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-UserModule-9b667911ad7e8500a38145c96f084f47"' :
-                                        'id="xs-injectables-links-module-UserModule-9b667911ad7e8500a38145c96f084f47"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-UserModule-7945921d104dd0b0c646743cca76149c"' :
+                                        'id="xs-injectables-links-module-UserModule-7945921d104dd0b0c646743cca76149c"' }>
                                         <li class="link">
                                             <a href="injectables/UserScoresService.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>UserScoresService</a>

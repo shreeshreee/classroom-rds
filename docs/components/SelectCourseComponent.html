@@ -187,45 +187,15 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(googleSheetsDbService: GoogleSheetsDbService)</code>
+<code>constructor()</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">projects/classroom-rds/src/app/grades/components/select-course/select-course.component.ts:17</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="18" class="link-to-prism">projects/classroom-rds/src/app/grades/components/select-course/select-course.component.ts:18</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parámetros :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Nombre</td>
-                                                    <td>Tipo</td>
-                                                <td>Opcional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>googleSheetsDbService</td>
-                                                  
-                                                        <td>
-                                                                    <code>GoogleSheetsDbService</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
             </tbody>
         </table>
 </section>
@@ -248,7 +218,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">projects/classroom-rds/src/app/grades/components/select-course/select-course.component.ts:15</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="16" class="link-to-prism">projects/classroom-rds/src/app/grades/components/select-course/select-course.component.ts:16</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -269,7 +239,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Definido en <a href="" data-line="16" class="link-to-prism">projects/classroom-rds/src/app/grades/components/select-course/select-course.component.ts:16</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">projects/classroom-rds/src/app/grades/components/select-course/select-course.component.ts:17</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -305,8 +275,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="20"
-                            class="link-to-prism">projects/classroom-rds/src/app/grades/components/select-course/select-course.component.ts:20</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="21"
+                            class="link-to-prism">projects/classroom-rds/src/app/grades/components/select-course/select-course.component.ts:21</a></div>
                 </td>
             </tr>
 
@@ -348,7 +318,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">projects/classroom-rds/src/app/grades/components/select-course/select-course.component.ts:17</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="18" class="link-to-prism">projects/classroom-rds/src/app/grades/components/select-course/select-course.component.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -362,10 +332,11 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, Component, Input, OnInit } from &#x27;@angular/core&#x27;;
-import { GoogleSheetsDbService } from &#x27;ng-google-sheets-db&#x27;;
+
+import { environment } from &#x27;@rds-env/environment&#x27;;
 
 import { Observable } from &#x27;rxjs&#x27;;
-import { environment } from &#x27;@rds-env/environment&#x27;;
+
 import { StudentGrade, studentGradeAttributesMapping } from &#x27;../../models/student-grade.model&#x27;;
 
 @Component({
@@ -378,13 +349,11 @@ export class SelectCourseComponent implements OnInit {
   @Input() courses: gapi.client.classroom.Course[];
   @Input() loading: boolean;
   characters$: Observable&lt;StudentGrade[]&gt;
-  constructor(private googleSheetsDbService: GoogleSheetsDbService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.characters$ &#x3D; this.googleSheetsDbService.getActive&lt;StudentGrade&gt;(
-      environment.characters.spreadsheetId, environment.characters.worksheetId, studentGradeAttributesMapping, &#x27;Active&#x27;);
-  }
 
+  }
 }
 </code></pre>
     </div>
@@ -461,7 +430,7 @@ export class SelectCourseComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutAlign="space-between top">  <div fxFlex="0 1 calc(36% - 5px)" fxFlex.lt-sm="100%">    <div *ngIf="loading" style="min-height: 300px;" fxLayout="column" fxLayoutAlign="center center">      <mat-spinner strokeWidth="3" [diameter]="50">      </mat-spinner>      <span>Buscando ...</span><br>    </div>    <mat-card *ngIf="!loading">      <div class="card border-primary m-n2 bg-transparent">        <h3 class="mat-h3 card-header">          <span [matBadge]="courses.length" matBadgePosition="after">Lista de cursos&nbsp;&nbsp;</span>        </h3>        <div *ngIf="courses.length==0">          <mat-list dense>            <mat-list-item> No hay cursos para mostrar </mat-list-item>          </mat-list>        </div>        <div *ngIf="courses.length>0" class="mt-n3">          <mat-list dense>            <mat-list-item *ngFor="let course of courses" [routerLink]="[course.id]" routerLinkActive="active">              {{course.name}}            </mat-list-item>          </mat-list>        </div>      </div>    </mat-card>  </div>  <div fxFlex="0 1 calc(63% - 5px)" fxFlex.lt-sm="100%">    <router-outlet></router-outlet>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'ConfigurationComponent', 'selector': 'app-configuration'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GalletasComponent', 'selector': 'app-galletas'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'ConfigurationComponent', 'selector': 'app-configuration'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GalletasComponent', 'selector': 'app-galletas'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
     var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'}];
     var ACTUAL_COMPONENT = {'name': 'SelectCourseComponent'};
 </script>

@@ -5,5 +5,6 @@ export interface Score {
   unidad3: string;
   notes1: string;
   notes2: string;
-  notes3: string
+  notes3: string;
+  finalScore?: number;
 }

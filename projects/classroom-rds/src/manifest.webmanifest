@@ -1,8 +1,8 @@
 {
   "name": "Escuela Rafael Díaz Serdán",
   "short_name": "Classroom RDS",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "theme_color": "#0060a0",
+  "background_color": "#fff",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",

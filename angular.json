@@ -17,6 +17,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "chartjs-plugin-annotation",
+              "chartjs-plugin-datalabels",
+              "chart.js"
+            ],
             "outputPath": "dist/classroom-rds",
             "index": "projects/classroom-rds/src/index.html",
             "main": "projects/classroom-rds/src/main.ts",
@@ -29,7 +34,6 @@
             ],
             "styles": [
               "projects/classroom-rds/src/styles.scss",
-              "projects/classroom-rds/src/assets/themes/colors.scss",
               "./node_modules/bootstrap/scss/bootstrap.scss",
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
             ],
@@ -43,9 +47,21 @@
                   "with": "projects/classroom-rds/src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": true
+                },
+                "fonts": true
+              },
               "outputHashing": "all",
-              "sourceMap": false,
+              "sourceMap": {
+                "scripts": true,
+                "styles": false,
+                "hidden": true,
+                "vendor": true
+              },
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -97,7 +113,6 @@
             ],
             "styles": [
               "./node_modules/bootstrap/scss/bootstrap.scss",
-              "projects/classroom-rds/src/assets/themes/colors.scss",
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "projects/classroom-rds/src/styles.scss"
             ],

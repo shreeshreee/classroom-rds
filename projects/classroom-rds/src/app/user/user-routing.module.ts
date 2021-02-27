@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { UserResolver } from './resolvers/user.resolver';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { UserGradesComponent } from './components/user-grades/user-grades.component';
 import { UserHomeComponent } from './components/user-home/user-home.component';
 import { UserComponent } from './containers/user/user.component';
-import { UserResolver } from './resolvers/user.resolver';
 
 const routes: Routes = [
   {

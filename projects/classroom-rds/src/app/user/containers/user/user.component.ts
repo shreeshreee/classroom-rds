@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Data } from '@angular/router';
 
 import { select, Store } from '@ngrx/store';
 
@@ -9,14 +10,13 @@ import { AppState } from '@rds-store/app.state';
 import { isAdmin, isLoggedIn, isTeacher, selectUser } from '@rds-auth/state/auth.selectors';
 import { signOut } from '@rds-auth/state/auth.actions';
 
+import { UserDomain } from '@rds-admin/models/users-domain.model';
+
 import { from, merge, Observable, of, Subscription } from 'rxjs';
 import { mergeMap, concatMap, map, switchMap } from 'rxjs/operators';
 
 import { UserDto } from '../../models/user-dto';
 import { UserScoresService } from './../../services/user-scores.service';
-
-import { UserDomain } from '~/app/admin/models/users-domain.model';
-import { ActivatedRoute, Data } from '@angular/router';
 
 @Component({
   selector: 'app-user',

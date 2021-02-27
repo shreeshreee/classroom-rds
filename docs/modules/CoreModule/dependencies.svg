@@ -28,13 +28,13 @@
 <title>cluster_CoreModule_declarations</title>
 <polygon fill="none" stroke="black" points="421,-78 421,-130 1294,-130 1294,-78 421,-78"/>
 </g>
-<g id="clust12" class="cluster">
-<title>cluster_CoreModule_providers</title>
-<polygon fill="none" stroke="black" points="263,-78 263,-130 413,-130 413,-78 263,-78"/>
-</g>
 <g id="clust9" class="cluster">
 <title>cluster_CoreModule_imports</title>
-<polygon fill="none" stroke="black" points="16,-78 16,-130 255,-130 255,-78 16,-78"/>
+<polygon fill="none" stroke="black" points="174,-78 174,-130 413,-130 413,-78 174,-78"/>
+</g>
+<g id="clust12" class="cluster">
+<title>cluster_CoreModule_providers</title>
+<polygon fill="none" stroke="black" points="16,-78 16,-130 166,-130 166,-78 16,-78"/>
 </g>
 <!-- ConfigComponent -->
 <g id="node1" class="node">
@@ -117,38 +117,38 @@
 <!-- MaterialModule -->
 <g id="node8" class="node">
 <title>MaterialModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="247.47,-122 244.47,-126 223.47,-126 220.47,-122 140.53,-122 140.53,-86 247.47,-86 247.47,-122"/>
-<text text-anchor="middle" x="194" y="-99.8" font-family="Times,serif" font-size="14.00">MaterialModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="405.47,-122 402.47,-126 381.47,-126 378.47,-122 298.53,-122 298.53,-86 405.47,-86 405.47,-122"/>
+<text text-anchor="middle" x="352" y="-99.8" font-family="Times,serif" font-size="14.00">MaterialModule</text>
 </g>
 <!-- MaterialModule&#45;&gt;CoreModule -->
 <g id="edge7" class="edge">
 <title>MaterialModule&#45;&gt;CoreModule</title>
-<path fill="none" stroke="black" d="M194,-122.13C194,-142.57 194,-173 194,-173 194,-173 580.61,-173 580.61,-173"/>
-<polygon fill="black" stroke="black" points="580.61,-176.5 590.61,-173 580.61,-169.5 580.61,-176.5"/>
+<path fill="none" stroke="black" d="M352,-122.27C352,-140.56 352,-166 352,-166 352,-166 580.56,-166 580.56,-166"/>
+<polygon fill="black" stroke="black" points="580.56,-169.5 590.56,-166 580.56,-162.5 580.56,-169.5"/>
 </g>
 <!-- SharedModule -->
 <g id="node9" class="node">
 <title>SharedModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="122.42,-122 119.42,-126 98.42,-126 95.42,-122 23.58,-122 23.58,-86 122.42,-86 122.42,-122"/>
-<text text-anchor="middle" x="73" y="-99.8" font-family="Times,serif" font-size="14.00">SharedModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="280.42,-122 277.42,-126 256.42,-126 253.42,-122 181.58,-122 181.58,-86 280.42,-86 280.42,-122"/>
+<text text-anchor="middle" x="231" y="-99.8" font-family="Times,serif" font-size="14.00">SharedModule</text>
 </g>
 <!-- SharedModule&#45;&gt;CoreModule -->
 <g id="edge8" class="edge">
 <title>SharedModule&#45;&gt;CoreModule</title>
-<path fill="none" stroke="black" d="M73,-122.01C73,-144.49 73,-180 73,-180 73,-180 580.45,-180 580.45,-180"/>
-<polygon fill="black" stroke="black" points="580.45,-183.5 590.45,-180 580.45,-176.5 580.45,-183.5"/>
+<path fill="none" stroke="black" d="M231,-122.13C231,-142.57 231,-173 231,-173 231,-173 580.49,-173 580.49,-173"/>
+<polygon fill="black" stroke="black" points="580.49,-176.5 590.49,-173 580.49,-169.5 580.49,-176.5"/>
 </g>
 <!-- LayoutService -->
 <g id="node10" class="node">
 <title>LayoutService</title>
-<ellipse fill="#fdb462" stroke="black" cx="338" cy="-104" rx="67.19" ry="18"/>
-<text text-anchor="middle" x="338" y="-99.8" font-family="Times,serif" font-size="14.00">LayoutService</text>
+<ellipse fill="#fdb462" stroke="black" cx="91" cy="-104" rx="67.19" ry="18"/>
+<text text-anchor="middle" x="91" y="-99.8" font-family="Times,serif" font-size="14.00">LayoutService</text>
 </g>
 <!-- LayoutService&#45;&gt;CoreModule -->
 <g id="edge9" class="edge">
 <title>LayoutService&#45;&gt;CoreModule</title>
-<path fill="none" stroke="black" d="M338,-122.27C338,-140.56 338,-166 338,-166 338,-166 580.64,-166 580.64,-166"/>
-<polygon fill="black" stroke="black" points="580.64,-169.5 590.64,-166 580.64,-162.5 580.64,-169.5"/>
+<path fill="none" stroke="black" d="M91,-122.01C91,-144.49 91,-180 91,-180 91,-180 580.48,-180 580.48,-180"/>
+<polygon fill="black" stroke="black" points="580.48,-183.5 590.48,-180 580.48,-176.5 580.48,-183.5"/>
 </g>
 </g>
 </svg>

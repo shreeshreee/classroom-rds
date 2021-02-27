@@ -190,7 +190,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="28" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:28</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="29" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -271,8 +271,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="36"
-                            class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:36</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="38"
+                            class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:38</a></div>
                 </td>
             </tr>
 
@@ -314,7 +314,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="27" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:27</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="28" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -346,7 +346,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="28" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:28</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="29" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -373,7 +373,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="24" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:24</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="25" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -400,7 +400,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="23" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:23</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="24" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -427,7 +427,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="25" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:25</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="26" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -454,7 +454,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="26" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:26</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="27" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:27</a></div>
                             </td>
                         </tr>
 
@@ -467,7 +467,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ChangeDetectionStrategy, OnDestroy } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, ViewChild } from &#x27;@angular/core&#x27;;
 
 import { select, Store } from &#x27;@ngrx/store&#x27;;
 
@@ -482,6 +482,7 @@ import { Observable, Subscription } from &#x27;rxjs&#x27;;
 import { Score } from &#x27;../../models/score.model&#x27;;
 import { UserScoresService } from &#x27;./../../services/user-scores.service&#x27;;
 
+
 @Component({
   selector: &#x27;app-user-grades&#x27;,
   templateUrl: &#x27;./user-grades.component.html&#x27;,
@@ -495,6 +496,7 @@ export class UserGradesComponent implements OnInit {
   userSub: Subscription;
   scores: Observable&lt;Score[]&gt;;
   today: Date &#x3D; new Date();
+
   constructor(
     private store: Store&lt;AppState&gt;,
     private scoreServices: UserScoresService
@@ -504,12 +506,9 @@ export class UserGradesComponent implements OnInit {
 
   ngOnInit(): void {
     this.user$.subscribe(user &#x3D;&gt; {
-      console.log(this.user)
-
       this.scores &#x3D; this.scoreServices.getScores(user.id);
     });
   }
-
 }
 </code></pre>
     </div>
@@ -520,20 +519,26 @@ export class UserGradesComponent implements OnInit {
   &lt;/mat-spinner&gt;
   &lt;span&gt;Buscando ...&lt;/span&gt;&lt;br&gt;
 &lt;/div&gt;
-&lt;mat-card *ngIf&#x3D;&quot;(scores|async) as scores&quot;&gt;
-  &lt;mat-card-content class&#x3D;&quot;card border-primary m-n2&quot;&gt;
-    &lt;h1 class&#x3D;&quot;mat-h2 card-header&quot;&gt;Calificaciones &amp;nbsp;&lt;small class&#x3D;&quot;text-muted&quot;&gt;Ciclo escolar
-        2020-21&lt;/small&gt;&lt;/h1&gt;
-    &lt;div class&#x3D;&quot;card-body&quot;&gt;
-      &lt;h3 class&#x3D;&quot;h3 card-title&quot;&gt;&lt;/h3&gt;
-      &lt;p class&#x3D;&quot;card-text&quot;&gt;Fecha y hora de consulta: {{today|date:&#x27;medium&#x27;}}&lt;/p&gt;
-      &lt;p class&#x3D;&quot;card-text&quot;&gt;Selecciona una materia para conocer sus observaciones:&lt;/p&gt;
-      &lt;div&gt;
+&lt;div *ngIf&#x3D;&quot;(scores|async) as scores&quot;&gt;
+  &lt;mat-card&gt;
+    &lt;mat-card-content class&#x3D;&quot;card border-primary m-n2&quot;&gt;
+      &lt;h1 class&#x3D;&quot;mat-h1 card-header&quot;&gt;Calificaciones &amp;nbsp;&lt;small class&#x3D;&quot;text-muted&quot;&gt;Ciclo escolar
+          2020-21&lt;/small&gt;&lt;/h1&gt;
+      &lt;div class&#x3D;&quot;card-body&quot;&gt;
+        &lt;p class&#x3D;&quot;card-text&quot;&gt;Fecha y hora de consulta: {{today|date:&#x27;medium&#x27;}}&lt;/p&gt;
+        &lt;p class&#x3D;&quot;card-text&quot;&gt;Selecciona una materia para conocer sus observaciones:&lt;/p&gt;
         &lt;app-grades-table [data]&#x3D;&quot;scores&quot;&gt;&lt;/app-grades-table&gt;
       &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/mat-card-content&gt;
-&lt;/mat-card&gt;
+      &lt;div class&#x3D;&quot;card-footer&quot;&gt;
+        &lt;h3 class&#x3D;&quot;text-center&quot;&gt;
+          Estadísticas
+        &lt;/h3&gt;
+        &lt;app-grades-bar-chart *ngIf&#x3D;&quot;scores&quot; [data]&#x3D;&quot;scores&quot;&gt;&lt;/app-grades-bar-chart&gt;
+      &lt;/div&gt;
+    &lt;/mat-card-content&gt;
+  &lt;/mat-card&gt;
+
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -569,8 +574,8 @@ export class UserGradesComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div *ngIf="!(scores|async)" style="min-height: 300px;" fxLayout="column" fxLayoutAlign="center center">  <mat-spinner strokeWidth="3" [diameter]="50">  </mat-spinner>  <span>Buscando ...</span><br></div><mat-card *ngIf="(scores|async) as scores">  <mat-card-content class="card border-primary m-n2">    <h1 class="mat-h2 card-header">Calificaciones &nbsp;<small class="text-muted">Ciclo escolar        2020-21</small></h1>    <div class="card-body">      <h3 class="h3 card-title"></h3>      <p class="card-text">Fecha y hora de consulta: {{today|date:\'medium\'}}</p>      <p class="card-text">Selecciona una materia para conocer sus observaciones:</p>      <div>        <app-grades-table [data]="scores"></app-grades-table>      </div>    </div>  </mat-card-content></mat-card></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'ConfigurationComponent', 'selector': 'app-configuration'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GalletasComponent', 'selector': 'app-galletas'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="!(scores|async)" style="min-height: 300px;" fxLayout="column" fxLayoutAlign="center center">  <mat-spinner strokeWidth="3" [diameter]="50">  </mat-spinner>  <span>Buscando ...</span><br></div><div *ngIf="(scores|async) as scores">  <mat-card>    <mat-card-content class="card border-primary m-n2">      <h1 class="mat-h1 card-header">Calificaciones &nbsp;<small class="text-muted">Ciclo escolar          2020-21</small></h1>      <div class="card-body">        <p class="card-text">Fecha y hora de consulta: {{today|date:\'medium\'}}</p>        <p class="card-text">Selecciona una materia para conocer sus observaciones:</p>        <app-grades-table [data]="scores"></app-grades-table>      </div>      <div class="card-footer">        <h3 class="text-center">          Estadísticas        </h3>        <app-grades-bar-chart *ngIf="scores" [data]="scores"></app-grades-bar-chart>      </div>    </mat-card-content>  </mat-card></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'ConfigurationComponent', 'selector': 'app-configuration'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GalletasComponent', 'selector': 'app-galletas'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
     var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'}];
     var ACTUAL_COMPONENT = {'name': 'UserGradesComponent'};
 </script>

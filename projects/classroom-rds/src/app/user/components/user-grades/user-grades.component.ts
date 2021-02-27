@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, ViewChild } from '@angular/core';
 
 import { select, Store } from '@ngrx/store';
 
@@ -13,6 +13,7 @@ import { Observable, Subscription } from 'rxjs';
 import { Score } from '../../models/score.model';
 import { UserScoresService } from './../../services/user-scores.service';
 
+
 @Component({
   selector: 'app-user-grades',
   templateUrl: './user-grades.component.html',
@@ -26,6 +27,7 @@ export class UserGradesComponent implements OnInit {
   userSub: Subscription;
   scores: Observable<Score[]>;
   today: Date = new Date();
+
   constructor(
     private store: Store<AppState>,
     private scoreServices: UserScoresService
@@ -35,10 +37,7 @@ export class UserGradesComponent implements OnInit {
 
   ngOnInit(): void {
     this.user$.subscribe(user => {
-      console.log(this.user)
-
       this.scores = this.scoreServices.getScores(user.id);
     });
   }
-
 }

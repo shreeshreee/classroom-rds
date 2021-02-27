@@ -1,8 +1,10 @@
+import { MatDialog } from '@angular/material/dialog';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { AfterViewInit, Component, OnInit, ViewChild, Input } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 
+import { GradesBarChartComponent } from './../grades-bar-chart/grades-bar-chart.component';
 import { Score } from '../../models/score.model';
 
 
@@ -27,6 +29,9 @@ export class GradesTableComponent implements AfterViewInit, OnInit {
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['courseName', 'unidad1', 'unidad2', 'unidad3'];
   expandedElement: Score;
+  /*  constructor(
+     private dialog: MatDialog,
+   ) { } */
   ngOnInit() {
     /*  const average1: number = this.average(this.data['unidad1']);
      const average2: number = this.average(this.data['unidad2']);
@@ -36,6 +41,13 @@ export class GradesTableComponent implements AfterViewInit, OnInit {
     //this.dataSource = new MatTableDataSource(this.data);
   }
 
+  /* openBarChart() {
+    const dialogRef = this.dialog.open(GradesBarChartComponent, {
+      minWidth: '450px',
+      minHeight: '550px',
+      data: { ...this.data }
+    })
+  } */
   ngAfterViewInit() {
     //this.dataSource.sort = this.sort;
   }
@@ -55,9 +67,9 @@ export class GradesTableComponent implements AfterViewInit, OnInit {
       sum3 = + score.unidad3 + sum3;
       count++;
     });
-    const avg1 = (Math.trunc(10 * (sum1 / count)) / 10).toString();
-    const avg2 = (sum2 / count).toString();
-    const avg3 = (sum3 / count).toString();
+    const avg1 = (Math.round(10 * (sum1 / count)) / 10).toString();
+    const avg2 = (Math.round(10 * (sum2 / count)) / 10).toString();
+    const avg3 = (Math.round(10 * (sum3 / count)) / 10).toString();
     return [avg1, avg2, avg3]
   }
   average(u: string[]): number {

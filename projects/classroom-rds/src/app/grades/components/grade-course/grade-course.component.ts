@@ -6,13 +6,12 @@ import { faBlind } from '@fortawesome/free-solid-svg-icons';
 
 import { StudentEntityService } from '@rds-store/student/student-entity.service';
 
-import { GoogleSheetsDbService } from 'ng-google-sheets-db';
-
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { environment } from '~/environments/environment';
 
 import { StudentGrade, studentGradeAttributesMapping, } from '../../models/student-grade.model';
+
+import { environment } from '~/environments/environment';
 
 @Component({
   selector: 'app-grade-course',
@@ -33,7 +32,6 @@ export class GradeCourseComponent implements OnInit {
     private route: ActivatedRoute,
     private dialog: MatDialog,
     private studentEntityService: StudentEntityService,
-    private googleSheetsDbService: GoogleSheetsDbService
   ) {
     this.route.paramMap.subscribe(params => this.courseId = params.get('courseId'));
     this.loading$ = this.studentEntityService.loading$;
@@ -54,7 +52,6 @@ export class GradeCourseComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.characters$ = this.googleSheetsDbService.getActive<StudentGrade>(
-      environment.characters.spreadsheetId, environment.characters.worksheetId, studentGradeAttributesMapping, 'Active');
+
   }
 }
