@@ -15,17 +15,14 @@ import {
   faCog,
   faSlidersH
 } from '@fortawesome/free-solid-svg-icons';
-import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
 
 import { Store } from '@ngrx/store';
 
 import { AppState } from '@rds-store/app.state';
 
-import { User } from '@rds-auth/models/user.model';
 import { signOut } from '@rds-auth/state/auth.actions';
 import { LoginDialogComponent } from '@rds-auth/components/login-dialog/login-dialog.component';
-
-import { Observable } from 'rxjs';
+import { User } from '@rds-auth/models/user.model';
 
 import { LayoutService } from '../layout.service';
 import { ConfigComponent } from '../config/config.component';

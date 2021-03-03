@@ -8,7 +8,6 @@ import { select, Store } from '@ngrx/store';
 
 import { AppState } from '@rds-store/app.state';
 
-import { User } from '@rds-auth/models/user.model';
 import { signInSuccess } from '@rds-auth/state/auth.actions';
 import * as fromAuthSelectors from '@rds-auth/state/auth.selectors';
 
@@ -21,6 +20,7 @@ import { ThemeService } from './../../shared/services/theme.service';
 import { LayoutService } from './layout.service';
 
 import { ConfigComponent } from './config/config.component';
+import { User } from '~/app/auth/models/user.model';
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',

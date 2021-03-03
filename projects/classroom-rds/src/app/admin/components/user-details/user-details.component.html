@@ -1,12 +1,12 @@
 <mat-card>
   <form [formGroup]="userDetailsForm" (ngSubmit)="onSubmit()">
     <mat-card-content class="card m-n2 bg-transparent">
-      <h1 class="mat-h1 card-header text-light">Actualiza tu información</h1>
+      <h1 class="mat-h1 card-header text-light">Tus datos</h1>
       <div class="card-body">
         <p class="card-text">
           Los datos que nos proporciones estan sujetos a verificación de autenticidad y deberán estar respaldados por
-          documentos oficiales en posesión del personal administrativo de la institución. Consulta las <a
-            [routerLink]="['/privacy-policy']">Políticas de Privacidad</a> sobre la información que nos proporcionas.
+          documentos oficiales en posesión del personal administrativo de la institución. Consulta las
+          <a [routerLink]="['/privacy-policy']">Políticas de Privacidad</a> sobre la información que nos proporcionas.
         </p>
         <mat-accordion togglePosition="before">
           <mat-expansion-panel appMaterialElevation [raisedElevation]="raisedElev">

@@ -51,7 +51,7 @@ export class UsersTableComponent implements AfterViewInit, OnInit {
   faBan = faBan;
   searching = false;
   isExpansionDetailRow = (i: number, row: UserDomain) => row.hasOwnProperty('detailRow');
-  constructor(private adminFireService: AdminFireService) { }
+  constructor() { }
   ngOnInit() {
     this.dataSource = new MatTableDataSource(this.data);
     this.searchFormInit();
@@ -65,13 +65,7 @@ export class UsersTableComponent implements AfterViewInit, OnInit {
   onDetails(id) {
 
   }
-  onDbBackup() {
-    this.data.map(async user => {
-      const userProfile = await (await gapi.client.classroom.userProfiles.get({ userId: user.id })).result;
-      const newUser = { ...user, photoUrl: userProfile.photoUrl, permissions: userProfile.permissions || null, isTeacher: userProfile.verifiedTeacher || false }
-      await this.adminFireService.createUser(newUser)
-    });
-  }
+
   searchFormInit() {
     this.searchForm = new FormGroup({
       courseName: new FormControl('', Validators.pattern('^[a-zA-Z ]+$')),

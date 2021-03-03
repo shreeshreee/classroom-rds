@@ -31,10 +31,10 @@
     </mat-form-field>
   </div> -->
 </div>
-<mat-accordion *ngIf="loaded$" toggle>
+<mat-accordion *ngIf="loaded$|async" hideToggle>
   <mat-expansion-panel *ngFor="let user of users$|async" appMaterialElevation [raisedElevation]="raisedElev">
     <mat-expansion-panel-header>
-      <img class="img-small rounded-circle" src="{{user.thu}}">
+      <img class="img-small rounded-circle" src="{{user.thumbnailPhoroUrl}}">
       <mat-panel-title>{{user.name.fullName}}</mat-panel-title>
       <mat-panel-description>{{user.primaryEmail}}</mat-panel-description>
     </mat-expansion-panel-header>

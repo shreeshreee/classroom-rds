@@ -1,0 +1,197 @@
+<div *ngIf="!user|async" style="min-height: 300px;" fxLayout="column" fxLayoutAlign="center center">
+  <mat-spinner strokeWidth="3" [diameter]="50">
+  </mat-spinner>
+  <span>Buscando ...</span><br>
+</div>
+<div *ngIf="(user|async)">
+  <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card>
+      <mat-card-content class="card border-primary m-n2 bg-transparent">
+        <h1 class="mat-h1 card-header text-light">Datos personales&nbsp;
+          <small class="font-weight-light">Alumnos</small>
+        </h1>
+        <div class="card-body">
+          <p class="card-text">
+            Los datos que nos proporciones estan sujetos a verificación de autenticidad y deberán estar respaldados por
+            documentos oficiales en posesión del personal administrativo de la institución. Consulta las
+            <a [routerLink]="['/privacy-policy']">Políticas de Privacidad</a> sobre la información que nos proporcionas.
+          </p>
+          <mat-accordion togglePosition="before">
+            <mat-expansion-panel appMaterialElevation [raisedElevation]="raisedElev">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Datos del Alumno:
+                </mat-panel-title>
+                <mat-panel-description>
+
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="5px">
+                <mat-form-field fxFlex="0 1 calc(33% - 5px)" fxFlex.lt-md="100%" appearance="outline">
+                  <mat-label>CURP</mat-label>
+                  <input matInput placeholder="CURP" formControlName="curp">
+                </mat-form-field>
+                <mat-form-field fxFlex="0 1 calc(33% - 5px)" fxFlex.lt-md="100%" appearance="outline">
+                  <mat-label>NIEV</mat-label>
+                  <input matInput placeholder="NIEV" formControlName="niev">
+                </mat-form-field>
+                <mat-form-field fxFlex="0 1 calc(33% - 5px)" fxFlex.lt-md="100%" appearance="outline">
+                  <mat-label>Fecha de nacimiento</mat-label>
+                  <input matInput [matDatepicker]="picker" (focus)="picker.open()" placeholder="Fecha de nacimiento"
+                    color="primary" name="dayOfBirth" formControlName="dayOfBirth">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </div>
+
+              <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="5px">
+                <mat-form-field fxFlex="0 1 calc(50% - 5px)" fxFlex.lt-md="100%" appearance="outline">
+                  <mat-label>Nombre(s)</mat-label>
+                  <input matInput placeholder="Nombre(s)" formControlName="firstName">
+                  <mat-error *ngIf="addressForm.controls['firstName'].hasError('required')">
+                    First name is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex="0 1 calc(50% - 5px)" fxFlex.lt-md="100%" appearance="outline">
+                  <mat-label>Apellido(s)</mat-label>
+                  <input matInput placeholder="Apellido(s)" formControlName="lastName">
+                  <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
+                    Last name is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="5px">
+                <mat-form-field fxFlex="0 1 calc(50% - 5px)" fxFlex.lt-md="100%" appearance="outline">
+                  <mat-label>Usuario Institucional</mat-label>
+                  <input type="email" matInput placeholder="E-mail" formControlName="primaryEmail">
+                  <mat-error *ngIf="addressForm.controls['primaryEmail'].hasError('required')">
+                    First name is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+                <mat-label for="gender">Genero: </mat-label>
+                <mat-radio-group fxLayout="row wrap" fxLayoutAlign="cener center" name="gender" color="primary"
+                  formControlName="gender">
+                  <mat-radio-button class="mx-2" value="Hombre">
+                    Hombre
+                  </mat-radio-button>
+                  <mat-radio-button class="mx-2" value="Mujer">
+                    Mujer
+                  </mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel appMaterialElevation [raisedElevation]="raisedElev">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Datos del Tutor
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+
+
+
+
+
+              <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="5px" fx>
+                <mat-form-field fxFlex="0 1 calc(33% - 5px)" fxFlex.lt-lg="0 1 calc(50% - 5px)" fxFlex.lt-md="100%"
+                  appearance="outline">
+                  <mat-label>Nombre(s)</mat-label>
+                  <input matInput placeholder="Nombre(s)" formControlName="parentFirstName">
+                  <mat-error *ngIf="addressForm.controls['parentFirstName'].hasError('required')">
+                    First name is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex="0 1 calc(33% - 5px)" fxFlex.lt-lg="0 1 calc(50% - 5px)" fxFlex.lt-md="100%"
+                  appearance="outline">
+                  <mat-label>Apellido(s)</mat-label>
+                  <input matInput placeholder="Apellido(s)" formControlName="parentLastName">
+                  <mat-error *ngIf="addressForm.controls['parentLastName'].hasError('required')">
+                    Last name is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex="0 1 calc(33% - 5px)" fxFlex.lt-lg="0 1 calc(50% - 5px)" fxFlex.lt-md="100%"
+                  appearance="outline">
+                  <mat-label>CURP</mat-label>
+                  <input matInput placeholder="CURP" formControlName="parentCurp">
+                </mat-form-field>
+              </div>
+
+              <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
+
+              </div>
+
+              <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
+                <mat-form-field fxFlex="0 1 calc(50% - 10px)" fxFlex.lt-md="100%" appearance="outline">
+                  <mat-label>Dirección</mat-label>
+                  <input matInput placeholder="Calle/Av., Num.Int./Ext., Col./Fracc." formControlName="direccion">
+                  <mat-error *ngIf="addressForm.controls['direccion'].hasError('required')">
+                    Address is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+                <div class="row" *ngIf="!hasUnitNumber">
+                  <div class="col">
+                    <button mat-button type="button" (click)="hasUnitNumber = !hasUnitNumber">
+                      + Add C/O, Apt, Suite, Unit
+                    </button>
+                  </div>
+                </div>
+                <div class="row" *ngIf="hasUnitNumber">
+                  <div class="col">
+                    <mat-form-field fxFlex="0 1 calc(50% - 10px)" fxFlex.lt-md="100%" appearance="outline">
+                      <textarea matInput placeholder="Address 2" formControlName="address2"></textarea>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+
+              <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="5px">
+                <mat-form-field fxFlex="0 1 calc(25% - 5px)" fxFlex.lt-lg="0 1 calc(50% - 10px)" fxFlex.lt-md="100%"
+                  appearance="outline">
+                  <input matInput #codigoPostal maxlength="5" placeholder="Código Postal" type="number"
+                    formControlName="codigoPostal">
+                  <mat-hint align="end">{{codigoPostal.value.length}} / 5</mat-hint>
+                </mat-form-field>
+                <mat-form-field fxFlex="0 1 calc(25% - 5px)" fxFlex.lt-lg="0 1 calc(50% - 10px)" fxFlex.lt-md="100%"
+                  appearance="outline">
+                  <mat-label>Estado</mat-label>
+                  <mat-select placeholder="Estado" formControlName="estado" (valueChange)="onEstadoChange()">
+                    <mat-option *ngFor="let state of statesNames" [value]="state">
+                      {{ state }}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="addressForm.controls['estado'].hasError('required')">
+                    State is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex="0 1 calc(25% - 5px)" fxFlex.lt-lg="0 1 calc(50% - 10px)" fxFlex.lt-md="100%"
+                  appearance="outline">
+                  <mat-label>Municipio</mat-label>
+                  <mat-select placeholder="Municipio" formControlName="municipio">
+                    <mat-option *ngFor="let municip of municipiosNames" [value]="municip">
+                      {{ municip }}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="addressForm.controls['municipio'].hasError('required')">
+                    State is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex="0 1 calc(25% - 5px)" fxFlex.lt-lg="0 1 calc(50% - 10px)" fxFlex.lt-md="100%"
+                  appearance="outline">
+                  <mat-label>Ciudad</mat-label>
+                  <input matInput placeholder="Ciudad" formControlName="ciudad">
+                  <mat-error *ngIf="addressForm.controls['ciudad'].hasError('required')">
+                    Este es un dato <strong>requerido</strong>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-button type="submit">Actualizar datos</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

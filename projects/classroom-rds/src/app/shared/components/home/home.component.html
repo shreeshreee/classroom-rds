@@ -3,4 +3,5 @@
   (onClosed)="onClosed(alert)">
   <span [innerHtml]="alert.msg"></span>
 </alert>
-<app-dashboard *ngIf="(isOnline$|async)"></app-dashboard>
+<app-dashboard *ngIf="(isOnline$|async)" [user]="user$|async" [isTeacher]="isTeacher$|async" [isAdmin]="isAdmin$|async">
+</app-dashboard>

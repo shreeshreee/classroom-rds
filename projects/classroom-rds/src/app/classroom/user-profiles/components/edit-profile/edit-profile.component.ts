@@ -3,7 +3,7 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
 import { select, Store } from '@ngrx/store';
 
-import { UpdatedUser, User } from '@rds-auth/models/user.model';
+import { User } from '@rds-auth/models/user.model';
 
 import { AppState } from '@rds-store/app.state';
 
@@ -24,7 +24,7 @@ export class EditProfileComponent implements OnInit, OnDestroy {
   @Input() user: User;
   user$: Observable<User>
   userSub: Subscription;
-  @Output() profileUpdate = new EventEmitter<UpdatedUser>();
+  @Output() profileUpdate = new EventEmitter<User>();
   updateProfileForm: FormGroup;
   fullName: FormControl;
   photoUrl: FormControl;
@@ -49,8 +49,8 @@ export class EditProfileComponent implements OnInit, OnDestroy {
 
   }
   onProfileUpdate() {
-    const newUser: UpdatedUser = {
-      name: this.updateProfileForm.get('fullName').value,
+    const newUser: User = {
+
       photoUrl: this.updateProfileForm.get('photoUrl').value,
       id: this.user.id
     };

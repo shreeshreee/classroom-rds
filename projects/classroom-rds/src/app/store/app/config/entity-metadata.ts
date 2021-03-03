@@ -7,6 +7,7 @@ import * as fromGuardian from '@rds-store/guardian';
 import * as fromStudent from '@rds-store/student';
 import * as fromTeacher from '@rds-store/teacher';
 import * as fromTopic from '@rds-store/topic';
+import * as fromUser from '@rds-store/user';
 import * as fromUserProfile from '@rds-store/user-profile';
 
 import * as fromUserDomain from '@rds-admin/state/user-domain';
@@ -14,7 +15,6 @@ import * as fromGroup from '@rds-admin/state/group';
 
 import * as fromStudentSubmission from '@rds-store/student-submission';
 
-import { UserDomain } from '~/app/admin/models/users-domain.model';
 
 
 export const entityMetadata: EntityMetadataMap = {
@@ -103,6 +103,13 @@ export const entityMetadata: EntityMetadataMap = {
       optimisticSaveEntities: true
     },
     selectId: (topics: gapi.client.classroom.Topic) => topics.topicId,
+  },
+  [fromUser.entityCollectionName]: {
+    entityDispatcherOptions: {
+      optimisticAdd: true,
+      optimisticUpdate: true,
+      optimisticSaveEntities: true
+    },
   }
 };
 export const pluralNames = {
@@ -117,6 +124,7 @@ export const pluralNames = {
   [fromUserProfile.entityCollectionName]: fromUserProfile.pluralizedEntityName,
   [fromUserDomain.entityCollectionName]: fromUserDomain.pluralizedEntityName,
   [fromGroup.entityCollectionName]: fromGroup.pluralizedEntityName,
+  [fromUser.entityCollectionName]: fromUser.pluralizedEntityName,
 };
 
 export const entityConfig = {

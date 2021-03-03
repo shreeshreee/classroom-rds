@@ -3,12 +3,13 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 import { select, Store } from '@ngrx/store';
 
-import { User } from '@rds-auth/models/user.model';
 import * as fromAuthSelectors from '@rds-auth/state/auth.selectors';
 
 import { AppState } from '@rds-store/app.state';
 
 import { Observable } from 'rxjs';
+
+import { User } from '~/app/auth/models/user.model';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -17,12 +18,16 @@ import { Observable } from 'rxjs';
 export class HomeComponent implements OnInit {
   isOnline$: Observable<boolean>;
   user$: Observable<User>;
+  isTeacher$: Observable<boolean>;
+  isAdmin$: Observable<boolean>;
   alert: any;
   constructor(
     private store: Store<AppState>,
     sanitizer: DomSanitizer
   ) {
     this.isOnline$ = this.store.pipe(select(fromAuthSelectors.isLoggedIn));
+    this.isTeacher$ = this.store.select(fromAuthSelectors.isTeacher);
+    this.isAdmin$ = this.store.select(fromAuthSelectors.isAdmin);
     this.user$ = this.store.pipe(select(fromAuthSelectors.selectUser));
     this.alert = {
       dismissable: true,

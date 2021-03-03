@@ -5,6 +5,8 @@ import { UserDomainEntityService } from '@rds-admin/state/user-domain/user-domai
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { AdminFireService } from '../../services';
+
 import { UserDomain } from '~/app/admin/models/users-domain.model';
 
 
@@ -17,8 +19,10 @@ import { UserDomain } from '~/app/admin/models/users-domain.model';
 export class UsersComponent implements OnInit {
   users$: Observable<UserDomain[]>;
   loaded$: Observable<boolean>;
+  users: UserDomain[];
   constructor(
     private userDomainEntityService: UserDomainEntityService,
+    private adminFireService: AdminFireService
   ) {
     this.loaded$ = this.userDomainEntityService.loaded$;
   }
@@ -31,5 +35,11 @@ export class UsersComponent implements OnInit {
         return users;
       }));
   }
-
+  onDbBackup(users: UserDomain[]) {
+    users.map(async user => {
+      const userProfile = await (await gapi.client.classroom.userProfiles.get({ userId: user.id })).result;
+      const newUser = { ...user, photoUrl: userProfile.photoUrl, permissions: userProfile.permissions || null, isTeacher: userProfile.verifiedTeacher || false }
+      await this.adminFireService.createUser(newUser)
+    });
+  }
 }

@@ -3,23 +3,27 @@
   </mat-spinner>
   <span>Buscando ...</span><br>
 </div>
-<div *ngIf="(scores|async) as scores">
-  <mat-card>
-    <mat-card-content class="card border-primary m-n2 bg-transparent">
-      <h1 class="mat-h1 card-header text-light">Calificaciones &nbsp;<small class="font-weight-light">Ciclo escolar
-          2020-21</small></h1>
-      <div class="card-body">
-        <p class="card-text">Fecha y hora de consulta: {{today|date:'medium'}}</p>
-        <p class="card-text">Selecciona una materia para conocer sus observaciones:</p>
-        <app-grades-table [data]="scores"></app-grades-table>
-      </div>
-      <div class="card-footer">
-        <h3 class="text-center">
-          Estadísticas
-        </h3>
-        <app-grades-bar-chart *ngIf="scores" [data]="scores"></app-grades-bar-chart>
-      </div>
-    </mat-card-content>
-  </mat-card>
-
-</div>
+<mat-card *ngIf="(scores|async) as scores">
+  <mat-card-content class="card border-primary m-n2 bg-transparent">
+    <h1 class="mat-h1 card-header text-light">Calificaciones &nbsp;
+      <small class="font-weight-light">Ciclo escolar 2020-21</small>
+    </h1>
+    <div class="float-right">
+      <button mat-button (click)="printPage()">
+        <fa-icon class="rds-icon" [icon]="faPrint" size="lg"></fa-icon>&nbsp;Imprimir
+      </button>
+      <button mat-button (click)="printPage()">
+        <fa-icon class="rds-icon" [icon]="faFilePdf" size="lg"></fa-icon>&nbsp;Descargar
+      </button>
+    </div>
+    <div class="card-body">
+      <p class="card-text">Fecha y hora de consulta: {{today|date:'medium'}}</p>
+      <p class="card-text">Selecciona una materia para conocer sus observaciones:</p>
+      <app-grades-table [data]="scores"></app-grades-table>
+    </div>
+    <div class="card-footer">
+      <h3 class="text-center">Estadísticas</h3>
+      <app-grades-bar-chart *ngIf="scores" [data]="scores"></app-grades-bar-chart>
+    </div>
+  </mat-card-content>
+</mat-card>

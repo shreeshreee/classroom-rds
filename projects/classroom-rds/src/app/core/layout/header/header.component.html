@@ -5,7 +5,7 @@
         <fa-icon [icon]="faBars"></fa-icon>
       </button>
       <button mat-icon-button [routerLink]="['/']">
-        <img class="img-fluid" src="assets/icons/android-chrome-512x512.png" />
+        <img class="img-fluid" src="assets/images/rds-personas.png" />
       </button>
       <button mat-button [matMenuTriggerFor]="escuela">
         Escuela
@@ -16,8 +16,7 @@
     </div>
     <div fxLayout="row" fxLayoutGap="5px">
       <button *ngIf="isOnline" mat-icon-button [matMenuTriggerFor]="userMenu">
-        <img class="img-fluid rounded-circle"
-          [src]="[user.photoUrl ? user.photoUrl : 'assets/images/dummy-user.png']" />
+        <img class="img-fluid rounded-circle" [src]="[user.photoUrl?user.photoUrl:'assets/images/dummy-user.png']" />
       </button>
       <button *ngIf="!isOnline" mat-icon-button (click)="onSignIn()">
         <img class="img-fluid" src="assets/images/google-logo.svg" />

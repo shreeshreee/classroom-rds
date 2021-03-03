@@ -1,23 +1,20 @@
-<div class="p-2">
+<div class="user-container p-2">
   <mat-card>
     <mat-card-header>
       <img mat-card-avatar src="https://i.pinimg.com/originals/98/d3/a2/98d3a283f98cded8e639957e935bd373.png" />
-      <mat-card-title><span class="view-title">Información Académica</span>
+      <mat-card-title><span class="view-title">Servicios Escolares</span>
       </mat-card-title>
       <mat-card-subtitle class="view-subtitle">Accede a toda tu información como alumno
       </mat-card-subtitle>
     </mat-card-header>
-    <mat-card-actions align="end">
-      <div fxLayout="row" fxLayoutAlign="space-around center">
-
-      </div>
-    </mat-card-actions>
   </mat-card>
   <div class="py-2 d-block">
-    <app-user-menu [user]="(userDto|async)" [isAdmin]="(isAdmin$|async)" [isTeacher]="(isTeacher$|async)"
+    <app-user-menu [user]="(user$|async)" [isAdmin]="(isAdmin$|async)" [isTeacher]="(isTeacher$|async)"
       [isOnline]="(isOnline$|async)" (logout)="logoutUser($event)"></app-user-menu>
   </div>
   <div class="py-2 d-block">
     <router-outlet></router-outlet>
   </div>
 </div>
+<!-- <app-user-grades-printable></app-user-grades-printable>
+ -->

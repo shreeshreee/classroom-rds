@@ -1,4 +1,5 @@
-@import './../../../../assets/themes/colors.scss';
+@import "./../../../../assets/themes/colors.scss";
+
 .view-title {
   color:$rds-logo-color;
   font-size: calc(1rem + 1.5vw);
@@ -8,11 +9,4 @@
   margin-top: -50px;
   font-size: calc(0.5rem + 1vw);
   font-weight: 400;
-}
-.additional-selection {
-  opacity: 0.75;
-  font-size: 0.75em;
-}
-mat-card {
-  min-width: 350px;
 }

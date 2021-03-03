@@ -20,43 +20,19 @@ import { Score } from '../../models/score.model';
     ]),
   ],
 })
-export class GradesTableComponent implements AfterViewInit, OnInit {
+export class GradesTableComponent implements OnInit {
   @Input() data: Score[];
   extraData: Score[];
-  //@ViewChild(MatSort) sort: MatSort;
-  //@ViewChild(MatTable) table: MatTable<Score>;
-  //dataSource: MatTableDataSource<Score>;
-  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['courseName', 'unidad1', 'unidad2', 'unidad3'];
+  final: any;
+  displayedColumns = ['courseName', 'unidad1', 'unidad2', 'unidad3', 'final'];
   expandedElement: Score;
-  /*  constructor(
-     private dialog: MatDialog,
-   ) { } */
+
   ngOnInit() {
-    /*  const average1: number = this.average(this.data['unidad1']);
-     const average2: number = this.average(this.data['unidad2']);
-     const average3: number = this.average(this.data['unidad3']); */
-    this.extraData = this.data.splice(this.data.length - 2, 2);
-    console.log(this.extraData)
-    //this.dataSource = new MatTableDataSource(this.data);
+    this.extraData = this.data.splice(this.data.length - 3, 2);
+    this.final = this.data.splice(this.data.length - 1, 1);
   }
-
-  /* openBarChart() {
-    const dialogRef = this.dialog.open(GradesBarChartComponent, {
-      minWidth: '450px',
-      minHeight: '550px',
-      data: { ...this.data }
-    })
-  } */
-  ngAfterViewInit() {
-    //this.dataSource.sort = this.sort;
-  }
-
 
   getAverage() {
-    /* const avg1 = this.data.map(t => +t.unidad1).reduce((acc, value) => acc + value, 0);
-    const avg2 = this.data.map(t => +t.unidad2).reduce((acc, value) => acc + value, 0);
-    const avg3 = this.data.map(t => +t.unidad3).reduce((acc, value) => acc + value, 0); */
     let sum1: number = 0;
     let sum2: number = 0;
     let sum3: number = 0;
@@ -72,13 +48,5 @@ export class GradesTableComponent implements AfterViewInit, OnInit {
     const avg3 = (Math.round(10 * (sum3 / count)) / 10).toString();
     return [avg1, avg2, avg3]
   }
-  average(u: string[]): number {
-    let sum = 0;
-    let count = 0;
-    u.map(u1 => {
-      sum = +u1 + sum;
-      count++;
-    })
-    return sum / count;
-  }
+
 }

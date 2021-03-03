@@ -1,0 +1,46 @@
+<div class="py-2">
+  <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+    <mat-form-field appearance="outline">
+      <mat-label>Grupo</mat-label>
+      <mat-select formControlName="grade" placeholder="Selecciona un grupo">
+        <mat-option *ngFor="let skey of slevelKeys" [value]="slevels[skey]">
+          {{slevels[skey]}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+
+  <div>
+    <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="5px" fxLayoutAlign="space-arround top">
+      <mat-card *ngIf="(loaded$|async) && users$|async as users" class="students-list" fxFlex fxFlex.lt-sm="100%">
+        <div class="card m-n3 bg-transparent ">
+          <mat-list class="d-block" *ngIf="users.length==0" dense>
+            <mat-list-item> No hay cursos para mostrar </mat-list-item>
+          </mat-list>
+          <mat-list>
+            <mat-list-item *ngFor="let user of users" (click)="sendUser(user)">
+              <img matListIcon src="{{user.photoUrl}}">
+              <h6 matLine>{{user.name.fullName}}</h6>
+            </mat-list-item>
+          </mat-list>
+        </div>
+      </mat-card>
+      <div *ngIf="userSub" fxFlex fxFlex.lt-sm="100%">
+        <app-school-form [user]="userSub" (userToEdit)="editUser($event)"></app-school-form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <mat-accordion hideToggle>
+  <mat-expansion-panel  appMaterialElevation [raisedElevation]="raisedElev"
+    >
+    <mat-expansion-panel-header>
+      <img class="img-small rounded-circle" src="{{user.photoUrl}}">
+      <mat-panel-title>{{user.name.fullName}}</mat-panel-title>
+      <mat-panel-description>{{user.primaryEmail}}</mat-panel-description>
+    </mat-expansion-panel-header>
+    <div *ngIf="user">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion> -->

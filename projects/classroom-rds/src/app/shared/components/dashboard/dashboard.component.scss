@@ -23,6 +23,9 @@ mat-card::ng-deep.mat-card-header-text {
   color:$rds-logo-color;
   font-size: calc(1rem + 1.5vw);
   font-weight: 800;
+  span {
+    font-weight: 300;
+  }
 }
 .view-subtitle {
   margin-top: -50px;

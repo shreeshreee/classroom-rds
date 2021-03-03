@@ -1,5 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, ViewChild } from '@angular/core';
 
+import { faPrint } from '@fortawesome/free-solid-svg-icons';
+import { faFilePdf } from '@fortawesome/free-regular-svg-icons';
+
 import { select, Store } from '@ngrx/store';
 
 import { AppState } from '@rds-store/app.state';
@@ -11,7 +14,8 @@ import { map } from 'rxjs/operators';
 import { Observable, Subscription } from 'rxjs';
 
 import { Score } from '../../models/score.model';
-import { UserScoresService } from './../../services/user-scores.service';
+
+import { SchoolService } from '~/app/school/services/school.service';
 
 
 @Component({
@@ -27,17 +31,21 @@ export class UserGradesComponent implements OnInit {
   userSub: Subscription;
   scores: Observable<Score[]>;
   today: Date = new Date();
-
+  faPrint = faPrint;
+  faFilePdf = faFilePdf;
   constructor(
     private store: Store<AppState>,
-    private scoreServices: UserScoresService
+    private schoolService: SchoolService
   ) {
     this.user$ = this.store.select(selectUser);
   }
 
   ngOnInit(): void {
     this.user$.subscribe(user => {
-      this.scores = this.scoreServices.getScores(user.id);
+      this.scores = this.schoolService.getScores(user.id);
     });
+  }
+  printPage() {
+    window.print();
   }
 }

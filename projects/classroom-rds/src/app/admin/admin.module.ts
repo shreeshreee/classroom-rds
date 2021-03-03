@@ -1,9 +1,3 @@
-import { GroupsResolver } from './services/groups.resolver';
-import { GroupDataService } from './state/group/group-data.service';
-import { GroupEntityService } from './state/group/group-entity.service';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
@@ -22,23 +16,25 @@ import { SharedModule } from '@rds-shared/shared.module';
 
 import * as fromUserDomain from '@rds-admin/state/user-domain';
 import * as fromGroup from '@rds-admin/state/group';
+
 import * as fromEntity from '@rds-store/app/config/entity-metadata';
 
-import { AdminApiService } from '@rds-admin/services';
-
+import { GroupsResolver } from './services/groups.resolver';
 import { UserDomainsResolver } from './services/user-domains.resolver';
+import { GroupTableComponent } from './components/group-table/group-table.component';
+import { SchoolHomeComponent } from './containers/school-home/school-home.component';
+import { GroupDataService } from './state/group/group-data.service';
+import { GroupEntityService } from './state/group/group-entity.service';
 import { UserDomainDataService } from './state/user-domain/user-domain-data.service';
 import { UserDomainEntityService } from './state/user-domain/user-domain-entity.service';
 import { MaterialModule } from '~/app/modules/material.module';
-import { GroupTableComponent } from './components/group-table/group-table.component';
-import { SchoolComponent } from './containers/school/school.component';
 
 @NgModule({
   declarations: [
     fromAdminComponents.adminComponents,
     fromAdminContainers.adminContainers,
     GroupTableComponent,
-    SchoolComponent
+    SchoolHomeComponent,
   ],
   imports: [
     CommonModule,

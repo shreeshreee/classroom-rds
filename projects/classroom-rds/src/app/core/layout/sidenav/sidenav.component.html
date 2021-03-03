@@ -3,21 +3,25 @@
     [attr.role]="isHandset ? 'dialog' : 'navigation'" [mode]="'side'" [opened]="isHandset == false" *ngIf="isOnline">
     <div fxLayout="column" fxLayoutAlign="space-between start">
       <mat-nav-list dense>
-        <mat-list-item *ngIf="isTeacher" [routerLink]="['classroom','clases']" routerLinkActive="active">
+        <mat-list-item *ngIf="isTeacher || isAdmin" [routerLink]="['classroom','clases']" routerLinkActive="active">
           <fa-icon matListIcon [icon]="faChalkboardTeacher"></fa-icon>
-          <span matLine [@animateText]="linkText ? 'show' : 'hide'">Cursos</span>
+          <span matLine [@animateText]="linkText ? 'show' : 'hide'">Classroom</span>
         </mat-list-item>
-        <mat-list-item *ngIf="isAdmin" [routerLink]="['admin']" routerLinkActive="active">
+        <mat-list-item *ngIf="isTeacher || isAdmin" [routerLink]="['admin']" routerLinkActive="active">
           <fa-icon matListIcon [icon]="faUserShield"></fa-icon>
-          <span matLine [@animateText]="linkText ? 'show' : 'hide'">Administrador</span>
+          <span matLine [@animateText]="linkText ? 'show' : 'hide'">Admin</span>
         </mat-list-item>
-        <mat-list-item [routerLink]="['user']" routerLinkActive="active">
+        <mat-list-item [routerLink]="['user','grades']" routerLinkActive="active">
           <fa-icon matListIcon [icon]="faAward"></fa-icon>
-          <span matLine [@animateText]="linkText ? 'show' : 'hide'">Caificaciones</span>
+          <span matLine [@animateText]="linkText ? 'show' : 'hide'">Calificaciones</span>
         </mat-list-item>
-        <mat-list-item *ngIf="isTeacher" [routerLink]="['calificaciones']" routerLinkActive="active">
-          <fa-icon matListIcon [icon]="faUserPlus"></fa-icon>
-          <span matLine [@animateText]="linkText ? 'show' : 'hide'">Informacion de usuario</span>
+        <mat-list-item [routerLink]="['user','info']" routerLinkActive="active">
+          <fa-icon matListIcon [icon]="faIdBadge"></fa-icon>
+          <span matLine [@animateText]="linkText ? 'show' : 'hide'">Datos</span>
+        </mat-list-item>
+        <mat-list-item *ngIf="isTeacher || isAdmin" [routerLink]="['escuela']" routerLinkActive="active">
+          <fa-icon matListIcon [icon]="faBuilding"></fa-icon>
+          <span matLine [@animateText]="linkText ? 'show' : 'hide'">Administración</span>
         </mat-list-item>
 
       </mat-nav-list>

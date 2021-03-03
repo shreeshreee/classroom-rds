@@ -2,14 +2,9 @@ import { Injectable } from '@angular/core';
 
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
-import { AuthService } from '@rds-auth/services';
-
-import { of } from 'rxjs';
-import { catchError, map, switchMap, tap } from 'rxjs/operators';
+import { map, switchMap, tap } from 'rxjs/operators';
 
 import * as fromAuthActions from '../auth.actions';
-import { isTeacher } from './../auth.selectors';
-import { User } from '../../models/user.model';
 import { AuthFireService } from '../../services/auth-fire.service';
 @Injectable()
 export class FireEffects {
@@ -52,40 +47,40 @@ export class FireEffects {
   );
 
 
-  updateProfile$ = createEffect(
-    () =>
-      this.actions$.pipe(
-        ofType(fromAuthActions.updateProfile),
-        switchMap((action) =>
-          this.authFireService.updateUser(action.userData)
-            .pipe(
-              map(() => {
-                const currentUser: any = this.authFireService.getAuthState();
-                const updatedUser: User = {
-                  id: currentUser.id,
-                  uid: currentUser.uid,
-                  name: currentUser.name,
-                  email: currentUser.email,
-                  photoUrl: currentUser.photoURL,
-                  isTeacher: currentUser.isTeacher,
-                  isAdmin: currentUser.isAdmin,
-                  isOnline: currentUser.isOnline,
-                  isNew: currentUser.isNew,
-                };
-                return fromAuthActions.updateProfileSuccess({ user: updatedUser });
-              }),
-              catchError((err) => of(fromAuthActions.authError({ error: err })))
-            )
-        )
-      ),
-  );
-
+  /*  updateProfile$ = createEffect(
+     () =>
+       this.actions$.pipe(
+         ofType(fromAuthActions.updateProfile),
+         switchMap((action) =>
+           this.authFireService.updateUser(action.userData)
+             .pipe(
+               map(() => {
+                 const currentUser: any = this.authFireService.getAuthState();
+                 const updatedUser: User = {
+                   id: currentUser.id,
+                   uid: currentUser.uid,
+                   name: currentUser.name,
+                   email: currentUser.email,
+                   photoUrl: currentUser.photoURL,
+                   isTeacher: currentUser.isTeacher,
+                   isAdmin: currentUser.isAdmin,
+                   isOnline: currentUser.isOnline,
+                   isNew: currentUser.isNew,
+                 };
+                 return fromAuthActions.updateProfileSuccess({ user: updatedUser });
+               }),
+               catchError((err) => of(fromAuthActions.authError({ error: err })))
+             )
+         )
+       ),
+   );
+  */
   updateOnlineStatus$ = createEffect(
     () =>
       this.actions$.pipe(
         ofType(fromAuthActions.updateOnlineStatus),
         switchMap((action) =>
-          this.authFireService.updateOnlineStatus(action.uid, action.isOnline)
+          this.authFireService.updateOnlineStatus(action.id, action.isOnline)
         )
       ),
     { dispatch: false }

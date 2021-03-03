@@ -12,11 +12,10 @@ import { SharedModule } from '../shared/shared.module';
 
 import { LayoutComponent } from './layout/layout.component';
 import { LayoutService } from './layout/layout.service';
+import { ConfigComponent } from './layout/config/config.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { SidenavComponent } from './layout/sidenav/sidenav.component';
-import { ConfigurationComponent } from './layout/configuration/configuration.component';
-import { ConfigComponent } from './layout/config/config.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { ConfigComponent } from './layout/config/config.component';
     HeaderComponent,
     SidenavComponent,
     FooterComponent,
-    ConfigurationComponent,
     ConfigComponent
   ],
   imports: [

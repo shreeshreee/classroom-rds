@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { select, Store } from '@ngrx/store';
 
-import { UpdatedUser, User } from '@rds-auth/models/user.model';
+import { User } from '@rds-auth/models/user.model';
 import { signOut } from '@rds-auth/state/auth.actions';
 import * as fromAuthActions from '@rds-auth/state/auth.actions';
 import * as fromAuthSelectors from '@rds-auth/state/auth.selectors';
@@ -31,7 +31,7 @@ export class UserProfileComponent implements OnInit {
     this.isTeacher$ = this.store.pipe(select(fromAuthSelectors.isTeacher));
   }
 
-  updateProfile(userData: UpdatedUser) {
+  updateProfile(userData: User) {
     this.store.dispatch(fromAuthActions.updateProfile({ userData }));
   }
 

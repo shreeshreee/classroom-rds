@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Output, EventEmitter, AfterViewInit, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Output, EventEmitter, AfterViewInit, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
@@ -16,8 +16,7 @@ import { UserDomain } from '@rds-admin/models/users-domain.model';
 import { Observable, Subscription } from 'rxjs';
 import { map, concatMap } from 'rxjs/operators';
 
-import { PhonesType } from './../../models/user-dto';
-import { UserDto } from '../../models/user-dto';
+import { PhonesType } from '../../../auth/models/user.model';
 
 @Component({
   selector: 'app-user-details',
@@ -28,8 +27,7 @@ import { UserDto } from '../../models/user-dto';
 export class UserDetailsComponent implements OnInit {
   @Output() updatedUser = new EventEmitter<any>();
   userDetailsForm: FormGroup;
-  user$: Observable<User>;
-  user: any;
+  @Input() user: User;
   raisedElev: number = 10;
   hasUnitNumber = false;
   faIdBadge = faIdBadge;
@@ -72,17 +70,13 @@ export class UserDetailsComponent implements OnInit {
   userSub: Subscription;
   constructor(
     private fb: FormBuilder,
-    private store: Store<AppState>,
   ) {
-    this.userSub = this.store.select(selectUser).subscribe(user => {
-      //this.phoneKeys = Object.keys(this.phones).filter(Number);
-      this.initForm();
-    });
+    this.initForm(this.user);
   }
   ngOnInit(): void {
 
   }
-  initForm(defaultUser?: UserDto) {
+  initForm(defaultUser?: User) {
     this.userDetailsForm = this.fb.group({
       dayOfBirth: new FormControl(''),
       addressLine: new FormControl(''),
@@ -100,9 +94,7 @@ export class UserDetailsComponent implements OnInit {
     alert('Todavia no estamos listos para actualizar tu información por esta via. Contácta a la dirección escolar para más detalles');
   }
   updateUser() {
-    this.updatedUser.emit(this.user$);
+    this.updatedUser.emit(this.user);
   }
-  ngOnDestroy(): void {
-    this.userSub.unsubscribe();
-  }
+
 }

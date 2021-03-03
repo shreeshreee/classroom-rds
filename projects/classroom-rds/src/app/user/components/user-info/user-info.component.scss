@@ -1,0 +1,10 @@
+@import './../../../../assets/themes/colors.scss';
+.card-header {
+  background-color: $rds-logo-color;
+}
+.card {
+  border:1px solid $rds-logo-color
+}
+.rds-icon {
+  color: $rds-logo-color;
+}

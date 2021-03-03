@@ -2,9 +2,10 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output
 
 import { faAward, faUserEdit, faSignOutAlt, faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 
+import { User } from '@rds-auth/models/user.model';
+
 import { UserDomain } from '@rds-admin/models/users-domain.model';
 
-import { UserDto } from '../../models/user-dto';
 
 @Component({
   selector: 'app-user-menu',
@@ -13,12 +14,12 @@ import { UserDto } from '../../models/user-dto';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserMenuComponent implements OnInit {
-  @Input() user: UserDto;
+  @Input() user: User;
   @Input() isOnline: boolean;
   @Input() isAdmin: boolean;
   @Input() isTeacher: boolean;
   userDomain: UserDomain;
-  @Output() logout = new EventEmitter<any>();
+  @Output() logout = new EventEmitter<User>();
   faAward = faAward;
   faUserEdit = faUserEdit;
   faSignOutAlt = faSignOutAlt;

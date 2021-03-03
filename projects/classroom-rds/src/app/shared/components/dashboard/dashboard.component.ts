@@ -1,54 +1,67 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { AfterViewInit } from '@angular/core';
 
 import { Store, select } from '@ngrx/store';
 
 import { AppState } from '@rds-store/app.state';
 
-import { User } from '@rds-auth/models/user.model';
-import { selectUser } from '@rds-auth/state/auth.selectors';
 import * as fromAuthActions from '@rds-auth/state/auth.actions';
 
-import { Observable } from 'rxjs';
+import { User } from '~/app/auth/models/user.model';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DashboardComponent implements OnInit {
-  user$: Observable<User>;
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = [
-    {
-      title: 'Información Académica',
-      description: 'Accede a toda tu información como alumno.',
-      route: 'user',
-      imgUrl: 'assets/images/assignment-grades2.png'
-    },
-    /* {
-      title: 'Sistema de calificaciones',
-      description: 'Accede a la información de tus calificaciones si eres alumno, o califica a tus alumnos en todas las materias que impartes si eres profesor.',
-      route: 'calificaciones',
-      imgUrl: 'assets/images/assignment-grades2.png'
-    }, */
-    {
-      title: 'Salones y grupos',
-      description: 'Administra grados, grupos y horarios en la institución',
-      route: 'under-construction',
-      imgUrl: 'assets/images/schedule-administrator.png',
-    },
-    {
-      title: 'Classroom',
-      description: 'Consulta la información de tus clases si eres alumno, o modifica y actualiza la información si eres profesor o administrador.',
-      route: 'clases',
-      imgUrl: 'assets/images/classroom-administrator.png',
-    },
-  ];
+export class DashboardComponent implements AfterViewInit, OnInit {
+  //user$: Observable<User>;
+  @Input() user: User;
+  @Input() isTeacher: boolean;
+  @Input() isAdmin: boolean;
+  cards: any[];
+  raisedElev: number = 12;
   constructor(
     private store: Store<AppState>,
   ) { }
+  ngAfterViewInit(): void {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+    this.cards = [
+      {
+        title: 'Información Académica',
+        description: 'Accede a toda tu información como alumno.',
+        route: 'user',
+        imgUrl: 'assets/images/assignment-grades2.png',
+        access: true
+      },
 
+      {
+        title: 'Salones y grupos',
+        description: 'Administra grados, grupos y horarios en la institución',
+        route: 'under-construction',
+        imgUrl: 'assets/images/schedule-administrator.png',
+        access: true
+      },
+      {
+        title: 'Google Classroom',
+        description: 'Accede a funciones de Google Classroom.',
+        route: 'clases',
+        imgUrl: 'assets/images/classroom-administrator.png',
+        access: true
+      },
+      {
+        title: 'Google Admin',
+        description: 'Accede a funciones como Administrador de G Suite.',
+        route: 'admin',
+        imgUrl: 'assets/images/system-administrator.png',
+        access: true
+      },
+    ];
+  }
   ngOnInit(): void {
-    this.user$ = this.store.pipe(select(selectUser));
+
+
   }
   optionsByRole(userId: string) {
     this.store.dispatch(fromAuthActions.checkTeacherRole({ id: userId }));

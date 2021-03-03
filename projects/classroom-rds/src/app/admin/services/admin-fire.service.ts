@@ -25,7 +25,7 @@ export class AdminFireService {
     this.user$ = this.getAuthState().pipe(
       switchMap((user) => {
         if (user) {
-          return this.afStore.collection<UserDomain>('users').doc<UserDomain>(`${user.providerData[0].uid}`).valueChanges();
+          return this.afDatabase.object<User>(`appusers/${user.providerData[0].uid}`).valueChanges();
         } else {
           return of(null);
         }
@@ -35,24 +35,25 @@ export class AdminFireService {
   getAuthState(): Observable<firebase.User> {
     return this.afAuth.authState;
   }
-  addAdminPrivileges(uid: string): Observable<void> {
-    const adminsRef = this.afDatabase.object(`admins/${uid}`);
-    this.afDatabase.object(`users/${uid}`).update({ isAdmin: true });
+  addAdminPrivileges(id: string): Observable<void> {
+    const adminsRef = this.afDatabase.object(`admins/${id}`);
+    this.afDatabase.object(`appusers/${id}`).update({ isAdmin: true });
     return from(adminsRef.set(true));
   }
 
-  removeAdminPrivileges(uid: string): Observable<void> {
-    this.afDatabase.object(`users/${uid}`).update({ isAdmin: false });
-    return from(this.afDatabase.object(`admins/${uid}`).remove());
+  removeAdminPrivileges(id: string): Observable<void> {
+    this.afDatabase.object(`appusers/${id}`).update({ isAdmin: false });
+    return from(this.afDatabase.object(`admins/${id}`).remove());
   }
 
   getUsers(): Observable<UserDomain[]> {
-    return this.afStore.collection<UserDomain>('users').valueChanges()
+    return this.afStore.collection<UserDomain>('appusers').valueChanges()
   }
 
   async createUser(user: UserDomain) {
     const key = user.id;
-    return await this.afStore.collection('users').doc(key).set(user, { merge: true });
+    //return await this.afStore.collection('users').doc(key).set(user, { merge: true });
+    return await this.afDatabase.object<UserDomain>(`appusers/${key}`).update(user);
   }
 
   async createGroup(group: Group) {

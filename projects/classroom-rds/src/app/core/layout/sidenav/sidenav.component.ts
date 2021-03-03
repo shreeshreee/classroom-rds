@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from '@angular/router';
 
+import { faIdBadge } from '@fortawesome/free-regular-svg-icons';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { faUser, faHome, faSchool, faChalkboardTeacher, faUserTie, faUserGraduate, faUserCog, IconDefinition, faCompressAlt, faSignOutAlt, faShieldAlt, faUserPlus, faAward, faExpandAlt, faUserShield } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faHome, faSchool, faChalkboardTeacher, faUserTie, faUserGraduate, faUserCog, IconDefinition, faCompressAlt, faSignOutAlt, faShieldAlt, faUserPlus, faAward, faExpandAlt, faUserShield, faBuilding } from '@fortawesome/free-solid-svg-icons';
 
 import { Store } from '@ngrx/store';
 
@@ -12,9 +12,10 @@ import { Observable } from 'rxjs';
 import { LayoutService } from './../layout.service';
 import { animateText, onMainContentChange, onSideNavChange } from '../../animations/animations';
 import { AppState } from '../../../store/app.state';
-import { User } from '../../../auth/models/user.model';
 import { signOut } from '../../../auth/state/auth.actions';
 import { NavLink } from '../../../shared/models/nav-link';
+
+import { User } from '~/app/auth/models/user.model';
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
@@ -42,7 +43,8 @@ export class SidenavComponent implements OnInit {
   faSchool = faSchool;
   faUserCog = faUserCog;
   faGoogle = faGoogle;
-
+  faBuilding = faBuilding;
+  faIdBadge = faIdBadge;
   alert: any = {
     type: 'success',
     msg: `<div>

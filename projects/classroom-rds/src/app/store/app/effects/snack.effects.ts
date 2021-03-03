@@ -37,7 +37,7 @@ export class SnackEffects {
         tap((action) =>
           this.snackService.messageWithComponent(action.user, {
             vPos: 'bottom', hPos: 'center', setAutoHide: true,
-            hide: 5000, action: true, actionString: 'Ok', extra: false, message: 'Has ingresado como: ' + action.user.name
+            hide: 5000, action: true, actionString: 'Ok', extra: false, message: 'Has ingresado como: ' + action.user.name.fullName
           })
         )
       ),

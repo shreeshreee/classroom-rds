@@ -1,6 +1,6 @@
 <mat-card class="simple-card" fxLayout="column wrap" fxLayoutAlign="space-around center">
-  <img mat-card-avatar [src]="[user.photoUrl ? user.photoUrl : 'assets/images/dummy-user.png']" />
-  <div class="mat-body-strong">{{user.name}}</div>
-  <div class="mat-small">{{user.email}}</div>
+  <img mat-card-avatar [src]="[user.photoUrl?user.photoUrl:'assets/images/dummy-user.png']" />
+  <div class="mat-body-strong">{{user.name.fullName}}</div>
+  <div class="mat-small">{{user.primaryEmail}}</div>
   <div *ngIf="user.isAdmin" class="mat-small">Administrador de sitio</div>
 </mat-card>

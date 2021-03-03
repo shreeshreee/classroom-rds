@@ -1,31 +1,32 @@
-<mat-card>
-  <mat-card-content *ngIf="user">
+<mat-card *ngIf="user">
+  <mat-card-content>
     <div class="text-right">
       <div style="margin-top: -40px">
-        <img [src]="[user.photoUrl ? user.photoUrl : 'assets/images/dummy-user.png']" height="72" width="72"
+        <img [src]="[user.photoUrl?user.photoUrl:'assets/images/dummy-user.png']" height="72" width="72"
           class="img-fluid rounded-circle" alt="avatar image" />
-        <fa-icon class="float-center" [ngClass]="[user.isVerified ? 'text-success' : 'text-danger']"
+        <fa-icon class="rds-icon float-center" [ngClass]="[user.isVerified ? 'text-success' : 'text-danger']"
           [icon]="user.isVerified ? faCheck : faTimes">
         </fa-icon>
       </div>
       <h3 *ngIf="user.name" class="mat-h3 mt-2">{{ user.name.fullName }}</h3>
       <h3 *ngIf="!user.name" class="mat-h3">Usuario anónimo</h3>
       <h4 class="mat-h4 mt-n3">{{ user.primaryEmail }}</h4>
+      <h4 class="mat-h4 mt-n3">{{ user.role }}</h4>
 
-      <button mat-button [routerLink]="['details']" routerLinkActive="active" appMaterialElevation>
-        <fa-icon [icon]="faUserEdit"></fa-icon>&nbsp;Tus datos
+      <button mat-button [routerLink]="['info']" routerLinkActive="active" appMaterialElevation>
+        <fa-icon size="lg" [icon]="faUserEdit"></fa-icon>&nbsp;Tus datos
       </button>
       <button mat-button [routerLink]="['grades']" routerLinkActive="active" appMaterialElevation>
-        <fa-icon [icon]="faAward"></fa-icon>&nbsp;Calificaciones
+        <fa-icon size="lg" [icon]="faAward"></fa-icon>&nbsp;Calificaciones
       </button>
       <button mat-button (click)="canLogout ? onLogout() : prepareForLogout()" appMaterialElevation>
-        <fa-icon [icon]="faSignOutAlt" *ngIf="!canLogout"></fa-icon>&nbsp;<span *ngIf="!canLogout">Cerrar sesión</span>
+        <fa-icon size="lg" [icon]="faSignOutAlt" *ngIf="!canLogout"></fa-icon>&nbsp;<span *ngIf="!canLogout">Cerrar
+          sesión</span>
         <span class="text-danger" *ngIf="canLogout">¿Deseas salir?</span>
       </button>
       <button *ngIf="canLogout" mat-button (click)="cancel()">
         Cancelar
       </button>
-
     </div>
   </mat-card-content>
 </mat-card>

@@ -6,5 +6,5 @@ export interface Score {
   notes1: string;
   notes2: string;
   notes3: string;
-  finalScore?: number;
+  final: number;
 }

@@ -2,15 +2,12 @@ import { Injectable } from '@angular/core';
 
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
-import { UserProfileEntityService } from '@rds-store/user-profile/user-profile-entity.service';
 import * as fromAppActions from '@rds-store/app/actions/app.actions';
 
 import { of, Observable, defer, from } from 'rxjs';
 import { switchMap, map, catchError, take } from 'rxjs/operators';
 
-import { checkTeacherRole } from './../auth.actions';
 import * as fromAuthActions from '../auth.actions';
-import { isTeacher, isAdmin } from './../auth.selectors';
 import { AuthFireService } from '../../services';
 import { User } from '../../models/user.model';
 import { AuthService } from '../../services/auth.service';
@@ -27,15 +24,13 @@ export class AuthEffects {
               //console.log(res)
               return {
                 id: res.user.providerData[0].uid,
-                name: res.user.displayName,
-                //givenName: res.additionalUserInfo.profile.given_name,
-                //familyName: res.additionalUserInfo.family_name,
-                email: res.user.email,
-                photoUrl: (res.user.photoURL) ? (res.user.photoURL) : res.user.providerData[0].photoURL,
+                name: { fullName: res.user.displayName },
+                primaryEmail: res.user.email,
+                photoUrl: res.user.providerData[0].photoURL,
                 isNew: res.additionalUserInfo.isNewUser,
                 isVerified: res.user.emailVerified,
                 creationTime: res.user.metadata.creationTime,
-                lastLogin: res.user.metadata.lastSignInTime,
+                lastLoginTime: res.user.metadata.lastSignInTime,
                 uid: res.user.uid
               };
             }),
@@ -63,7 +58,7 @@ export class AuthEffects {
         ofType(fromAuthActions.signInSuccess),
         switchMap((action) => {
           return [
-            fromAuthActions.updateOnlineStatus({ uid: action.user.uid, isOnline: true }),
+            fromAuthActions.updateOnlineStatus({ id: action.user.id, isOnline: true }),
             fromAuthActions.checkAdminRole({ id: action.user.id }),
             fromAuthActions.checkTeacherRole({ id: action.user.id }),
             fromAppActions.localStoreUser({ user: action.user })
@@ -77,7 +72,7 @@ export class AuthEffects {
       this.actions$.pipe(
         ofType(fromAuthActions.signOut),
         switchMap((action) =>
-          from(this.authService.signOut(action.user.uid))
+          from(this.authService.signOut(action.user.id))
             .pipe(
               map(() => fromAuthActions.signOutCompleted()),
               catchError((err) => of(fromAuthActions.authError({ error: err })))
@@ -99,11 +94,9 @@ export class AuthEffects {
                 //console.log(authData)
                 const user = {
                   id: authData.user.providerData[0].uid,
-                  name: authData.user.displayName,
-                  givenName: authData.additionalUserInfo.profile.given_name,
-                  familyName: authData.additionalUserInfo.family_name,
-                  email: authData.user.email,
-                  photoUrl: authData.user.photoURL,
+                  name: { fullName: authData.user.displayName },
+                  primaryEmail: authData.user.email,
+                  photoUrl: authData.user.providerData[0].photoURL,
                   isTeacher: authData.isTeacher,
                   isAdmin: authData.isAdmin,
                   isNew: authData.additionalUserInfo.isNewUser,

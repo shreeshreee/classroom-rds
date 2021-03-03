@@ -11,11 +11,11 @@ import { UserDomainEntityService } from '../../state/user-domain/user-domain-ent
 import { CourseLevel } from '~/app/classroom/models/classroom.enum';
 
 @Component({
-  selector: 'app-school',
-  templateUrl: './school.component.html',
-  styleUrls: ['./school.component.scss']
+  selector: 'app-school-home',
+  templateUrl: './school-home.component.html',
+  styleUrls: ['./school-home.component.scss']
 })
-export class SchoolComponent implements OnInit {
+export class SchoolHomeComponent implements OnInit {
   users$: Observable<UserDomain[]>;
   loaded$: Observable<boolean>;
   level: string;

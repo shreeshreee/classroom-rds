@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Inject, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
+import { ChartDataSets, ChartLegendOptions, ChartOptions, ChartType } from 'chart.js';
 
 import { Label, Color, BaseChartDirective } from 'ng2-charts';
 
@@ -22,7 +22,7 @@ export class GradesBarChartComponent implements OnInit {
   raisedElev: number = 10;
   barChartType: ChartType = 'bar';
   barChartLegend = true;
-  barChartPlugins = [pluginDataLabels];
+  barChartPlugins = [/* pluginDataLabels */];
   barChartData: ChartDataSets[];
   barChartLabels: Label[];
   barChartOptions: ChartOptions = {
@@ -37,38 +37,19 @@ export class GradesBarChartComponent implements OnInit {
       }
     }
   };
-  /* constructor(
-    private dialogRef: MatDialogRef<GradesBarChartComponent>,
-    @Inject(MAT_DIALOG_DATA) public data
-  ) { } */
 
   ngOnInit(): void {
-    let final: number[] = [];
     const nameArray: string[] = this.data.map(score => score.courseName);
     const data1: number[] = this.data.map(score => +score.unidad1);
     const data2: number[] = this.data.map(score => +score.unidad2);
     const data3: number[] = this.data.map(score => +score.unidad3);
-    for (let i = 0; i < +nameArray.length; i++) {
-      final[i] = Math.round(10 * (+data1[i] + data2[i] + data3[i]) / 3) / 10;
-    }
-
+    const final: number[] = this.data.map(score => +score.final);
     this.barChartLabels = nameArray;
     this.barChartData = [
-      {
-        data: data1,
-        label: 'Unidad 1',
-        borderJoinStyle: 'round',
-
-      },
+      { data: data1, label: 'Unidad 1' },
       { data: data2, label: 'Unidad 2' },
       { data: data3, label: 'Unidad 3' },
-      {
-        data: final,
-        label: 'Promedio final',
-        // Changes this dataset to become a line
-        type: 'line'
-      },
-
+      { data: final, label: 'Promedio final', type: 'line' },
     ];
   }
   // events
