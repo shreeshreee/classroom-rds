@@ -63,6 +63,9 @@ export class SchoolService {
   getScores(id: string): Observable<Score[]> {
     return this.afDatabase.object<Score[]>(`scores/${id}`).valueChanges();
   }
-
+  async updateUser(id: string, user: Partial<User>): Promise<User> {
+    await this.afDatabase.object<User>(`appusers/${id}`).update(user).then(() => this.getUser(id));
+    return
+  }
 }
 

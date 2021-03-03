@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { DefaultDataService, HttpUrlGenerator, QueryParams } from '@ngrx/data';
+import { Update } from '@ngrx/entity';
 
 import { from, Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
@@ -31,5 +32,8 @@ export class UserDataService extends DefaultDataService<User> {
 
   getById(id: string): Observable<User> {
     return this.schoolService.getUser(id);
+  }
+  update(update: Update<User>) {
+    return from(this.schoolService.updateUser(update.id.toString(), update.changes))
   }
 }

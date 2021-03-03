@@ -22,7 +22,7 @@ import { UserEntityService } from '~/app/store/user/user-entity.service';
 export class SchoolStudentsComponent implements OnInit, OnDestroy {
   @Input() users$: Observable<User[]>;
   user$: Observable<User>;
-  userSub: Subject<User> = new Subject<User>();
+  userSub: Subject<Partial<User>> = new Subject<Partial<User>>();
   loaded$: Observable<boolean>;
   searchForm: FormGroup;
   fullName: string;
@@ -51,11 +51,12 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.onSearch();
   }
-  sendUser(user: User) {
+  sendUser(user: Partial<User>) {
     this.userSub.next(user);
   }
-  editUser(user: User) {
-    console.log('Partial User:', user)
+  editUser(user: Partial<User>) {
+    //console.log('Partial User:', user)
+    this.userEntityService.update(user);
     // call action or service to edit user on DB
   }
   onSearch() {
@@ -66,5 +67,6 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy(): void {
     this.subService.unsubscribeComponent$.next();
+    this.userSub.unsubscribe();
   }
 }

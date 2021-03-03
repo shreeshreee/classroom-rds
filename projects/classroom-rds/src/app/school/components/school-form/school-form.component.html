@@ -4,28 +4,29 @@
   <span>Buscando ...</span><br>
 </div>
 <div *ngIf="(user|async)">
-  <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
-    <mat-card>
-      <mat-card-content class="card border-primary m-n2 bg-transparent">
-        <h1 class="mat-h1 card-header text-light">Datos personales&nbsp;
-          <small class="font-weight-light">Alumnos</small>
-        </h1>
-        <div class="card-body">
-          <p class="card-text">
-            Los datos que nos proporciones estan sujetos a verificación de autenticidad y deberán estar respaldados por
-            documentos oficiales en posesión del personal administrativo de la institución. Consulta las
-            <a [routerLink]="['/privacy-policy']">Políticas de Privacidad</a> sobre la información que nos proporcionas.
-          </p>
-          <mat-accordion togglePosition="before">
-            <mat-expansion-panel appMaterialElevation [raisedElevation]="raisedElev">
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  Datos del Alumno:
-                </mat-panel-title>
-                <mat-panel-description>
+  <mat-card>
+    <mat-card-content class="card border-primary m-n2 bg-transparent">
+      <h1 class="mat-h1 card-header text-light">Datos personales&nbsp;
+        <small class="font-weight-light">Alumnos</small>
+      </h1>
+      <div class="card-body">
+        <p class="card-text">
+          Los datos que nos proporciones estan sujetos a verificación de autenticidad y deberán estar respaldados por
+          documentos oficiales en posesión del personal administrativo de la institución. Consulta las
+          <a [routerLink]="['/privacy-policy']">Políticas de Privacidad</a> sobre la información que nos proporcionas.
+        </p>
+        <mat-accordion togglePosition="before">
+          <mat-expansion-panel appMaterialElevation [raisedElevation]="raisedElev">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Datos del Alumno:
+              </mat-panel-title>
+              <mat-panel-description>
 
-                </mat-panel-description>
-              </mat-expansion-panel-header>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+
               <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="5px">
                 <mat-form-field fxFlex="0 1 calc(33% - 5px)" fxFlex.lt-md="100%" appearance="outline">
                   <mat-label>CURP</mat-label>
@@ -79,9 +80,12 @@
                   </mat-radio-button>
                 </mat-radio-group>
               </div>
-            </mat-expansion-panel>
+              <button mat-button type="submit">Actualizar datos</button>
+            </form>
 
-            <mat-expansion-panel appMaterialElevation [raisedElevation]="raisedElev">
+          </mat-expansion-panel>
+
+          <!--   <mat-expansion-panel appMaterialElevation [raisedElevation]="raisedElev">
               <mat-expansion-panel-header>
                 <mat-panel-title>
                   Datos del Tutor
@@ -185,13 +189,9 @@
                   </mat-error>
                 </mat-form-field>
               </div>
-            </mat-expansion-panel>
-          </mat-accordion>
-        </div>
-      </mat-card-content>
-      <mat-card-actions align="end">
-        <button mat-button type="submit">Actualizar datos</button>
-      </mat-card-actions>
-    </mat-card>
-  </form>
+            </mat-expansion-panel> -->
+        </mat-accordion>
+      </div>
+    </mat-card-content>
+  </mat-card>
 </div>

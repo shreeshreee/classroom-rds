@@ -1,6 +1,6 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component, ChangeDetectionStrategy, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { User } from '@rds-auth/models/user.model';
 
@@ -17,7 +17,7 @@ import states from './states.json';
 })
 export class SchoolFormComponent implements OnInit {
   @Input() user: Subject<User>;
-  @Output() updatedUser: EventEmitter<User> = new EventEmitter<User>();
+  @Output() updatedUser: EventEmitter<Partial<User>> = new EventEmitter<Partial<User>>();
   statesNames: string[];
   municipiosNames: string[];
   addressForm: FormGroup;
@@ -30,38 +30,69 @@ export class SchoolFormComponent implements OnInit {
     this.statesNames = Object.keys(states);
   }
   ngOnInit() {
+    this.initForm();
     this.user.subscribe(user => {
-      this.initForm(user)
+      this.addressForm.patchValue({
+        id: user.id,
+        curp: user.curp,
+        niev: user.niev,
+        dayOfBirth: user.dayOfBirth,
+        primaryEmail: user.primaryEmail,
+        firstName: user.name.givenName,
+        lastName: user.name.familyName,
+        gender: user.gender,
+        /*  parentFirstName: user.parentName.givenName,
+         parentLastName: user.parentName.familyName,
+         parentCurp: user.parentCurp,
+         direccion: null,
+         address2: null,
+         ciudad: null,
+         municipio: null,
+         estado: null,
+         codigoPostal: null */
+      });
     });
 
   }
-  initForm(defaultUser?: User) {
+  initForm() {
     this.addressForm = this.fb.group({
-      curp: defaultUser.curp || null,
-      niev: defaultUser.niev || null,
-      dayOfBirth: [defaultUser.dayOfBirth || null, Validators.required],
-      primaryEmail: [defaultUser.primaryEmail || null, Validators.required],
-      firstName: [defaultUser.name.givenName || null, Validators.required],
-      lastName: [defaultUser.name.familyName || null, Validators.required],
-      gender: [defaultUser.gender || null, Validators.required],
-      parentFirstName: [defaultUser.parentName.givenName || null, Validators.required],
-      parentLastName: [defaultUser.parentName.familyName || null, Validators.required],
-      parentCurp: [defaultUser.parentCurp || null, Validators.required],
-      direccion: [null, Validators.required],
-      address2: null,
-      ciudad: [null, Validators.required],
-      municipio: [null, Validators.required,],
-      estado: [null, Validators.required],
-      codigoPostal: [null, Validators.compose([
-        Validators.required, Validators.minLength(5), Validators.maxLength(5)])
-      ],
-      shipping: ['free', Validators.required]
+      id: '',
+      curp: new FormControl(null),
+      niev: new FormControl(null),
+      dayOfBirth: new FormControl(''),
+      primaryEmail: new FormControl(null),
+      firstName: new FormControl(null),
+      lastName: new FormControl(null),
+      gender: new FormControl(null, [Validators.required]),
+      /*  parentFirstName: new FormControl(null),
+       parentLastName: new FormControl(null),
+       parentCurp: new FormControl(null),
+       direccion: new FormControl(null),
+       address2: null,
+       ciudad: new FormControl(null),
+       municipio: new FormControl(null),
+       estado: new FormControl(null),
+       codigoPostal: new FormControl(null) */
     });
   }
 
   onSubmit() {
-    const variable = this.addressForm.value;
-    this.updatedUser.emit(variable)
+    const postUser: Partial<User> = {
+      id: this.addressForm.value.id,
+      curp: this.addressForm.value.curp,
+      niev: this.addressForm.value.niev,
+      dayOfBirth: this.addressForm.value.dayOfBirth,
+      primaryEmail: this.addressForm.value.primaryEmail,
+      name: {
+        givenName: this.addressForm.value.firstName,
+        familyName: this.addressForm.value.lastName,
+        fullName: this.addressForm.value.firstName + this.addressForm.value.lastName
+      },
+      gender: this.addressForm.value.gender,
+
+    };
+    console.log(postUser)
+    this.updatedUser.emit(postUser);
   }
   onEstadoChange() {
     this.addressForm.controls['estado'].valueChanges.subscribe((estado: string) => {
