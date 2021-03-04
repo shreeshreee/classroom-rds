@@ -1,10 +1,12 @@
-import { Component, OnInit, OnDestroy, Input, Output, EventEmitter } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Component, OnInit, OnDestroy, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { MatList, MatListItem } from '@angular/material/list';
 
 import { QueryParams } from '@ngrx/data';
 
 import { Observable, Subject } from 'rxjs';
-import { map, take } from 'rxjs/operators';
+import { map, take, catchError } from 'rxjs/operators';
 
 import { selectUser } from './../../../auth/state/auth.selectors';
 
@@ -22,6 +24,7 @@ import { UserEntityService } from '~/app/store/user/user-entity.service';
 export class SchoolStudentsComponent implements OnInit, OnDestroy {
   @Input() users$: Observable<User[]>;
   user$: Observable<User>;
+  activeClass: string;
   userSub: Subject<Partial<User>> = new Subject<Partial<User>>();
   loaded$: Observable<boolean>;
   searchForm: FormGroup;
@@ -34,6 +37,7 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
   searching: boolean = false;
   constructor(
     private fb: FormBuilder,
+    private snackbar: MatSnackBar,
     private subService: SubscriptionService,
     private userEntityService: UserEntityService,
   ) {
@@ -56,13 +60,17 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
   }
   editUser(user: Partial<User>) {
     //console.log('Partial User:', user)
-    this.userEntityService.update(user);
+    this.userEntityService.update(user).subscribe(() => this.snackbar.open('Usuario actualizado', 'ok', { duration: 1000 }), (error: any) => this.snackbar.open(`Error ${error}`, 'ok'));
+    this.searchForm.get('grade').valueChanges.subscribe((grade: string) => {
+      this.users$ = this.userEntityService.entities$
+        .pipe(map(users => users.filter(x => x.grade == grade)))
+    });
     // call action or service to edit user on DB
   }
   onSearch() {
     this.searchForm.get('grade').valueChanges.subscribe((grade: string) => {
       this.users$ = this.userEntityService.entities$
-        .pipe(take(1), map(users => users.filter(x => x.grade == grade)))
+        .pipe(map(users => users.filter(x => x.grade == grade)))
     });
   }
   ngOnDestroy(): void {

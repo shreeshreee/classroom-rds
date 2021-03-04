@@ -1,6 +1,6 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component, ChangeDetectionStrategy, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { User } from '@rds-auth/models/user.model';
 
@@ -38,8 +38,8 @@ export class SchoolFormComponent implements OnInit {
         niev: user.niev,
         dayOfBirth: user.dayOfBirth,
         primaryEmail: user.primaryEmail,
-        firstName: user.name.givenName,
-        lastName: user.name.familyName,
+        familyName: user.name.familyName,
+        givenName: user.name.givenName,
         gender: user.gender,
         /*  parentFirstName: user.parentName.givenName,
          parentLastName: user.parentName.familyName,
@@ -60,9 +60,9 @@ export class SchoolFormComponent implements OnInit {
       curp: new FormControl(null),
       niev: new FormControl(null),
       dayOfBirth: new FormControl(''),
-      primaryEmail: new FormControl(null),
-      firstName: new FormControl(null),
-      lastName: new FormControl(null),
+      primaryEmail: new FormControl(null, [Validators.required, Validators.email]),
+      familyName: new FormControl(null, [Validators.required]),
+      givenName: new FormControl(null, [Validators.required]),
       gender: new FormControl(null, [Validators.required]),
       /*  parentFirstName: new FormControl(null),
        parentLastName: new FormControl(null),
@@ -77,7 +77,19 @@ export class SchoolFormComponent implements OnInit {
   }
 
   onSubmit() {
-    const postUser: Partial<User> = {
+    // get only updated values
+    const postUser: Partial<User> = {};
+    this.addressForm['_forEachChild']((control, name) => {
+      if (control.dirty) {
+        if (name != 'familyName' && name != 'givenName') {
+          postUser[name] = control.value;
+        }
+      }
+      postUser['id'] = this.addressForm.get('id').value;
+    });
+
+
+    /* const postUser: Partial<User> = {
       id: this.addressForm.value.id,
       curp: this.addressForm.value.curp,
       niev: this.addressForm.value.niev,
@@ -90,7 +102,7 @@ export class SchoolFormComponent implements OnInit {
       },
       gender: this.addressForm.value.gender,
 
-    };
+    }; */
     console.log(postUser)
     this.updatedUser.emit(postUser);
   }

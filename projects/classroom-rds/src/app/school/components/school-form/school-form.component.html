@@ -3,11 +3,11 @@
   </mat-spinner>
   <span>Buscando ...</span><br>
 </div>
-<div *ngIf="(user|async)">
+<div *ngIf="(user|async) as user">
   <mat-card>
     <mat-card-content class="card border-primary m-n2 bg-transparent">
       <h1 class="mat-h1 card-header text-light">Datos personales&nbsp;
-        <small class="font-weight-light">Alumnos</small>
+        <small class="font-weight-light">{{user.name.fullName}}</small>
       </h1>
       <div class="card-body">
         <p class="card-text">
@@ -48,15 +48,15 @@
               <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="5px">
                 <mat-form-field fxFlex="0 1 calc(50% - 5px)" fxFlex.lt-md="100%" appearance="outline">
                   <mat-label>Nombre(s)</mat-label>
-                  <input matInput placeholder="Nombre(s)" formControlName="firstName">
-                  <mat-error *ngIf="addressForm.controls['firstName'].hasError('required')">
+                  <input matInput placeholder="Nombre(s)" formControlName="givenName">
+                  <mat-error *ngIf="addressForm.controls['givenName'].hasError('required')">
                     First name is <strong>required</strong>
                   </mat-error>
                 </mat-form-field>
                 <mat-form-field fxFlex="0 1 calc(50% - 5px)" fxFlex.lt-md="100%" appearance="outline">
                   <mat-label>Apellido(s)</mat-label>
-                  <input matInput placeholder="Apellido(s)" formControlName="lastName">
-                  <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
+                  <input matInput placeholder="Apellido(s)" formControlName="familyName">
+                  <mat-error *ngIf="addressForm.controls['familyName'].hasError('required')">
                     Last name is <strong>required</strong>
                   </mat-error>
                 </mat-form-field>

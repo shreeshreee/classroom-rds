@@ -1,0 +1,13 @@
+[debug] [2021-03-03T23:37:02.879Z] ----------------------------------------------------------------------
+[debug] [2021-03-03T23:37:02.881Z] Command:       /usr/bin/node /usr/bin/firebase deploy
+[debug] [2021-03-03T23:37:02.881Z] CLI Version:   9.5.0
+[debug] [2021-03-03T23:37:02.882Z] Platform:      linux
+[debug] [2021-03-03T23:37:02.882Z] Node Version:  v14.16.0
+[debug] [2021-03-03T23:37:02.882Z] Time:          Wed Mar 03 2021 17:37:02 GMT-0600 (hora estándar central)
+[debug] [2021-03-03T23:37:02.882Z] ----------------------------------------------------------------------
+[debug] [2021-03-03T23:37:02.882Z] 
+[debug] [2021-03-03T23:37:02.888Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-03-03T23:37:02.889Z] > authorizing via signed-in user
+[debug] [2021-03-03T23:37:02.889Z] [iam] checking project classroom-rds for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2021-03-03T23:37:02.891Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/classroom-rds:testIamPermissions  
+ {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]}

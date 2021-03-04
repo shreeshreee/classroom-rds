@@ -5,7 +5,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as fromAppActions from '@rds-store/app/actions/app.actions';
 
 import { of, Observable, defer, from } from 'rxjs';
-import { switchMap, map, catchError, take } from 'rxjs/operators';
+import { switchMap, map, catchError, take, findIndex } from 'rxjs/operators';
 
 import * as fromAuthActions from '../auth.actions';
 import { AuthFireService } from '../../services';
@@ -21,12 +21,13 @@ export class AuthEffects {
         switchMap(() => this.authService.handleSignInClick()
           .pipe(
             map((res) => {
-              //console.log(res)
               return {
                 id: res.user.providerData[0].uid,
-                name: { fullName: res.user.displayName },
+                name: {
+                  fullName: res.user.displayName,
+                },
                 primaryEmail: res.user.email,
-                photoUrl: res.user.providerData[0].photoURL,
+                photoUrl: res.user.photoURL,
                 isNew: res.additionalUserInfo.isNewUser,
                 isVerified: res.user.emailVerified,
                 creationTime: res.user.metadata.creationTime,

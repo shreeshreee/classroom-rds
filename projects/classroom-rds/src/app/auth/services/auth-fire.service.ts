@@ -7,7 +7,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import { from, Observable, of } from 'rxjs';
-import { map, concatMap } from 'rxjs/operators';
+import { map, concatMap, switchMap } from 'rxjs/operators';
 
 import { User } from '../models/user.model';
 @Injectable({
@@ -22,7 +22,7 @@ export class AuthFireService {
 
   ) {
     this.user$ = this.getAuthState().pipe(
-      concatMap((user) => {
+      switchMap((user) => {
         if (user) {
           return this.afStore.collection<User>('appusers').doc(`${user.providerData[0].uid}`).valueChanges();
         } else {

@@ -1,7 +1,13 @@
+@import './../../../../assets/themes/colors.scss';
+
 .img-small {
   height: 30px;
   width: auto;
 }
 .students-list {
   max-width: 360px;
+}
+
+mat-list-item.active {
+  background: $rds-logo-color;
 }
