@@ -8,7 +8,7 @@ declare var gapi: any;
 export class UserProfilesService {
   constructor(
   ) {
-    this.handleClassroomLoad();
+
   }
   private hasAccessScopes(googleAuth: gapi.auth2.GoogleAuth): boolean {
     return (

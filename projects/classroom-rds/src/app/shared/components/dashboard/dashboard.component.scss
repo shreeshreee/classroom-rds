@@ -20,6 +20,7 @@ mat-card::ng-deep.mat-card-header-text {
 }
 
 .view-title {
+  font-family: Comfortaa;
   color:$rds-logo-color;
   font-size: calc(1rem + 1.5vw);
   font-weight: 800;
@@ -28,9 +29,8 @@ mat-card::ng-deep.mat-card-header-text {
   }
 }
 .view-subtitle {
+  font-family: Comfortaa;
   margin-top: -50px;
   font-size: calc(0.5rem + 1vw);
   font-weight: 400;
 }
-
-

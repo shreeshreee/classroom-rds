@@ -2,8 +2,9 @@
   <div class="py-2">
     <mat-card>
       <mat-card-header>
-        <img mat-card-avatar src="assets/images/rds-newlogo-transparent.png">
-        <mat-card-title class="view-title">Bienvenido <small class="text-muted">{{user.name.fullName}}</small>
+        <!-- <img mat-card-avatar src="assets/images/rds-newlogo-transparent.png">-->
+        <mat-card-title class="view-title">Bienvenido
+          <!-- <small class="text-muted">{{user.name.fullName}}</small> -->
         </mat-card-title>
         <mat-card-subtitle class="view-subtitle">Panel de acceso a servicios de información para estudiantes y
           profesores.<br>
@@ -17,7 +18,7 @@
 
   <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="10px" fxLayoutAlign="flex-start">
     <mat-card class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-lg="0 1 calc(50% - 10px)"
-      fxFlex.lt-sm="100%" [routerLink]="['user']" appMaterialElevation [raisedElevation]="raisedElev">
+      fxFlex.lt-sm="100%" [routerLink]="['user',user.id]" appMaterialElevation [raisedElevation]="raisedElev">
       <mat-card-header>
         <mat-card-title>Servicios Escolares</mat-card-title>
         <mat-card-subtitle>
@@ -38,7 +39,7 @@
       <img mat-card-image src="assets/images/dashboard-image.png" />
     </mat-card>
     <mat-card *ngIf="isTeacher || isAdmin" class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)"
-      fxFlex.lt-lg="0 1 calc(50% - 10px)" fxFlex.lt-sm="100%" [routerLink]="['escuela']" appMaterialElevation
+      fxFlex.lt-lg="0 1 calc(50% - 10px)" fxFlex.lt-sm="100%" [routerLink]="['gsuite']" appMaterialElevation
       [raisedElevation]="raisedElev">
       <mat-card-header>
         <mat-card-title>Funciones de G Suite</mat-card-title>

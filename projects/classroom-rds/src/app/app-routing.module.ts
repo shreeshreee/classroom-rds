@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AuthGuard } from '@rds-auth/guards/auth.guard';
 
@@ -19,19 +19,18 @@ import { TermsComponent } from '@rds-shared/components/terms/terms.component';
 import { UnderConstructionComponent } from '@rds-shared/components/under-construction/under-construction.component';
 
 import { ConfigComponent } from './core/layout/config/config.component';
-import { SchoolFormComponent } from './school/components/school-form/school-form.component';
 const routes: Routes = [{
   path: '', component: LayoutComponent, children: [
     { path: '', component: HomeComponent },
     { path: 'config', component: ConfigComponent },
     { path: 'escuela', loadChildren: () => import('./school/school.module').then(m => m.SchoolModule), canActivate: [AuthGuard] },
-    { path: 'classroom', loadChildren: () => import('./classroom/classroom.module').then(m => m.ClassroomModule), canActivate: [AuthGuard] },
+    { path: 'gsuite', loadChildren: () => import('./classroom/classroom.module').then(m => m.ClassroomModule), canActivate: [AuthGuard] },
     { path: 'perfil', loadChildren: () => import('./classroom/user-profiles/user-profiles.module').then(m => m.UserProfilesModule), canActivate: [AuthGuard] },
     { path: 'calificaciones', loadChildren: () => import('./grades/grades.module').then(m => m.GradesModule), canActivate: [AuthGuard] },
-    { path: 'clases', loadChildren: () => import('./classroom/courses/courses.module').then(m => m.CoursesModule), canActivate: [AuthGuard] },
+    /*     { path: 'clases', loadChildren: () => import('./classroom/courses/courses.module').then(m => m.CoursesModule), canActivate: [AuthGuard] },*/
     { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule), canActivate: [AuthGuard] },
     { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivate: [AuthGuard] },
-    { path: 'galletas', component: GalletasComponent },
+    { path: 'pan_de_sal', component: GalletasComponent },
     { path: 'about', component: AboutComponent },
     { path: 'remote-learning', component: RemoteLearningComponent },
     { path: 'privacy-policy', component: PrivacyPolicyComponent },
@@ -49,7 +48,8 @@ const routes: Routes = [{
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     useHash: true,
-    paramsInheritanceStrategy: 'always',
+    /* relativeLinkResolution: 'corrected',
+    paramsInheritanceStrategy: 'always', */
   })],
   exports: [RouterModule]
 })

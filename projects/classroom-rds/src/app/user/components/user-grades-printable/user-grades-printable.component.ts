@@ -5,10 +5,11 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Score } from '../../models/score.model';
+import { Grade, Score } from '../../models/grade.model';
 import { User } from './../../../auth/models/user.model';
 
 import { AppState } from '~/app/store/app.state';
+import { UserAuth } from '~/app/auth/models/user-auth.model';
 import { selectUser } from '~/app/auth/state/auth.selectors';
 import { SchoolService } from '~/app/school/services/school.service';
 
@@ -20,7 +21,7 @@ import { SchoolService } from '~/app/school/services/school.service';
 export class UserGradesPrintableComponent implements OnInit {
   user$: Observable<User>;
   today: Date = new Date();
-  scores: Observable<Score[]>;
+  scores: Observable<Grade>;
   constructor(
     private store: Store<AppState>,
     private schoolService: SchoolService
@@ -31,7 +32,7 @@ export class UserGradesPrintableComponent implements OnInit {
 
   ngOnInit(): void {
     this.user$.subscribe(user => {
-      this.scores = this.schoolService.getScores(user.id);
+      this.scores = this.schoolService.getCurrentScore(user.id);
     });
   }
 

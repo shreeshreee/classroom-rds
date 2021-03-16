@@ -125,6 +125,9 @@
                             <a href="#entityCollectionEndPoint" title="projects/classroom-rds/src/app/store/topic/state.ts"><b>entityCollectionEndPoint</b>&nbsp;&nbsp;&nbsp;(projects/.../state.ts)</a>
                         </li>
                         <li>
+                            <a href="#entityCollectionEndPoint" title="projects/classroom-rds/src/app/store/user/state.ts"><b>entityCollectionEndPoint</b>&nbsp;&nbsp;&nbsp;(projects/.../state.ts)</a>
+                        </li>
+                        <li>
                             <a href="#entityCollectionEndPoint" title="projects/classroom-rds/src/app/store/user-profile/state.ts"><b>entityCollectionEndPoint</b>&nbsp;&nbsp;&nbsp;(projects/.../state.ts)</a>
                         </li>
                         <li>
@@ -156,6 +159,9 @@
                         </li>
                         <li>
                             <a href="#entityCollectionName" title="projects/classroom-rds/src/app/store/topic/state.ts"><b>entityCollectionName</b>&nbsp;&nbsp;&nbsp;(projects/.../state.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#entityCollectionName" title="projects/classroom-rds/src/app/store/user/state.ts"><b>entityCollectionName</b>&nbsp;&nbsp;&nbsp;(projects/.../state.ts)</a>
                         </li>
                         <li>
                             <a href="#entityCollectionName" title="projects/classroom-rds/src/app/store/user-profile/state.ts"><b>entityCollectionName</b>&nbsp;&nbsp;&nbsp;(projects/.../state.ts)</a>
@@ -195,6 +201,9 @@
                         </li>
                         <li>
                             <a href="#entitySelectId" title="projects/classroom-rds/src/app/store/topic/state.ts"><b>entitySelectId</b>&nbsp;&nbsp;&nbsp;(projects/.../state.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#entitySelectId" title="projects/classroom-rds/src/app/store/user/state.ts"><b>entitySelectId</b>&nbsp;&nbsp;&nbsp;(projects/.../state.ts)</a>
                         </li>
                         <li>
                             <a href="#entitySelectId" title="projects/classroom-rds/src/app/store/user-profile/state.ts"><b>entitySelectId</b>&nbsp;&nbsp;&nbsp;(projects/.../state.ts)</a>
@@ -297,6 +306,9 @@
                         </li>
                         <li>
                             <a href="#pluralizedEntityName" title="projects/classroom-rds/src/app/store/topic/state.ts"><b>pluralizedEntityName</b>&nbsp;&nbsp;&nbsp;(projects/.../state.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#pluralizedEntityName" title="projects/classroom-rds/src/app/store/user/state.ts"><b>pluralizedEntityName</b>&nbsp;&nbsp;&nbsp;(projects/.../state.ts)</a>
                         </li>
                         <li>
                             <a href="#pluralizedEntityName" title="projects/classroom-rds/src/app/store/user-profile/state.ts"><b>pluralizedEntityName</b>&nbsp;&nbsp;&nbsp;(projects/.../state.ts)</a>
@@ -402,7 +414,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>createAction(&#x27;[Auth Component] Add user admin privileges&#x27;, props&lt;{ uid: string }&gt;())</code>
+                            <i>Valor por defecto : </i><code>createAction(&#x27;[Auth Component] Add user admin privileges&#x27;, props&lt;{ id: string }&gt;())</code>
                         </td>
                     </tr>
 
@@ -549,7 +561,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>createAction(&#x27;[Auth Component] Remove user admin privileges&#x27;, props&lt;{ uid: string }&gt;())</code>
+                            <i>Valor por defecto : </i><code>createAction(&#x27;[Auth Component] Remove user admin privileges&#x27;, props&lt;{ id: string }&gt;())</code>
                         </td>
                     </tr>
 
@@ -717,7 +729,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>createAction(&#x27;[Auth Component] Update user online status&#x27;, props&lt;{ uid: string; isOnline: boolean }&gt;())</code>
+                            <i>Valor por defecto : </i><code>createAction(&#x27;[Auth Component] Update user online status&#x27;, props&lt;{ id: string; isOnline: boolean }&gt;())</code>
                         </td>
                     </tr>
 
@@ -738,7 +750,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>createAction(&#x27;[Auth Component] Update profile&#x27;, props&lt;{ userData: UpdatedUser }&gt;())</code>
+                            <i>Valor por defecto : </i><code>createAction(&#x27;[Auth Component] Update profile&#x27;, props&lt;{ userData: User }&gt;())</code>
                         </td>
                     </tr>
 
@@ -815,8 +827,10 @@
   AdminWellcomeComponent,
   GroupComponent,
   GroupDialogComponent,
+  GroupTableComponent,
   UsersGroupsComponent,
-  UsersTableComponent
+  UsersTableComponent,
+  UserDetailsComponent
 ]</code>
                         </td>
                     </tr>
@@ -850,7 +864,8 @@
                             <i>Valor por defecto : </i><code>[
   AdminComponent,
   GroupsComponent,
-  UsersComponent
+  UsersComponent,
+  SchoolHomeComponent
 ]</code>
                         </td>
                     </tr>
@@ -2053,6 +2068,111 @@
             </tbody>
         </table>
 </section>
+    <h3>projects/classroom-rds/src/app/store/user/state.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="entityCollectionEndPoint"></a>
+                        <span class="name">
+                            <b>
+                            entityCollectionEndPoint</b>
+                            <a href="#entityCollectionEndPoint"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>pluralizedEntityName</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="entityCollectionName"></a>
+                        <span class="name">
+                            <b>
+                            entityCollectionName</b>
+                            <a href="#entityCollectionName"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;User&#x27;</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="entitySelectId"></a>
+                        <span class="name">
+                            <b>
+                            entitySelectId</b>
+                            <a href="#entitySelectId"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;url&#x27;</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="pluralizedEntityName"></a>
+                        <span class="name">
+                            <b>
+                            pluralizedEntityName</b>
+                            <a href="#pluralizedEntityName"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;users&#x27;</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
     <h3>projects/classroom-rds/src/app/store/user-profile/state.ts</h3>
     <section>
     <h3></h3>        <table class="table table-sm table-bordered">
@@ -2506,6 +2626,13 @@
       optimisticSaveEntities: true
     },
     selectId: (topics: gapi.client.classroom.Topic) &#x3D;&gt; topics.topicId,
+  },
+  [fromUser.entityCollectionName]: {
+    entityDispatcherOptions: {
+      optimisticAdd: true,
+      optimisticUpdate: true,
+      optimisticSaveEntities: true
+    },
   }
 }</code>
                         </td>
@@ -2546,6 +2673,7 @@
   [fromUserProfile.entityCollectionName]: fromUserProfile.pluralizedEntityName,
   [fromUserDomain.entityCollectionName]: fromUserDomain.pluralizedEntityName,
   [fromGroup.entityCollectionName]: fromGroup.pluralizedEntityName,
+  [fromUser.entityCollectionName]: fromUser.pluralizedEntityName,
 }</code>
                         </td>
                     </tr>

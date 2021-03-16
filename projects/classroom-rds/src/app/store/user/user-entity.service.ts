@@ -11,5 +11,4 @@ export class UserEntityService extends EntityCollectionServiceBase<User> {
   constructor(readonly serviceElementsFactory: EntityCollectionServiceElementsFactory) {
     super(fromUser.entityCollectionName, serviceElementsFactory);
   }
-
 }

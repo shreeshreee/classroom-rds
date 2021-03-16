@@ -1,32 +1,60 @@
-<mat-card *ngIf="user">
-  <mat-card-content>
-    <div class="text-right">
-      <div style="margin-top: -40px">
-        <img [src]="[user.photoUrl?user.photoUrl:'assets/images/dummy-user.png']" height="72" width="72"
-          class="img-fluid rounded-circle" alt="avatar image" />
-        <fa-icon class="rds-icon float-center" [ngClass]="[user.isVerified ? 'text-success' : 'text-danger']"
-          [icon]="user.isVerified ? faCheck : faTimes">
-        </fa-icon>
+<div *ngIf="user" fxLayout="row wrap" fxLayoutAlign="space-around">
+  <mat-card class="mb-2 dashboard-cards" fxFlex="0 1 calc(50% - 5px)" fxFlex.lt-sm="100%">
+    <mat-card-content>
+      <div class="text-right">
+        <div style="margin-top: -40px">
+          <img height="72" width="72" class="img-fluid rounded-circle" alt="avatar image"
+            src="{{user.thumbnailPhotoUrl?user.thumbnailPhotoUrl:user.photoUrl}}" />
+        </div>
+        <h2 *ngIf="user.name">{{ user.name.fullName }}</h2>
+        <h3 class="mt-n3">{{ user.primaryEmail }}</h3>
+        <h4 class="mat-h4 mt-n3 text-success"><strong>{{ user.role }}</strong></h4>
+        <h4 *ngIf="user.isAdmin" class="mat-h4 mt-n3 text-warning"><strong>Administrador</strong></h4>
+        <button *ngIf="user.role=='Alumnos'" mat-button [routerLink]="['grades']" routerLinkActive="active"
+          appMaterialElevation>
+          <fa-icon size="lg" [icon]="faAward"></fa-icon>&nbsp;Calificaciones
+        </button>
+        <button mat-button (click)="canLogout ? onLogout() : prepareForLogout()" appMaterialElevation>
+          <fa-icon size="lg" [icon]="faSignOutAlt" *ngIf="!canLogout"></fa-icon>&nbsp;<span *ngIf="!canLogout">Cerrar
+            sesión</span>
+          <span class="text-danger" *ngIf="canLogout">¿Deseas salir?</span>
+        </button>
+        <button *ngIf="canLogout" mat-button (click)="cancel()">
+          Cancelar
+        </button>
       </div>
-      <h3 *ngIf="user.name" class="mat-h3 mt-2">{{ user.name.fullName }}</h3>
-      <h3 *ngIf="!user.name" class="mat-h3">Usuario anónimo</h3>
-      <h4 class="mat-h4 mt-n3">{{ user.primaryEmail }}</h4>
-      <h4 class="mat-h4 mt-n3">{{ user.role }}</h4>
-
-      <button mat-button [routerLink]="['info']" routerLinkActive="active" appMaterialElevation>
-        <fa-icon size="lg" [icon]="faUserEdit"></fa-icon>&nbsp;Tus datos
-      </button>
-      <button mat-button [routerLink]="['grades']" routerLinkActive="active" appMaterialElevation>
-        <fa-icon size="lg" [icon]="faAward"></fa-icon>&nbsp;Calificaciones
-      </button>
-      <button mat-button (click)="canLogout ? onLogout() : prepareForLogout()" appMaterialElevation>
-        <fa-icon size="lg" [icon]="faSignOutAlt" *ngIf="!canLogout"></fa-icon>&nbsp;<span *ngIf="!canLogout">Cerrar
-          sesión</span>
-        <span class="text-danger" *ngIf="canLogout">¿Deseas salir?</span>
-      </button>
-      <button *ngIf="canLogout" mat-button (click)="cancel()">
-        Cancelar
-      </button>
-    </div>
-  </mat-card-content>
-</mat-card>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="mb-2 dashboard-cards" fxFlex="0 1 calc(50% - 5px)" fxFlex.lt-sm="100%">
+    <mat-card-content>
+      <div class="mb-n2" *ngIf="user.role=='Alumnos'" fxLayout="row">
+        <p class="col-6">NIEV:&nbsp;</p>
+        <p class="col-6">{{user.niev}}</p>
+      </div>
+      <div class="mb-n2" *ngIf="user.role=='Profesores'" fxLayout="row">
+        <p class="col-6">RFC:&nbsp;</p>
+        <p class="col-6">{{user.rfc}}</p>
+      </div>
+      <div class="mb-n2" fxLayout="row">
+        <p class="col-6">CURP:&nbsp;</p>
+        <p class="col-6">{{user.curp}}</p>
+      </div>
+      <div class="mb-n2" fxLayout="row">
+        <p class="col-6">Nivel:&nbsp;</p>
+        <p class="col-6">{{user.level}}</p>
+      </div>
+      <div class="mb-n2" fxLayout="row">
+        <p class="col-6">Grado:&nbsp;</p>
+        <p class="col-6">{{user.grade}}</p>
+      </div>
+      <div class="mb-n2" fxLayout="row">
+        <p class="col-6">Genero:&nbsp;</p>
+        <p class="col-6">{{user.gender}}</p>
+      </div>
+      <div class="mb-n2" fxLayout="row">
+        <p class="col-6">Fecha de nacimiento:&nbsp;</p>
+        <p class="col-6">{{user.dob|date}}</p>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

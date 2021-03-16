@@ -1,0 +1,50 @@
+@startuml [Auth Effect] Check teacher role
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+interface "[Auth Effect] Check teacher role" << (A,#FF7700) action >> {
+            variable: checkTeacherRole
+            src: auth.actions
+            --
+            props<{id: string}>
+
+        }
+
+        
+interface "dashboard.component:: DashboardComponent D" << (D,orchid) dispatch >> {
+            name: checkTeacherRole
+            action: [Auth Effect] Check teacher role
+            ..
+            Class: DashboardComponent
+Method: optionsByRole
+            __
+        }
+        "[Auth Effect] Check teacher role" -down-> "dashboard.component:: DashboardComponent D"
+
+interface "auth.effects:: AuthEffects D" << (D,orchid) dispatch >> {
+            name: checkTeacherRole
+            action: [Auth Effect] Check teacher role
+            ..
+            Class: AuthEffects
+Property: signInSuccess$
+            __
+        }
+        "[Auth Effect] Check teacher role" -down-> "auth.effects:: AuthEffects D"
+
+interface "fire.effects:: FireEffects L" << (L,orchid) listen >> {
+            name: checkTeacherRole
+            action: [Auth Effect] Check teacher role
+            ..
+            Class: FireEffects
+Property: checkTeacherRole$
+            __
+        }
+        "[Auth Effect] Check teacher role" <.down. "fire.effects:: FireEffects L"
+ 
+
+@enduml

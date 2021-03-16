@@ -15,8 +15,8 @@
       </button>
     </div>
     <div fxLayout="row" fxLayoutGap="5px">
-      <button *ngIf="isOnline" mat-icon-button [matMenuTriggerFor]="userMenu">
-        <img class="img-fluid rounded-circle" [src]="[user.photoUrl?user.photoUrl:'assets/images/dummy-user.png']" />
+      <button *ngIf="isOnline && user" mat-icon-button [matMenuTriggerFor]="userMenu">
+        <img class="img-fluid rounded-circle" src="{{user.thumbnailPhotoUrl?user.thumbnailPhotoUrl:user.photoUrl}}" />
       </button>
       <button *ngIf="!isOnline" mat-icon-button (click)="onSignIn()">
         <img class="img-fluid" src="assets/images/google-logo.svg" />
@@ -26,7 +26,7 @@
 </mat-toolbar>
 <mat-menu #userMenu="matMenu" fxLayoutAlign="right">
   <ng-template matMenuContent>
-    <div mat-list-item *ngIf="isOnline && user" [routerLink]="['user']" appMaterialElevation>
+    <div mat-list-item *ngIf="isOnline && user" [routerLink]="['user',user.id]" appMaterialElevation>
       <app-user-card [isOnline]="isOnline" [isAdmin]="isAdmin" [user]="user"> </app-user-card>
     </div>
     <div mat-menu-item *ngIf="isOnline && isTeacher" [routerLink]="['clases']" appMaterialElevation>

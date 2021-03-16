@@ -8,6 +8,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { AppState } from '~/app/store/app.state';
+import { UserAuth } from '~/app/auth/models/user-auth.model';
 import { User } from '~/app/auth/models/user.model';
 import { selectUser } from '~/app/auth/state/auth.selectors';
 

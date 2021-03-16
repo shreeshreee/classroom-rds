@@ -22,9 +22,9 @@ See Demo app for this project at: [Classroom RDS](https://classroom-rds.web.app)
 
 ## Features
 
-- Angular 11.0.5
-- Angular Material 11.0.3 with custom theme
-- NGRX State Management 10.1.2 (@ngrx/route-store & @ngrx/data)
+- Angular 11.2
+- Angular Material 11.2 with custom theme and dark theme
+- NGRX State Management 11 (@ngrx/route-store & @ngrx/data)
 - Angular FontAwesome 5.15.1
 - Angular Flex-layout 11
 - Full Angular PWA
@@ -39,15 +39,15 @@ See Demo app for this project at: [Classroom RDS](https://classroom-rds.web.app)
 
 ## Screenshots
 
-![](projects/classroom-rds/src/assets/screenshots/screenshot01.png)
+![](projects/classroom-rds/src/assets/screenshots/screenshot10.png)
 
 **Fig. 1** - View example
 
-![](projects/classroom-rds/src/assets/screenshots/screenshot02.png)
+![](projects/classroom-rds/src/assets/screenshots/screenshot11.png)
 
 **Fig. 2** - View example
 
-![](projects/classroom-rds/src/assets/screenshots/screenshot03.png)
+![](projects/classroom-rds/src/assets/screenshots/screenshot12.png)
 
 **Fig. 3** - View example
 ## Install this repository

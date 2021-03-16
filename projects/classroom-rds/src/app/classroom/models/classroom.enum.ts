@@ -1,6 +1,4 @@
-export enum CourseLevel {
-  Maternal, Preescolar, Primaria, Secundaria, Docente, Inespecífico
-}
+
 export enum State {
   STATE_UNSPECIFIED,
   PUBLISHED,

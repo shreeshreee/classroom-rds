@@ -1,0 +1,39 @@
+@startuml [Auth Effect] Update teacher role
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+interface "[Auth Effect] Update teacher role" << (A,#FF7700) action >> {
+            variable: updateTeachersRole
+            src: auth.actions
+            --
+            props<{isTeacher: boolean}>
+
+        }
+
+        
+interface "auth.reducer:: authReducer L" << (L,orchid) listen >> {
+            name: updateTeachersRole
+            action: [Auth Effect] Update teacher role
+            ..
+            Variable: authReducer
+            __
+        }
+        "[Auth Effect] Update teacher role" <.down. "auth.reducer:: authReducer L"
+
+interface "fire.effects:: FireEffects D" << (D,orchid) dispatch >> {
+            name: updateTeachersRole
+            action: [Auth Effect] Update teacher role
+            ..
+            Class: FireEffects
+Property: checkTeacherRole$
+            __
+        }
+        "[Auth Effect] Update teacher role" -down-> "fire.effects:: FireEffects D"
+ 
+
+@enduml

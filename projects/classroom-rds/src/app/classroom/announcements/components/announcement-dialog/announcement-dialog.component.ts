@@ -6,8 +6,10 @@ import { MatChipInputEvent } from '@angular/material/chips';
 
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-import { CourseLevel, State } from '@rds-classroom/models/classroom.enum';
+import { State } from '@rds-classroom/models/classroom.enum';
 import { Link } from '@rds-classroom/models/classroom.model';
+
+import { CourseLevel } from '~/app/auth/models/user.enum';
 
 @Component({
   templateUrl: './announcement-dialog.component.html',

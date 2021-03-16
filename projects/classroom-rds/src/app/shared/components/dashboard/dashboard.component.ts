@@ -25,8 +25,7 @@ export class DashboardComponent implements AfterViewInit, OnInit {
     private store: Store<AppState>,
   ) { }
   ngAfterViewInit(): void {
-    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-    //Add 'implements AfterViewInit' to the class.
+
     this.cards = [
       {
         title: 'Información Académica',

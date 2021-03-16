@@ -1,10 +1,12 @@
 @import './../../../../assets/themes/colors.scss';
 .view-title {
+  font-family: Comfortaa;
   color:$rds-logo-color;
   font-size: calc(1rem + 1.5vw);
   font-weight: 800;
 }
 .view-subtitle {
+  font-family: Comfortaa;
   margin-top: -50px;
   font-size: calc(0.5rem + 1vw);
   font-weight: 400;
@@ -13,14 +15,17 @@
   opacity: 0.75;
   font-size: 0.75em;
 }
+
+/*
 app-user-grades-printable {
-  /* hide the printing component from @media screen */
+  // hide the printing component from @media screen
   display: none;
 }
-
+*/
+/*
 @media print {
-  /* invert the display (show/hide) properties of the main */
-  /* aplication component and the printing component       */
+  // invert the display (show/hide) properties of the main
+  // aplication component and the printing component
   app-user-grades-printable {
     display: block;
   }
@@ -31,3 +36,5 @@ app-user-grades-printable {
     display: none;
   }
 }
+
+*/

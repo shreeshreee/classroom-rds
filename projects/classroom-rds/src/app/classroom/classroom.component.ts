@@ -1,6 +1,9 @@
 import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { faIdCard } from '@fortawesome/free-regular-svg-icons';
+import { faIdCardAlt } from '@fortawesome/free-solid-svg-icons';
+
 import { Store, select } from '@ngrx/store';
 
 import { AppState } from '@rds-store/app.state';
@@ -26,6 +29,9 @@ export class ClassroomComponent implements OnInit {
   isAdmin$: Observable<boolean>;
   isTeacher$: Observable<boolean>;
   isLoading$: Observable<boolean>;
+  faIdCard = faIdCard;
+  faIdCardAlt = faIdCardAlt;
+  raisedElev: number = 12;
   userId: string;
   /** Based on the screen size, switch from standard to one column per row */
   cards = [

@@ -4,68 +4,60 @@
   <span>Buscando ...</span><br>
 </div>
 <div *ngIf="(user|async) as user">
-  <mat-card>
-    <mat-card-content class="card border-primary m-n2 bg-transparent">
-      <h1 class="mat-h1 card-header text-light">Datos personales&nbsp;
-        <small class="font-weight-light">{{user.name.fullName}}</small>
-      </h1>
-      <div class="card-body">
-        <p class="card-text">
-          Los datos que nos proporciones estan sujetos a verificación de autenticidad y deberán estar respaldados por
-          documentos oficiales en posesión del personal administrativo de la institución. Consulta las
-          <a [routerLink]="['/privacy-policy']">Políticas de Privacidad</a> sobre la información que nos proporcionas.
-        </p>
-        <mat-accordion togglePosition="before">
-          <mat-expansion-panel appMaterialElevation [raisedElevation]="raisedElev">
-            <mat-expansion-panel-header>
-              <mat-panel-title>
-                Datos del Alumno:
-              </mat-panel-title>
-              <mat-panel-description>
+  <form [formGroup]="studentForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card>
+      <mat-card-content class="card border-primary m-n2 bg-transparent">
+        <h2 class="card-header text-light">{{user.name.fullName}}&nbsp;&nbsp;<small
+            class="text-muted">{{user.id}}</small>
+        </h2>
+        <div class="card-body">
+          <mat-accordion togglePosition="before">
+            <mat-expansion-panel appMaterialElevation [raisedElevation]="raisedElev">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Datos del alumno
+                </mat-panel-title>
+              </mat-expansion-panel-header>
 
-              </mat-panel-description>
-            </mat-expansion-panel-header>
-            <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
-
-              <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="5px">
-                <mat-form-field fxFlex="0 1 calc(33% - 5px)" fxFlex.lt-md="100%" appearance="outline">
+              <div fxLayout="row wrap" fxLayout.lt-lg="column" fxLayoutGap="5px">
+                <mat-form-field fxFlex="0 1 calc(33% - 5px)" fxFlex.lt-lg="100%" appearance="outline">
                   <mat-label>CURP</mat-label>
                   <input matInput placeholder="CURP" formControlName="curp">
                 </mat-form-field>
-                <mat-form-field fxFlex="0 1 calc(33% - 5px)" fxFlex.lt-md="100%" appearance="outline">
+                <mat-form-field fxFlex="0 1 calc(33% - 5px)" fxFlex.lt-lg="100%" appearance="outline">
                   <mat-label>NIEV</mat-label>
                   <input matInput placeholder="NIEV" formControlName="niev">
                 </mat-form-field>
-                <mat-form-field fxFlex="0 1 calc(33% - 5px)" fxFlex.lt-md="100%" appearance="outline">
+                <mat-form-field fxFlex="0 1 calc(33% - 5px)" fxFlex.lt-lg="100%" appearance="outline">
                   <mat-label>Fecha de nacimiento</mat-label>
                   <input matInput [matDatepicker]="picker" (focus)="picker.open()" placeholder="Fecha de nacimiento"
-                    color="primary" name="dayOfBirth" formControlName="dayOfBirth">
+                    color="primary" name="dob" formControlName="dob">
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
               </div>
 
-              <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="5px">
-                <mat-form-field fxFlex="0 1 calc(50% - 5px)" fxFlex.lt-md="100%" appearance="outline">
+              <div fxLayout="row wrap" fxLayout.lt-lg="column" fxLayoutGap="5px">
+                <mat-form-field fxFlex="0 1 calc(50% - 5px)" fxFlex.lt-lg="100%" appearance="outline">
                   <mat-label>Nombre(s)</mat-label>
                   <input matInput placeholder="Nombre(s)" formControlName="givenName">
-                  <mat-error *ngIf="addressForm.controls['givenName'].hasError('required')">
+                  <mat-error *ngIf="studentForm.controls['givenName'].hasError('required')">
                     First name is <strong>required</strong>
                   </mat-error>
                 </mat-form-field>
-                <mat-form-field fxFlex="0 1 calc(50% - 5px)" fxFlex.lt-md="100%" appearance="outline">
+                <mat-form-field fxFlex="0 1 calc(50% - 5px)" fxFlex.lt-lg="100%" appearance="outline">
                   <mat-label>Apellido(s)</mat-label>
                   <input matInput placeholder="Apellido(s)" formControlName="familyName">
-                  <mat-error *ngIf="addressForm.controls['familyName'].hasError('required')">
+                  <mat-error *ngIf="studentForm.controls['familyName'].hasError('required')">
                     Last name is <strong>required</strong>
                   </mat-error>
                 </mat-form-field>
               </div>
-              <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="5px">
-                <mat-form-field fxFlex="0 1 calc(50% - 5px)" fxFlex.lt-md="100%" appearance="outline">
+              <div fxLayout="row wrap" fxLayout.lt-lg="column" fxLayoutGap="5px">
+                <mat-form-field fxFlex="0 1 calc(50% - 5px)" fxFlex.lt-lg="100%" appearance="outline">
                   <mat-label>Usuario Institucional</mat-label>
                   <input type="email" matInput placeholder="E-mail" formControlName="primaryEmail">
-                  <mat-error *ngIf="addressForm.controls['primaryEmail'].hasError('required')">
+                  <mat-error *ngIf="studentForm.controls['primaryEmail'].hasError('required')">
                     First name is <strong>required</strong>
                   </mat-error>
                 </mat-form-field>
@@ -81,117 +73,168 @@
                 </mat-radio-group>
               </div>
               <button mat-button type="submit">Actualizar datos</button>
-            </form>
 
-          </mat-expansion-panel>
+            </mat-expansion-panel>
+            <!--   parent form    -->
+            <div formArrayName="parents">
+              <div *ngFor="let parent of parents.controls; let j=index">
+                <div [formGroupName]="j">
+                  <mat-expansion-panel appMaterialElevation [raisedElevation]="raisedElev">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Datos del padre o tutor
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        <button mat-icon-button (click)="removeParent(j)">
+                          <fa-icon class="text-danger" [icon]="faTrashAlt" size="lg"></fa-icon>
+                        </button>
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <!-- <form [formGroup]="parentForm" novalidate (ngSubmit)="onSubmitParent()"> -->
+                    <div fxLayout="row wrap" fxLayout.lt-lg="column" fxLayoutGap="5px">
+                      <mat-form-field fxFlex="0 1 calc(50% - 5px)" fxFlex.lt-lg="100%" appearance="outline">
+                        <mat-label>Nombre(s)</mat-label>
+                        <input matInput placeholder="Nombre(s)" formControlName="givenName">
+                        <mat-error *ngIf="parentForm.controls['givenName'].hasError('required')">
+                          First name is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                      <mat-form-field fxFlex="0 1 calc(50% - 5px)" fxFlex.lt-lg="100%" appearance="outline">
+                        <mat-label>Apellido(s)</mat-label>
+                        <input matInput placeholder="Apellido(s)" formControlName="familyName">
+                        <mat-error *ngIf="parentForm.controls['familyName'].hasError('required')">
+                          Last name is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                    <mat-label for="relation">Parentezco: </mat-label>
+                    <mat-radio-group fxLayout="row wrap" fxLayoutAlign="cener center" name="relation" color="primary"
+                      formControlName="relationType">
+                      <mat-radio-button class="mx-2" value="Madre">
+                        Madre
+                      </mat-radio-button>
+                      <mat-radio-button class="mx-2" value="Padre">
+                        Padre
+                      </mat-radio-button>
+                      <mat-radio-button class="mx-2" value="Otro">
+                        Otro
+                      </mat-radio-button>
+                      <div *ngIf="parentForm.controls['relationType'].value=='Otro'">
+                        <mat-form-field class="d-flex" appearance="outline">
+                          <mat-label>Parentesco</mat-label>
+                          <input matInput placeholder="Parentesco" formControlName="relationCustom">
+                        </mat-form-field>
+                      </div>
+                    </mat-radio-group>
+                    <div fxLayout="row wrap" fxLayout.lt-lg="column" fxLayoutGap="5px">
+                      <mat-form-field fxFlex="0 1 calc(50% - 5px)" fxFlex.lt-lg="100%" appearance="outline">
+                        <mat-label>CURP</mat-label>
+                        <input matInput placeholder="CURP" formControlName="curp">
+                      </mat-form-field>
+                      <mat-form-field fxFlex="0 1 calc(50% - 5px)" fxFlex.lt-lg="100%" appearance="outline">
+                        <mat-label>Correo electrónico</mat-label>
+                        <input matInput placeholder="Correo electrónico" formControlName="email">
+                      </mat-form-field>
+                    </div>
+                    <div fxLayout="row wrap" fxLayout.lt-lg="column" fxLayoutGap="5px">
+                      <mat-form-field class="d-block" fxFlex.lt-md="100%" appearance="outline">
+                        <mat-label>Dirección</mat-label>
+                        <input matInput placeholder="Calle/Av., Num.Int./Ext., Col./Fracc."
+                          formControlName="streetAddress">
+                        <mat-error *ngIf="parentForm.controls['streetAddress'].hasError('required')">
+                          Address is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="5px">
+                      <mat-form-field fxFlex="0 1 calc(25% - 5px)" fxFlex.lt-lg="0 1 calc(50% - 10px)"
+                        fxFlex.lt-md="100%" appearance="outline">
+                        <input matInput #postalCode maxlength="5" placeholder="Código Postal" type="number"
+                          formControlName="postalCode">
+                        <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+                      </mat-form-field>
+                      <mat-form-field fxFlex="0 1 calc(25% - 5px)" fxFlex.lt-lg="0 1 calc(50% - 10px)"
+                        fxFlex.lt-md="100%" appearance="outline">
+                        <mat-label>Estado</mat-label>
+                        <mat-select placeholder="Estado" formControlName="state" (valueChange)="onEstadoChange()">
+                          <mat-option *ngFor="let state of statesNames" [value]="state">
+                            {{ state }}
+                          </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="parentForm.controls['state'].hasError('required')">
+                          State is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                      <mat-form-field fxFlex="0 1 calc(25% - 5px)" fxFlex.lt-lg="0 1 calc(50% - 10px)"
+                        fxFlex.lt-md="100%" appearance="outline">
+                        <mat-label>Municipio</mat-label>
+                        <mat-select placeholder="Municipio" formControlName="municipio">
+                          <mat-option *ngFor="let municip of municipiosNames" [value]="municip">
+                            {{ municip }}
+                          </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="parentForm.controls['municipio'].hasError('required')">
+                          State is <strong>required</strong>
+                        </mat-error>
+                      </mat-form-field>
+                      <mat-form-field fxFlex="0 1 calc(25% - 5px)" fxFlex.lt-lg="0 1 calc(50% - 10px)"
+                        fxFlex.lt-md="100%" appearance="outline">
+                        <mat-label>Ciudad</mat-label>
+                        <input matInput placeholder="Ciudad" formControlName="city">
+                        <mat-error *ngIf="parentForm.controls['city'].hasError('required')">
+                          Este es un dato <strong>requerido</strong>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div formArrayName="phones">
+                      <div *ngFor="let phone of phones.controls; let i=index">
+                        <div [formGroupName]="i" fxLayout="row wrap" fxLayoutGap="5px"
+                          fxLayoutAlign="space-around center">
+                          <mat-form-field fxFlex="0 1 calc(40% - 5px)" appearance="outline">
+                            <mat-label>Telefono</mat-label>
+                            <input matInput type="text" formControlName="value">
+                          </mat-form-field>
+                          <mat-form-field fxFlex="0 1 calc(40% - 5px)" appearance="outline">
+                            <mat-label>Tipo de teléfono</mat-label>
+                            <mat-select placeholder="Tipo de teléfono" formControlName="type">
+                              <mat-option *ngFor="let phoneKey of phoneKeys" [value]="phoneEnum[phoneKey]">
+                                {{ phoneEnum[phoneKey] }}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <button mat-icon-button (click)="removeSkill(i)">
+                            <fa-icon class="text-danger" [icon]="faTrashAlt" size="lg"></fa-icon>
+                          </button>
+                        </div>
+                      </div>
+                      <p>
+                        <button mat-icon-button type="button" (click)="addPhone()">Añadir teléfono</button>
+                      </p>
+                    </div>
+                    <button mat-button type="submit">Actualizar datos</button>
+                    <!-- </form> -->
+                  </mat-expansion-panel>
+                </div>
+              </div>
+              <div class="text-center"></div>
+              <button mat-button type="button" (click)="addParent()">
+                <fa-icon class="text-success" [icon]="faPlus" size="lg"></fa-icon>&nbsp;Agrega padre o tutor
+              </button>
+            </div>
 
-          <!--   <mat-expansion-panel appMaterialElevation [raisedElevation]="raisedElev">
+            <mat-expansion-panel appMaterialElevation [raisedElevation]="raisedElev">
               <mat-expansion-panel-header>
                 <mat-panel-title>
-                  Datos del Tutor
+                  Datos biométricos del alumno
                 </mat-panel-title>
               </mat-expansion-panel-header>
 
 
 
-
-
-
-              <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="5px" fx>
-                <mat-form-field fxFlex="0 1 calc(33% - 5px)" fxFlex.lt-lg="0 1 calc(50% - 5px)" fxFlex.lt-md="100%"
-                  appearance="outline">
-                  <mat-label>Nombre(s)</mat-label>
-                  <input matInput placeholder="Nombre(s)" formControlName="parentFirstName">
-                  <mat-error *ngIf="addressForm.controls['parentFirstName'].hasError('required')">
-                    First name is <strong>required</strong>
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field fxFlex="0 1 calc(33% - 5px)" fxFlex.lt-lg="0 1 calc(50% - 5px)" fxFlex.lt-md="100%"
-                  appearance="outline">
-                  <mat-label>Apellido(s)</mat-label>
-                  <input matInput placeholder="Apellido(s)" formControlName="parentLastName">
-                  <mat-error *ngIf="addressForm.controls['parentLastName'].hasError('required')">
-                    Last name is <strong>required</strong>
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field fxFlex="0 1 calc(33% - 5px)" fxFlex.lt-lg="0 1 calc(50% - 5px)" fxFlex.lt-md="100%"
-                  appearance="outline">
-                  <mat-label>CURP</mat-label>
-                  <input matInput placeholder="CURP" formControlName="parentCurp">
-                </mat-form-field>
-              </div>
-
-              <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
-
-              </div>
-
-              <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
-                <mat-form-field fxFlex="0 1 calc(50% - 10px)" fxFlex.lt-md="100%" appearance="outline">
-                  <mat-label>Dirección</mat-label>
-                  <input matInput placeholder="Calle/Av., Num.Int./Ext., Col./Fracc." formControlName="direccion">
-                  <mat-error *ngIf="addressForm.controls['direccion'].hasError('required')">
-                    Address is <strong>required</strong>
-                  </mat-error>
-                </mat-form-field>
-                <div class="row" *ngIf="!hasUnitNumber">
-                  <div class="col">
-                    <button mat-button type="button" (click)="hasUnitNumber = !hasUnitNumber">
-                      + Add C/O, Apt, Suite, Unit
-                    </button>
-                  </div>
-                </div>
-                <div class="row" *ngIf="hasUnitNumber">
-                  <div class="col">
-                    <mat-form-field fxFlex="0 1 calc(50% - 10px)" fxFlex.lt-md="100%" appearance="outline">
-                      <textarea matInput placeholder="Address 2" formControlName="address2"></textarea>
-                    </mat-form-field>
-                  </div>
-                </div>
-              </div>
-
-              <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="5px">
-                <mat-form-field fxFlex="0 1 calc(25% - 5px)" fxFlex.lt-lg="0 1 calc(50% - 10px)" fxFlex.lt-md="100%"
-                  appearance="outline">
-                  <input matInput #codigoPostal maxlength="5" placeholder="Código Postal" type="number"
-                    formControlName="codigoPostal">
-                  <mat-hint align="end">{{codigoPostal.value.length}} / 5</mat-hint>
-                </mat-form-field>
-                <mat-form-field fxFlex="0 1 calc(25% - 5px)" fxFlex.lt-lg="0 1 calc(50% - 10px)" fxFlex.lt-md="100%"
-                  appearance="outline">
-                  <mat-label>Estado</mat-label>
-                  <mat-select placeholder="Estado" formControlName="estado" (valueChange)="onEstadoChange()">
-                    <mat-option *ngFor="let state of statesNames" [value]="state">
-                      {{ state }}
-                    </mat-option>
-                  </mat-select>
-                  <mat-error *ngIf="addressForm.controls['estado'].hasError('required')">
-                    State is <strong>required</strong>
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field fxFlex="0 1 calc(25% - 5px)" fxFlex.lt-lg="0 1 calc(50% - 10px)" fxFlex.lt-md="100%"
-                  appearance="outline">
-                  <mat-label>Municipio</mat-label>
-                  <mat-select placeholder="Municipio" formControlName="municipio">
-                    <mat-option *ngFor="let municip of municipiosNames" [value]="municip">
-                      {{ municip }}
-                    </mat-option>
-                  </mat-select>
-                  <mat-error *ngIf="addressForm.controls['municipio'].hasError('required')">
-                    State is <strong>required</strong>
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field fxFlex="0 1 calc(25% - 5px)" fxFlex.lt-lg="0 1 calc(50% - 10px)" fxFlex.lt-md="100%"
-                  appearance="outline">
-                  <mat-label>Ciudad</mat-label>
-                  <input matInput placeholder="Ciudad" formControlName="ciudad">
-                  <mat-error *ngIf="addressForm.controls['ciudad'].hasError('required')">
-                    Este es un dato <strong>requerido</strong>
-                  </mat-error>
-                </mat-form-field>
-              </div>
-            </mat-expansion-panel> -->
-        </mat-accordion>
-      </div>
-    </mat-card-content>
-  </mat-card>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </form>
 </div>

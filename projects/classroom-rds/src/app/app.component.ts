@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
     this.seoService.titleInit();
     this.seoService.generateTags({
       title: this.title,
-      description: 'Portal de información y servicios escolares de la Escuela Rafael Díaz Serdán',
+      description: 'Aplicación de servicios escolares de la escuela Rafael Díaz Serdán',
       image: 'assets/screenshots/screenshot02.png'
     });
   }

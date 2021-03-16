@@ -72,7 +72,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
-import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
+import { Routes, RouterModule, PreloadAllModules } from &#x27;@angular/router&#x27;;
 
 import { AuthGuard } from &#x27;@rds-auth/guards/auth.guard&#x27;;
 
@@ -92,11 +92,12 @@ import { TermsComponent } from &#x27;@rds-shared/components/terms/terms.componen
 import { UnderConstructionComponent } from &#x27;@rds-shared/components/under-construction/under-construction.component&#x27;;
 
 import { ConfigComponent } from &#x27;./core/layout/config/config.component&#x27;;
-import { ConfigurationComponent } from &#x27;./core/layout/configuration/configuration.component&#x27;;
+import { SchoolFormComponent } from &#x27;./school/components/school-form/school-form.component&#x27;;
 const routes: Routes &#x3D; [{
   path: &#x27;&#x27;, component: LayoutComponent, children: [
     { path: &#x27;&#x27;, component: HomeComponent },
     { path: &#x27;config&#x27;, component: ConfigComponent },
+    { path: &#x27;escuela&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./school/school.module&#x27;).then(m &#x3D;&gt; m.SchoolModule)&quot;, canActivate: [AuthGuard] },
     { path: &#x27;classroom&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./classroom/classroom.module&#x27;).then(m &#x3D;&gt; m.ClassroomModule)&quot;, canActivate: [AuthGuard] },
     { path: &#x27;perfil&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./classroom/user-profiles/user-profiles.module&#x27;).then(m &#x3D;&gt; m.UserProfilesModule)&quot;, canActivate: [AuthGuard] },
     { path: &#x27;calificaciones&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./grades/grades.module&#x27;).then(m &#x3D;&gt; m.GradesModule)&quot;, canActivate: [AuthGuard] },
@@ -114,13 +115,15 @@ const routes: Routes &#x3D; [{
     { path: &#x27;code-conduct-school&#x27;, component: CodeConductSchoolComponent },
     { path: &#x27;terms&#x27;, component: TermsComponent },
     { path: &#x27;under-construction&#x27;, component: UnderConstructionComponent },
-    { path: &#x27;configuration&#x27;, component: ConfigurationComponent },
+    { path: &#x27;**&#x27;, component: NotFoundComponent }
   ]
-}]
-  ;
+}];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes, {
+    useHash: true,
+    paramsInheritanceStrategy: &#x27;always&#x27;,
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

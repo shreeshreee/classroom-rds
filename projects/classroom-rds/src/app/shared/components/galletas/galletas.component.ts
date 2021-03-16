@@ -13,7 +13,7 @@ export class GalletasComponent implements OnInit {
     <h2>
     <strong>Receta</strong>
     </h2>
-    Consulta aquí los ingredientes y el resumen de la preparación de la receta de los Polvorones.
+    Consulta aquí los ingredientes y el resumen de la preparación del Pan de Sal.
     </div>`
   };
   constructor() { }

@@ -1,4 +1,5 @@
-import { CourseLevel } from '@rds-classroom/models/classroom.enum';
+import { CourseLevel } from "~/app/auth/models/user.enum";
+
 export interface UserDomain {
   /** A list of the user's addresses. The maximum allowed data size is 10Kb. */
   addresses: [{
@@ -337,18 +338,3 @@ export interface GroupResponse {
   nextPageToken: string;
 }
 
-export enum SchoolLevel {
-  /* "1° de Preescolar",
-  "2° de Preescolar",
-  "3° de Preescolar", */
-  "Preescolar",
-  "1° de Primaria",
-  "2° de Primaria",
-  "3° de Primaria",
-  "4° de Primaria",
-  "5° de Primaria",
-  "6° de Primaria",
-  "1° de Secundaria",
-  "2° de Secundaria",
-  "3° de Secundaria",
-}

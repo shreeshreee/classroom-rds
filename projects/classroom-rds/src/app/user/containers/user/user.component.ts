@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { select, Store } from '@ngrx/store';
@@ -11,40 +11,55 @@ import { signOut } from '@rds-auth/state/auth.actions';
 import { UserDomain } from '@rds-admin/models/users-domain.model';
 
 import { Observable, of, Subscription } from 'rxjs';
+import { map, take } from 'rxjs/operators';
 
+import { UserAuth } from '~/app/auth/models/user-auth.model';
 import { User } from '~/app/auth/models/user.model';
+import { SubscriptionService } from '~/app/shared/services/subscription.service';
+import { UserEntityService } from '~/app/store/user/user-entity.service';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss']
 })
-export class UserComponent implements OnInit {
+export class UserComponent implements OnInit, OnDestroy {
   user$: Observable<User>;
   userId: string;
   user: User;
   isOnline$: Observable<boolean>;
+  loading$: Observable<boolean>
   isAdmin$: Observable<boolean>;
   isTeacher$: Observable<boolean>;
   userDomain: Observable<UserDomain>;
-/*   userSub: Subscription;
- */  loading = false;
+  userSub: Subscription;
   constructor(
     private store: Store<AppState>,
-    /* private router: ActivatedRoute,
-    private userScoreService: UserScoresService */
+    private router: ActivatedRoute,
+    private subService: SubscriptionService,
+    private userEntityService: UserEntityService
   ) {
-    this.user$ = this.store.pipe(select(selectUser));
+    //this.userSub = this.store.select(selectUser).subscribe(user => this.userId = user.id);
+    this.loading$ = this.userEntityService.loading$;
+    //this.user$ = this.userEntityService.entities$;
+    this.userId = this.router.snapshot.paramMap.get('id');
     this.isOnline$ = store.pipe(select(isLoggedIn));
     this.isAdmin$ = store.pipe(select(isAdmin));
     this.isTeacher$ = store.pipe(select(isTeacher));
   }
   ngOnInit(): void {
+    this.user$ = this.userEntityService.entities$
+      .pipe(
+        take(1),
+        map(user => {
+          return user.find(x => x.id == this.userId);
+        })
+      );
   }
   logoutUser(user: User) {
     this.store.dispatch(signOut({ user }));
   }
-  /*   ngOnDestroy() {
-      this.userSub.unsubscribe();
-    } */
+  ngOnDestroy() {
+    this.subService.unsubscribeComponent$;
+  }
 }

@@ -81,22 +81,33 @@
                             <ul class="index-list">
                                 <li>
                                             <span class="modifier">Opcional</span>
+                                        <a href="#addresses">addresses</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Opcional</span>
                                         <a href="#creationTime">creationTime</a>
                                 </li>
                                 <li>
                                             <span class="modifier">Opcional</span>
-                                        <a href="#email">email</a>
+                                        <a href="#curp">curp</a>
                                 </li>
                                 <li>
                                             <span class="modifier">Opcional</span>
-                                        <a href="#familyName">familyName</a>
+                                        <a href="#dayOfBirth">dayOfBirth</a>
                                 </li>
                                 <li>
                                             <span class="modifier">Opcional</span>
-                                        <a href="#givenName">givenName</a>
+                                        <a href="#emails">emails</a>
                                 </li>
                                 <li>
                                             <span class="modifier">Opcional</span>
+                                        <a href="#gender">gender</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Opcional</span>
+                                        <a href="#grade">grade</a>
+                                </li>
+                                <li>
                                         <a href="#id">id</a>
                                 </li>
                                 <li>
@@ -121,7 +132,11 @@
                                 </li>
                                 <li>
                                             <span class="modifier">Opcional</span>
-                                        <a href="#lastLogin">lastLogin</a>
+                                        <a href="#lastLoginTime">lastLoginTime</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Opcional</span>
+                                        <a href="#level">level</a>
                                 </li>
                                 <li>
                                             <span class="modifier">Opcional</span>
@@ -129,11 +144,51 @@
                                 </li>
                                 <li>
                                             <span class="modifier">Opcional</span>
+                                        <a href="#niev">niev</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Opcional</span>
+                                        <a href="#notes">notes</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Opcional</span>
+                                        <a href="#parentCurp">parentCurp</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Opcional</span>
+                                        <a href="#parentName">parentName</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Opcional</span>
                                         <a href="#permissions">permissions</a>
                                 </li>
                                 <li>
                                             <span class="modifier">Opcional</span>
+                                        <a href="#phones">phones</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Opcional</span>
                                         <a href="#photoUrl">photoUrl</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Opcional</span>
+                                        <a href="#primaryEmail">primaryEmail</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Opcional</span>
+                                        <a href="#role">role</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Opcional</span>
+                                        <a href="#suspended">suspended</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Opcional</span>
+                                        <a href="#suspensionReason">suspensionReason</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Opcional</span>
+                                        <a href="#thumbnailPhotoUrl">thumbnailPhotoUrl</a>
                                 </li>
                                 <li>
                                             <span class="modifier">Opcional</span>
@@ -150,6 +205,46 @@
 
             <section>
                 <h3 id="inputs">Propiedades</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="addresses"></a>
+                                        <span class="name"><b>addresses</b><a href="#addresses"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>addresses:     <code>[literal type]</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>    <code>[literal type]</code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>A list of the user&#39;s addresses. The maximum allowed data size is 10Kb. </p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <table class="table table-sm table-bordered">
                         <tbody>
                                 <tr>
@@ -182,19 +277,25 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Output only. The time the user&#39;s account was created. The value is in ISO 8601 date and time format. The time is the complete date plus hours, minutes, and seconds in the form YYYY-MM-DDThh:mm:ssTZD. For example, 2010-04-05T17:30:04+01:00. </p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="email"></a>
-                                        <span class="name"><b>email</b><a href="#email"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="curp"></a>
+                                        <span class="name"><b>curp</b><a href="#curp"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>email:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>curp:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -222,13 +323,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="familyName"></a>
-                                        <span class="name"><b>familyName</b><a href="#familyName"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="dayOfBirth"></a>
+                                        <span class="name"><b>dayOfBirth</b><a href="#dayOfBirth"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>familyName:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>dayOfBirth:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -256,13 +357,87 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="givenName"></a>
-                                        <span class="name"><b>givenName</b><a href="#givenName"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="emails"></a>
+                                        <span class="name"><b>emails</b><a href="#emails"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>givenName:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>emails:     <code>[literal type]</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>    <code>[literal type]</code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="gender"></a>
+                                        <span class="name"><b>gender</b><a href="#gender"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>gender:     <code>&quot;Hombre&quot; | &quot;Mujer&quot;</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>    <code>&quot;Hombre&quot; | &quot;Mujer&quot;</code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The user&#39;s gender. The maximum allowed data size for this field is 1Kb. </p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="grade"></a>
+                                        <span class="name"><b>grade</b><a href="#grade"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>grade:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -309,15 +484,16 @@
                                         </td>
                                     </tr>
 
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Opcional</i>
-                                        </td>
-                                    </tr>
 
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The unique ID for the user. A user id can be used as a user request URI&#39;s userKey. </p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -352,6 +528,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Output only. Indicates a user with super admininistrator privileges. The isAdmin property can only be edited in the Make a user an administrator operation ( makeAdmin method). If edited in the user insert or update methods, the edit is ignored by the API service. </p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -494,13 +676,53 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="lastLogin"></a>
-                                        <span class="name"><b>lastLogin</b><a href="#lastLogin"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="lastLoginTime"></a>
+                                        <span class="name"><b>lastLoginTime</b><a href="#lastLoginTime"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>lastLogin:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>lastLoginTime:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Output only. The last time the user logged into the user&#39;s account. The value is in ISO 8601 date and time format. The time is the complete date plus hours, minutes, and seconds in the form YYYY-MM-DDThh:mm:ssTZD. For example, 2010-04-05T17:30:04+01:00. </p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="level"></a>
+                                        <span class="name"><b>level</b><a href="#level"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>level:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -534,7 +756,47 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>name:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>name:     <code>literal type</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>    <code>literal type</code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Holds the given and family names of the user, and the read-only fullName value. The maximum number of characters in the givenName and in the familyName values is 60. In addition, name values support unicode/UTF-8 characters, and can contain spaces, letters (a-z), numbers (0-9), dashes (-), forward slashes (/), and periods (.). For more information about character usage rules, see the administration help center. Maximum allowed data size for this field is 1Kb. </p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="niev"></a>
+                                        <span class="name"><b>niev</b><a href="#niev"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>niev:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -543,6 +805,108 @@
                                     <tr>
                                         <td class="col-md-4">
                                             <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="notes"></a>
+                                        <span class="name"><b>notes</b><a href="#notes"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>notes:     <code>[literal type]</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>    <code>[literal type]</code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="parentCurp"></a>
+                                        <span class="name"><b>parentCurp</b><a href="#parentCurp"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>parentCurp:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="parentName"></a>
+                                        <span class="name"><b>parentName</b><a href="#parentName"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>parentName:     <code>literal type</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>    <code>literal type</code>
 
                                         </td>
                                     </tr>
@@ -596,6 +960,46 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
+                                        <a name="phones"></a>
+                                        <span class="name"><b>phones</b><a href="#phones"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>phones:     <code>[literal type]</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>    <code>[literal type]</code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>A list of the user&#39;s phone numbers. The maximum allowed data size is 1Kb. </p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
                                         <a name="photoUrl"></a>
                                         <span class="name"><b>photoUrl</b><a href="#photoUrl"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
@@ -630,6 +1034,200 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
+                                        <a name="primaryEmail"></a>
+                                        <span class="name"><b>primaryEmail</b><a href="#primaryEmail"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>primaryEmail:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The user&#39;s primary email address. This property is required in a request to create a user account. The primaryEmail must be unique and cannot be an alias of another user. </p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="role"></a>
+                                        <span class="name"><b>role</b><a href="#role"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>role:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="suspended"></a>
+                                        <span class="name"><b>suspended</b><a href="#suspended"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>suspended:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Indicates if user is suspended. </p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="suspensionReason"></a>
+                                        <span class="name"><b>suspensionReason</b><a href="#suspensionReason"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>suspensionReason:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Output only. Has the reason a user account is suspended either by the administrator or by Google at the time of suspension. The property is returned only if the suspended property is true. </p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="thumbnailPhotoUrl"></a>
+                                        <span class="name"><b>thumbnailPhotoUrl</b><a href="#thumbnailPhotoUrl"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>thumbnailPhotoUrl:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Output only. Photo Url of the user (Read-only) </p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
                                         <a name="uid"></a>
                                         <span class="name"><b>uid</b><a href="#uid"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
@@ -658,6 +1256,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Firebase database user&#39;s ID </p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -665,28 +1269,150 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface User {
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { UserName } from &quot;~/app/admin/models/users-domain.model&quot;;
+
+export interface User {
+  curp?: string;
+  dayOfBirth?: string;
+  grade?: string;
+  level?: string;
+  permissions?: any;
+  parentName?: {
+    /** The user&#x27;s full name formed by concatenating the first and last name values. */
+    fullName?: string,
+    /** The user&#x27;s last name. Required when creating a user account. */
+    familyName?: string,
+    /** The user&#x27;s first name. Required when creating a user account. */
+    givenName?: string
+  };
+  parentCurp?: string;
+  photoUrl?: string;
+  role?: string;
+  /** A list of the user&#x27;s addresses. The maximum allowed data size is 10Kb. */
+  addresses?: [{
+    /** The address type. Acceptable values: custom, home, other, work. */
+    type: &#x27;custom&#x27; | &#x27;home&#x27; | &#x27;other&#x27; | &#x27;work&#x27;,
+    /** The street address, such as 1600 Amphitheatre Parkway. Whitespace within the string is ignored; however, newlines are significant. */
+    streetAddress: string,
+    /** Indicates if the user-supplied address was formatted. Formatted addresses are not currently supported. */
+    sourceIsStructured: boolean,
+    /** The abbreviated province or state. */
+    region: string,
+    /** If this is the user&#x27;s primary address. The addresses list may contain only one primary address. */
+    primary: boolean,
+    /** The ZIP or postal code, if applicable. */
+    postalCode: string;
+    /** The post office box, if present. */
+    poBox: string,
+    /** The town or city of the address. */
+    locality: string,
+    /** A full and unstructured postal address. This is not synced with the structured address fields. */
+    formatted: string,
+    /** For extended addresses, such as an address that includes a sub-region. */
+    externalAddress: string,
+    /** If the address type is custom, this property contains the custom value. */
+    customType: string,
+    /** The country code. Uses the ISO 3166-1 standard. */
+    countryCode: string
+    /** Country. */
+    country: string
+  }];
+  /**Output only. The time the user&#x27;s account was created. The value is in ISO 8601 date and time format. The time is the complete date plus hours, minutes, and seconds in the form YYYY-MM-DDThh:mm:ssTZD. For example, 2010-04-05T17:30:04+01:00. */
   creationTime?: string;
-  email?: string;
-  familyName?: string;
-  givenName?: string;
-  id?: string;
+  emails?: [
+    {
+      /** The user&#x27;s email address. Also serves as the email ID. This value can be the user&#x27;s primary email address or an alias. */
+      address: string,
+      /** If the value of type is custom, this property contains the custom type string. */
+      customType: string,
+      /** Indicates if this is the user&#x27;s primary email. Only one entry can be marked as primary. */
+      primary: boolean,
+      /** The type of the email account. Acceptable values: custom, home, other, work. */
+      type: &#x27;custom&#x27; | &#x27;home&#x27; | &#x27;other&#x27; | &#x27;work&#x27;
+    }
+  ];
+  /** The user&#x27;s gender. The maximum allowed data size for this field is 1Kb. */
+  gender?: &#x27;Hombre&#x27; | &#x27;Mujer&#x27;
+  /** The unique ID for the user. A user id can be used as a user request URI&#x27;s userKey. */
+  id: string;
+  /** Output only. Indicates a user with super admininistrator privileges. The isAdmin property can only be edited in the Make a user an administrator operation ( makeAdmin method). If edited in the user insert or update methods, the edit is ignored by the API service. */
   isAdmin?: boolean;
   isNew?: boolean;
   isOnline?: boolean;
   isTeacher?: boolean;
   isVerified?: boolean;
-  lastLogin?: string;
-  name?: string;
-  permissions?: any;
-  photoUrl?: string;
+  /** Output only. The last time the user logged into the user&#x27;s account. The value is in ISO 8601 date and time format. The time is the complete date plus hours, minutes, and seconds in the form YYYY-MM-DDThh:mm:ssTZD. For example, 2010-04-05T17:30:04+01:00. */
+  lastLoginTime?: string;
+  /** Holds the given and family names of the user, and the read-only fullName value. The maximum number of characters in the givenName and in the familyName values is 60. In addition, name values support unicode/UTF-8 characters, and can contain spaces, letters (a-z), numbers (0-9), dashes (-), forward slashes (/), and periods (.). For more information about character usage rules, see the administration help center. Maximum allowed data size for this field is 1Kb. */
+  name?: {
+    /** The user&#x27;s full name formed by concatenating the first and last name values. */
+    fullName: string,
+    /** The user&#x27;s last name. Required when creating a user account. */
+    familyName?: string,
+    /** The user&#x27;s first name. Required when creating a user account. */
+    givenName?: string
+  };
+  niev?: string;
+  notes?: [{
+    /** Content type of note, either plain text or HTML. Default is plain text. Acceptable values: text_plain, text_html. */
+    contentType: &#x27;text_plain&#x27; | &#x27;text_html&#x27;,
+    /** Contents of notes. */
+    value: string
+  }];
+  /** A list of the user&#x27;s phone numbers. The maximum allowed data size is 1Kb. */
+  phones?: [{
+    /** If the value of type is custom, this property contains the custom type. */
+    customType: string,
+    /** Indicates if this is the user&#x27;s primary phone number. A user may only have one primary phone number. */
+    primary: boolean,
+    /** The type of phone number. */
+    type: &#x27;assistant&#x27; | &#x27;callback&#x27; | &#x27;car&#x27; | &#x27;company_main&#x27; | &#x27;custom&#x27; | &#x27;grand_central&#x27; | &#x27;home&#x27; | &#x27;home_fax&#x27; | &#x27;isdn&#x27; | &#x27;main&#x27; | &#x27;mobile&#x27; | &#x27;other&#x27; | &#x27;other_fax&#x27; | &#x27;pager&#x27; | &#x27;radio&#x27; | &#x27;telex&#x27; | &#x27;tty_tdd&#x27; | &#x27;work&#x27; | &#x27;work_fax&#x27; | &#x27;work_mobile&#x27; | &#x27;work_pager&#x27;,
+    /** A human-readable phone number. It may be in any telephone number format. */
+    value: string,
+  }];
+  /** The user&#x27;s primary email address. This property is required in a request to create a user account. The primaryEmail must be unique and cannot be an alias of another user. */
+  primaryEmail?: string;
+  /** Indicates if user is suspended. */
+  suspended?: boolean;
+  /** Output only. Has the reason a user account is suspended either by the administrator or by Google at the time of suspension. The property is returned only if the suspended property is true. */
+  suspensionReason?: string;
+  /** Output only. Photo Url of the user (Read-only) */
+  thumbnailPhotoUrl?: string;
+  /** Firebase database user&#x27;s ID */
   uid?: string;
 }
 
-export interface UpdatedUser {
-  id: string;
-  name: string;
-  photoUrl: string;
+
+export enum PhonesType {
+  home, car, work, mobile, assistant
+}
+export interface Address {
+  /** The address type. Acceptable values: custom, home, other, work. */
+  type?: &#x27;custom&#x27; | &#x27;home&#x27; | &#x27;other&#x27; | &#x27;work&#x27;,
+  /** The street address, such as 1600 Amphitheatre Parkway. Whitespace within the string is ignored; however, newlines are significant. */
+  streetAddress?: string,
+  /** Indicates if the user-supplied address was formatted. Formatted addresses are not currently supported. */
+  sourceIsStructured?: boolean,
+  /** The abbreviated province or state. */
+  region?: string,
+  /** If this is the user&#x27;s primary address. The addresses list may contain only one primary address. */
+  primary?: boolean,
+  /** The ZIP or postal code, if applicable. */
+  postalCode?: string;
+  /** The post office box, if present. */
+  poBox?: string,
+  /** The town or city of the address. */
+  locality?: string,
+  /** A full and unstructured postal address. This is not synced with the structured address fields. */
+  formatted?: string,
+  /** For extended addresses, such as an address that includes a sub-region. */
+  externalAddress?: string,
+  /** If the address type is custom, this property contains the custom value. */
+  customType?: string,
+  /** The country code. Uses the ISO 3166-1 standard. */
+  countryCode?: string
+  /** Country. */
+  country?: string
 }
 </code></pre>
     </div>

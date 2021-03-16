@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { UserDetailsComponent } from '../admin/components/user-details/user-details.component';
-
+import { UserResolver } from './services/user.resolver';
 import { UserGradesComponent } from './components/user-grades/user-grades.component';
 import { UserHomeComponent } from './components/user-home/user-home.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
@@ -10,7 +9,7 @@ import { UserComponent } from './containers/user/user.component';
 
 const routes: Routes = [
   {
-    path: '', component: UserComponent, children: [
+    path: ':id', component: UserComponent, resolve: { user: UserResolver }, children: [
       /* { path: '', redirectTo: ':userId', pathMatch: 'full' }, */
       { path: '', component: UserHomeComponent },
 

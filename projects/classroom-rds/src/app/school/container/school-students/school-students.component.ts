@@ -1,18 +1,13 @@
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component, OnInit, OnDestroy, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { MatList, MatListItem } from '@angular/material/list';
-
-import { QueryParams } from '@ngrx/data';
 
 import { Observable, Subject } from 'rxjs';
 import { map, take, catchError } from 'rxjs/operators';
 
-import { selectUser } from './../../../auth/state/auth.selectors';
-
-import { SchoolLevel } from '~/app/admin/models/users-domain.model';
+import { CourseLevel, SchoolLevel } from '~/app/auth/models/user.enum';
 import { User } from '~/app/auth/models/user.model';
-import { CourseLevel } from '~/app/classroom/models/classroom.enum';
+import { Parent } from '~/app/school/models/parent.model';
 import { SubscriptionService } from '~/app/shared/services/subscription.service';
 import { UserEntityService } from '~/app/store/user/user-entity.service';
 
@@ -23,7 +18,6 @@ import { UserEntityService } from '~/app/store/user/user-entity.service';
 })
 export class SchoolStudentsComponent implements OnInit, OnDestroy {
   @Input() users$: Observable<User[]>;
-  user$: Observable<User>;
   activeClass: string;
   userSub: Subject<Partial<User>> = new Subject<Partial<User>>();
   loaded$: Observable<boolean>;

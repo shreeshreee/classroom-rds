@@ -1,18 +1,18 @@
-<div class="user-container p-2">
+<div *ngIf="!(loading$|async)" class="user-container m-2">
   <mat-card>
     <mat-card-header>
-      <img mat-card-avatar src="https://i.pinimg.com/originals/98/d3/a2/98d3a283f98cded8e639957e935bd373.png" />
+      <!-- <img mat-card-avatar src="https://i.pinimg.com/originals/98/d3/a2/98d3a283f98cded8e639957e935bd373.png" /> -->
       <mat-card-title><span class="view-title">Servicios Escolares</span>
       </mat-card-title>
       <mat-card-subtitle class="view-subtitle">Accede a toda tu información como alumno
       </mat-card-subtitle>
     </mat-card-header>
   </mat-card>
-  <div class="py-2 d-block">
+  <div class="mt-2 d-block">
     <app-user-menu [user]="(user$|async)" [isAdmin]="(isAdmin$|async)" [isTeacher]="(isTeacher$|async)"
       [isOnline]="(isOnline$|async)" (logout)="logoutUser($event)"></app-user-menu>
   </div>
-  <div class="py-2 d-block">
+  <div class="mb-2 d-block">
     <router-outlet></router-outlet>
   </div>
 </div>

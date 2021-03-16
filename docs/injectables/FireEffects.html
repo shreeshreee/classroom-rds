@@ -87,9 +87,6 @@
                             <li>
                                 <a href="#updateOnlineStatus$">updateOnlineStatus$</a>
                             </li>
-                            <li>
-                                <a href="#updateProfile$">updateProfile$</a>
-                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -114,7 +111,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="92" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:92</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="87" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:87</a></div>
                             </td>
                         </tr>
 
@@ -200,7 +197,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="28" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:28</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="23" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -237,7 +234,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="41" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:41</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="36" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:36</a></div>
                             </td>
                         </tr>
 
@@ -272,7 +269,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:17</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -298,7 +295,7 @@
       this.actions$.pipe(
         ofType(fromAuthActions.updateOnlineStatus),
         switchMap((action) &#x3D;&gt;
-          this.authFireService.updateOnlineStatus(action.uid, action.isOnline)
+          this.authFireService.updateOnlineStatus(action.id, action.isOnline)
         )
       ),
     { dispatch: false }
@@ -307,59 +304,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="83" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:83</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="updateProfile$"></a>
-                        <span class="name">
-                            <b>
-                            updateProfile$</b>
-                            <a href="#updateProfile$"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>createEffect(
-    () &#x3D;&gt;
-      this.actions$.pipe(
-        ofType(fromAuthActions.updateProfile),
-        switchMap((action) &#x3D;&gt;
-          this.authFireService.updateUser(action.userData)
-            .pipe(
-              map(() &#x3D;&gt; {
-                const currentUser: any &#x3D; this.authFireService.getAuthState();
-                const updatedUser: User &#x3D; {
-                  id: currentUser.id,
-                  uid: currentUser.uid,
-                  name: currentUser.name,
-                  email: currentUser.email,
-                  photoUrl: currentUser.photoURL,
-                  isTeacher: currentUser.isTeacher,
-                  isAdmin: currentUser.isAdmin,
-                  isOnline: currentUser.isOnline,
-                  isNew: currentUser.isNew,
-                };
-                return fromAuthActions.updateProfileSuccess({ user: updatedUser });
-              }),
-              catchError((err) &#x3D;&gt; of(fromAuthActions.authError({ error: err })))
-            )
-        )
-      ),
-  )</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="55" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:55</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="78" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:78</a></div>
                             </td>
                         </tr>
 
@@ -376,14 +321,9 @@
 
 import { Actions, createEffect, ofType } from &#x27;@ngrx/effects&#x27;;
 
-import { AuthService } from &#x27;@rds-auth/services&#x27;;
-
-import { of } from &#x27;rxjs&#x27;;
-import { catchError, map, switchMap, tap } from &#x27;rxjs/operators&#x27;;
+import { map, switchMap, tap } from &#x27;rxjs/operators&#x27;;
 
 import * as fromAuthActions from &#x27;../auth.actions&#x27;;
-import { isTeacher } from &#x27;./../auth.selectors&#x27;;
-import { User } from &#x27;../../models/user.model&#x27;;
 import { AuthFireService } from &#x27;../../services/auth-fire.service&#x27;;
 @Injectable()
 export class FireEffects {
@@ -426,40 +366,40 @@ export class FireEffects {
   );
 
 
-  updateProfile$ &#x3D; createEffect(
-    () &#x3D;&gt;
-      this.actions$.pipe(
-        ofType(fromAuthActions.updateProfile),
-        switchMap((action) &#x3D;&gt;
-          this.authFireService.updateUser(action.userData)
-            .pipe(
-              map(() &#x3D;&gt; {
-                const currentUser: any &#x3D; this.authFireService.getAuthState();
-                const updatedUser: User &#x3D; {
-                  id: currentUser.id,
-                  uid: currentUser.uid,
-                  name: currentUser.name,
-                  email: currentUser.email,
-                  photoUrl: currentUser.photoURL,
-                  isTeacher: currentUser.isTeacher,
-                  isAdmin: currentUser.isAdmin,
-                  isOnline: currentUser.isOnline,
-                  isNew: currentUser.isNew,
-                };
-                return fromAuthActions.updateProfileSuccess({ user: updatedUser });
-              }),
-              catchError((err) &#x3D;&gt; of(fromAuthActions.authError({ error: err })))
-            )
-        )
-      ),
-  );
-
+  /*  updateProfile$ &#x3D; createEffect(
+     () &#x3D;&gt;
+       this.actions$.pipe(
+         ofType(fromAuthActions.updateProfile),
+         switchMap((action) &#x3D;&gt;
+           this.authFireService.updateUser(action.userData)
+             .pipe(
+               map(() &#x3D;&gt; {
+                 const currentUser: any &#x3D; this.authFireService.getAuthState();
+                 const updatedUser: User &#x3D; {
+                   id: currentUser.id,
+                   uid: currentUser.uid,
+                   name: currentUser.name,
+                   email: currentUser.email,
+                   photoUrl: currentUser.photoURL,
+                   isTeacher: currentUser.isTeacher,
+                   isAdmin: currentUser.isAdmin,
+                   isOnline: currentUser.isOnline,
+                   isNew: currentUser.isNew,
+                 };
+                 return fromAuthActions.updateProfileSuccess({ user: updatedUser });
+               }),
+               catchError((err) &#x3D;&gt; of(fromAuthActions.authError({ error: err })))
+             )
+         )
+       ),
+   );
+  */
   updateOnlineStatus$ &#x3D; createEffect(
     () &#x3D;&gt;
       this.actions$.pipe(
         ofType(fromAuthActions.updateOnlineStatus),
         switchMap((action) &#x3D;&gt;
-          this.authFireService.updateOnlineStatus(action.uid, action.isOnline)
+          this.authFireService.updateOnlineStatus(action.id, action.isOnline)
         )
       ),
     { dispatch: false }

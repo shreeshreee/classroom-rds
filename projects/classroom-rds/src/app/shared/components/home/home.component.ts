@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   user$: Observable<User>;
   isTeacher$: Observable<boolean>;
   isAdmin$: Observable<boolean>;
-  alert: any;
+  alerts: any[];
   constructor(
     private store: Store<AppState>,
     sanitizer: DomSanitizer
@@ -29,16 +29,23 @@ export class HomeComponent implements OnInit {
     this.isTeacher$ = this.store.select(fromAuthSelectors.isTeacher);
     this.isAdmin$ = this.store.select(fromAuthSelectors.isAdmin);
     this.user$ = this.store.pipe(select(fromAuthSelectors.selectUser));
-    this.alert = {
-      dismissable: true,
+    this.alerts = [{
+      dismissible: true,
       type: 'success',
-      msg: sanitizer.sanitize(SecurityContext.HTML, 'Conoce tus calificaciones de la Unidad 2 en la sección "Información Académica".')
-    }
+      visible: true,
+      link: 'user/grades',
+      msg: sanitizer.sanitize(SecurityContext.HTML, 'Conoce tus calificaciones de la Unidad 2 en la sección "Información Académica". <br>Disponibles a partir del <strong>24 de marzo de 2021</strong>. Puedes acceder aquí en este anuncio')
+    },
+    {
+      dismissible: true,
+      type: 'danger',
+      visible: false,
+      link: 'pan_de_sal',
+      msg: sanitizer.sanitize(SecurityContext.HTML, 'Ingresa a la <strong>transmisión en vivo</strong> de la elaboración del Pan de Sal, de nuestro club de cocina. <br>Acompañanos el día <strong>11 de marzo de 2021 a las 12:00 del día.</strong>. Puedes acceder aquí en este anuncio')
+    }]
   }
   ngOnInit(): void {
 
   }
-  onClosed(dismissedAlert: any): void {
-    this.alert = this.alert.filter(alert => alert !== dismissedAlert);
-  }
+
 }

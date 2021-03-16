@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { select, Store } from '@ngrx/store';
 
+import { UserProfilesService } from '@rds-classroom/user-profiles/services/user-profiles.service';
+
 import { User } from '@rds-auth/models/user.model';
 import { signOut } from '@rds-auth/state/auth.actions';
 import * as fromAuthActions from '@rds-auth/state/auth.actions';
@@ -22,7 +24,9 @@ export class UserProfileComponent implements OnInit {
   isAdmin$: Observable<boolean>;
   isTeacher$: Observable<boolean>;
 
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<AppState>,
+    private userProfilesService: UserProfilesService
+  ) { this.userProfilesService.handleClassroomLoad(); }
 
   ngOnInit() {
     this.user$ = this.store.pipe(select(fromAuthSelectors.selectUser));

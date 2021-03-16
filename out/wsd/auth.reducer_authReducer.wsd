@@ -1,0 +1,356 @@
+@startuml auth.reducer_authReducer
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+interface "[Auth Effect] Google`s sign-in Success" << (A,#FF7700) action >> {
+            variable: signInSuccess
+            src: auth.actions
+            --
+            props<{user: User}>
+
+        }
+
+        
+interface "auth.reducer:: authReducer L" << (L,orchid) listen >> {
+            name: signInSuccess
+            action: [Auth Effect] Google`s sign-in Success
+            ..
+            Variable: authReducer
+            __
+        }
+        "[Auth Effect] Google`s sign-in Success" <.down. "auth.reducer:: authReducer L"
+
+interface "auth.effects:: AuthEffects D" << (D,orchid) dispatch >> {
+            name: signInSuccess
+            action: [Auth Effect] Google`s sign-in Success
+            ..
+            Class: AuthEffects
+Property: signIn$
+            __
+        }
+        "[Auth Effect] Google`s sign-in Success" -down-> "auth.effects:: AuthEffects D"
+
+interface "auth.effects:: AuthEffects D" << (D,orchid) dispatch >> {
+            name: signInSuccess
+            action: [Auth Effect] Google`s sign-in Success
+            ..
+            Class: AuthEffects
+Property: signIn$
+            __
+        }
+        "[Auth Effect] Google`s sign-in Success" -down-> "auth.effects:: AuthEffects D"
+
+interface "auth.effects:: AuthEffects L" << (L,orchid) listen >> {
+            name: signInSuccess
+            action: [Auth Effect] Google`s sign-in Success
+            ..
+            Class: AuthEffects
+Property: signInSuccess$
+            __
+        }
+        "[Auth Effect] Google`s sign-in Success" <.down. "auth.effects:: AuthEffects L"
+
+interface "auth.effects:: AuthEffects D" << (D,orchid) dispatch >> {
+            name: signInSuccess
+            action: [Auth Effect] Google`s sign-in Success
+            ..
+            Class: AuthEffects
+Property: getUser$
+            __
+        }
+        "[Auth Effect] Google`s sign-in Success" -down-> "auth.effects:: AuthEffects D"
+
+interface "route.effects:: RouteEffects L" << (L,orchid) listen >> {
+            name: signInSuccess
+            action: [Auth Effect] Google`s sign-in Success
+            ..
+            Class: RouteEffects
+Property: goroot$
+            __
+        }
+        "[Auth Effect] Google`s sign-in Success" <.down. "route.effects:: RouteEffects L"
+
+interface "spinner.effects:: SpinnerEffects L" << (L,orchid) listen >> {
+            name: signInSuccess
+            action: [Auth Effect] Google`s sign-in Success
+            ..
+            Class: SpinnerEffects
+Property: spinneroff$
+            __
+        }
+        "[Auth Effect] Google`s sign-in Success" <.down. "spinner.effects:: SpinnerEffects L"
+
+interface "snack.effects:: SnackEffects L" << (L,orchid) listen >> {
+            name: signInSuccess
+            action: [Auth Effect] Google`s sign-in Success
+            ..
+            Class: SnackEffects
+Property: welcomeBack$
+            __
+        }
+        "[Auth Effect] Google`s sign-in Success" <.down. "snack.effects:: SnackEffects L"
+
+interface "[Auth Component] Update profile success" << (A,#FF7700) action >> {
+            variable: updateProfileSuccess
+            src: auth.actions
+            --
+            props<{user: User}>
+
+        }
+
+        
+interface "auth.reducer:: authReducer L" << (L,orchid) listen >> {
+            name: updateProfileSuccess
+            action: [Auth Component] Update profile success
+            ..
+            Variable: authReducer
+            __
+        }
+        "[Auth Component] Update profile success" <.down. "auth.reducer:: authReducer L"
+
+interface "route.effects:: RouteEffects L" << (L,orchid) listen >> {
+            name: updateProfileSuccess
+            action: [Auth Component] Update profile success
+            ..
+            Class: RouteEffects
+Property: goprofile$
+            __
+        }
+        "[Auth Component] Update profile success" <.down. "route.effects:: RouteEffects L"
+
+interface "spinner.effects:: SpinnerEffects L" << (L,orchid) listen >> {
+            name: updateProfileSuccess
+            action: [Auth Component] Update profile success
+            ..
+            Class: SpinnerEffects
+Property: spinneroff$
+            __
+        }
+        "[Auth Component] Update profile success" <.down. "spinner.effects:: SpinnerEffects L"
+
+interface "snack.effects:: SnackEffects L" << (L,orchid) listen >> {
+            name: updateProfileSuccess
+            action: [Auth Component] Update profile success
+            ..
+            Class: SnackEffects
+Property: updatedUser$
+            __
+        }
+        "[Auth Component] Update profile success" <.down. "snack.effects:: SnackEffects L"
+
+interface "[Auth Effect] Google`s sign-in Fail" << (A,#FF7700) action >> {
+            variable: signInFailure
+            src: auth.actions
+            --
+            props<{error: any}>
+
+        }
+
+        
+interface "auth.reducer:: authReducer L" << (L,orchid) listen >> {
+            name: signInFailure
+            action: [Auth Effect] Google`s sign-in Fail
+            ..
+            Variable: authReducer
+            __
+        }
+        "[Auth Effect] Google`s sign-in Fail" <.down. "auth.reducer:: authReducer L"
+
+interface "auth.effects:: AuthEffects D" << (D,orchid) dispatch >> {
+            name: signInFailure
+            action: [Auth Effect] Google`s sign-in Fail
+            ..
+            Class: AuthEffects
+Property: getUser$
+            __
+        }
+        "[Auth Effect] Google`s sign-in Fail" -down-> "auth.effects:: AuthEffects D"
+
+interface "spinner.effects:: SpinnerEffects L" << (L,orchid) listen >> {
+            name: signInFailure
+            action: [Auth Effect] Google`s sign-in Fail
+            ..
+            Class: SpinnerEffects
+Property: spinneroff$
+            __
+        }
+        "[Auth Effect] Google`s sign-in Fail" <.down. "spinner.effects:: SpinnerEffects L"
+
+interface "[Auth Component] Authorization error" << (A,#FF7700) action >> {
+            variable: authError
+            src: auth.actions
+            --
+            props<{error: any}>
+
+        }
+
+        
+interface "auth.reducer:: authReducer L" << (L,orchid) listen >> {
+            name: authError
+            action: [Auth Component] Authorization error
+            ..
+            Variable: authReducer
+            __
+        }
+        "[Auth Component] Authorization error" <.down. "auth.reducer:: authReducer L"
+
+interface "auth.effects:: AuthEffects D" << (D,orchid) dispatch >> {
+            name: authError
+            action: [Auth Component] Authorization error
+            ..
+            Class: AuthEffects
+Property: signIn$
+            __
+        }
+        "[Auth Component] Authorization error" -down-> "auth.effects:: AuthEffects D"
+
+interface "auth.effects:: AuthEffects D" << (D,orchid) dispatch >> {
+            name: authError
+            action: [Auth Component] Authorization error
+            ..
+            Class: AuthEffects
+Property: signOut$
+            __
+        }
+        "[Auth Component] Authorization error" -down-> "auth.effects:: AuthEffects D"
+
+interface "auth.effects:: AuthEffects D" << (D,orchid) dispatch >> {
+            name: authError
+            action: [Auth Component] Authorization error
+            ..
+            Class: AuthEffects
+Property: getUser$
+            __
+        }
+        "[Auth Component] Authorization error" -down-> "auth.effects:: AuthEffects D"
+
+interface "spinner.effects:: SpinnerEffects L" << (L,orchid) listen >> {
+            name: authError
+            action: [Auth Component] Authorization error
+            ..
+            Class: SpinnerEffects
+Property: spinneroff$
+            __
+        }
+        "[Auth Component] Authorization error" <.down. "spinner.effects:: SpinnerEffects L"
+
+interface "snack.effects:: SnackEffects L" << (L,orchid) listen >> {
+            name: authError
+            action: [Auth Component] Authorization error
+            ..
+            Class: SnackEffects
+Property: unableToLogin$
+            __
+        }
+        "[Auth Component] Authorization error" <.down. "snack.effects:: SnackEffects L"
+
+interface "[Auth Effect] Google`s sign-out request" << (A,#FF7700) action >> {
+            variable: signOut
+            src: auth.actions
+            --
+            props<{user: User}>
+
+        }
+
+        
+interface "auth.reducer:: authReducer L" << (L,orchid) listen >> {
+            name: signOut
+            action: [Auth Effect] Google`s sign-out request
+            ..
+            Variable: authReducer
+            __
+        }
+        "[Auth Effect] Google`s sign-out request" <.down. "auth.reducer:: authReducer L"
+
+interface "app.state:: logout L" << (L,orchid) listen >> {
+            name: signOut
+            action: [Auth Effect] Google`s sign-out request
+            ..
+            Function: logout
+            __
+        }
+        "[Auth Effect] Google`s sign-out request" <.down. "app.state:: logout L"
+
+interface "user-profile.component:: UserProfileComponent D" << (D,orchid) dispatch >> {
+            name: signOut
+            action: [Auth Effect] Google`s sign-out request
+            ..
+            Class: UserProfileComponent
+Method: logoutUser
+            __
+        }
+        "[Auth Effect] Google`s sign-out request" -down-> "user-profile.component:: UserProfileComponent D"
+
+interface "auth.effects:: AuthEffects L" << (L,orchid) listen >> {
+            name: signOut
+            action: [Auth Effect] Google`s sign-out request
+            ..
+            Class: AuthEffects
+Property: signOut$
+            __
+        }
+        "[Auth Effect] Google`s sign-out request" <.down. "auth.effects:: AuthEffects L"
+
+interface "[Auth Component] Update admin role" << (A,#FF7700) action >> {
+            variable: updateAdminRole
+            src: auth.actions
+            --
+            props<{isAdmin: boolean}>
+
+        }
+
+        
+interface "auth.reducer:: authReducer L" << (L,orchid) listen >> {
+            name: updateAdminRole
+            action: [Auth Component] Update admin role
+            ..
+            Variable: authReducer
+            __
+        }
+        "[Auth Component] Update admin role" <.down. "auth.reducer:: authReducer L"
+
+interface "fire.effects:: FireEffects D" << (D,orchid) dispatch >> {
+            name: updateAdminRole
+            action: [Auth Component] Update admin role
+            ..
+            Class: FireEffects
+Property: checkAdminRole$
+            __
+        }
+        "[Auth Component] Update admin role" -down-> "fire.effects:: FireEffects D"
+
+interface "[Auth Effect] Update teacher role" << (A,#FF7700) action >> {
+            variable: updateTeachersRole
+            src: auth.actions
+            --
+            props<{isTeacher: boolean}>
+
+        }
+
+        
+interface "auth.reducer:: authReducer L" << (L,orchid) listen >> {
+            name: updateTeachersRole
+            action: [Auth Effect] Update teacher role
+            ..
+            Variable: authReducer
+            __
+        }
+        "[Auth Effect] Update teacher role" <.down. "auth.reducer:: authReducer L"
+
+interface "fire.effects:: FireEffects D" << (D,orchid) dispatch >> {
+            name: updateTeachersRole
+            action: [Auth Effect] Update teacher role
+            ..
+            Class: FireEffects
+Property: checkTeacherRole$
+            __
+        }
+        "[Auth Effect] Update teacher role" -down-> "fire.effects:: FireEffects D"
+ 
+
+@enduml

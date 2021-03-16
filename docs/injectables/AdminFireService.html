@@ -219,7 +219,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>addAdminPrivileges(uid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>addAdminPrivileges(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -247,7 +247,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>uid</td>
+                                    <td>id</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
@@ -298,8 +298,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="58"
-                            class="link-to-prism">projects/classroom-rds/src/app/admin/services/admin-fire.service.ts:58</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="59"
+                            class="link-to-prism">projects/classroom-rds/src/app/admin/services/admin-fire.service.ts:59</a></div>
                 </td>
             </tr>
 
@@ -511,7 +511,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>removeAdminPrivileges(uid: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>removeAdminPrivileges(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
@@ -539,7 +539,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>uid</td>
+                                    <td>id</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
@@ -660,7 +660,7 @@ export class AdminFireService {
     this.user$ &#x3D; this.getAuthState().pipe(
       switchMap((user) &#x3D;&gt; {
         if (user) {
-          return this.afStore.collection&lt;UserDomain&gt;(&#x27;users&#x27;).doc&lt;UserDomain&gt;(&#x60;${user.providerData[0].uid}&#x60;).valueChanges();
+          return this.afDatabase.object&lt;User&gt;(&#x60;appusers/${user.providerData[0].uid}&#x60;).valueChanges();
         } else {
           return of(null);
         }
@@ -670,24 +670,25 @@ export class AdminFireService {
   getAuthState(): Observable&lt;firebase.User&gt; {
     return this.afAuth.authState;
   }
-  addAdminPrivileges(uid: string): Observable&lt;void&gt; {
-    const adminsRef &#x3D; this.afDatabase.object(&#x60;admins/${uid}&#x60;);
-    this.afDatabase.object(&#x60;users/${uid}&#x60;).update({ isAdmin: true });
+  addAdminPrivileges(id: string): Observable&lt;void&gt; {
+    const adminsRef &#x3D; this.afDatabase.object(&#x60;admins/${id}&#x60;);
+    this.afDatabase.object(&#x60;appusers/${id}&#x60;).update({ isAdmin: true });
     return from(adminsRef.set(true));
   }
 
-  removeAdminPrivileges(uid: string): Observable&lt;void&gt; {
-    this.afDatabase.object(&#x60;users/${uid}&#x60;).update({ isAdmin: false });
-    return from(this.afDatabase.object(&#x60;admins/${uid}&#x60;).remove());
+  removeAdminPrivileges(id: string): Observable&lt;void&gt; {
+    this.afDatabase.object(&#x60;appusers/${id}&#x60;).update({ isAdmin: false });
+    return from(this.afDatabase.object(&#x60;admins/${id}&#x60;).remove());
   }
 
   getUsers(): Observable&lt;UserDomain[]&gt; {
-    return this.afStore.collection&lt;UserDomain&gt;(&#x27;users&#x27;).valueChanges()
+    return this.afStore.collection&lt;UserDomain&gt;(&#x27;appusers&#x27;).valueChanges()
   }
 
   async createUser(user: UserDomain) {
     const key &#x3D; user.id;
-    return await this.afStore.collection(&#x27;users&#x27;).doc(key).set(user, { merge: true });
+    //return await this.afStore.collection(&#x27;users&#x27;).doc(key).set(user, { merge: true });
+    return await this.afDatabase.object&lt;UserDomain&gt;(&#x60;appusers/${key}&#x60;).update(user);
   }
 
   async createGroup(group: Group) {

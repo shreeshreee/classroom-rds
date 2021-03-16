@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, ViewChild } from '@angular/core';
 
 import { faPrint } from '@fortawesome/free-solid-svg-icons';
@@ -13,9 +14,13 @@ import { selectUser } from '@rds-auth/state/auth.selectors';
 import { map } from 'rxjs/operators';
 import { Observable, Subscription } from 'rxjs';
 
-import { Score } from '../../models/score.model';
+import { Score } from '../../models/grade.model';
+import { isTeacher } from './../../../auth/state/auth.selectors';
+import { SubscriptionService } from './../../../shared/services/subscription.service';
 
+import { UserAuth } from '~/app/auth/models/user-auth.model';
 import { SchoolService } from '~/app/school/services/school.service';
+import { UserEntityService } from '~/app/store/user/user-entity.service';
 
 
 @Component({
@@ -24,28 +29,34 @@ import { SchoolService } from '~/app/school/services/school.service';
   styleUrls: ['./user-grades.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class UserGradesComponent implements OnInit {
+export class UserGradesComponent implements OnInit, OnDestroy {
   user$: Observable<User>;
-  user: User;
+  isTeacher$: Observable<boolean>;
+  loading$: Observable<boolean>;
+  userId: string;
   userName: string;
   userSub: Subscription;
-  scores: Observable<Score[]>;
   today: Date = new Date();
   faPrint = faPrint;
   faFilePdf = faFilePdf;
   constructor(
+    private userES: UserEntityService,
+    private router: ActivatedRoute,
     private store: Store<AppState>,
-    private schoolService: SchoolService
+    private subService: SubscriptionService
   ) {
-    this.user$ = this.store.select(selectUser);
+    this.loading$ = this.userES.loading$;
+    this.userId = this.router.parent.snapshot.paramMap.get('id');
+    this.user$ = this.userES.entities$.pipe(map(users => users.find(u => u.id == this.userId)))
+    this.isTeacher$ = this.store.pipe(select(isTeacher));
   }
 
   ngOnInit(): void {
-    this.user$.subscribe(user => {
-      this.scores = this.schoolService.getScores(user.id);
-    });
   }
   printPage() {
     window.print();
+  }
+  ngOnDestroy() {
+    this.subService.unsubscribeComponent$;
   }
 }

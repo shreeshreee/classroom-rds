@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import { faAward, faUserEdit, faSignOutAlt, faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faAward, faUserEdit, faSignOutAlt, faCheck, faTimes, faUserCheck, faUserTimes } from '@fortawesome/free-solid-svg-icons';
 
 import { User } from '@rds-auth/models/user.model';
 
@@ -18,13 +18,12 @@ export class UserMenuComponent implements OnInit {
   @Input() isOnline: boolean;
   @Input() isAdmin: boolean;
   @Input() isTeacher: boolean;
-  userDomain: UserDomain;
   @Output() logout = new EventEmitter<User>();
   faAward = faAward;
   faUserEdit = faUserEdit;
   faSignOutAlt = faSignOutAlt;
-  faCheck = faCheck;
-  faTimes = faTimes;
+  faUserCheck = faUserCheck;
+  faUserTimes = faUserTimes;
   canLogout: boolean;
   constructor() { }
 

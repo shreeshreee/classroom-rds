@@ -76,19 +76,18 @@ import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
 
 import { AdminComponent, GroupsComponent, UsersComponent } from &#x27;@rds-admin/containers&#x27;;
 
-import { UserDetailsComponent } from &#x27;../user/components/user-details/user-details.component&#x27;;
-
 import { AdminWellcomeComponent } from &#x27;./components&#x27;;
 
 import { GroupsResolver } from &#x27;./services/groups.resolver&#x27;;
 import { UserDomainsResolver } from &#x27;./services/user-domains.resolver&#x27;;
-import { SchoolComponent } from &#x27;./containers/school/school.component&#x27;;
+import { UserDetailsComponent } from &#x27;./components/user-details/user-details.component&#x27;;
+import { SchoolHomeComponent } from &#x27;./containers/school-home/school-home.component&#x27;;
 
 const routes: Routes &#x3D; [{
   path: &#x27;&#x27;, component: AdminComponent, children: [
     { path: &#x27;&#x27;, component: AdminWellcomeComponent },
     { path: &#x27;users&#x27;, component: UsersComponent, resolve: { users: UserDomainsResolver } },
-    { path: &#x27;school&#x27;, component: SchoolComponent, resolve: { users: UserDomainsResolver } },
+    { path: &#x27;school-home&#x27;, component: SchoolHomeComponent, resolve: { users: UserDomainsResolver } },
     { path: &#x27;users/:userId&#x27;, component: UserDetailsComponent },
     { path: &#x27;groups&#x27;, component: GroupsComponent, resolve: { groups: GroupsResolver } }
 

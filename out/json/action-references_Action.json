@@ -1,0 +1,1745 @@
+{
+  "rootPath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/",
+  "data": [
+    {
+      "name": "[Auth Component] Add user admin privileges",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 133,
+      "end": 216,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "id",
+                  "type": "string"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "addAdminPrivileges"
+    },
+    {
+      "name": "[Auth Component] Check user admin error",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 244,
+      "end": 324,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "error",
+                  "type": "any"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "adminError"
+    },
+    {
+      "name": "[Auth Component] Authorization error",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 351,
+      "end": 428,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "error",
+                  "type": "any"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "authError",
+      "references": [
+        {
+          "name": "authError",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Component] Authorization error\", (props: { error: any; } & \"arrays are not allowed in action creators\") => { error: any; } & TypedAction<\"[Auth Component] Authorization error\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.reducer.ts",
+          "fileName": "auth.reducer",
+          "declarationContext": [
+            {
+              "kindText": "VariableDeclaration",
+              "name": "authReducer"
+            }
+          ]
+        },
+        {
+          "name": "authError",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Component] Authorization error\", (props: { error: any; } & \"arrays are not allowed in action creators\") => { error: any; } & TypedAction<\"[Auth Component] Authorization error\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts",
+          "fileName": "auth.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AuthEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "signIn$"
+            }
+          ]
+        },
+        {
+          "name": "authError",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Component] Authorization error\", (props: { error: any; } & \"arrays are not allowed in action creators\") => { error: any; } & TypedAction<\"[Auth Component] Authorization error\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts",
+          "fileName": "auth.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AuthEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "signOut$"
+            }
+          ]
+        },
+        {
+          "name": "authError",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Component] Authorization error\", (props: { error: any; } & \"arrays are not allowed in action creators\") => { error: any; } & TypedAction<\"[Auth Component] Authorization error\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts",
+          "fileName": "auth.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AuthEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "getUser$"
+            }
+          ]
+        },
+        {
+          "name": "authError",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Component] Authorization error\", (props: { error: any; } & \"arrays are not allowed in action creators\") => { error: any; } & TypedAction<\"[Auth Component] Authorization error\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/spinner.effects.ts",
+          "fileName": "spinner.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "SpinnerEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "spinneroff$"
+            }
+          ]
+        },
+        {
+          "name": "authError",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Component] Authorization error\", (props: { error: any; } & \"arrays are not allowed in action creators\") => { error: any; } & TypedAction<\"[Auth Component] Authorization error\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/snack.effects.ts",
+          "fileName": "snack.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "SnackEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "unableToLogin$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "[Auth Effect] Check admin role",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 460,
+      "end": 531,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "id",
+                  "type": "string"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "checkAdminRole",
+      "references": [
+        {
+          "name": "checkAdminRole",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Check admin role\", (props: { id: string; } & \"arrays are not allowed in action creators\") => { id: string; } & TypedAction<\"[Auth Effect] Check admin role\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts",
+          "fileName": "auth.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AuthEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "signInSuccess$"
+            }
+          ]
+        },
+        {
+          "name": "checkAdminRole",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Check admin role\", (props: { id: string; } & \"arrays are not allowed in action creators\") => { id: string; } & TypedAction<\"[Auth Effect] Check admin role\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts",
+          "fileName": "fire.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "FireEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "checkAdminRole$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "[Auth Effect] Check current user",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 558,
+      "end": 607,
+      "kind": 1002,
+      "kindText": "Action",
+      "variable": "checkUser"
+    },
+    {
+      "name": "[Auth Effect] Get current user",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 632,
+      "end": 678,
+      "kind": 1002,
+      "kindText": "Action",
+      "variable": "getUser",
+      "references": [
+        {
+          "name": "getUser",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Get current user\", () => TypedAction<\"[Auth Effect] Get current user\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts",
+          "fileName": "auth.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AuthEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "getUser$"
+            }
+          ]
+        },
+        {
+          "name": "getUser",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Get current user\", () => TypedAction<\"[Auth Effect] Get current user\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts",
+          "fileName": "auth.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AuthEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "init$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "[Auth Component] Remove user admin privileges",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 717,
+      "end": 803,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "id",
+                  "type": "string"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "removeAdminPrivileges"
+    },
+    {
+      "name": "[Auth Effect] Save user to firestore",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 829,
+      "end": 906,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "user",
+                  "type": "User"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "saveUser",
+      "references": [
+        {
+          "name": "saveUser",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Save user to firestore\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[Auth Effect] Save user to firestore\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts",
+          "fileName": "auth.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AuthEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "signIn$"
+            }
+          ]
+        },
+        {
+          "name": "saveUser",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Save user to firestore\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[Auth Effect] Save user to firestore\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts",
+          "fileName": "fire.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "FireEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "saveUser$"
+            }
+          ]
+        },
+        {
+          "name": "saveUser",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Save user to firestore\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[Auth Effect] Save user to firestore\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/snack.effects.ts",
+          "fileName": "snack.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "SnackEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "userCreated$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "[Auth Effect] Google`s sign-in request",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 930,
+      "end": 985,
+      "kind": 1002,
+      "kindText": "Action",
+      "variable": "signIn",
+      "references": [
+        {
+          "name": "signIn",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-in request\", () => TypedAction<\"[Auth Effect] Google`s sign-in request\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts",
+          "fileName": "auth.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AuthEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "signIn$"
+            }
+          ]
+        },
+        {
+          "name": "signIn",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-in request\", () => TypedAction<\"[Auth Effect] Google`s sign-in request\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/components/login-dialog/login-dialog.component.ts",
+          "fileName": "login-dialog.component",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "LoginDialogComponent"
+            },
+            {
+              "kindText": "MethodDeclaration",
+              "name": "onLogin"
+            }
+          ]
+        },
+        {
+          "name": "signIn",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-in request\", () => TypedAction<\"[Auth Effect] Google`s sign-in request\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/dialog.effects.ts",
+          "fileName": "dialog.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "DialogEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "hideDialog$"
+            }
+          ]
+        },
+        {
+          "name": "signIn",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-in request\", () => TypedAction<\"[Auth Effect] Google`s sign-in request\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/spinner.effects.ts",
+          "fileName": "spinner.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "SpinnerEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "spinneron$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "[Auth Effect] Google`s sign-in Fail",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 1016,
+      "end": 1092,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "error",
+                  "type": "any"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "signInFailure",
+      "references": [
+        {
+          "name": "signInFailure",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-in Fail\", (props: { error: any; } & \"arrays are not allowed in action creators\") => { error: any; } & TypedAction<\"[Auth Effect] Google`s sign-in Fail\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.reducer.ts",
+          "fileName": "auth.reducer",
+          "declarationContext": [
+            {
+              "kindText": "VariableDeclaration",
+              "name": "authReducer"
+            }
+          ]
+        },
+        {
+          "name": "signInFailure",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-in Fail\", (props: { error: any; } & \"arrays are not allowed in action creators\") => { error: any; } & TypedAction<\"[Auth Effect] Google`s sign-in Fail\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts",
+          "fileName": "auth.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AuthEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "getUser$"
+            }
+          ]
+        },
+        {
+          "name": "signInFailure",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-in Fail\", (props: { error: any; } & \"arrays are not allowed in action creators\") => { error: any; } & TypedAction<\"[Auth Effect] Google`s sign-in Fail\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/spinner.effects.ts",
+          "fileName": "spinner.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "SpinnerEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "spinneroff$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "[Auth Effect] Google`s sign-in Success",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 1123,
+      "end": 1202,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "user",
+                  "type": "User"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "signInSuccess",
+      "references": [
+        {
+          "name": "signInSuccess",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-in Success\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[Auth Effect] Google`s sign-in Success\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.reducer.ts",
+          "fileName": "auth.reducer",
+          "declarationContext": [
+            {
+              "kindText": "VariableDeclaration",
+              "name": "authReducer"
+            }
+          ]
+        },
+        {
+          "name": "signInSuccess",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-in Success\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[Auth Effect] Google`s sign-in Success\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts",
+          "fileName": "auth.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AuthEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "signIn$"
+            }
+          ]
+        },
+        {
+          "name": "signInSuccess",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-in Success\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[Auth Effect] Google`s sign-in Success\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts",
+          "fileName": "auth.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AuthEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "signIn$"
+            }
+          ]
+        },
+        {
+          "name": "signInSuccess",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-in Success\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[Auth Effect] Google`s sign-in Success\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts",
+          "fileName": "auth.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AuthEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "signInSuccess$"
+            }
+          ]
+        },
+        {
+          "name": "signInSuccess",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-in Success\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[Auth Effect] Google`s sign-in Success\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts",
+          "fileName": "auth.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AuthEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "getUser$"
+            }
+          ]
+        },
+        {
+          "name": "signInSuccess",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-in Success\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[Auth Effect] Google`s sign-in Success\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/route.effects.ts",
+          "fileName": "route.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "RouteEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "goroot$"
+            }
+          ]
+        },
+        {
+          "name": "signInSuccess",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-in Success\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[Auth Effect] Google`s sign-in Success\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/spinner.effects.ts",
+          "fileName": "spinner.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "SpinnerEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "spinneroff$"
+            }
+          ]
+        },
+        {
+          "name": "signInSuccess",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-in Success\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[Auth Effect] Google`s sign-in Success\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/snack.effects.ts",
+          "fileName": "snack.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "SnackEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "welcomeBack$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "[Auth Effect] Google`s sign-out request",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 1227,
+      "end": 1307,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "user",
+                  "type": "User"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "signOut",
+      "references": [
+        {
+          "name": "signOut",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-out request\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[Auth Effect] Google`s sign-out request\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.reducer.ts",
+          "fileName": "auth.reducer",
+          "declarationContext": [
+            {
+              "kindText": "VariableDeclaration",
+              "name": "authReducer"
+            }
+          ]
+        },
+        {
+          "name": "signOut",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-out request\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[Auth Effect] Google`s sign-out request\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app.state.ts",
+          "fileName": "app.state",
+          "declarationContext": [
+            {
+              "kindText": "FunctionDeclaration",
+              "name": "logout"
+            }
+          ]
+        },
+        {
+          "name": "signOut",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-out request\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[Auth Effect] Google`s sign-out request\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/classroom/user-profiles/containers/user-profile/user-profile.component.ts",
+          "fileName": "user-profile.component",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "UserProfileComponent"
+            },
+            {
+              "kindText": "MethodDeclaration",
+              "name": "logoutUser"
+            }
+          ]
+        },
+        {
+          "name": "signOut",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-out request\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[Auth Effect] Google`s sign-out request\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts",
+          "fileName": "auth.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AuthEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "signOut$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "[Auth Effect] Google`s sign-out completed",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 1341,
+      "end": 1398,
+      "kind": 1002,
+      "kindText": "Action",
+      "variable": "signOutCompleted",
+      "references": [
+        {
+          "name": "signOutCompleted",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-out completed\", () => TypedAction<\"[Auth Effect] Google`s sign-out completed\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts",
+          "fileName": "auth.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AuthEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "signOut$"
+            }
+          ]
+        },
+        {
+          "name": "signOutCompleted",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-out completed\", () => TypedAction<\"[Auth Effect] Google`s sign-out completed\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/route.effects.ts",
+          "fileName": "route.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "RouteEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "gohome$"
+            }
+          ]
+        },
+        {
+          "name": "signOutCompleted",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-out completed\", () => TypedAction<\"[Auth Effect] Google`s sign-out completed\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/app.effects.ts",
+          "fileName": "app.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AppEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "removeUser$"
+            }
+          ]
+        },
+        {
+          "name": "signOutCompleted",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Google`s sign-out completed\", () => TypedAction<\"[Auth Effect] Google`s sign-out completed\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/snack.effects.ts",
+          "fileName": "snack.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "SnackEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "comeBackSoon$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "[Auth Component] Update admin role",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 1431,
+      "end": 1512,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "isAdmin",
+                  "type": "boolean"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "updateAdminRole",
+      "references": [
+        {
+          "name": "updateAdminRole",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Component] Update admin role\", (props: { isAdmin: boolean; } & \"arrays are not allowed in action creators\") => { isAdmin: boolean; } & TypedAction<\"[Auth Component] Update admin role\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.reducer.ts",
+          "fileName": "auth.reducer",
+          "declarationContext": [
+            {
+              "kindText": "VariableDeclaration",
+              "name": "authReducer"
+            }
+          ]
+        },
+        {
+          "name": "updateAdminRole",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Component] Update admin role\", (props: { isAdmin: boolean; } & \"arrays are not allowed in action creators\") => { isAdmin: boolean; } & TypedAction<\"[Auth Component] Update admin role\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts",
+          "fileName": "fire.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "FireEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "checkAdminRole$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "[Auth Component] Update user online status",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 1548,
+      "end": 1650,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "id",
+                  "type": "string"
+                },
+                {
+                  "name": "isOnline",
+                  "type": "boolean"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "updateOnlineStatus",
+      "references": [
+        {
+          "name": "updateOnlineStatus",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Component] Update user online status\", (props: { id: string; isOnline: boolean; } & \"arrays are not allowed in action creators\") => { id: string; isOnline: boolean; } & TypedAction<...>>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts",
+          "fileName": "auth.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AuthEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "signInSuccess$"
+            }
+          ]
+        },
+        {
+          "name": "updateOnlineStatus",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Component] Update user online status\", (props: { id: string; isOnline: boolean; } & \"arrays are not allowed in action creators\") => { id: string; isOnline: boolean; } & TypedAction<...>>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts",
+          "fileName": "fire.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "FireEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "updateOnlineStatus$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "[Auth Component] Update profile",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 1681,
+      "end": 1757,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "userData",
+                  "type": "User"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "updateProfile",
+      "references": [
+        {
+          "name": "updateProfile",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Component] Update profile\", (props: { userData: User; } & \"arrays are not allowed in action creators\") => { userData: User; } & TypedAction<\"[Auth Component] Update profile\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/classroom/user-profiles/components/edit-profile/edit-profile.component.ts",
+          "fileName": "edit-profile.component",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "EditProfileComponent"
+            },
+            {
+              "kindText": "MethodDeclaration",
+              "name": "onProfileUpdate"
+            }
+          ]
+        },
+        {
+          "name": "updateProfile",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Component] Update profile\", (props: { userData: User; } & \"arrays are not allowed in action creators\") => { userData: User; } & TypedAction<\"[Auth Component] Update profile\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/classroom/user-profiles/containers/user-profile/user-profile.component.ts",
+          "fileName": "user-profile.component",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "UserProfileComponent"
+            },
+            {
+              "kindText": "MethodDeclaration",
+              "name": "updateProfile"
+            }
+          ]
+        },
+        {
+          "name": "updateProfile",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Component] Update profile\", (props: { userData: User; } & \"arrays are not allowed in action creators\") => { userData: User; } & TypedAction<\"[Auth Component] Update profile\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/spinner.effects.ts",
+          "fileName": "spinner.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "SpinnerEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "spinneron$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "[Auth Component] Update profile success",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 1795,
+      "end": 1875,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "user",
+                  "type": "User"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "updateProfileSuccess",
+      "references": [
+        {
+          "name": "updateProfileSuccess",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Component] Update profile success\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[Auth Component] Update profile success\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.reducer.ts",
+          "fileName": "auth.reducer",
+          "declarationContext": [
+            {
+              "kindText": "VariableDeclaration",
+              "name": "authReducer"
+            }
+          ]
+        },
+        {
+          "name": "updateProfileSuccess",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Component] Update profile success\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[Auth Component] Update profile success\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/route.effects.ts",
+          "fileName": "route.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "RouteEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "goprofile$"
+            }
+          ]
+        },
+        {
+          "name": "updateProfileSuccess",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Component] Update profile success\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[Auth Component] Update profile success\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/spinner.effects.ts",
+          "fileName": "spinner.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "SpinnerEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "spinneroff$"
+            }
+          ]
+        },
+        {
+          "name": "updateProfileSuccess",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Component] Update profile success\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[Auth Component] Update profile success\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/snack.effects.ts",
+          "fileName": "snack.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "SnackEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "updatedUser$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "[Auth Effect] Check teacher role",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 1909,
+      "end": 1982,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "id",
+                  "type": "string"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "checkTeacherRole",
+      "references": [
+        {
+          "name": "checkTeacherRole",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Check teacher role\", (props: { id: string; } & \"arrays are not allowed in action creators\") => { id: string; } & TypedAction<\"[Auth Effect] Check teacher role\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts",
+          "fileName": "dashboard.component",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "DashboardComponent"
+            },
+            {
+              "kindText": "MethodDeclaration",
+              "name": "optionsByRole"
+            }
+          ]
+        },
+        {
+          "name": "checkTeacherRole",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Check teacher role\", (props: { id: string; } & \"arrays are not allowed in action creators\") => { id: string; } & TypedAction<\"[Auth Effect] Check teacher role\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts",
+          "fileName": "auth.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AuthEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "signInSuccess$"
+            }
+          ]
+        },
+        {
+          "name": "checkTeacherRole",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Check teacher role\", (props: { id: string; } & \"arrays are not allowed in action creators\") => { id: string; } & TypedAction<\"[Auth Effect] Check teacher role\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts",
+          "fileName": "fire.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "FireEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "checkTeacherRole$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "[Auth Effect] Update teacher role",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 2018,
+      "end": 2100,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "isTeacher",
+                  "type": "boolean"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "updateTeachersRole",
+      "references": [
+        {
+          "name": "updateTeachersRole",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Update teacher role\", (props: { isTeacher: boolean; } & \"arrays are not allowed in action creators\") => { isTeacher: boolean; } & TypedAction<\"[Auth Effect] Update teacher role\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.reducer.ts",
+          "fileName": "auth.reducer",
+          "declarationContext": [
+            {
+              "kindText": "VariableDeclaration",
+              "name": "authReducer"
+            }
+          ]
+        },
+        {
+          "name": "updateTeachersRole",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[Auth Effect] Update teacher role\", (props: { isTeacher: boolean; } & \"arrays are not allowed in action creators\") => { isTeacher: boolean; } & TypedAction<\"[Auth Effect] Update teacher role\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts",
+          "fileName": "fire.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "FireEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "checkTeacherRole$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "[App] Load App",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/actions/app.actions.ts",
+      "pos": 128,
+      "end": 162,
+      "kind": 1002,
+      "kindText": "Action",
+      "variable": "loadApp",
+      "references": [
+        {
+          "name": "loadApp",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[App] Load App\", () => TypedAction<\"[App] Load App\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/app.effects.ts",
+          "fileName": "app.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AppEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "loadApp$"
+            }
+          ]
+        },
+        {
+          "name": "loadApp",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[App] Load App\", () => TypedAction<\"[App] Load App\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/spinner.effects.ts",
+          "fileName": "spinner.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "SpinnerEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "spinneron$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "[App] Load App Success",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/actions/app.actions.ts",
+      "pos": 195,
+      "end": 238,
+      "kind": 1002,
+      "kindText": "Action",
+      "variable": "loadAppSuccess",
+      "references": [
+        {
+          "name": "loadAppSuccess",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[App] Load App Success\", () => TypedAction<\"[App] Load App Success\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/app.effects.ts",
+          "fileName": "app.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AppEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "loadApp$"
+            }
+          ]
+        },
+        {
+          "name": "loadAppSuccess",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[App] Load App Success\", () => TypedAction<\"[App] Load App Success\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/spinner.effects.ts",
+          "fileName": "spinner.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "SpinnerEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "spinneroff$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "[App] Load App Fail",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/actions/app.actions.ts",
+      "pos": 268,
+      "end": 334,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "error",
+                  "type": "any"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "loadAppFail",
+      "references": [
+        {
+          "name": "loadAppFail",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[App] Load App Fail\", (props: { error: any; } & \"arrays are not allowed in action creators\") => { error: any; } & TypedAction<\"[App] Load App Fail\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/app.effects.ts",
+          "fileName": "app.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AppEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "loadApp$"
+            }
+          ]
+        },
+        {
+          "name": "loadAppFail",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[App] Load App Fail\", (props: { error: any; } & \"arrays are not allowed in action creators\") => { error: any; } & TypedAction<\"[App] Load App Fail\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/spinner.effects.ts",
+          "fileName": "spinner.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "SpinnerEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "spinneroff$"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "[App] Store in local User",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/actions/app.actions.ts",
+      "pos": 367,
+      "end": 439,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "user",
+                  "type": "User"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "localStoreUser",
+      "references": [
+        {
+          "name": "localStoreUser",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[App] Store in local User\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[App] Store in local User\">>",
+          "isCall": true,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts",
+          "fileName": "auth.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AuthEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "signInSuccess$"
+            }
+          ]
+        },
+        {
+          "name": "localStoreUser",
+          "kind": 1003,
+          "kindText": "ActionReference",
+          "documentation": "",
+          "type": "ActionCreator<\"[App] Store in local User\", (props: { user: User; } & \"arrays are not allowed in action creators\") => { user: User; } & TypedAction<\"[App] Store in local User\">>",
+          "isCall": false,
+          "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/effects/app.effects.ts",
+          "fileName": "app.effects",
+          "declarationContext": [
+            {
+              "kindText": "ClassDeclaration",
+              "name": "AppEffects"
+            },
+            {
+              "kindText": "PropertyDeclaration",
+              "name": "localStoreUser$"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

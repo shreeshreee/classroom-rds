@@ -1,9 +1,5 @@
 export const environment = {
   production: true,
-  characters: {
-    spreadsheetId: '1uq18UwoEeVS-PrrRyjXuBGx7y0D8anECSH-mX6gAduo',
-    worksheetId: 1,
-  },
   firebaseConfig: {
     apiKey: 'AIzaSyAlAPUXjpBlZY2WwatG1k6LOuAlGACD9gY',
     authDomain: 'classroom-rds.firebaseapp.com',

@@ -9,7 +9,7 @@ import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 
 import * as pluginAnnotations from 'chartjs-plugin-annotation';
 
-import { Score } from '../../models/score.model';
+import { Score } from '../../models/grade.model';
 
 @Component({
   selector: 'app-grades-bar-chart',
@@ -19,6 +19,9 @@ import { Score } from '../../models/score.model';
 })
 export class GradesBarChartComponent implements OnInit {
   @Input() data: Score[];
+  copyData: Score[];
+  extraData: Score[];
+  avgData: Score;
   raisedElev: number = 10;
   barChartType: ChartType = 'bar';
   barChartLegend = true;
@@ -39,11 +42,14 @@ export class GradesBarChartComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    const nameArray: string[] = this.data.map(score => score.courseName);
-    const data1: number[] = this.data.map(score => +score.unidad1);
-    const data2: number[] = this.data.map(score => +score.unidad2);
-    const data3: number[] = this.data.map(score => +score.unidad3);
-    const final: number[] = this.data.map(score => +score.final);
+    this.copyData = [...this.data];
+    this.avgData = this.copyData.splice(-1, 1).pop();
+    this.extraData = this.copyData.splice(-2, 2);
+    const nameArray: string[] = this.copyData.map(score => score.courseName);
+    const data1: number[] = this.copyData.map(score => +score.unit1);
+    const data2: number[] = this.copyData.map(score => +score.unit2);
+    const data3: number[] = this.copyData.map(score => +score.unit3);
+    const final: number[] = this.copyData.map(score => +score.final);
     this.barChartLabels = nameArray;
     this.barChartData = [
       { data: data1, label: 'Unidad 1' },

@@ -52,7 +52,7 @@ export const authReducer = createReducer<AuthenticationState>(
       error: action.error
     };
   }),
-  on(fromAuthActions.signOut, (state) => {
+  on(fromAuthActions.signOutCompleted, (state) => {
     return {
       ...state,
       user: null,
@@ -70,7 +70,13 @@ export const authReducer = createReducer<AuthenticationState>(
       ...state,
       isTeacher: action.isTeacher
     };
-  })
+  }),
+  on(fromAuthActions.fullfillUserSuccess, (state, action) => {
+    return {
+      ...state,
+      user: action.user,
+    };
+  }),
 );
 
 

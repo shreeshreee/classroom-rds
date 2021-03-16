@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_compiler';
 
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
 import * as fromAppActions from '@rds-store/app/actions/app.actions';
 
 import { of, Observable, defer, from } from 'rxjs';
-import { switchMap, map, catchError, take, findIndex } from 'rxjs/operators';
+import { switchMap, map, catchError, take } from 'rxjs/operators';
 
 import * as fromAuthActions from '../auth.actions';
 import { AuthFireService } from '../../services';
@@ -20,21 +21,25 @@ export class AuthEffects {
         ofType(fromAuthActions.signIn),
         switchMap(() => this.authService.handleSignInClick()
           .pipe(
+            take(1),
             map((res) => {
               return {
                 id: res.user.providerData[0].uid,
-                name: {
-                  fullName: res.user.displayName,
-                },
                 primaryEmail: res.user.email,
                 photoUrl: res.user.photoURL,
+                displayName: res.user.displayName,
                 isNew: res.additionalUserInfo.isNewUser,
                 isVerified: res.user.emailVerified,
                 creationTime: res.user.metadata.creationTime,
                 lastLoginTime: res.user.metadata.lastSignInTime,
                 uid: res.user.uid
-              };
+              }
             }),
+            /* switchMap((user: User) => {
+              return [
+                fromAuthActions.fullfillUser({ id: user.id })
+              ]
+            }), */
             switchMap((user: User) => {
               if (user.isNew) {
                 return [
@@ -75,7 +80,13 @@ export class AuthEffects {
         switchMap((action) =>
           from(this.authService.signOut(action.user.id))
             .pipe(
-              map(() => fromAuthActions.signOutCompleted()),
+              switchMap((res) => {
+                return [
+                  fromAuthActions.updateOnlineStatus({ id: action.user.id, isOnline: false }),
+                  fromAuthActions.signOutCompleted()
+                ];
+              })
+              ,
               catchError((err) => of(fromAuthActions.authError({ error: err })))
             )
         )
@@ -87,20 +98,19 @@ export class AuthEffects {
     () =>
       this.actions$.pipe(
         ofType(fromAuthActions.getUser),
-        switchMap(() => this.authFireService.user$
+        switchMap(() => this.authFireService.getAuthState()
           .pipe(
             take(1),
             map((authData: any) => {
               if (authData) {
-                //console.log(authData)
                 const user = {
                   id: authData.user.providerData[0].uid,
-                  name: { fullName: authData.user.displayName },
+                  name: authData.user.displayName,
                   primaryEmail: authData.user.email,
-                  photoUrl: authData.user.providerData[0].photoURL,
+                  photoUrl: authData.photoURL,
                   isTeacher: authData.isTeacher,
                   isAdmin: authData.isAdmin,
-                  isNew: authData.additionalUserInfo.isNewUser,
+                  isNew: authData.isNewUser,
                   isVerified: authData.user.emailVerified,
                   creationTime: authData.user.metadata.creationTime,
                   lastLogin: authData.user.metadata.lastSignInTime,

@@ -1,0 +1,539 @@
+{
+  "rootPath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/",
+  "data": [
+    {
+      "name": "[Auth Component] Add user admin privileges",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 133,
+      "end": 216,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "id",
+                  "type": "string"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "addAdminPrivileges"
+    },
+    {
+      "name": "[Auth Component] Check user admin error",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 244,
+      "end": 324,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "error",
+                  "type": "any"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "adminError"
+    },
+    {
+      "name": "[Auth Component] Authorization error",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 351,
+      "end": 428,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "error",
+                  "type": "any"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "authError"
+    },
+    {
+      "name": "[Auth Effect] Check admin role",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 460,
+      "end": 531,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "id",
+                  "type": "string"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "checkAdminRole"
+    },
+    {
+      "name": "[Auth Effect] Check current user",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 558,
+      "end": 607,
+      "kind": 1002,
+      "kindText": "Action",
+      "variable": "checkUser"
+    },
+    {
+      "name": "[Auth Effect] Get current user",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 632,
+      "end": 678,
+      "kind": 1002,
+      "kindText": "Action",
+      "variable": "getUser"
+    },
+    {
+      "name": "[Auth Component] Remove user admin privileges",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 717,
+      "end": 803,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "id",
+                  "type": "string"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "removeAdminPrivileges"
+    },
+    {
+      "name": "[Auth Effect] Save user to firestore",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 829,
+      "end": 906,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "user",
+                  "type": "User"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "saveUser"
+    },
+    {
+      "name": "[Auth Effect] Google`s sign-in request",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 930,
+      "end": 985,
+      "kind": 1002,
+      "kindText": "Action",
+      "variable": "signIn"
+    },
+    {
+      "name": "[Auth Effect] Google`s sign-in Fail",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 1016,
+      "end": 1092,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "error",
+                  "type": "any"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "signInFailure"
+    },
+    {
+      "name": "[Auth Effect] Google`s sign-in Success",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 1123,
+      "end": 1202,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "user",
+                  "type": "User"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "signInSuccess"
+    },
+    {
+      "name": "[Auth Effect] Google`s sign-out request",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 1227,
+      "end": 1307,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "user",
+                  "type": "User"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "signOut"
+    },
+    {
+      "name": "[Auth Effect] Google`s sign-out completed",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 1341,
+      "end": 1398,
+      "kind": 1002,
+      "kindText": "Action",
+      "variable": "signOutCompleted"
+    },
+    {
+      "name": "[Auth Component] Update admin role",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 1431,
+      "end": 1512,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "isAdmin",
+                  "type": "boolean"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "updateAdminRole"
+    },
+    {
+      "name": "[Auth Component] Update user online status",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 1548,
+      "end": 1650,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "id",
+                  "type": "string"
+                },
+                {
+                  "name": "isOnline",
+                  "type": "boolean"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "updateOnlineStatus"
+    },
+    {
+      "name": "[Auth Component] Update profile",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 1681,
+      "end": 1757,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "userData",
+                  "type": "User"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "updateProfile"
+    },
+    {
+      "name": "[Auth Component] Update profile success",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 1795,
+      "end": 1875,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "user",
+                  "type": "User"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "updateProfileSuccess"
+    },
+    {
+      "name": "[Auth Effect] Check teacher role",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 1909,
+      "end": 1982,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "id",
+                  "type": "string"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "checkTeacherRole"
+    },
+    {
+      "name": "[Auth Effect] Update teacher role",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.actions.ts",
+      "pos": 2018,
+      "end": 2100,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "isTeacher",
+                  "type": "boolean"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "updateTeachersRole"
+    },
+    {
+      "name": "[App] Load App",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/actions/app.actions.ts",
+      "pos": 128,
+      "end": 162,
+      "kind": 1002,
+      "kindText": "Action",
+      "variable": "loadApp"
+    },
+    {
+      "name": "[App] Load App Success",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/actions/app.actions.ts",
+      "pos": 195,
+      "end": 238,
+      "kind": 1002,
+      "kindText": "Action",
+      "variable": "loadAppSuccess"
+    },
+    {
+      "name": "[App] Load App Fail",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/actions/app.actions.ts",
+      "pos": 268,
+      "end": 334,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "error",
+                  "type": "any"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "loadAppFail"
+    },
+    {
+      "name": "[App] Store in local User",
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/store/app/actions/app.actions.ts",
+      "pos": 367,
+      "end": 439,
+      "kind": 1002,
+      "kindText": "Action",
+      "createActionArgs": [
+        {
+          "name": "props",
+          "typeArguments": [
+            {
+              "kind": 173,
+              "kindText": "TypeLiteral",
+              "properties": [
+                {
+                  "name": "user",
+                  "type": "User"
+                }
+              ]
+            }
+          ],
+          "kind": 196,
+          "kindText": "CallExpression"
+        }
+      ],
+      "variable": "localStoreUser"
+    }
+  ]
+}

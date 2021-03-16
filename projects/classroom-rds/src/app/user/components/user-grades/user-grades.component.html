@@ -1,13 +1,18 @@
-<div *ngIf="!(scores|async)" style="min-height: 300px;" fxLayout="column" fxLayoutAlign="center center">
+<div *ngIf="(loading$|async)" style="min-height: 300px;" fxLayout="column" fxLayoutAlign="center center">
   <mat-spinner strokeWidth="3" [diameter]="50">
   </mat-spinner>
   <span>Buscando ...</span><br>
 </div>
-<mat-card *ngIf="(scores|async) as scores">
+
+<mat-card *ngIf="!(loading$|async) && user$|async as user">
   <mat-card-content class="card border-primary m-n2 bg-transparent">
-    <h1 class="mat-h1 card-header text-light">Calificaciones &nbsp;
-      <small class="font-weight-light">Ciclo escolar 2020-21</small>
-    </h1>
+    <div class="card-header text-light" fxLayout="row wrap" fxLayoutAlign="space-between top">
+      <div>
+        <h1>Calificaciones&nbsp;&nbsp;<small class="font-weight-light">Ciclo escolar 2020-21</small>
+        </h1>
+      </div>
+      <div>{{today|date:'medium'}}</div>
+    </div>
     <div class="float-right">
       <button mat-button (click)="printPage()">
         <fa-icon class="rds-icon" [icon]="faPrint" size="lg"></fa-icon>&nbsp;Imprimir
@@ -17,13 +22,25 @@
       </button>
     </div>
     <div class="card-body">
-      <p class="card-text">Fecha y hora de consulta: {{today|date:'medium'}}</p>
-      <p class="card-text">Selecciona una materia para conocer sus observaciones:</p>
-      <app-grades-table [data]="scores"></app-grades-table>
+
+      <app-grades-table *ngIf="user.level!='Preescolar'" [data]="user.currentGrades"></app-grades-table>
+      <app-grades-list *ngIf="user.level=='Preescolar'" [data]="user.currentGrades"></app-grades-list>
     </div>
-    <div class="card-footer">
+    <div *ngIf="user.level!='Preescolar'" class="card-footer">
+      <h3 class="text-center">Recomendaciones</h3>
+      <app-grade-recomendation [data]="user.currentGrades.notes">
+      </app-grade-recomendation>
       <h3 class="text-center">Estadísticas</h3>
-      <app-grades-bar-chart *ngIf="scores" [data]="scores"></app-grades-bar-chart>
+      <app-grades-bar-chart [data]="user.currentGrades.scores"></app-grades-bar-chart>
     </div>
   </mat-card-content>
 </mat-card>
+<div *ngIf="(isTeacher$|async)">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <span class="text-warning"> Por el momento, las calificaciones son de acceso a los alumnos.</span>
+      </mat-card-title>
+    </mat-card-header>
+  </mat-card>
+</div>

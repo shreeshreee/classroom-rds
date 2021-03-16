@@ -1,23 +1,35 @@
-<!-- <div *ngIf="isLoading$|async" class="w-100">
-  <mat-progress-bar mode="query" color="primary"> </mat-progress-bar>
-</div> -->
-<div class="p-4" *ngIf="(user$|async) as user">
-  <div fxLayout="column" fxLayoutAlign="space-between start">
-    <p class="display-4 display-4-responsive"> Bienvenido </p>
-    <p class="h4 h4-responsive"> {{user.name}}</p>
-    <p class="h5 h5-responsive">Panel de acceso a servicios de información para estudiantes y profesores.
-    </p>
-  </div>
+<div class="p-2">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <img class="img-google-logo"
+          src="https://lh3.googleusercontent.com/sYGCKFdty43En6yLGeV94mfNGHXfVj-bQYitHRndarB7tHmQq_kyVxhlPejeCBVEEYUbnKG2_jUzgNXoPoer6XJm71V3uz2Z6q0CmNw=w0" />
+      </mat-card-title>
+      <mat-card-subtitle>Administra Google Classroom y Google Admin Directory.</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+</div>
+<div class="py-2">
   <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="10px" fxLayoutAlign="flex-start">
-    <mat-card *ngFor="let item of cards" class="mb-2 dashboard-cards mat-elevation-z5" fxFlex="0 1 calc(33.3% - 10px)"
-      fxFlex.lt-md="0 1 calc(50% - 10px)" fxFlex.lt-sm="100%" [routerLink]="[item.route]">
+    <mat-card class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-lg="0 1 calc(50% - 10px)"
+      fxFlex.lt-sm="100%" [routerLink]="['clases']" appMaterialElevation [raisedElevation]="raisedElev">
       <mat-card-header>
-        <mat-card-title>
-          {{ item.title }}
-        </mat-card-title>
-        <mat-card-subtitle>{{ item.description }}</mat-card-subtitle>
+        <img mat-card-avatar src="https://i.pinimg.com/originals/98/d3/a2/98d3a283f98cded8e639957e935bd373.png" />
+        <mat-card-title>Google Classroom</mat-card-title>
+        <mat-card-subtitle>
+          <p><small>Administrador de recursos.</small></p>
+        </mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image [src]="item.imgUrl" />
+    </mat-card>
+    <mat-card class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-lg="0 1 calc(50% - 10px)"
+      fxFlex.lt-sm="100%" [routerLink]="['/admin']" appMaterialElevation [raisedElevation]="raisedElev">
+      <mat-card-header>
+        <img mat-card-avatar src="https://mytcpip.com/wp-content/uploads/2019/06/nexusae0_icon2.png" />
+        <mat-card-title>Google Admin</mat-card-title>
+        <mat-card-subtitle>
+          <p><small>Administración de dominio.</small></p>
+        </mat-card-subtitle>
+      </mat-card-header>
     </mat-card>
   </div>
 </div>

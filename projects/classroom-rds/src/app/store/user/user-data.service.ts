@@ -8,6 +8,7 @@ import { from, Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 
 import * as fromUser from './';
+import { UserAuth } from '~/app/auth/models/user-auth.model';
 import { User } from '~/app/auth/models/user.model';
 import { SchoolService } from '~/app/school/services/school.service';
 @Injectable()
@@ -33,7 +34,7 @@ export class UserDataService extends DefaultDataService<User> {
   getById(id: string): Observable<User> {
     return this.schoolService.getUser(id);
   }
-  update(update: Update<User>) {
+  update(update: Update<User>): Observable<User> {
     return from(this.schoolService.updateUser(update.id.toString(), update.changes))
   }
 }

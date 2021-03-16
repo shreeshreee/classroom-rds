@@ -10,6 +10,8 @@ import { User } from '@rds-auth/models/user.model';
 
 import { Observable } from 'rxjs';
 
+import { UserAuth } from '~/app/auth/models/user-auth.model';
+
 @Component({
   selector: 'app-user-home',
   templateUrl: './user-home.component.html',

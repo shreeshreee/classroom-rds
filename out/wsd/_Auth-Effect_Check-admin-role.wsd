@@ -1,0 +1,40 @@
+@startuml [Auth Effect] Check admin role
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+interface "[Auth Effect] Check admin role" << (A,#FF7700) action >> {
+            variable: checkAdminRole
+            src: auth.actions
+            --
+            props<{id: string}>
+
+        }
+
+        
+interface "auth.effects:: AuthEffects D" << (D,orchid) dispatch >> {
+            name: checkAdminRole
+            action: [Auth Effect] Check admin role
+            ..
+            Class: AuthEffects
+Property: signInSuccess$
+            __
+        }
+        "[Auth Effect] Check admin role" -down-> "auth.effects:: AuthEffects D"
+
+interface "fire.effects:: FireEffects L" << (L,orchid) listen >> {
+            name: checkAdminRole
+            action: [Auth Effect] Check admin role
+            ..
+            Class: FireEffects
+Property: checkAdminRole$
+            __
+        }
+        "[Auth Effect] Check admin role" <.down. "fire.effects:: FireEffects L"
+ 
+
+@enduml

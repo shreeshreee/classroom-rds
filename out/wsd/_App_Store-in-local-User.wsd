@@ -1,0 +1,40 @@
+@startuml [App] Store in local User
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+interface "[App] Store in local User" << (A,#FF7700) action >> {
+            variable: localStoreUser
+            src: app.actions
+            --
+            props<{user: User}>
+
+        }
+
+        
+interface "auth.effects:: AuthEffects D" << (D,orchid) dispatch >> {
+            name: localStoreUser
+            action: [App] Store in local User
+            ..
+            Class: AuthEffects
+Property: signInSuccess$
+            __
+        }
+        "[App] Store in local User" -down-> "auth.effects:: AuthEffects D"
+
+interface "app.effects:: AppEffects L" << (L,orchid) listen >> {
+            name: localStoreUser
+            action: [App] Store in local User
+            ..
+            Class: AppEffects
+Property: localStoreUser$
+            __
+        }
+        "[App] Store in local User" <.down. "app.effects:: AppEffects L"
+ 
+
+@enduml

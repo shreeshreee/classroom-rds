@@ -12,11 +12,15 @@ import { concatMap, map, take } from 'rxjs/operators';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
+import { UserAuth } from '~/app/auth/models/user-auth.model';
+import { UserStudent } from '~/app/auth/models/user-student.model';
 import { User } from '~/app/auth/models/user.model';
-import { Score } from '~/app/user/models/score.model';
+import { Grade, Score } from '~/app/user/models/grade.model';
 @Injectable()
 export class SchoolService {
   user$: Observable<firebase.User>;
+  private userCollection: string = 'testuser';
+  private currentScore: string = 'currentGrades';
   private usersDb: AngularFireList<User>;
   constructor(
     public afAuth: AngularFireAuth,
@@ -25,15 +29,15 @@ export class SchoolService {
     this.user$ = this.getAuthState().pipe(
       concatMap((user) => {
         if (user) {
-          return this.afDatabase.object<User[]>(`appusers/${user.providerData[0].uid}`).valueChanges();
+          return this.afDatabase.object<User[]>(`${this.userCollection}/${user.providerData[0].uid}`).valueChanges();
         } else {
           return of(null);
         }
       })
     );
-    this.usersDb = this.afDatabase.list<User>('appusers', (ref) =>
+    /* this.usersDb = this.afDatabase.list<User>(`${this.userCollection}`, (ref) =>
       ref.orderByChild('name/fullName')
-    );
+    ); */
   }
 
   getAuthState(): Observable<firebase.User> {
@@ -58,14 +62,15 @@ export class SchoolService {
     )).toPromise();
   }
   getUser(id: string): Observable<User> {
-    return this.afDatabase.object<User>(`appusers/${id}`).valueChanges();
+    return this.afDatabase.object<User>(`${this.userCollection}/${id}`).valueChanges();
   }
-  getScores(id: string): Observable<Score[]> {
-    return this.afDatabase.object<Score[]>(`scores/${id}`).valueChanges();
+  getCurrentScore(id: string): Observable<Grade> {
+    return this.afDatabase.object<Grade>(`${this.userCollection}/${id}/${this.currentScore}`).valueChanges();
   }
   async updateUser(id: string, user: Partial<User>): Promise<User> {
-    await this.afDatabase.object<User>(`appusers/${id}`).update(user).then(() => this.getUser(id));
-    return
+    return await this.afDatabase.object<User>(`${this.userCollection}/${id}`)
+      .update(user)
+      .then()
   }
 }
 

@@ -1,0 +1,59 @@
+@startuml [Auth Component] Update profile success
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+interface "[Auth Component] Update profile success" << (A,#FF7700) action >> {
+            variable: updateProfileSuccess
+            src: auth.actions
+            --
+            props<{user: User}>
+
+        }
+
+        
+interface "auth.reducer:: authReducer L" << (L,orchid) listen >> {
+            name: updateProfileSuccess
+            action: [Auth Component] Update profile success
+            ..
+            Variable: authReducer
+            __
+        }
+        "[Auth Component] Update profile success" <.down. "auth.reducer:: authReducer L"
+
+interface "route.effects:: RouteEffects L" << (L,orchid) listen >> {
+            name: updateProfileSuccess
+            action: [Auth Component] Update profile success
+            ..
+            Class: RouteEffects
+Property: goprofile$
+            __
+        }
+        "[Auth Component] Update profile success" <.down. "route.effects:: RouteEffects L"
+
+interface "spinner.effects:: SpinnerEffects L" << (L,orchid) listen >> {
+            name: updateProfileSuccess
+            action: [Auth Component] Update profile success
+            ..
+            Class: SpinnerEffects
+Property: spinneroff$
+            __
+        }
+        "[Auth Component] Update profile success" <.down. "spinner.effects:: SpinnerEffects L"
+
+interface "snack.effects:: SnackEffects L" << (L,orchid) listen >> {
+            name: updateProfileSuccess
+            action: [Auth Component] Update profile success
+            ..
+            Class: SnackEffects
+Property: updatedUser$
+            __
+        }
+        "[Auth Component] Update profile success" <.down. "snack.effects:: SnackEffects L"
+ 
+
+@enduml

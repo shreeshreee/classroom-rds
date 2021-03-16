@@ -5,10 +5,11 @@ import { QueryParams } from '@ngrx/data';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { SchoolLevel, UserDomain } from '../../models/users-domain.model';
+import { UserDomain } from '../../models/users-domain.model';
 import { UserDomainEntityService } from '../../state/user-domain/user-domain-entity.service';
 
-import { CourseLevel } from '~/app/classroom/models/classroom.enum';
+import { CourseLevel, SchoolLevel } from '~/app/auth/models/user.enum';
+
 
 @Component({
   selector: 'app-school-home',

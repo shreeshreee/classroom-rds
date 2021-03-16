@@ -1,0 +1,49 @@
+@startuml [Auth Effect] Google`s sign-in Fail
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+interface "[Auth Effect] Google`s sign-in Fail" << (A,#FF7700) action >> {
+            variable: signInFailure
+            src: auth.actions
+            --
+            props<{error: any}>
+
+        }
+
+        
+interface "auth.reducer:: authReducer L" << (L,orchid) listen >> {
+            name: signInFailure
+            action: [Auth Effect] Google`s sign-in Fail
+            ..
+            Variable: authReducer
+            __
+        }
+        "[Auth Effect] Google`s sign-in Fail" <.down. "auth.reducer:: authReducer L"
+
+interface "auth.effects:: AuthEffects D" << (D,orchid) dispatch >> {
+            name: signInFailure
+            action: [Auth Effect] Google`s sign-in Fail
+            ..
+            Class: AuthEffects
+Property: getUser$
+            __
+        }
+        "[Auth Effect] Google`s sign-in Fail" -down-> "auth.effects:: AuthEffects D"
+
+interface "spinner.effects:: SpinnerEffects L" << (L,orchid) listen >> {
+            name: signInFailure
+            action: [Auth Effect] Google`s sign-in Fail
+            ..
+            Class: SpinnerEffects
+Property: spinneroff$
+            __
+        }
+        "[Auth Effect] Google`s sign-in Fail" <.down. "spinner.effects:: SpinnerEffects L"
+ 
+
+@enduml

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { environment } from '@rds-env/environment';
 
-import { from, Observable, Subject, Subscription } from 'rxjs';
+import { from, Observable, of, Subject, Subscription } from 'rxjs';
 
 import firebase from 'firebase/app';
 import 'firebase/auth';
@@ -37,7 +37,6 @@ export class AuthService {
   constructor(
     private authFireService: AuthFireService,
   ) {
-
   }
 
   handleClientLoad() {
@@ -74,8 +73,8 @@ export class AuthService {
           )
         );
         // Handle initial sign-in state. (Determine if user is already signed in.)
-        const user = gapi.auth2.getAuthInstance().currentUser.get();
-        this.setSigninStatus(user);
+        this._googleUser = gapi.auth2.getAuthInstance().currentUser.get();
+        this.setSigninStatus(this._googleUser);
       },
       () => {
         //this.isClientLoaded = false;
@@ -98,12 +97,12 @@ export class AuthService {
     return this.authFireService.signInWithCredential(credential);
   }
 
-  async signOut(uid: string) {
-    this.authFireService.signOut(uid);
-    return gapi.auth2.getAuthInstance().signOut();
+  async signOut(id: string) {
+    const auth2 = gapi.auth2.getAuthInstance();
+    return await auth2.signOut();
   }
 
-  setSigninStatus(user) {
+  setSigninStatus(user: gapi.auth2.GoogleUser) {
     const isAuthorized = this.updateSigninStatus(user);
     if (isAuthorized) {
       //  alert('You are currently signed in and have granted access to this app.');
@@ -116,7 +115,7 @@ export class AuthService {
 
 
 
-  updateSigninStatus(user) {
+  updateSigninStatus(user: gapi.auth2.GoogleUser) {
     return user.hasGrantedScopes(environment.gapiClientConfig.scope);
   }
 

@@ -1,24 +1,18 @@
 <div class="py-2">
-  <div fxlayout="row wrap" fxLayoutAlign="right center">
-    <form fxFlex="30%" [formGroup]="searchForm" (ngSubmit)="onSearch()">
-      <mat-form-field appearance="outline">
-        <mat-label>Grupo</mat-label>
-        <mat-select formControlName="grade" placeholder="Selecciona un grupo">
-          <mat-option *ngFor="let skey of slevelKeys" [value]="slevels[skey]">
-            {{slevels[skey]}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </form>
-    <div fxFlex>
-      <h3>Selecciona un grupo para ver la lista de alumnos</h3>
-    </div>
-  </div>
-
-
+  <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+    <mat-form-field class="d-block" appearance="outline">
+      <mat-label>Selecciona un grupo</mat-label>
+      <mat-select formControlName="grade">
+        <mat-option *ngFor="let skey of slevelKeys" [value]="slevels[skey]">
+          {{slevels[skey]}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
   <div>
     <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="5px" fxLayoutAlign="space-arround top">
-      <mat-card *ngIf="(loaded$|async) && users$|async as users" class="students-list" fxFlex fxFlex.lt-sm="100%">
+      <mat-card *ngIf="(loaded$|async) && users$|async as users" class="students-list" fxFlex="0 1 calc(30% - 5px)"
+        fxFlex.lt-sm="100%">
         <div class="card m-n3 bg-transparent ">
           <mat-list class="list-group" *ngIf="users.length==0" dense>
             <mat-list-item> No hay cursos para mostrar </mat-list-item>
@@ -27,13 +21,13 @@
             <mat-list-item class="list-group-item d-flex justify-content-between align-items-center"
               *ngFor="let user of users" (click)="sendUser(user);activeClass=user.id"
               [ngClass]="{'active': user.id==activeClass, 'bg-transparent': user.id!=activeClass}">
-              <img matListIcon src="{{user.photoUrl}}">
-              <h6 matLine>{{user.name.fullName}}</h6>
+              <img matListAvatar src="{{user.photoUrl}}">
+              <h4 matLine>{{user.name.fullName}}</h4>
             </mat-list-item>
           </mat-list>
         </div>
       </mat-card>
-      <div *ngIf="userSub" fxFlex fxFlex.lt-sm="100%">
+      <div *ngIf="userSub" fxFlex="0 1 calc(68% - 5px)" fxFlex.lt-md="100%">
         <app-school-form [user]="userSub" (updatedUser)="editUser($event)"></app-school-form>
       </div>
     </div>

@@ -16,7 +16,20 @@
 mat-card {
   min-width: 350px;
 }
+mat-card-header {
+  font-family: Comfortaa;
+  font-weight: bold;
 
+  .img-google-logo {
+    margin-top: -5px;
+    height: 35px;
+    width: auto;
+  }
+  .text-google-logo {
+    color: gray;
+    font-size: 1.4em;
+  }
+}
 
 .flex-row {
   > div {

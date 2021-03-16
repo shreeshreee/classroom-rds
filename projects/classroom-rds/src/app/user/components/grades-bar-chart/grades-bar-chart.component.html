@@ -2,10 +2,10 @@
   <mat-expansion-panel-header>
     Comparativo por materia
   </mat-expansion-panel-header>
-  <div *ngIf="data.length>0">
+  <div *ngIf="copyData.length>0">
     <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
       [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
     </canvas>
-    {{data.courseName}}
+    {{copyData.courseName}}
   </div>
 </mat-expansion-panel>

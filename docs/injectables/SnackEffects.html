@@ -329,7 +329,7 @@
         tap((action) &#x3D;&gt;
           this.snackService.messageWithComponent(action.user, {
             vPos: &#x27;bottom&#x27;, hPos: &#x27;center&#x27;, setAutoHide: true,
-            hide: 5000, action: true, actionString: &#x27;Ok&#x27;, extra: false, message: &#x27;Has ingresado como: &#x27; + action.user.name
+            hide: 5000, action: true, actionString: &#x27;Ok&#x27;, extra: false, message: &#x27;Has ingresado como: &#x27; + action.user.name.fullName
           })
         )
       ),
@@ -391,7 +391,7 @@ export class SnackEffects {
         tap((action) &#x3D;&gt;
           this.snackService.messageWithComponent(action.user, {
             vPos: &#x27;bottom&#x27;, hPos: &#x27;center&#x27;, setAutoHide: true,
-            hide: 5000, action: true, actionString: &#x27;Ok&#x27;, extra: false, message: &#x27;Has ingresado como: &#x27; + action.user.name
+            hide: 5000, action: true, actionString: &#x27;Ok&#x27;, extra: false, message: &#x27;Has ingresado como: &#x27; + action.user.name.fullName
           })
         )
       ),

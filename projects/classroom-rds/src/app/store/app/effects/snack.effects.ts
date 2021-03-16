@@ -37,7 +37,7 @@ export class SnackEffects {
         tap((action) =>
           this.snackService.messageWithComponent(action.user, {
             vPos: 'bottom', hPos: 'center', setAutoHide: true,
-            hide: 5000, action: true, actionString: 'Ok', extra: false, message: 'Has ingresado como: ' + action.user.name.fullName
+            hide: 5000, action: true, actionString: 'Ok', extra: false, message: 'Has ingresado como: ' + action.user.displayName
           })
         )
       ),
@@ -68,14 +68,14 @@ export class SnackEffects {
     { dispatch: false }
   );
 
-  /*  youAreLoggedOut$ = createEffect(
-     () =>
-       this.actions$.pipe(
-         ofType(fromAuthActions.signOut),
-         tap(() => this.snackService.justMessage('Finazlizando sesión'))
-       ),
-     { dispatch: false }
-   ); */
+  youAreLoggedOut$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(fromAuthActions.signOut),
+        tap(() => this.snackService.justMessage('Finazlizando sesión'))
+      ),
+    { dispatch: false }
+  );
 
   comeBackSoon$ = createEffect(
     () =>

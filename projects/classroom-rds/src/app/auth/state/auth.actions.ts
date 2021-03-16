@@ -3,6 +3,8 @@ import { createAction, props } from '@ngrx/store';
 import { User } from '../models/user.model';
 
 
+export const fullfillUserSuccess = createAction('[Auth Effect] Succesfuly merge auth user with data', props<{ user: User }>());
+export const fullfillUser = createAction('[Auth Effect] Merge auth user with data', props<{ id: string }>());
 export const addAdminPrivileges = createAction('[Auth Component] Add user admin privileges', props<{ id: string }>());
 export const adminError = createAction('[Auth Component] Check user admin error', props<{ error: any }>());
 export const authError = createAction('[Auth Component] Authorization error', props<{ error: any }>());

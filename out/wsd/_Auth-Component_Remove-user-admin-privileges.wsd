@@ -1,0 +1,20 @@
+@startuml [Auth Component] Remove user admin privileges
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+interface "[Auth Component] Remove user admin privileges" << (A,#FF7700) action >> {
+            variable: removeAdminPrivileges
+            src: auth.actions
+            --
+            props<{id: string}>
+
+        }
+
+         
+
+@enduml

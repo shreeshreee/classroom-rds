@@ -1,0 +1,59 @@
+@startuml [Auth Effect] Google`s sign-out completed
+
+set namespaceSeparator ::
+skinparam class {
+    BackgroundColor<<listen>> HoneyDew
+    BackgroundColor<<action>> Wheat
+    BackgroundColor<<dispatch>> Technology
+}
+
+interface "[Auth Effect] Google`s sign-out completed" << (A,#FF7700) action >> {
+            variable: signOutCompleted
+            src: auth.actions
+            --
+            
+        }
+
+        
+interface "auth.effects:: AuthEffects D" << (D,orchid) dispatch >> {
+            name: signOutCompleted
+            action: [Auth Effect] Google`s sign-out completed
+            ..
+            Class: AuthEffects
+Property: signOut$
+            __
+        }
+        "[Auth Effect] Google`s sign-out completed" -down-> "auth.effects:: AuthEffects D"
+
+interface "route.effects:: RouteEffects L" << (L,orchid) listen >> {
+            name: signOutCompleted
+            action: [Auth Effect] Google`s sign-out completed
+            ..
+            Class: RouteEffects
+Property: gohome$
+            __
+        }
+        "[Auth Effect] Google`s sign-out completed" <.down. "route.effects:: RouteEffects L"
+
+interface "app.effects:: AppEffects L" << (L,orchid) listen >> {
+            name: signOutCompleted
+            action: [Auth Effect] Google`s sign-out completed
+            ..
+            Class: AppEffects
+Property: removeUser$
+            __
+        }
+        "[Auth Effect] Google`s sign-out completed" <.down. "app.effects:: AppEffects L"
+
+interface "snack.effects:: SnackEffects L" << (L,orchid) listen >> {
+            name: signOutCompleted
+            action: [Auth Effect] Google`s sign-out completed
+            ..
+            Class: SnackEffects
+Property: comeBackSoon$
+            __
+        }
+        "[Auth Effect] Google`s sign-out completed" <.down. "snack.effects:: SnackEffects L"
+ 
+
+@enduml

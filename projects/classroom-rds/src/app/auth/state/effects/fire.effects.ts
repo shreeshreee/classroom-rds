@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
-import { map, switchMap, tap } from 'rxjs/operators';
+import { map, switchMap, take, tap } from 'rxjs/operators';
 
 import * as fromAuthActions from '../auth.actions';
+import { User } from '../../models/user.model';
 import { AuthFireService } from '../../services/auth-fire.service';
 @Injectable()
 export class FireEffects {
@@ -19,6 +20,8 @@ export class FireEffects {
       ),
     { dispatch: false }
   );
+
+
 
   checkAdminRole$ = createEffect(
     () =>
@@ -45,7 +48,19 @@ export class FireEffects {
         )
       )
   );
-
+  fullfillUser$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(fromAuthActions.signInSuccess),
+        switchMap((action) =>
+          this.authFireService.getUserById(action.user.id)
+            .pipe(
+              take(1),
+              map((user: User) => fromAuthActions.fullfillUserSuccess({ user }))
+            )
+        )
+      )
+  );
 
   /*  updateProfile$ = createEffect(
      () =>

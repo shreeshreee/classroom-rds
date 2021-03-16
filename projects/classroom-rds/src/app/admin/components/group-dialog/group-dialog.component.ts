@@ -3,7 +3,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-import { CourseLevel } from '@rds-classroom/models/classroom.enum';
+import { CourseLevel } from '~/app/auth/models/user.enum';
+
 @Component({
   selector: 'app-group-dialog',
   templateUrl: './group-dialog.component.html',

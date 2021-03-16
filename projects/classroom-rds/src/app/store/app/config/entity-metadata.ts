@@ -105,6 +105,7 @@ export const entityMetadata: EntityMetadataMap = {
     selectId: (topics: gapi.client.classroom.Topic) => topics.topicId,
   },
   [fromUser.entityCollectionName]: {
+    //sortComparer: sortByName,
     entityDispatcherOptions: {
       optimisticAdd: true,
       optimisticUpdate: true,

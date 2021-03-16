@@ -18,11 +18,12 @@ import { UserEntityService } from './../store/user/user-entity.service';
 import { SchoolRoutingModule } from './school-routing.module';
 
 import { SchoolService } from './services/school.service';
-import { UserResolver } from './services/user.resolver';
+import { UsersResolver } from './services/users.resolver';
 import { SchoolDashboardComponent } from './components/school-dashboard/school-dashboard.component';
 import { SchoolFormComponent } from './components/school-form/school-form.component';
 import { SchoolStudentsComponent } from './container/school-students/school-students.component';
 import { SchoolComponent } from './container/school/school.component';
+import { SubjectsComponent } from './container/subjects/subjects.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { SchoolComponent } from './container/school/school.component';
     SchoolDashboardComponent,
     SchoolStudentsComponent,
     SchoolFormComponent,
+    SubjectsComponent,
   ],
   imports: [
     CommonModule,
@@ -44,7 +46,7 @@ import { SchoolComponent } from './container/school/school.component';
   ],
   providers: [
     SchoolService,
-    UserResolver,
+    UsersResolver,
     UserEntityService,
     UserDataService,
   ]

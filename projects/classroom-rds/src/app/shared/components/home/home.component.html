@@ -1,7 +1,9 @@
+<div [routerLink]="alert.link" *ngFor="let alert of alerts">
+  <alert [ngClass]="{'hidden':!alert.visible}" [type]="alert.type" [dismissible]="alert.dismissible">
+    <span [innerHtml]="alert.msg"></span>
+  </alert>
+</div>
 <app-wellcome *ngIf="!(isOnline$|async)"></app-wellcome>
-<alert *ngIf="(isOnline$|async) && (user$|async).isNew" [type]="alert.type" [dismissible]="alert.dismissible"
-  (onClosed)="onClosed(alert)">
-  <span [innerHtml]="alert.msg"></span>
-</alert>
-<app-dashboard *ngIf="(isOnline$|async)" [user]="user$|async" [isTeacher]="isTeacher$|async" [isAdmin]="isAdmin$|async">
+<app-dashboard *ngIf="(isOnline$|async) && (user$|async)" [user]="user$|async" [isTeacher]="isTeacher$|async"
+  [isAdmin]="isAdmin$|async">
 </app-dashboard>

@@ -1,11 +1,15 @@
 import { MatDialog } from '@angular/material/dialog';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { AfterViewInit, Component, OnInit, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 
+import { faComments } from '@fortawesome/free-regular-svg-icons';
+
 import { GradesBarChartComponent } from './../grades-bar-chart/grades-bar-chart.component';
-import { Score } from '../../models/score.model';
+import { Grade, Score } from '../../models/grade.model';
+
+import { ScoreDataSource } from './score-datasource';
 
 
 @Component({
@@ -14,22 +18,30 @@ import { Score } from '../../models/score.model';
   styleUrls: ['./grades-table.component.scss'],
   animations: [
     trigger('detailExpand', [
-      state('collapsed', style({ height: '0px', minHeight: '0', display: 'none' })),
-      state('expanded', style({ height: '*' })),
+      state('collapsed', style({ height: '0px', minHeight: '0', visibility: 'hidden' })),
+      state('expanded', style({ height: '*', visibility: 'visible' })),
       transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
     ]),
   ],
 })
 export class GradesTableComponent implements OnInit {
-  @Input() data: Score[];
+  @Input() data: Grade;
+  copyData: Score[];
   extraData: Score[];
-  final: any;
+  avgData: Score;
+  faComments = faComments;
   displayedColumns = ['courseName', 'unidad1', 'unidad2', 'unidad3', 'final'];
-  expandedElement: Score;
+  optative: ScoreDataSource;
+  formative: ScoreDataSource;
+  isExpansionDetailRow = (i: number, row: Object) => row.hasOwnProperty('detailRow');
+  expandedElement: any;
 
   ngOnInit() {
-    this.extraData = this.data.splice(this.data.length - 3, 2);
-    this.final = this.data.splice(this.data.length - 1, 1);
+    this.copyData = [...this.data.scores];
+    this.formative = new ScoreDataSource(this.copyData);
+    this.avgData = this.copyData.splice(-1, 1).pop();
+    this.extraData = this.copyData.splice(-2, 2);
+    this.optative = new ScoreDataSource(this.extraData)
   }
 
   getAverage() {
@@ -37,10 +49,10 @@ export class GradesTableComponent implements OnInit {
     let sum2: number = 0;
     let sum3: number = 0;
     let count = 0;
-    this.data.forEach(score => {
-      sum1 = + score.unidad1 + sum1;
-      sum2 = + score.unidad2 + sum2;
-      sum3 = + score.unidad3 + sum3;
+    this.copyData.forEach(score => {
+      sum1 = + score.unit1 + sum1;
+      sum2 = + score.unit2 + sum2;
+      sum3 = + score.unit3 + sum3;
       count++;
     });
     const avg1 = (Math.round(10 * (sum1 / count)) / 10).toString();

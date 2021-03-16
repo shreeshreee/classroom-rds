@@ -1,0 +1,38 @@
+{
+  "rootPath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/",
+  "data": [
+    {
+      "filePath": "/home/jcmelchorp/beaverNet/github/jcmelchorp/classroom-rds/projects/classroom-rds/src/app/auth/state/auth.reducer.ts",
+      "pos": 493,
+      "end": 1550,
+      "kind": 1004,
+      "kindText": "Reducer",
+      "state": {
+        "name": "AuthenticationState",
+        "properties": [
+          {
+            "name": "user",
+            "type": "User"
+          },
+          {
+            "name": "isAdmin",
+            "type": "boolean"
+          },
+          {
+            "name": "isLoggedIn",
+            "type": "boolean"
+          },
+          {
+            "name": "isTeacher",
+            "type": "boolean"
+          },
+          {
+            "name": "error",
+            "type": "any"
+          }
+        ]
+      },
+      "name": "authReducer"
+    }
+  ]
+}

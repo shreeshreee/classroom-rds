@@ -13,7 +13,9 @@ import {
   faUserTie
 } from '@fortawesome/free-solid-svg-icons';
 
-import { CourseLevel, CourseState } from '@rds-classroom/models/classroom.enum';
+import { CourseState } from '@rds-classroom/models/classroom.enum';
+
+import { CourseLevel } from '~/app/auth/models/user.enum';
 
 
 @Component({

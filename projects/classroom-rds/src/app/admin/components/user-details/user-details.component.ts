@@ -16,7 +16,8 @@ import { UserDomain } from '@rds-admin/models/users-domain.model';
 import { Observable, Subscription } from 'rxjs';
 import { map, concatMap } from 'rxjs/operators';
 
-import { PhonesType } from '../../../auth/models/user.model';
+import { PhoneType } from '~/app/auth/models/user-parent.model';
+
 
 @Component({
   selector: 'app-user-details',
@@ -66,7 +67,7 @@ export class UserDetailsComponent implements OnInit {
     { clave: 'Zac', nombre: 'Zacatecas' }
   ];
   phoneKeys;
-  phones: PhonesType;
+  phones: PhoneType;
   userSub: Subscription;
   constructor(
     private fb: FormBuilder,
