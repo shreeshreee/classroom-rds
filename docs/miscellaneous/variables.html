@@ -236,6 +236,12 @@
                             <a href="#flyOut" title="projects/classroom-rds/src/app/core/animations/fade-in.animation.ts"><b>flyOut</b>&nbsp;&nbsp;&nbsp;(projects/.../fade-in.animation.ts)</a>
                         </li>
                         <li>
+                            <a href="#fullfillUser" title="projects/classroom-rds/src/app/auth/state/auth.actions.ts"><b>fullfillUser</b>&nbsp;&nbsp;&nbsp;(projects/.../auth.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#fullfillUserSuccess" title="projects/classroom-rds/src/app/auth/state/auth.actions.ts"><b>fullfillUserSuccess</b>&nbsp;&nbsp;&nbsp;(projects/.../auth.actions.ts)</a>
+                        </li>
+                        <li>
                             <a href="#gapi" title="projects/classroom-rds/src/app/admin/services/admin-api.service.ts"><b>gapi</b>&nbsp;&nbsp;&nbsp;(projects/.../admin-api.service.ts)</a>
                         </li>
                         <li>
@@ -520,6 +526,48 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Valor por defecto : </i><code>createAction(&#x27;[Auth Effect] Check current user&#x27;,)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fullfillUser"></a>
+                        <span class="name">
+                            <b>
+                            fullfillUser</b>
+                            <a href="#fullfillUser"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>createAction(&#x27;[Auth Effect] Merge auth user with data&#x27;, props&lt;{ id: string }&gt;())</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fullfillUserSuccess"></a>
+                        <span class="name">
+                            <b>
+                            fullfillUserSuccess</b>
+                            <a href="#fullfillUserSuccess"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>createAction(&#x27;[Auth Effect] Succesfuly merge auth user with data&#x27;, props&lt;{ user: User }&gt;())</code>
                         </td>
                     </tr>
 
@@ -1122,7 +1170,7 @@
       error: action.error
     };
   }),
-  on(fromAuthActions.signOut, (state) &#x3D;&gt; {
+  on(fromAuthActions.signOutCompleted, (state) &#x3D;&gt; {
     return {
       ...state,
       user: null,
@@ -1140,7 +1188,13 @@
       ...state,
       isTeacher: action.isTeacher
     };
-  })
+  }),
+  on(fromAuthActions.fullfillUserSuccess, (state, action) &#x3D;&gt; {
+    return {
+      ...state,
+      user: action.user,
+    };
+  }),
 )</code>
                         </td>
                     </tr>
@@ -2628,6 +2682,7 @@
     selectId: (topics: gapi.client.classroom.Topic) &#x3D;&gt; topics.topicId,
   },
   [fromUser.entityCollectionName]: {
+    //sortComparer: sortByName,
     entityDispatcherOptions: {
       optimisticAdd: true,
       optimisticUpdate: true,
@@ -2706,10 +2761,6 @@
                         <td class="col-md-4">
                             <i>Valor por defecto : </i><code>{
   production: true,
-  characters: {
-    spreadsheetId: &#x27;1uq18UwoEeVS-PrrRyjXuBGx7y0D8anECSH-mX6gAduo&#x27;,
-    worksheetId: 1,
-  },
   firebaseConfig: {
     apiKey: &#x27;AIzaSyAlAPUXjpBlZY2WwatG1k6LOuAlGACD9gY&#x27;,
     authDomain: &#x27;classroom-rds.firebaseapp.com&#x27;,
@@ -2895,10 +2946,6 @@
                         <td class="col-md-4">
                             <i>Valor por defecto : </i><code>{
   production: false,
-  characters: {
-    spreadsheetId: &#x27;1uq18UwoEeVS-PrrRyjXuBGx7y0D8anECSH-mX6gAduo&#x27;,
-    worksheetId: 1,
-  },
   firebaseConfig: {
     apiKey: &#x27;AIzaSyAlAPUXjpBlZY2WwatG1k6LOuAlGACD9gY&#x27;,
     authDomain: &#x27;classroom-rds.firebaseapp.com&#x27;,
@@ -3748,7 +3795,7 @@
   UserCardComponent,
   WellcomeComponent,
   RemoveConfirmComponent,
-  GalletasComponent,
+  YoutubeComponent,
   CodeConductSchoolComponent,
   PreescolarComponent,
   PrimariaComponent,

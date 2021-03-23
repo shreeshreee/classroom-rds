@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, Inject, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
+import { faChartBar } from '@fortawesome/free-regular-svg-icons';
+
 import { ChartDataSets, ChartLegendOptions, ChartOptions, ChartType } from 'chart.js';
 
 import { Label, Color, BaseChartDirective } from 'ng2-charts';
@@ -23,9 +25,10 @@ export class GradesBarChartComponent implements OnInit {
   extraData: Score[];
   avgData: Score;
   raisedElev: number = 10;
+  faChartBar = faChartBar;
   barChartType: ChartType = 'bar';
   barChartLegend = true;
-  barChartPlugins = [/* pluginDataLabels */];
+  barChartPlugins = [pluginDataLabels];
   barChartData: ChartDataSets[];
   barChartLabels: Label[];
   barChartOptions: ChartOptions = {

@@ -16,6 +16,7 @@ import { Group, UserDomain } from '~/app/admin/models/users-domain.model';
 @Injectable()
 export class AdminFireService {
   user$: Observable<firebase.User>;
+  private userCollection: string = 'users';
   constructor(
     public afAuth: AngularFireAuth,
     private afDatabase: AngularFireDatabase,
@@ -25,7 +26,7 @@ export class AdminFireService {
     this.user$ = this.getAuthState().pipe(
       switchMap((user) => {
         if (user) {
-          return this.afDatabase.object<User>(`appusers/${user.providerData[0].uid}`).valueChanges();
+          return this.afDatabase.object<User>(`${this.userCollection}/${user.providerData[0].uid}`).valueChanges();
         } else {
           return of(null);
         }
@@ -37,23 +38,23 @@ export class AdminFireService {
   }
   addAdminPrivileges(id: string): Observable<void> {
     const adminsRef = this.afDatabase.object(`admins/${id}`);
-    this.afDatabase.object(`appusers/${id}`).update({ isAdmin: true });
+    this.afDatabase.object(`${this.userCollection}/${id}`).update({ isAdmin: true });
     return from(adminsRef.set(true));
   }
 
   removeAdminPrivileges(id: string): Observable<void> {
-    this.afDatabase.object(`appusers/${id}`).update({ isAdmin: false });
+    this.afDatabase.object(`${this.userCollection}/${id}`).update({ isAdmin: false });
     return from(this.afDatabase.object(`admins/${id}`).remove());
   }
 
   getUsers(): Observable<UserDomain[]> {
-    return this.afStore.collection<UserDomain>('appusers').valueChanges()
+    return this.afStore.collection<UserDomain>(`${this.userCollection}`).valueChanges()
   }
 
   async createUser(user: UserDomain) {
     const key = user.id;
     //return await this.afStore.collection('users').doc(key).set(user, { merge: true });
-    return await this.afDatabase.object<UserDomain>(`appusers/${key}`).update(user);
+    return await this.afDatabase.object<UserDomain>(`${this.userCollection}/${key}`).update(user);
   }
 
   async createGroup(group: Group) {

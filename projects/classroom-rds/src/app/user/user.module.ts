@@ -35,6 +35,7 @@ import { UserHomeComponent } from './components/user-home/user-home.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { UserMenuComponent } from './components/user-menu/user-menu.component';
 import { UserComponent } from './containers/user/user.component';
+import { WorkingOnGradesComponent } from './components/working-on-grades/working-on-grades.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { UserComponent } from './containers/user/user.component';
     UserInfoComponent,
     GradeRecomendationComponent,
     GradesListComponent,
+    WorkingOnGradesComponent,
   ],
   imports: [
     CommonModule,

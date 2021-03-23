@@ -26,12 +26,11 @@
       <app-grades-table *ngIf="user.level!='Preescolar'" [data]="user.currentGrades"></app-grades-table>
       <app-grades-list *ngIf="user.level=='Preescolar'" [data]="user.currentGrades"></app-grades-list>
     </div>
-    <div *ngIf="user.level!='Preescolar'" class="card-footer">
+    <div *ngIf="user.level!='Preescolar'" class="card-footer ">
       <h3 class="text-center">Recomendaciones</h3>
-      <app-grade-recomendation [data]="user.currentGrades.notes">
-      </app-grade-recomendation>
-      <h3 class="text-center">Estadísticas</h3>
-      <app-grades-bar-chart [data]="user.currentGrades.scores"></app-grades-bar-chart>
+      <app-grade-recomendation [data]="user.currentGrades.notes"></app-grade-recomendation>
+      <h3 class="text-center d-print-none">Estadísticas</h3>
+      <app-grades-bar-chart class="d-print-none" [data]="user.currentGrades.scores"></app-grades-bar-chart>
     </div>
   </mat-card-content>
 </mat-card>

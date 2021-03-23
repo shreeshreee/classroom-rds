@@ -59,7 +59,7 @@
             <h3>Fichero</h3>
             </p>
             <p class="comment">
-                <code>projects/classroom-rds/src/app/school/services/user.resolver.ts</code>
+                <code>projects/classroom-rds/src/app/user/services/user.resolver.ts</code>
             </p>
 
 
@@ -70,6 +70,23 @@
     <h3 id="index">Índice</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Propiedades</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#subs">subs</a>
+                            </li>
+                            <li>
+                                <a href="#userId">userId</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -100,12 +117,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(userEntityService: <a href="../injectables/UserEntityService.html">UserEntityService</a>, subService: <a href="../injectables/SubscriptionService.html">SubscriptionService</a>)</code>
+<code>constructor(userEntityService: <a href="../injectables/UserEntityService.html">UserEntityService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">projects/classroom-rds/src/app/school/services/user.resolver.ts:13</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="19" class="link-to-prism">projects/classroom-rds/src/app/user/services/user.resolver.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -127,18 +144,6 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/UserEntityService.html" target="_self" >UserEntityService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>subService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/SubscriptionService.html" target="_self" >SubscriptionService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -182,8 +187,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="18"
-                            class="link-to-prism">projects/classroom-rds/src/app/school/services/user.resolver.ts:18</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="23"
+                            class="link-to-prism">projects/classroom-rds/src/app/user/services/user.resolver.ts:23</a></div>
                 </td>
             </tr>
 
@@ -250,29 +255,34 @@
             <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from &#x27;@angular/router&#x27;;
 
-import { Observable } from &#x27;rxjs&#x27;;
-import { filter, first, map, takeUntil, tap } from &#x27;rxjs/operators&#x27;;
+import { select, Store } from &#x27;@ngrx/store&#x27;;
 
-import { SubscriptionService } from &#x27;./../../shared/services/subscription.service&#x27;;
+import { Observable, Subscription } from &#x27;rxjs&#x27;;
+import { filter, first, map, take, takeUntil, tap } from &#x27;rxjs/operators&#x27;;
 
+import { selectUser } from &#x27;./../../auth/state/auth.selectors&#x27;;
+import { SubscriptionService } from &#x27;../../shared/services/subscription.service&#x27;;
+
+import { AppState } from &#x27;~/app/store/app.state&#x27;;
 import { UserEntityService } from &#x27;~/app/store/user/user-entity.service&#x27;;
 
 
 @Injectable()
 export class UserResolver implements Resolve&lt;boolean&gt; {
-
+  userId: string;
+  subs: Subscription;
   constructor(
     private userEntityService: UserEntityService,
-    private subService: SubscriptionService) { }
+  ) { }
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable&lt;boolean&gt; {
-    return this.userEntityService.loaded$
+    return this.userEntityService.loading$
       .pipe(
         tap(loaded &#x3D;&gt; {
           if (!loaded) {
-            this.userEntityService.getAll().pipe(takeUntil(this.subService.unsubscribe$));
+            this.userEntityService.getByKey(route.paramMap.get(&#x27;id&#x27;));
           }
         }),
         filter(loaded &#x3D;&gt; !!loaded),

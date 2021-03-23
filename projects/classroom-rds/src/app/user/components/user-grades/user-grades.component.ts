@@ -1,5 +1,5 @@
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, ViewChild } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 
 import { faPrint } from '@fortawesome/free-solid-svg-icons';
 import { faFilePdf } from '@fortawesome/free-regular-svg-icons';
@@ -9,17 +9,13 @@ import { select, Store } from '@ngrx/store';
 import { AppState } from '@rds-store/app.state';
 
 import { User } from '@rds-auth/models/user.model';
-import { selectUser } from '@rds-auth/state/auth.selectors';
 
 import { map } from 'rxjs/operators';
 import { Observable, Subscription } from 'rxjs';
 
-import { Score } from '../../models/grade.model';
 import { isTeacher } from './../../../auth/state/auth.selectors';
 import { SubscriptionService } from './../../../shared/services/subscription.service';
 
-import { UserAuth } from '~/app/auth/models/user-auth.model';
-import { SchoolService } from '~/app/school/services/school.service';
 import { UserEntityService } from '~/app/store/user/user-entity.service';
 
 

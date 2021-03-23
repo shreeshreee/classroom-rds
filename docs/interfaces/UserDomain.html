@@ -1843,7 +1843,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CourseLevel } from &#x27;@rds-classroom/models/classroom.enum&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CourseLevel } from &quot;~/app/auth/models/user.enum&quot;;
+
 export interface UserDomain {
   /** A list of the user&#x27;s addresses. The maximum allowed data size is 10Kb. */
   addresses: [{
@@ -2182,21 +2183,6 @@ export interface GroupResponse {
   nextPageToken: string;
 }
 
-export enum SchoolLevel {
-  /* &quot;1° de Preescolar&quot;,
-  &quot;2° de Preescolar&quot;,
-  &quot;3° de Preescolar&quot;, */
-  &quot;Preescolar&quot;,
-  &quot;1° de Primaria&quot;,
-  &quot;2° de Primaria&quot;,
-  &quot;3° de Primaria&quot;,
-  &quot;4° de Primaria&quot;,
-  &quot;5° de Primaria&quot;,
-  &quot;6° de Primaria&quot;,
-  &quot;1° de Secundaria&quot;,
-  &quot;2° de Secundaria&quot;,
-  &quot;3° de Secundaria&quot;,
-}
 </code></pre>
     </div>
 </div>

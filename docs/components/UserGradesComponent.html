@@ -72,6 +72,7 @@
     </p>
     <p class="comment">
                     <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
     </p>
 
 
@@ -141,16 +142,19 @@
                                 <a href="#faPrint">faPrint</a>
                             </li>
                             <li>
-                                <a href="#scores">scores</a>
+                                <a href="#isTeacher$">isTeacher$</a>
+                            </li>
+                            <li>
+                                <a href="#loading$">loading$</a>
                             </li>
                             <li>
                                 <a href="#today">today</a>
                             </li>
                             <li>
-                                <a href="#user">user</a>
+                                <a href="#user$">user$</a>
                             </li>
                             <li>
-                                <a href="#user$">user$</a>
+                                <a href="#userId">userId</a>
                             </li>
                             <li>
                                 <a href="#userName">userName</a>
@@ -170,6 +174,9 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
@@ -194,12 +201,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(store: <a href="../interfaces/AppState.html">Store<AppState></a>, schoolService: <a href="../injectables/SchoolService.html">SchoolService</a>)</code>
+<code>constructor(userES: <a href="../injectables/UserEntityService.html">UserEntityService</a>, router: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, store: <a href="../interfaces/AppState.html">Store<AppState></a>, subService: <a href="../injectables/SubscriptionService.html">SubscriptionService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="35" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:35</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="41" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:41</a></div>
                             </td>
                         </tr>
 
@@ -217,6 +224,30 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
+                                                        <td>userES</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserEntityService.html" target="_self" >UserEntityService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
                                                         <td>store</td>
                                                   
                                                         <td>
@@ -229,10 +260,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>schoolService</td>
+                                                        <td>subService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/SchoolService.html" target="_self" >SchoolService</a></code>
+                                                                        <code><a href="../injectables/SubscriptionService.html" target="_self" >SubscriptionService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -262,6 +293,45 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="59"
+                            class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:59</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="ngOnInit"></a>
                     <span class="name">
                         <b>
@@ -280,8 +350,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="43"
-                            class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:43</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="54"
+                            class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:54</a></div>
                 </td>
             </tr>
 
@@ -319,8 +389,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="48"
-                            class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:48</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="56"
+                            class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:56</a></div>
                 </td>
             </tr>
 
@@ -361,7 +431,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="35" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:35</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="41" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:41</a></div>
                             </td>
                         </tr>
 
@@ -387,6 +457,33 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="40" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isTeacher$"></a>
+                        <span class="name">
+                            <b>
+                            isTeacher$</b>
+                            <a href="#isTeacher$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
                                     <div class="io-line">Definido en <a href="" data-line="34" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:34</a></div>
                             </td>
                         </tr>
@@ -398,23 +495,23 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="scores"></a>
+                        <a name="loading$"></a>
                         <span class="name">
                             <b>
-                            scores</b>
-                            <a href="#scores"><span class="icon ion-ios-link"></span></a>
+                            loading$</b>
+                            <a href="#loading$"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Tipo : </i>        <code><a href="../interfaces/Score.html" target="_self" >Observable&lt;Score[]&gt;</a></code>
+                            <i>Tipo : </i>    <code>Observable&lt;boolean&gt;</code>
 
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="32" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:32</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="35" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:35</a></div>
                             </td>
                         </tr>
 
@@ -446,34 +543,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="33" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:33</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="user"></a>
-                        <span class="name">
-                            <b>
-                            user</b>
-                            <a href="#user"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Tipo : </i>        <code><a href="../interfaces/User.html" target="_self" >User</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="29" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:29</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="39" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:39</a></div>
                             </td>
                         </tr>
 
@@ -500,7 +570,34 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="28" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:28</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="33" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userId"></a>
+                        <span class="name">
+                            <b>
+                            userId</b>
+                            <a href="#userId"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="36" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:36</a></div>
                             </td>
                         </tr>
 
@@ -527,7 +624,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="30" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:30</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="37" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:37</a></div>
                             </td>
                         </tr>
 
@@ -554,7 +651,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="31" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:31</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="38" class="link-to-prism">projects/classroom-rds/src/app/user/components/user-grades/user-grades.component.ts:38</a></div>
                             </td>
                         </tr>
 
@@ -567,7 +664,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, ViewChild } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, ViewChild } from &#x27;@angular/core&#x27;;
 
 import { faPrint } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
 import { faFilePdf } from &#x27;@fortawesome/free-regular-svg-icons&#x27;;
@@ -582,9 +680,13 @@ import { selectUser } from &#x27;@rds-auth/state/auth.selectors&#x27;;
 import { map } from &#x27;rxjs/operators&#x27;;
 import { Observable, Subscription } from &#x27;rxjs&#x27;;
 
-import { Score } from &#x27;../../models/score.model&#x27;;
+import { Score } from &#x27;../../models/grade.model&#x27;;
+import { isTeacher } from &#x27;./../../../auth/state/auth.selectors&#x27;;
+import { SubscriptionService } from &#x27;./../../../shared/services/subscription.service&#x27;;
 
+import { UserAuth } from &#x27;~/app/auth/models/user-auth.model&#x27;;
 import { SchoolService } from &#x27;~/app/school/services/school.service&#x27;;
+import { UserEntityService } from &#x27;~/app/store/user/user-entity.service&#x27;;
 
 
 @Component({
@@ -593,45 +695,56 @@ import { SchoolService } from &#x27;~/app/school/services/school.service&#x27;;
   styleUrls: [&#x27;./user-grades.component.scss&#x27;],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class UserGradesComponent implements OnInit {
+export class UserGradesComponent implements OnInit, OnDestroy {
   user$: Observable&lt;User&gt;;
-  user: User;
+  isTeacher$: Observable&lt;boolean&gt;;
+  loading$: Observable&lt;boolean&gt;;
+  userId: string;
   userName: string;
   userSub: Subscription;
-  scores: Observable&lt;Score[]&gt;;
   today: Date &#x3D; new Date();
   faPrint &#x3D; faPrint;
   faFilePdf &#x3D; faFilePdf;
   constructor(
+    private userES: UserEntityService,
+    private router: ActivatedRoute,
     private store: Store&lt;AppState&gt;,
-    private schoolService: SchoolService
+    private subService: SubscriptionService
   ) {
-    this.user$ &#x3D; this.store.select(selectUser);
+    this.loading$ &#x3D; this.userES.loading$;
+    this.userId &#x3D; this.router.parent.snapshot.paramMap.get(&#x27;id&#x27;);
+    this.user$ &#x3D; this.userES.entities$.pipe(map(users &#x3D;&gt; users.find(u &#x3D;&gt; u.id &#x3D;&#x3D; this.userId)))
+    this.isTeacher$ &#x3D; this.store.pipe(select(isTeacher));
   }
 
   ngOnInit(): void {
-    this.user$.subscribe(user &#x3D;&gt; {
-      this.scores &#x3D; this.schoolService.getScores(user.id);
-    });
   }
   printPage() {
     window.print();
+  }
+  ngOnDestroy() {
+    this.subService.unsubscribeComponent$;
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;!(scores|async)&quot; style&#x3D;&quot;min-height: 300px;&quot; fxLayout&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;center center&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;(loading$|async)&quot; style&#x3D;&quot;min-height: 300px;&quot; fxLayout&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;center center&quot;&gt;
   &lt;mat-spinner strokeWidth&#x3D;&quot;3&quot; [diameter]&#x3D;&quot;50&quot;&gt;
   &lt;/mat-spinner&gt;
   &lt;span&gt;Buscando ...&lt;/span&gt;&lt;br&gt;
 &lt;/div&gt;
-&lt;mat-card *ngIf&#x3D;&quot;(scores|async) as scores&quot;&gt;
+
+&lt;mat-card *ngIf&#x3D;&quot;!(loading$|async) &amp;&amp; user$|async as user&quot;&gt;
   &lt;mat-card-content class&#x3D;&quot;card border-primary m-n2 bg-transparent&quot;&gt;
-    &lt;h1 class&#x3D;&quot;mat-h1 card-header text-light&quot;&gt;Calificaciones &amp;nbsp;
-      &lt;small class&#x3D;&quot;font-weight-light&quot;&gt;Ciclo escolar 2020-21&lt;/small&gt;
-    &lt;/h1&gt;
+    &lt;div class&#x3D;&quot;card-header text-light&quot; fxLayout&#x3D;&quot;row wrap&quot; fxLayoutAlign&#x3D;&quot;space-between top&quot;&gt;
+      &lt;div&gt;
+        &lt;h1&gt;Calificaciones&amp;nbsp;&amp;nbsp;&lt;small class&#x3D;&quot;font-weight-light&quot;&gt;Ciclo escolar 2020-21&lt;/small&gt;
+        &lt;/h1&gt;
+      &lt;/div&gt;
+      &lt;div&gt;{{today|date:&#x27;medium&#x27;}}&lt;/div&gt;
+    &lt;/div&gt;
     &lt;div class&#x3D;&quot;float-right&quot;&gt;
       &lt;button mat-button (click)&#x3D;&quot;printPage()&quot;&gt;
         &lt;fa-icon class&#x3D;&quot;rds-icon&quot; [icon]&#x3D;&quot;faPrint&quot; size&#x3D;&quot;lg&quot;&gt;&lt;/fa-icon&gt;&amp;nbsp;Imprimir
@@ -641,16 +754,28 @@ export class UserGradesComponent implements OnInit {
       &lt;/button&gt;
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;card-body&quot;&gt;
-      &lt;p class&#x3D;&quot;card-text&quot;&gt;Fecha y hora de consulta: {{today|date:&#x27;medium&#x27;}}&lt;/p&gt;
-      &lt;p class&#x3D;&quot;card-text&quot;&gt;Selecciona una materia para conocer sus observaciones:&lt;/p&gt;
-      &lt;app-grades-table [data]&#x3D;&quot;scores&quot;&gt;&lt;/app-grades-table&gt;
+
+      &lt;app-grades-table *ngIf&#x3D;&quot;user.level!&#x3D;&#x27;Preescolar&#x27;&quot; [data]&#x3D;&quot;user.currentGrades&quot;&gt;&lt;/app-grades-table&gt;
+      &lt;app-grades-list *ngIf&#x3D;&quot;user.level&#x3D;&#x3D;&#x27;Preescolar&#x27;&quot; [data]&#x3D;&quot;user.currentGrades&quot;&gt;&lt;/app-grades-list&gt;
     &lt;/div&gt;
-    &lt;div class&#x3D;&quot;card-footer&quot;&gt;
+    &lt;div *ngIf&#x3D;&quot;user.level!&#x3D;&#x27;Preescolar&#x27;&quot; class&#x3D;&quot;card-footer&quot;&gt;
+      &lt;h3 class&#x3D;&quot;text-center&quot;&gt;Recomendaciones&lt;/h3&gt;
+      &lt;app-grade-recomendation [data]&#x3D;&quot;user.currentGrades.notes&quot;&gt;
+      &lt;/app-grade-recomendation&gt;
       &lt;h3 class&#x3D;&quot;text-center&quot;&gt;Estadísticas&lt;/h3&gt;
-      &lt;app-grades-bar-chart *ngIf&#x3D;&quot;scores&quot; [data]&#x3D;&quot;scores&quot;&gt;&lt;/app-grades-bar-chart&gt;
+      &lt;app-grades-bar-chart [data]&#x3D;&quot;user.currentGrades.scores&quot;&gt;&lt;/app-grades-bar-chart&gt;
     &lt;/div&gt;
   &lt;/mat-card-content&gt;
 &lt;/mat-card&gt;
+&lt;div *ngIf&#x3D;&quot;(isTeacher$|async)&quot;&gt;
+  &lt;mat-card&gt;
+    &lt;mat-card-header&gt;
+      &lt;mat-card-title&gt;
+        &lt;span class&#x3D;&quot;text-warning&quot;&gt; Por el momento, las calificaciones son de acceso a los alumnos.&lt;/span&gt;
+      &lt;/mat-card-title&gt;
+    &lt;/mat-card-header&gt;
+  &lt;/mat-card&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -662,6 +787,7 @@ export class UserGradesComponent implements OnInit {
 
 .card-header {
   background-color: $rds-logo-color;
+  height: 50px;
 }
 .rds-icon {
   color: $rds-logo-color;
@@ -694,8 +820,8 @@ export class UserGradesComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div *ngIf="!(scores|async)" style="min-height: 300px;" fxLayout="column" fxLayoutAlign="center center">  <mat-spinner strokeWidth="3" [diameter]="50">  </mat-spinner>  <span>Buscando ...</span><br></div><mat-card *ngIf="(scores|async) as scores">  <mat-card-content class="card border-primary m-n2 bg-transparent">    <h1 class="mat-h1 card-header text-light">Calificaciones &nbsp;      <small class="font-weight-light">Ciclo escolar 2020-21</small>    </h1>    <div class="float-right">      <button mat-button (click)="printPage()">        <fa-icon class="rds-icon" [icon]="faPrint" size="lg"></fa-icon>&nbsp;Imprimir      </button>      <button mat-button (click)="printPage()">        <fa-icon class="rds-icon" [icon]="faFilePdf" size="lg"></fa-icon>&nbsp;Descargar      </button>    </div>    <div class="card-body">      <p class="card-text">Fecha y hora de consulta: {{today|date:\'medium\'}}</p>      <p class="card-text">Selecciona una materia para conocer sus observaciones:</p>      <app-grades-table [data]="scores"></app-grades-table>    </div>    <div class="card-footer">      <h3 class="text-center">Estadísticas</h3>      <app-grades-bar-chart *ngIf="scores" [data]="scores"></app-grades-bar-chart>    </div>  </mat-card-content></mat-card></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GalletasComponent', 'selector': 'app-galletas'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SchoolDashboardComponent', 'selector': 'app-school-dashboard'},{'name': 'SchoolFormComponent', 'selector': 'app-school-form'},{'name': 'SchoolHomeComponent', 'selector': 'app-school-home'},{'name': 'SchoolStudentsComponent', 'selector': 'app-school-students'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserGradesPrintableComponent', 'selector': 'app-user-grades-printable'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="(loading$|async)" style="min-height: 300px;" fxLayout="column" fxLayoutAlign="center center">  <mat-spinner strokeWidth="3" [diameter]="50">  </mat-spinner>  <span>Buscando ...</span><br></div><mat-card *ngIf="!(loading$|async) && user$|async as user">  <mat-card-content class="card border-primary m-n2 bg-transparent">    <div class="card-header text-light" fxLayout="row wrap" fxLayoutAlign="space-between top">      <div>        <h1>Calificaciones&nbsp;&nbsp;<small class="font-weight-light">Ciclo escolar 2020-21</small>        </h1>      </div>      <div>{{today|date:\'medium\'}}</div>    </div>    <div class="float-right">      <button mat-button (click)="printPage()">        <fa-icon class="rds-icon" [icon]="faPrint" size="lg"></fa-icon>&nbsp;Imprimir      </button>      <button mat-button (click)="printPage()">        <fa-icon class="rds-icon" [icon]="faFilePdf" size="lg"></fa-icon>&nbsp;Descargar      </button>    </div>    <div class="card-body">      <app-grades-table *ngIf="user.level!=\'Preescolar\'" [data]="user.currentGrades"></app-grades-table>      <app-grades-list *ngIf="user.level==\'Preescolar\'" [data]="user.currentGrades"></app-grades-list>    </div>    <div *ngIf="user.level!=\'Preescolar\'" class="card-footer">      <h3 class="text-center">Recomendaciones</h3>      <app-grade-recomendation [data]="user.currentGrades.notes">      </app-grade-recomendation>      <h3 class="text-center">Estadísticas</h3>      <app-grades-bar-chart [data]="user.currentGrades.scores"></app-grades-bar-chart>    </div>  </mat-card-content></mat-card><div *ngIf="(isTeacher$|async)">  <mat-card>    <mat-card-header>      <mat-card-title>        <span class="text-warning"> Por el momento, las calificaciones son de acceso a los alumnos.</span>      </mat-card-title>    </mat-card-header>  </mat-card></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradeRecomendationComponent', 'selector': 'app-grade-recomendation'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesListComponent', 'selector': 'app-grades-list'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SchoolDashboardComponent', 'selector': 'app-school-dashboard'},{'name': 'SchoolFormComponent', 'selector': 'app-school-form'},{'name': 'SchoolHomeComponent', 'selector': 'app-school-home'},{'name': 'SchoolStudentsComponent', 'selector': 'app-school-students'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'SubjectsComponent', 'selector': 'app-subjects'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserGradesPrintableComponent', 'selector': 'app-user-grades-printable'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'},{'name': 'WorkingOnGradesComponent', 'selector': 'app-working-on-grades'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
     var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'}];
     var ACTUAL_COMPONENT = {'name': 'UserGradesComponent'};
 </script>

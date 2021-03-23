@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   isDark: boolean;
   defaultElevation = 0;
   raisedElevation = 12;
-  title = 'Escuela RDS';
+  title = 'Escuela Rafael Díaz Serdán';
   constructor(
     private themeService: ThemeService,
     private seoService: SeoService,
@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
     this.seoService.titleInit();
     this.seoService.generateTags({
       title: this.title,
-      description: 'Aplicación de servicios escolares de la escuela Rafael Díaz Serdán',
+      description: 'Aplicación de servicios escolares de la Escuela Rafael Díaz Serdán - Educación para la vida. Ubicada en la ciudad y puerto de Veracruz, México',
       image: 'assets/screenshots/screenshot02.png'
     });
   }

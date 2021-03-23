@@ -82,6 +82,9 @@
                                 <a href="#checkTeacherRole$">checkTeacherRole$</a>
                             </li>
                             <li>
+                                <a href="#fullfillUser$">fullfillUser$</a>
+                            </li>
+                            <li>
                                 <a href="#saveUser$">saveUser$</a>
                             </li>
                             <li>
@@ -111,7 +114,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="87" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:87</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="102" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:102</a></div>
                             </td>
                         </tr>
 
@@ -197,7 +200,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="23" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:23</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="26" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -234,7 +237,45 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="36" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:36</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="39" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fullfillUser$"></a>
+                        <span class="name">
+                            <b>
+                            fullfillUser$</b>
+                            <a href="#fullfillUser$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>createEffect(
+    () &#x3D;&gt;
+      this.actions$.pipe(
+        ofType(fromAuthActions.signInSuccess),
+        switchMap((action) &#x3D;&gt;
+          this.authFireService.getUserById(action.user.id)
+            .pipe(
+              take(1),
+              map((user: User) &#x3D;&gt; fromAuthActions.fullfillUserSuccess({ user }))
+            )
+        )
+      )
+  )</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="51" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:51</a></div>
                             </td>
                         </tr>
 
@@ -269,7 +310,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:12</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -304,7 +345,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="78" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:78</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="93" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/fire.effects.ts:93</a></div>
                             </td>
                         </tr>
 
@@ -321,9 +362,10 @@
 
 import { Actions, createEffect, ofType } from &#x27;@ngrx/effects&#x27;;
 
-import { map, switchMap, tap } from &#x27;rxjs/operators&#x27;;
+import { map, switchMap, take, tap } from &#x27;rxjs/operators&#x27;;
 
 import * as fromAuthActions from &#x27;../auth.actions&#x27;;
+import { User } from &#x27;../../models/user.model&#x27;;
 import { AuthFireService } from &#x27;../../services/auth-fire.service&#x27;;
 @Injectable()
 export class FireEffects {
@@ -338,6 +380,8 @@ export class FireEffects {
       ),
     { dispatch: false }
   );
+
+
 
   checkAdminRole$ &#x3D; createEffect(
     () &#x3D;&gt;
@@ -364,7 +408,19 @@ export class FireEffects {
         )
       )
   );
-
+  fullfillUser$ &#x3D; createEffect(
+    () &#x3D;&gt;
+      this.actions$.pipe(
+        ofType(fromAuthActions.signInSuccess),
+        switchMap((action) &#x3D;&gt;
+          this.authFireService.getUserById(action.user.id)
+            .pipe(
+              take(1),
+              map((user: User) &#x3D;&gt; fromAuthActions.fullfillUserSuccess({ user }))
+            )
+        )
+      )
+  );
 
   /*  updateProfile$ &#x3D; createEffect(
      () &#x3D;&gt;

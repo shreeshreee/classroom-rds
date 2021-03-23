@@ -15,7 +15,7 @@ import { User } from '../models/user.model';
 })
 export class AuthFireService {
   user$: Observable<firebase.User>;
-  private userCollection: string = 'testuser';
+  private userCollection: string = 'users';
   constructor(
     public afAuth: AngularFireAuth,
     private afDatabase: AngularFireDatabase,
@@ -56,7 +56,7 @@ export class AuthFireService {
   }
   createUser(user: Partial<User>) {
     const key = user.id;
-    return this.afStore.collection('users').doc(key).set({
+    return this.afStore.collection(`${this.userCollection}`).doc(key).set({
       isVerified: user.isVerified,
       uid: user.uid,
     }, { merge: true }).then(

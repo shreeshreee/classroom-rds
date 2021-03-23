@@ -1,5 +1,5 @@
 <div [routerLink]="alert.link" *ngFor="let alert of alerts">
-  <alert [ngClass]="{'hidden':!alert.visible}" [type]="alert.type" [dismissible]="alert.dismissible">
+  <alert [ngClass]="{'hidden':!alert.visible }" [type]="alert.type" [dismissible]="alert.dismissible">
     <span [innerHtml]="alert.msg"></span>
   </alert>
 </div>

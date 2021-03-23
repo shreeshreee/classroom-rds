@@ -3,7 +3,6 @@ import { CodeConductSchoolComponent } from './code-conduct-school/code-conduct-s
 import { CodeConductComponent } from './code-conduct/code-conduct.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DeleteButtonComponent } from './delete-button/delete-button.component';
-import { GalletasComponent } from './galletas/galletas.component';
 import { HomeComponent } from './home/home.component';
 import { LicenseComponent } from './license/license.component';
 import { LocationComponent } from './location/location.component';
@@ -20,6 +19,7 @@ import { TermsComponent } from './terms/terms.component';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
 import { UserCardComponent } from './user-card/user-card.component';
 import { WellcomeComponent } from './wellcome/wellcome.component';
+import { YoutubeComponent } from './youtube/youtube.component';
 // start:ng42.barrel
 
 export const sharedComponents: any[] = [
@@ -39,7 +39,7 @@ export const sharedComponents: any[] = [
   UserCardComponent,
   WellcomeComponent,
   RemoveConfirmComponent,
-  GalletasComponent,
+  YoutubeComponent,
   CodeConductSchoolComponent,
   PreescolarComponent,
   PrimariaComponent,
@@ -53,7 +53,7 @@ export * from './code-conduct-school/code-conduct-school.component';
 export * from './code-conduct/code-conduct.component';
 export * from './dashboard/dashboard.component';
 export * from './delete-button/delete-button.component';
-export * from './galletas/galletas.component';
+export * from './youtube/youtube.component';
 export * from './home/home.component';
 export * from './license/license.component';
 export * from './location/location.component';

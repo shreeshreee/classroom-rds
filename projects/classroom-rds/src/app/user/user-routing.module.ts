@@ -5,6 +5,7 @@ import { UserResolver } from './services/user.resolver';
 import { UserGradesComponent } from './components/user-grades/user-grades.component';
 import { UserHomeComponent } from './components/user-home/user-home.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
+import { WorkingOnGradesComponent } from './components/working-on-grades/working-on-grades.component';
 import { UserComponent } from './containers/user/user.component';
 
 const routes: Routes = [
@@ -14,7 +15,7 @@ const routes: Routes = [
       { path: '', component: UserHomeComponent },
 
       { path: 'info', component: UserInfoComponent },
-
+      { path: 'grades_soon', component: WorkingOnGradesComponent },
       { path: 'grades', component: UserGradesComponent },
     ],
   },

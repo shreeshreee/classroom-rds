@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-galletas',
-  templateUrl: './galletas.component.html',
-  styleUrls: ['./galletas.component.scss']
+  selector: 'app-youtube',
+  templateUrl: './youtube.component.html',
+  styleUrls: ['./youtube.component.scss']
 })
-export class GalletasComponent implements OnInit {
+export class YoutubeComponent implements OnInit {
   dismissible = true;
   alert: any = {
     type: 'warning',

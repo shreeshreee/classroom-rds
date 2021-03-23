@@ -1,8 +1,8 @@
 <div class="py-2">
-  <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+  <form [formGroup]="searchForm">
     <mat-form-field class="d-block" appearance="outline">
       <mat-label>Selecciona un grupo</mat-label>
-      <mat-select formControlName="grade">
+      <mat-select formControlName="grade" placeholder="Selecciona un grado escolar" (change)="onSearch()">
         <mat-option *ngFor="let skey of slevelKeys" [value]="slevels[skey]">
           {{slevels[skey]}}
         </mat-option>
@@ -13,7 +13,7 @@
     <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="5px" fxLayoutAlign="space-arround top">
       <mat-card *ngIf="(loaded$|async) && users$|async as users" class="students-list" fxFlex="0 1 calc(30% - 5px)"
         fxFlex.lt-sm="100%">
-        <div class="card m-n3 bg-transparent ">
+        <div class="card m-n3 bg-transparent">
           <mat-list class="list-group" *ngIf="users.length==0" dense>
             <mat-list-item> No hay cursos para mostrar </mat-list-item>
           </mat-list>

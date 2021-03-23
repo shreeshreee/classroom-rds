@@ -2,6 +2,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component, OnInit, OnDestroy, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
+import * as school from '@rds-auth/models/school.json';
+
 import { Observable, Subject } from 'rxjs';
 import { map, take, catchError } from 'rxjs/operators';
 
@@ -38,7 +40,8 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
     this.initSearchForm();
     this.loaded$ = this.userEntityService.loaded$;
     this.clevelKeys = Object.keys(this.clevels).filter(Number);
-    this.slevelKeys = Object.keys(this.slevels).filter(Number);
+    this.slevelKeys = Object.values(this.slevels).filter(Number)
+    console.log(this.slevels)
   }
   initSearchForm() {
     this.searchForm = this.fb.group({
@@ -64,7 +67,12 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
   onSearch() {
     this.searchForm.get('grade').valueChanges.subscribe((grade: string) => {
       this.users$ = this.userEntityService.entities$
-        .pipe(map(users => users.filter(x => x.grade == grade)))
+        .pipe(map(users => {
+          if (!users) {
+            this.userEntityService.getWithQuery({ grade });
+          }
+          return users.filter(x => x.grade == grade)
+        }));
     });
   }
   ngOnDestroy(): void {

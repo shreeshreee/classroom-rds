@@ -39,11 +39,11 @@
         <p class="col-6">CURP:&nbsp;</p>
         <p class="col-6">{{user.curp}}</p>
       </div>
-      <div class="mb-n2" fxLayout="row">
+      <div class="mb-n2" *ngIf="user.role=='Alumnos'" fxLayout="row">
         <p class="col-6">Nivel:&nbsp;</p>
         <p class="col-6">{{user.level}}</p>
       </div>
-      <div class="mb-n2" fxLayout="row">
+      <div class="mb-n2" *ngIf="user.role=='Alumnos'" fxLayout="row">
         <p class="col-6">Grado:&nbsp;</p>
         <p class="col-6">{{user.grade}}</p>
       </div>

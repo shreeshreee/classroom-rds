@@ -41,7 +41,7 @@
     <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
     <ng-container matColumnDef="expandedDetail">
       <mat-cell *matCellDef="let element">
-        {{element.element.notes2}}
+        <em class=".d-print-block">{{element.element.notes2}}</em>
       </mat-cell>
       <mat-footer-cell *matFooterCellDef> </mat-footer-cell>
     </ng-container>

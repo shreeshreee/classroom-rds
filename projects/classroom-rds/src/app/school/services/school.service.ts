@@ -19,7 +19,7 @@ import { Grade, Score } from '~/app/user/models/grade.model';
 @Injectable()
 export class SchoolService {
   user$: Observable<firebase.User>;
-  private userCollection: string = 'testuser';
+  private userCollection: string = 'users';
   private currentScore: string = 'currentGrades';
   private usersDb: AngularFireList<User>;
   constructor(
@@ -35,9 +35,9 @@ export class SchoolService {
         }
       })
     );
-    /* this.usersDb = this.afDatabase.list<User>(`${this.userCollection}`, (ref) =>
+    this.usersDb = this.afDatabase.list<User>(`${this.userCollection}`, (ref) =>
       ref.orderByChild('name/fullName')
-    ); */
+    );
   }
 
   getAuthState(): Observable<firebase.User> {
@@ -54,12 +54,10 @@ export class SchoolService {
       })
     );
   }
-  getUsersWithQuery(queryParams: QueryParams): Promise<User[]> {
-    return this.usersDb.valueChanges().pipe(map(users =>
-      users
-        .filter(x => x.grade == queryParams.grade)
-        .filter(y => y.level == queryParams.level)
-    )).toPromise();
+  getUsersWithQuery(queryParams: QueryParams): Observable<User[]> {
+    console.log(queryParams.grade)
+    return this.afDatabase.list<User>(`${this.userCollection}`).valueChanges().pipe(map(users => users.filter(x => x.grade == queryParams.grade)));
+    return this.usersDb.valueChanges().pipe(map(users => users.filter(x => x.grade == queryParams.grade)))
   }
   getUser(id: string): Observable<User> {
     return this.afDatabase.object<User>(`${this.userCollection}/${id}`).valueChanges();

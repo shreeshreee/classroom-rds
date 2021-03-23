@@ -131,7 +131,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#alert">alert</a>
+                                <a href="#alerts">alerts</a>
                             </li>
                             <li>
                                 <a href="#isAdmin$">isAdmin$</a>
@@ -159,9 +159,6 @@
                         <ul class="index-list">
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
-                            </li>
-                            <li>
-                                <a href="#onClosed">onClosed</a>
                             </li>
                         </ul>
                     </td>
@@ -267,8 +264,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="38"
-                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/home/home.component.ts:38</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="47"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/home/home.component.ts:47</a></div>
                 </td>
             </tr>
 
@@ -279,76 +276,6 @@
                     <div class="io-description">
                         <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="onClosed"></a>
-                    <span class="name">
-                        <b>
-                            onClosed
-                        </b>
-                        <a href="#onClosed"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>onClosed(dismissedAlert: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="41"
-                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/home/home.component.ts:41</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parámetros :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Nombre</td>
-                                    <td>Tipo</td>
-                                    <td>Opcional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>dismissedAlert</td>
-                                    <td>
-                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
                     </div>
                 </td>
             </tr>
@@ -364,17 +291,17 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="alert"></a>
+                        <a name="alerts"></a>
                         <span class="name">
                             <b>
-                            alert</b>
-                            <a href="#alert"><span class="icon ion-ios-link"></span></a>
+                            alerts</b>
+                            <a href="#alerts"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Tipo : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                            <i>Tipo : </i>    <code>any[]</code>
 
                         </td>
                     </tr>
@@ -523,7 +450,7 @@ export class HomeComponent implements OnInit {
   user$: Observable&lt;User&gt;;
   isTeacher$: Observable&lt;boolean&gt;;
   isAdmin$: Observable&lt;boolean&gt;;
-  alert: any;
+  alerts: any[];
   constructor(
     private store: Store&lt;AppState&gt;,
     sanitizer: DomSanitizer
@@ -532,29 +459,38 @@ export class HomeComponent implements OnInit {
     this.isTeacher$ &#x3D; this.store.select(fromAuthSelectors.isTeacher);
     this.isAdmin$ &#x3D; this.store.select(fromAuthSelectors.isAdmin);
     this.user$ &#x3D; this.store.pipe(select(fromAuthSelectors.selectUser));
-    this.alert &#x3D; {
-      dismissable: true,
+    this.alerts &#x3D; [{
+      dismissible: true,
       type: &#x27;success&#x27;,
-      msg: sanitizer.sanitize(SecurityContext.HTML, &#x27;Conoce tus calificaciones de la Unidad 2 en la sección &quot;Información Académica&quot;.&#x27;)
-    }
+      visible: true,
+      link: &#x27;user/grades&#x27;,
+      msg: sanitizer.sanitize(SecurityContext.HTML, &#x27;Conoce tus calificaciones de la Unidad 2 en la sección &quot;Información Académica&quot;. &lt;br&gt;Disponibles a partir del &lt;strong&gt;24 de marzo de 2021&lt;/strong&gt;. Puedes acceder aquí en este anuncio&#x27;)
+    },
+    {
+      dismissible: true,
+      type: &#x27;danger&#x27;,
+      visible: false,
+      link: &#x27;pan_de_sal&#x27;,
+      msg: sanitizer.sanitize(SecurityContext.HTML, &#x27;Ingresa a la &lt;strong&gt;transmisión en vivo&lt;/strong&gt; de la elaboración del Pan de Sal, de nuestro club de cocina. &lt;br&gt;Acompañanos el día &lt;strong&gt;11 de marzo de 2021 a las 12:00 del día.&lt;/strong&gt;. Puedes acceder aquí en este anuncio&#x27;)
+    }]
   }
   ngOnInit(): void {
 
   }
-  onClosed(dismissedAlert: any): void {
-    this.alert &#x3D; this.alert.filter(alert &#x3D;&gt; alert !&#x3D;&#x3D; dismissedAlert);
-  }
+
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;app-wellcome *ngIf&#x3D;&quot;!(isOnline$|async)&quot;&gt;&lt;/app-wellcome&gt;
-&lt;alert *ngIf&#x3D;&quot;(isOnline$|async) &amp;&amp; (user$|async).isNew&quot; [type]&#x3D;&quot;alert.type&quot; [dismissible]&#x3D;&quot;alert.dismissible&quot;
-  (onClosed)&#x3D;&quot;onClosed(alert)&quot;&gt;
-  &lt;span [innerHtml]&#x3D;&quot;alert.msg&quot;&gt;&lt;/span&gt;
-&lt;/alert&gt;
-&lt;app-dashboard *ngIf&#x3D;&quot;(isOnline$|async)&quot; [user]&#x3D;&quot;user$|async&quot; [isTeacher]&#x3D;&quot;isTeacher$|async&quot; [isAdmin]&#x3D;&quot;isAdmin$|async&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div [routerLink]&#x3D;&quot;alert.link&quot; *ngFor&#x3D;&quot;let alert of alerts&quot;&gt;
+  &lt;alert [ngClass]&#x3D;&quot;{&#x27;hidden&#x27;:!alert.visible}&quot; [type]&#x3D;&quot;alert.type&quot; [dismissible]&#x3D;&quot;alert.dismissible&quot;&gt;
+    &lt;span [innerHtml]&#x3D;&quot;alert.msg&quot;&gt;&lt;/span&gt;
+  &lt;/alert&gt;
+&lt;/div&gt;
+&lt;app-wellcome *ngIf&#x3D;&quot;!(isOnline$|async)&quot;&gt;&lt;/app-wellcome&gt;
+&lt;app-dashboard *ngIf&#x3D;&quot;(isOnline$|async) &amp;&amp; (user$|async)&quot; [user]&#x3D;&quot;user$|async&quot; [isTeacher]&#x3D;&quot;isTeacher$|async&quot;
+  [isAdmin]&#x3D;&quot;isAdmin$|async&quot;&gt;
 &lt;/app-dashboard&gt;
 </code></pre>
     </div>
@@ -563,7 +499,10 @@ export class HomeComponent implements OnInit {
                 <p class="comment">
                     <code>./home.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.hidden {
+  display:none;
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -591,8 +530,8 @@ export class HomeComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-wellcome *ngIf="!(isOnline$|async)"></app-wellcome><alert *ngIf="(isOnline$|async) && (user$|async).isNew" [type]="alert.type" [dismissible]="alert.dismissible"  (onClosed)="onClosed(alert)">  <span [innerHtml]="alert.msg"></span></alert><app-dashboard *ngIf="(isOnline$|async)" [user]="user$|async" [isTeacher]="isTeacher$|async" [isAdmin]="isAdmin$|async"></app-dashboard></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GalletasComponent', 'selector': 'app-galletas'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SchoolDashboardComponent', 'selector': 'app-school-dashboard'},{'name': 'SchoolFormComponent', 'selector': 'app-school-form'},{'name': 'SchoolHomeComponent', 'selector': 'app-school-home'},{'name': 'SchoolStudentsComponent', 'selector': 'app-school-students'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserGradesPrintableComponent', 'selector': 'app-user-grades-printable'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
+        var COMPONENT_TEMPLATE = '<div><div [routerLink]="alert.link" *ngFor="let alert of alerts">  <alert [ngClass]="{\'hidden\':!alert.visible}" [type]="alert.type" [dismissible]="alert.dismissible">    <span [innerHtml]="alert.msg"></span>  </alert></div><app-wellcome *ngIf="!(isOnline$|async)"></app-wellcome><app-dashboard *ngIf="(isOnline$|async) && (user$|async)" [user]="user$|async" [isTeacher]="isTeacher$|async"  [isAdmin]="isAdmin$|async"></app-dashboard></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradeRecomendationComponent', 'selector': 'app-grade-recomendation'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesListComponent', 'selector': 'app-grades-list'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SchoolDashboardComponent', 'selector': 'app-school-dashboard'},{'name': 'SchoolFormComponent', 'selector': 'app-school-form'},{'name': 'SchoolHomeComponent', 'selector': 'app-school-home'},{'name': 'SchoolStudentsComponent', 'selector': 'app-school-students'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'SubjectsComponent', 'selector': 'app-subjects'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserGradesPrintableComponent', 'selector': 'app-user-grades-printable'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'},{'name': 'WorkingOnGradesComponent', 'selector': 'app-working-on-grades'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
     var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'}];
     var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
 </script>

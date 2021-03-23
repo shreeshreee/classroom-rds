@@ -8,7 +8,6 @@ import { LayoutComponent } from '@rds-core/layout/layout.component';
 import { AboutComponent } from '@rds-shared/components/about/about.component';
 import { CodeConductSchoolComponent } from '@rds-shared/components/code-conduct-school/code-conduct-school.component';
 import { CodeConductComponent } from '@rds-shared/components/code-conduct/code-conduct.component';
-import { GalletasComponent } from '@rds-shared/components/galletas/galletas.component';
 import { HomeComponent } from '@rds-shared/components/home/home.component';
 import { LicenseComponent } from '@rds-shared/components/license/license.component';
 import { LocationComponent } from '@rds-shared/components/location/location.component';
@@ -19,6 +18,7 @@ import { TermsComponent } from '@rds-shared/components/terms/terms.component';
 import { UnderConstructionComponent } from '@rds-shared/components/under-construction/under-construction.component';
 
 import { ConfigComponent } from './core/layout/config/config.component';
+import { YoutubeComponent } from '~/app/shared/components/youtube/youtube.component';
 const routes: Routes = [{
   path: '', component: LayoutComponent, children: [
     { path: '', component: HomeComponent },
@@ -30,7 +30,7 @@ const routes: Routes = [{
     /*     { path: 'clases', loadChildren: () => import('./classroom/courses/courses.module').then(m => m.CoursesModule), canActivate: [AuthGuard] },*/
     { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule), canActivate: [AuthGuard] },
     { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivate: [AuthGuard] },
-    { path: 'pan_de_sal', component: GalletasComponent },
+    { path: 'youtube', component: YoutubeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'remote-learning', component: RemoteLearningComponent },
     { path: 'privacy-policy', component: PrivacyPolicyComponent },

@@ -47,7 +47,7 @@ export class SchoolFormComponent implements OnInit {
       this.studentForm.patchValue({
         curp: user.curp,
         niev: user.niev,
-        dob: user.dob,
+        dob: new Date(user.dob),
         primaryEmail: user.primaryEmail,
         familyName: user.name.familyName,
         givenName: user.name.givenName,
@@ -107,7 +107,7 @@ export class SchoolFormComponent implements OnInit {
     this.studentForm = this.fb.group({
       curp: new FormControl(null),
       niev: new FormControl(null),
-      dayOfBirth: new FormControl(''),
+      dob: new FormControl(null),
       primaryEmail: new FormControl(null, [Validators.required, Validators.email]),
       familyName: new FormControl(null, [Validators.required]),
       givenName: new FormControl(null, [Validators.required]),

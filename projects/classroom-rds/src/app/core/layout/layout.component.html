@@ -1,5 +1,5 @@
 <div [ngClass]="{'dark-theme': isDarkTheme | async}" fxLayout="column" fxFlexFill>
-  <app-header [user]="(user$|async)" [isHandset]="(isHandset$|async)" [isAdmin]="(isAdmin$|async)"
+  <app-header class="d-print-none" [user]="(user$|async)" [isHandset]="(isHandset$|async)" [isAdmin]="(isAdmin$|async)"
     [isTeacher]="(isTeacher$|async)" [isOnline]="(isOnline$|async)">
   </app-header>
   <div *ngIf="loading">

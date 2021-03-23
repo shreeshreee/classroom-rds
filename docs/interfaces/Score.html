@@ -62,7 +62,7 @@
             <h3>Fichero</h3>
         </p>
         <p class="comment">
-            <code>projects/classroom-rds/src/app/user/models/score.model.ts</code>
+            <code>projects/classroom-rds/src/app/user/models/grade.model.ts</code>
         </p>
 
 
@@ -86,6 +86,9 @@
                                         <a href="#final">final</a>
                                 </li>
                                 <li>
+                                        <a href="#isCourseClose">isCourseClose</a>
+                                </li>
+                                <li>
                                         <a href="#notes1">notes1</a>
                                 </li>
                                 <li>
@@ -95,13 +98,13 @@
                                         <a href="#notes3">notes3</a>
                                 </li>
                                 <li>
-                                        <a href="#unidad1">unidad1</a>
+                                        <a href="#unit1">unit1</a>
                                 </li>
                                 <li>
-                                        <a href="#unidad2">unidad2</a>
+                                        <a href="#unit2">unit2</a>
                                 </li>
                                 <li>
-                                        <a href="#unidad3">unidad3</a>
+                                        <a href="#unit3">unit3</a>
                                 </li>
                             </ul>
                         </td>
@@ -162,6 +165,35 @@
                                     <tr>
                                         <td class="col-md-4">
                                             <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="isCourseClose"></a>
+                                        <span class="name"><b>isCourseClose</b><a href="#isCourseClose"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>isCourseClose:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                                         </td>
                                     </tr>
@@ -263,13 +295,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="unidad1"></a>
-                                        <span class="name"><b>unidad1</b><a href="#unidad1"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="unit1"></a>
+                                        <span class="name"><b>unit1</b><a href="#unit1"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>unidad1:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>unit1:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -292,13 +324,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="unidad2"></a>
-                                        <span class="name"><b>unidad2</b><a href="#unidad2"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="unit2"></a>
+                                        <span class="name"><b>unit2</b><a href="#unit2"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>unidad2:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>unit2:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -321,13 +353,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="unidad3"></a>
-                                        <span class="name"><b>unidad3</b><a href="#unidad3"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="unit3"></a>
+                                        <span class="name"><b>unit3</b><a href="#unit3"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>unidad3:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>unit3:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -353,13 +385,19 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface Score {
   courseName: string;
-  unidad1: string;
-  unidad2: string;
-  unidad3: string;
+  unit1: string;
+  unit2: string;
+  unit3: string;
   notes1: string;
   notes2: string;
   notes3: string;
   final: number;
+  isCourseClose: boolean;
+}
+export interface Grade {
+  isFinished: boolean
+  notes1: string[];
+  scores: Score[];
 }
 </code></pre>
     </div>

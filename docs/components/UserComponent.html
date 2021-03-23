@@ -72,6 +72,7 @@
     </p>
     <p class="comment">
                     <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
     </p>
 
 
@@ -140,7 +141,7 @@
                                 <a href="#isTeacher$">isTeacher$</a>
                             </li>
                             <li>
-                                <a href="#loading">loading</a>
+                                <a href="#loading$">loading$</a>
                             </li>
                             <li>
                                 <a href="#user">user</a>
@@ -153,6 +154,9 @@
                             </li>
                             <li>
                                 <a href="#userId">userId</a>
+                            </li>
+                            <li>
+                                <a href="#userSub">userSub</a>
                             </li>
                         </ul>
                     </td>
@@ -168,6 +172,9 @@
                         <ul class="index-list">
                             <li>
                                 <a href="#logoutUser">logoutUser</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
@@ -190,12 +197,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(store: <a href="../interfaces/AppState.html">Store<AppState></a>)</code>
+<code>constructor(store: <a href="../interfaces/AppState.html">Store<AppState></a>, router: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, subService: <a href="../injectables/SubscriptionService.html">SubscriptionService</a>, userEntityService: <a href="../injectables/UserEntityService.html">UserEntityService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="31" class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:31</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="35" class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:35</a></div>
                             </td>
                         </tr>
 
@@ -217,6 +224,42 @@
                                                   
                                                         <td>
                                                                         <code><a href="../interfaces/AppState.html" target="_self" >Store&lt;AppState&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>subService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SubscriptionService.html" target="_self" >SubscriptionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userEntityService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserEntityService.html" target="_self" >UserEntityService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -264,8 +307,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="44"
-                            class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:44</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="59"
+                            class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:59</a></div>
                 </td>
             </tr>
 
@@ -316,6 +359,45 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="62"
+                            class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:62</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="ngOnInit"></a>
                     <span class="name">
                         <b>
@@ -334,8 +416,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="42"
-                            class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:42</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="50"
+                            class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:50</a></div>
                 </td>
             </tr>
 
@@ -377,7 +459,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="27" class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:27</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="32" class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -404,7 +486,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="26" class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:26</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="30" class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -431,7 +513,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="28" class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:28</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="33" class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -442,17 +524,18 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="loading"></a>
+                        <a name="loading$"></a>
                         <span class="name">
                             <b>
-                            loading</b>
-                            <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                            loading$</b>
+                            <a href="#loading$"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>false</code>
+                            <i>Tipo : </i>    <code>Observable&lt;boolean&gt;</code>
+
                         </td>
                     </tr>
                         <tr>
@@ -484,7 +567,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="25" class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:25</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="29" class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -511,7 +594,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="23" class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:23</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="27" class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:27</a></div>
                             </td>
                         </tr>
 
@@ -538,7 +621,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="29" class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:29</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="34" class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:34</a></div>
                             </td>
                         </tr>
 
@@ -565,7 +648,34 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="24" class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:24</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="28" class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userSub"></a>
+                        <span class="name">
+                            <b>
+                            userSub</b>
+                            <a href="#userSub"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="35" class="link-to-prism">projects/classroom-rds/src/app/user/containers/user/user.component.ts:35</a></div>
                             </td>
                         </tr>
 
@@ -578,7 +688,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnDestroy, OnInit } from &#x27;@angular/core&#x27;;
 import { ActivatedRoute } from &#x27;@angular/router&#x27;;
 
 import { select, Store } from &#x27;@ngrx/store&#x27;;
@@ -591,62 +701,77 @@ import { signOut } from &#x27;@rds-auth/state/auth.actions&#x27;;
 import { UserDomain } from &#x27;@rds-admin/models/users-domain.model&#x27;;
 
 import { Observable, of, Subscription } from &#x27;rxjs&#x27;;
+import { map, take } from &#x27;rxjs/operators&#x27;;
 
+import { UserAuth } from &#x27;~/app/auth/models/user-auth.model&#x27;;
 import { User } from &#x27;~/app/auth/models/user.model&#x27;;
+import { SubscriptionService } from &#x27;~/app/shared/services/subscription.service&#x27;;
+import { UserEntityService } from &#x27;~/app/store/user/user-entity.service&#x27;;
 
 @Component({
   selector: &#x27;app-user&#x27;,
   templateUrl: &#x27;./user.component.html&#x27;,
   styleUrls: [&#x27;./user.component.scss&#x27;]
 })
-export class UserComponent implements OnInit {
+export class UserComponent implements OnInit, OnDestroy {
   user$: Observable&lt;User&gt;;
   userId: string;
   user: User;
   isOnline$: Observable&lt;boolean&gt;;
+  loading$: Observable&lt;boolean&gt;
   isAdmin$: Observable&lt;boolean&gt;;
   isTeacher$: Observable&lt;boolean&gt;;
   userDomain: Observable&lt;UserDomain&gt;;
-/*   userSub: Subscription;
- */  loading &#x3D; false;
+  userSub: Subscription;
   constructor(
     private store: Store&lt;AppState&gt;,
-    /* private router: ActivatedRoute,
-    private userScoreService: UserScoresService */
+    private router: ActivatedRoute,
+    private subService: SubscriptionService,
+    private userEntityService: UserEntityService
   ) {
-    this.user$ &#x3D; this.store.pipe(select(selectUser));
+    //this.userSub &#x3D; this.store.select(selectUser).subscribe(user &#x3D;&gt; this.userId &#x3D; user.id);
+    this.loading$ &#x3D; this.userEntityService.loading$;
+    //this.user$ &#x3D; this.userEntityService.entities$;
+    this.userId &#x3D; this.router.snapshot.paramMap.get(&#x27;id&#x27;);
     this.isOnline$ &#x3D; store.pipe(select(isLoggedIn));
     this.isAdmin$ &#x3D; store.pipe(select(isAdmin));
     this.isTeacher$ &#x3D; store.pipe(select(isTeacher));
   }
   ngOnInit(): void {
+    this.user$ &#x3D; this.userEntityService.entities$
+      .pipe(
+        take(1),
+        map(user &#x3D;&gt; {
+          return user.find(x &#x3D;&gt; x.id &#x3D;&#x3D; this.userId);
+        })
+      );
   }
   logoutUser(user: User) {
     this.store.dispatch(signOut({ user }));
   }
-  /*   ngOnDestroy() {
-      this.userSub.unsubscribe();
-    } */
+  ngOnDestroy() {
+    this.subService.unsubscribeComponent$;
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;user-container p-2&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;!(loading$|async)&quot; class&#x3D;&quot;user-container m-2&quot;&gt;
   &lt;mat-card&gt;
     &lt;mat-card-header&gt;
-      &lt;img mat-card-avatar src&#x3D;&quot;https://i.pinimg.com/originals/98/d3/a2/98d3a283f98cded8e639957e935bd373.png&quot; /&gt;
+      &lt;!-- &lt;img mat-card-avatar src&#x3D;&quot;https://i.pinimg.com/originals/98/d3/a2/98d3a283f98cded8e639957e935bd373.png&quot; /&gt; --&gt;
       &lt;mat-card-title&gt;&lt;span class&#x3D;&quot;view-title&quot;&gt;Servicios Escolares&lt;/span&gt;
       &lt;/mat-card-title&gt;
       &lt;mat-card-subtitle class&#x3D;&quot;view-subtitle&quot;&gt;Accede a toda tu información como alumno
       &lt;/mat-card-subtitle&gt;
     &lt;/mat-card-header&gt;
   &lt;/mat-card&gt;
-  &lt;div class&#x3D;&quot;py-2 d-block&quot;&gt;
+  &lt;div class&#x3D;&quot;mt-2 d-block&quot;&gt;
     &lt;app-user-menu [user]&#x3D;&quot;(user$|async)&quot; [isAdmin]&#x3D;&quot;(isAdmin$|async)&quot; [isTeacher]&#x3D;&quot;(isTeacher$|async)&quot;
       [isOnline]&#x3D;&quot;(isOnline$|async)&quot; (logout)&#x3D;&quot;logoutUser($event)&quot;&gt;&lt;/app-user-menu&gt;
   &lt;/div&gt;
-  &lt;div class&#x3D;&quot;py-2 d-block&quot;&gt;
+  &lt;div class&#x3D;&quot;mb-2 d-block&quot;&gt;
     &lt;router-outlet&gt;&lt;/router-outlet&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -661,11 +786,13 @@ export class UserComponent implements OnInit {
                 </p>
                 <pre class="line-numbers"><code class="language-scss">@import &#x27;./../../../../assets/themes/colors.scss&#x27;;
 .view-title {
+  font-family: Comfortaa;
   color:$rds-logo-color;
   font-size: calc(1rem + 1.5vw);
   font-weight: 800;
 }
 .view-subtitle {
+  font-family: Comfortaa;
   margin-top: -50px;
   font-size: calc(0.5rem + 1vw);
   font-weight: 400;
@@ -674,14 +801,17 @@ export class UserComponent implements OnInit {
   opacity: 0.75;
   font-size: 0.75em;
 }
+
+/*
 app-user-grades-printable {
-  /* hide the printing component from @media screen */
+  // hide the printing component from @media screen
   display: none;
 }
-
+*/
+/*
 @media print {
-  /* invert the display (show/hide) properties of the main */
-  /* aplication component and the printing component       */
+  // invert the display (show/hide) properties of the main
+  // aplication component and the printing component
   app-user-grades-printable {
     display: block;
   }
@@ -692,6 +822,8 @@ app-user-grades-printable {
     display: none;
   }
 }
+
+*/
 </code></pre>
     </div>
 
@@ -720,8 +852,8 @@ app-user-grades-printable {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="user-container p-2">  <mat-card>    <mat-card-header>      <img mat-card-avatar src="https://i.pinimg.com/originals/98/d3/a2/98d3a283f98cded8e639957e935bd373.png" />      <mat-card-title><span class="view-title">Servicios Escolares</span>      </mat-card-title>      <mat-card-subtitle class="view-subtitle">Accede a toda tu información como alumno      </mat-card-subtitle>    </mat-card-header>  </mat-card>  <div class="py-2 d-block">    <app-user-menu [user]="(user$|async)" [isAdmin]="(isAdmin$|async)" [isTeacher]="(isTeacher$|async)"      [isOnline]="(isOnline$|async)" (logout)="logoutUser($event)"></app-user-menu>  </div>  <div class="py-2 d-block">    <router-outlet></router-outlet>  </div></div><!-- <app-user-grades-printable></app-user-grades-printable> --></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GalletasComponent', 'selector': 'app-galletas'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SchoolDashboardComponent', 'selector': 'app-school-dashboard'},{'name': 'SchoolFormComponent', 'selector': 'app-school-form'},{'name': 'SchoolHomeComponent', 'selector': 'app-school-home'},{'name': 'SchoolStudentsComponent', 'selector': 'app-school-students'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserGradesPrintableComponent', 'selector': 'app-user-grades-printable'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'}];
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="!(loading$|async)" class="user-container m-2">  <mat-card>    <mat-card-header>      <!-- <img mat-card-avatar src="https://i.pinimg.com/originals/98/d3/a2/98d3a283f98cded8e639957e935bd373.png" /> -->      <mat-card-title><span class="view-title">Servicios Escolares</span>      </mat-card-title>      <mat-card-subtitle class="view-subtitle">Accede a toda tu información como alumno      </mat-card-subtitle>    </mat-card-header>  </mat-card>  <div class="mt-2 d-block">    <app-user-menu [user]="(user$|async)" [isAdmin]="(isAdmin$|async)" [isTeacher]="(isTeacher$|async)"      [isOnline]="(isOnline$|async)" (logout)="logoutUser($event)"></app-user-menu>  </div>  <div class="mb-2 d-block">    <router-outlet></router-outlet>  </div></div><!-- <app-user-grades-printable></app-user-grades-printable> --></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradeRecomendationComponent', 'selector': 'app-grade-recomendation'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesListComponent', 'selector': 'app-grades-list'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SchoolDashboardComponent', 'selector': 'app-school-dashboard'},{'name': 'SchoolFormComponent', 'selector': 'app-school-form'},{'name': 'SchoolHomeComponent', 'selector': 'app-school-home'},{'name': 'SchoolStudentsComponent', 'selector': 'app-school-students'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'SubjectsComponent', 'selector': 'app-subjects'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserGradesPrintableComponent', 'selector': 'app-user-grades-printable'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'},{'name': 'WorkingOnGradesComponent', 'selector': 'app-working-on-grades'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
     var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'}];
     var ACTUAL_COMPONENT = {'name': 'UserComponent'};
 </script>

@@ -90,6 +90,9 @@
                             <li>
                                 <a href="#welcomeBack$">welcomeBack$</a>
                             </li>
+                            <li>
+                                <a href="#youAreLoggedOut$">youAreLoggedOut$</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -329,7 +332,7 @@
         tap((action) &#x3D;&gt;
           this.snackService.messageWithComponent(action.user, {
             vPos: &#x27;bottom&#x27;, hPos: &#x27;center&#x27;, setAutoHide: true,
-            hide: 5000, action: true, actionString: &#x27;Ok&#x27;, extra: false, message: &#x27;Has ingresado como: &#x27; + action.user.name.fullName
+            hide: 5000, action: true, actionString: &#x27;Ok&#x27;, extra: false, message: &#x27;Has ingresado como: &#x27; + action.user.displayName
           })
         )
       ),
@@ -340,6 +343,39 @@
                         <tr>
                             <td class="col-md-4">
                                     <div class="io-line">Definido en <a href="" data-line="33" class="link-to-prism">projects/classroom-rds/src/app/store/app/effects/snack.effects.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="youAreLoggedOut$"></a>
+                        <span class="name">
+                            <b>
+                            youAreLoggedOut$</b>
+                            <a href="#youAreLoggedOut$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>createEffect(
+    () &#x3D;&gt;
+      this.actions$.pipe(
+        ofType(fromAuthActions.signOut),
+        tap(() &#x3D;&gt; this.snackService.justMessage(&#x27;Finazlizando sesión&#x27;))
+      ),
+    { dispatch: false }
+  )</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="71" class="link-to-prism">projects/classroom-rds/src/app/store/app/effects/snack.effects.ts:71</a></div>
                             </td>
                         </tr>
 
@@ -391,7 +427,7 @@ export class SnackEffects {
         tap((action) &#x3D;&gt;
           this.snackService.messageWithComponent(action.user, {
             vPos: &#x27;bottom&#x27;, hPos: &#x27;center&#x27;, setAutoHide: true,
-            hide: 5000, action: true, actionString: &#x27;Ok&#x27;, extra: false, message: &#x27;Has ingresado como: &#x27; + action.user.name.fullName
+            hide: 5000, action: true, actionString: &#x27;Ok&#x27;, extra: false, message: &#x27;Has ingresado como: &#x27; + action.user.displayName
           })
         )
       ),
@@ -422,14 +458,14 @@ export class SnackEffects {
     { dispatch: false }
   );
 
-  /*  youAreLoggedOut$ &#x3D; createEffect(
-     () &#x3D;&gt;
-       this.actions$.pipe(
-         ofType(fromAuthActions.signOut),
-         tap(() &#x3D;&gt; this.snackService.justMessage(&#x27;Finazlizando sesión&#x27;))
-       ),
-     { dispatch: false }
-   ); */
+  youAreLoggedOut$ &#x3D; createEffect(
+    () &#x3D;&gt;
+      this.actions$.pipe(
+        ofType(fromAuthActions.signOut),
+        tap(() &#x3D;&gt; this.snackService.justMessage(&#x27;Finazlizando sesión&#x27;))
+      ),
+    { dispatch: false }
+  );
 
   comeBackSoon$ &#x3D; createEffect(
     () &#x3D;&gt;

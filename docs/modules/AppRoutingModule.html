@@ -72,7 +72,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
-import { Routes, RouterModule, PreloadAllModules } from &#x27;@angular/router&#x27;;
+import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
 
 import { AuthGuard } from &#x27;@rds-auth/guards/auth.guard&#x27;;
 
@@ -81,7 +81,6 @@ import { LayoutComponent } from &#x27;@rds-core/layout/layout.component&#x27;;
 import { AboutComponent } from &#x27;@rds-shared/components/about/about.component&#x27;;
 import { CodeConductSchoolComponent } from &#x27;@rds-shared/components/code-conduct-school/code-conduct-school.component&#x27;;
 import { CodeConductComponent } from &#x27;@rds-shared/components/code-conduct/code-conduct.component&#x27;;
-import { GalletasComponent } from &#x27;@rds-shared/components/galletas/galletas.component&#x27;;
 import { HomeComponent } from &#x27;@rds-shared/components/home/home.component&#x27;;
 import { LicenseComponent } from &#x27;@rds-shared/components/license/license.component&#x27;;
 import { LocationComponent } from &#x27;@rds-shared/components/location/location.component&#x27;;
@@ -92,19 +91,19 @@ import { TermsComponent } from &#x27;@rds-shared/components/terms/terms.componen
 import { UnderConstructionComponent } from &#x27;@rds-shared/components/under-construction/under-construction.component&#x27;;
 
 import { ConfigComponent } from &#x27;./core/layout/config/config.component&#x27;;
-import { SchoolFormComponent } from &#x27;./school/components/school-form/school-form.component&#x27;;
+import { YoutubeComponent } from &#x27;~/app/shared/components/youtube/youtube.component&#x27;;
 const routes: Routes &#x3D; [{
   path: &#x27;&#x27;, component: LayoutComponent, children: [
     { path: &#x27;&#x27;, component: HomeComponent },
     { path: &#x27;config&#x27;, component: ConfigComponent },
     { path: &#x27;escuela&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./school/school.module&#x27;).then(m &#x3D;&gt; m.SchoolModule)&quot;, canActivate: [AuthGuard] },
-    { path: &#x27;classroom&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./classroom/classroom.module&#x27;).then(m &#x3D;&gt; m.ClassroomModule)&quot;, canActivate: [AuthGuard] },
+    { path: &#x27;gsuite&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./classroom/classroom.module&#x27;).then(m &#x3D;&gt; m.ClassroomModule)&quot;, canActivate: [AuthGuard] },
     { path: &#x27;perfil&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./classroom/user-profiles/user-profiles.module&#x27;).then(m &#x3D;&gt; m.UserProfilesModule)&quot;, canActivate: [AuthGuard] },
     { path: &#x27;calificaciones&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./grades/grades.module&#x27;).then(m &#x3D;&gt; m.GradesModule)&quot;, canActivate: [AuthGuard] },
-    { path: &#x27;clases&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./classroom/courses/courses.module&#x27;).then(m &#x3D;&gt; m.CoursesModule)&quot;, canActivate: [AuthGuard] },
+    /*     { path: &#x27;clases&#x27;, loadChildren: () &#x3D;&gt; import(&#x27;./classroom/courses/courses.module&#x27;).then(m &#x3D;&gt; m.CoursesModule), canActivate: [AuthGuard] },*/
     { path: &#x27;user&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./user/user.module&#x27;).then(m &#x3D;&gt; m.UserModule)&quot;, canActivate: [AuthGuard] },
     { path: &#x27;admin&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./admin/admin.module&#x27;).then(m &#x3D;&gt; m.AdminModule)&quot;, canActivate: [AuthGuard] },
-    { path: &#x27;galletas&#x27;, component: GalletasComponent },
+    { path: &#x27;youtube&#x27;, component: YoutubeComponent },
     { path: &#x27;about&#x27;, component: AboutComponent },
     { path: &#x27;remote-learning&#x27;, component: RemoteLearningComponent },
     { path: &#x27;privacy-policy&#x27;, component: PrivacyPolicyComponent },
@@ -122,7 +121,8 @@ const routes: Routes &#x3D; [{
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     useHash: true,
-    paramsInheritanceStrategy: &#x27;always&#x27;,
+    /* relativeLinkResolution: &#x27;corrected&#x27;,
+    paramsInheritanceStrategy: &#x27;always&#x27;, */
   })],
   exports: [RouterModule]
 })

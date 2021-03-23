@@ -523,13 +523,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/SchoolModule.html" data-type="entity-link">SchoolModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-SchoolModule-12a85e683f021454a3cefc738482af0e"' : 'data-target="#xs-components-links-module-SchoolModule-12a85e683f021454a3cefc738482af0e"' }>
+                                            'data-target="#components-links-module-SchoolModule-1ee5aeb98ca2b10758100f61a97525d2"' : 'data-target="#xs-components-links-module-SchoolModule-1ee5aeb98ca2b10758100f61a97525d2"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Componentes</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-SchoolModule-12a85e683f021454a3cefc738482af0e"' :
-                                            'id="xs-components-links-module-SchoolModule-12a85e683f021454a3cefc738482af0e"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-SchoolModule-1ee5aeb98ca2b10758100f61a97525d2"' :
+                                            'id="xs-components-links-module-SchoolModule-1ee5aeb98ca2b10758100f61a97525d2"' }>
                                             <li class="link">
                                                 <a href="components/SchoolComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">SchoolComponent</a>
@@ -546,17 +546,21 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                 <a href="components/SchoolStudentsComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">SchoolStudentsComponent</a>
                                             </li>
+                                            <li class="link">
+                                                <a href="components/SubjectsComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">SubjectsComponent</a>
+                                            </li>
                                         </ul>
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-SchoolModule-12a85e683f021454a3cefc738482af0e"' : 'data-target="#xs-injectables-links-module-SchoolModule-12a85e683f021454a3cefc738482af0e"' }>
+                                        'data-target="#injectables-links-module-SchoolModule-1ee5aeb98ca2b10758100f61a97525d2"' : 'data-target="#xs-injectables-links-module-SchoolModule-1ee5aeb98ca2b10758100f61a97525d2"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Inyectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-SchoolModule-12a85e683f021454a3cefc738482af0e"' :
-                                        'id="xs-injectables-links-module-SchoolModule-12a85e683f021454a3cefc738482af0e"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-SchoolModule-1ee5aeb98ca2b10758100f61a97525d2"' :
+                                        'id="xs-injectables-links-module-SchoolModule-1ee5aeb98ca2b10758100f61a97525d2"' }>
                                         <li class="link">
                                             <a href="injectables/SchoolService.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>SchoolService</a>
@@ -670,16 +674,24 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/UserModule.html" data-type="entity-link">UserModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-UserModule-db538abcc42bd675a421d9e76d8e3eb2"' : 'data-target="#xs-components-links-module-UserModule-db538abcc42bd675a421d9e76d8e3eb2"' }>
+                                            'data-target="#components-links-module-UserModule-081b3dc3d86b31a82c9a3c6983d264fe"' : 'data-target="#xs-components-links-module-UserModule-081b3dc3d86b31a82c9a3c6983d264fe"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Componentes</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-UserModule-db538abcc42bd675a421d9e76d8e3eb2"' :
-                                            'id="xs-components-links-module-UserModule-db538abcc42bd675a421d9e76d8e3eb2"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-UserModule-081b3dc3d86b31a82c9a3c6983d264fe"' :
+                                            'id="xs-components-links-module-UserModule-081b3dc3d86b31a82c9a3c6983d264fe"' }>
+                                            <li class="link">
+                                                <a href="components/GradeRecomendationComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">GradeRecomendationComponent</a>
+                                            </li>
                                             <li class="link">
                                                 <a href="components/GradesBarChartComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">GradesBarChartComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/GradesListComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">GradesListComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/GradesTableComponent.html"
@@ -709,20 +721,32 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                 <a href="components/UserMenuComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">UserMenuComponent</a>
                                             </li>
+                                            <li class="link">
+                                                <a href="components/WorkingOnGradesComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">WorkingOnGradesComponent</a>
+                                            </li>
                                         </ul>
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-UserModule-db538abcc42bd675a421d9e76d8e3eb2"' : 'data-target="#xs-injectables-links-module-UserModule-db538abcc42bd675a421d9e76d8e3eb2"' }>
+                                        'data-target="#injectables-links-module-UserModule-081b3dc3d86b31a82c9a3c6983d264fe"' : 'data-target="#xs-injectables-links-module-UserModule-081b3dc3d86b31a82c9a3c6983d264fe"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Inyectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-UserModule-db538abcc42bd675a421d9e76d8e3eb2"' :
-                                        'id="xs-injectables-links-module-UserModule-db538abcc42bd675a421d9e76d8e3eb2"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-UserModule-081b3dc3d86b31a82c9a3c6983d264fe"' :
+                                        'id="xs-injectables-links-module-UserModule-081b3dc3d86b31a82c9a3c6983d264fe"' }>
                                         <li class="link">
                                             <a href="injectables/SchoolService.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>SchoolService</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="injectables/UserDataService.html"
+                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>UserDataService</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="injectables/UserEntityService.html"
+                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>UserEntityService</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -822,9 +846,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/DeleteButtonComponent.html" data-type="entity-link">DeleteButtonComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/GalletasComponent.html" data-type="entity-link">GalletasComponent</a>
-                            </li>
-                            <li class="link">
                                 <a href="components/GroupComponent.html" data-type="entity-link">GroupComponent</a>
                             </li>
                             <li class="link">
@@ -896,6 +917,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <li class="link">
                                 <a href="components/WellcomeComponent.html" data-type="entity-link">WellcomeComponent</a>
                             </li>
+                            <li class="link">
+                                <a href="components/YoutubeComponent.html" data-type="entity-link">YoutubeComponent</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="chapter">
@@ -908,6 +932,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
                             <li class="link">
                                 <a href="classes/AppPage.html" data-type="entity-link">AppPage</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/ScoreDataSource.html" data-type="entity-link">ScoreDataSource</a>
                             </li>
                         </ul>
                     </li>
@@ -1085,6 +1112,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <li class="link">
                                 <a href="guards/UserResolver.html" data-type="entity-link">UserResolver</a>
                             </li>
+                            <li class="link">
+                                <a href="guards/UsersResolver.html" data-type="entity-link">UsersResolver</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="chapter">
@@ -1095,9 +1125,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <span class="icon ion-ios-arrow-down"></span>
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
-                            <li class="link">
-                                <a href="interfaces/Address.html" data-type="entity-link">Address</a>
-                            </li>
                             <li class="link">
                                 <a href="interfaces/AppState.html" data-type="entity-link">AppState</a>
                             </li>
@@ -1132,6 +1159,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/GlobalPermissions.html" data-type="entity-link">GlobalPermissions</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/Grade.html" data-type="entity-link">Grade</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/GradeHistory.html" data-type="entity-link">GradeHistory</a>
                             </li>
                             <li class="link">
@@ -1156,13 +1186,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/NavLink.html" data-type="entity-link">NavLink</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/Parent.html" data-type="entity-link">Parent</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/Permission.html" data-type="entity-link">Permission</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/RoleSelectorId.html" data-type="entity-link">RoleSelectorId</a>
-                            </li>
-                            <li class="link">
-                                <a href="interfaces/SchoolTree.html" data-type="entity-link">SchoolTree</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/Score.html" data-type="entity-link">Score</a>
@@ -1186,10 +1216,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/User.html" data-type="entity-link">User</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/UserAuth.html" data-type="entity-link">UserAuth</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/UserDomain.html" data-type="entity-link">UserDomain</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/UserName.html" data-type="entity-link">UserName</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/UserParent.html" data-type="entity-link">UserParent</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/UserPhoto.html" data-type="entity-link">UserPhoto</a>
@@ -1198,10 +1234,19 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/UserResponse.html" data-type="entity-link">UserResponse</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/UserScore.html" data-type="entity-link">UserScore</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/UserStudent.html" data-type="entity-link">UserStudent</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/UserStudent-1.html" data-type="entity-link">UserStudent</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/UserTeacher.html" data-type="entity-link">UserTeacher</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/UserTeacher-1.html" data-type="entity-link">UserTeacher</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/YouTubeVideo.html" data-type="entity-link">YouTubeVideo</a>

@@ -309,7 +309,7 @@ export const authReducer &#x3D; createReducer&lt;AuthenticationState&gt;(
       error: action.error
     };
   }),
-  on(fromAuthActions.signOut, (state) &#x3D;&gt; {
+  on(fromAuthActions.signOutCompleted, (state) &#x3D;&gt; {
     return {
       ...state,
       user: null,
@@ -327,7 +327,13 @@ export const authReducer &#x3D; createReducer&lt;AuthenticationState&gt;(
       ...state,
       isTeacher: action.isTeacher
     };
-  })
+  }),
+  on(fromAuthActions.fullfillUserSuccess, (state, action) &#x3D;&gt; {
+    return {
+      ...state,
+      user: action.user,
+    };
+  }),
 );
 
 

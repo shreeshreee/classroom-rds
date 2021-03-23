@@ -28,7 +28,7 @@ export class UserDataService extends DefaultDataService<User> {
   }
 
   getWithQuery(queryParams: QueryParams) {
-    return from(this.schoolService.getUsersWithQuery(queryParams));
+    return this.schoolService.getUsersWithQuery(queryParams).pipe(take(1), map(users => users));
   }
 
   getById(id: string): Observable<User> {

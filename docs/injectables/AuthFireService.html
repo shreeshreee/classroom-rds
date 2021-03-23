@@ -82,6 +82,10 @@
                             <li>
                                 <a href="#user$">user$</a>
                             </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#userCollection">userCollection</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -105,6 +109,9 @@
                             </li>
                             <li>
                                 <a href="#getAuthState">getAuthState</a>
+                            </li>
+                            <li>
+                                <a href="#getUserById">getUserById</a>
                             </li>
                             <li>
                                 <a href="#signInWithCredential">signInWithCredential</a>
@@ -138,7 +145,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:17</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="18" class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -227,8 +234,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="65"
-                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:65</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="67"
+                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:67</a></div>
                 </td>
             </tr>
 
@@ -297,8 +304,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="73"
-                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:73</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="75"
+                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:75</a></div>
                 </td>
             </tr>
 
@@ -360,15 +367,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>createUser(user: <a href="../interfaces/User.html">User</a>)</code>
+<code>createUser(user: <a href="../interfaces/User.html">Partial<User></a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="51"
-                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:51</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="57"
+                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:57</a></div>
                 </td>
             </tr>
 
@@ -390,7 +397,7 @@
                                 <tr>
                                     <td>user</td>
                                     <td>
-                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+                                                <code><a href="../interfaces/User.html" target="_self" >Partial&lt;User&gt;</a></code>
                                     </td>
 
                                     <td>
@@ -437,8 +444,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="35"
-                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:35</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="39"
+                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:39</a></div>
                 </td>
             </tr>
 
@@ -449,6 +456,76 @@
                     <div class="io-description">
                         <b>Devuelve : </b>        <code><a href="../interfaces/User.html" target="_self" >Observable&lt;firebase.User&gt;</a></code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUserById"></a>
+                    <span class="name">
+                        <b>
+                            getUserById
+                        </b>
+                        <a href="#getUserById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUserById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="35"
+                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:35</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -476,8 +553,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="38"
-                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:38</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="42"
+                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:42</a></div>
                 </td>
             </tr>
 
@@ -546,8 +623,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="41"
-                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:41</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="45"
+                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:45</a></div>
                 </td>
             </tr>
 
@@ -616,8 +693,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="45"
-                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:45</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="49"
+                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:49</a></div>
                 </td>
             </tr>
 
@@ -703,7 +780,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="19" class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:19</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="20" class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -737,6 +814,39 @@
 
             </tbody>
         </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userCollection"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            userCollection</b>
+                            <a href="#userCollection"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;users&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="18" class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
 </section>
 
     </div>
@@ -752,7 +862,7 @@ import firebase from &#x27;firebase/app&#x27;;
 import &#x27;firebase/auth&#x27;;
 
 import { from, Observable, of } from &#x27;rxjs&#x27;;
-import { map, concatMap, switchMap } from &#x27;rxjs/operators&#x27;;
+import { map, concatMap, switchMap, take } from &#x27;rxjs/operators&#x27;;
 
 import { User } from &#x27;../models/user.model&#x27;;
 @Injectable({
@@ -760,6 +870,7 @@ import { User } from &#x27;../models/user.model&#x27;;
 })
 export class AuthFireService {
   user$: Observable&lt;firebase.User&gt;;
+  private userCollection: string &#x3D; &#x27;users&#x27;;
   constructor(
     public afAuth: AngularFireAuth,
     private afDatabase: AngularFireDatabase,
@@ -769,14 +880,17 @@ export class AuthFireService {
     this.user$ &#x3D; this.getAuthState().pipe(
       switchMap((user) &#x3D;&gt; {
         if (user) {
-          return this.afStore.collection&lt;User&gt;(&#x27;appusers&#x27;).doc(&#x60;${user.providerData[0].uid}&#x60;).valueChanges();
+          return this.afDatabase.object&lt;User&gt;(&#x60;${this.userCollection}/${user.providerData[0].uid}&#x60;).valueChanges();
         } else {
           return of(null);
         }
       })
     );
   }
+  getUserById(id: string) {
+    return this.afDatabase.object&lt;User&gt;(&#x60;${this.userCollection}/${id}&#x60;).valueChanges();
 
+  }
   getAuthState(): Observable&lt;firebase.User&gt; {
     return this.afAuth.authState;
   }
@@ -784,31 +898,29 @@ export class AuthFireService {
     return this.afAuth.signInWithCredential(credentials);
   }
   signOut(id: string) {
-    this.updateOnlineStatus(id, false);
+    //this.updateOnlineStatus(id, false);
     return this.afAuth.signOut();
   }
   updateOnlineStatus(id: string, status: boolean): Observable&lt;void&gt; {
-    if (status) {
-      this.afDatabase.database.ref().child(&#x60;appusers/${id}&#x60;).onDisconnect().update({ isOnline: false });
-    }
-    return from(this.afDatabase.object(&#x60;appusers/${id}&#x60;).update({ isOnline: status }));
+    //if (status) {
+    //console.log(&#x27;onDisconect branch&#x27;, status)
+    return from(this.afDatabase.database.ref().child(&#x60;${this.userCollection}/${id}&#x60;).onDisconnect().update({ isOnline: status }));
+    //}
+    //console.log(&#x27;outer branch&#x27;, status)
+    //return from(this.afDatabase.object(&#x60;${this.userCollection}/${id}&#x60;).update({ isOnline: status }));
   }
-  createUser(user: User) {
+  createUser(user: Partial&lt;User&gt;) {
     const key &#x3D; user.id;
-    return this.afStore.collection(&#x27;users&#x27;).doc(key).set({
+    return this.afStore.collection(&#x60;${this.userCollection}&#x60;).doc(key).set({
       isVerified: user.isVerified,
       uid: user.uid,
     }, { merge: true }).then(
-      () &#x3D;&gt; this.afDatabase.object(&#x60;appusers/${user.id}&#x60;).update({
-        isOnline: true,
-        isTeacher: false,
-        uid: user.uid,
-      })
+      () &#x3D;&gt; this.afDatabase.object(&#x60;${this.userCollection}/${user.id}&#x60;).update(user)
     );
   }
 
   checkAdminRole(id: string): Observable&lt;boolean&gt; {
-    const val &#x3D; this.afDatabase.object&lt;User&gt;(&#x60;appusers/${id}&#x60;).valueChanges();
+    const val &#x3D; this.afDatabase.object&lt;User&gt;(&#x60;${this.userCollection}/${id}&#x60;).valueChanges();
     let isAdmin: Observable&lt;boolean&gt; &#x3D; val.pipe(map(user &#x3D;&gt; {
       return user.isAdmin;
     }))
@@ -816,7 +928,7 @@ export class AuthFireService {
   }
 
   checkTeacherRole(id: string): Observable&lt;boolean&gt; {
-    const val &#x3D; this.afDatabase.object&lt;User&gt;(&#x60;appusers/${id}&#x60;).valueChanges();
+    const val &#x3D; this.afDatabase.object&lt;User&gt;(&#x60;${this.userCollection}/${id}&#x60;).valueChanges();
     let isTeacher: Observable&lt;boolean&gt; &#x3D; val.pipe(map(user &#x3D;&gt; {
       return user.isTeacher;
     }))

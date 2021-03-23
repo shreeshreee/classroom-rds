@@ -117,7 +117,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="14" class="link-to-prism">projects/classroom-rds/src/app/store/user/user-data.service.ts:14</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">projects/classroom-rds/src/app/store/user/user-data.service.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -206,8 +206,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="25"
-                            class="link-to-prism">projects/classroom-rds/src/app/store/user/user-data.service.ts:25</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="26"
+                            class="link-to-prism">projects/classroom-rds/src/app/store/user/user-data.service.ts:26</a></div>
                 </td>
             </tr>
 
@@ -245,8 +245,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="33"
-                            class="link-to-prism">projects/classroom-rds/src/app/store/user/user-data.service.ts:33</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="34"
+                            class="link-to-prism">projects/classroom-rds/src/app/store/user/user-data.service.ts:34</a></div>
                 </td>
             </tr>
 
@@ -315,8 +315,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="29"
-                            class="link-to-prism">projects/classroom-rds/src/app/store/user/user-data.service.ts:29</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="30"
+                            class="link-to-prism">projects/classroom-rds/src/app/store/user/user-data.service.ts:30</a></div>
                 </td>
             </tr>
 
@@ -385,8 +385,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="36"
-                            class="link-to-prism">projects/classroom-rds/src/app/store/user/user-data.service.ts:36</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="37"
+                            class="link-to-prism">projects/classroom-rds/src/app/store/user/user-data.service.ts:37</a></div>
                 </td>
             </tr>
 
@@ -423,7 +423,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Devuelve : </b>        <code><a href="../interfaces/User.html" target="_self" >Observable&lt;User&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -449,6 +449,7 @@ import { from, Observable } from &#x27;rxjs&#x27;;
 import { map, take } from &#x27;rxjs/operators&#x27;;
 
 import * as fromUser from &#x27;./&#x27;;
+import { UserAuth } from &#x27;~/app/auth/models/user-auth.model&#x27;;
 import { User } from &#x27;~/app/auth/models/user.model&#x27;;
 import { SchoolService } from &#x27;~/app/school/services/school.service&#x27;;
 @Injectable()
@@ -468,13 +469,13 @@ export class UserDataService extends DefaultDataService&lt;User&gt; {
   }
 
   getWithQuery(queryParams: QueryParams) {
-    return from(this.schoolService.getUsersWithQuery(queryParams));
+    return this.schoolService.getUsersWithQuery(queryParams).pipe(take(1), map(users &#x3D;&gt; users));
   }
 
   getById(id: string): Observable&lt;User&gt; {
     return this.schoolService.getUser(id);
   }
-  update(update: Update&lt;User&gt;) {
+  update(update: Update&lt;User&gt;): Observable&lt;User&gt; {
     return from(this.schoolService.updateUser(update.id.toString(), update.changes))
   }
 }
