@@ -1,4 +1,3 @@
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -6,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -21,6 +19,7 @@ import { MaterialModule } from './../modules/material.module';
 import { SchoolService } from '../school/services/school.service';
 import { UserDataService } from '../store/user/user-data.service';
 import { UserEntityService } from '../store/user/user-entity.service';
+import { ResumeComponent } from '../shared/components/resume/resume.component';
 
 import { UserRoutingModule } from './user-routing.module';
 
@@ -34,8 +33,8 @@ import { UserGradesComponent } from './components/user-grades/user-grades.compon
 import { UserHomeComponent } from './components/user-home/user-home.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { UserMenuComponent } from './components/user-menu/user-menu.component';
-import { UserComponent } from './containers/user/user.component';
 import { WorkingOnGradesComponent } from './components/working-on-grades/working-on-grades.component';
+import { UserComponent } from './containers/user/user.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +49,7 @@ import { WorkingOnGradesComponent } from './components/working-on-grades/working
     GradeRecomendationComponent,
     GradesListComponent,
     WorkingOnGradesComponent,
+    ResumeComponent,
   ],
   imports: [
     CommonModule,

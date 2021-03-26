@@ -24,6 +24,8 @@ import { SchoolFormComponent } from './components/school-form/school-form.compon
 import { SchoolStudentsComponent } from './container/school-students/school-students.component';
 import { SchoolComponent } from './container/school/school.component';
 import { SubjectsComponent } from './container/subjects/subjects.component';
+import { SchoolTeachersComponent } from './container/school-teachers/school-teachers.component';
+import { TeachersFormComponent } from './components/teachers-form/teachers-form.component';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import { SubjectsComponent } from './container/subjects/subjects.component';
     SchoolStudentsComponent,
     SchoolFormComponent,
     SubjectsComponent,
+    SchoolTeachersComponent,
+    TeachersFormComponent,
   ],
   imports: [
     CommonModule,

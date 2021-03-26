@@ -11,7 +11,7 @@ import { UserEntityService } from '~/app/store/user/user-entity.service';
 
 @Injectable()
 export class UsersResolver implements Resolve<boolean> {
-
+  usersOnline: number = 0;
   constructor(
     private userEntityService: UserEntityService,
     private subService: SubscriptionService) { }

@@ -18,6 +18,7 @@ import { TermsComponent } from '@rds-shared/components/terms/terms.component';
 import { UnderConstructionComponent } from '@rds-shared/components/under-construction/under-construction.component';
 
 import { ConfigComponent } from './core/layout/config/config.component';
+import { ResumeComponent } from './shared/components/resume/resume.component';
 import { YoutubeComponent } from '~/app/shared/components/youtube/youtube.component';
 const routes: Routes = [{
   path: '', component: LayoutComponent, children: [
@@ -41,6 +42,8 @@ const routes: Routes = [{
     { path: 'code-conduct-school', component: CodeConductSchoolComponent },
     { path: 'terms', component: TermsComponent },
     { path: 'under-construction', component: UnderConstructionComponent },
+    { path: 'resume', component: ResumeComponent },
+
     { path: '**', component: NotFoundComponent }
   ]
 }];

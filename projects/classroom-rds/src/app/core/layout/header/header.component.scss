@@ -1,6 +1,6 @@
 @import './../../../../assets/themes/colors.scss';
-mat-toolbar{
-  //z-index: 1000;
+.header {
+  z-index: 100;
   min-height: 50px!important;
   height: 50px !important;
 }

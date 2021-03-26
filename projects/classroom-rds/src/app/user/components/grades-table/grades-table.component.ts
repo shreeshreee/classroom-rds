@@ -1,12 +1,8 @@
-import { MatDialog } from '@angular/material/dialog';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit, Input } from '@angular/core';
-import { MatSort } from '@angular/material/sort';
-import { MatTable, MatTableDataSource } from '@angular/material/table';
 
 import { faComments } from '@fortawesome/free-regular-svg-icons';
 
-import { GradesBarChartComponent } from './../grades-bar-chart/grades-bar-chart.component';
 import { Grade, Score } from '../../models/grade.model';
 
 import { ScoreDataSource } from './score-datasource';
@@ -60,5 +56,6 @@ export class GradesTableComponent implements OnInit {
     const avg3 = (Math.round(10 * (sum3 / count)) / 10).toString();
     return [avg1, avg2, avg3]
   }
+
 
 }

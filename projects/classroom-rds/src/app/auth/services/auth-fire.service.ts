@@ -47,12 +47,12 @@ export class AuthFireService {
     return this.afAuth.signOut();
   }
   updateOnlineStatus(id: string, status: boolean): Observable<void> {
-    //if (status) {
-    //console.log('onDisconect branch', status)
-    return from(this.afDatabase.database.ref().child(`${this.userCollection}/${id}`).onDisconnect().update({ isOnline: status }));
-    //}
+    if (status) {
+      //console.log('onDisconect branch', status)
+      return from(this.afDatabase.database.ref().child(`${this.userCollection}/${id}`).onDisconnect().update({ isOnline: status }));
+    }
     //console.log('outer branch', status)
-    //return from(this.afDatabase.object(`${this.userCollection}/${id}`).update({ isOnline: status }));
+    return from(this.afDatabase.object(`${this.userCollection}/${id}`).update({ isOnline: status }));
   }
   createUser(user: Partial<User>) {
     const key = user.id;

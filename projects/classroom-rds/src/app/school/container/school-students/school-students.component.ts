@@ -2,6 +2,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component, OnInit, OnDestroy, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
+
 import * as school from '@rds-auth/models/school.json';
 
 import { Observable, Subject } from 'rxjs';
@@ -31,6 +33,8 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
   slevels = SchoolLevel;
   raisedElev = 8;
   searching: boolean = false;
+  hidden: boolean = false;
+  faCircle = faCircle;
   constructor(
     private fb: FormBuilder,
     private snackbar: MatSnackBar,
@@ -40,8 +44,7 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
     this.initSearchForm();
     this.loaded$ = this.userEntityService.loaded$;
     this.clevelKeys = Object.keys(this.clevels).filter(Number);
-    this.slevelKeys = Object.values(this.slevels).filter(Number)
-    console.log(this.slevels)
+    this.slevelKeys = Object.keys(this.slevels).filter(x => x.length > 5);
   }
   initSearchForm() {
     this.searchForm = this.fb.group({
@@ -51,6 +54,9 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.onSearch();
+  }
+  getUserCount() {
+
   }
   sendUser(user: Partial<User>) {
     this.userSub.next(user);

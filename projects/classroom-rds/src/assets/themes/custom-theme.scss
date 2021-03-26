@@ -11,7 +11,7 @@
     @include mat-elevation(18,#e91e63, 0.8);
   }
 } */
-$custom-typography: mat-typography-config($font-family: "montserrat");
+$custom-typography: mat-typography-config($font-family: "comfortaa");
 @include mat-core($custom-typography);
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker

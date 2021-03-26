@@ -28,18 +28,18 @@ import { User } from '~/app/auth/models/user.model';
 })
 export class LayoutComponent {
   isHandset$: Observable<boolean>;
+  isDarkTheme: Observable<boolean>;
   user$: Observable<User>;
   isOnline$: Observable<boolean>;
   isAdmin$: Observable<boolean>;
   isTeacher$: Observable<boolean>;
   loading = false;
   faCookieBite = faCookieBite;
-  isDarkTheme: Observable<boolean>;
   constructor(
     private layoutService: LayoutService,
+    private themeService: ThemeService,
     private store: Store<AppState>,
     private router: Router,
-    private themeService: ThemeService,
     private dialog: MatDialog,
   ) {
     this.router.events.subscribe((event: RouterEvent) => {

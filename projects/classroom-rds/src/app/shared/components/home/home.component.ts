@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
       type: 'success',
       visible: true,
       link: 'user/grades',
-      msg: sanitizer.sanitize(SecurityContext.HTML, 'Conoce tus calificaciones de la Unidad 2 en la sección "Información Académica". <br>Disponibles a partir del <strong>24 de marzo de 2021</strong>. Puedes acceder aquí en este anuncio')
+      msg: sanitizer.sanitize(SecurityContext.HTML, 'Conoce tus calificaciones de la Unidad 2 en la sección "Información Académica". <br>Disponibles a partir del <strong>24 de marzo de 2021</strong>.')
     },
     {
       dismissible: true,

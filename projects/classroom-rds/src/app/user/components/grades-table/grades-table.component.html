@@ -1,12 +1,12 @@
 <h1>Campos y áreas de formación</h1>
-<div *ngIf="data">
+<div *ngIf="data" #htmlData>
   <mat-table #table [dataSource]="formative">
     <!-- Id Column -->
     <ng-container matColumnDef="courseName">
       <mat-header-cell *matHeaderCellDef>Materia</mat-header-cell>
       <mat-cell *matCellDef="let element">
-        <span matBadge="{{element.notes2?'1':''}}" matBadgePosition="after"
-          matBadgeColor="warn">{{element.courseName}}&nbsp;&nbsp;</span>
+        <span matBadge="{{element.notes2?'1':''}}" matBadgePosition="after" matBadgeOverlap="false"
+          [matBadgeHidden]="hidden" matBadgeColor="warn">{{element.courseName}}&nbsp;&nbsp;</span>
       </mat-cell>
       <mat-footer-cell *matFooterCellDef> Promedio: </mat-footer-cell>
     </ng-container>

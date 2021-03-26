@@ -1,4 +1,4 @@
-<mat-toolbar class="animation fadeInOut mat-elevation-z2 sticky-top">
+<mat-toolbar class="header animation fadeInOut mat-elevation-z2 sticky-top">
   <mat-toolbar-row fxLayoutAlign="space-between center">
     <div fxLayout="row" fxLayoutGap="5px">
       <button *ngIf="isHandset && isOnline" mat-icon-button (click)="toggleSidenavLeft($event)">
@@ -12,6 +12,9 @@
       </button>
       <button mat-button [matMenuTriggerFor]="webapp">
         Aplicación
+      </button>
+      <button mat-icon-button routerLink="resume">
+        <mat-icon>picture_as_pdf</mat-icon>
       </button>
     </div>
     <div fxLayout="row" fxLayoutGap="5px">
