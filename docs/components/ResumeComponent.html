@@ -1,0 +1,1502 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Google Classroom RDS Admin</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Google Classroom RDS Admin</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Escribe para buscar"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Componentes</li>
+  <li>ResumeComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>Fichero</h3>
+</p>
+<p class="comment">
+    <code>projects/classroom-rds/src/app/shared/components/resume/resume.component.ts</code>
+</p>
+
+
+
+
+
+<section>
+    <h3>Meta datos</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-resume</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./resume.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./resume.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Índice</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Propiedades</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#degrees">degrees</a>
+                            </li>
+                            <li>
+                                <a href="#resume">resume</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Métodos</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addEducation">addEducation</a>
+                            </li>
+                            <li>
+                                <a href="#addExperience">addExperience</a>
+                            </li>
+                            <li>
+                                <a href="#addSkill">addSkill</a>
+                            </li>
+                            <li>
+                                <a href="#fileChanged">fileChanged</a>
+                            </li>
+                            <li>
+                                <a href="#generatePdf">generatePdf</a>
+                            </li>
+                            <li>
+                                <a href="#getBase64">getBase64</a>
+                            </li>
+                            <li>
+                                <a href="#getDocumentDefinition">getDocumentDefinition</a>
+                            </li>
+                            <li>
+                                <a href="#getEducationObject">getEducationObject</a>
+                            </li>
+                            <li>
+                                <a href="#getExperienceObject">getExperienceObject</a>
+                            </li>
+                            <li>
+                                <a href="#getProfilePicObject">getProfilePicObject</a>
+                            </li>
+                            <li>
+                                <a href="#resetForm">resetForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">projects/classroom-rds/src/app/shared/components/resume/resume.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Métodos
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addEducation"></a>
+                    <span class="name">
+                        <b>
+                            addEducation
+                        </b>
+                        <a href="#addEducation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addEducation()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="39"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/resume/resume.component.ts:39</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addExperience"></a>
+                    <span class="name">
+                        <b>
+                            addExperience
+                        </b>
+                        <a href="#addExperience"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addExperience()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="35"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/resume/resume.component.ts:35</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addSkill"></a>
+                    <span class="name">
+                        <b>
+                            addSkill
+                        </b>
+                        <a href="#addSkill"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addSkill()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="282"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/resume/resume.component.ts:282</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fileChanged"></a>
+                    <span class="name">
+                        <b>
+                            fileChanged
+                        </b>
+                        <a href="#fileChanged"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fileChanged(e)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="265"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/resume/resume.component.ts:265</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>e</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generatePdf"></a>
+                    <span class="name">
+                        <b>
+                            generatePdf
+                        </b>
+                        <a href="#generatePdf"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>generatePdf(action: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="43"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/resume/resume.component.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                    <td>Valor por defecto</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>action</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>&#x27;open&#x27;</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getBase64"></a>
+                    <span class="name">
+                        <b>
+                            getBase64
+                        </b>
+                        <a href="#getBase64"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getBase64(file)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="270"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/resume/resume.component.ts:270</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>file</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDocumentDefinition"></a>
+                    <span class="name">
+                        <b>
+                            getDocumentDefinition
+                        </b>
+                        <a href="#getDocumentDefinition"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDocumentDefinition()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="61"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/resume/resume.component.ts:61</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>    <code>{ content: {}; info: { title: string; author: any; subject: string; keywords: string; }; styles: ...</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getEducationObject"></a>
+                    <span class="name">
+                        <b>
+                            getEducationObject
+                        </b>
+                        <a href="#getEducationObject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getEducationObject(educations: <a href="../classes/Education.html">Education[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="224"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/resume/resume.component.ts:224</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>educations</td>
+                                    <td>
+                                                <code><a href="../classes/Education.html" target="_self" >Education[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>    <code>{ table: { widths: {}; body: {}; }; }</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getExperienceObject"></a>
+                    <span class="name">
+                        <b>
+                            getExperienceObject
+                        </b>
+                        <a href="#getExperienceObject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getExperienceObject(experiences: <a href="../classes/Experience.html">Experience[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="187"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/resume/resume.component.ts:187</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>experiences</td>
+                                    <td>
+                                                <code><a href="../classes/Experience.html" target="_self" >Experience[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>    <code>{ table: { widths: {}; body: {}; }; }</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProfilePicObject"></a>
+                    <span class="name">
+                        <b>
+                            getProfilePicObject
+                        </b>
+                        <a href="#getProfilePicObject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getProfilePicObject()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="254"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/resume/resume.component.ts:254</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>    <code>{ image: any; width: number; alignment: string; }</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetForm"></a>
+                    <span class="name">
+                        <b>
+                            resetForm
+                        </b>
+                        <a href="#resetForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resetForm()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="57"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/resume/resume.component.ts:57</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Propiedades
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="degrees"></a>
+                        <span class="name">
+                            <b>
+                            degrees</b>
+                            <a href="#degrees"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>[&#x27;B.E.&#x27;, &#x27;M.E.&#x27;, &#x27;B.Com&#x27;, &#x27;M.Com&#x27;]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">projects/classroom-rds/src/app/shared/components/resume/resume.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="resume"></a>
+                        <span class="name">
+                            <b>
+                            resume</b>
+                            <a href="#resume"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>new Resume()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">projects/classroom-rds/src/app/shared/components/resume/resume.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+import pdfMake from &#x27;pdfmake/build/pdfmake&#x27;;
+import pdfFonts from &#x27;pdfmake/build/vfs_fonts&#x27;;
+
+import { Resume, Experience, Education, Skill } from &#x27;./resume&#x27;;
+pdfMake.vfs &#x3D; pdfFonts.pdfMake.vfs;
+@Component({
+  selector: &#x27;app-resume&#x27;,
+  templateUrl: &#x27;./resume.component.html&#x27;,
+  styleUrls: [&#x27;./resume.component.scss&#x27;]
+})
+export class ResumeComponent {
+
+  resume &#x3D; new Resume();
+
+  degrees &#x3D; [&#x27;B.E.&#x27;, &#x27;M.E.&#x27;, &#x27;B.Com&#x27;, &#x27;M.Com&#x27;];
+
+  constructor() {
+    this.resume &#x3D; JSON.parse(sessionStorage.getItem(&#x27;resume&#x27;)) || new Resume();
+    if (!this.resume.experiences || this.resume.experiences.length &#x3D;&#x3D;&#x3D; 0) {
+      this.resume.experiences &#x3D; [];
+      this.resume.experiences.push(new Experience());
+    }
+    if (!this.resume.educations || this.resume.educations.length &#x3D;&#x3D;&#x3D; 0) {
+      this.resume.educations &#x3D; [];
+      this.resume.educations.push(new Education());
+    }
+    if (!this.resume.skills || this.resume.skills.length &#x3D;&#x3D;&#x3D; 0) {
+      this.resume.skills &#x3D; [];
+      this.resume.skills.push(new Skill());
+    }
+  }
+
+  addExperience() {
+    this.resume.experiences.push(new Experience());
+  }
+
+  addEducation() {
+    this.resume.educations.push(new Education());
+  }
+
+  generatePdf(action &#x3D; &#x27;open&#x27;) {
+    const documentDefinition &#x3D; this.getDocumentDefinition();
+
+    switch (action) {
+      case &#x27;open&#x27;: pdfMake.createPdf(documentDefinition).open(); break;
+      case &#x27;print&#x27;: pdfMake.createPdf(documentDefinition).print(); break;
+      case &#x27;download&#x27;: pdfMake.createPdf(documentDefinition).download(); break;
+
+      default: pdfMake.createPdf(documentDefinition).open(); break;
+    }
+
+  }
+
+
+  resetForm() {
+    this.resume &#x3D; new Resume();
+  }
+
+  getDocumentDefinition() {
+    sessionStorage.setItem(&#x27;resume&#x27;, JSON.stringify(this.resume));
+    return {
+      content: [
+        {
+          text: &#x27;RESUME&#x27;,
+          bold: true,
+          fontSize: 20,
+          alignment: &#x27;center&#x27;,
+          margin: [0, 0, 0, 20]
+        },
+        {
+          columns: [
+            [{
+              text: this.resume.name,
+              style: &#x27;name&#x27;
+            },
+            {
+              text: this.resume.address
+            },
+            {
+              text: &#x27;Email : &#x27; + this.resume.email,
+            },
+            {
+              text: &#x27;Contant No : &#x27; + this.resume.contactNo,
+            },
+            {
+              text: &#x27;GitHub: &#x27; + this.resume.socialProfile,
+              link: this.resume.socialProfile,
+              color: &#x27;blue&#x27;,
+            }
+            ],
+            [
+              this.getProfilePicObject()
+            ]
+          ]
+        },
+        {
+          text: &#x27;Skills&#x27;,
+          style: &#x27;header&#x27;
+        },
+        {
+          columns: [
+            {
+              ul: [
+                ...this.resume.skills.filter((value, index) &#x3D;&gt; index % 3 &#x3D;&#x3D;&#x3D; 0).map(s &#x3D;&gt; s.value)
+              ]
+            },
+            {
+              ul: [
+                ...this.resume.skills.filter((value, index) &#x3D;&gt; index % 3 &#x3D;&#x3D;&#x3D; 1).map(s &#x3D;&gt; s.value)
+              ]
+            },
+            {
+              ul: [
+                ...this.resume.skills.filter((value, index) &#x3D;&gt; index % 3 &#x3D;&#x3D;&#x3D; 2).map(s &#x3D;&gt; s.value)
+              ]
+            }
+          ]
+        },
+        {
+          text: &#x27;Experience&#x27;,
+          style: &#x27;header&#x27;
+        },
+        this.getExperienceObject(this.resume.experiences),
+
+        {
+          text: &#x27;Education&#x27;,
+          style: &#x27;header&#x27;
+        },
+        this.getEducationObject(this.resume.educations),
+        {
+          text: &#x27;Other Details&#x27;,
+          style: &#x27;header&#x27;
+        },
+        {
+          text: this.resume.otherDetails
+        },
+        {
+          text: &#x27;Signature&#x27;,
+          style: &#x27;sign&#x27;
+        },
+        {
+          columns: [
+            { qr: this.resume.name + &#x27;, Contact No : &#x27; + this.resume.contactNo, fit: 100 },
+            {
+              text: &#x60;(${this.resume.name})&#x60;,
+              alignment: &#x27;right&#x27;,
+            }
+          ]
+        }
+      ],
+      info: {
+        title: this.resume.name + &#x27;_RESUME&#x27;,
+        author: this.resume.name,
+        subject: &#x27;RESUME&#x27;,
+        keywords: &#x27;RESUME, ONLINE RESUME&#x27;,
+      },
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+          margin: [0, 20, 0, 10],
+          decoration: &#x27;underline&#x27;
+        },
+        name: {
+          fontSize: 16,
+          bold: true
+        },
+        jobTitle: {
+          fontSize: 14,
+          bold: true,
+          italics: true
+        },
+        sign: {
+          margin: [0, 50, 0, 10],
+          alignment: &#x27;right&#x27;,
+          italics: true
+        },
+        tableHeader: {
+          bold: true,
+        }
+      }
+    };
+  }
+
+  getExperienceObject(experiences: Experience[]) {
+
+    const exs &#x3D; [];
+
+    experiences.forEach(experience &#x3D;&gt; {
+      exs.push(
+        [{
+          columns: [
+            [{
+              text: experience.jobTitle,
+              style: &#x27;jobTitle&#x27;
+            },
+            {
+              text: experience.employer,
+            },
+            {
+              text: experience.jobDescription,
+            }],
+            {
+              text: &#x27;Experience : &#x27; + experience.experience + &#x27; Months&#x27;,
+              alignment: &#x27;right&#x27;
+            }
+          ]
+        }]
+      );
+    });
+
+    return {
+      table: {
+        widths: [&#x27;*&#x27;],
+        body: [
+          ...exs
+        ]
+      }
+    };
+  }
+
+  getEducationObject(educations: Education[]) {
+    return {
+      table: {
+        widths: [&#x27;*&#x27;, &#x27;*&#x27;, &#x27;*&#x27;, &#x27;*&#x27;],
+        body: [
+          [{
+            text: &#x27;Degree&#x27;,
+            style: &#x27;tableHeader&#x27;
+          },
+          {
+            text: &#x27;College&#x27;,
+            style: &#x27;tableHeader&#x27;
+          },
+          {
+            text: &#x27;Passing Year&#x27;,
+            style: &#x27;tableHeader&#x27;
+          },
+          {
+            text: &#x27;Result&#x27;,
+            style: &#x27;tableHeader&#x27;
+          },
+          ],
+          ...educations.map(ed &#x3D;&gt; {
+            return [ed.degree, ed.college, ed.passingYear, ed.percentage];
+          })
+        ]
+      }
+    };
+  }
+
+  getProfilePicObject() {
+    if (this.resume.profilePic) {
+      return {
+        image: this.resume.profilePic,
+        width: 75,
+        alignment: &#x27;right&#x27;
+      };
+    }
+    return null;
+  }
+
+  fileChanged(e) {
+    const file &#x3D; e.target.files[0];
+    this.getBase64(file);
+  }
+
+  getBase64(file) {
+    const reader &#x3D; new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload &#x3D; () &#x3D;&gt; {
+      console.log(reader.result);
+      this.resume.profilePic &#x3D; reader.result as string;
+    };
+    reader.onerror &#x3D; (error) &#x3D;&gt; {
+      console.log(&#x27;Error: &#x27;, error);
+    };
+  }
+
+  addSkill() {
+    this.resume.skills.push(new Skill());
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;nav class&#x3D;&quot;navbar navbar-expand navbar-light bg-primary d-flex justify-content-between&quot;&gt;
+  &lt;div class&#x3D;&quot;navbar-brand mb-0 h1 text-white&quot;&gt;ONLINE RESUME BUILDER&lt;/div&gt;
+&lt;/nav&gt;
+&lt;div class&#x3D;&quot;container-fluid&quot;&gt;
+  &lt;form #resumeForm&#x3D;&quot;ngForm&quot;&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+        &lt;div class&#x3D;&quot;shadow-sm card&quot;&gt;
+          &lt;div class&#x3D;&quot;card-body&quot;&gt;
+            &lt;h4 class&#x3D;&quot;card-title d-flex align-items-center&quot;&gt;
+              &lt;i class&#x3D;&quot;material-icons&quot;&gt;
+                account_circle
+              &lt;/i&gt;
+              Personal Details
+            &lt;/h4&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+              &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                  &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;resume.name&quot; name&#x3D;&quot;name&quot; placeholder&#x3D;&quot;Name&quot;
+                    #Name&#x3D;&quot;ngModel&quot; required
+                    [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: Name.invalid &amp;&amp; (Name.touched || resumeForm.submitted) }&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                  &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                    &lt;textarea class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;resume.address&quot; name&#x3D;&quot;address&quot; rows&#x3D;&quot;3&quot;
+                      placeholder&#x3D;&quot;Address&quot; #Address&#x3D;&quot;ngModel&quot; required
+                      [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: Address.invalid &amp;&amp; (Address.touched || resumeForm.submitted) }&quot;&gt;&lt;/textarea&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                  &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;resume.contactNo&quot; name&#x3D;&quot;contactNo&quot;
+                    placeholder&#x3D;&quot;Contact No.&quot; #ContactNo&#x3D;&quot;ngModel&quot; required
+                    [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: ContactNo.invalid &amp;&amp; (ContactNo.touched || resumeForm.submitted) }&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                  &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;resume.email&quot; name&#x3D;&quot;emailId&quot;
+                    placeholder&#x3D;&quot;Email ID&quot; #Email&#x3D;&quot;ngModel&quot; required
+                    [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: Email.invalid &amp;&amp; (Email.touched || resumeForm.submitted) }&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                  &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;resume.socialProfile&quot; name&#x3D;&quot;socialProfile&quot;
+                    placeholder&#x3D;&quot;Social Profile &quot;&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Skills --&gt;
+        &lt;div class&#x3D;&quot;shadow-sm card&quot;&gt;
+          &lt;div class&#x3D;&quot;card-body&quot;&gt;
+            &lt;div class&#x3D;&quot;d-flex justify-content-between card-title&quot;&gt;
+              &lt;h4 class&#x3D;&quot;d-flex align-items-center&quot;&gt;
+                &lt;i class&#x3D;&quot;material-icons&quot;&gt;
+                  timeline
+                &lt;/i&gt;
+                Skills
+              &lt;/h4&gt;
+              &lt;button class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;addSkill()&quot;&gt;+&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+              &lt;div class&#x3D;&quot;col-md-4&quot; *ngFor&#x3D;&quot;let s of resume.skills; let i&#x3D;index&quot;&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                  &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;skill{{i}}&quot; [(ngModel)]&#x3D;&quot;s.value&quot;
+                    placeholder&#x3D;&quot;e.g. Java / Angular / .Net &quot; #Skill&#x3D;&quot;ngModel&quot; required
+                    [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: Skill.invalid &amp;&amp; (Skill.touched || resumeForm.submitted) }&quot;&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+
+        &lt;!-- Experience --&gt;
+        &lt;div class&#x3D;&quot;shadow-sm card&quot;&gt;
+          &lt;div class&#x3D;&quot;card-body&quot;&gt;
+            &lt;div class&#x3D;&quot;d-flex justify-content-between card-title&quot;&gt;
+              &lt;h4 class&#x3D;&quot;d-flex align-items-center&quot;&gt;
+                &lt;i class&#x3D;&quot;material-icons&quot;&gt;
+                  timeline
+                &lt;/i&gt;
+                Experience
+              &lt;/h4&gt;
+              &lt;button class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;addExperience()&quot;&gt;+&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;row&quot; *ngFor&#x3D;&quot;let ex of resume.experiences; let i&#x3D;index&quot;&gt;
+              &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                  &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;employer{{i}}&quot; [(ngModel)]&#x3D;&quot;ex.employer&quot;
+                    placeholder&#x3D;&quot;Employer&quot; #Employer&#x3D;&quot;ngModel&quot; required
+                    [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: Employer.invalid &amp;&amp; (Employer.touched || resumeForm.submitted) }&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                  &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                    &lt;textarea class&#x3D;&quot;form-control&quot; name&#x3D;&quot;jobDescription{{i}}&quot; [(ngModel)]&#x3D;&quot;ex.jobDescription&quot; rows&#x3D;&quot;3&quot;
+                      placeholder&#x3D;&quot;Job Description&quot;&gt;&lt;/textarea&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                  &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;jobTitle{{i}}&quot; [(ngModel)]&#x3D;&quot;ex.jobTitle&quot;
+                    placeholder&#x3D;&quot;Job Title&quot; #JobTitle&#x3D;&quot;ngModel&quot; required
+                    [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: JobTitle.invalid &amp;&amp; (JobTitle.touched || resumeForm.submitted) }&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                  &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;exInMonths{{i}}&quot; [(ngModel)]&#x3D;&quot;ex.experience&quot;
+                    placeholder&#x3D;&quot;Experience in months&quot; #Experience&#x3D;&quot;ngModel&quot; required
+                    [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: Experience.invalid &amp;&amp; (Experience.touched || resumeForm.submitted) }&quot;&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Education --&gt;
+        &lt;div class&#x3D;&quot;shadow-sm card&quot;&gt;
+          &lt;div class&#x3D;&quot;card-body&quot;&gt;
+            &lt;div class&#x3D;&quot;d-flex justify-content-between card-title&quot;&gt;
+              &lt;h4 class&#x3D;&quot;d-flex align-items-center&quot;&gt;
+                &lt;i class&#x3D;&quot;material-icons&quot;&gt;
+                  school
+                &lt;/i&gt;
+                Education
+              &lt;/h4&gt;
+              &lt;button class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;addEducation()&quot;&gt;+&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;row&quot; *ngFor&#x3D;&quot;let ed of resume.educations; let i&#x3D;index&quot;&gt;
+              &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                  &lt;select class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Degree&quot; name&#x3D;&quot;degree{{i}}&quot; [(ngModel)]&#x3D;&quot;ed.degree&quot;
+                    #Degree&#x3D;&quot;ngModel&quot; required
+                    [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: Degree.invalid &amp;&amp; (Degree.touched || resumeForm.submitted) }&quot;&gt;
+                    &lt;option [value]&#x3D;&quot;d&quot; *ngFor&#x3D;&quot;let d of degrees&quot;&gt;{{d}}&lt;/option&gt;
+                  &lt;/select&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                  &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;college{{i}}&quot; [(ngModel)]&#x3D;&quot;ed.college&quot;
+                    placeholder&#x3D;&quot;School/College&quot; #College&#x3D;&quot;ngModel&quot; required
+                    [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: College.invalid &amp;&amp; (College.touched || resumeForm.submitted) }&quot;&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                  &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;passingYear{{i}}&quot; [(ngModel)]&#x3D;&quot;ed.passingYear&quot;
+                    placeholder&#x3D;&quot;Passing Year&quot; #PassingYear&#x3D;&quot;ngModel&quot; required
+                    [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: PassingYear.invalid &amp;&amp; (PassingYear.touched || resumeForm.submitted) }&quot;&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                  &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;result{{i}}&quot; [(ngModel)]&#x3D;&quot;ed.percentage&quot;
+                    placeholder&#x3D;&quot;Percentage&quot; #Percentage&#x3D;&quot;ngModel&quot; required
+                    [ngClass]&#x3D;&quot;{&#x27;is-invalid&#x27;: Percentage.invalid &amp;&amp; (Percentage.touched || resumeForm.submitted) }&quot;&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Other Details --&gt;
+
+        &lt;div class&#x3D;&quot;shadow-sm card&quot;&gt;
+          &lt;div class&#x3D;&quot;card-body&quot;&gt;
+            &lt;h4 class&#x3D;&quot;card-title d-flex align-items-center&quot;&gt;
+              &lt;i class&#x3D;&quot;material-icons&quot;&gt; list &lt;/i&gt;Other Details
+            &lt;/h4&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+              &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                  &lt;textarea type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;resume.otherDetails&quot; name&#x3D;&quot;otherDetails&quot;
+                    rows&#x3D;&quot;4&quot;&gt;&lt;/textarea&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+        &lt;div class&#x3D;&quot;shadow-sm card action-buttons&quot;&gt;
+          &lt;button (click)&#x3D;&quot;resumeForm.valid ? generatePdf(&#x27;open&#x27;) : &#x27;&#x27;&quot;
+            class&#x3D;&quot;btn btn-primary d-flex align-items-center justify-content-center&quot;&gt;
+            &lt;i class&#x3D;&quot;material-icons&quot;&gt;
+              picture_as_pdf
+            &lt;/i&gt; &lt;span&gt;Open PDF&lt;/span&gt;&lt;/button&gt;
+          &lt;button (click)&#x3D;&quot;resumeForm.valid ? generatePdf(&#x27;download&#x27;) : &#x27;&#x27;&quot;
+            class&#x3D;&quot;btn btn-primary d-flex align-items-center justify-content-center&quot;&gt;
+            &lt;i class&#x3D;&quot;material-icons&quot;&gt;
+              cloud_download
+            &lt;/i&gt;&lt;span&gt;Download PDF&lt;/span&gt;&lt;/button&gt;
+          &lt;button (click)&#x3D;&quot;resumeForm.valid ? generatePdf(&#x27;print&#x27;) : &#x27;&#x27;&quot;
+            class&#x3D;&quot;btn btn-primary d-flex align-items-center justify-content-center&quot;&gt;
+            &lt;i class&#x3D;&quot;material-icons&quot;&gt;
+              print
+            &lt;/i&gt;&lt;span&gt;Print PDF&lt;/span&gt;&lt;/button&gt;
+
+          &lt;button type&#x3D;&#x27;reset&#x27; (click)&#x3D;&quot;resetForm()&quot;
+            class&#x3D;&quot;btn btn-primary d-flex align-items-center justify-content-center&quot;&gt;
+            &lt;i class&#x3D;&quot;material-icons&quot;&gt;
+              clear
+            &lt;/i&gt;&lt;span&gt;Reset&lt;/span&gt;&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;card p-4&quot;&gt;
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;label class&#x3D;&quot;h4 mb-3&quot; for&#x3D;&quot;&quot;&gt;Show your picture in Resume&lt;/label&gt;
+            &lt;input type&#x3D;&quot;file&quot; class&#x3D;&quot;form-control-file&quot; (change)&#x3D;&quot;fileChanged($event)&quot; aria-describedby&#x3D;&quot;fileHelpId&quot;&gt;
+          &lt;/div&gt;
+          &lt;img *ngIf&#x3D;&quot;resume.profilePic&quot; [src]&#x3D;&quot;resume.profilePic&quot; class&#x3D;&quot;img-thumbnail&quot;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./resume.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.row{
+  padding: 10px;
+}
+
+.card{
+  margin: 10px;
+}
+
+.material-icons{
+  font-size: 30px;
+}
+
+button span{
+  font-size: 22px;
+}
+
+.action-buttons button{
+  margin : 5px;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Leyenda</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Elemento Html</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Componente</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Elemento Html con directiva</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><nav class="navbar navbar-expand navbar-light bg-primary d-flex justify-content-between">  <div class="navbar-brand mb-0 h1 text-white">ONLINE RESUME BUILDER</div></nav><div class="container-fluid">  <form #resumeForm="ngForm">    <div class="row">      <div class="col-md-8">        <div class="shadow-sm card">          <div class="card-body">            <h4 class="card-title d-flex align-items-center">              <i class="material-icons">                account_circle              </i>              Personal Details            </h4>            <div class="row">              <div class="col-md-6">                <div class="form-group">                  <input type="text" class="form-control" [(ngModel)]="resume.name" name="name" placeholder="Name"                    #Name="ngModel" required                    [ngClass]="{\'is-invalid\': Name.invalid && (Name.touched || resumeForm.submitted) }">                </div>                <div class="form-group">                  <div class="form-group">                    <textarea class="form-control" [(ngModel)]="resume.address" name="address" rows="3"                      placeholder="Address" #Address="ngModel" required                      [ngClass]="{\'is-invalid\': Address.invalid && (Address.touched || resumeForm.submitted) }"></textarea>                  </div>                </div>              </div>              <div class="col-md-6">                <div class="form-group">                  <input type="text" class="form-control" [(ngModel)]="resume.contactNo" name="contactNo"                    placeholder="Contact No." #ContactNo="ngModel" required                    [ngClass]="{\'is-invalid\': ContactNo.invalid && (ContactNo.touched || resumeForm.submitted) }">                </div>                <div class="form-group">                  <input type="text" class="form-control" [(ngModel)]="resume.email" name="emailId"                    placeholder="Email ID" #Email="ngModel" required                    [ngClass]="{\'is-invalid\': Email.invalid && (Email.touched || resumeForm.submitted) }">                </div>                <div class="form-group">                  <input type="text" class="form-control" [(ngModel)]="resume.socialProfile" name="socialProfile"                    placeholder="Social Profile ">                </div>              </div>            </div>          </div>        </div>        <!-- Skills -->        <div class="shadow-sm card">          <div class="card-body">            <div class="d-flex justify-content-between card-title">              <h4 class="d-flex align-items-center">                <i class="material-icons">                  timeline                </i>                Skills              </h4>              <button class="btn btn-primary" (click)="addSkill()">+</button>            </div>            <div class="row">              <div class="col-md-4" *ngFor="let s of resume.skills; let i=index">                <div class="form-group">                  <input type="text" class="form-control" name="skill{{i}}" [(ngModel)]="s.value"                    placeholder="e.g. Java / Angular / .Net " #Skill="ngModel" required                    [ngClass]="{\'is-invalid\': Skill.invalid && (Skill.touched || resumeForm.submitted) }">                </div>              </div>            </div>          </div>        </div>        <!-- Experience -->        <div class="shadow-sm card">          <div class="card-body">            <div class="d-flex justify-content-between card-title">              <h4 class="d-flex align-items-center">                <i class="material-icons">                  timeline                </i>                Experience              </h4>              <button class="btn btn-primary" (click)="addExperience()">+</button>            </div>            <div class="row" *ngFor="let ex of resume.experiences; let i=index">              <div class="col-md-6">                <div class="form-group">                  <input type="text" class="form-control" name="employer{{i}}" [(ngModel)]="ex.employer"                    placeholder="Employer" #Employer="ngModel" required                    [ngClass]="{\'is-invalid\': Employer.invalid && (Employer.touched || resumeForm.submitted) }">                </div>                <div class="form-group">                  <div class="form-group">                    <textarea class="form-control" name="jobDescription{{i}}" [(ngModel)]="ex.jobDescription" rows="3"                      placeholder="Job Description"></textarea>                  </div>                </div>              </div>              <div class="col-md-6">                <div class="form-group">                  <input type="text" class="form-control" name="jobTitle{{i}}" [(ngModel)]="ex.jobTitle"                    placeholder="Job Title" #JobTitle="ngModel" required                    [ngClass]="{\'is-invalid\': JobTitle.invalid && (JobTitle.touched || resumeForm.submitted) }">                </div>                <div class="form-group">                  <input type="number" class="form-control" name="exInMonths{{i}}" [(ngModel)]="ex.experience"                    placeholder="Experience in months" #Experience="ngModel" required                    [ngClass]="{\'is-invalid\': Experience.invalid && (Experience.touched || resumeForm.submitted) }">                </div>              </div>            </div>          </div>        </div>        <!-- Education -->        <div class="shadow-sm card">          <div class="card-body">            <div class="d-flex justify-content-between card-title">              <h4 class="d-flex align-items-center">                <i class="material-icons">                  school                </i>                Education              </h4>              <button class="btn btn-primary" (click)="addEducation()">+</button>            </div>            <div class="row" *ngFor="let ed of resume.educations; let i=index">              <div class="col-md-3">                <div class="form-group">                  <select class="form-control" placeholder="Degree" name="degree{{i}}" [(ngModel)]="ed.degree"                    #Degree="ngModel" required                    [ngClass]="{\'is-invalid\': Degree.invalid && (Degree.touched || resumeForm.submitted) }">                    <option [value]="d" *ngFor="let d of degrees">{{d}}</option>                  </select>                </div>              </div>              <div class="col-md-3">                <div class="form-group">                  <input type="text" class="form-control" name="college{{i}}" [(ngModel)]="ed.college"                    placeholder="School/College" #College="ngModel" required                    [ngClass]="{\'is-invalid\': College.invalid && (College.touched || resumeForm.submitted) }">                </div>              </div>              <div class="col-md-3">                <div class="form-group">                  <input type="number" class="form-control" name="passingYear{{i}}" [(ngModel)]="ed.passingYear"                    placeholder="Passing Year" #PassingYear="ngModel" required                    [ngClass]="{\'is-invalid\': PassingYear.invalid && (PassingYear.touched || resumeForm.submitted) }">                </div>              </div>              <div class="col-md-3">                <div class="form-group">                  <input type="number" class="form-control" name="result{{i}}" [(ngModel)]="ed.percentage"                    placeholder="Percentage" #Percentage="ngModel" required                    [ngClass]="{\'is-invalid\': Percentage.invalid && (Percentage.touched || resumeForm.submitted) }">                </div>              </div>            </div>          </div>        </div>        <!-- Other Details -->        <div class="shadow-sm card">          <div class="card-body">            <h4 class="card-title d-flex align-items-center">              <i class="material-icons"> list </i>Other Details            </h4>            <div class="row">              <div class="col-md-12">                <div class="form-group">                  <textarea type="text" class="form-control" [(ngModel)]="resume.otherDetails" name="otherDetails"                    rows="4"></textarea>                </div>              </div>            </div>          </div>        </div>      </div>      <div class="col-md-4">        <div class="shadow-sm card action-buttons">          <button (click)="resumeForm.valid ? generatePdf(\'open\') : \'\'"            class="btn btn-primary d-flex align-items-center justify-content-center">            <i class="material-icons">              picture_as_pdf            </i> <span>Open PDF</span></button>          <button (click)="resumeForm.valid ? generatePdf(\'download\') : \'\'"            class="btn btn-primary d-flex align-items-center justify-content-center">            <i class="material-icons">              cloud_download            </i><span>Download PDF</span></button>          <button (click)="resumeForm.valid ? generatePdf(\'print\') : \'\'"            class="btn btn-primary d-flex align-items-center justify-content-center">            <i class="material-icons">              print            </i><span>Print PDF</span></button>          <button type=\'reset\' (click)="resetForm()"            class="btn btn-primary d-flex align-items-center justify-content-center">            <i class="material-icons">              clear            </i><span>Reset</span></button>        </div>        <div class="card p-4">          <div class="form-group">            <label class="h4 mb-3" for="">Show your picture in Resume</label>            <input type="file" class="form-control-file" (change)="fileChanged($event)" aria-describedby="fileHelpId">          </div>          <img *ngIf="resume.profilePic" [src]="resume.profilePic" class="img-thumbnail">        </div>      </div>    </div>  </form></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradeRecomendationComponent', 'selector': 'app-grade-recomendation'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesListComponent', 'selector': 'app-grades-list'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SchoolDashboardComponent', 'selector': 'app-school-dashboard'},{'name': 'SchoolFormComponent', 'selector': 'app-school-form'},{'name': 'SchoolHomeComponent', 'selector': 'app-school-home'},{'name': 'SchoolStudentsComponent', 'selector': 'app-school-students'},{'name': 'SchoolTeachersComponent', 'selector': 'app-school-teachers'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'SubjectsComponent', 'selector': 'app-subjects'},{'name': 'TeachersFormComponent', 'selector': 'app-teachers-form'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserGradesPrintableComponent', 'selector': 'app-user-grades-printable'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'},{'name': 'WorkingOnGradesComponent', 'selector': 'app-working-on-grades'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
+    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'}];
+    var ACTUAL_COMPONENT = {'name': 'ResumeComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No hay resultados que coincidan "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ResumeComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

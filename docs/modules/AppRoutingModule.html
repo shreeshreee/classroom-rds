@@ -91,6 +91,7 @@ import { TermsComponent } from &#x27;@rds-shared/components/terms/terms.componen
 import { UnderConstructionComponent } from &#x27;@rds-shared/components/under-construction/under-construction.component&#x27;;
 
 import { ConfigComponent } from &#x27;./core/layout/config/config.component&#x27;;
+import { ResumeComponent } from &#x27;./shared/components/resume/resume.component&#x27;;
 import { YoutubeComponent } from &#x27;~/app/shared/components/youtube/youtube.component&#x27;;
 const routes: Routes &#x3D; [{
   path: &#x27;&#x27;, component: LayoutComponent, children: [
@@ -114,6 +115,8 @@ const routes: Routes &#x3D; [{
     { path: &#x27;code-conduct-school&#x27;, component: CodeConductSchoolComponent },
     { path: &#x27;terms&#x27;, component: TermsComponent },
     { path: &#x27;under-construction&#x27;, component: UnderConstructionComponent },
+    { path: &#x27;resume&#x27;, component: ResumeComponent },
+
     { path: &#x27;**&#x27;, component: NotFoundComponent }
   ]
 }];

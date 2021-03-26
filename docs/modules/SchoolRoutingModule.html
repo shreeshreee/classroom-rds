@@ -77,17 +77,21 @@ import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 import { UsersResolver } from &#x27;./services/users.resolver&#x27;;
 import { SchoolDashboardComponent } from &#x27;./components/school-dashboard/school-dashboard.component&#x27;;
 import { SchoolFormComponent } from &#x27;./components/school-form/school-form.component&#x27;;
+import { TeachersFormComponent } from &#x27;./components/teachers-form/teachers-form.component&#x27;;
 import { SchoolStudentsComponent } from &#x27;./container/school-students/school-students.component&#x27;;
+import { SchoolTeachersComponent } from &#x27;./container/school-teachers/school-teachers.component&#x27;;
 import { SchoolComponent } from &#x27;./container/school/school.component&#x27;;
 
 const routes: Routes &#x3D; [{
   path: &#x27;&#x27;, component: SchoolComponent, children: [
-    { path: &#x27;&#x27;, component: SchoolDashboardComponent },
+    { path: &#x27;&#x27;, component: SchoolDashboardComponent, resolve: { users: UsersResolver } },
     {
       path: &#x27;alumnos&#x27;, component: SchoolStudentsComponent, children: [
         { path: &#x27;:id&#x27;, component: SchoolFormComponent }
       ]
     },
+    { path: &#x27;profesores&#x27;, component: SchoolTeachersComponent },
+    { path: &#x27;profesores/:id&#x27;, component: TeachersFormComponent }
     /* { path: &#x27;alumnos/:id&#x27;, component: SchoolStudentComponent }, */
   ]
 }];

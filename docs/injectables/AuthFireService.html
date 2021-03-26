@@ -902,12 +902,12 @@ export class AuthFireService {
     return this.afAuth.signOut();
   }
   updateOnlineStatus(id: string, status: boolean): Observable&lt;void&gt; {
-    //if (status) {
-    //console.log(&#x27;onDisconect branch&#x27;, status)
-    return from(this.afDatabase.database.ref().child(&#x60;${this.userCollection}/${id}&#x60;).onDisconnect().update({ isOnline: status }));
-    //}
+    if (status) {
+      //console.log(&#x27;onDisconect branch&#x27;, status)
+      return from(this.afDatabase.database.ref().child(&#x60;${this.userCollection}/${id}&#x60;).onDisconnect().update({ isOnline: status }));
+    }
     //console.log(&#x27;outer branch&#x27;, status)
-    //return from(this.afDatabase.object(&#x60;${this.userCollection}/${id}&#x60;).update({ isOnline: status }));
+    return from(this.afDatabase.object(&#x60;${this.userCollection}/${id}&#x60;).update({ isOnline: status }));
   }
   createUser(user: Partial&lt;User&gt;) {
     const key &#x3D; user.id;
