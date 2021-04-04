@@ -1,5 +1,5 @@
 import { ActivatedRoute } from '@angular/router';
-import { Component, ChangeDetectionStrategy, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, OnInit, Output, EventEmitter, SimpleChanges } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { faTrashAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
@@ -34,13 +34,22 @@ export class SchoolFormComponent implements OnInit {
   faTrashAlt = faTrashAlt;
   faPlus = faPlus;
   private userId;
+  changedUser: Subject<User>;
   constructor(
     private fb: FormBuilder,
   ) {
     this.statesNames = Object.keys(states);
     this.phoneKeys = Object.keys(this.phoneEnum).filter(Number);
   }
+  ngOnChanges(changes: SimpleChanges) {
+    //changedUser:SimpleChanges=changes.user;
+    this.fillForm();
+  }
   ngOnInit() {
+    this.fillForm();
+  }
+
+  fillForm() {
     this.user.subscribe(user => {
       this.userId = user.id;
       this.studentForm = this.fb.group({
@@ -53,10 +62,8 @@ export class SchoolFormComponent implements OnInit {
         gender: new FormControl(user.gender),
         parents: this.fb.array(user.parents.map(parent => this.setParent(parent))),
       });
-
     });
   }
-
 
   onSubmit() {
     // get only updated values
@@ -77,28 +84,6 @@ export class SchoolFormComponent implements OnInit {
     this.municipiosNames = Object.values(states[estado]);
   }
 
-  /* onSubmitParent() {
-    // get only updated values
-    const postUser: Partial<User> = {};
-    const postParent: Partial<Parent> = {};
-    this.parentForm['_forEachChild']((control, name) => {
-      if (control.dirty) {
-        if (name != 'relationType' || name != 'relationCustom') {
-          postParent[name] = control.value;
-        }
-      }
-    });
-    const postRelation: any = {
-      type: this.parentForm.get('relationType').value,
-      custom: this.parentForm.get('relationCustom').value
-    };
-    postParent.relation = postRelation;
-    postUser.id = this.userId;
-    postUser.parents.push(postParent);
-    console.log(postUser)
-    this.updatedUser.emit(postUser);
-  } */
-
   get parents(): FormArray {
     return this.studentForm.get('parents') as FormArray;
   }
@@ -114,6 +99,7 @@ export class SchoolFormComponent implements OnInit {
       phones: [],
       email: '',
       streetAddress: '',
+      neighborhood: '',
       city: '',
       postalCode: '',
       municipio: '',
@@ -132,6 +118,7 @@ export class SchoolFormComponent implements OnInit {
       phones: [],
       email: [parent.email],
       streetAddress: [parent.streetAddress],
+      neighborhood: [parent.neighborhood],
       city: [parent.city],
       postalCode: [parent.postalCode],
       municipio: [parent.municipio],

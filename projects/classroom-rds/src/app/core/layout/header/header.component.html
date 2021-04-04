@@ -32,14 +32,6 @@
     <div mat-list-item *ngIf="isOnline && user" [routerLink]="['user',user.id]" appMaterialElevation>
       <app-user-card [isOnline]="isOnline" [isAdmin]="isAdmin" [user]="user"> </app-user-card>
     </div>
-    <div mat-menu-item *ngIf="isOnline && isTeacher" [routerLink]="['clases']" appMaterialElevation>
-      <fa-icon matListIcon [icon]="faUserTie" size="lg"></fa-icon>
-      <span>&nbsp;Profesor</span>
-    </div>
-    <div mat-menu-item *ngIf="isOnline && isAdmin" [routerLink]="['admin']" appMaterialElevation>
-      <fa-icon matListIcon [icon]="faShieldAlt" size="lg"></fa-icon>
-      <span>&nbsp;Administrador</span>
-    </div>
     <div mat-menu-item *ngIf="isOnline" (click)="openConfigDialog()" appMaterialElevation>
       <fa-icon matListIcon [icon]="faSlidersH" size="lg"></fa-icon>
       <span>&nbsp;Configuración</span>

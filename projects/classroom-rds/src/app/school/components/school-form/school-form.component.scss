@@ -1,5 +1,9 @@
-@import './../../../../assets/themes/colors.scss';
-
+@import "./../../../../assets/themes/colors.scss";
+.card-name {
+  padding-left: 10px;
+  margin-top: -10px;
+  color: darkgray;
+}
 .card-header {
   background-color: $rds-logo-color;
 }
