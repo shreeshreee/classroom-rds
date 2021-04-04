@@ -25,6 +25,12 @@
       "@rds-admin/*": [
         "projects/classroom-rds/src/app/admin/*"
       ],
+      "@rds-user/*": [
+        "projects/classroom-rds/src/app/user/*"
+      ],
+      "@rds-school/*": [
+        "projects/classroom-rds/src/app/school/*"
+      ],
       "@rds-env/*": [
         "projects/classroom-rds/src/environments/*"
       ]

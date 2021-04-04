@@ -82,29 +82,28 @@
                   <mat-expansion-panel appMaterialElevation [raisedElevation]="raisedElev">
                     <mat-expansion-panel-header>
                       <mat-panel-title>
-                        Datos del padre o tutor
+                        {{parent.controls['givenName'].value}}&nbsp;{{parent.controls['familyName'].value}}
                       </mat-panel-title>
                       <mat-panel-description>
-                        <button mat-icon-button (click)="removeParent(j)">
-                          <fa-icon class="text-danger" [icon]="faTrashAlt" size="lg"></fa-icon>
-                        </button>
+                        <div *ngIf="parent.controls['relationType'].value=='Otro';else relationType">
+                          {{parent.controls['relationCustom'].value}}
+                        </div>
+                        <ng-template #relationType>
+                          {{parent.controls['relationType'].value}}
+                        </ng-template>
                       </mat-panel-description>
+                      <fa-icon class="text-danger" [icon]="faTrashAlt" size="lg" mat-icon-button
+                        (click)="removeParent(j)"></fa-icon>
                     </mat-expansion-panel-header>
                     <!-- <form [formGroup]="parentForm" novalidate (ngSubmit)="onSubmitParent()"> -->
                     <div fxLayout="row wrap" fxLayout.lt-lg="column" fxLayoutGap="5px">
                       <mat-form-field fxFlex="0 1 calc(50% - 5px)" fxFlex.lt-lg="100%" appearance="outline">
                         <mat-label>Nombre(s)</mat-label>
                         <input matInput placeholder="Nombre(s)" formControlName="givenName">
-                        <mat-error *ngIf="parentForm.controls['givenName'].hasError('required')">
-                          First name is <strong>required</strong>
-                        </mat-error>
                       </mat-form-field>
                       <mat-form-field fxFlex="0 1 calc(50% - 5px)" fxFlex.lt-lg="100%" appearance="outline">
                         <mat-label>Apellido(s)</mat-label>
                         <input matInput placeholder="Apellido(s)" formControlName="familyName">
-                        <mat-error *ngIf="parentForm.controls['familyName'].hasError('required')">
-                          Last name is <strong>required</strong>
-                        </mat-error>
                       </mat-form-field>
                     </div>
                     <mat-label for="relation">Parentezco: </mat-label>
@@ -119,7 +118,7 @@
                       <mat-radio-button class="mx-2" value="Otro">
                         Otro
                       </mat-radio-button>
-                      <div *ngIf="parentForm.controls['relationType'].value=='Otro'">
+                      <div *ngIf="parent.controls['relationType'].value=='Otro'">
                         <mat-form-field class="d-flex" appearance="outline">
                           <mat-label>Parentesco</mat-label>
                           <input matInput placeholder="Parentesco" formControlName="relationCustom">
@@ -141,9 +140,6 @@
                         <mat-label>Dirección</mat-label>
                         <input matInput placeholder="Calle/Av., Num.Int./Ext., Col./Fracc."
                           formControlName="streetAddress">
-                        <mat-error *ngIf="parentForm.controls['streetAddress'].hasError('required')">
-                          Address is <strong>required</strong>
-                        </mat-error>
                       </mat-form-field>
                     </div>
                     <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="5px">
@@ -156,14 +152,12 @@
                       <mat-form-field fxFlex="0 1 calc(25% - 5px)" fxFlex.lt-lg="0 1 calc(50% - 10px)"
                         fxFlex.lt-md="100%" appearance="outline">
                         <mat-label>Estado</mat-label>
-                        <mat-select placeholder="Estado" formControlName="state" (valueChange)="onEstadoChange()">
+                        <mat-select placeholder="Estado" formControlName="state"
+                          (selectionChange)="onEstadoChange($event.value)">
                           <mat-option *ngFor="let state of statesNames" [value]="state">
                             {{ state }}
                           </mat-option>
                         </mat-select>
-                        <mat-error *ngIf="parentForm.controls['state'].hasError('required')">
-                          State is <strong>required</strong>
-                        </mat-error>
                       </mat-form-field>
                       <mat-form-field fxFlex="0 1 calc(25% - 5px)" fxFlex.lt-lg="0 1 calc(50% - 10px)"
                         fxFlex.lt-md="100%" appearance="outline">
@@ -173,7 +167,7 @@
                             {{ municip }}
                           </mat-option>
                         </mat-select>
-                        <mat-error *ngIf="parentForm.controls['municipio'].hasError('required')">
+                        <mat-error *ngIf="parent.controls['municipio'].hasError('required')">
                           State is <strong>required</strong>
                         </mat-error>
                       </mat-form-field>
@@ -181,12 +175,9 @@
                         fxFlex.lt-md="100%" appearance="outline">
                         <mat-label>Ciudad</mat-label>
                         <input matInput placeholder="Ciudad" formControlName="city">
-                        <mat-error *ngIf="parentForm.controls['city'].hasError('required')">
-                          Este es un dato <strong>requerido</strong>
-                        </mat-error>
                       </mat-form-field>
                     </div>
-                    <div formArrayName="phones">
+                    <!-- <div formArrayName="phones">
                       <div *ngFor="let phone of phones.controls; let i=index">
                         <div [formGroupName]="i" fxLayout="row wrap" fxLayoutGap="5px"
                           fxLayoutAlign="space-around center">
@@ -210,16 +201,17 @@
                       <p>
                         <button mat-icon-button type="button" (click)="addPhone()">Añadir teléfono</button>
                       </p>
-                    </div>
+                    </div> -->
                     <button mat-button type="submit">Actualizar datos</button>
                     <!-- </form> -->
                   </mat-expansion-panel>
                 </div>
               </div>
-              <div class="text-center"></div>
-              <button mat-button type="button" (click)="addParent()">
-                <fa-icon class="text-success" [icon]="faPlus" size="lg"></fa-icon>&nbsp;Agrega padre o tutor
-              </button>
+              <div class="text-center">
+                <button mat-button type="button" (click)="addParent()">
+                  <fa-icon class="text-success" [icon]="faPlus" size="lg"></fa-icon>&nbsp;Agrega padre o tutor
+                </button>
+              </div>
             </div>
 
             <mat-expansion-panel appMaterialElevation [raisedElevation]="raisedElev">

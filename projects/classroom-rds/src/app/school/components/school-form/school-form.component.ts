@@ -41,22 +41,19 @@ export class SchoolFormComponent implements OnInit {
     this.phoneKeys = Object.keys(this.phoneEnum).filter(Number);
   }
   ngOnInit() {
-    this.initForm();
     this.user.subscribe(user => {
       this.userId = user.id;
-      this.studentForm.patchValue({
-        curp: user.curp,
-        niev: user.niev,
-        dob: new Date(user.dob),
-        primaryEmail: user.primaryEmail,
-        familyName: user.name.familyName,
-        givenName: user.name.givenName,
-        gender: user.gender,
-        parents: user.parents,
+      this.studentForm = this.fb.group({
+        curp: new FormControl(user.curp),
+        niev: new FormControl(user.niev),
+        dob: new FormControl(new Date(user.dob)),
+        primaryEmail: new FormControl(user.primaryEmail),
+        familyName: new FormControl(user.name.familyName),
+        givenName: new FormControl(user.name.givenName),
+        gender: new FormControl(user.gender),
+        parents: this.fb.array(user.parents.map(parent => this.setParent(parent))),
       });
-      /* user.parents.forEach(parent => {
-        this.patchParentForm(parent)
-      }) */
+
     });
   }
 
@@ -76,10 +73,8 @@ export class SchoolFormComponent implements OnInit {
     console.log(postUser)
     this.updatedUser.emit(postUser);
   }
-  onEstadoChange(j: number) {
-    this.studentForm.parent[j].controls['state'].valueChanges.subscribe((estado: string) => {
-      this.municipiosNames = Object.values(states[estado]);
-    })
+  onEstadoChange(estado) {
+    this.municipiosNames = Object.values(states[estado]);
   }
 
   /* onSubmitParent() {
@@ -103,32 +98,7 @@ export class SchoolFormComponent implements OnInit {
     console.log(postUser)
     this.updatedUser.emit(postUser);
   } */
-  initForm() {
-    this.studentForm = this.fb.group({
-      curp: new FormControl(null),
-      niev: new FormControl(null),
-      dob: new FormControl(null),
-      primaryEmail: new FormControl(null, [Validators.required, Validators.email]),
-      familyName: new FormControl(null, [Validators.required]),
-      givenName: new FormControl(null, [Validators.required]),
-      gender: new FormControl(null, [Validators.required]),
-      parents: this.fb.array([]),
-    });
-    /* this.parentForm = this.fb.group({
-      familyName: '',
-      givenName: '',
-      curp: '',
-      email: new FormControl(null),
-      phones: this.fb.array([]),
-      streetAddress: new FormControl(null),
-      city: new FormControl(null),
-      municipio: new FormControl(null),
-      state: new FormControl(null),
-      postalCode: new FormControl(null),
-      relationType: new FormControl(null, [Validators.required]),
-      relationCustom: new FormControl(null)
-    }); */
-  }
+
   get parents(): FormArray {
     return this.studentForm.get('parents') as FormArray;
   }
@@ -150,6 +120,24 @@ export class SchoolFormComponent implements OnInit {
       state: '',
     });
   }
+  setParent(parent): FormGroup {
+    return this.fb.group({
+      userId: '',
+      givenName: [parent.givenName],
+      familyName: [parent.familyName],
+      curp: [parent.curp],
+      gender: [parent.gender],
+      relationType: [parent.relationType],
+      relationCustom: [parent.relationCustom],
+      phones: [],
+      email: [parent.email],
+      streetAddress: [parent.streetAddress],
+      city: [parent.city],
+      postalCode: [parent.postalCode],
+      municipio: [parent.municipio],
+      state: [parent.state],
+    });
+  }
   addParent() {
     this.parents.push(this.newParent());
   }
@@ -157,7 +145,7 @@ export class SchoolFormComponent implements OnInit {
     this.parents.removeAt(j);
   }
   get phones(): FormArray {
-    return this.parentForm.get('phones') as FormArray;
+    return this.parents.get('phones') as FormArray;
   }
   newPhone(): FormGroup {
     return this.fb.group({

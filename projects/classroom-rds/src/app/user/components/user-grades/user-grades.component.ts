@@ -10,23 +10,15 @@ import { AppState } from '@rds-store/app.state';
 
 import { User } from '@rds-auth/models/user.model';
 
-import pdfFonts from 'pdfmake/build/vfs_fonts';
-import { pdfMake } from 'pdfmake/build/pdfmake';
-
-import jsPDF from 'jspdf';
-
-import html2canvas from 'html2canvas';
-
 import { map } from 'rxjs/operators';
 import { Observable, Subscription } from 'rxjs';
 
 import { isTeacher } from './../../../auth/state/auth.selectors';
 import { SubscriptionService } from './../../../shared/services/subscription.service';
-import { Education, Experience, Resume, Skill } from '../../../shared/components/resume/resume';
 
 import { PdfService } from '~/app/shared/services/pdf.service';
 import { UserEntityService } from '~/app/store/user/user-entity.service';
-pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
 
 
 @Component({
@@ -46,10 +38,7 @@ export class UserGradesComponent implements OnInit, OnDestroy {
   today: Date = new Date();
   faPrint = faPrint;
   faFilePdf = faFilePdf;
-  /**  */
-  resume = new Resume();
-  degrees = ['B.E.', 'M.E.', 'B.Com', 'M.Com'];
-  /** */
+
   constructor(
     private userES: UserEntityService,
     private router: ActivatedRoute,
