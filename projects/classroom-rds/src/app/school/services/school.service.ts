@@ -70,5 +70,6 @@ export class SchoolService {
       .update(user)
       .then()
   }
+
 }
 

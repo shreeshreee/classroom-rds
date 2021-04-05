@@ -1,4 +1,4 @@
-@import './../../../../assets/themes/colors.scss';
+@import "./../../../../assets/themes/colors.scss";
 
 .img-small {
   height: 30px;
@@ -6,10 +6,11 @@
 }
 .students-list {
   min-width: 280px;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 mat-list-item.active {
+  color: $mystic-color;
   background: $rds-logo-color;
 }

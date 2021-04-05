@@ -11,7 +11,7 @@ import { SchoolComponent } from './container/school/school.component';
 
 const routes: Routes = [{
   path: '', component: SchoolComponent, children: [
-    { path: '', component: SchoolDashboardComponent, resolve: { users: UsersResolver } },
+    { path: '', component: SchoolDashboardComponent/* , resolve: { users: UsersResolver } */ },
     {
       path: 'alumnos', component: SchoolStudentsComponent, children: [
         { path: ':id', component: SchoolFormComponent }

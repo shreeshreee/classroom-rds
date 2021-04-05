@@ -24,7 +24,7 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
   @Input() users$: Observable<User[]>;
   activeClass: string;
   userSub: Subject<Partial<User>> = new Subject<Partial<User>>();
-  loaded$: Observable<boolean>;
+  loading$: Observable<boolean>;
   searchForm: FormGroup;
   fullName: string;
   clevelKeys;
@@ -42,7 +42,7 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
     private userEntityService: UserEntityService,
   ) {
     this.initSearchForm();
-    this.loaded$ = this.userEntityService.loaded$;
+    this.loading$ = this.userEntityService.loading$;
     this.clevelKeys = Object.keys(this.clevels).filter(Number);
     this.slevelKeys = Object.keys(this.slevels).filter(x => x.length > 5);
   }
@@ -53,7 +53,7 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.onSearch();
+
   }
   getUserCount() {
 
@@ -70,16 +70,13 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
     });
     // call action or service to edit user on DB
   }
-  onSearch() {
-    this.searchForm.get('grade').valueChanges.subscribe((grade: string) => {
-      this.users$ = this.userEntityService.entities$
-        .pipe(map(users => {
-          if (!users) {
-            this.userEntityService.getWithQuery({ grade });
-          }
-          return users.filter(x => x.grade == grade)
-        }));
-    });
+  onSearch(grade) {
+    this.userEntityService.getWithQuery({ grade });
+    this.users$ = this.userEntityService.entities$.pipe(map(users => users.filter(x => x.grade == grade).sort((a, b) => this.compare(a.name.familyName, b.name.familyName, true))))
+  }
+  /** Simple sort comparator for example ID/Name columns (for client-side sorting). */
+  compare(a: string | number, b: string | number, isAsc: boolean): number {
+    return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
   }
   ngOnDestroy(): void {
     this.subService.unsubscribeComponent$.next();

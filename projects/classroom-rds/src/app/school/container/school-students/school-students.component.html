@@ -2,7 +2,8 @@
   <form [formGroup]="searchForm">
     <mat-form-field class="d-block" appearance="outline">
       <mat-label>Selecciona un grupo</mat-label>
-      <mat-select formControlName="grade" placeholder="Selecciona un grado escolar" (change)="onSearch()">
+      <mat-select formControlName="grade" placeholder="Selecciona un grado escolar"
+        (selectionChange)="onSearch($event.value)">
         <mat-option *ngFor="let skey of slevelKeys" value="{{skey}}">
           {{skey}}
         </mat-option>
@@ -10,10 +11,14 @@
     </mat-form-field>
   </form>
   <div>
+    <div *ngIf="loading$|async" style="min-height: 300px;" fxLayout="column" fxLayoutAlign="center center">
+      <mat-spinner strokeWidth="3" [diameter]="50">
+      </mat-spinner>
+      <span>Buscando ...</span><br>
+    </div>
     <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="5px" fxLayoutAlign="space-arround top">
-      <mat-card *ngIf="(loaded$|async) && users$|async as users" fxFlex="0 1 calc(30% - 5px)" fxFlex.lt-sm="100%"
+      <mat-card *ngIf="!(loading$|async) && users$|async as users" fxFlex="0 1 calc(30% - 5px)" fxFlex.lt-sm="100%"
         class="students-list">
-
         <mat-list *ngIf="users.length==0" dense>
           <mat-list-item> No hay cursos para mostrar </mat-list-item>
         </mat-list>
