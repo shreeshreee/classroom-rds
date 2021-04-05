@@ -10,13 +10,14 @@ import { signOut } from '@rds-auth/state/auth.actions';
 
 import { UserDomain } from '@rds-admin/models/users-domain.model';
 
+import { User } from '@rds-auth/models/user.model';
+
+import { SubscriptionService } from '@rds-shared/services/subscription.service';
+
+import { UserEntityService } from '@rds-store/user/user-entity.service';
+
 import { Observable, of, Subscription } from 'rxjs';
 import { map, take } from 'rxjs/operators';
-
-import { UserAuth } from '~/app/auth/models/user-auth.model';
-import { User } from '~/app/auth/models/user.model';
-import { SubscriptionService } from '~/app/shared/services/subscription.service';
-import { UserEntityService } from '~/app/store/user/user-entity.service';
 
 @Component({
   selector: 'app-user',

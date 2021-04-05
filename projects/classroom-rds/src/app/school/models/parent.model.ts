@@ -22,6 +22,7 @@ export interface Parent {
   }];
   email?: string;
   streetAddress?: string,
+  neightborhood?: string;
   city?: string;
   postalCode?: string;
   municipio?: string;

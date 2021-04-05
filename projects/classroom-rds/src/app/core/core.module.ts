@@ -1,40 +1,23 @@
-import { RouterModule } from '@angular/router';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SharedModule } from '@rds-shared/shared.module';
 
 import { AlertModule } from 'ngx-bootstrap/alert';
 
-import { MaterialModule } from '../modules/material.module';
-import { SharedModule } from '../shared/shared.module';
+import { layoutComponents } from './layout';
+import { coreServices } from './services';
 
-import { LayoutComponent } from './layout/layout.component';
-import { LayoutService } from './layout/layout.service';
-import { ConfigComponent } from './layout/config/config.component';
-import { FooterComponent } from './layout/footer/footer.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { SidenavComponent } from './layout/sidenav/sidenav.component';
-
+import { appearanceModules } from '~/app/modules';
 @NgModule({
   declarations: [
-    LayoutComponent,
-    HeaderComponent,
-    SidenavComponent,
-    FooterComponent,
-    ConfigComponent
+    ...layoutComponents
   ],
   imports: [
-    CommonModule,
-    RouterModule,
-    FlexLayoutModule,
-    FontAwesomeModule,
-    MaterialModule,
     SharedModule,
-    AlertModule
+    AlertModule,
+    ...appearanceModules,
   ],
-  providers: [LayoutService],
+  providers: [...coreServices],
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() core: CoreModule) {

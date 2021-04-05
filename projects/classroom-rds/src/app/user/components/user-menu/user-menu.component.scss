@@ -1,8 +1,8 @@
-@import './../../../../assets/themes/colors.scss';
+@import "./../../../../assets/themes/colors.scss";
 .active {
   color: $rds-logo-color;
 }
-.rds-icon {
-  color: $rds-logo-color;
+
+.confirm {
+  min-width: 200px;
 }
-.confirm { min-width: 200px; }

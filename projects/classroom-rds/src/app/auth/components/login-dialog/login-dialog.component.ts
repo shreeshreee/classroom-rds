@@ -1,9 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
-import { faDoorClosed, faDoorOpen, faIcons, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faDoorOpen, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { FaIconComponent, FaLayersComponent } from '@fortawesome/angular-fontawesome';
 
 import { Store } from '@ngrx/store';
 
@@ -18,7 +17,7 @@ import { AppState } from '@rds-store/app.state';
 export class LoginDialogComponent implements OnInit {
   faGoogle = faGoogle;
   faTimes = faTimes;
-  faDoor = faDoorOpen;
+  faDoorOpen = faDoorOpen;
   constructor(
     private dialogRef: MatDialogRef<LoginDialogComponent>,
     private store: Store<AppState>
@@ -27,7 +26,6 @@ export class LoginDialogComponent implements OnInit {
   ngOnInit(): void {
   }
   onLogin() {
-    this.faDoor = faDoorClosed;
     this.store.dispatch(
       fromAuthActions.signIn()
     );

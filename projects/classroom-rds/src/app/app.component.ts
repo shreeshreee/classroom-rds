@@ -1,11 +1,10 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, HostBinding, OnInit } from '@angular/core';
 
-import { Observable, Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 import { SeoService } from './shared/services';
-import { ThemeService } from './shared/services/theme.service';
+import { ThemeService } from './core/services/theme.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

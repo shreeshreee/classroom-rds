@@ -30,7 +30,7 @@ import { TeacherEntityService } from '@rds-store/teacher/teacher-entity.service'
 
 import { UserProfilesService } from '@rds-classroom/user-profiles/services/user-profiles.service';
 
-import { LayoutService } from '@rds-core/layout/layout.service';
+import { LayoutService } from '~/app/core/services/layout.service';
 
 import { NavLink } from '@rds-shared/models/nav-link';
 

@@ -22,12 +22,10 @@ export class SchoolTeachersComponent implements OnInit {
   loaded$: Observable<boolean>;
 
   constructor(
-
     private subService: SubscriptionService,
     private userEntityService: UserEntityService,
   ) {
     this.loaded$ = this.userEntityService.loaded$;
-
   }
 
   ngOnInit(): void {

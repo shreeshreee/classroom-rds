@@ -8,7 +8,8 @@ import { CourseDialogComponent } from '@rds-classroom/courses/components/course-
 
 import { Observable } from 'rxjs';
 
-import { ThemeService } from '~/app/shared/services';
+import { ThemeService } from '../../services';
+
 
 @Component({
   templateUrl: './config.component.html',

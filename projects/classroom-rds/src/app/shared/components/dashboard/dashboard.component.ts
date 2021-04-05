@@ -12,7 +12,6 @@ import { User } from '~/app/auth/models/user.model';
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent implements AfterViewInit, OnInit {
   //user$: Observable<User>;

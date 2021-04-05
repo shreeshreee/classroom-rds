@@ -11,32 +11,24 @@ import { EntityDataService, EntityDefinitionService, EntityServices } from '@ngr
 import * as fromEntity from '@rds-store/app/config/entity-metadata';
 import * as fromUser from '@rds-store/user';
 
+import { appearanceModules } from './../modules/index';
 import { MaterialModule } from './../modules/material.module';
 import { UserDataService } from './../store/user/user-data.service';
 import { UserEntityService } from './../store/user/user-entity.service';
 
+import { schoolContainers } from './container';
 import { SchoolRoutingModule } from './school-routing.module';
 
+import { schoolComponents } from './components/index';
 import { SchoolService } from './services/school.service';
 import { UsersResolver } from './services/users.resolver';
-import { SchoolDashboardComponent } from './components/school-dashboard/school-dashboard.component';
-import { SchoolFormComponent } from './components/school-form/school-form.component';
-import { SchoolStudentsComponent } from './container/school-students/school-students.component';
-import { SchoolComponent } from './container/school/school.component';
-import { SubjectsComponent } from './container/subjects/subjects.component';
-import { SchoolTeachersComponent } from './container/school-teachers/school-teachers.component';
-import { TeachersFormComponent } from './components/teachers-form/teachers-form.component';
+
 
 
 @NgModule({
   declarations: [
-    SchoolComponent,
-    SchoolDashboardComponent,
-    SchoolStudentsComponent,
-    SchoolFormComponent,
-    SubjectsComponent,
-    SchoolTeachersComponent,
-    TeachersFormComponent,
+    ...schoolComponents,
+    ...schoolContainers
   ],
   imports: [
     CommonModule,
@@ -44,9 +36,7 @@ import { TeachersFormComponent } from './components/teachers-form/teachers-form.
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MaterialModule,
-    FontAwesomeModule,
-    FlexLayoutModule,
+    ...appearanceModules
   ],
   providers: [
     SchoolService,

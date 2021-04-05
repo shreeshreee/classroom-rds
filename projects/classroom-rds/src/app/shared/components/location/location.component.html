@@ -1,23 +1,25 @@
 <alert #banner [type]="alert.type" (click)="banner.close()" [dismissible]="dismissible">
   <span [routerLink]="['galletas']" [innerHtml]="(alert.msg)"></span>
 </alert>
-<div class="p-2">
-  <mat-card>
-    <mat-card-header>
-      <img mat-card-avatar src="assets/images/rds-newlogo-transparent.png">
-      <mat-card-title class="view-title">Ubicación</mat-card-title>
-      <mat-card-subtitle class="view-subtitle">¿Dónde nos encontramos?
+<div class="m-4">
+  <mat-card class="mat-elevation-z4" style="width: fit-content;">
+    <mat-card-header style="margin-top: -20px">
+      <div class="float-right img-container">
+        <img style="max-height: 80px;" src="assets/images/rds-personas.png" class="img-fluid" />
+      </div>
+      <mat-card-title>
+        <span class="view-title">Ubicación</span>
+      </mat-card-title>
+      <mat-card-subtitle style="margin-top: 10px">
+        <span class="view-subtitle">¿Dónde nos encontramos?</span>
       </mat-card-subtitle>
     </mat-card-header>
-    <div class="float-right img-container">
-      <img style="max-height: 100px;" src="assets/images/rds-personas.png" class="img-fluid" />
-    </div>
-    <mat-card-content>
+  </mat-card>
+  <div class="p-2 text-justify">
+    <p>
       Te invitamos a que visites nuestras instalaciones, observes el ambiente escolar y platiques con nuestro personal
       docente. Vive con nosotros la experiencia educativa; conócenos!
-    </mat-card-content>
-  </mat-card>
-  <div class="py-2 text-justify">
+    </p>
     <dl class="row">
       <dt class="col-sm-2">Dirección</dt>
       <dd class="col-sm-9">

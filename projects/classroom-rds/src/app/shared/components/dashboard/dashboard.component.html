@@ -1,53 +1,48 @@
-<div *ngIf="user" class="px-2">
-  <div class="py-2">
-    <mat-card>
-      <mat-card-header>
-        <!-- <img mat-card-avatar src="assets/images/rds-newlogo-transparent.png">-->
-        <mat-card-title class="view-title">Bienvenido
-          <!-- <small class="text-muted">{{user.name.fullName}}</small> -->
-        </mat-card-title>
-        <mat-card-subtitle class="view-subtitle">Panel de acceso a servicios de información para estudiantes y
-          profesores.<br>
-        </mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <span class="fs-1"></span>
-      </mat-card-content>
-    </mat-card>
-  </div>
-
-  <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="10px" fxLayoutAlign="flex-start">
-    <mat-card class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-lg="0 1 calc(50% - 10px)"
-      fxFlex.lt-sm="100%" [routerLink]="['user',user.id]" appMaterialElevation [raisedElevation]="raisedElev">
-      <mat-card-header>
-        <mat-card-title>Servicios Escolares</mat-card-title>
-        <mat-card-subtitle>
-          <p><small>Accede a toda tu información como alumno.</small></p>
-        </mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image src="assets/images/assignment-grades2.png" />
-    </mat-card>
-    <mat-card *ngIf="isTeacher || isAdmin" class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)"
-      fxFlex.lt-lg="0 1 calc(50% - 10px)" fxFlex.lt-sm="100%" [routerLink]="['escuela']" appMaterialElevation
-      [raisedElevation]="raisedElev">
-      <mat-card-header>
-        <mat-card-title>Administración escolar</mat-card-title>
-        <mat-card-subtitle>
-          <p><small>Administra usuarios en la institución.</small></p>
-        </mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image src="assets/images/dashboard-image.png" />
-    </mat-card>
-    <mat-card *ngIf="isTeacher || isAdmin" class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)"
-      fxFlex.lt-lg="0 1 calc(50% - 10px)" fxFlex.lt-sm="100%" [routerLink]="['gsuite']" appMaterialElevation
-      [raisedElevation]="raisedElev">
-      <mat-card-header>
-        <mat-card-title>Funciones de G Suite</mat-card-title>
-        <mat-card-subtitle>
-          <p><small>Administra Google Classroom y Google Admin Directory.</small></p>
-        </mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image src="assets/images/dashboard-google.png" />
-    </mat-card>
+<div *ngIf="user" class="m-4">
+  <mat-card class="mat-elevation-z4" style="width: fit-content;">
+    <mat-card-header style="margin-top: -20px">
+      <mat-card-title>
+        <span class="view-title">Bienvenido</span>
+      </mat-card-title>
+      <mat-card-subtitle style="margin-top: 10px">
+        <span class="view-subtitle">Servicios para estudiantes y profesores.</span>
+      </mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+  <div class="p-2">
+    <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="10px" fxLayoutAlign="flex-start">
+      <mat-card class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-lg="0 1 calc(50% - 10px)"
+        fxFlex.lt-sm="100%" [routerLink]="['user',user.id]" appMaterialElevation [raisedElevation]="raisedElev">
+        <mat-card-header>
+          <mat-card-title>Servicios Escolares</mat-card-title>
+          <mat-card-subtitle>
+            <p><small>Accede a toda tu información como alumno.</small></p>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="assets/images/assignment-grades2.png" />
+      </mat-card>
+      <mat-card *ngIf="isTeacher || isAdmin" class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)"
+        fxFlex.lt-lg="0 1 calc(50% - 10px)" fxFlex.lt-sm="100%" [routerLink]="['escuela']" appMaterialElevation
+        [raisedElevation]="raisedElev">
+        <mat-card-header>
+          <mat-card-title>Administración escolar</mat-card-title>
+          <mat-card-subtitle>
+            <p><small>Administra usuarios en la institución.</small></p>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="assets/images/dashboard-image.png" />
+      </mat-card>
+      <mat-card *ngIf="isTeacher || isAdmin" class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)"
+        fxFlex.lt-lg="0 1 calc(50% - 10px)" fxFlex.lt-sm="100%" [routerLink]="['gsuite']" appMaterialElevation
+        [raisedElevation]="raisedElev">
+        <mat-card-header>
+          <mat-card-title>Funciones de G Suite</mat-card-title>
+          <mat-card-subtitle>
+            <p><small>Administra Google Classroom y Google Admin Directory.</small></p>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="assets/images/dashboard-google.png" />
+      </mat-card>
+    </div>
   </div>
 </div>

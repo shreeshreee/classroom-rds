@@ -4,13 +4,14 @@ import { Injectable } from '@angular/core';
 import { DefaultDataService, HttpUrlGenerator, QueryParams } from '@ngrx/data';
 import { Update } from '@ngrx/entity';
 
+import { User } from '@rds-auth/models/user.model';
+
+import { SchoolService } from '@rds-school/services/school.service';
+
 import { from, Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 
 import * as fromUser from './';
-import { UserAuth } from '~/app/auth/models/user-auth.model';
-import { User } from '~/app/auth/models/user.model';
-import { SchoolService } from '~/app/school/services/school.service';
 @Injectable()
 export class UserDataService extends DefaultDataService<User> {
 

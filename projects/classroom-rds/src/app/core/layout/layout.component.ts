@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
 
 import { faCookieBite } from '@fortawesome/free-solid-svg-icons';
 
@@ -13,14 +12,11 @@ import * as fromAuthSelectors from '@rds-auth/state/auth.selectors';
 
 import { loadApp } from '@rds-store/app/actions/app.actions';
 
+import { User } from '@rds-auth/models/user.model';
+
 import { Observable } from 'rxjs';
 
-import { ThemeService } from './../../shared/services/theme.service';
-
-import { LayoutService } from './layout.service';
-
-import { ConfigComponent } from './config/config.component';
-import { User } from '~/app/auth/models/user.model';
+import { LayoutService, ThemeService } from '../services';
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
@@ -40,7 +36,6 @@ export class LayoutComponent {
     private themeService: ThemeService,
     private store: Store<AppState>,
     private router: Router,
-    private dialog: MatDialog,
   ) {
     this.router.events.subscribe((event: RouterEvent) => {
       this.navigationInterceptor(event)

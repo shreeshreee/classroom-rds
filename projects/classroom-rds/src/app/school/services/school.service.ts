@@ -1,21 +1,18 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { query } from '@angular/animations';
 
 import { QueryParams } from '@ngrx/data';
+
+import { User } from '@rds-auth/models/user.model';
+
+import { Grade } from '@rds-user/models/grade.model';
 
 import { Observable, of } from 'rxjs';
 import { concatMap, map, take } from 'rxjs/operators';
 
 import firebase from 'firebase/app';
 import 'firebase/auth';
-
-import { UserAuth } from '~/app/auth/models/user-auth.model';
-import { UserStudent } from '~/app/auth/models/user-student.model';
-import { User } from '~/app/auth/models/user.model';
-import { Grade, Score } from '~/app/user/models/grade.model';
 @Injectable()
 export class SchoolService {
   user$: Observable<firebase.User>;
@@ -36,7 +33,7 @@ export class SchoolService {
       })
     );
     this.usersDb = this.afDatabase.list<User>(`${this.userCollection}`, (ref) =>
-      ref.orderByChild('name/fullName')
+      ref.orderByChild('name/familyName')
     );
   }
 
@@ -57,7 +54,6 @@ export class SchoolService {
   getUsersWithQuery(queryParams: QueryParams): Observable<User[]> {
     console.log(queryParams.grade)
     return this.afDatabase.list<User>(`${this.userCollection}`).valueChanges().pipe(map(users => users.filter(x => x.grade == queryParams.grade)));
-    return this.usersDb.valueChanges().pipe(map(users => users.filter(x => x.grade == queryParams.grade)))
   }
   getUser(id: string): Observable<User> {
     return this.afDatabase.object<User>(`${this.userCollection}/${id}`).valueChanges();

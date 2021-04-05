@@ -9,7 +9,7 @@ import { Store } from '@ngrx/store';
 
 import { Observable } from 'rxjs';
 
-import { LayoutService } from './../layout.service';
+import { LayoutService } from '../../services/layout.service';
 import { animateText, onMainContentChange, onSideNavChange } from '../../animations/animations';
 import { AppState } from '../../../store/app.state';
 import { signOut } from '../../../auth/state/auth.actions';

@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 
+import { SubscriptionService } from '@rds-shared/services';
+
+import { UserEntityService } from '@rds-store/user/user-entity.service';
+
 import { Observable } from 'rxjs';
-import { filter, first, map, takeUntil, tap } from 'rxjs/operators';
-
-import { SubscriptionService } from '../../shared/services/subscription.service';
-
-import { UserEntityService } from '~/app/store/user/user-entity.service';
+import { filter, first, takeUntil, tap } from 'rxjs/operators';
 
 
 @Injectable()

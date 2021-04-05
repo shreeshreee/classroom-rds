@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 
 import { EntityCollectionServiceBase, EntityCollectionServiceElementsFactory } from '@ngrx/data';
 
-import * as fromUser from '.';
+import { User } from '@rds-auth/models/user.model';
 
-import { User } from '~/app/auth/models/user.model';
+import * as fromUser from './';
 
 @Injectable()
 export class UserEntityService extends EntityCollectionServiceBase<User> {

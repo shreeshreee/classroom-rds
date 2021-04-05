@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { UserEntityService } from '@rds-store/user/user-entity.service';
+
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
-import { UserEntityService } from '~/app/store/user/user-entity.service';
 
 @Component({
   selector: 'app-school',

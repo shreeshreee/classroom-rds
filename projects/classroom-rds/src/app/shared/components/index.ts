@@ -25,27 +25,26 @@ import { YoutubeComponent } from './youtube/youtube.component';
 export const sharedComponents: any[] = [
   AboutComponent,
   CodeConductComponent,
+  CodeConductSchoolComponent,
   DashboardComponent,
   DeleteButtonComponent,
   HomeComponent,
   LicenseComponent,
+  LocationComponent,
   LogoComponent,
   NotFoundComponent,
+  PreescolarComponent,
+  PrimariaComponent,
   PrivacyPolicyComponent,
+  RemoteLearningComponent,
   RemoveConfirmComponent,
+  SecundariaComponent,
   SnackComponent,
   TermsComponent,
   UnderConstructionComponent,
   UserCardComponent,
   WellcomeComponent,
-  RemoveConfirmComponent,
   YoutubeComponent,
-  CodeConductSchoolComponent,
-  PreescolarComponent,
-  PrimariaComponent,
-  SecundariaComponent,
-  LocationComponent,
-  RemoteLearningComponent
 ];
 
 export * from './about/about.component';
@@ -53,7 +52,6 @@ export * from './code-conduct-school/code-conduct-school.component';
 export * from './code-conduct/code-conduct.component';
 export * from './dashboard/dashboard.component';
 export * from './delete-button/delete-button.component';
-export * from './youtube/youtube.component';
 export * from './home/home.component';
 export * from './license/license.component';
 export * from './location/location.component';
@@ -66,10 +64,11 @@ export * from './remote-learning/remote-learning.component';
 export * from './remove-confirm/remove-confirm.component';
 export * from './secundaria/secundaria.component';
 export * from './snack/snack.component';
+export * from './terms/terms.component';
 export * from './under-construction/under-construction.component';
 export * from './user-card/user-card.component';
 export * from './wellcome/wellcome.component';
-export * from './terms/terms.component';
+export * from './youtube/youtube.component';
 
 
 // end:ng42.barrel

@@ -7,8 +7,7 @@
   <form [formGroup]="studentForm" novalidate (ngSubmit)="onSubmit()">
     <mat-card>
       <mat-card-content class="card border-primary m-n2 bg-transparent">
-        <h1 class="card-header text-light">{{user.name.fullName}}&nbsp;&nbsp;<small
-            class="text-muted">{{user.id}}</small>
+        <h1 class="card-header">{{user.name.fullName}}&nbsp;&nbsp;<small class="text-muted">{{user.id}}</small>
         </h1>
         <div class="card-body">
           <h2 class="card-title">Datos personales</h2>

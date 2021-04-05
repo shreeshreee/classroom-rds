@@ -2,8 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { User } from '@rds-auth/models/user.model';
 
-import { UserAuth } from './../../../auth/models/user-auth.model';
-
 
 @Component({
   selector: 'app-user-card',

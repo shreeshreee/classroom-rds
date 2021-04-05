@@ -1,30 +1,37 @@
 import { RouterModule } from '@angular/router';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { AlertModule } from 'ngx-bootstrap/alert';
 
-import { MaterialModule } from '../modules/material.module';
+import { appearanceModules } from '../modules';
 
-import * as fromSharedComponents from './components';
-import * as fromSharedServices from './services';
-
+import { sharedComponents } from './components';
+import { sharedServices } from './services';
+export const sharedModules: any[] = [
+  CommonModule,
+  RouterModule,
+];
 @NgModule({
   imports: [
-    CommonModule,
-    RouterModule,
-    FlexLayoutModule,
-    FontAwesomeModule,
-    MaterialModule,
+    ...sharedModules,
+    ...appearanceModules,
     AlertModule,
     CarouselModule,
   ],
-  providers: [...fromSharedServices.sharedServices],
-  declarations: [...fromSharedComponents.sharedComponents],
-  exports: [...fromSharedComponents.sharedComponents]
+  exports: [
+    ...sharedModules,
+    ...sharedComponents
+  ],
+  declarations: [...sharedComponents],
+
 })
-export class SharedModule { }
+export class SharedModule {
+  static forRoot(): ModuleWithProviders<SharedModule> {
+    return {
+      ngModule: SharedModule,
+      providers: [...sharedServices]
+    }
+  }
+}

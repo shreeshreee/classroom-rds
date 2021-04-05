@@ -1,28 +1,4 @@
-@import "./../../../../assets/themes/colors.scss";
-mat-card {
-  max-width: fit-content;
-}
-.view-title {
-  color:$rds-logo-color;
-  font-size: calc(1rem + 1.5vw);
-  font-weight: 800;
-}
-.view-subtitle {
-  margin-top: -50px;
-  font-size: calc(0.5rem + 1vw);
-  font-weight: 400;
-}
-
 .img-carousel {
   width: 25%;
   height: auto;
-}
-.text-wrap-right {
-  float:right;
-  margin: 5px;
-}
-
-.text-wrap-left {
-  float:left;
-  margin: 5px;
 }

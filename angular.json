@@ -112,9 +112,9 @@
               "projects/classroom-rds/src/manifest.webmanifest"
             ],
             "styles": [
+              "projects/classroom-rds/src/styles.scss",
               "./node_modules/bootstrap/scss/bootstrap.scss",
-              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
-              "projects/classroom-rds/src/styles.scss"
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
             ],
             "scripts": []
           }

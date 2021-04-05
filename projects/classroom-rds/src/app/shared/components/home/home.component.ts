@@ -7,9 +7,9 @@ import * as fromAuthSelectors from '@rds-auth/state/auth.selectors';
 
 import { AppState } from '@rds-store/app.state';
 
-import { Observable } from 'rxjs';
+import { User } from '@rds-auth/models/user.model';
 
-import { User } from '~/app/auth/models/user.model';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
     this.alerts = [{
       dismissible: true,
       type: 'success',
-      visible: true,
+      visible: false,
       link: 'user/grades',
       msg: sanitizer.sanitize(SecurityContext.HTML, 'Conoce tus calificaciones de la Unidad 2 en la sección "Información Académica". <br>Disponibles a partir del <strong>24 de marzo de 2021</strong>.')
     },

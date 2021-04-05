@@ -17,9 +17,10 @@ import { RemoteLearningComponent } from '@rds-shared/components/remote-learning/
 import { TermsComponent } from '@rds-shared/components/terms/terms.component';
 import { UnderConstructionComponent } from '@rds-shared/components/under-construction/under-construction.component';
 
-import { ConfigComponent } from './core/layout/config/config.component';
-import { ResumeComponent } from './shared/components/resume/resume.component';
-import { YoutubeComponent } from '~/app/shared/components/youtube/youtube.component';
+import { ConfigComponent } from '@rds-core/layout/config/config.component';
+import { SettingsComponent } from '@rds-core/layout/settings/settings.component';
+
+import { YoutubeComponent } from '@rds-shared/components/youtube/youtube.component';
 const routes: Routes = [{
   path: '', component: LayoutComponent, children: [
     { path: '', component: HomeComponent },
@@ -42,7 +43,7 @@ const routes: Routes = [{
     { path: 'code-conduct-school', component: CodeConductSchoolComponent },
     { path: 'terms', component: TermsComponent },
     { path: 'under-construction', component: UnderConstructionComponent },
-    { path: 'resume', component: ResumeComponent },
+    { path: 'settings', component: SettingsComponent },
 
     { path: '**', component: NotFoundComponent }
   ]

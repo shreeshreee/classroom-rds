@@ -24,10 +24,13 @@ import { signOut } from '@rds-auth/state/auth.actions';
 import { LoginDialogComponent } from '@rds-auth/components/login-dialog/login-dialog.component';
 import { User } from '@rds-auth/models/user.model';
 
-import { LayoutService } from '../layout.service';
-import { ConfigComponent } from '../config/config.component';
+import { SubscriptionService } from '@rds-shared/services';
 
-import { ThemeService } from '~/app/shared/services';
+import { ThemeService } from 'ng2-charts';
+
+import { LayoutService } from '../../services';
+
+
 
 @Component({
   selector: 'app-header',
@@ -65,13 +68,15 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private layoutService: LayoutService,
+    private subService: SubscriptionService,
     private dialog: MatDialog,
     private store: Store<AppState>,
-    private themeService: ThemeService
   ) { }
 
   ngOnInit() {
-    this.themeService.isDarkTheme;
+  }
+  ngOnDestroy() {
+    this.subService.unsubscribeComponent$;
   }
   toggleSidenavLeft($event: any) {
     this.layoutService.toggleSidenavLeft.emit($event);
@@ -82,7 +87,5 @@ export class HeaderComponent implements OnInit {
   onSignOut() {
     this.store.dispatch(signOut({ user: this.user }));
   }
-  openConfigDialog() {
-    const dialogRef = this.dialog.open(ConfigComponent, { width: '300px', data: { checked: this.themeService.isDarkTheme } });
-  }
+
 }
