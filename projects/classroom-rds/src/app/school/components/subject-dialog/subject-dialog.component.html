@@ -1,0 +1,38 @@
+<div fxLayout="row wrap" fxLayoutAlign="space-between center">
+  <h2 mat-dialog-title>{{(data.isNew) ? 'Crea' : 'Modifica'}} una clase</h2>
+  <fa-icon mat-icon-button [icon]="faTimes" size="lg" (click)="close()" [matDialogClose]=""></fa-icon>
+</div>
+<mat-dialog-content>
+  <mat-form-field class="d-block" appearance="outline">
+    <mat-label>Nombre</mat-label>
+    <input matInput type="text" placeholder="¿Cuál es el nombre de tu clase?" [(ngModel)]="data.name">
+  </mat-form-field>
+  <div fxLayout="row" fxLayoutGap="5px">
+    <mat-form-field appearance="outline">
+      <mat-label>Grado</mat-label>
+      <mat-select [(ngModel)]="data.grade" placeholder="Selecciona el grado escolar">
+        <mat-option *ngFor="let skey of slevelKeys" value="{{skey}}">
+          {{skey}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Estado</mat-label>
+      <mat-select [(ngModel)]="data.classState" placeholder="Selecciona el estado"
+        (change)="onStateSelection($event.key)">
+        <mat-option *ngFor="let key of keys" [value]="states[key]">
+          {{states[key]}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <mat-form-field class="d-block" appearance="outline">
+    <mat-label>Descripción</mat-label>
+    <textarea matInput type="text" [(ngModel)]="data.description"></textarea>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button [matDialogClose]="data">
+    {{(data.isNew) ? 'Crear' : 'Modificar'}}
+  </button>
+</mat-dialog-actions>

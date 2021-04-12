@@ -1,9 +1,8 @@
-<mat-toolbar class="header animation fadeInOut mat-elevation-z2 sticky-top">
-  <mat-toolbar-row fxLayoutAlign="space-between center">
-    <div fxLayout="row" fxLayoutGap="5px">
-      <button *ngIf="isHandset && isOnline" mat-icon-button (click)="toggleSidenavLeft($event)">
-        <fa-icon [icon]="faBars"></fa-icon>
-      </button>
+<mat-toolbar class="border-bottom">
+  <mat-toolbar-row fxLayout="row warp" fxLayoutAlign="space-between center">
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+      <fa-icon *ngIf="isHandset && isOnline" [icon]="faBars" mat-icon-button (click)="toggleSidenavLeft($event)">
+      </fa-icon>
       <button mat-icon-button [routerLink]="['/']">
         <img class="img-fluid" src="assets/images/rds-personas.png" />
       </button>
@@ -13,13 +12,10 @@
       <button mat-button [matMenuTriggerFor]="webapp">
         Aplicación
       </button>
-      <!--  <button mat-icon-button routerLink="resume">
-        <mat-icon>picture_as_pdf</mat-icon>
-      </button> -->
     </div>
-    <div fxLayout="row" fxLayoutGap="5px">
+    <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="5px">
       <button *ngIf="isOnline && user" mat-icon-button [matMenuTriggerFor]="userMenu">
-        <img class="img-fluid rounded-circle" src="{{user.photoUrl?user.photoUrl:user.classroomPhotoUrl}}" />
+        <img class="img-fluid rounded-circle" [src]="user.photoUrl?user.photoUrl:user.thumbnailPhotoUrl" />
       </button>
       <button *ngIf="!isOnline" mat-icon-button (click)="onSignIn()">
         <img class="img-fluid" src="assets/images/google-logo.svg" />
@@ -29,10 +25,10 @@
 </mat-toolbar>
 <mat-menu #userMenu="matMenu" fxLayoutAlign="right">
   <ng-template matMenuContent>
-    <div mat-list-item *ngIf="isOnline && user" [routerLink]="['user',user.id]" appMaterialElevation>
+    <div mat-list-item *ngIf="isOnline && user" [routerLink]="['user',user.id]">
       <app-user-card [isOnline]="isOnline" [isAdmin]="isAdmin" [user]="user"> </app-user-card>
     </div>
-    <div mat-menu-item *ngIf="isOnline" [routerLink]="['settings']" appMaterialElevation>
+    <div mat-menu-item *ngIf="isOnline" [routerLink]="['settings']">
       <fa-icon matListIcon [icon]="faSlidersH" size="lg"></fa-icon>
       <span>&nbsp;Configuración</span>
     </div>

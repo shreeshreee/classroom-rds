@@ -1,1 +1,42 @@
-<p>subjects works!</p>
+<div class="py-2">
+
+  <div fxLayout="row" fxLayoutAlign="space-between top">
+    <div fxFlex="0 1 calc(30% - 5px)" fxFlex.lt-md="100%">
+      <form [formGroup]="searchForm">
+        <button type="button" class="btn-block" (click)="openSubjectDialog()" mat-raised-button>Nueva materia</button>
+        <mat-form-field class="d-block" appearance="outline">
+          <mat-label>Selecciona un grupo</mat-label>
+          <mat-select formControlName="grade" placeholder="Selecciona un grado escolar"
+            (selectionChange)="onSearch($event.value)">
+            <mat-option *ngFor="let skey of slevelKeys" value="{{skey}}">
+              {{skey}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
+    </div>
+    <div *ngIf="loading$|async" style="min-height: 300px;" fxLayout="column" fxLayoutAlign="center center">
+      <mat-spinner strokeWidth="3" [diameter]="50">
+      </mat-spinner>
+      <span>Buscando ...</span><br>
+    </div>
+
+    <mat-card *ngIf="!(loading$|async) && classes$|async as classes" fxFlex="0 1 calc(68% - 5px)" fxFlex.lt-sm="100%">
+      <mat-list *ngIf="classes.length==0" dense>
+        <mat-list-item> No hay cursos para mostrar </mat-list-item>
+      </mat-list>
+      <mat-list dense>
+        <mat-list-item *ngFor="let class of classes" (click)="sendUser(class);activeClass=class.id"
+          [ngClass]="{'active': class.id==activeClass, 'bg-transparent': class.id!=activeClass}">
+          <img matListAvatar src="{{class.photoUrl}}">
+          <div matLine>{{class.name.fullName}}</div>
+          <fa-icon matTooltip="Última conexión: {{class.lastLoginTime|date:'medium'}}" [icon]="faCircle"
+            class="{{class.isOnline?'text-success':'text-danger'}}"></fa-icon>
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+    <div *ngIf="classSub" fxFlex="0 1 calc(68% - 5px)" fxFlex.lt-md="100%">
+      <!-- <app-school-form [class]="classSub" (updatedClass)="editClass($event)"></app-school-form> -->
+    </div>
+  </div>
+</div>

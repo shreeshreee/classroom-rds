@@ -5,7 +5,7 @@ import { Actions, ofType } from '@ngrx/effects';
 
 import { filter } from 'rxjs/operators';
 
-import { ToastService } from '../shared/services/toast.service';
+import { ToastService } from '@rds-shared/services/toast.service';
 
 @Injectable({ providedIn: 'root' })
 export class NgrxToastService {

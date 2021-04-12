@@ -11,13 +11,13 @@ body {
 }
 .view-title {
   color: $rds-logo-color;
-  font-size: calc(2rem + 1.5vw);
+  font-size: calc(1rem + 1.5vw);
   font-family: "fredoka one", cursive;
   text-shadow: -3px -2px 1px $text-shadow-color;
 }
 .view-subtitle {
   font-family: "comfortaa";
-  font-size: calc(0.8rem + 1vw);
+  font-size: calc(0.5rem + 1vw);
   font-weight: 400;
 }
 .display-4-responsive {
@@ -78,6 +78,9 @@ body {
 }
 .hidden {
   display: none;
+}
+.active {
+  color: $rds-logo-color;
 }
 
 .text-wrap-right {

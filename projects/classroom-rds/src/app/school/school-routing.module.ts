@@ -1,21 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SchoolDashboardComponent, SchoolFormComponent, TeachersFormComponent } from './components';
-import { SchoolComponent, SchoolStudentsComponent, SchoolTeachersComponent } from './container';
+import { AdminGuard } from '../admin/guards/admin.guard';
+
+import { AssigmentsDashboardComponent, SchoolDashboardComponent, TeachersFormComponent } from './components';
+import { AssignmentsComponent, SchoolComponent, SchoolStudentsComponent, SchoolTeachersComponent, SubjectsComponent } from './container';
 
 import { UsersResolver } from './services/users.resolver';
 
 const routes: Routes = [{
-  path: '', component: SchoolComponent, children: [
-    { path: '', component: SchoolDashboardComponent },
+  path: '', component: SchoolComponent, data: { breadcrumb: null, }, children: [
+    { path: '', component: SchoolDashboardComponent, data: { breadcrumb: null, } },
+    { path: 'alumnos', component: SchoolStudentsComponent, data: { breadcrumb: 'Alumnos', }, },
     {
-      path: 'alumnos', component: SchoolStudentsComponent, children: [
-        { path: ':id', component: SchoolFormComponent }
+      path: 'asignaciones', component: AssignmentsComponent, data: { breadcrumb: 'Asignaciones' }, children: [
+        { path: '', component: AssigmentsDashboardComponent, data: { breadcrumb: null } },
+        { path: 'rooms', loadChildren: () => import('../rooms/rooms.module').then(m => m.RoomsModule), canActivate: [AdminGuard], data: { breadcrumb: 'Grupos' }, resolve: { users: UsersResolver } },
+        { path: 'materias', component: SubjectsComponent, data: { breadcrumb: 'Materias' } },
+        { path: 'nuevo', component: SubjectsComponent }
       ]
     },
-    { path: 'profesores', component: SchoolTeachersComponent, resolve: { users: UsersResolver } },
-    { path: 'profesores/:id', component: TeachersFormComponent }
+    { path: 'profesores', component: SchoolTeachersComponent, resolve: { users: UsersResolver }, data: { breadcrumb: 'Profesores' } },
+    { path: 'profesores/:id', component: TeachersFormComponent },
   ]
 }];
 

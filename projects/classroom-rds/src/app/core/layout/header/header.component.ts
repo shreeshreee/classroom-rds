@@ -1,4 +1,3 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -26,24 +25,12 @@ import { User } from '@rds-auth/models/user.model';
 
 import { SubscriptionService } from '@rds-shared/services';
 
-import { ThemeService } from 'ng2-charts';
-
 import { LayoutService } from '../../services';
-
-
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  animations: [
-    trigger('fade',
-      [
-        state('void', style({ opacity: 0 })),
-        transition(':enter', [animate(0)]),
-        transition(':leave', [animate(200)]),
-      ]
-    )]
 })
 export class HeaderComponent implements OnInit {
   @Input() isHandset: boolean;

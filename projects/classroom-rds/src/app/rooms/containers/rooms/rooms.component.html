@@ -1,0 +1,11 @@
+<button mat-raised-button class="btn btn-primary" (click)="openRoomDialog()">
+  <fa-icon [icon]="faPlus"></fa-icon> Grupo
+</button>
+<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="5px" fxLayoutAlign="flex-start">
+  <app-room *ngFor="let room of rooms" [room]="room" class="mb-2" fxFlex="0 1 calc(33.3% - 5px)"
+    fxFlex.lt-lg="0 1 calc(50% - 5px)" fxFlex.lt-sm="100%">
+    <button name="editRoom" mat-icon-button (click)="openRoomDialog(room)">
+      <fa-icon [icon]="faEdit" size="lg"></fa-icon>
+    </button>
+  </app-room>
+</div>

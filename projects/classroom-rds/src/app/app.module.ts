@@ -20,7 +20,6 @@ import { AppComponent } from './app.component';
 
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
-import { MaterialModule } from './modules/material.module';
 import { SharedModule } from './shared/shared.module';
 import { AppStoreModule } from './store/app-store.module';
 
@@ -47,6 +46,7 @@ import { AppStoreModule } from './store/app-store.module';
     AngularFirestoreModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

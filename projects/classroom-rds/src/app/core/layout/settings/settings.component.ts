@@ -11,7 +11,7 @@ import { ThemeService } from '../../services';
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss']
 })
-export class SettingsComponent implements OnInit {
+export class SettingsComponent {
   defaultElevation = 4;
   raisedElevation = 6;
   faSun = faSun;
@@ -21,9 +21,6 @@ export class SettingsComponent implements OnInit {
   constructor(
     public themeService: ThemeService,
   ) {
-
-  }
-  ngOnInit() {
     this.isDarkTheme = this.themeService.isDarkTheme;
   }
 

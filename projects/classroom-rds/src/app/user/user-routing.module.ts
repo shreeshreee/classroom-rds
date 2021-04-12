@@ -10,11 +10,10 @@ import { UserComponent } from './containers/user/user.component';
 const routes: Routes = [
   {
     path: ':id', component: UserComponent, resolve: { user: UserResolver }, children: [
-      /* { path: '', redirectTo: ':userId', pathMatch: 'full' }, */
       { path: '', component: UserHomeComponent },
       { path: 'info', component: UserInfoComponent },
       { path: 'grades_soon', component: WorkingOnGradesComponent },
-      { path: 'grades', component: UserGradesComponent },
+      { path: 'grades', component: UserGradesComponent, data: { breadcrumb: 'Calificaciones' } },
     ],
   },
 

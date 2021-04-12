@@ -57,10 +57,11 @@ export class AuthFireService {
   createUser(user: Partial<User>) {
     const key = user.id;
     return this.afStore.collection(`${this.userCollection}`).doc(key).set({
+      ...user,
       isVerified: user.isVerified,
       uid: user.uid,
     }, { merge: true }).then(
-      () => this.afDatabase.object(`${this.userCollection}/${user.id}`).update(user)
+      () => this.afDatabase.object<User>(`${this.userCollection}/${user.id}`).update(user)
     );
   }
 

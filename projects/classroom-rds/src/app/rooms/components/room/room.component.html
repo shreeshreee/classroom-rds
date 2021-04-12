@@ -1,0 +1,48 @@
+<mat-card class="card">
+  <div class="float-right">
+    <ng-content #editRoom></ng-content>
+    <app-delete-button (delete)="handleDelete()"></app-delete-button>
+  </div>
+  <mat-card-header>
+    <mat-card-title>
+      <span>{{ room.name }}</span>
+    </mat-card-title>
+    <mat-card-subtitle>
+      {{ room.id }}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions>
+    <mat-accordion displayMode="default" [multi]="false" [hideToggle]="false">
+      <mat-expansion-panel class="mat-elevation-z0">
+        <mat-expansion-panel-header>
+          <mat-panel-title>Alumnos</mat-panel-title>
+        </mat-expansion-panel-header>
+        <button mat-raised-button class="btn-block" (click)="openDialog()">
+          <mat-icon>add</mat-icon> Alumno
+        </button>
+        <div class="students" cdkDropList cdkDropListOrientation="vertical" (cdkDropListDropped)="studentDrop($event)">
+          <div class="inner-card" cdkDrag *ngFor="let student of room.students; let i = index"
+            (click)="openDialog(student, i)">
+            <mat-card [ngClass]="student.label"> {{i+1}}. {{ student.fullName }} </mat-card>
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel class="mat-elevation-z0">
+        <mat-expansion-panel-header>
+          <mat-panel-title>Materias</mat-panel-title>
+        </mat-expansion-panel-header>
+        <button mat-raised-button class="btn-block" (click)="openCoursesDialog()">
+          <mat-icon class="text-success">add</mat-icon>&nbsp; Materia
+        </button>
+        <mat-list cdkDropList cdkDropListOrientation="vertical" (cdkDropListDropped)="courseDrop($event)" dense>
+          <mat-list-item class="inner-card" cdkDrag *ngFor="let course of room.courses; let i = index"
+            (click)="openCoursesDialog(course, i)">
+            <img matListAvatar *ngIf="course.teacher" src="{{course.teacher.photoUrl}}">
+            <span matLine>{{i+1}}. {{ course.name }}</span>
+            <span matLine class="text-muted" *ngIf="course.teacher">({{course.teacher.name.givenName}})</span>
+          </mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-card-actions>
+</mat-card>

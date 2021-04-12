@@ -21,17 +21,18 @@ import { ConfigComponent } from '@rds-core/layout/config/config.component';
 import { SettingsComponent } from '@rds-core/layout/settings/settings.component';
 
 import { YoutubeComponent } from '@rds-shared/components/youtube/youtube.component';
+
+import { AdminGuard } from './admin/guards/admin.guard';
 const routes: Routes = [{
-  path: '', component: LayoutComponent, children: [
-    { path: '', component: HomeComponent },
-    { path: 'config', component: ConfigComponent },
-    { path: 'escuela', loadChildren: () => import('./school/school.module').then(m => m.SchoolModule), canActivate: [AuthGuard] },
-    { path: 'gsuite', loadChildren: () => import('./classroom/classroom.module').then(m => m.ClassroomModule), canActivate: [AuthGuard] },
+  path: '', component: LayoutComponent, data: { breadcrumb: 'Home' }, children: [
+    { path: '', component: HomeComponent, data: { breadcrumb: null } },
+    { path: 'config', component: ConfigComponent, canActivate: [AuthGuard] },
+    { path: 'escuela', loadChildren: () => import('./school/school.module').then(m => m.SchoolModule), canActivate: [AdminGuard], data: { breadcrumb: 'Administración' } },
+    { path: 'gsuite', loadChildren: () => import('./classroom/classroom.module').then(m => m.ClassroomModule), canActivate: [AuthGuard], data: { breadcrumb: 'Google GSuite' } },
     { path: 'perfil', loadChildren: () => import('./classroom/user-profiles/user-profiles.module').then(m => m.UserProfilesModule), canActivate: [AuthGuard] },
-    { path: 'calificaciones', loadChildren: () => import('./grades/grades.module').then(m => m.GradesModule), canActivate: [AuthGuard] },
-    /*     { path: 'clases', loadChildren: () => import('./classroom/courses/courses.module').then(m => m.CoursesModule), canActivate: [AuthGuard] },*/
-    { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule), canActivate: [AuthGuard] },
-    { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivate: [AuthGuard] },
+    { path: 'calificaciones', loadChildren: () => import('./grades/grades.module').then(m => m.GradesModule), canActivate: [AdminGuard] },
+    { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule), canActivate: [AuthGuard], data: { breadcrumb: 'Servicios escolares' } },
+    { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivate: [AdminGuard] },
     { path: 'youtube', component: YoutubeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'remote-learning', component: RemoteLearningComponent },
@@ -43,8 +44,7 @@ const routes: Routes = [{
     { path: 'code-conduct-school', component: CodeConductSchoolComponent },
     { path: 'terms', component: TermsComponent },
     { path: 'under-construction', component: UnderConstructionComponent },
-    { path: 'settings', component: SettingsComponent },
-
+    { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard], data: { breadcrumb: 'Configuración' } },
     { path: '**', component: NotFoundComponent }
   ]
 }];

@@ -35,11 +35,6 @@ export class AuthEffects {
                 uid: res.user.uid
               }
             }),
-            /* switchMap((user: User) => {
-              return [
-                fromAuthActions.fullfillUser({ id: user.id })
-              ]
-            }), */
             switchMap((user: User) => {
               if (user.isNew) {
                 return [
@@ -48,6 +43,7 @@ export class AuthEffects {
                 ];
               } else {
                 return [
+                  fromAuthActions.saveUser({ user }),
                   fromAuthActions.signInSuccess({ user }),
                 ];
               }

@@ -8,8 +8,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EntityDefinitionService, EntityServices, EntityDataService } from '@ngrx/data';
 
 import { AdminRoutingModule } from '@rds-admin/admin-routing.module';
-import * as fromAdminComponents from '@rds-admin/components';
-import * as fromAdminContainers from '@rds-admin/containers';
 import * as fromAdminServices from '@rds-admin/services';
 
 import { SharedModule } from '@rds-shared/shared.module';
@@ -18,6 +16,10 @@ import * as fromUserDomain from '@rds-admin/state/user-domain';
 import * as fromGroup from '@rds-admin/state/group';
 
 import * as fromEntity from '@rds-store/app/config/entity-metadata';
+
+import { adminComponents } from '@rds-admin/components';
+import { AdminComponent, adminContainers } from '@rds-admin/containers';
+import { adminServices } from '@rds-admin/services';
 
 import { GroupsResolver } from './services/groups.resolver';
 import { UserDomainsResolver } from './services/user-domains.resolver';
@@ -31,8 +33,8 @@ import { MaterialModule } from '~/app/modules/material.module';
 
 @NgModule({
   declarations: [
-    fromAdminComponents.adminComponents,
-    fromAdminContainers.adminContainers,
+    ...adminComponents,
+    ...adminContainers,
     GroupTableComponent,
     SchoolHomeComponent,
   ],
@@ -46,9 +48,9 @@ import { MaterialModule } from '~/app/modules/material.module';
     FlexLayoutModule,
     SharedModule,
   ],
-  exports: [fromAdminContainers.AdminComponent],
+  exports: [AdminComponent],
   providers: [
-    fromAdminServices.adminServices,
+    ...adminServices,
     UserDomainsResolver,
     UserDomainEntityService,
     UserDomainDataService,

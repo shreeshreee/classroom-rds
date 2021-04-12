@@ -1,37 +1,40 @@
+import { SharedModule } from '@rds-shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { EntityDataService, EntityDefinitionService, EntityServices } from '@ngrx/data';
 
 import * as fromEntity from '@rds-store/app/config/entity-metadata';
 import * as fromUser from '@rds-store/user';
+import * as fromClass from '@rds-store/class';
 
-import { appearanceModules } from './../modules/index';
-import { MaterialModule } from './../modules/material.module';
+import { appearanceModules } from './../modules';
 import { UserDataService } from './../store/user/user-data.service';
 import { UserEntityService } from './../store/user/user-entity.service';
 
 import { schoolContainers } from './container';
 import { SchoolRoutingModule } from './school-routing.module';
 
-import { schoolComponents } from './components/index';
+import { schoolComponents } from './components';
 import { SchoolService } from './services/school.service';
 import { UsersResolver } from './services/users.resolver';
+import { ClassesEntityService } from '../store/class/classes-entity.service';
+import { ClassesDataService } from '../store/class/classes-data.service';
+import { SubjectDialogComponent } from './components/subject-dialog/subject-dialog.component'
+
 
 
 
 @NgModule({
   declarations: [
     ...schoolComponents,
-    ...schoolContainers
+    ...schoolContainers,
+    SubjectDialogComponent,
   ],
   imports: [
-    CommonModule,
+    SharedModule,
     SchoolRoutingModule,
     FormsModule,
     ReactiveFormsModule,
@@ -43,6 +46,8 @@ import { UsersResolver } from './services/users.resolver';
     UsersResolver,
     UserEntityService,
     UserDataService,
+    ClassesEntityService,
+    ClassesDataService,
   ]
 })
 export class SchoolModule {
@@ -52,9 +57,13 @@ export class SchoolModule {
     entityDataService: EntityDataService,
     userEntityService: UserEntityService,
     userDataService: UserDataService,
+    classEntityService: ClassesEntityService,
+    classDataService: ClassesDataService,
   ) {
-    entityServices.registerEntityCollectionServices([userEntityService]);
     eds.registerMetadataMap(fromEntity.entityMetadata);
+    entityServices.registerEntityCollectionServices([userEntityService, classEntityService]);
     entityDataService.registerService(fromUser.entityCollectionName, userDataService);
+    entityDataService.registerService(fromClass.entityCollectionName, classDataService);
+
   }
 }

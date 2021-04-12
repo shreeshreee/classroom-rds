@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 
-import { faUserSlash } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-delete-button',
@@ -9,7 +9,8 @@ import { faUserSlash } from '@fortawesome/free-solid-svg-icons';
 })
 export class DeleteButtonComponent {
   canDelete: boolean;
-  faUserSlash = faUserSlash;
+  faTrashAlt = faTrashAlt;
+  faTimes = faTimes;
   @Output() delete = new EventEmitter<boolean>();
 
   cancel(): void {

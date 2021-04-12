@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: classroom-rds.web.app
+Token: 421c7d3529ae15efe795bdb8463ea2ccb50dad27d02c90911f0f6b6625f2e4ab

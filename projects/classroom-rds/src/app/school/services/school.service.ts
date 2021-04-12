@@ -8,17 +8,20 @@ import { User } from '@rds-auth/models/user.model';
 
 import { Grade } from '@rds-user/models/grade.model';
 
-import { Observable, of } from 'rxjs';
+import { from, Observable, of } from 'rxjs';
 import { concatMap, map, take } from 'rxjs/operators';
 
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import { Class } from '../models/class.model';
 @Injectable()
 export class SchoolService {
   user$: Observable<firebase.User>;
   private userCollection: string = 'users';
+  private classesCollection: string = 'courses';
   private currentScore: string = 'currentGrades';
   private usersDb: AngularFireList<User>;
+  classRef: AngularFireList<any>;
   constructor(
     public afAuth: AngularFireAuth,
     private afDatabase: AngularFireDatabase,
@@ -35,6 +38,7 @@ export class SchoolService {
     this.usersDb = this.afDatabase.list<User>(`${this.userCollection}`, (ref) =>
       ref.orderByChild('name/familyName')
     );
+    this.classRef = this.afDatabase.list(this.classesCollection);
   }
 
   getAuthState(): Observable<firebase.User> {
@@ -66,6 +70,30 @@ export class SchoolService {
       .update(user)
       .then()
   }
-
+  async createClass(course: Class) {
+    const dbKey = this.afDatabase.createPushId();
+    const ref = await this.afDatabase.object(`${this.classesCollection}/${dbKey}`);
+    ref.set({ ...course, id: dbKey }).then(() => { return { ...course, id: dbKey } })
+  }
+  async updateClass(id: string, changes: Partial<Class>): Promise<Class> {
+    return await this.afDatabase.object<Class>(`${this.classesCollection}/${id}`)
+      .update(changes)
+      .then()
+  }
+  getClasses(): Observable<Class[]> {
+    return this.afDatabase.list<Class>(`${this.classesCollection}`).valueChanges();
+  }
+  getClassesWithQuery(queryParams: QueryParams): Observable<Class[]> {
+    return this.afDatabase.list<Class>(`${this.classesCollection}`).valueChanges().pipe(map(users => users.filter(x => x.grade == queryParams.grade)));
+  }
+  getClassById(id: string): Observable<Class> {
+    return this.afDatabase.object<Class>(`${this.classesCollection}/${id}`).valueChanges();
+  }
+  create(course: Class): Observable<Class> {
+    const dbKey = this.afDatabase.createPushId();
+    console.log(dbKey)
+    this.classRef.push({ ...course })
+    return this.afDatabase.object<Class>(`${this.classesCollection}/${dbKey}`).valueChanges()
+  }
 }
 

@@ -3,7 +3,7 @@
     class="students-list">
 
     <mat-list *ngIf="users.length==0" dense>
-      <mat-list-item> No hay cursos para mostrar </mat-list-item>
+      <mat-list-item> No hay profesores para mostrar </mat-list-item>
     </mat-list>
     <mat-list class="teacher-list" dense>
       <mat-list-item *ngFor="let user of users$|async" [routerLink]="user.id">
@@ -11,7 +11,6 @@
         <p matLine>{{user.name.fullName}}</p>
         <fa-icon matTooltip="Última conexión: {{user.lastLoginTime|date:'medium'}}" [icon]="faCircle"
           class="{{user.isOnline?'text-success':'text-danger'}}"></fa-icon>
-
       </mat-list-item>
     </mat-list>
   </mat-card>

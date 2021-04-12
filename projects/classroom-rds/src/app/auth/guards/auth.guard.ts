@@ -10,7 +10,9 @@ import { tap } from 'rxjs/operators';
 
 import { isLoggedIn } from '../state/auth.selectors';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthGuard implements CanActivate {
   constructor(
     private store: Store<AppState>,

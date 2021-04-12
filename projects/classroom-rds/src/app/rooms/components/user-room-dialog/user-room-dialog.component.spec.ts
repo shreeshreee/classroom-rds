@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminComponent } from './admin.component';
+import { UserRoomDialogComponent } from './user-room-dialog.component';
 
-describe('AdminComponent', () => {
-  let component: AdminComponent;
-  let fixture: ComponentFixture<AdminComponent>;
+describe('UserRoomDialogComponent', () => {
+  let component: UserRoomDialogComponent;
+  let fixture: ComponentFixture<UserRoomDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminComponent ]
+      declarations: [ UserRoomDialogComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminComponent);
+    fixture = TestBed.createComponent(UserRoomDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

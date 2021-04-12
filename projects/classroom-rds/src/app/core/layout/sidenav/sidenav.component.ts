@@ -3,17 +3,13 @@ import { MatSidenav } from '@angular/material/sidenav';
 
 import { faIdBadge } from '@fortawesome/free-regular-svg-icons';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { faUser, faHome, faSchool, faChalkboardTeacher, faUserTie, faUserGraduate, faUserCog, IconDefinition, faCompressAlt, faSignOutAlt, faShieldAlt, faUserPlus, faAward, faExpandAlt, faUserShield, faBuilding } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faSchool, faChalkboardTeacher, faUserCog, faCompressAlt, faUserPlus, faAward, faExpandAlt, faUserShield, faBuilding, faUserGraduate } from '@fortawesome/free-solid-svg-icons';
 
 import { Store } from '@ngrx/store';
 
-import { Observable } from 'rxjs';
-
-import { LayoutService } from '../../services/layout.service';
 import { animateText, onMainContentChange, onSideNavChange } from '../../animations/animations';
+import { LayoutService } from '../../services/layout.service';
 import { AppState } from '../../../store/app.state';
-import { signOut } from '../../../auth/state/auth.actions';
-import { NavLink } from '../../../shared/models/nav-link';
 
 import { User } from '~/app/auth/models/user.model';
 @Component({
@@ -39,7 +35,7 @@ export class SidenavComponent implements OnInit {
   faCompressAlt = faCompressAlt;
   faExpandAlt = faExpandAlt;
   faUserShield = faUserShield;
-  faUser = faUser;
+  faUserGraduate = faUserGraduate;
   faSchool = faSchool;
   faUserCog = faUserCog;
   faGoogle = faGoogle;
@@ -59,7 +55,6 @@ export class SidenavComponent implements OnInit {
 
   constructor(
     private layoutService: LayoutService,
-    private store: Store<AppState>,
   ) {
     this.layoutService.toggleSidenavLeft.subscribe(() => {
       this.sidenavLeft.toggle();

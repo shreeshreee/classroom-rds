@@ -4,7 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { FormGroup } from '@angular/forms';
 
-import { AdminFireService } from '@rds-admin/services';
+import { AdminFireService, GroupsService } from '@rds-admin/services';
 
 import { Group } from '~/app/admin/models/users-domain.model';
 
@@ -24,7 +24,7 @@ export class GroupTableComponent implements OnInit {
   searchForm: FormGroup;
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['id', 'name', 'directMembersCount', 'email'];
-  constructor(private adminFireService: AdminFireService) { }
+  constructor(private groupsService: GroupsService) { }
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource(this.data);
@@ -38,7 +38,7 @@ export class GroupTableComponent implements OnInit {
   onDbBackup() {
     this.data.map(async group => {
       const newGroup: Group = { ...group, grade: null, level: null, priority: null, students: [], teachers: [] }
-      await this.adminFireService.createGroup(newGroup);
+      await this.groupsService.createGroup(newGroup);
     });
   }
 

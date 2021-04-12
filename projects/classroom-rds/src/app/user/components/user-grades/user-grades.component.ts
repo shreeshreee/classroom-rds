@@ -10,14 +10,14 @@ import { AppState } from '@rds-store/app.state';
 
 import { User } from '@rds-auth/models/user.model';
 
+import { SubscriptionService } from '@rds-shared/services';
+
+import { isTeacher } from '@rds-auth/state/auth.selectors';
+
+import { UserEntityService } from '@rds-store/user/user-entity.service';
+
 import { map } from 'rxjs/operators';
 import { Observable, Subscription } from 'rxjs';
-
-import { isTeacher } from './../../../auth/state/auth.selectors';
-import { SubscriptionService } from './../../../shared/services/subscription.service';
-
-import { PdfService } from '~/app/shared/services/pdf.service';
-import { UserEntityService } from '~/app/store/user/user-entity.service';
 
 
 
@@ -44,7 +44,6 @@ export class UserGradesComponent implements OnInit, OnDestroy {
     private router: ActivatedRoute,
     private store: Store<AppState>,
     private subService: SubscriptionService,
-    private pdfMake: PdfService,
   ) {
 
     this.loading$ = this.userES.loading$;

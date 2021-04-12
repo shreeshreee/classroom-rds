@@ -29,6 +29,7 @@
             "tsConfig": "projects/classroom-rds/tsconfig.app.json",
             "aot": true,
             "assets": [
+              "projects/classroom-rds/src/.well-known",
               "projects/classroom-rds/src/assets",
               "projects/classroom-rds/src/manifest.webmanifest"
             ],
@@ -108,6 +109,7 @@
             "tsConfig": "projects/classroom-rds/tsconfig.spec.json",
             "karmaConfig": "projects/classroom-rds/karma.conf.js",
             "assets": [
+              "projects/classroom-rds/src/.well-known",
               "projects/classroom-rds/src/assets",
               "projects/classroom-rds/src/manifest.webmanifest"
             ],

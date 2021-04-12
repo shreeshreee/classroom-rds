@@ -7,7 +7,7 @@ import { faFacebook, faGithub, faTwitter } from '@fortawesome/free-brands-svg-ic
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent {
   @Input() isHandset: boolean;
   socialSet: any[] = [
     /*  {
@@ -26,9 +26,6 @@ export class FooterComponent implements OnInit {
       site: 'https://twitter.com/Escuela_RDS',
     }
   ];
-  constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }

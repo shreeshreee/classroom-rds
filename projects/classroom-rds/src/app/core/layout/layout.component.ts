@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from '@angular/router';
+import { OverlayContainer } from '@angular/cdk/overlay';
 
 import { faCookieBite } from '@fortawesome/free-solid-svg-icons';
 
@@ -33,9 +34,11 @@ export class LayoutComponent {
   faCookieBite = faCookieBite;
   constructor(
     private layoutService: LayoutService,
-    private themeService: ThemeService,
+    public themeService: ThemeService,
     private store: Store<AppState>,
     private router: Router,
+    private overlay: OverlayContainer,
+
   ) {
     this.router.events.subscribe((event: RouterEvent) => {
       this.navigationInterceptor(event)
@@ -45,7 +48,6 @@ export class LayoutComponent {
       this.store.dispatch(signInSuccess({ user }));
     }
     this.store.dispatch(loadApp());
-    this.isHandset$ = this.layoutService.isHandset$
     this.isOnline$ = this.store.pipe(select(fromAuthSelectors.isLoggedIn));
     this.user$ = this.store.pipe(select(fromAuthSelectors.selectUser));
     this.isAdmin$ = this.store.pipe(select(fromAuthSelectors.isAdmin));
@@ -71,5 +73,13 @@ export class LayoutComponent {
   }
   ngOnInit(): void {
     this.isDarkTheme = this.themeService.isDarkTheme;
+    this.isDarkTheme.subscribe(isDark => {
+      if (isDark) {
+        this.overlay.getContainerElement().classList.add('dark-theme');
+      } else {
+        this.overlay.getContainerElement().classList.remove('dark-theme');
+      }
+    });
+    this.isHandset$ = this.layoutService.isHandset$;
   }
 }

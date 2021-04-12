@@ -1,0 +1,25 @@
+<div fxLayout="row wrap" fxLayoutAlign="space-between center">
+  <h2 mat-dialog-title>{{ data.isNew ? 'Agrega' : 'Modifica' }} un grupo</h2>
+  <fa-icon mat-icon-button [icon]="faTimes" size="lg" (click)="close()" [matDialogClose]=""></fa-icon>
+</div>
+<div mat-dialog-content class="content">
+  <mat-form-field>
+    <input placeholder="Correo electrónico" matInput [(ngModel)]="data.student.email">
+  </mat-form-field>
+  <br />
+  <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="data.student.label">
+    <mat-button-toggle *ngFor="let opt of labelOptions" [value]="opt">
+      <mat-icon [ngClass]="opt">{{
+        opt === 'gray' ? 'check_circle' : 'lens'}}</mat-icon>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="" (click)="close()">
+    Cancelar
+  </button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>
+    {{ data.isNew ? 'Crear' : 'Modificar' }}
+  </button>
+  <app-delete-button (delete)="handleStudentDelete()" *ngIf="!data.isNew"></app-delete-button>
+</div>

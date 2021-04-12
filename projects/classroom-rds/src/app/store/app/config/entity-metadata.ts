@@ -12,7 +12,7 @@ import * as fromUserProfile from '@rds-store/user-profile';
 
 import * as fromUserDomain from '@rds-admin/state/user-domain';
 import * as fromGroup from '@rds-admin/state/group';
-
+import * as fromClass from '@rds-store/class';
 import * as fromStudentSubmission from '@rds-store/student-submission';
 
 
@@ -111,7 +111,15 @@ export const entityMetadata: EntityMetadataMap = {
       optimisticUpdate: true,
       optimisticSaveEntities: true
     },
-  }
+  },
+  [fromClass.entityCollectionName]: {
+    //sortComparer: sortByName,
+    entityDispatcherOptions: {
+      optimisticAdd: false,
+      optimisticUpdate: true,
+      optimisticSaveEntities: false
+    },
+  },
 };
 export const pluralNames = {
   [fromAnnouncement.entityCollectionName]: fromAnnouncement.pluralizedEntityName,
@@ -126,6 +134,7 @@ export const pluralNames = {
   [fromUserDomain.entityCollectionName]: fromUserDomain.pluralizedEntityName,
   [fromGroup.entityCollectionName]: fromGroup.pluralizedEntityName,
   [fromUser.entityCollectionName]: fromUser.pluralizedEntityName,
+  [fromClass.entityCollectionName]: fromClass.pluralizedEntityName,
 };
 
 export const entityConfig = {

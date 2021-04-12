@@ -3,6 +3,7 @@
     <span [innerHtml]="alert.msg"></span>
   </alert>
 </div>
+
 <app-wellcome *ngIf="!(isOnline$|async)"></app-wellcome>
 <app-dashboard *ngIf="(isOnline$|async) && (user$|async)" [user]="user$|async" [isTeacher]="isTeacher$|async"
   [isAdmin]="isAdmin$|async">

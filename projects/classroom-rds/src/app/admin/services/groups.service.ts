@@ -34,7 +34,7 @@ export class GroupsService {
   createGroup(data: Group): Promise<void> {
     const dbKey = this.db.createPushId();
     const fsKey = this.afs.createId();
-    //this.db.list(`groups/${dbKey}`).push({ ...data, id: fsKey });
+    this.db.list(`groups`).push({ ...data, id: dbKey });
     return this.afs.collection('groups').doc(data.id).set({
       ...data
     });

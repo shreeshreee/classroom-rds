@@ -6,7 +6,7 @@ import { SubscriptionService } from '@rds-shared/services';
 import { UserEntityService } from '@rds-store/user/user-entity.service';
 
 import { Observable } from 'rxjs';
-import { filter, first, takeUntil, tap } from 'rxjs/operators';
+import { filter, first, map, takeUntil, tap } from 'rxjs/operators';
 
 
 @Injectable()
@@ -23,7 +23,7 @@ export class UsersResolver implements Resolve<boolean> {
       .pipe(
         tap(loaded => {
           if (!loaded) {
-            this.userEntityService.getAll().pipe(takeUntil(this.subService.unsubscribe$));
+            this.userEntityService.getAll().pipe(takeUntil(this.subService.unsubscribe$)).pipe(map(users => users.filter(users => users.isTeacher == true)));
           }
         }),
         filter(loaded => !!loaded),

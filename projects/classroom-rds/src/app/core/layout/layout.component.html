@@ -1,6 +1,6 @@
 <div [ngClass]="{'dark-theme': isDarkTheme | async}" fxLayout="column" fxFlexFill>
-  <app-header class="d-print-none" [user]="(user$|async)" [isHandset]="(isHandset$|async)" [isAdmin]="(isAdmin$|async)"
-    [isTeacher]="(isTeacher$|async)" [isOnline]="(isOnline$|async)">
+  <app-header class="d-print-none fix-top" [user]="(user$|async)" [isHandset]="(isHandset$|async)"
+    [isAdmin]="(isAdmin$|async)" [isTeacher]="(isTeacher$|async)" [isOnline]="(isOnline$|async)">
   </app-header>
   <div *ngIf="loading">
     <mat-progress-bar mode="query" color="primary"> </mat-progress-bar>

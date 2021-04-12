@@ -1,0 +1,36 @@
+<div fxLayout="row wrap" fxLayoutAlign="space-between center">
+  <h2 mat-dialog-title>{{(data.isNew) ? 'Crea' : 'Modifica'}} un grupo</h2>
+  <fa-icon mat-icon-button [icon]="faTimes" size="lg" (click)="close()" [matDialogClose]=""></fa-icon>
+</div>
+<mat-dialog-content>
+  <mat-form-field>
+    <input placeholder="Nombre" matInput [(ngModel)]="data.name" />
+  </mat-form-field>
+  <mat-form-field>
+    <input placeholder="Descripción" matInput [(ngModel)]="data.description" />
+  </mat-form-field>
+  <div fxLayout="row" fxLayoutGap="5px">
+    <mat-form-field appearance="outline">
+      <mat-label>Grado</mat-label>
+      <mat-select [(ngModel)]="data.grade" placeholder="Selecciona el grado escolar">
+        <mat-option *ngFor="let skey of slevelKeys" value="{{skey}}">
+          {{skey}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Estado</mat-label>
+      <mat-select [(ngModel)]="data.status" placeholder="Selecciona el estado">
+        <mat-option *ngFor="let key of keys" [value]="states[key]">
+          {{states[key]}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>
+    {{ data.isNew ? 'Crear' : 'Modificar' }}
+  </button>
+</div>

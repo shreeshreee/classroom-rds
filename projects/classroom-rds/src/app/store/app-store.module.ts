@@ -11,8 +11,6 @@ import { environment } from '@rds-env/environment';
 import { reducers } from './app.state';
 import { NgrxToastService } from './ngrx-toast.service';
 
-import { GuardianDataService } from './guardian/guardian-data.service';
-import { GuardianEntityService } from './guardian/guardian-entity.service';
 import * as fromEntity from './app/config/entity-metadata';
 import { registeredEffects } from './app/config/registered-effects';
 import { storeConfig } from './app/config/store-config';

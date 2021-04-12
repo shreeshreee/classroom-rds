@@ -1,22 +1,17 @@
- @import './../../../../assets/themes/colors.scss';
- .sidenav-container {
+.sidenav-container {
   height: 100%;
 }
 
 .sidenav {
-  border:none;
-  margin-left: -5px;
-  width: 50px;
+  border: none;
+  width: max-content;
+  mat-toolbar {
+    background: inherit;
+  }
 }
-
-.img-google {
-  height: 50px;
-  width: auto;
+.sidenav-content {
+  border-radius: 5px;
 }
-
 .main-container {
   width: 100%;
-}
-.active {
-  color: $rds-logo-color
 }

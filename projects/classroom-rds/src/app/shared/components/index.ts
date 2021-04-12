@@ -1,3 +1,4 @@
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { AboutComponent } from './about/about.component';
 import { CodeConductSchoolComponent } from './code-conduct-school/code-conduct-school.component';
 import { CodeConductComponent } from './code-conduct/code-conduct.component';
@@ -24,6 +25,7 @@ import { YoutubeComponent } from './youtube/youtube.component';
 
 export const sharedComponents: any[] = [
   AboutComponent,
+  BreadcrumbComponent,
   CodeConductComponent,
   CodeConductSchoolComponent,
   DashboardComponent,
@@ -48,6 +50,7 @@ export const sharedComponents: any[] = [
 ];
 
 export * from './about/about.component';
+export * from './breadcrumb/breadcrumb.component';
 export * from './code-conduct-school/code-conduct-school.component';
 export * from './code-conduct/code-conduct.component';
 export * from './dashboard/dashboard.component';
