@@ -13,7 +13,7 @@ export class AdminComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //this.adminApiService.handleAdminLoad();
+    this.adminApiService.handleAdminLoad();
   }
 
 }
