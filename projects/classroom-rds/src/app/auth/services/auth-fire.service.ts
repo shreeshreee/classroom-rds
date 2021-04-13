@@ -25,7 +25,7 @@ export class AuthFireService {
     this.user$ = this.getAuthState().pipe(
       switchMap((user) => {
         if (user) {
-          return this.afDatabase.object<User>(`${this.userCollection}/${user.providerData[0].uid}`).valueChanges();
+          return this.afStore.collection<User>(`${this.userCollection}/${user.providerData[0].uid}`).valueChanges();
         } else {
           return of(null);
         }
@@ -41,6 +41,9 @@ export class AuthFireService {
   }
   signInWithCredential(credentials: firebase.auth.AuthCredential): Promise<firebase.auth.UserCredential> {
     return this.afAuth.signInWithCredential(credentials);
+  }
+  signInWithPopup(): Observable<firebase.auth.UserCredential> {
+    return from(this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider));
   }
   signOut(id: string) {
     //this.updateOnlineStatus(id, false);

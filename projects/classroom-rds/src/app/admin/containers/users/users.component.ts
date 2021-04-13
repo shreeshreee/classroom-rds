@@ -38,7 +38,7 @@ export class UsersComponent implements OnInit {
   onDbBackup(users: UserDomain[]) {
     users.map(async user => {
       const userProfile = await (await gapi.client.classroom.userProfiles.get({ userId: user.id })).result;
-      const newUser = { ...user, photoUrl: userProfile.photoUrl, permissions: userProfile.permissions || null, isTeacher: userProfile.verifiedTeacher || false }
+      const newUser = { ...user, classroomPhotoUrl: userProfile.photoUrl, permissions: userProfile.permissions || null, isTeacher: userProfile.verifiedTeacher || false }
       await this.adminFireService.createUser(newUser)
     });
   }

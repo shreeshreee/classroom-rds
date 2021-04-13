@@ -20,12 +20,16 @@ export const environment = {
       'https://classroom.googleapis.com/$discovery/rest?version=v1',
       'https://admin.googleapis.com/$discovery/rest?version=directory_v1'
     ],
-    scope: [
+    authScopes: [
       'openid',
       'email',
       'profile'
     ].join(' '),
     classroomScopes: [
+      // See and update its own attachments to posts in Google Classroom
+      'https://www.googleapis.com/auth/classroom.addons.student',
+      // See, create, and update its own attachments to posts in classes you teach in Google Classroom
+      'https://www.googleapis.com/auth/classroom.addons.teacher',
       // Administrar tus clases de Google Classroom
       'https://www.googleapis.com/auth/classroom.courses',
       // Ver tus clases de Google Classroom

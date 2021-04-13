@@ -4,7 +4,7 @@
       <div class="text-right">
         <div style="margin-top: -40px">
           <img height="72" width="72" class="img-fluid rounded-circle" alt="avatar image"
-            src="{{user.thumbnailPhotoUrl?user.thumbnailPhotoUrl:user.photoUrl}}" />
+            src="{{user.photoUrl?user.photoUrl:user.thumbnailPhotoUrl}}" />
         </div>
         <h2 *ngIf="user.name">{{ user.name.fullName }}</h2>
         <h3 class="mt-n3">{{ user.primaryEmail }}</h3>

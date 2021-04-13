@@ -19,14 +19,15 @@ export class AuthEffects {
     () =>
       this.actions$.pipe(
         ofType(fromAuthActions.signIn),
-        switchMap(() => this.authService.handleSignInClick()
+        switchMap(() => this.authFireService.signInWithPopup()/*  this.authService.handleSignInClick() */
           .pipe(
-            take(1),
             map((res) => {
+              console.log(res)
               return {
                 id: res.user.providerData[0].uid,
                 primaryEmail: res.user.email,
-                photoUrl: res.user.photoURL,
+                authPhotoUrl: res.user.photoURL,
+                photoUrl: res.user.providerData[0].photoURL,
                 displayName: res.user.displayName,
                 isNew: res.additionalUserInfo.isNewUser,
                 isVerified: res.user.emailVerified,
@@ -38,12 +39,11 @@ export class AuthEffects {
             switchMap((user: User) => {
               if (user.isNew) {
                 return [
-                  fromAuthActions.saveUser({ user }),
                   fromAuthActions.signInSuccess({ user }),
+                  fromAuthActions.saveUser({ user }),
                 ];
               } else {
                 return [
-                  fromAuthActions.saveUser({ user }),
                   fromAuthActions.signInSuccess({ user }),
                 ];
               }
@@ -104,6 +104,7 @@ export class AuthEffects {
                   name: authData.user.displayName,
                   primaryEmail: authData.user.email,
                   photoUrl: authData.photoURL,
+                  authPhotoUrl: authData.authPhotoUrl,
                   isTeacher: authData.isTeacher,
                   isAdmin: authData.isAdmin,
                   isNew: authData.isNewUser,

@@ -32,6 +32,7 @@ export interface User {
   isTeacher?: boolean;
   isVerified?: boolean;
   primaryEmail?: string;
+  authPhotoUrl?: string;
   photoUrl?: string;
   displayName?: string;
   name?: {

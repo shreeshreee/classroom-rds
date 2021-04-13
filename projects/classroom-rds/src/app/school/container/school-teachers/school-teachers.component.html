@@ -7,7 +7,7 @@
     </mat-list>
     <mat-list class="teacher-list" dense>
       <mat-list-item *ngFor="let user of users$|async" [routerLink]="user.id">
-        <img matListAvatar [src]="[user.photoUrl?user.photoUrl:user.thumbnailPhotoUrl]" />
+        <img matListAvatar src="{{user.photoUrl?user.photoUrl:user.thumbnailPhotoUrl}}" />
         <p matLine>{{user.name.fullName}}</p>
         <fa-icon matTooltip="Última conexión: {{user.lastLoginTime|date:'medium'}}" [icon]="faCircle"
           class="{{user.isOnline?'text-success':'text-danger'}}"></fa-icon>

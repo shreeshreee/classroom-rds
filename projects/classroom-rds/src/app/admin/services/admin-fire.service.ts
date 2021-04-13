@@ -26,7 +26,7 @@ export class AdminFireService {
     this.user$ = this.getAuthState().pipe(
       switchMap((user) => {
         if (user) {
-          return this.afDatabase.object<User>(`${this.userCollection}/${user.providerData[0].uid}`).valueChanges();
+          return this.afStore.collection(`${this.userCollection}/${user.providerData[0].uid}`).valueChanges();
         } else {
           return of(null);
         }
@@ -51,10 +51,10 @@ export class AdminFireService {
     return this.afStore.collection<UserDomain>(`${this.userCollection}`).valueChanges()
   }
 
-  async createUser(user: UserDomain) {
+  async createUser(user: UserDomain): Promise<void> {
     const key = user.id;
-    //return await this.afStore.collection('users').doc(key).set(user, { merge: true });
-    return await this.afDatabase.object<UserDomain>(`${this.userCollection}/${key}`).update(user);
+    return await this.afStore.collection('users').doc(key).set(user, { merge: true });
+    //return await this.afDatabase.object<UserDomain>(`${this.userCollection}/${key}`).update(user);
   }
 
   async createGroup(group: Group) {
