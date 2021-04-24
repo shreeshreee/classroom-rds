@@ -9,7 +9,8 @@ import { appearanceModules } from '../modules';
 
 import { sharedComponents } from './components';
 import { sharedServices } from './services';
-import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+
+
 export const sharedModules: any[] = [
   CommonModule,
   RouterModule,

@@ -1,69 +1,58 @@
 @import "./../../../../assets/themes/colors.scss";
+
 .container {
   transform: translate(-50%, -50%);
-  top: 20%;
+  top: 50%;
   left: 50%;
-  display: block;
   position: absolute;
-  max-width: 225px;
 }
-
 h1 span {
   font-family: "Fredoka One";
-  font-size: 1.8em;
-  height: 200px;
+  font-size: 2.8rem;
+  height: 220px;
   position: absolute;
   width: 30px;
   transform-origin: bottom center;
   color: $rds-logo-color;
-  @media (min-width: 768px) and (max-width: 991.98px) {
-    height: 150px;
-    font-size: 1.3em;
-    width: 20px;
-  }
-  @media (max-width: 767.98px) {
-    height: 100px;
-    font-size: 0.8em;
-    width: 10px;
-  }
+  text-shadow: 3px 3px 1px $text-shadow-color;
+}
+.emblem {
+  position: absolute;
+  left: 20px;
+  right: 0;
+  top: -40px;
+  margin: 0 auto;
+  width: 60vh;
+  height: 50vh;
+  font-weight: bold;
+  color: $rds-logo-color;
+  animation: spinZ 2.5s cubic-bezier(0.98, 0, 0.65, 1.65) alternate;
+  text-align: center;
+  display: inline-block;
+}
+.image-container {
+  display: block;
 }
 .img-casa {
-  position: absolute;
-  height: 200px;
-  width: auto;
-  margin-top: 50px;
-  margin-left: -80px;
-  @media (min-width: 768px) and (max-width: 991.98px) {
-    height: 160px;
-    margin-left: -70px;
-    margin-top: 30px;
-  }
-  @media (max-width: 767.98px) {
-    height: 95px;
-    margin-left: -40px;
-    margin-top: 20px;
-  }
-}
-.img-personas {
-  position: absolute;
+  padding-left: 50px;
+  padding-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
   height: 220px;
   width: auto;
-  margin-top: 190px;
-  margin-left: -180px;
-  @media (min-width: 768px) and (max-width: 991.98px) {
-    height: 170px;
-    margin-left: -140px;
-    margin-top: 140px;
-  }
-  @media (max-width: 767.98px) {
-    height: 110px;
-    margin-left: -90px;
-    margin-top: 80px;
-  }
+  animation: createBox 2s cubic-bezier(0.8, 0, 0.5, 1.85);
 }
 
+.img-personas {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -60px;
+  height: 260px;
+  width: auto;
+  animation: createBox 2s cubic-bezier(0.2, 0, 0.9, 0.95);
+}
 .char01 {
-  transform: rotate(300deg);
+  transform: rotate(301deg);
 }
 .char02 {
   transform: rotate(309deg);
@@ -78,7 +67,7 @@ h1 span {
   transform: rotate(331deg);
 }
 .char06 {
-  transform: rotate(339deg);
+  transform: rotate(337deg);
 }
 .char07 {
   transform: rotate(343deg);
@@ -93,7 +82,7 @@ h1 span {
   transform: rotate(4deg);
 }
 .char11 {
-  transform: rotate(12deg);
+  transform: rotate(11deg);
 }
 .char12 {
   transform: rotate(18deg);
@@ -102,7 +91,7 @@ h1 span {
   transform: rotate(26deg);
 }
 .char14 {
-  transform: rotate(34deg);
+  transform: rotate(32deg);
 }
 .char15 {
   transform: rotate(36deg);
@@ -111,7 +100,7 @@ h1 span {
   transform: rotate(42deg);
 }
 .char17 {
-  transform: rotate(51deg);
+  transform: rotate(48deg);
 }
 .char18 {
   transform: rotate(54deg);
@@ -129,7 +118,7 @@ h1 span {
   transform: rotate(81deg);
 }
 .char23 {
-  transform: rotate(89deg);
+  transform: rotate(88deg);
 }
 .char24 {
   transform: rotate(95deg);
@@ -139,4 +128,23 @@ h1 span {
 }
 .char26 {
   transform: rotate(111deg);
+}
+
+@keyframes spinZ {
+  0% {
+    transform: rotateZ(360deg) scale(0);
+    //transform: scale(0);
+  }
+  100% {
+    transform: rotateZ(0deg) scale(1);
+    //transform: scale(1);
+  }
+}
+@keyframes createBox {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }

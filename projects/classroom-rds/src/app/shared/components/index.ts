@@ -1,5 +1,5 @@
-import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { AboutComponent } from './about/about.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { CodeConductSchoolComponent } from './code-conduct-school/code-conduct-school.component';
 import { CodeConductComponent } from './code-conduct/code-conduct.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -7,6 +7,7 @@ import { DeleteButtonComponent } from './delete-button/delete-button.component';
 import { HomeComponent } from './home/home.component';
 import { LicenseComponent } from './license/license.component';
 import { LocationComponent } from './location/location.component';
+import { LogoAnimateComponent } from './logo-animate/logo-animate.component';
 import { LogoComponent } from './logo/logo.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PreescolarComponent } from './preescolar/preescolar.component';
@@ -34,6 +35,7 @@ export const sharedComponents: any[] = [
   LicenseComponent,
   LocationComponent,
   LogoComponent,
+  LogoAnimateComponent,
   NotFoundComponent,
   PreescolarComponent,
   PrimariaComponent,
@@ -59,6 +61,7 @@ export * from './home/home.component';
 export * from './license/license.component';
 export * from './location/location.component';
 export * from './logo/logo.component';
+export * from './logo-animate/logo-animate.component'
 export * from './not-found/not-found.component';
 export * from './preescolar/preescolar.component';
 export * from './primaria/primaria.component';
