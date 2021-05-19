@@ -10,6 +10,9 @@ import { appearanceModules } from '../modules';
 import { sharedComponents } from './components';
 import { sharedServices } from './services';
 
+import { ParallaxSpaceComponent } from './components/parallax-space/parallax-space.component';
+import { ParallaxComponent } from './components/parallax/parallax.component';
+
 
 export const sharedModules: any[] = [
   CommonModule,

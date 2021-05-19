@@ -1,3 +1,5 @@
+import { from } from 'rxjs';
+
 import { AboutComponent } from './about/about.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { CodeConductSchoolComponent } from './code-conduct-school/code-conduct-school.component';
@@ -10,6 +12,8 @@ import { LocationComponent } from './location/location.component';
 import { LogoAnimateComponent } from './logo-animate/logo-animate.component';
 import { LogoComponent } from './logo/logo.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ParallaxSpaceComponent } from './parallax-space/parallax-space.component';
+import { ParallaxComponent } from './parallax/parallax.component';
 import { PreescolarComponent } from './preescolar/preescolar.component';
 import { PrimariaComponent } from './primaria/primaria.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
@@ -37,6 +41,8 @@ export const sharedComponents: any[] = [
   LogoComponent,
   LogoAnimateComponent,
   NotFoundComponent,
+  ParallaxSpaceComponent,
+  ParallaxComponent,
   PreescolarComponent,
   PrimariaComponent,
   PrivacyPolicyComponent,
@@ -75,7 +81,7 @@ export * from './under-construction/under-construction.component';
 export * from './user-card/user-card.component';
 export * from './wellcome/wellcome.component';
 export * from './youtube/youtube.component';
-
-
+export * from './parallax/parallax.component';
+export * from './parallax-space/parallax-space.component';
 // end:ng42.barrel
 

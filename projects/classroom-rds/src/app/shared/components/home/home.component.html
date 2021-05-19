@@ -4,7 +4,8 @@
   </alert>
 </div>
 
-<app-logo-animate *ngIf="!(isOnline$|async)"></app-logo-animate>
+<!-- <app-logo-animate *ngIf="!(isOnline$|async)"></app-logo-animate>-->
+<app-parallax-space></app-parallax-space>
 <app-dashboard *ngIf="(isOnline$|async) && (user$|async)" [user]="user$|async" [isTeacher]="isTeacher$|async"
   [isAdmin]="isAdmin$|async">
 </app-dashboard>
