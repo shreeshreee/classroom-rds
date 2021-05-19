@@ -8,14 +8,21 @@
   </p>
 </mat-dialog-content>
 <mat-dialog-actions align="center">
-  <div fxLayout="row wrap" fxLayoutGap="10px">
-    <div mat-raised-button fxLayout="column" fxLayoutAlign="space-around center">
-      <fa-icon class="rds-icon" mat-icon-button (click)="onLogin()" size="3x" [icon]="faDoorOpen"></fa-icon>
-      <h5>Ingresar</h5>
-    </div>
-    <div fxLayout="column" fxLayoutAlign="center start">
+  <div fxLayout="column">
+    <button mat-raised-button (click)="onLogin()">
+      <img class="img-google" src="assets/images/google-logo.svg" />
+    </button>
+    <div>@rafaeldiazserdan.net</div>
+  </div>
+  <!--  <div id="gSignInWrapper">
+      <button id="customBtn" mat-icon-button (click)="onLogin()" class="customGPlusSignIn">
+        <span class="icon"></span>
+        <span class="buttonText">@rafaeldiazserdan.net</span>
+      </button>
+    </div> -->
+  <!-- <div fxLayout="column" fxLayoutAlign="center start">
       <h2 class="my-n2">rafaeldiazserdan.net</h2>
       <h2>rds.edu.mx</h2>
-    </div>
-  </div>
+    </div> -->
+
 </mat-dialog-actions>

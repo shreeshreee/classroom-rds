@@ -17,9 +17,11 @@
       <button *ngIf="isOnline && user" mat-icon-button [matMenuTriggerFor]="userMenu">
         <img class="img-fluid rounded-circle" src="{{user.photoUrl}}" />
       </button>
-      <button *ngIf="!isOnline" mat-icon-button (click)="onSignIn()">
-        <img class="img-fluid" src="assets/images/google-logo.svg" />
-      </button>
+      <div *ngIf="!isOnline" mat-raised-button fxLayout="column" fxLayoutAlign="space-around center">
+        <fa-icon class="rds-icon" mat-icon-button (click)="onSignIn()" size="lg"
+          [icon]="isDoorOpen?faDoorOpen:faDoorClosed"></fa-icon>
+        <!-- <h5>Ingresar</h5> -->
+      </div>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
@@ -71,8 +73,7 @@
 <mat-menu #oferta="matMenu">
   <ng-template matMenuContent>
     <div mat-menu-item [routerLink]="['remote-learning']" routerLinkActive="active">Educación a distancia</div>
-    <div mat-menu-item [routerLink]="['under-construction']" routerLinkActive="active">Preescolar</div>
-    <div mat-menu-item [routerLink]="['under-construction']" routerLinkActive="active">Primaria</div>
-    <div mat-menu-item [routerLink]="['under-construction']" routerLinkActive="active">Secundaria</div>
+    <div mat-menu-item [routerLink]="['reopenning']" routerLinkActive="active">Reapertura</div>
+
   </ng-template>
 </mat-menu>

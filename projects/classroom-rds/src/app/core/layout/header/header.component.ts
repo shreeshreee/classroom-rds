@@ -12,7 +12,9 @@ import {
   faInfo,
   faUserTie,
   faCog,
-  faSlidersH
+  faSlidersH,
+  faDoorOpen,
+  faDoorClosed
 } from '@fortawesome/free-solid-svg-icons';
 
 import { Store } from '@ngrx/store';
@@ -38,6 +40,7 @@ export class HeaderComponent implements OnInit {
   @Input() isOnline: boolean;
   @Input() isAdmin: boolean;
   @Input() isTeacher: boolean;
+  isDoorOpen: boolean = false;
   faBars = faBars;
   faSignIn = faSignInAlt;
   faEllipsisV = faEllipsisV;
@@ -47,7 +50,8 @@ export class HeaderComponent implements OnInit {
   faGlobe = faGlobe;
   faGoogle = faGoogle;
   faInfo = faInfo;
-
+  faDoorOpen = faDoorOpen;
+  faDoorClosed = faDoorClosed
   faCog = faCog;
   faSlidersH = faSlidersH;
   linkText: boolean = false;
@@ -69,9 +73,22 @@ export class HeaderComponent implements OnInit {
     this.layoutService.toggleSidenavLeft.emit($event);
   }
   onSignIn() {
-    this.dialog.open(LoginDialogComponent, { height: '250px', width: '350px' });
+    this.isDoorOpen = true;
+    const dialogRef = this.dialog.open(LoginDialogComponent, {
+      height: '50%',
+      width: '30%',
+      minHeight: '300px',
+      minWidth: '350px',
+      data: { isDoorOpen: this.isDoorOpen }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+
+      }
+    });
   }
   onSignOut() {
+    this.isDoorOpen = false;
     this.store.dispatch(signOut({ user: this.user }));
   }
 

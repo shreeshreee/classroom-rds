@@ -12,6 +12,7 @@ import { sharedServices } from './services';
 
 import { ParallaxSpaceComponent } from './components/parallax-space/parallax-space.component';
 import { ParallaxComponent } from './components/parallax/parallax.component';
+import { ReopenningComponent } from './components/reopenning/reopenning.component';
 
 
 export const sharedModules: any[] = [
@@ -29,7 +30,7 @@ export const sharedModules: any[] = [
     ...sharedModules,
     ...sharedComponents
   ],
-  declarations: [...sharedComponents],
+  declarations: [...sharedComponents, ReopenningComponent],
   providers: [...sharedServices]
 
 })

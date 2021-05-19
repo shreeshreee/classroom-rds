@@ -23,6 +23,7 @@ import { SettingsComponent } from '@rds-core/layout/settings/settings.component'
 import { YoutubeComponent } from '@rds-shared/components/youtube/youtube.component';
 
 import { AdminGuard } from './admin/guards/admin.guard';
+import { ReopenningComponent } from './shared/components/reopenning/reopenning.component';
 const routes: Routes = [{
   path: '', component: LayoutComponent, data: { breadcrumb: 'Home' }, children: [
     { path: '', component: HomeComponent, data: { breadcrumb: null } },
@@ -35,6 +36,7 @@ const routes: Routes = [{
     { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivate: [AdminGuard] },
     { path: 'youtube', component: YoutubeComponent },
     { path: 'about', component: AboutComponent },
+    { path: 'reopenning', component: ReopenningComponent },
     { path: 'remote-learning', component: RemoteLearningComponent },
     { path: 'privacy-policy', component: PrivacyPolicyComponent },
     { path: 'not-found', component: NotFoundComponent },
