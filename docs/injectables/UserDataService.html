@@ -117,7 +117,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">projects/classroom-rds/src/app/store/user/user-data.service.ts:15</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="16" class="link-to-prism">projects/classroom-rds/src/app/store/user/user-data.service.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -206,8 +206,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="26"
-                            class="link-to-prism">projects/classroom-rds/src/app/store/user/user-data.service.ts:26</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="27"
+                            class="link-to-prism">projects/classroom-rds/src/app/store/user/user-data.service.ts:27</a></div>
                 </td>
             </tr>
 
@@ -245,8 +245,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="34"
-                            class="link-to-prism">projects/classroom-rds/src/app/store/user/user-data.service.ts:34</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="35"
+                            class="link-to-prism">projects/classroom-rds/src/app/store/user/user-data.service.ts:35</a></div>
                 </td>
             </tr>
 
@@ -315,8 +315,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="30"
-                            class="link-to-prism">projects/classroom-rds/src/app/store/user/user-data.service.ts:30</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="31"
+                            class="link-to-prism">projects/classroom-rds/src/app/store/user/user-data.service.ts:31</a></div>
                 </td>
             </tr>
 
@@ -385,8 +385,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="37"
-                            class="link-to-prism">projects/classroom-rds/src/app/store/user/user-data.service.ts:37</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="38"
+                            class="link-to-prism">projects/classroom-rds/src/app/store/user/user-data.service.ts:38</a></div>
                 </td>
             </tr>
 
@@ -445,13 +445,14 @@ import { Injectable } from &#x27;@angular/core&#x27;;
 import { DefaultDataService, HttpUrlGenerator, QueryParams } from &#x27;@ngrx/data&#x27;;
 import { Update } from &#x27;@ngrx/entity&#x27;;
 
+import { User } from &#x27;@rds-auth/models/user.model&#x27;;
+
+import { SchoolService } from &#x27;@rds-school/services/school.service&#x27;;
+
 import { from, Observable } from &#x27;rxjs&#x27;;
 import { map, take } from &#x27;rxjs/operators&#x27;;
 
 import * as fromUser from &#x27;./&#x27;;
-import { UserAuth } from &#x27;~/app/auth/models/user-auth.model&#x27;;
-import { User } from &#x27;~/app/auth/models/user.model&#x27;;
-import { SchoolService } from &#x27;~/app/school/services/school.service&#x27;;
 @Injectable()
 export class UserDataService extends DefaultDataService&lt;User&gt; {
 

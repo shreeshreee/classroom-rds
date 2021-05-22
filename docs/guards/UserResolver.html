@@ -122,7 +122,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="19" class="link-to-prism">projects/classroom-rds/src/app/user/services/user.resolver.ts:19</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">projects/classroom-rds/src/app/user/services/user.resolver.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -187,8 +187,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="23"
-                            class="link-to-prism">projects/classroom-rds/src/app/user/services/user.resolver.ts:23</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="17"
+                            class="link-to-prism">projects/classroom-rds/src/app/user/services/user.resolver.ts:17</a></div>
                 </td>
             </tr>
 
@@ -255,15 +255,9 @@
             <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from &#x27;@angular/router&#x27;;
 
-import { select, Store } from &#x27;@ngrx/store&#x27;;
-
 import { Observable, Subscription } from &#x27;rxjs&#x27;;
-import { filter, first, map, take, takeUntil, tap } from &#x27;rxjs/operators&#x27;;
+import { filter, first, tap } from &#x27;rxjs/operators&#x27;;
 
-import { selectUser } from &#x27;./../../auth/state/auth.selectors&#x27;;
-import { SubscriptionService } from &#x27;../../shared/services/subscription.service&#x27;;
-
-import { AppState } from &#x27;~/app/store/app.state&#x27;;
 import { UserEntityService } from &#x27;~/app/store/user/user-entity.service&#x27;;
 
 

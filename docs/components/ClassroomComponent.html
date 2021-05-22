@@ -743,39 +743,46 @@ export class ClassroomComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;p-2&quot;&gt;
-  &lt;mat-card&gt;
-    &lt;mat-card-header&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;m-4&quot;&gt;
+  &lt;mat-card class&#x3D;&quot;mat-elevation-z4&quot; style&#x3D;&quot;width: fit-content;&quot;&gt;
+    &lt;mat-card-header style&#x3D;&quot;margin-top: -20px&quot;&gt;
       &lt;mat-card-title&gt;
         &lt;img class&#x3D;&quot;img-google-logo&quot;
           src&#x3D;&quot;https://lh3.googleusercontent.com/sYGCKFdty43En6yLGeV94mfNGHXfVj-bQYitHRndarB7tHmQq_kyVxhlPejeCBVEEYUbnKG2_jUzgNXoPoer6XJm71V3uz2Z6q0CmNw&#x3D;w0&quot; /&gt;
       &lt;/mat-card-title&gt;
-      &lt;mat-card-subtitle&gt;Administra Google Classroom y Google Admin Directory.&lt;/mat-card-subtitle&gt;
+      &lt;mat-card-subtitle style&#x3D;&quot;margin-top: 10px&quot;&gt;
+        &lt;span class&#x3D;&quot;view-subtitle&quot;&gt;Administra Google Classroom y Google Admin Directory.&lt;/span&gt;
+      &lt;/mat-card-subtitle&gt;
     &lt;/mat-card-header&gt;
   &lt;/mat-card&gt;
-&lt;/div&gt;
-&lt;div class&#x3D;&quot;py-2&quot;&gt;
-  &lt;div fxLayout&#x3D;&quot;row wrap&quot; fxLayout.lt-sm&#x3D;&quot;column&quot; fxLayoutGap&#x3D;&quot;10px&quot; fxLayoutAlign&#x3D;&quot;flex-start&quot;&gt;
-    &lt;mat-card class&#x3D;&quot;mb-2 dashboard-cards&quot; fxFlex&#x3D;&quot;0 1 calc(33.3% - 10px)&quot; fxFlex.lt-lg&#x3D;&quot;0 1 calc(50% - 10px)&quot;
-      fxFlex.lt-sm&#x3D;&quot;100%&quot; [routerLink]&#x3D;&quot;[&#x27;clases&#x27;]&quot; appMaterialElevation [raisedElevation]&#x3D;&quot;raisedElev&quot;&gt;
-      &lt;mat-card-header&gt;
-        &lt;img mat-card-avatar src&#x3D;&quot;https://i.pinimg.com/originals/98/d3/a2/98d3a283f98cded8e639957e935bd373.png&quot; /&gt;
-        &lt;mat-card-title&gt;Google Classroom&lt;/mat-card-title&gt;
-        &lt;mat-card-subtitle&gt;
-          &lt;p&gt;&lt;small&gt;Administrador de recursos.&lt;/small&gt;&lt;/p&gt;
-        &lt;/mat-card-subtitle&gt;
-      &lt;/mat-card-header&gt;
-    &lt;/mat-card&gt;
-    &lt;mat-card class&#x3D;&quot;mb-2 dashboard-cards&quot; fxFlex&#x3D;&quot;0 1 calc(33.3% - 10px)&quot; fxFlex.lt-lg&#x3D;&quot;0 1 calc(50% - 10px)&quot;
-      fxFlex.lt-sm&#x3D;&quot;100%&quot; [routerLink]&#x3D;&quot;[&#x27;/admin&#x27;]&quot; appMaterialElevation [raisedElevation]&#x3D;&quot;raisedElev&quot;&gt;
-      &lt;mat-card-header&gt;
-        &lt;img mat-card-avatar src&#x3D;&quot;https://mytcpip.com/wp-content/uploads/2019/06/nexusae0_icon2.png&quot; /&gt;
-        &lt;mat-card-title&gt;Google Admin&lt;/mat-card-title&gt;
-        &lt;mat-card-subtitle&gt;
-          &lt;p&gt;&lt;small&gt;Administración de dominio.&lt;/small&gt;&lt;/p&gt;
-        &lt;/mat-card-subtitle&gt;
-      &lt;/mat-card-header&gt;
-    &lt;/mat-card&gt;
+
+  &lt;div class&#x3D;&quot;p-2&quot;&gt;
+    &lt;div fxLayout&#x3D;&quot;row wrap&quot; fxLayout.lt-sm&#x3D;&quot;column&quot; fxLayoutGap&#x3D;&quot;10px&quot; fxLayoutAlign&#x3D;&quot;flex-start&quot;&gt;
+      &lt;mat-card class&#x3D;&quot;mb-2 dashboard-cards&quot; fxFlex&#x3D;&quot;0 1 calc(33.3% - 10px)&quot; fxFlex.lt-lg&#x3D;&quot;0 1 calc(50% - 10px)&quot;
+        fxFlex.lt-sm&#x3D;&quot;100%&quot; [routerLink]&#x3D;&quot;[&#x27;clases&#x27;]&quot; appMaterialElevation [raisedElevation]&#x3D;&quot;raisedElev&quot;&gt;
+        &lt;mat-card-header&gt;
+          &lt;img mat-card-avatar src&#x3D;&quot;https://i.pinimg.com/originals/98/d3/a2/98d3a283f98cded8e639957e935bd373.png&quot; /&gt;
+          &lt;mat-card-title&gt;
+            &lt;span class&#x3D;&quot;google-card-name&quot;&gt;Google Classroom&lt;/span&gt;
+          &lt;/mat-card-title&gt;
+          &lt;mat-card-subtitle&gt;
+            &lt;span&gt;Administrador de recursos.&lt;/span&gt;
+          &lt;/mat-card-subtitle&gt;
+        &lt;/mat-card-header&gt;
+      &lt;/mat-card&gt;
+      &lt;mat-card class&#x3D;&quot;mb-2 dashboard-cards&quot; fxFlex&#x3D;&quot;0 1 calc(33.3% - 10px)&quot; fxFlex.lt-lg&#x3D;&quot;0 1 calc(50% - 10px)&quot;
+        fxFlex.lt-sm&#x3D;&quot;100%&quot; [routerLink]&#x3D;&quot;[&#x27;/admin&#x27;]&quot; appMaterialElevation [raisedElevation]&#x3D;&quot;raisedElev&quot;&gt;
+        &lt;mat-card-header&gt;
+          &lt;img mat-card-avatar src&#x3D;&quot;https://mytcpip.com/wp-content/uploads/2019/06/nexusae0_icon2.png&quot; /&gt;
+          &lt;mat-card-title&gt;
+            &lt;span class&#x3D;&quot;google-card-name&quot;&gt;Google Admin&lt;/span&gt;
+          &lt;/mat-card-title&gt;
+          &lt;mat-card-subtitle&gt;
+            &lt;span&gt;Administración de dominio.&lt;/span&gt;
+          &lt;/mat-card-subtitle&gt;
+        &lt;/mat-card-header&gt;
+      &lt;/mat-card&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -785,57 +792,17 @@ export class ClassroomComponent implements OnInit {
                 <p class="comment">
                     <code>./classroom.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">@import &#x27;./../../assets/themes/colors.scss&#x27;;
-.view-title {
-  color:$rds-logo-color;
-  font-size: calc(1rem + 1.5vw);
-  font-weight: 800;
-}
-.view-subtitle {
-  margin-top: -50px;
-  font-size: calc(0.5rem + 1vw);
-  font-weight: 400;
-}
+                <pre class="line-numbers"><code class="language-scss">@import &quot;./../../assets/themes/colors.scss&quot;;
+
 .additional-selection {
   opacity: 0.75;
   font-size: 0.75em;
 }
-mat-card {
-  min-width: 350px;
-}
 mat-card-header {
-  font-family: Comfortaa;
-  font-weight: bold;
-
   .img-google-logo {
     margin-top: -5px;
     height: 35px;
     width: auto;
-  }
-  .text-google-logo {
-    color: gray;
-    font-size: 1.4em;
-  }
-}
-
-.flex-row {
-  &gt; div {
-    flex: 50%;
-    border-radius: 10px;
-    padding: 10px;
-  }
-  &gt; .outlook {
-    color: black;
-    background: rgba(0,0,0,0.1);
-  }
-  &gt; .temp {
-    background: lightblue;
-    color: black;
-    margin-right: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 }
 
@@ -853,18 +820,6 @@ mat-card-header {
   bottom: 15px;
   border: 1px solid gray;
   box-shadow: none;
-}
-
-
-.display-4-responsive {
-  font-size: calc(1rem + 4vw);
-  font-weight: 100;
-}
-
-.h2-responsive {
-  margin-top: -20px;
-  font-size: calc(0.5rem + 1.5vw);
-  font-weight: 100;
 }
 </code></pre>
     </div>
@@ -894,9 +849,9 @@ mat-card-header {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="p-2">  <mat-card>    <mat-card-header>      <mat-card-title>        <img class="img-google-logo"          src="https://lh3.googleusercontent.com/sYGCKFdty43En6yLGeV94mfNGHXfVj-bQYitHRndarB7tHmQq_kyVxhlPejeCBVEEYUbnKG2_jUzgNXoPoer6XJm71V3uz2Z6q0CmNw=w0" />      </mat-card-title>      <mat-card-subtitle>Administra Google Classroom y Google Admin Directory.</mat-card-subtitle>    </mat-card-header>  </mat-card></div><div class="py-2">  <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="10px" fxLayoutAlign="flex-start">    <mat-card class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-lg="0 1 calc(50% - 10px)"      fxFlex.lt-sm="100%" [routerLink]="[\'clases\']" appMaterialElevation [raisedElevation]="raisedElev">      <mat-card-header>        <img mat-card-avatar src="https://i.pinimg.com/originals/98/d3/a2/98d3a283f98cded8e639957e935bd373.png" />        <mat-card-title>Google Classroom</mat-card-title>        <mat-card-subtitle>          <p><small>Administrador de recursos.</small></p>        </mat-card-subtitle>      </mat-card-header>    </mat-card>    <mat-card class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-lg="0 1 calc(50% - 10px)"      fxFlex.lt-sm="100%" [routerLink]="[\'/admin\']" appMaterialElevation [raisedElevation]="raisedElev">      <mat-card-header>        <img mat-card-avatar src="https://mytcpip.com/wp-content/uploads/2019/06/nexusae0_icon2.png" />        <mat-card-title>Google Admin</mat-card-title>        <mat-card-subtitle>          <p><small>Administración de dominio.</small></p>        </mat-card-subtitle>      </mat-card-header>    </mat-card>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradeRecomendationComponent', 'selector': 'app-grade-recomendation'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesListComponent', 'selector': 'app-grades-list'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SchoolDashboardComponent', 'selector': 'app-school-dashboard'},{'name': 'SchoolFormComponent', 'selector': 'app-school-form'},{'name': 'SchoolHomeComponent', 'selector': 'app-school-home'},{'name': 'SchoolStudentsComponent', 'selector': 'app-school-students'},{'name': 'SchoolTeachersComponent', 'selector': 'app-school-teachers'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'SubjectsComponent', 'selector': 'app-subjects'},{'name': 'TeachersFormComponent', 'selector': 'app-teachers-form'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserGradesPrintableComponent', 'selector': 'app-user-grades-printable'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'},{'name': 'WorkingOnGradesComponent', 'selector': 'app-working-on-grades'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
-    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'}];
+        var COMPONENT_TEMPLATE = '<div><div class="m-4">  <mat-card class="mat-elevation-z4" style="width: fit-content;">    <mat-card-header style="margin-top: -20px">      <mat-card-title>        <img class="img-google-logo"          src="https://lh3.googleusercontent.com/sYGCKFdty43En6yLGeV94mfNGHXfVj-bQYitHRndarB7tHmQq_kyVxhlPejeCBVEEYUbnKG2_jUzgNXoPoer6XJm71V3uz2Z6q0CmNw=w0" />      </mat-card-title>      <mat-card-subtitle style="margin-top: 10px">        <span class="view-subtitle">Administra Google Classroom y Google Admin Directory.</span>      </mat-card-subtitle>    </mat-card-header>  </mat-card>  <div class="p-2">    <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="10px" fxLayoutAlign="flex-start">      <mat-card class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-lg="0 1 calc(50% - 10px)"        fxFlex.lt-sm="100%" [routerLink]="[\'clases\']" appMaterialElevation [raisedElevation]="raisedElev">        <mat-card-header>          <img mat-card-avatar src="https://i.pinimg.com/originals/98/d3/a2/98d3a283f98cded8e639957e935bd373.png" />          <mat-card-title>            <span class="google-card-name">Google Classroom</span>          </mat-card-title>          <mat-card-subtitle>            <span>Administrador de recursos.</span>          </mat-card-subtitle>        </mat-card-header>      </mat-card>      <mat-card class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-lg="0 1 calc(50% - 10px)"        fxFlex.lt-sm="100%" [routerLink]="[\'/admin\']" appMaterialElevation [raisedElevation]="raisedElev">        <mat-card-header>          <img mat-card-avatar src="https://mytcpip.com/wp-content/uploads/2019/06/nexusae0_icon2.png" />          <mat-card-title>            <span class="google-card-name">Google Admin</span>          </mat-card-title>          <mat-card-subtitle>            <span>Administración de dominio.</span>          </mat-card-subtitle>        </mat-card-header>      </mat-card>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnimatedTextComponent', 'selector': 'app-animated-text'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssigmentsDashboardComponent', 'selector': 'app-assigments-dashboard'},{'name': 'AssignmentsComponent', 'selector': 'app-assignments'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradeRecomendationComponent', 'selector': 'app-grade-recomendation'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesListComponent', 'selector': 'app-grades-list'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoAnimateComponent', 'selector': 'app-logo-animate'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainContentComponent', 'selector': 'app-main-content'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'ParallaxComponent', 'selector': 'app-parallax'},{'name': 'ParallaxSpaceComponent', 'selector': 'app-parallax-space'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'ReopenningComponent', 'selector': 'app-reopenning'},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'RoomComponent', 'selector': 'app-room'},{'name': 'RoomDialogComponent', 'selector': ''},{'name': 'RoomsComponent', 'selector': 'app-rooms'},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SchoolDashboardComponent', 'selector': 'app-school-dashboard'},{'name': 'SchoolFormComponent', 'selector': 'app-school-form'},{'name': 'SchoolHomeComponent', 'selector': 'app-school-home'},{'name': 'SchoolStudentsComponent', 'selector': 'app-school-students'},{'name': 'SchoolTeachersComponent', 'selector': 'app-school-teachers'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'SubjectDialogComponent', 'selector': ''},{'name': 'SubjectsComponent', 'selector': 'app-subjects'},{'name': 'TeachersFormComponent', 'selector': 'app-teachers-form'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserGradesPrintableComponent', 'selector': 'app-user-grades-printable'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UserRoomDialogComponent', 'selector': ''},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'},{'name': 'WorkingOnGradesComponent', 'selector': 'app-working-on-grades'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
+    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'},{'name': 'ParallaxDirective', 'selector': '[appParallax]'}];
     var ACTUAL_COMPONENT = {'name': 'ClassroomComponent'};
 </script>
 <script src="../js/tree.js"></script>

@@ -85,6 +85,10 @@
                                 </li>
                                 <li>
                                             <span class="modifier">Opcional</span>
+                                        <a href="#authPhotoUrl">authPhotoUrl</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Opcional</span>
                                         <a href="#classroomPhotoUrl">classroomPhotoUrl</a>
                                 </li>
                                 <li>
@@ -244,6 +248,40 @@
                                     <tr>
                                         <td class="col-md-4">
                                             <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Opcional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="authPhotoUrl"></a>
+                                        <span class="name"><b>authPhotoUrl</b><a href="#authPhotoUrl"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>authPhotoUrl:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                                         </td>
                                     </tr>
@@ -1415,6 +1453,7 @@ export interface User {
   isTeacher?: boolean;
   isVerified?: boolean;
   primaryEmail?: string;
+  authPhotoUrl?: string;
   photoUrl?: string;
   displayName?: string;
   name?: {

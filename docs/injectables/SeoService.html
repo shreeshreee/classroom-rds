@@ -114,12 +114,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(swUpdate: <a href="https://angular.io/api/service-worker/SwUpdate" target="_blank">SwUpdate</a>, snackBar: MatSnackBar, titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, metaService: <a href="https://angular.io/api/platform-browser/Meta" target="_blank">Meta</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, activatedRoute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, dialog: MatDialog)</code>
+<code>constructor(swUpdate: <a href="https://angular.io/api/service-worker/SwUpdate" target="_blank">SwUpdate</a>, snack: <a href="../injectables/SnackService.html">SnackService</a>, titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, metaService: <a href="https://angular.io/api/platform-browser/Meta" target="_blank">Meta</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, activatedRoute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">projects/classroom-rds/src/app/shared/services/seo.service.ts:15</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="18" class="link-to-prism">projects/classroom-rds/src/app/shared/services/seo.service.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -149,10 +149,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>snackBar</td>
+                                                        <td>snack</td>
                                                   
                                                         <td>
-                                                                    <code>MatSnackBar</code>
+                                                                        <code><a href="../injectables/SnackService.html" target="_self" >SnackService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -208,18 +208,6 @@
                                                     </td>
                                                     
                                                 </tr>
-                                                <tr>
-                                                        <td>dialog</td>
-                                                  
-                                                        <td>
-                                                                    <code>MatDialog</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -256,8 +244,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="49"
-                            class="link-to-prism">projects/classroom-rds/src/app/shared/services/seo.service.ts:49</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="51"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/services/seo.service.ts:51</a></div>
                 </td>
             </tr>
 
@@ -321,8 +309,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="26"
-                            class="link-to-prism">projects/classroom-rds/src/app/shared/services/seo.service.ts:26</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="28"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/services/seo.service.ts:28</a></div>
                 </td>
             </tr>
 
@@ -364,7 +352,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">projects/classroom-rds/src/app/shared/services/seo.service.ts:15</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="18" class="link-to-prism">projects/classroom-rds/src/app/shared/services/seo.service.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -377,15 +365,18 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { SnackComponent } from &#x27;./../components/snack/snack.component&#x27;;
-import { Injectable } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { MatSnackBar } from &#x27;@angular/material/snack-bar&#x27;;
 import { Title, Meta } from &#x27;@angular/platform-browser&#x27;;
 import { NavigationEnd, Router, ActivatedRoute } from &#x27;@angular/router&#x27;;
 import { SwUpdate } from &#x27;@angular/service-worker&#x27;;
+import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
 
 import { filter, map } from &#x27;rxjs/operators&#x27;;
-import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
+
+import { SnackComponent } from &#x27;./../components/snack/snack.component&#x27;;
+
+import { SnackService } from &#x27;./snack.service&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;,
@@ -394,12 +385,11 @@ export class SeoService {
   titlePage: string;
   constructor(
     private swUpdate: SwUpdate,
-    private snackBar: MatSnackBar,
+    private snack: SnackService,
     private titleService: Title,
     private metaService: Meta,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private dialog: MatDialog
   ) { }
 
   titleInit() {
@@ -472,15 +462,9 @@ export class SeoService {
     ]);
     if (this.swUpdate.isEnabled) {
       this.swUpdate.available.subscribe(async () &#x3D;&gt; {
-        this.snackBar.open(
-          &#x27;Se han hecho cambios desde la última visita. Actualiza la página para continuar&#x27;
+        this.snack.messageWithAction(
+          &#x27;Se han hecho cambios desde la última visita. Actualiza la página para continuar&#x27;, &#x27;Ok&#x27;
         );
-        const alert &#x3D; await this.dialog.open(SnackComponent, {
-          data: {
-            header: &#x60;This app has been updated!&#x60;,
-            message: &#x60;Newer version of the app is available. It&#x27;s a quick refresh away!&#x60;
-          }
-        });
       });
     }
   }

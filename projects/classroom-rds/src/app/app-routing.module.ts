@@ -17,17 +17,16 @@ import { RemoteLearningComponent } from '@rds-shared/components/remote-learning/
 import { TermsComponent } from '@rds-shared/components/terms/terms.component';
 import { UnderConstructionComponent } from '@rds-shared/components/under-construction/under-construction.component';
 
-import { ConfigComponent } from '@rds-core/layout/config/config.component';
-import { SettingsComponent } from '@rds-core/layout/settings/settings.component';
+import { SettingsComponent } from '@rds-core/components/settings/settings.component';
 
 import { YoutubeComponent } from '@rds-shared/components/youtube/youtube.component';
 
-import { AdminGuard } from './admin/guards/admin.guard';
-import { ReopenningComponent } from './shared/components/reopenning/reopenning.component';
+import { AdminGuard } from '@rds-admin/guards/admin.guard';
+
+import { ReopenningComponent } from '@rds-shared//components/reopenning/reopenning.component';
 const routes: Routes = [{
   path: '', component: LayoutComponent, data: { breadcrumb: 'Home' }, children: [
     { path: '', component: HomeComponent, data: { breadcrumb: null } },
-    { path: 'config', component: ConfigComponent, canActivate: [AuthGuard] },
     { path: 'escuela', loadChildren: () => import('./school/school.module').then(m => m.SchoolModule), canActivate: [AdminGuard], data: { breadcrumb: 'Administración' } },
     { path: 'gsuite', loadChildren: () => import('./classroom/classroom.module').then(m => m.ClassroomModule), canActivate: [AuthGuard], data: { breadcrumb: 'Google GSuite' } },
     { path: 'perfil', loadChildren: () => import('./classroom/user-profiles/user-profiles.module').then(m => m.UserProfilesModule), canActivate: [AuthGuard] },
@@ -35,16 +34,16 @@ const routes: Routes = [{
     { path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule), canActivate: [AuthGuard], data: { breadcrumb: 'Servicios escolares' } },
     { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivate: [AdminGuard] },
     { path: 'youtube', component: YoutubeComponent },
-    { path: 'about', component: AboutComponent },
-    { path: 'reopenning', component: ReopenningComponent },
-    { path: 'remote-learning', component: RemoteLearningComponent },
-    { path: 'privacy-policy', component: PrivacyPolicyComponent },
+    { path: 'about', component: AboutComponent, data: { breadcrumb: '¿Quiénes somos?' } },
+    { path: 'reopenning', component: ReopenningComponent, data: { breadcrumb: 'Reapertura' } },
+    { path: 'remote-learning', component: RemoteLearningComponent, data: { breadcrumb: 'Educación a distancia' } },
+    { path: 'privacy-policy', component: PrivacyPolicyComponent, data: { breadcrumb: 'Políticas de privacidad' } },
     { path: 'not-found', component: NotFoundComponent },
-    { path: 'location', component: LocationComponent },
+    { path: 'location', component: LocationComponent, data: { breadcrumb: '¿Dónde estamos?' } },
     { path: 'license', component: LicenseComponent },
-    { path: 'code-conduct', component: CodeConductComponent },
+    { path: 'code-conduct', component: CodeConductComponent, data: { breadcrumb: 'Código de conducta' } },
     { path: 'code-conduct-school', component: CodeConductSchoolComponent },
-    { path: 'terms', component: TermsComponent },
+    { path: 'terms', component: TermsComponent, data: { breadcrumb: '¿Quiénes somos?' } },
     { path: 'under-construction', component: UnderConstructionComponent },
     { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard], data: { breadcrumb: 'Configuración' } },
     { path: '**', component: NotFoundComponent }

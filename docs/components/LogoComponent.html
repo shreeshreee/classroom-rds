@@ -238,7 +238,7 @@ export class LogoComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;no-copy&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container no-copy&quot;&gt;
   &lt;h1&gt;
     &lt;span class&#x3D;&quot;char01&quot;&gt;E&lt;/span&gt;
     &lt;span class&#x3D;&quot;char02&quot;&gt;s&lt;/span&gt;
@@ -278,14 +278,23 @@ export class LogoComponent implements OnInit {
                     <code>./logo.component.scss</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">@import &quot;./../../../../assets/themes/colors.scss&quot;;
+.container {
+  transform: translate(-50%, -50%);
+  top: 20%;
+  left: 50%;
+  display: block;
+  position: absolute;
+  max-width: 225px;
+}
+
 h1 span {
-  font-family: &#x27;Fredoka One&#x27; ;
+  font-family: &quot;Fredoka One&quot;;
   font-size: 1.8em;
   height: 200px;
   position: absolute;
   width: 30px;
   transform-origin: bottom center;
-  color:$rds-logo-color;
+  color: $rds-logo-color;
   @media (min-width: 768px) and (max-width: 991.98px) {
     height: 150px;
     font-size: 1.3em;
@@ -295,24 +304,24 @@ h1 span {
     height: 100px;
     font-size: 0.8em;
     width: 10px;
-   }
+  }
 }
 .img-casa {
   position: absolute;
-  height: 180px;
+  height: 200px;
   width: auto;
-  margin-top: 70px;
-  margin-left:-70px;
+  margin-top: 50px;
+  margin-left: -80px;
   @media (min-width: 768px) and (max-width: 991.98px) {
-    height: 140px;
-    margin-left: -50px;
-    margin-top: 50px;
+    height: 160px;
+    margin-left: -70px;
+    margin-top: 30px;
   }
   @media (max-width: 767.98px) {
-    height: 80px;
-    margin-left: -35px;
-    margin-top: 40px;
-   }
+    height: 95px;
+    margin-left: -40px;
+    margin-top: 20px;
+  }
 }
 .img-personas {
   position: absolute;
@@ -328,36 +337,88 @@ h1 span {
   @media (max-width: 767.98px) {
     height: 110px;
     margin-left: -90px;
-    margin-top: 90px;
-   }
+    margin-top: 80px;
+  }
 }
 
-.char01 { transform: rotate(300deg); }
-.char02 { transform: rotate(309deg); }
-.char03 { transform: rotate(316deg); }
-.char04 { transform: rotate(323deg); }
-.char05 { transform: rotate(331deg); }
-.char06 { transform: rotate(339deg); }
-.char07 { transform: rotate(343deg); }
-.char08 { transform: rotate(350deg); }
-.char09 { transform: rotate(356deg); }
-.char10 { transform: rotate(4deg); }
-.char11 { transform: rotate(12deg); }
-.char12 { transform: rotate(18deg); }
-.char13 { transform: rotate(26deg); }
-.char14 { transform: rotate(34deg); }
-.char15 { transform: rotate(36deg); }
-.char16 { transform: rotate(42deg); }
-.char17 { transform: rotate(51deg); }
-.char18 { transform: rotate(54deg); }
-.char19 { transform: rotate(62deg); }
-.char20 { transform: rotate(67deg); }
-.char21 { transform: rotate(73deg); }
-.char22 { transform: rotate(81deg); }
-.char23 { transform: rotate(89deg); }
-.char24 { transform: rotate(95deg); }
-.char25 { transform: rotate(103deg); }
-.char26 { transform: rotate(111deg); }
+.char01 {
+  transform: rotate(300deg);
+}
+.char02 {
+  transform: rotate(309deg);
+}
+.char03 {
+  transform: rotate(316deg);
+}
+.char04 {
+  transform: rotate(323deg);
+}
+.char05 {
+  transform: rotate(331deg);
+}
+.char06 {
+  transform: rotate(339deg);
+}
+.char07 {
+  transform: rotate(343deg);
+}
+.char08 {
+  transform: rotate(350deg);
+}
+.char09 {
+  transform: rotate(356deg);
+}
+.char10 {
+  transform: rotate(4deg);
+}
+.char11 {
+  transform: rotate(12deg);
+}
+.char12 {
+  transform: rotate(18deg);
+}
+.char13 {
+  transform: rotate(26deg);
+}
+.char14 {
+  transform: rotate(34deg);
+}
+.char15 {
+  transform: rotate(36deg);
+}
+.char16 {
+  transform: rotate(42deg);
+}
+.char17 {
+  transform: rotate(51deg);
+}
+.char18 {
+  transform: rotate(54deg);
+}
+.char19 {
+  transform: rotate(62deg);
+}
+.char20 {
+  transform: rotate(67deg);
+}
+.char21 {
+  transform: rotate(73deg);
+}
+.char22 {
+  transform: rotate(81deg);
+}
+.char23 {
+  transform: rotate(89deg);
+}
+.char24 {
+  transform: rotate(95deg);
+}
+.char25 {
+  transform: rotate(103deg);
+}
+.char26 {
+  transform: rotate(111deg);
+}
 </code></pre>
     </div>
 
@@ -386,9 +447,9 @@ h1 span {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="no-copy">  <h1>    <span class="char01">E</span>    <span class="char02">s</span>    <span class="char03">c</span>    <span class="char04">u</span>    <span class="char05">e</span>    <span class="char06">l</span>    <span class="char07">a</span>    <span class="char08"></span>    <span class="char09">R</span>    <span class="char10">a</span>    <span class="char11">f</span>    <span class="char12">a</span>    <span class="char13">e</span>    <span class="char14">l</span>    <span class="char15"></span>    <span class="char16">D</span>    <span class="char17">í</span>    <span class="char18">a</span>    <span class="char19">z</span>    <span class="char20"></span>    <span class="char21">S</span>    <span class="char22">e</span>    <span class="char23">r</span>    <span class="char24">d</span>    <span class="char25">á</span>    <span class="char26">n</span>  </h1>  <img class="img-casa" src="assets/images/rds-house-words.png" />  <img class="img-personas" src="assets/images/rds-personas.png" /></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradeRecomendationComponent', 'selector': 'app-grade-recomendation'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesListComponent', 'selector': 'app-grades-list'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SchoolDashboardComponent', 'selector': 'app-school-dashboard'},{'name': 'SchoolFormComponent', 'selector': 'app-school-form'},{'name': 'SchoolHomeComponent', 'selector': 'app-school-home'},{'name': 'SchoolStudentsComponent', 'selector': 'app-school-students'},{'name': 'SchoolTeachersComponent', 'selector': 'app-school-teachers'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'SubjectsComponent', 'selector': 'app-subjects'},{'name': 'TeachersFormComponent', 'selector': 'app-teachers-form'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserGradesPrintableComponent', 'selector': 'app-user-grades-printable'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'},{'name': 'WorkingOnGradesComponent', 'selector': 'app-working-on-grades'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
-    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container no-copy">  <h1>    <span class="char01">E</span>    <span class="char02">s</span>    <span class="char03">c</span>    <span class="char04">u</span>    <span class="char05">e</span>    <span class="char06">l</span>    <span class="char07">a</span>    <span class="char08"></span>    <span class="char09">R</span>    <span class="char10">a</span>    <span class="char11">f</span>    <span class="char12">a</span>    <span class="char13">e</span>    <span class="char14">l</span>    <span class="char15"></span>    <span class="char16">D</span>    <span class="char17">í</span>    <span class="char18">a</span>    <span class="char19">z</span>    <span class="char20"></span>    <span class="char21">S</span>    <span class="char22">e</span>    <span class="char23">r</span>    <span class="char24">d</span>    <span class="char25">á</span>    <span class="char26">n</span>  </h1>  <img class="img-casa" src="assets/images/rds-house-words.png" />  <img class="img-personas" src="assets/images/rds-personas.png" /></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnimatedTextComponent', 'selector': 'app-animated-text'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssigmentsDashboardComponent', 'selector': 'app-assigments-dashboard'},{'name': 'AssignmentsComponent', 'selector': 'app-assignments'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradeRecomendationComponent', 'selector': 'app-grade-recomendation'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesListComponent', 'selector': 'app-grades-list'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoAnimateComponent', 'selector': 'app-logo-animate'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainContentComponent', 'selector': 'app-main-content'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'ParallaxComponent', 'selector': 'app-parallax'},{'name': 'ParallaxSpaceComponent', 'selector': 'app-parallax-space'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'ReopenningComponent', 'selector': 'app-reopenning'},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'RoomComponent', 'selector': 'app-room'},{'name': 'RoomDialogComponent', 'selector': ''},{'name': 'RoomsComponent', 'selector': 'app-rooms'},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SchoolDashboardComponent', 'selector': 'app-school-dashboard'},{'name': 'SchoolFormComponent', 'selector': 'app-school-form'},{'name': 'SchoolHomeComponent', 'selector': 'app-school-home'},{'name': 'SchoolStudentsComponent', 'selector': 'app-school-students'},{'name': 'SchoolTeachersComponent', 'selector': 'app-school-teachers'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'SubjectDialogComponent', 'selector': ''},{'name': 'SubjectsComponent', 'selector': 'app-subjects'},{'name': 'TeachersFormComponent', 'selector': 'app-teachers-form'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserGradesPrintableComponent', 'selector': 'app-user-grades-printable'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UserRoomDialogComponent', 'selector': ''},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'},{'name': 'WorkingOnGradesComponent', 'selector': 'app-working-on-grades'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
+    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'},{'name': 'ParallaxDirective', 'selector': '[appParallax]'}];
     var ACTUAL_COMPONENT = {'name': 'LogoComponent'};
 </script>
 <script src="../js/tree.js"></script>

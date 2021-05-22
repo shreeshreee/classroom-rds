@@ -860,7 +860,7 @@ export class GroupsService {
   createGroup(data: Group): Promise&lt;void&gt; {
     const dbKey &#x3D; this.db.createPushId();
     const fsKey &#x3D; this.afs.createId();
-    //this.db.list(&#x60;groups/${dbKey}&#x60;).push({ ...data, id: fsKey });
+    this.db.list(&#x60;groups&#x60;).push({ ...data, id: dbKey });
     return this.afs.collection(&#x27;groups&#x27;).doc(data.id).set({
       ...data
     });

@@ -57,7 +57,7 @@
             <h3>Fichero</h3>
         </p>
         <p class="comment">
-            <code>projects/classroom-rds/src/app/shared/services/theme.service.ts</code>
+            <code>projects/classroom-rds/src/app/core/services/theme.service.ts</code>
         </p>
 
 
@@ -76,8 +76,11 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Private</span>
                                 <a href="#_darkTheme">_darkTheme</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#isDark">isDark</a>
                             </li>
                             <li>
                                 <a href="#isDarkTheme">isDarkTheme</a>
@@ -96,6 +99,9 @@
                         <ul class="index-list">
                             <li>
                                 <a href="#setDarkTheme">setDarkTheme</a>
+                            </li>
+                            <li>
+                                <a href="#toggleDarkTheme">toggleDarkTheme</a>
                             </li>
                         </ul>
                     </td>
@@ -137,8 +143,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="12"
-                            class="link-to-prism">projects/classroom-rds/src/app/shared/services/theme.service.ts:12</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="11"
+                            class="link-to-prism">projects/classroom-rds/src/app/core/services/theme.service.ts:11</a></div>
                 </td>
             </tr>
 
@@ -185,6 +191,45 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleDarkTheme"></a>
+                    <span class="name">
+                        <b>
+                            toggleDarkTheme
+                        </b>
+                        <a href="#toggleDarkTheme"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleDarkTheme()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="14"
+                            class="link-to-prism">projects/classroom-rds/src/app/core/services/theme.service.ts:14</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
             <section>
     
@@ -198,7 +243,6 @@
                         <a name="_darkTheme"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Private</span>
                             _darkTheme</b>
                             <a href="#_darkTheme"><span class="icon ion-ios-link"></span></a>
                         </span>
@@ -211,7 +255,35 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="9" class="link-to-prism">projects/classroom-rds/src/app/shared/services/theme.service.ts:9</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="8" class="link-to-prism">projects/classroom-rds/src/app/core/services/theme.service.ts:8</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isDark"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            isDark</b>
+                            <a href="#isDark"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="7" class="link-to-prism">projects/classroom-rds/src/app/core/services/theme.service.ts:7</a></div>
                             </td>
                         </tr>
 
@@ -237,7 +309,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="10" class="link-to-prism">projects/classroom-rds/src/app/shared/services/theme.service.ts:10</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="9" class="link-to-prism">projects/classroom-rds/src/app/core/services/theme.service.ts:9</a></div>
                             </td>
                         </tr>
 
@@ -254,15 +326,18 @@
 
 import { Subject } from &#x27;rxjs&#x27;;
 
-@Injectable({
-  providedIn: &#x27;root&#x27;
-})
+@Injectable()
 export class ThemeService {
-  private _darkTheme &#x3D; new Subject&lt;boolean&gt;();
+  private isDark: boolean;
+  _darkTheme &#x3D; new Subject&lt;boolean&gt;();
   isDarkTheme &#x3D; this._darkTheme.asObservable();
 
   setDarkTheme(isDarkTheme: boolean): void {
     this._darkTheme.next(isDarkTheme);
+  }
+  toggleDarkTheme(): void {
+    this.isDarkTheme.subscribe(isDark &#x3D;&gt; this.isDark &#x3D; isDark)
+    this._darkTheme.next(!this.isDark);
   }
 }
 </code></pre>

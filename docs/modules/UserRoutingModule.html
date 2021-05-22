@@ -74,22 +74,19 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 
+import { UserHomeComponent, UserInfoComponent, WorkingOnGradesComponent, UserGradesComponent } from &#x27;./components&#x27;;
+
 import { UserResolver } from &#x27;./services/user.resolver&#x27;;
-import { UserGradesComponent } from &#x27;./components/user-grades/user-grades.component&#x27;;
-import { UserHomeComponent } from &#x27;./components/user-home/user-home.component&#x27;;
-import { UserInfoComponent } from &#x27;./components/user-info/user-info.component&#x27;;
-import { WorkingOnGradesComponent } from &#x27;./components/working-on-grades/working-on-grades.component&#x27;;
 import { UserComponent } from &#x27;./containers/user/user.component&#x27;;
+
 
 const routes: Routes &#x3D; [
   {
     path: &#x27;:id&#x27;, component: UserComponent, resolve: { user: UserResolver }, children: [
-      /* { path: &#x27;&#x27;, redirectTo: &#x27;:userId&#x27;, pathMatch: &#x27;full&#x27; }, */
       { path: &#x27;&#x27;, component: UserHomeComponent },
-
       { path: &#x27;info&#x27;, component: UserInfoComponent },
       { path: &#x27;grades_soon&#x27;, component: WorkingOnGradesComponent },
-      { path: &#x27;grades&#x27;, component: UserGradesComponent },
+      { path: &#x27;grades&#x27;, component: UserGradesComponent, data: { breadcrumb: &#x27;Calificaciones&#x27; } },
     ],
   },
 

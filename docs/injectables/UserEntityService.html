@@ -129,9 +129,9 @@
 
 import { EntityCollectionServiceBase, EntityCollectionServiceElementsFactory } from &#x27;@ngrx/data&#x27;;
 
-import * as fromUser from &#x27;.&#x27;;
+import { User } from &#x27;@rds-auth/models/user.model&#x27;;
 
-import { User } from &#x27;~/app/auth/models/user.model&#x27;;
+import * as fromUser from &#x27;./&#x27;;
 
 @Injectable()
 export class UserEntityService extends EntityCollectionServiceBase&lt;User&gt; {

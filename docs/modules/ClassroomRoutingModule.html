@@ -77,12 +77,9 @@ import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 import { ClassroomComponent } from &#x27;./classroom.component&#x27;;
 
 const routes: Routes &#x3D; [
-  { path: &#x27;&#x27;, component: ClassroomComponent },
+  { path: &#x27;&#x27;, component: ClassroomComponent, data: { breadcrumb: null } },
   {
-    path: &#x27;clases&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./courses/courses.module&#x27;).then(m &#x3D;&gt; m.CoursesModule)&quot;
-  },
-  {
-    path: &#x27;u&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./user-profiles/user-profiles.module&#x27;).then(m &#x3D;&gt; m.UserProfilesModule)&quot;
+    path: &#x27;clases&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./courses/courses.module&#x27;).then(m &#x3D;&gt; m.CoursesModule)&quot;, data: { breadcrumb: null }
   },
 ];
 @NgModule({

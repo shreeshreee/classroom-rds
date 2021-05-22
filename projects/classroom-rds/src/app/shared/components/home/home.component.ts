@@ -38,6 +38,13 @@ export class HomeComponent implements OnInit {
     },
     {
       dismissible: true,
+      type: 'success',
+      visible: true,
+      link: 'reopenning',
+      msg: sanitizer.sanitize(SecurityContext.HTML, 'Conoce los requerimientos para la <strong>modalidad mixta</strong> en la reapertura de los centros educativos, a partir del <strong>1 de junio de 2021</strong>.')
+    },
+    {
+      dismissible: true,
       type: 'danger',
       visible: false,
       link: 'pan_de_sal',

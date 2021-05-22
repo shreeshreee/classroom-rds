@@ -75,15 +75,15 @@ export class HeaderComponent implements OnInit {
   onSignIn() {
     this.isDoorOpen = true;
     const dialogRef = this.dialog.open(LoginDialogComponent, {
-      height: '50%',
+      height: 'fit-content',
       width: '30%',
-      minHeight: '300px',
+      minHeight: 'fit-content',
       minWidth: '350px',
       data: { isDoorOpen: this.isDoorOpen }
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-
+        this.isDoorOpen = result.data.isDoorOpen;
       }
     });
   }

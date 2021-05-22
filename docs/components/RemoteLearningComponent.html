@@ -661,33 +661,32 @@ export class RemoteLearningComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;px-2&quot;&gt;
-  &lt;div class&#x3D;&quot;py-2&quot;&gt;
-    &lt;mat-card&gt;
-      &lt;mat-card-header&gt;
-        &lt;img mat-card-avatar src&#x3D;&quot;assets/images/rds-newlogo-transparent.png&quot;&gt;
-        &lt;mat-card-title class&#x3D;&quot;view-title&quot;&gt;Educación a distancia&lt;/mat-card-title&gt;
-        &lt;mat-card-subtitle class&#x3D;&quot;view-subtitle&quot;&gt;en respuesta a la emergencia sanitaria.&lt;br&gt;
-        &lt;/mat-card-subtitle&gt;
-      &lt;/mat-card-header&gt;
-      &lt;mat-card-content&gt;
-        Descarga de manuales para el manejo y prevencion de eventualidades en la modalidad de educación a distancia
-      &lt;/mat-card-content&gt;
-    &lt;/mat-card&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;m-4&quot;&gt;
+  &lt;mat-card class&#x3D;&quot;mat-elevation-z4&quot; style&#x3D;&quot;width: fit-content;&quot;&gt;
+    &lt;mat-card-header style&#x3D;&quot;margin-top: -20px&quot;&gt;
+      &lt;mat-card-title&gt;
+        &lt;span class&#x3D;&quot;view-title&quot;&gt; Educación a distancia&lt;/span&gt;
+      &lt;/mat-card-title&gt;
+      &lt;mat-card-subtitle style&#x3D;&quot;margin-top: 10px&quot;&gt;
+        &lt;span class&#x3D;&quot;view-subtitle&quot;&gt;en respuesta a la emergencia sanitaria.&lt;/span&gt;
+      &lt;/mat-card-subtitle&gt;
+    &lt;/mat-card-header&gt;
+  &lt;/mat-card&gt;
 
-
-    &lt;div fxFlex&#x3D;&quot;25%&quot;&gt;
-      &lt;carousel&gt;
-        &lt;slide *ngFor&#x3D;&quot;let pict of picts; let index&#x3D;index&quot;&gt;
-          &lt;img class&#x3D;&quot;img-fluid&quot; [src]&#x3D;&quot;pict.path&quot; alt&#x3D;&quot;first slide&quot; height&#x3D;&quot;auto&quot;&gt;
-        &lt;/slide&gt;
-      &lt;/carousel&gt;
-    &lt;/div&gt;
+  &lt;div class&#x3D;&quot;p-2&quot; fxLayout&#x3D;&quot;row wrap&quot; fxLayoutAlign&#x3D;&quot;center start&quot;&gt;
+    &lt;carousel fxFlex&#x3D;&quot;0 1 calc(33.3% - 10px)&quot; fxFlex.lt-md&#x3D;&quot;0 1 calc(50% - 10px)&quot; fxFlex.lt-sm&#x3D;&quot;100%&quot;&gt;
+      &lt;slide *ngFor&#x3D;&quot;let pict of picts; let index&#x3D;index&quot;&gt;
+        &lt;img class&#x3D;&quot;img-fluid&quot; [src]&#x3D;&quot;pict.path&quot; alt&#x3D;&quot;first slide&quot; height&#x3D;&quot;auto&quot;&gt;
+      &lt;/slide&gt;
+    &lt;/carousel&gt;
   &lt;/div&gt;
-  &lt;div class&#x3D;&quot;py-2&quot; fxLayout&#x3D;&quot;row wrap&quot; fxLayoutGap&#x3D;&quot;5px&quot;&gt;
+  &lt;p&gt;
+    Descarga de manuales para el manejo y prevencion de eventualidades en la modalidad de educación a distancia
+  &lt;/p&gt;
+  &lt;div class&#x3D;&quot;p-2&quot; fxLayout&#x3D;&quot;row wrap&quot; fxLayoutGap&#x3D;&quot;5px&quot;&gt;
     &lt;div *ngFor&#x3D;&quot;let infoManual of infographics&quot; fxFlex&#x3D;&quot;0 1 calc(33.3% - 10px)&quot; fxFlex.lt-md&#x3D;&quot;0 1 calc(50% - 10px)&quot;
       fxFlex.lt-sm&#x3D;&quot;100%&quot;&gt;
-      &lt;div class&#x3D;&quot;card border-success&quot; fxLayout&#x3D;&quot;row wrap&quot;&gt;
+      &lt;div class&#x3D;&quot;card border-success bg-transparent&quot; fxLayout&#x3D;&quot;row wrap&quot;&gt;
         &lt;div fxFlex&#x3D;&quot;70%&quot; class&#x3D;&quot;card-body&quot;&gt;
           &lt;h3 class&#x3D;&quot;card-title&quot;&gt;{{infoManual.title}}&lt;/h3&gt;
           &lt;p class&#x3D;&quot;card-text&quot;&gt;{{infoManual.description}}&lt;/p&gt;
@@ -701,7 +700,6 @@ export class RemoteLearningComponent implements OnInit {
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -709,33 +707,9 @@ export class RemoteLearningComponent implements OnInit {
                 <p class="comment">
                     <code>./remote-learning.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">@import &quot;./../../../../assets/themes/colors.scss&quot;;
-mat-card {
-  max-width: fit-content;
-}
-.view-title {
-  color:$rds-logo-color;
-  font-size: calc(1rem + 1.5vw);
-  font-weight: 800;
-}
-.view-subtitle {
-  margin-top: -50px;
-  font-size: calc(0.5rem + 1vw);
-  font-weight: 400;
-}
-
-.img-carousel {
+                <pre class="line-numbers"><code class="language-scss">.img-carousel {
   width: 25%;
   height: auto;
-}
-.text-wrap-right {
-  float:right;
-  margin: 5px;
-}
-
-.text-wrap-left {
-  float:left;
-  margin: 5px;
 }
 </code></pre>
     </div>
@@ -765,9 +739,9 @@ mat-card {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="px-2">  <div class="py-2">    <mat-card>      <mat-card-header>        <img mat-card-avatar src="assets/images/rds-newlogo-transparent.png">        <mat-card-title class="view-title">Educación a distancia</mat-card-title>        <mat-card-subtitle class="view-subtitle">en respuesta a la emergencia sanitaria.<br>        </mat-card-subtitle>      </mat-card-header>      <mat-card-content>        Descarga de manuales para el manejo y prevencion de eventualidades en la modalidad de educación a distancia      </mat-card-content>    </mat-card>    <div fxFlex="25%">      <carousel>        <slide *ngFor="let pict of picts; let index=index">          <img class="img-fluid" [src]="pict.path" alt="first slide" height="auto">        </slide>      </carousel>    </div>  </div>  <div class="py-2" fxLayout="row wrap" fxLayoutGap="5px">    <div *ngFor="let infoManual of infographics" fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-md="0 1 calc(50% - 10px)"      fxFlex.lt-sm="100%">      <div class="card border-success" fxLayout="row wrap">        <div fxFlex="70%" class="card-body">          <h3 class="card-title">{{infoManual.title}}</h3>          <p class="card-text">{{infoManual.description}}</p>          <p class="card-text"><small class="text-muted">{{infoManual.size}}</small></p>        </div>        <div fxFlex="30%">          <a [href]="infoManual.file" target="_blank" rel="noopener">            <img class="img-fluid img-thumbnail" [src]="infoManual.file" alt="{{infoManual.title}}">          </a>        </div>      </div>    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradeRecomendationComponent', 'selector': 'app-grade-recomendation'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesListComponent', 'selector': 'app-grades-list'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SchoolDashboardComponent', 'selector': 'app-school-dashboard'},{'name': 'SchoolFormComponent', 'selector': 'app-school-form'},{'name': 'SchoolHomeComponent', 'selector': 'app-school-home'},{'name': 'SchoolStudentsComponent', 'selector': 'app-school-students'},{'name': 'SchoolTeachersComponent', 'selector': 'app-school-teachers'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'SubjectsComponent', 'selector': 'app-subjects'},{'name': 'TeachersFormComponent', 'selector': 'app-teachers-form'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserGradesPrintableComponent', 'selector': 'app-user-grades-printable'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'},{'name': 'WorkingOnGradesComponent', 'selector': 'app-working-on-grades'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
-    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'}];
+        var COMPONENT_TEMPLATE = '<div><div class="m-4">  <mat-card class="mat-elevation-z4" style="width: fit-content;">    <mat-card-header style="margin-top: -20px">      <mat-card-title>        <span class="view-title"> Educación a distancia</span>      </mat-card-title>      <mat-card-subtitle style="margin-top: 10px">        <span class="view-subtitle">en respuesta a la emergencia sanitaria.</span>      </mat-card-subtitle>    </mat-card-header>  </mat-card>  <div class="p-2" fxLayout="row wrap" fxLayoutAlign="center start">    <carousel fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-md="0 1 calc(50% - 10px)" fxFlex.lt-sm="100%">      <slide *ngFor="let pict of picts; let index=index">        <img class="img-fluid" [src]="pict.path" alt="first slide" height="auto">      </slide>    </carousel>  </div>  <p>    Descarga de manuales para el manejo y prevencion de eventualidades en la modalidad de educación a distancia  </p>  <div class="p-2" fxLayout="row wrap" fxLayoutGap="5px">    <div *ngFor="let infoManual of infographics" fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-md="0 1 calc(50% - 10px)"      fxFlex.lt-sm="100%">      <div class="card border-success bg-transparent" fxLayout="row wrap">        <div fxFlex="70%" class="card-body">          <h3 class="card-title">{{infoManual.title}}</h3>          <p class="card-text">{{infoManual.description}}</p>          <p class="card-text"><small class="text-muted">{{infoManual.size}}</small></p>        </div>        <div fxFlex="30%">          <a [href]="infoManual.file" target="_blank" rel="noopener">            <img class="img-fluid img-thumbnail" [src]="infoManual.file" alt="{{infoManual.title}}">          </a>        </div>      </div>    </div>  </div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnimatedTextComponent', 'selector': 'app-animated-text'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssigmentsDashboardComponent', 'selector': 'app-assigments-dashboard'},{'name': 'AssignmentsComponent', 'selector': 'app-assignments'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradeRecomendationComponent', 'selector': 'app-grade-recomendation'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesListComponent', 'selector': 'app-grades-list'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoAnimateComponent', 'selector': 'app-logo-animate'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainContentComponent', 'selector': 'app-main-content'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'ParallaxComponent', 'selector': 'app-parallax'},{'name': 'ParallaxSpaceComponent', 'selector': 'app-parallax-space'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'ReopenningComponent', 'selector': 'app-reopenning'},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'RoomComponent', 'selector': 'app-room'},{'name': 'RoomDialogComponent', 'selector': ''},{'name': 'RoomsComponent', 'selector': 'app-rooms'},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SchoolDashboardComponent', 'selector': 'app-school-dashboard'},{'name': 'SchoolFormComponent', 'selector': 'app-school-form'},{'name': 'SchoolHomeComponent', 'selector': 'app-school-home'},{'name': 'SchoolStudentsComponent', 'selector': 'app-school-students'},{'name': 'SchoolTeachersComponent', 'selector': 'app-school-teachers'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'SubjectDialogComponent', 'selector': ''},{'name': 'SubjectsComponent', 'selector': 'app-subjects'},{'name': 'TeachersFormComponent', 'selector': 'app-teachers-form'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserGradesPrintableComponent', 'selector': 'app-user-grades-printable'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UserRoomDialogComponent', 'selector': ''},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'},{'name': 'WorkingOnGradesComponent', 'selector': 'app-working-on-grades'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
+    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'},{'name': 'ParallaxDirective', 'selector': '[appParallax]'}];
     var ACTUAL_COMPONENT = {'name': 'RemoteLearningComponent'};
 </script>
 <script src="../js/tree.js"></script>

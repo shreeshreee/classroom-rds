@@ -85,22 +85,22 @@ import { CoursesComponent } from &#x27;./containers/courses/courses.component&#x
 
 const routes: Routes &#x3D; [
   {
-    path: &#x27;&#x27;, component: CoursesComponent, children: [
-      { path: &#x27;&#x27;, component: CoursesListComponent, resolve: { courses: CoursesResolver } },
+    path: &#x27;&#x27;, component: CoursesComponent, data: { breadcrumb: &#x27;Clases&#x27; }, children: [
+      { path: &#x27;&#x27;, component: CoursesListComponent, data: { breadcrumb: null }, resolve: { courses: CoursesResolver } },
       {
-        path: &#x27;:courseId&#x27;, component: CourseComponent, resolve: { course: CourseResolver }, children: [
-          { path: &#x27;&#x27;, component: WellcomeComponent },
+        path: &#x27;:courseId&#x27;, component: CourseComponent, data: { breadcrumb: null }, resolve: { course: CourseResolver }, children: [
+          /* { path: &#x27;&#x27;, component: WellcomeComponent }, */
           {
-            path: &#x27;students&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;../students/students.module&#x27;).then(m &#x3D;&gt; m.StudentsModule)&quot;
+            path: &#x27;students&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;../students/students.module&#x27;).then(m &#x3D;&gt; m.StudentsModule)&quot;, data: { breadcrumb: &#x27;Alumnos&#x27; }
           },
           {
-            path: &#x27;teachers&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;../teachers/teachers.module&#x27;).then(m &#x3D;&gt; m.TeachersModule)&quot;
+            path: &#x27;teachers&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;../teachers/teachers.module&#x27;).then(m &#x3D;&gt; m.TeachersModule)&quot;, data: { breadcrumb: &#x27;Profesores&#x27; }
           },
           {
-            path: &#x27;courseworks&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;../course-works/course-works.module&#x27;).then(m &#x3D;&gt; m.CourseWorksModule)&quot;
+            path: &#x27;courseworks&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;../course-works/course-works.module&#x27;).then(m &#x3D;&gt; m.CourseWorksModule)&quot;, data: { breadcrumb: &#x27;Trabajo de clase&#x27; }
           },
           {
-            path: &#x27;announcements&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;../announcements/announcements.module&#x27;).then(m &#x3D;&gt; m.AnnouncementsModule)&quot;
+            path: &#x27;announcements&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;../announcements/announcements.module&#x27;).then(m &#x3D;&gt; m.AnnouncementsModule)&quot;, data: { breadcrumb: &#x27;Avisos&#x27; }
           },
         ]
       },

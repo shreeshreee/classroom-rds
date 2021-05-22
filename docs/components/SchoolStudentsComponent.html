@@ -150,7 +150,7 @@
                                 <a href="#hidden">hidden</a>
                             </li>
                             <li>
-                                <a href="#loaded$">loaded$</a>
+                                <a href="#loading$">loading$</a>
                             </li>
                             <li>
                                 <a href="#raisedElev">raisedElev</a>
@@ -182,6 +182,9 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                <a href="#compare">compare</a>
+                            </li>
                             <li>
                                 <a href="#editUser">editUser</a>
                             </li>
@@ -346,6 +349,102 @@
     <h3 id="methods">
         Métodos
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="compare"></a>
+                    <span class="name">
+                        <b>
+                            compare
+                        </b>
+                        <a href="#compare"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>compare(a: string | number, b: string | number, isAsc: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="78"
+                            class="link-to-prism">projects/classroom-rds/src/app/school/container/school-students/school-students.component.ts:78</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Simple sort comparator for example ID/Name columns (for client-side sorting). </p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>a</td>
+                                    <td>
+                                            <code>string | number</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>b</td>
+                                    <td>
+                                            <code>string | number</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>isAsc</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -516,8 +615,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="84"
-                            class="link-to-prism">projects/classroom-rds/src/app/school/container/school-students/school-students.component.ts:84</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="81"
+                            class="link-to-prism">projects/classroom-rds/src/app/school/container/school-students/school-students.component.ts:81</a></div>
                 </td>
             </tr>
 
@@ -587,7 +686,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onSearch()</code>
+<code>onSearch(grade)</code>
                 </td>
             </tr>
 
@@ -604,8 +703,35 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>grade</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
                         <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -850,11 +976,11 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="loaded$"></a>
+                        <a name="loading$"></a>
                         <span class="name">
                             <b>
-                            loaded$</b>
-                            <a href="#loaded$"><span class="icon ion-ios-link"></span></a>
+                            loading$</b>
+                            <a href="#loading$"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -1075,7 +1201,7 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
   @Input() users$: Observable&lt;User[]&gt;;
   activeClass: string;
   userSub: Subject&lt;Partial&lt;User&gt;&gt; &#x3D; new Subject&lt;Partial&lt;User&gt;&gt;();
-  loaded$: Observable&lt;boolean&gt;;
+  loading$: Observable&lt;boolean&gt;;
   searchForm: FormGroup;
   fullName: string;
   clevelKeys;
@@ -1093,7 +1219,7 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
     private userEntityService: UserEntityService,
   ) {
     this.initSearchForm();
-    this.loaded$ &#x3D; this.userEntityService.loaded$;
+    this.loading$ &#x3D; this.userEntityService.loading$;
     this.clevelKeys &#x3D; Object.keys(this.clevels).filter(Number);
     this.slevelKeys &#x3D; Object.keys(this.slevels).filter(x &#x3D;&gt; x.length &gt; 5);
   }
@@ -1104,7 +1230,7 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.onSearch();
+
   }
   getUserCount() {
 
@@ -1121,16 +1247,13 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
     });
     // call action or service to edit user on DB
   }
-  onSearch() {
-    this.searchForm.get(&#x27;grade&#x27;).valueChanges.subscribe((grade: string) &#x3D;&gt; {
-      this.users$ &#x3D; this.userEntityService.entities$
-        .pipe(map(users &#x3D;&gt; {
-          if (!users) {
-            this.userEntityService.getWithQuery({ grade });
-          }
-          return users.filter(x &#x3D;&gt; x.grade &#x3D;&#x3D; grade)
-        }));
-    });
+  onSearch(grade) {
+    this.userEntityService.getWithQuery({ grade });
+    this.users$ &#x3D; this.userEntityService.entities$.pipe(map(users &#x3D;&gt; users.filter(x &#x3D;&gt; x.grade &#x3D;&#x3D; grade).sort((a, b) &#x3D;&gt; this.compare(a.name.familyName, b.name.familyName, true))))
+  }
+  /** Simple sort comparator for example ID/Name columns (for client-side sorting). */
+  compare(a: string | number, b: string | number, isAsc: boolean): number {
+    return (a &lt; b ? -1 : 1) * (isAsc ? 1 : -1);
   }
   ngOnDestroy(): void {
     this.subService.unsubscribeComponent$.next();
@@ -1145,7 +1268,8 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
   &lt;form [formGroup]&#x3D;&quot;searchForm&quot;&gt;
     &lt;mat-form-field class&#x3D;&quot;d-block&quot; appearance&#x3D;&quot;outline&quot;&gt;
       &lt;mat-label&gt;Selecciona un grupo&lt;/mat-label&gt;
-      &lt;mat-select formControlName&#x3D;&quot;grade&quot; placeholder&#x3D;&quot;Selecciona un grado escolar&quot; (change)&#x3D;&quot;onSearch()&quot;&gt;
+      &lt;mat-select formControlName&#x3D;&quot;grade&quot; placeholder&#x3D;&quot;Selecciona un grado escolar&quot;
+        (selectionChange)&#x3D;&quot;onSearch($event.value)&quot;&gt;
         &lt;mat-option *ngFor&#x3D;&quot;let skey of slevelKeys&quot; value&#x3D;&quot;{{skey}}&quot;&gt;
           {{skey}}
         &lt;/mat-option&gt;
@@ -1153,10 +1277,14 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
     &lt;/mat-form-field&gt;
   &lt;/form&gt;
   &lt;div&gt;
+    &lt;div *ngIf&#x3D;&quot;loading$|async&quot; style&#x3D;&quot;min-height: 300px;&quot; fxLayout&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;center center&quot;&gt;
+      &lt;mat-spinner strokeWidth&#x3D;&quot;3&quot; [diameter]&#x3D;&quot;50&quot;&gt;
+      &lt;/mat-spinner&gt;
+      &lt;span&gt;Buscando ...&lt;/span&gt;&lt;br&gt;
+    &lt;/div&gt;
     &lt;div fxLayout&#x3D;&quot;row wrap&quot; fxLayout.lt-sm&#x3D;&quot;column&quot; fxLayoutGap&#x3D;&quot;5px&quot; fxLayoutAlign&#x3D;&quot;space-arround top&quot;&gt;
-      &lt;mat-card *ngIf&#x3D;&quot;(loaded$|async) &amp;&amp; users$|async as users&quot; fxFlex&#x3D;&quot;0 1 calc(30% - 5px)&quot; fxFlex.lt-sm&#x3D;&quot;100%&quot;
+      &lt;mat-card *ngIf&#x3D;&quot;!(loading$|async) &amp;&amp; users$|async as users&quot; fxFlex&#x3D;&quot;0 1 calc(30% - 5px)&quot; fxFlex.lt-sm&#x3D;&quot;100%&quot;
         class&#x3D;&quot;students-list&quot;&gt;
-
         &lt;mat-list *ngIf&#x3D;&quot;users.length&#x3D;&#x3D;0&quot; dense&gt;
           &lt;mat-list-item&gt; No hay cursos para mostrar &lt;/mat-list-item&gt;
         &lt;/mat-list&gt;
@@ -1176,19 +1304,6 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;!-- &lt;mat-accordion hideToggle&gt;
-  &lt;mat-expansion-panel  appMaterialElevation [raisedElevation]&#x3D;&quot;raisedElev&quot;
-    &gt;
-    &lt;mat-expansion-panel-header&gt;
-      &lt;img class&#x3D;&quot;img-small rounded-circle&quot; src&#x3D;&quot;{{user.photoUrl}}&quot;&gt;
-      &lt;mat-panel-title&gt;{{user.name.fullName}}&lt;/mat-panel-title&gt;
-      &lt;mat-panel-description&gt;{{user.primaryEmail}}&lt;/mat-panel-description&gt;
-    &lt;/mat-expansion-panel-header&gt;
-    &lt;div *ngIf&#x3D;&quot;user&quot;&gt;
-      &lt;router-outlet&gt;&lt;/router-outlet&gt;
-    &lt;/div&gt;
-  &lt;/mat-expansion-panel&gt;
-&lt;/mat-accordion&gt; --&gt;
 </code></pre>
     </div>
 
@@ -1196,7 +1311,7 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
                 <p class="comment">
                     <code>./school-students.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">@import &#x27;./../../../../assets/themes/colors.scss&#x27;;
+                <pre class="line-numbers"><code class="language-scss">@import &quot;./../../../../assets/themes/colors.scss&quot;;
 
 .img-small {
   height: 30px;
@@ -1204,11 +1319,12 @@ export class SchoolStudentsComponent implements OnInit, OnDestroy {
 }
 .students-list {
   min-width: 280px;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 mat-list-item.active {
+  color: $mystic-color;
   background: $rds-logo-color;
 }
 </code></pre>
@@ -1239,9 +1355,9 @@ mat-list-item.active {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="py-2">  <form [formGroup]="searchForm">    <mat-form-field class="d-block" appearance="outline">      <mat-label>Selecciona un grupo</mat-label>      <mat-select formControlName="grade" placeholder="Selecciona un grado escolar" (change)="onSearch()">        <mat-option *ngFor="let skey of slevelKeys" value="{{skey}}">          {{skey}}        </mat-option>      </mat-select>    </mat-form-field>  </form>  <div>    <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="5px" fxLayoutAlign="space-arround top">      <mat-card *ngIf="(loaded$|async) && users$|async as users" fxFlex="0 1 calc(30% - 5px)" fxFlex.lt-sm="100%"        class="students-list">        <mat-list *ngIf="users.length==0" dense>          <mat-list-item> No hay cursos para mostrar </mat-list-item>        </mat-list>        <mat-list dense>          <mat-list-item *ngFor="let user of users" (click)="sendUser(user);activeClass=user.id"            [ngClass]="{\'active\': user.id==activeClass, \'bg-transparent\': user.id!=activeClass}">            <img matListAvatar src="{{user.photoUrl}}">            <div matLine>{{user.name.fullName}}</div>            <fa-icon matTooltip="Última conexión: {{user.lastLoginTime|date:\'medium\'}}" [icon]="faCircle"              class="{{user.isOnline?\'text-success\':\'text-danger\'}}"></fa-icon>          </mat-list-item>        </mat-list>      </mat-card>      <div *ngIf="userSub" fxFlex="0 1 calc(68% - 5px)" fxFlex.lt-md="100%">        <app-school-form [user]="userSub" (updatedUser)="editUser($event)"></app-school-form>      </div>    </div>  </div></div><!-- <mat-accordion hideToggle>  <mat-expansion-panel  appMaterialElevation [raisedElevation]="raisedElev"    >    <mat-expansion-panel-header>      <img class="img-small rounded-circle" src="{{user.photoUrl}}">      <mat-panel-title>{{user.name.fullName}}</mat-panel-title>      <mat-panel-description>{{user.primaryEmail}}</mat-panel-description>    </mat-expansion-panel-header>    <div *ngIf="user">      <router-outlet></router-outlet>    </div>  </mat-expansion-panel></mat-accordion> --></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradeRecomendationComponent', 'selector': 'app-grade-recomendation'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesListComponent', 'selector': 'app-grades-list'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SchoolDashboardComponent', 'selector': 'app-school-dashboard'},{'name': 'SchoolFormComponent', 'selector': 'app-school-form'},{'name': 'SchoolHomeComponent', 'selector': 'app-school-home'},{'name': 'SchoolStudentsComponent', 'selector': 'app-school-students'},{'name': 'SchoolTeachersComponent', 'selector': 'app-school-teachers'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'SubjectsComponent', 'selector': 'app-subjects'},{'name': 'TeachersFormComponent', 'selector': 'app-teachers-form'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserGradesPrintableComponent', 'selector': 'app-user-grades-printable'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'},{'name': 'WorkingOnGradesComponent', 'selector': 'app-working-on-grades'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
-    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'}];
+        var COMPONENT_TEMPLATE = '<div><div class="py-2">  <form [formGroup]="searchForm">    <mat-form-field class="d-block" appearance="outline">      <mat-label>Selecciona un grupo</mat-label>      <mat-select formControlName="grade" placeholder="Selecciona un grado escolar"        (selectionChange)="onSearch($event.value)">        <mat-option *ngFor="let skey of slevelKeys" value="{{skey}}">          {{skey}}        </mat-option>      </mat-select>    </mat-form-field>  </form>  <div>    <div *ngIf="loading$|async" style="min-height: 300px;" fxLayout="column" fxLayoutAlign="center center">      <mat-spinner strokeWidth="3" [diameter]="50">      </mat-spinner>      <span>Buscando ...</span><br>    </div>    <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="5px" fxLayoutAlign="space-arround top">      <mat-card *ngIf="!(loading$|async) && users$|async as users" fxFlex="0 1 calc(30% - 5px)" fxFlex.lt-sm="100%"        class="students-list">        <mat-list *ngIf="users.length==0" dense>          <mat-list-item> No hay cursos para mostrar </mat-list-item>        </mat-list>        <mat-list dense>          <mat-list-item *ngFor="let user of users" (click)="sendUser(user);activeClass=user.id"            [ngClass]="{\'active\': user.id==activeClass, \'bg-transparent\': user.id!=activeClass}">            <img matListAvatar src="{{user.photoUrl}}">            <div matLine>{{user.name.fullName}}</div>            <fa-icon matTooltip="Última conexión: {{user.lastLoginTime|date:\'medium\'}}" [icon]="faCircle"              class="{{user.isOnline?\'text-success\':\'text-danger\'}}"></fa-icon>          </mat-list-item>        </mat-list>      </mat-card>      <div *ngIf="userSub" fxFlex="0 1 calc(68% - 5px)" fxFlex.lt-md="100%">        <app-school-form [user]="userSub" (updatedUser)="editUser($event)"></app-school-form>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnimatedTextComponent', 'selector': 'app-animated-text'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssigmentsDashboardComponent', 'selector': 'app-assigments-dashboard'},{'name': 'AssignmentsComponent', 'selector': 'app-assignments'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradeRecomendationComponent', 'selector': 'app-grade-recomendation'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesListComponent', 'selector': 'app-grades-list'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoAnimateComponent', 'selector': 'app-logo-animate'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainContentComponent', 'selector': 'app-main-content'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'ParallaxComponent', 'selector': 'app-parallax'},{'name': 'ParallaxSpaceComponent', 'selector': 'app-parallax-space'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'ReopenningComponent', 'selector': 'app-reopenning'},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'RoomComponent', 'selector': 'app-room'},{'name': 'RoomDialogComponent', 'selector': ''},{'name': 'RoomsComponent', 'selector': 'app-rooms'},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SchoolDashboardComponent', 'selector': 'app-school-dashboard'},{'name': 'SchoolFormComponent', 'selector': 'app-school-form'},{'name': 'SchoolHomeComponent', 'selector': 'app-school-home'},{'name': 'SchoolStudentsComponent', 'selector': 'app-school-students'},{'name': 'SchoolTeachersComponent', 'selector': 'app-school-teachers'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'SubjectDialogComponent', 'selector': ''},{'name': 'SubjectsComponent', 'selector': 'app-subjects'},{'name': 'TeachersFormComponent', 'selector': 'app-teachers-form'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserGradesPrintableComponent', 'selector': 'app-user-grades-printable'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UserRoomDialogComponent', 'selector': ''},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'},{'name': 'WorkingOnGradesComponent', 'selector': 'app-working-on-grades'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
+    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'},{'name': 'ParallaxDirective', 'selector': '[appParallax]'}];
     var ACTUAL_COMPONENT = {'name': 'SchoolStudentsComponent'};
 </script>
 <script src="../js/tree.js"></script>

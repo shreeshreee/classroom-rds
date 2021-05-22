@@ -114,7 +114,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="134" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:134</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="131" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:131</a></div>
                             </td>
                         </tr>
 
@@ -210,6 +210,7 @@
                   name: authData.user.displayName,
                   primaryEmail: authData.user.email,
                   photoUrl: authData.photoURL,
+                  authPhotoUrl: authData.authPhotoUrl,
                   isTeacher: authData.isTeacher,
                   isAdmin: authData.isAdmin,
                   isNew: authData.isNewUser,
@@ -233,7 +234,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="97" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:97</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="93" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:93</a></div>
                             </td>
                         </tr>
 
@@ -267,7 +268,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="132" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:132</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="129" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:129</a></div>
                             </td>
                         </tr>
 
@@ -292,14 +293,15 @@
     () &#x3D;&gt;
       this.actions$.pipe(
         ofType(fromAuthActions.signIn),
-        switchMap(() &#x3D;&gt; this.authService.handleSignInClick()
+        switchMap(() &#x3D;&gt; this.authFireService.signInWithPopup()/*  this.authService.handleSignInClick() */
           .pipe(
-            take(1),
             map((res) &#x3D;&gt; {
+              console.log(res)
               return {
                 id: res.user.providerData[0].uid,
                 primaryEmail: res.user.email,
-                photoUrl: res.user.photoURL,
+                authPhotoUrl: res.user.photoURL,
+                photoUrl: res.user.providerData[0].photoURL,
                 displayName: res.user.displayName,
                 isNew: res.additionalUserInfo.isNewUser,
                 isVerified: res.user.emailVerified,
@@ -308,16 +310,11 @@
                 uid: res.user.uid
               }
             }),
-            /* switchMap((user: User) &#x3D;&gt; {
-              return [
-                fromAuthActions.fullfillUser({ id: user.id })
-              ]
-            }), */
             switchMap((user: User) &#x3D;&gt; {
               if (user.isNew) {
                 return [
-                  fromAuthActions.saveUser({ user }),
                   fromAuthActions.signInSuccess({ user }),
+                  fromAuthActions.saveUser({ user }),
                 ];
               } else {
                 return [
@@ -373,7 +370,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="61" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:61</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="57" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:57</a></div>
                             </td>
                         </tr>
 
@@ -418,7 +415,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="76" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:76</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="72" class="link-to-prism">projects/classroom-rds/src/app/auth/state/effects/auth.effects.ts:72</a></div>
                             </td>
                         </tr>
 
@@ -452,14 +449,15 @@ export class AuthEffects {
     () &#x3D;&gt;
       this.actions$.pipe(
         ofType(fromAuthActions.signIn),
-        switchMap(() &#x3D;&gt; this.authService.handleSignInClick()
+        switchMap(() &#x3D;&gt; this.authFireService.signInWithPopup()/*  this.authService.handleSignInClick() */
           .pipe(
-            take(1),
             map((res) &#x3D;&gt; {
+              console.log(res)
               return {
                 id: res.user.providerData[0].uid,
                 primaryEmail: res.user.email,
-                photoUrl: res.user.photoURL,
+                authPhotoUrl: res.user.photoURL,
+                photoUrl: res.user.providerData[0].photoURL,
                 displayName: res.user.displayName,
                 isNew: res.additionalUserInfo.isNewUser,
                 isVerified: res.user.emailVerified,
@@ -468,16 +466,11 @@ export class AuthEffects {
                 uid: res.user.uid
               }
             }),
-            /* switchMap((user: User) &#x3D;&gt; {
-              return [
-                fromAuthActions.fullfillUser({ id: user.id })
-              ]
-            }), */
             switchMap((user: User) &#x3D;&gt; {
               if (user.isNew) {
                 return [
-                  fromAuthActions.saveUser({ user }),
                   fromAuthActions.signInSuccess({ user }),
+                  fromAuthActions.saveUser({ user }),
                 ];
               } else {
                 return [
@@ -541,6 +534,7 @@ export class AuthEffects {
                   name: authData.user.displayName,
                   primaryEmail: authData.user.email,
                   photoUrl: authData.photoURL,
+                  authPhotoUrl: authData.authPhotoUrl,
                   isTeacher: authData.isTeacher,
                   isAdmin: authData.isAdmin,
                   isNew: authData.isNewUser,

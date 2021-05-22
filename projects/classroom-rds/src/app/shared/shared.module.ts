@@ -10,6 +10,7 @@ import { appearanceModules } from '../modules';
 import { sharedComponents } from './components';
 import { sharedServices } from './services';
 
+import { AnimatedTextComponent } from './components/animated-text/animated-text.component';
 import { ParallaxSpaceComponent } from './components/parallax-space/parallax-space.component';
 import { ParallaxComponent } from './components/parallax/parallax.component';
 import { ReopenningComponent } from './components/reopenning/reopenning.component';
@@ -30,7 +31,7 @@ export const sharedModules: any[] = [
     ...sharedModules,
     ...sharedComponents
   ],
-  declarations: [...sharedComponents, ReopenningComponent],
+  declarations: [...sharedComponents],
   providers: [...sharedServices]
 
 })

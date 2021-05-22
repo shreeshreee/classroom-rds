@@ -81,6 +81,13 @@
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
+                                <a href="#classesCollection">classesCollection</a>
+                            </li>
+                            <li>
+                                <a href="#classRef">classRef</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
                                 <a href="#currentScore">currentScore</a>
                             </li>
                             <li>
@@ -107,7 +114,23 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#create">create</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createClass">createClass</a>
+                            </li>
+                            <li>
                                 <a href="#getAuthState">getAuthState</a>
+                            </li>
+                            <li>
+                                <a href="#getClassById">getClassById</a>
+                            </li>
+                            <li>
+                                <a href="#getClasses">getClasses</a>
+                            </li>
+                            <li>
+                                <a href="#getClassesWithQuery">getClassesWithQuery</a>
                             </li>
                             <li>
                                 <a href="#getCurrentScore">getCurrentScore</a>
@@ -120,6 +143,10 @@
                             </li>
                             <li>
                                 <a href="#getUsersWithQuery">getUsersWithQuery</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateClass">updateClass</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
@@ -207,6 +234,148 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="create"></a>
+                    <span class="name">
+                        <b>
+                            create
+                        </b>
+                        <a href="#create"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>create(course: <a href="../interfaces/Class.html">Class</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="92"
+                            class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:92</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>course</td>
+                                    <td>
+                                                <code><a href="../interfaces/Class.html" target="_self" >Class</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="../interfaces/Class.html" target="_self" >Observable&lt;Class&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createClass"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            createClass
+                        </b>
+                        <a href="#createClass"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createClass(course: <a href="../interfaces/Class.html">Class</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="73"
+                            class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:73</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>course</td>
+                                    <td>
+                                                <code><a href="../interfaces/Class.html" target="_self" >Class</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getAuthState"></a>
                     <span class="name">
                         <b>
@@ -225,8 +394,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="43"
-                            class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:43</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="44"
+                            class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:44</a></div>
                 </td>
             </tr>
 
@@ -237,6 +406,185 @@
                     <div class="io-description">
                         <b>Devuelve : </b>        <code><a href="../interfaces/User.html" target="_self" >Observable&lt;firebase.User&gt;</a></code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getClassById"></a>
+                    <span class="name">
+                        <b>
+                            getClassById
+                        </b>
+                        <a href="#getClassById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getClassById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="89"
+                            class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="../interfaces/Class.html" target="_self" >Observable&lt;Class&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getClasses"></a>
+                    <span class="name">
+                        <b>
+                            getClasses
+                        </b>
+                        <a href="#getClasses"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getClasses()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="83"
+                            class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:83</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="../interfaces/Class.html" target="_self" >Observable&lt;Class[]&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getClassesWithQuery"></a>
+                    <span class="name">
+                        <b>
+                            getClassesWithQuery
+                        </b>
+                        <a href="#getClassesWithQuery"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getClassesWithQuery(queryParams: QueryParams)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="86"
+                            class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:86</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>queryParams</td>
+                                    <td>
+                                            <code>QueryParams</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="../interfaces/Class.html" target="_self" >Observable&lt;Class[]&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -404,8 +752,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="46"
-                            class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:46</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="47"
+                            class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:47</a></div>
                 </td>
             </tr>
 
@@ -443,8 +791,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="57"
-                            class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:57</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="58"
+                            class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:58</a></div>
                 </td>
             </tr>
 
@@ -482,6 +830,90 @@
                     </div>
                     <div class="io-description">
                         <b>Devuelve : </b>        <code><a href="../interfaces/User.html" target="_self" >Observable&lt;User[]&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateClass"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            updateClass
+                        </b>
+                        <a href="#updateClass"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateClass(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, changes: <a href="../interfaces/Class.html">Partial<Class></a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="78"
+                            class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:78</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>changes</td>
+                                    <td>
+                                                <code><a href="../interfaces/Class.html" target="_self" >Partial&lt;Class&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="../interfaces/Class.html" target="_self" >Promise&lt;Class&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -613,6 +1045,66 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="classesCollection"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            classesCollection</b>
+                            <a href="#classesCollection"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor por defecto : </i><code>&#x27;courses&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="21" class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:21</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="classRef"></a>
+                        <span class="name">
+                            <b>
+                            classRef</b>
+                            <a href="#classRef"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>    <code>AngularFireList&lt;any&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido en <a href="" data-line="24" class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="currentScore"></a>
                         <span class="name">
                             <b>
@@ -635,7 +1127,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="23" class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:23</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="22" class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -662,7 +1154,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="21" class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:21</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="19" class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -695,7 +1187,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="22" class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:22</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="20" class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -723,7 +1215,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="24" class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:24</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="23" class="link-to-prism">projects/classroom-rds/src/app/school/services/school.service.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -739,27 +1231,27 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { AngularFireAuth } from &#x27;@angular/fire/auth&#x27;;
 import { AngularFireDatabase, AngularFireList } from &#x27;@angular/fire/database&#x27;;
-import { AngularFirestore } from &#x27;@angular/fire/firestore&#x27;;
-import { query } from &#x27;@angular/animations&#x27;;
 
 import { QueryParams } from &#x27;@ngrx/data&#x27;;
 
-import { Observable, of } from &#x27;rxjs&#x27;;
+import { User } from &#x27;@rds-auth/models/user.model&#x27;;
+
+import { Grade } from &#x27;@rds-user/models/grade.model&#x27;;
+
+import { from, Observable, of } from &#x27;rxjs&#x27;;
 import { concatMap, map, take } from &#x27;rxjs/operators&#x27;;
 
 import firebase from &#x27;firebase/app&#x27;;
 import &#x27;firebase/auth&#x27;;
-
-import { UserAuth } from &#x27;~/app/auth/models/user-auth.model&#x27;;
-import { UserStudent } from &#x27;~/app/auth/models/user-student.model&#x27;;
-import { User } from &#x27;~/app/auth/models/user.model&#x27;;
-import { Grade, Score } from &#x27;~/app/user/models/grade.model&#x27;;
+import { Class } from &#x27;../models/class.model&#x27;;
 @Injectable()
 export class SchoolService {
   user$: Observable&lt;firebase.User&gt;;
   private userCollection: string &#x3D; &#x27;users&#x27;;
+  private classesCollection: string &#x3D; &#x27;courses&#x27;;
   private currentScore: string &#x3D; &#x27;currentGrades&#x27;;
   private usersDb: AngularFireList&lt;User&gt;;
+  classRef: AngularFireList&lt;any&gt;;
   constructor(
     public afAuth: AngularFireAuth,
     private afDatabase: AngularFireDatabase,
@@ -774,8 +1266,9 @@ export class SchoolService {
       })
     );
     this.usersDb &#x3D; this.afDatabase.list&lt;User&gt;(&#x60;${this.userCollection}&#x60;, (ref) &#x3D;&gt;
-      ref.orderByChild(&#x27;name/fullName&#x27;)
+      ref.orderByChild(&#x27;name/familyName&#x27;)
     );
+    this.classRef &#x3D; this.afDatabase.list(this.classesCollection);
   }
 
   getAuthState(): Observable&lt;firebase.User&gt; {
@@ -795,7 +1288,6 @@ export class SchoolService {
   getUsersWithQuery(queryParams: QueryParams): Observable&lt;User[]&gt; {
     console.log(queryParams.grade)
     return this.afDatabase.list&lt;User&gt;(&#x60;${this.userCollection}&#x60;).valueChanges().pipe(map(users &#x3D;&gt; users.filter(x &#x3D;&gt; x.grade &#x3D;&#x3D; queryParams.grade)));
-    return this.usersDb.valueChanges().pipe(map(users &#x3D;&gt; users.filter(x &#x3D;&gt; x.grade &#x3D;&#x3D; queryParams.grade)))
   }
   getUser(id: string): Observable&lt;User&gt; {
     return this.afDatabase.object&lt;User&gt;(&#x60;${this.userCollection}/${id}&#x60;).valueChanges();
@@ -807,6 +1299,31 @@ export class SchoolService {
     return await this.afDatabase.object&lt;User&gt;(&#x60;${this.userCollection}/${id}&#x60;)
       .update(user)
       .then()
+  }
+  async createClass(course: Class) {
+    const dbKey &#x3D; this.afDatabase.createPushId();
+    const ref &#x3D; await this.afDatabase.object(&#x60;${this.classesCollection}/${dbKey}&#x60;);
+    ref.set({ ...course, id: dbKey }).then(() &#x3D;&gt; { return { ...course, id: dbKey } })
+  }
+  async updateClass(id: string, changes: Partial&lt;Class&gt;): Promise&lt;Class&gt; {
+    return await this.afDatabase.object&lt;Class&gt;(&#x60;${this.classesCollection}/${id}&#x60;)
+      .update(changes)
+      .then()
+  }
+  getClasses(): Observable&lt;Class[]&gt; {
+    return this.afDatabase.list&lt;Class&gt;(&#x60;${this.classesCollection}&#x60;).valueChanges();
+  }
+  getClassesWithQuery(queryParams: QueryParams): Observable&lt;Class[]&gt; {
+    return this.afDatabase.list&lt;Class&gt;(&#x60;${this.classesCollection}&#x60;).valueChanges().pipe(map(users &#x3D;&gt; users.filter(x &#x3D;&gt; x.grade &#x3D;&#x3D; queryParams.grade)));
+  }
+  getClassById(id: string): Observable&lt;Class&gt; {
+    return this.afDatabase.object&lt;Class&gt;(&#x60;${this.classesCollection}/${id}&#x60;).valueChanges();
+  }
+  create(course: Class): Observable&lt;Class&gt; {
+    const dbKey &#x3D; this.afDatabase.createPushId();
+    console.log(dbKey)
+    this.classRef.push({ ...course })
+    return this.afDatabase.object&lt;Class&gt;(&#x60;${this.classesCollection}/${dbKey}&#x60;).valueChanges()
   }
 }
 

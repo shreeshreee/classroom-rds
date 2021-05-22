@@ -1,6 +1,7 @@
 import { from } from 'rxjs';
 
 import { AboutComponent } from './about/about.component';
+import { AnimatedTextComponent } from './animated-text/animated-text.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { CodeConductSchoolComponent } from './code-conduct-school/code-conduct-school.component';
 import { CodeConductComponent } from './code-conduct/code-conduct.component';
@@ -19,6 +20,7 @@ import { PrimariaComponent } from './primaria/primaria.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { RemoteLearningComponent } from './remote-learning/remote-learning.component';
 import { RemoveConfirmComponent } from './remove-confirm/remove-confirm.component';
+import { ReopenningComponent } from './reopenning/reopenning.component';
 import { SecundariaComponent } from './secundaria/secundaria.component';
 import { SnackComponent } from './snack/snack.component';
 import { TermsComponent } from './terms/terms.component';
@@ -30,6 +32,7 @@ import { YoutubeComponent } from './youtube/youtube.component';
 
 export const sharedComponents: any[] = [
   AboutComponent,
+  AnimatedTextComponent,
   BreadcrumbComponent,
   CodeConductComponent,
   CodeConductSchoolComponent,
@@ -48,6 +51,7 @@ export const sharedComponents: any[] = [
   PrivacyPolicyComponent,
   RemoteLearningComponent,
   RemoveConfirmComponent,
+  ReopenningComponent,
   SecundariaComponent,
   SnackComponent,
   TermsComponent,
@@ -58,6 +62,7 @@ export const sharedComponents: any[] = [
 ];
 
 export * from './about/about.component';
+export * from './animated-text/animated-text.component';
 export * from './breadcrumb/breadcrumb.component';
 export * from './code-conduct-school/code-conduct-school.component';
 export * from './code-conduct/code-conduct.component';
@@ -74,6 +79,7 @@ export * from './primaria/primaria.component';
 export * from './privacy-policy/privacy-policy.component';
 export * from './remote-learning/remote-learning.component';
 export * from './remove-confirm/remove-confirm.component';
+export * from './animated-text/animated-text.component';
 export * from './secundaria/secundaria.component';
 export * from './snack/snack.component';
 export * from './terms/terms.component';
