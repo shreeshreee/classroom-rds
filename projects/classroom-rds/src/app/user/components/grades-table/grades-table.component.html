@@ -14,7 +14,8 @@
     <!-- Name Column -->
     <ng-container matColumnDef="unidad1">
       <mat-header-cell *matHeaderCellDef>Unidad 1</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.unit1==0?'-':element.unit1}} </mat-cell>
+      <mat-cell class="text-{{element.unit1<6?'danger':'dark'}}" *matCellDef="let element">
+        {{element.unit1==0?'-':element.unit1}} </mat-cell>
       <mat-footer-cell *matFooterCellDef>
         {{getAverage()[0]==0?'-':getAverage()[0]|number}}
       </mat-footer-cell>
@@ -22,13 +23,15 @@
 
     <ng-container matColumnDef="unidad2">
       <mat-header-cell *matHeaderCellDef>Unidad 2</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.unit2==0?'-':element.unit2}}</mat-cell>
+      <mat-cell class="text-{{element.unit2<6?'danger':'dark'}}" *matCellDef="let element">
+        {{element.unit2==0?'-':element.unit2}}</mat-cell>
       <mat-footer-cell *matFooterCellDef> {{getAverage()[1]==0?'-':getAverage()[1]|number}} </mat-footer-cell>
     </ng-container>
 
     <ng-container matColumnDef="unidad3">
       <mat-header-cell *matHeaderCellDef>Unidad 3</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.unit3==0?'-':element.unit3}}</mat-cell>
+      <mat-cell class="text-{{element.unit3<6?'danger':'dark'}}" *matCellDef="let element">
+        {{element.unit3==0?'-':element.unit3}}</mat-cell>
       <mat-footer-cell *matFooterCellDef> {{getAverage()[2]==0?'-':getAverage()[2]|number}}</mat-footer-cell>
     </ng-container>
 

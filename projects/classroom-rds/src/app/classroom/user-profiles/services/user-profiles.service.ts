@@ -22,7 +22,7 @@ export class UserProfilesService {
     // Retrieve the GoogleUser object for the current user.
     const googleAuth: gapi.auth2.GoogleAuth = gapi.auth2.getAuthInstance();
     const googleUser: gapi.auth2.GoogleUser = googleAuth.currentUser.get();
-    const isAuthorized = googleUser.hasGrantedScopes(environment.gapiClientConfig.classroomScopes);
+    const isAuthorized = this.hasAccessScopes(googleAuth);
     if (!isAuthorized) {
       const option: gapi.auth2.SigninOptionsBuilder = new gapi.auth2.SigninOptionsBuilder();
       option.setScope(environment.gapiClientConfig.classroomScopes);

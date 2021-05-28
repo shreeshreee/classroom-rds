@@ -1,0 +1,20 @@
+<div fxLayout="row wrap" fxLayoutAlign="space-between center">
+  <h2 mat-dialog-title>Usuario Creado</h2>
+  <fa-icon mat-icon-button [icon]="faTimes" size="lg" (click)="onClose()" [matDialogClose]=""></fa-icon>
+</div>
+<mat-dialog-content>
+  <div *ngIf="data">
+    <div class="mb-n2" fxLayout="row">
+      <p class="col-6">ID:&nbsp;</p>
+      <p class="col-6">{{data.id}}</p>
+    </div>
+    <div class="mb-n2" fxLayout="row">
+      <p class="col-6">Nombre completo:&nbsp;</p>
+      <p class="col-6">{{data.name.fullName}}</p>
+    </div>
+    <div class="mb-n2" fxLayout="row">
+      <p class="col-6">Correo electrónico:&nbsp;</p>
+      <p class="col-6">{{data.primaryEmail}}</p>
+    </div>
+  </div>
+</mat-dialog-content>

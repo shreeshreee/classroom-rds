@@ -5,12 +5,16 @@ import { GroupComponent } from '@rds-admin/components/group/group.component';
 import { UsersGroupsComponent } from '@rds-admin/components/users-groups/users-groups.component';
 import { UsersTableComponent } from '@rds-admin/components/users-table/users-table.component';
 
+import { CreateUserConfirmComponent } from './create-user-confirm/create-user-confirm.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 import { GroupTableComponent } from './group-table/group-table.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 
 export const adminComponents: any[] = [
   AddUserGroupComponent,
   AdminWellcomeComponent,
+  CreateUserComponent,
+  CreateUserConfirmComponent,
   GroupComponent,
   GroupDialogComponent,
   GroupTableComponent,
@@ -27,5 +31,8 @@ export * from '@rds-admin/components/group-dialog/group-dialog.component';
 export * from '@rds-admin/components/users-groups/users-groups.component';
 export * from '@rds-admin/components/users-table/users-table.component';
 export * from '@rds-admin/components/user-details/user-details.component';
+export * from '@rds-admin/components/create-user/create-user.component';
+export * from '@rds-admin/components/create-user-confirm/create-user-confirm.component';
+
 
 

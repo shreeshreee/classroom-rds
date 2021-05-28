@@ -12,6 +12,7 @@ import * as fromUserProfile from '@rds-store/user-profile';
 
 import * as fromUserDomain from '@rds-admin/state/user-domain';
 import * as fromGroup from '@rds-admin/state/group';
+
 import * as fromClass from '@rds-store/class';
 import * as fromStudentSubmission from '@rds-store/student-submission';
 
@@ -54,7 +55,6 @@ export const entityMetadata: EntityMetadataMap = {
       optimisticUpdate: true,
       optimisticSaveEntities: true
     },
-
   },
   [fromGroup.entityCollectionName]: {
     entityDispatcherOptions: {

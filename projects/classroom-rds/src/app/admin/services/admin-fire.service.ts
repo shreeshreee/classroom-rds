@@ -51,12 +51,17 @@ export class AdminFireService {
     return this.afStore.collection<UserDomain>(`${this.userCollection}`).valueChanges()
   }
 
-  async createUser(user: UserDomain): Promise<void> {
+  /* async createUser(user: UserDomain): Promise<void> {
     const key = user.id;
     return await this.afStore.collection('users').doc(key).set(user, { merge: true });
     //return await this.afDatabase.object<UserDomain>(`${this.userCollection}/${key}`).update(user);
+  } */
+  async createUser(user: any) {
+    const key = user.id;
+    return await this.afStore.collection(`${this.userCollection}`).doc(key).set(user, { merge: true }).then(
+      () => this.afDatabase.object<User>(`${this.userCollection}/${user.id}`).update(user)
+    );
   }
-
   async createGroup(group: Group) {
     const key = group.id;
     console.log(group.name)

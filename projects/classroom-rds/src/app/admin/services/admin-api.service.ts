@@ -4,15 +4,46 @@ import { QueryParams } from '@ngrx/data';
 
 import { environment } from '@rds-env/environment';
 
-import { GroupResponse } from '../models/users-domain.model';
+import { UserDomain, UserResponse } from '@rds-admin/models/users-domain.model';
 
-import { UserDomain, UserResponse } from '~/app/admin/models/users-domain.model';
+import { GroupResponse } from '../models/users-domain.model';
 
 declare var gapi: any;
 @Injectable()
 export class AdminApiService {
-  handleAdminLoad() {
+  constructor() { }
+  private hasAccessScopes(googleAuth: gapi.auth2.GoogleAuth): boolean {
+    return (
+      googleAuth &&
+      googleAuth.currentUser
+        .get()
+        .hasGrantedScopes(environment.gapiClientConfig.adminScopes)
+    );
+  }
+  async handleAdminLoad(): Promise<void> {
     // Retrieve the GoogleUser object for the current user.
+    const googleAuth: gapi.auth2.GoogleAuth = gapi.auth2.getAuthInstance();
+    const googleUser: gapi.auth2.GoogleUser = googleAuth.currentUser.get();
+    const isAuthorized = this.hasAccessScopes(googleAuth);
+    if (!isAuthorized) {
+      const option: gapi.auth2.SigninOptionsBuilder = new gapi.auth2.SigninOptionsBuilder();
+      option.setScope(environment.gapiClientConfig.adminScopes);
+      await googleUser.grant(option).then(
+        (success) => {
+          //alert(JSON.stringify({ message: "success", value: success }));
+        },
+        (fail) => {
+          alert(JSON.stringify({ message: 'fail', value: fail }));
+        });
+    }
+    gapi.client.load('admin', 'directory_v1', () => {
+      // alert('loaded classroom');
+    });
+  }
+  /* handleAdminLoad() {
+    // Retrieve the GoogleUser object for the current user.
+     this._googleAuth = gapi.auth2.getAuthInstance();
+    this._googleUser = this._googleAuth.currentUser.get();
     const googleAuth: gapi.auth2.GoogleAuth = gapi.auth2.getAuthInstance();
     const googleUser: gapi.auth2.GoogleUser = googleAuth.currentUser.get();
     const isAuthorized = googleUser.hasGrantedScopes(environment.gapiClientConfig.adminScopes);
@@ -24,12 +55,29 @@ export class AdminApiService {
           //alert(JSON.stringify({ message: "success", value: success }));
         },
         (fail) => {
-          alert(JSON.stringify({ message: 'fail', value: fail }));
+          confirm(JSON.stringify({ message: 'fail', value: fail }));
         });
       gapi.client.load('admin', 'directory_v1', () => {
         //alert('loaded admin directory');
       });
     }
+  } */
+
+  async addUser(user: Partial<UserDomain>) {
+    const response: gapi.client.Response<any> = await gapi.client.directory.users.insert({
+
+      password: user.password,
+      primaryEmail: user.primaryEmail,
+      name: {
+        givenName: user.name.givenName,
+        familyName: user.name.familyName
+      },
+      changePasswordAtNextLogin: false,
+      orgUnitPath: user.orgUnitPath
+    }
+    );
+    console.log(response.result)
+    return response.result;
   }
 
   async listAllUsers() {

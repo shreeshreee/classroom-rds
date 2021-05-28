@@ -2,7 +2,7 @@ import { CourseLevel } from "~/app/auth/models/user.enum";
 
 export interface UserDomain {
   /** A list of the user's addresses. The maximum allowed data size is 10Kb. */
-  addresses: [{
+  addresses?: [{
     /** The address type. Acceptable values: custom, home, other, work. */
     type: 'custom' | 'home' | 'other' | 'work',
     /** The street address, such as 1600 Amphitheatre Parkway. Whitespace within the string is ignored; however, newlines are significant. */
@@ -31,23 +31,23 @@ export interface UserDomain {
     country: string
   }];
   /** Output only. This property is true if the user has completed an initial login and accepted the Terms of Service agreement. */
-  agreedToTerms: boolean;
+  agreedToTerms?: boolean;
   /**  Output only. asps.list of the user's alias email addresses. */
-  aliases: string[];
+  aliases?: string[];
   /**Indicates if user is archived. */
-  archived: boolean;
+  archived?: boolean;
   /** Indicates if the user is forced to change their password at next login. This setting doesn't apply when the user signs in via a third-party identity provider. */
-  changePasswordAtNextLogin: boolean;
+  changePasswordAtNextLogin?: boolean;
   /**Output only. The time the user's account was created. The value is in ISO 8601 date and time format. The time is the complete date plus hours, minutes, and seconds in the form YYYY-MM-DDThh:mm:ssTZD. For example, 2010-04-05T17:30:04+01:00. */
-  creationTime: string;
+  creationTime?: string;
   /** Custom fields of the user. customSchemas.(key) is a nested object. customSchemas.(key).(key) can be any value. */
-  customSchemas: any;
+  customSchemas?: any;
   /** Output only. The customer ID to retrieve all account users. You can use the alias my_customer to represent your account's customerId. As a reseller administrator, you can use the resold customer account's customerId. To get a customerId, use the account's primary domain in the domain parameter of a users.list request. */
-  customerId: string;
+  customerId?: string;
   /** Output only. The time the user's account was deleted. The value is in ISO 8601 date and time format. The time is the complete date plus hours, minutes, and seconds in the form YYYY-MM-DDThh:mm:ssTZD. For example 2010-04-05T17:30:04+01:00. */
-  deletionTime: string;
+  deletionTime?: string;
   /** A list of the user's email addresses. The maximum allowed data size is 10Kb. */
-  emails: [
+  emails?: [
     {
       /** The user's email address. Also serves as the email ID. This value can be the user's primary email address or an alias. */
       address: string,
@@ -60,9 +60,9 @@ export interface UserDomain {
     }
   ];
   /** Output only. ETag of the resource. */
-  etag: string;
+  etag?: string;
   /** A list of external IDs for the user, such as an employee or network ID. The maximum allowed data size is 2Kb.   */
-  externalIds: [
+  externalIds?: [
     {
       /** If the external ID type is custom, this property holds the custom type. */
       customType: string,
@@ -73,13 +73,13 @@ export interface UserDomain {
     }
   ];
   /** The user's gender. The maximum allowed data size for this field is 1Kb. */
-  gender: any;
+  gender?: any;
   /** Stores the hash format of the password property. We recommend sending the password property value as a base 16 bit hexadecimal-encoded hash value. Set the hashFunction values as either the SHA-1, MD5, or crypt hash format. */
-  hashFunction: string;
+  hashFunction?: string;
   /** The unique ID for the user. A user id can be used as a user request URI's userKey. */
-  id: string;
+  id?: string;
   /** The user's Instant Messenger (IM) accounts. A user account can have multiple ims properties. But, only one of these ims properties can be the primary IM contact. The maximum allowed data size is 2Kb. */
-  ims: [{
+  ims?: [{
     /** If the protocol value is custom_protocol, this property holds the custom protocol's string. */
     customProtocol: string,
     /** If the IM type is custom, this property holds the custom type string. */
@@ -94,21 +94,21 @@ export interface UserDomain {
     type: 'custom' | 'home' | 'other' | 'work',
   }];
   /** Indicates if the user's profile is visible in the Google Workspace global address list when the contact sharing feature is enabled for the domain. For more information about excluding user profiles, see the administration help center. */
-  includeInGlobalAddressList: boolean;
+  includeInGlobalAddressList?: boolean;
   /** If true, the user's IP address is whitelisted. */
-  ipWhitelisted: boolean;
+  ipWhitelisted?: boolean;
   /** Output only. Indicates a user with super admininistrator privileges. The isAdmin property can only be edited in the Make a user an administrator operation ( makeAdmin method). If edited in the user insert or update methods, the edit is ignored by the API service. */
-  isAdmin: boolean;
+  isAdmin?: boolean;
   /** Output only. Indicates if the user is a delegated administrator. Delegated administrators are supported by the API but cannot create or undelete users, or make users administrators. These requests are ignored by the API service. Roles and privileges for administrators are assigned using the Admin console. */
-  isDelegatedAdmin: boolean;
+  isDelegatedAdmin?: boolean;
   /** Output only. Is enrolled in 2-step verification (Read-only) */
-  isEnforcedIn2Sv: boolean;
+  isEnforcedIn2Sv?: boolean;
   /** Output only. Is 2-step verification enforced (Read-only) */
-  isEnrolledIn2Sv: boolean;
+  isEnrolledIn2Sv?: boolean;
   /** Output only. Indicates if the user's Google mailbox is created. This property is only applicable if the user has been assigned a Gmail license. */
-  isMailboxSetup: boolean;
+  isMailboxSetup?: boolean;
   /** A list of the user's keywords. The maximum allowed data size is 1Kb. */
-  keywords: [{
+  keywords?: [{
     /** Custom Type. */
     customType: string,
     /** Each entry can have a type which indicates standard type of that entry. For example, keyword could be of type occupation or outlook. In addition to the standard type, an entry can have a custom type and can give it any name. Such types should have the CUSTOM value as type and also have a customType value. Acceptable values: custom, mission, occupation, outlook. */
@@ -117,9 +117,9 @@ export interface UserDomain {
     value: string
   }];
   /** Output only. The type of the API resource. For Users resources, the value is admin#directory#user. */
-  kind: string;
+  kind?: string;
   /** A list of the user's languages. The maximum allowed data size is 1Kb. */
-  languages: [
+  languages?: [
     {
       /** Other language. A user can provide their own language name if there is no corresponding Google III language code. If this is set, LanguageCode can't be set. */
       customLanguage: string,
@@ -128,9 +128,9 @@ export interface UserDomain {
     }
   ];
   /** Output only. The last time the user logged into the user's account. The value is in ISO 8601 date and time format. The time is the complete date plus hours, minutes, and seconds in the form YYYY-MM-DDThh:mm:ssTZD. For example, 2010-04-05T17:30:04+01:00. */
-  lastLoginTime: string;
+  lastLoginTime?: string;
   /** A list of the user's locations. The maximum allowed data size is 10Kb. */
-  locations: [{
+  locations?: [{
     /** Textual location. This is most useful for display purposes to concisely describe the location. For example, Mountain View, CA or Near Seattle. */
     area: string,
     /** Building identifier. */
@@ -147,7 +147,7 @@ export interface UserDomain {
     type: 'custom' | 'default' | 'desk',
   }];
   /** Holds the given and family names of the user, and the read-only fullName value. The maximum number of characters in the givenName and in the familyName values is 60. In addition, name values support unicode/UTF-8 characters, and can contain spaces, letters (a-z), numbers (0-9), dashes (-), forward slashes (/), and periods (.). For more information about character usage rules, see the administration help center. Maximum allowed data size for this field is 1Kb. */
-  name: {
+  name?: {
     /** The user's full name formed by concatenating the first and last name values. */
     fullName: string,
     /** The user's last name. Required when creating a user account. */
@@ -156,18 +156,18 @@ export interface UserDomain {
     givenName: string
   };
   /** Output only. asps.list of the user's non-editable alias email addresses. These are typically outside the account's primary domain or sub-domain. */
-  nonEditableAliases: string[];
+  nonEditableAliases?: string[];
   /** Notes for the user as a nested object. */
-  notes: [{
+  notes?: [{
     /** Content type of note, either plain text or HTML. Default is plain text. Acceptable values: text_plain, text_html. */
     contentType: 'text_plain' | 'text_html',
     /** Contents of notes. */
     value: string
   }];
   /** The full path of the parent organization associated with the user. If the parent organization is the top-level, it is represented as a forward slash (/). */
-  orgUnitPath: string;
+  orgUnitPath?: string;
   /** A list of organizations the user belongs to. The maximum allowed data size is 10Kb. */
-  organizations: [
+  organizations?: [
     {
       /** The cost center of the user's organization. */
       costCenter: string,
@@ -196,9 +196,9 @@ export interface UserDomain {
     }
   ];
   /** Stores the password for the user account. The user's password value is required when creating a user account. It is optional when updating a user and should only be provided if the user is updating their account password. A password can contain any combination of ASCII characters. A minimum of 8 characters is required. The maximum length is 100 characters. We recommend sending the password property value as a hexadecimal-encoded hash value and setting hashFunction accordingly. If a hashFunction is specified, the password must be a valid hash key. The password value is never returned in the API's response body. */
-  password: any;
+  password?: any;
   /** A list of the user's phone numbers. The maximum allowed data size is 1Kb. */
-  phones: [{
+  phones?: [{
     /** If the value of type is custom, this property contains the custom type. */
     customType: string,
     /** Indicates if this is the user's primary phone number. A user may only have one primary phone number. */
@@ -209,7 +209,7 @@ export interface UserDomain {
     value: string,
   }];
   /** A list of POSIX account information for the user. */
-  posixAccounts: [{
+  posixAccounts?: [{
     /** A POSIX account field identifier. */
     accountId: string,
     /** The GECOS (user information) for this account. */
@@ -232,20 +232,20 @@ export interface UserDomain {
     username: string
   }];
   /** The user's primary email address. This property is required in a request to create a user account. The primaryEmail must be unique and cannot be an alias of another user. */
-  primaryEmail: string;
+  primaryEmail?: string;
   /** Recovery email of the user. */
-  recoveryEmail: string;
+  recoveryEmail?: string;
   /** Recovery phone of the user. The phone number must be in the E.164 format, starting with the plus sign (+). Example: +16506661212. */
-  recoveryPhone: string;
+  recoveryPhone?: string;
   /** A list of the user's relationships to other users. The maximum allowed data size for this field is 2Kb. */
-  relations: [{
+  relations?: [{
     /** If the value of type is custom, this property contains the custom type. */
     customType: string,
     /** The type of relation. Acceptable values: admin_assistant, assistant, brother, child, custom, domestic_partner, dotted_line_manager, exec_assistant, father, friend, manager, mother, parent, partner, referred_by, relative, sister, spouse. */
     type: 'admin_assistant' | 'assistant' | 'brother' | 'child', 'custom', 'domestic_partner', 'dotted_line_manager', 'exec_assistant', 'father', 'friend', 'manager', 'mother', 'parent', 'partner', 'referred_by', 'relative', 'sister', 'spouse',
   }];
   /** A list of the user's addresses. The maximum allowed data size is 10Kb. A list of SSH public keys. */
-  sshPublicKeys: [{
+  sshPublicKeys?: [{
     /** An expiration time in microseconds since epoch. */
     expirationTimeUsec: number,
     /** A SHA-256 fingerprint of the SSH public key. (Read-only) */
@@ -254,15 +254,15 @@ export interface UserDomain {
     key: string
   }];
   /** Indicates if user is suspended. */
-  suspended: boolean;
+  suspended?: boolean;
   /** Output only. Has the reason a user account is suspended either by the administrator or by Google at the time of suspension. The property is returned only if the suspended property is true. */
-  suspensionReason: string;
+  suspensionReason?: string;
   /** Output only. ETag of the user's photo (Read-only) */
-  thumbnailPhotoEtag: string;
+  thumbnailPhotoEtag?: string;
   /** Output only. Photo Url of the user (Read-only) */
-  thumbnailPhotoUrl: string;
+  thumbnailPhotoUrl?: string;
   /** A list of the user's websites. The maximum allowed data size is 2Kb. */
-  websites: [{
+  websites?: [{
     /** The custom type. Only used if the type is custom. */
     customType: string,
     /** If this is user's primary website or not. */

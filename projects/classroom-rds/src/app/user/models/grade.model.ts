@@ -6,6 +6,9 @@ export interface Score {
   notes1: string;
   notes2: string;
   notes3: string;
+  recover1?: string;
+  recover2?: string;
+  recover3?: string;
   final: number;
   isCourseClose: boolean;
 }
