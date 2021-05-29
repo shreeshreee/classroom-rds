@@ -22,14 +22,14 @@ See Demo app for this project at: [Classroom RDS](https://classroom-rds.web.app)
 
 ## Features
 
-- Angular 11.2
-- Angular Material 11.2 with custom theme and dark theme
-- NGRX State Management 11 (@ngrx/route-store & @ngrx/data)
+- Angular 12
+- Angular Material 12 with custom theme and dark theme
+- NGRX State Management 12 (@ngrx/route-store & @ngrx/data)
 - Angular FontAwesome 5.15.1
 - Angular Flex-layout 11
-- Full Angular PWA
+- Full Angular PWA 12
 - Lasy Loading & SEO.
-- Ngx-bootstrap 6.2.0
+- Ngx-bootstrap 6.2.0 with Bootstrap 4.6.0
 - Google API Auth2 (via GAPI with @types/gapi.auth2) & and Firebase Authentication
 - Google Classroom Client (via GAPI with @types/gapi.client.classroom)
 - Google Firebase for FireHosting
