@@ -27,7 +27,6 @@
             "main": "projects/classroom-rds/src/main.ts",
             "polyfills": "projects/classroom-rds/src/polyfills.ts",
             "tsConfig": "projects/classroom-rds/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/classroom-rds/src/.well-known",
               "projects/classroom-rds/src/assets",
@@ -38,7 +37,13 @@
               "./node_modules/bootstrap/scss/bootstrap.scss",
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {

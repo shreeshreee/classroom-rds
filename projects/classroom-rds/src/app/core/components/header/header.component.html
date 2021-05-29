@@ -14,7 +14,7 @@
       </button>
     </div>
     <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="5px">
-      <span>{{myDate|date:'full':'es-MX'}}</span>
+      <!-- <span>{{myDate|date:'full':'es-MX'}}</span> -->
       <button *ngIf="isOnline && user" mat-icon-button [matMenuTriggerFor]="userMenu">
         <img class="img-fluid rounded-circle" src="{{user.photoUrl}}" />
       </button>
