@@ -31,6 +31,7 @@ import { GroupEntityService } from './state/group/group-entity.service';
 import { UserDomainDataService } from './state/user-domain/user-domain-data.service';
 import { UserDomainEntityService } from './state/user-domain/user-domain-entity.service';
 import { MaterialModule } from '~/app/modules/material.module';
+import { CreateUserErrorComponent } from './components/create-user-error/create-user-error.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MaterialModule } from '~/app/modules/material.module';
     ...adminContainers,
     GroupTableComponent,
     SchoolHomeComponent,
+    CreateUserErrorComponent,
   ],
   imports: [
     CommonModule,

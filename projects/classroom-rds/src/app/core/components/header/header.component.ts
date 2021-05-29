@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { DatePipe } from '@angular/common';
 
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import {
@@ -33,6 +34,7 @@ import { LayoutService } from '../../services';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
+  providers: [DatePipe]
 })
 export class HeaderComponent implements OnInit {
   @Input() isHandset: boolean;
@@ -40,6 +42,8 @@ export class HeaderComponent implements OnInit {
   @Input() isOnline: boolean;
   @Input() isAdmin: boolean;
   @Input() isTeacher: boolean;
+  myDate: Date;
+
   isDoorOpen: boolean = false;
   faBars = faBars;
   faSignIn = faSignInAlt;
@@ -62,7 +66,10 @@ export class HeaderComponent implements OnInit {
     private subService: SubscriptionService,
     private dialog: MatDialog,
     private store: Store<AppState>,
-  ) { }
+    private datePipe: DatePipe,
+  ) {
+    this.myDate = new Date();
+  }
 
   ngOnInit() {
   }

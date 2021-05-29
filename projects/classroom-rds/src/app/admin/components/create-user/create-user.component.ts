@@ -19,6 +19,7 @@ import { CourseLevel, SchoolLevel } from './../../../auth/models/user.enum';
 })
 export class CreateUserComponent implements OnInit {
   faTimes = faTimes;
+  hide: boolean = false;
   newUser: Observable<UserDomain>;
   clevelKeys;
   clevels = CourseLevel;
@@ -34,14 +35,8 @@ export class CreateUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.data.name.givenName = 'Alumno';
-    this.data.name.familyName = 'RDS';
-    this.data.primaryEmail = 'alumno10@rafaeldiazserdan.net';
-    this.data.level = 'Secundaria';
-    this.data.grade = '1° de Secundaria';
-    this.data.role = 'Alumnos';
-    this.data.password = 'rafael2021';
   }
+
   onClose() {
     this.dialogRef.close(this.data);
   }
