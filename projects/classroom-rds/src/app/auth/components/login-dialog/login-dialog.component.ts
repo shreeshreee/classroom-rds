@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { faDoorOpen, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
@@ -15,11 +15,13 @@ import { AppState } from '@rds-store/app.state';
   styleUrls: ['./login-dialog.component.scss']
 })
 export class LoginDialogComponent implements OnInit {
+  isDoorOpen: boolean = true;
   faGoogle = faGoogle;
   faTimes = faTimes;
   faDoorOpen = faDoorOpen;
   constructor(
     private dialogRef: MatDialogRef<LoginDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data,
     private store: Store<AppState>
   ) { }
 
@@ -29,8 +31,11 @@ export class LoginDialogComponent implements OnInit {
     this.store.dispatch(
       fromAuthActions.signIn()
     );
+    this.data.isDoorOpen = false;
   }
+
   close() {
+    this.data.isDoorOpen = false;
     this.dialogRef.close();
   }
 }

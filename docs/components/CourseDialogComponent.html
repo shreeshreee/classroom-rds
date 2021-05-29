@@ -62,7 +62,7 @@
     <h3>Fichero</h3>
 </p>
 <p class="comment">
-    <code>projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts</code>
+    <code>projects/classroom-rds/src/app/rooms/components/course-dialog/course-dialog.component.ts</code>
 </p>
 
 
@@ -131,61 +131,17 @@
                                 <a href="#data">data</a>
                             </li>
                             <li>
-                                <a href="#faArchived">faArchived</a>
-                            </li>
-                            <li>
-                                <a href="#faBan">faBan</a>
-                            </li>
-                            <li>
-                                <a href="#faChalkboardTeacher">faChalkboardTeacher</a>
-                            </li>
-                            <li>
-                                <a href="#facheck">facheck</a>
-                            </li>
-                            <li>
-                                <a href="#faCheckCircle">faCheckCircle</a>
-                            </li>
-                            <li>
-                                <a href="#faElipsisV">faElipsisV</a>
-                            </li>
-                            <li>
-                                <a href="#faExclamation">faExclamation</a>
-                            </li>
-                            <li>
-                                <a href="#faHandShake">faHandShake</a>
-                            </li>
-                            <li>
-                                <a href="#faHouseUser">faHouseUser</a>
-                            </li>
-                            <li>
-                                <a href="#faScrewDriver">faScrewDriver</a>
-                            </li>
-                            <li>
-                                <a href="#faStudents">faStudents</a>
-                            </li>
-                            <li>
-                                <a href="#faTeachers">faTeachers</a>
-                            </li>
-                            <li>
-                                <a href="#faThumbsdown">faThumbsdown</a>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialogRef">dialogRef</a>
                             </li>
                             <li>
                                 <a href="#faTimes">faTimes</a>
                             </li>
                             <li>
-                                <a href="#faTimesCircle">faTimesCircle</a>
+                                <a href="#loading$">loading$</a>
                             </li>
                             <li>
-                                <a href="#keys">keys</a>
-                            </li>
-                            <li>
-                                <a href="#levelKeys">levelKeys</a>
-                            </li>
-                            <li>
-                                <a href="#levels">levels</a>
-                            </li>
-                            <li>
-                                <a href="#states">states</a>
+                                <a href="#teachers$">teachers$</a>
                             </li>
                         </ul>
                     </td>
@@ -203,13 +159,10 @@
                                 <a href="#close">close</a>
                             </li>
                             <li>
+                                <a href="#handleCourseDelete">handleCourseDelete</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit">ngOnInit</a>
-                            </li>
-                            <li>
-                                <a href="#onSectionSelection">onSectionSelection</a>
-                            </li>
-                            <li>
-                                <a href="#onStateSelection">onStateSelection</a>
                             </li>
                         </ul>
                     </td>
@@ -229,12 +182,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(dialogRef: <a href="../components/CourseDialogComponent.html">MatDialogRef<CourseDialogComponent></a>, data)</code>
+<code>constructor(roomService: <a href="../injectables/RoomService.html">RoomService</a>, dialogRef: MatDialogRef<CourseDialogComponent>, userEntityService: <a href="../injectables/UserEntityService.html">UserEntityService</a>, data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="44" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:44</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="25" class="link-to-prism">projects/classroom-rds/src/app/rooms/components/course-dialog/course-dialog.component.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -252,10 +205,34 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
+                                                        <td>roomService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RoomService.html" target="_self" >RoomService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
                                                         <td>dialogRef</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../components/CourseDialogComponent.html" target="_self" >MatDialogRef&lt;CourseDialogComponent&gt;</a></code>
+                                                                    <code>MatDialogRef&lt;CourseDialogComponent&gt;</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userEntityService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserEntityService.html" target="_self" >UserEntityService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -267,6 +244,7 @@
                                                         <td>data</td>
                                                   
                                                         <td>
+                                                                        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -314,8 +292,47 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="63"
-                            class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:63</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="42"
+                            class="link-to-prism">projects/classroom-rds/src/app/rooms/components/course-dialog/course-dialog.component.ts:42</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleCourseDelete"></a>
+                    <span class="name">
+                        <b>
+                            handleCourseDelete
+                        </b>
+                        <a href="#handleCourseDelete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>handleCourseDelete()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="37"
+                            class="link-to-prism">projects/classroom-rds/src/app/rooms/components/course-dialog/course-dialog.component.ts:37</a></div>
                 </td>
             </tr>
 
@@ -353,8 +370,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="53"
-                            class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:53</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="35"
+                            class="link-to-prism">projects/classroom-rds/src/app/rooms/components/course-dialog/course-dialog.component.ts:35</a></div>
                 </td>
             </tr>
 
@@ -365,138 +382,6 @@
                     <div class="io-description">
                         <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="onSectionSelection"></a>
-                    <span class="name">
-                        <b>
-                            onSectionSelection
-                        </b>
-                        <a href="#onSectionSelection"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>onSectionSelection(event)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="59"
-                            class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:59</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parámetros :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Nombre</td>
-                                    <td>Opcional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>event</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="onStateSelection"></a>
-                    <span class="name">
-                        <b>
-                            onStateSelection
-                        </b>
-                        <a href="#onStateSelection"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>onStateSelection(event)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="56"
-                            class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:56</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parámetros :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Nombre</td>
-                                    <td>Opcional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>event</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
                     </div>
                 </td>
             </tr>
@@ -523,6 +408,12 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
                             <b>Decoradores : </b>
                             <br />
                             <code>
@@ -532,7 +423,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="47" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:47</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="30" class="link-to-prism">projects/classroom-rds/src/app/rooms/components/course-dialog/course-dialog.component.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -543,334 +434,24 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="faArchived"></a>
+                        <a name="dialogRef"></a>
                         <span class="name">
                             <b>
-                            faArchived</b>
-                            <a href="#faArchived"><span class="icon ion-ios-link"></span></a>
+                                <span class="modifier">Public</span>
+                            dialogRef</b>
+                            <a href="#dialogRef"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>faFileArchive</code>
+                            <i>Tipo : </i>    <code>MatDialogRef&lt;CourseDialogComponent&gt;</code>
+
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="38" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:38</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="faBan"></a>
-                        <span class="name">
-                            <b>
-                            faBan</b>
-                            <a href="#faBan"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>faBan</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="29" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:29</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="faChalkboardTeacher"></a>
-                        <span class="name">
-                            <b>
-                            faChalkboardTeacher</b>
-                            <a href="#faChalkboardTeacher"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>faChalkboardTeacher</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="28" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:28</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="facheck"></a>
-                        <span class="name">
-                            <b>
-                            facheck</b>
-                            <a href="#facheck"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>faCheck</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="32" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:32</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="faCheckCircle"></a>
-                        <span class="name">
-                            <b>
-                            faCheckCircle</b>
-                            <a href="#faCheckCircle"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>faCheckCircle</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="26" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:26</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="faElipsisV"></a>
-                        <span class="name">
-                            <b>
-                            faElipsisV</b>
-                            <a href="#faElipsisV"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>faEllipsisV</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="30" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:30</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="faExclamation"></a>
-                        <span class="name">
-                            <b>
-                            faExclamation</b>
-                            <a href="#faExclamation"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>faExclamation</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="39" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:39</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="faHandShake"></a>
-                        <span class="name">
-                            <b>
-                            faHandShake</b>
-                            <a href="#faHandShake"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>faHandshakeAltSlash</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="35" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:35</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="faHouseUser"></a>
-                        <span class="name">
-                            <b>
-                            faHouseUser</b>
-                            <a href="#faHouseUser"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>faHouseUser</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="31" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:31</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="faScrewDriver"></a>
-                        <span class="name">
-                            <b>
-                            faScrewDriver</b>
-                            <a href="#faScrewDriver"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>faScrewdriver</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="36" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:36</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="faStudents"></a>
-                        <span class="name">
-                            <b>
-                            faStudents</b>
-                            <a href="#faStudents"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>faUserGraduate</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="33" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:33</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="faTeachers"></a>
-                        <span class="name">
-                            <b>
-                            faTeachers</b>
-                            <a href="#faTeachers"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>faUserTie</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="34" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:34</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="faThumbsdown"></a>
-                        <span class="name">
-                            <b>
-                            faThumbsdown</b>
-                            <a href="#faThumbsdown"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>faThumbsDown</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="37" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:37</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="28" class="link-to-prism">projects/classroom-rds/src/app/rooms/components/course-dialog/course-dialog.component.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -896,7 +477,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="40" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:40</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="23" class="link-to-prism">projects/classroom-rds/src/app/rooms/components/course-dialog/course-dialog.component.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -907,22 +488,23 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="faTimesCircle"></a>
+                        <a name="loading$"></a>
                         <span class="name">
                             <b>
-                            faTimesCircle</b>
-                            <a href="#faTimesCircle"><span class="icon ion-ios-link"></span></a>
+                            loading$</b>
+                            <a href="#loading$"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>faTimesCircle</code>
+                            <i>Tipo : </i>    <code>Observable&lt;boolean&gt;</code>
+
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="27" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:27</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="25" class="link-to-prism">projects/classroom-rds/src/app/rooms/components/course-dialog/course-dialog.component.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -933,90 +515,23 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="keys"></a>
+                        <a name="teachers$"></a>
                         <span class="name">
                             <b>
-                            keys</b>
-                            <a href="#keys"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="41" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:41</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="levelKeys"></a>
-                        <span class="name">
-                            <b>
-                            levelKeys</b>
-                            <a href="#levelKeys"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="42" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:42</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="levels"></a>
-                        <span class="name">
-                            <b>
-                            levels</b>
-                            <a href="#levels"><span class="icon ion-ios-link"></span></a>
+                            teachers$</b>
+                            <a href="#teachers$"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>CourseLevel</code>
+                            <i>Tipo : </i>        <code><a href="../interfaces/User.html" target="_self" >Observable&lt;User[]&gt;</a></code>
+
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="43" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:43</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="states"></a>
-                        <span class="name">
-                            <b>
-                            states</b>
-                            <a href="#states"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Valor por defecto : </i><code>CourseState</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="44" class="link-to-prism">projects/classroom-rds/src/app/classroom/courses/components/course-dialog/course-dialog.component.ts:44</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="24" class="link-to-prism">projects/classroom-rds/src/app/rooms/components/course-dialog/course-dialog.component.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -1029,24 +544,21 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Inject, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { COMMA, ENTER } from &#x27;@angular/cdk/keycodes&#x27;;
+import { Component, Inject, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { MatChipInputEvent } from &#x27;@angular/material/chips&#x27;;
 import { MatDialogRef, MAT_DIALOG_DATA } from &#x27;@angular/material/dialog&#x27;;
 
-import { faCheckCircle, faFileArchive, faThumbsDown, faTimesCircle } from &#x27;@fortawesome/free-regular-svg-icons&#x27;;
-import {
-  faBan,
-  faChalkboardTeacher,
-  faCheck, faEllipsisV,
-  faExclamation,
-  faHandshakeAltSlash,
-  faHouseUser, faScrewdriver,
-  faTimes, faUserGraduate,
-  faUserTie
-} from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
+import { faTimes } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
 
-import { CourseState } from &#x27;@rds-classroom/models/classroom.enum&#x27;;
+import { UserEntityService } from &#x27;@rds-store/user/user-entity.service&#x27;;
 
-import { CourseLevel } from &#x27;~/app/auth/models/user.enum&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { map } from &#x27;rxjs/operators&#x27;;
+
+import { RoomService } from &#x27;../../services/room.service&#x27;;
+
+import { User } from &#x27;~/app/auth/models/user.model&#x27;;
 
 
 @Component({
@@ -1054,108 +566,64 @@ import { CourseLevel } from &#x27;~/app/auth/models/user.enum&#x27;;
   styleUrls: [&#x27;./course-dialog.component.scss&#x27;]
 })
 export class CourseDialogComponent implements OnInit {
-  faCheckCircle &#x3D; faCheckCircle;
-  faTimesCircle &#x3D; faTimesCircle;
-  faChalkboardTeacher &#x3D; faChalkboardTeacher;
-  faBan &#x3D; faBan;
-  faElipsisV &#x3D; faEllipsisV;
-  faHouseUser &#x3D; faHouseUser;
-  facheck &#x3D; faCheck;
-  faStudents &#x3D; faUserGraduate;
-  faTeachers &#x3D; faUserTie;
-  faHandShake &#x3D; faHandshakeAltSlash;
-  faScrewDriver &#x3D; faScrewdriver;
-  faThumbsdown &#x3D; faThumbsDown;
-  faArchived &#x3D; faFileArchive;
-  faExclamation &#x3D; faExclamation;
   faTimes &#x3D; faTimes;
-  keys;
-  levelKeys;
-  levels &#x3D; CourseLevel;
-  states &#x3D; CourseState;
+  teachers$: Observable&lt;User[]&gt;;
+  loading$: Observable&lt;boolean&gt;;
   constructor(
-    private dialogRef: MatDialogRef&lt;CourseDialogComponent&gt;,
-    @Inject(MAT_DIALOG_DATA) public data
-  ) {
-    this.levelKeys &#x3D; Object.keys(this.levels).filter(Number);
-    this.keys &#x3D; Object.keys(this.states).filter(Number);
+    private roomService: RoomService,
+    public dialogRef: MatDialogRef&lt;CourseDialogComponent&gt;,
+    private userEntityService: UserEntityService,
+    @Inject(MAT_DIALOG_DATA) public data: any) {
+    this.loading$ &#x3D; this.userEntityService.loading$;
+    this.teachers$ &#x3D; this.userEntityService.entities$.pipe(map(users &#x3D;&gt; users.filter(x &#x3D;&gt; x.isTeacher &#x3D;&#x3D; true)))
   }
 
   ngOnInit(): void {
-
   }
-  onStateSelection(event) {
-    this.data.courseState &#x3D; event.key;
-  }
-  onSectionSelection(event) {
-    this.data.section &#x3D; event.key;
+  handleCourseDelete(): void {
+    this.roomService.removeCourse(this.data.roomId, this.data.course);
+    this.dialogRef.close();
   }
 
   close() {
     this.dialogRef.close();
   }
-
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div fxLayout&#x3D;&quot;row wrap&quot; fxLayoutAlign&#x3D;&quot;space-between center&quot;&gt;
-  &lt;h2 mat-dialog-title&gt;{{(data.isNew) ? &#x27;Crea&#x27; : &#x27;Modifica&#x27;}} una clase&lt;/h2&gt;
+  &lt;h2 mat-dialog-title&gt;{{(data.isNew) ? &#x27;Crea&#x27; : &#x27;Modifica&#x27;}} una materia&lt;/h2&gt;
   &lt;fa-icon mat-icon-button [icon]&#x3D;&quot;faTimes&quot; size&#x3D;&quot;lg&quot; (click)&#x3D;&quot;close()&quot; [matDialogClose]&#x3D;&quot;&quot;&gt;&lt;/fa-icon&gt;
 &lt;/div&gt;
-
 &lt;mat-dialog-content&gt;
   &lt;mat-form-field class&#x3D;&quot;d-block&quot; appearance&#x3D;&quot;outline&quot;&gt;
-    &lt;mat-label&gt;Nombre&lt;/mat-label&gt;
-    &lt;input matInput type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;¿Cuál es el nombre de tu clase?&quot; [(ngModel)]&#x3D;&quot;data.name&quot;&gt;
-  &lt;/mat-form-field&gt;
-  &lt;div class&#x3D;&quot;d-block&quot;&gt;
-    &lt;mat-slide-toggle matInput palceholder&#x3D;&quot;Informes a tutores&quot; color&#x3D;&quot;primary&quot; [(ngModel)]&#x3D;&quot;data.guardiansEnabled&quot;&gt;
-    &lt;/mat-slide-toggle&gt;&amp;nbsp;
-    &lt;mat-label&gt;Informes a tutores&lt;/mat-label&gt;
-  &lt;/div&gt;
-  &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutGap&#x3D;&quot;5px&quot;&gt;
-    &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
-      &lt;mat-label&gt;Nivel&lt;/mat-label&gt;
-      &lt;mat-select [(ngModel)]&#x3D;&quot;data.section&quot; placeholder&#x3D;&quot;Selecciona el nivel escolar&quot;
-        (change)&#x3D;&quot;onSectionSelection($event.key)&quot;&gt;
-        &lt;mat-option *ngFor&#x3D;&quot;let key of levelKeys&quot; [value]&#x3D;&quot;levels[key]&quot;&gt;
-          {{levels[key]}}
-        &lt;/mat-option&gt;
-      &lt;/mat-select&gt;
-    &lt;/mat-form-field&gt;
-    &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
-      &lt;mat-label&gt;Grado&lt;/mat-label&gt;
-      &lt;input matInput type&#x3D;&quot;text&quot; [(ngModel)]&#x3D;&quot;data.room&quot; /&gt;
-    &lt;/mat-form-field&gt;
-  &lt;/div&gt;
-  &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutGap&#x3D;&quot;5px&quot;&gt;
-
-    &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
-      &lt;mat-label&gt;Estado&lt;/mat-label&gt;
-      &lt;mat-select [(ngModel)]&#x3D;&quot;data.courseState&quot; placeholder&#x3D;&quot;Selecciona el estado&quot;
-        (change)&#x3D;&quot;onStateSelection($event.key)&quot;&gt;
-        &lt;mat-option *ngFor&#x3D;&quot;let key of keys&quot; [value]&#x3D;&quot;states[key]&quot;&gt;
-          {{states[key]}}
-        &lt;/mat-option&gt;
-      &lt;/mat-select&gt;
-    &lt;/mat-form-field&gt;
-  &lt;/div&gt;
-  &lt;mat-form-field class&#x3D;&quot;d-block&quot; appearance&#x3D;&quot;outline&quot;&gt;
-    &lt;mat-label&gt;Descripción del encabezado&lt;/mat-label&gt;
-    &lt;textarea matInput type&#x3D;&quot;text&quot; [(ngModel)]&#x3D;&quot;data.descriptionHeading&quot;&gt;&lt;/textarea&gt;
+    &lt;input placeholder&#x3D;&quot;Nombre&quot; matInput [(ngModel)]&#x3D;&quot;data.course.name&quot; /&gt;
   &lt;/mat-form-field&gt;
   &lt;mat-form-field class&#x3D;&quot;d-block&quot; appearance&#x3D;&quot;outline&quot;&gt;
-    &lt;mat-label&gt;Descripción&lt;/mat-label&gt;
-    &lt;textarea matInput type&#x3D;&quot;text&quot; [(ngModel)]&#x3D;&quot;data.description&quot;&gt;&lt;/textarea&gt;
+    &lt;mat-label&gt;Profesor&lt;/mat-label&gt;
+    &lt;mat-select [(ngModel)]&#x3D;&quot;data.course.teacher&quot; placeholder&#x3D;&quot;Selecciona el profesor&quot;&gt;
+      &lt;div *ngIf&#x3D;&quot;(loading$|async)&quot;&gt;
+        &lt;mat-progress-bar&gt;&lt;/mat-progress-bar&gt;
+      &lt;/div&gt;
+      &lt;div *ngIf&#x3D;&quot;!(loading$|async)&quot;&gt;
+        &lt;mat-option *ngFor&#x3D;&quot;let teacher of teachers$|async&quot;
+          [value]&#x3D;&quot;{id:teacher.id,name:teacher.name,photoUrl:teacher.photoUrl}&quot;&gt;
+          &lt;img class&#x3D;&quot;img-select rounded-circle&quot; src&#x3D;&quot;{{teacher.photoUrl}}&quot;&gt;&amp;nbsp;
+          {{teacher.name.fullName}}
+        &lt;/mat-option&gt;
+      &lt;/div&gt;
+    &lt;/mat-select&gt;
   &lt;/mat-form-field&gt;
 &lt;/mat-dialog-content&gt;
-&lt;mat-dialog-actions&gt;
-  &lt;button mat-raised-button [matDialogClose]&#x3D;&quot;data&quot;&gt;
-    {{(data.isNew) ? &#x27;Crear&#x27; : &#x27;Modificar&#x27;}}
+&lt;div mat-dialog-actions&gt;
+  &lt;button mat-button (click)&#x3D;&quot;close()&quot; [mat-dialog-close]&#x3D;&quot;&quot;&gt;Cancel&lt;/button&gt;
+  &lt;button mat-button [mat-dialog-close]&#x3D;&quot;data&quot; cdkFocusInitial&gt;
+    {{ data.isNew ? &#x27;Crear&#x27; : &#x27;Modificar&#x27; }}
   &lt;/button&gt;
-&lt;/mat-dialog-actions&gt;
+  &lt;app-delete-button (delete)&#x3D;&quot;handleCourseDelete()&quot; *ngIf&#x3D;&quot;!data.isNew&quot;&gt;&lt;/app-delete-button&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -1163,7 +631,11 @@ export class CourseDialogComponent implements OnInit {
                 <p class="comment">
                     <code>./course-dialog.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.img-select {
+  width: 25px;
+  height: auto;
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -1191,9 +663,9 @@ export class CourseDialogComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div fxLayout="row wrap" fxLayoutAlign="space-between center">  <h2 mat-dialog-title>{{(data.isNew) ? \'Crea\' : \'Modifica\'}} una clase</h2>  <fa-icon mat-icon-button [icon]="faTimes" size="lg" (click)="close()" [matDialogClose]=""></fa-icon></div><mat-dialog-content>  <mat-form-field class="d-block" appearance="outline">    <mat-label>Nombre</mat-label>    <input matInput type="text" placeholder="¿Cuál es el nombre de tu clase?" [(ngModel)]="data.name">  </mat-form-field>  <div class="d-block">    <mat-slide-toggle matInput palceholder="Informes a tutores" color="primary" [(ngModel)]="data.guardiansEnabled">    </mat-slide-toggle>&nbsp;    <mat-label>Informes a tutores</mat-label>  </div>  <div fxLayout="row" fxLayoutGap="5px">    <mat-form-field appearance="outline">      <mat-label>Nivel</mat-label>      <mat-select [(ngModel)]="data.section" placeholder="Selecciona el nivel escolar"        (change)="onSectionSelection($event.key)">        <mat-option *ngFor="let key of levelKeys" [value]="levels[key]">          {{levels[key]}}        </mat-option>      </mat-select>    </mat-form-field>    <mat-form-field appearance="outline">      <mat-label>Grado</mat-label>      <input matInput type="text" [(ngModel)]="data.room" />    </mat-form-field>  </div>  <div fxLayout="row" fxLayoutGap="5px">    <mat-form-field appearance="outline">      <mat-label>Estado</mat-label>      <mat-select [(ngModel)]="data.courseState" placeholder="Selecciona el estado"        (change)="onStateSelection($event.key)">        <mat-option *ngFor="let key of keys" [value]="states[key]">          {{states[key]}}        </mat-option>      </mat-select>    </mat-form-field>  </div>  <mat-form-field class="d-block" appearance="outline">    <mat-label>Descripción del encabezado</mat-label>    <textarea matInput type="text" [(ngModel)]="data.descriptionHeading"></textarea>  </mat-form-field>  <mat-form-field class="d-block" appearance="outline">    <mat-label>Descripción</mat-label>    <textarea matInput type="text" [(ngModel)]="data.description"></textarea>  </mat-form-field></mat-dialog-content><mat-dialog-actions>  <button mat-raised-button [matDialogClose]="data">    {{(data.isNew) ? \'Crear\' : \'Modificar\'}}  </button></mat-dialog-actions></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradeRecomendationComponent', 'selector': 'app-grade-recomendation'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesListComponent', 'selector': 'app-grades-list'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SchoolDashboardComponent', 'selector': 'app-school-dashboard'},{'name': 'SchoolFormComponent', 'selector': 'app-school-form'},{'name': 'SchoolHomeComponent', 'selector': 'app-school-home'},{'name': 'SchoolStudentsComponent', 'selector': 'app-school-students'},{'name': 'SchoolTeachersComponent', 'selector': 'app-school-teachers'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'SubjectsComponent', 'selector': 'app-subjects'},{'name': 'TeachersFormComponent', 'selector': 'app-teachers-form'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserGradesPrintableComponent', 'selector': 'app-user-grades-printable'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'},{'name': 'WorkingOnGradesComponent', 'selector': 'app-working-on-grades'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
-    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'}];
+        var COMPONENT_TEMPLATE = '<div><div fxLayout="row wrap" fxLayoutAlign="space-between center">  <h2 mat-dialog-title>{{(data.isNew) ? \'Crea\' : \'Modifica\'}} una materia</h2>  <fa-icon mat-icon-button [icon]="faTimes" size="lg" (click)="close()" [matDialogClose]=""></fa-icon></div><mat-dialog-content>  <mat-form-field class="d-block" appearance="outline">    <input placeholder="Nombre" matInput [(ngModel)]="data.course.name" />  </mat-form-field>  <mat-form-field class="d-block" appearance="outline">    <mat-label>Profesor</mat-label>    <mat-select [(ngModel)]="data.course.teacher" placeholder="Selecciona el profesor">      <div *ngIf="(loading$|async)">        <mat-progress-bar></mat-progress-bar>      </div>      <div *ngIf="!(loading$|async)">        <mat-option *ngFor="let teacher of teachers$|async"          [value]="{id:teacher.id,name:teacher.name,photoUrl:teacher.photoUrl}">          <img class="img-select rounded-circle" src="{{teacher.photoUrl}}">&nbsp;          {{teacher.name.fullName}}        </mat-option>      </div>    </mat-select>  </mat-form-field></mat-dialog-content><div mat-dialog-actions>  <button mat-button (click)="close()" [mat-dialog-close]="">Cancel</button>  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>    {{ data.isNew ? \'Crear\' : \'Modificar\' }}  </button>  <app-delete-button (delete)="handleCourseDelete()" *ngIf="!data.isNew"></app-delete-button></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnimatedTextComponent', 'selector': 'app-animated-text'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssigmentsDashboardComponent', 'selector': 'app-assigments-dashboard'},{'name': 'AssignmentsComponent', 'selector': 'app-assignments'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradeRecomendationComponent', 'selector': 'app-grade-recomendation'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesListComponent', 'selector': 'app-grades-list'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoAnimateComponent', 'selector': 'app-logo-animate'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainContentComponent', 'selector': 'app-main-content'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'ParallaxComponent', 'selector': 'app-parallax'},{'name': 'ParallaxSpaceComponent', 'selector': 'app-parallax-space'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'ReopenningComponent', 'selector': 'app-reopenning'},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'RoomComponent', 'selector': 'app-room'},{'name': 'RoomDialogComponent', 'selector': ''},{'name': 'RoomsComponent', 'selector': 'app-rooms'},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SchoolDashboardComponent', 'selector': 'app-school-dashboard'},{'name': 'SchoolFormComponent', 'selector': 'app-school-form'},{'name': 'SchoolHomeComponent', 'selector': 'app-school-home'},{'name': 'SchoolStudentsComponent', 'selector': 'app-school-students'},{'name': 'SchoolTeachersComponent', 'selector': 'app-school-teachers'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'SubjectDialogComponent', 'selector': ''},{'name': 'SubjectsComponent', 'selector': 'app-subjects'},{'name': 'TeachersFormComponent', 'selector': 'app-teachers-form'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserGradesPrintableComponent', 'selector': 'app-user-grades-printable'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UserRoomDialogComponent', 'selector': ''},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'},{'name': 'WorkingOnGradesComponent', 'selector': 'app-working-on-grades'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
+    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'},{'name': 'ParallaxDirective', 'selector': '[appParallax]'}];
     var ACTUAL_COMPONENT = {'name': 'CourseDialogComponent'};
 </script>
 <script src="../js/tree.js"></script>

@@ -9,9 +9,10 @@ export const schoolComponents: any[] = [
   TeachersFormComponent,
   AssigmentsDashboardComponent,
 
+
 ]
 export * from './school-dashboard/school-dashboard.component';
 export * from './school-form/school-form.component';
 export * from './teachers-form/teachers-form.component';
-export * from './assigments-dashboard/assigments-dashboard.component'
+export * from './assigments-dashboard/assigments-dashboard.component';
 

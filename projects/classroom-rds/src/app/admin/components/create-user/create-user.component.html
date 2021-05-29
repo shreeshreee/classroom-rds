@@ -1,0 +1,75 @@
+<div fxLayout="row wrap" fxLayoutAlign="space-between center">
+  <h2 mat-dialog-title>Nuevo Usuario</h2>
+  <fa-icon mat-icon-button [icon]="faTimes" size="lg" (click)="onClose()" [matDialogClose]=""></fa-icon>
+</div>
+<mat-dialog-content>
+  <mat-form-field class="d-block" appearance="outline">
+    <mat-label>Nombre(s)</mat-label>
+    <input matInput type="text" [(ngModel)]="data.name.givenName">
+  </mat-form-field>
+  <mat-form-field class="d-block" appearance="outline">
+    <mat-label>Apellido(s)</mat-label>
+    <input matInput type="text" [(ngModel)]="data.name.familyName">
+  </mat-form-field>
+  <mat-label for="gender">Género: </mat-label>
+  <mat-radio-group fxLayout="row wrap" fxLayoutAlign="cener center" name="gender" color="primary"
+    [(ngModel)]="data.gender">
+    <mat-radio-button class="mx-2" value="Hombre">
+      Hombre
+    </mat-radio-button>
+    <mat-radio-button class="mx-2" value="Mujer">
+      Mujer
+    </mat-radio-button>
+  </mat-radio-group>
+  <mat-form-field class="d-block" appearance="outline">
+    <mat-label>Correo electrónico</mat-label>
+    <input matInput type="text" [(ngModel)]="data.primaryEmail">
+  </mat-form-field>
+  <mat-form-field class="d-block" appearance="outline">
+    <mat-label>Contraseña</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="data.password" required>
+    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    <mat-hint *ngIf="!data.password">Enter your password</mat-hint>
+  </mat-form-field>
+  <mat-label for="role">Rol de usuario: </mat-label>
+  <mat-radio-group fxLayout="row wrap" fxLayoutAlign="cener center" name="role" color="primary" [(ngModel)]="data.role">
+    <mat-radio-button class="mx-2" value="Alumnos">
+      Alumno
+    </mat-radio-button>
+    <mat-radio-button class="mx-2" value="Profesores">
+      Docente
+    </mat-radio-button>
+    <mat-radio-button class="mx-2" value="Administrativos">
+      Administrativo
+    </mat-radio-button>
+  </mat-radio-group>
+  <mat-form-field appearance="outline">
+    <mat-label>Fecha de nacimiento</mat-label>
+    <input matInput [matDatepicker]="picker" (focus)="picker.open()" placeholder="Fecha de nacimiento" color="primary"
+      name="dob" [(ngModel)]="data.dob">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <div fxLayout="row" fxLayoutGap="5px">
+    <mat-form-field appearance="outline">
+      <mat-label>Grupo</mat-label>
+      <mat-select [(ngModel)]="data.grade">
+        <mat-option *ngFor="let key of slevelKeys" [value]="key">
+          {{key}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Nivel</mat-label>
+      <mat-select [(ngModel)]="data.level">
+        <mat-option *ngFor="let key of clevelKeys" [value]="clevels[key]">
+          {{clevels[key]}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+<div mat-dialog-actions>
+  <button mat-button (click)="onClose()" [matDialogClose]="">Cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Create User</button>
+</div>

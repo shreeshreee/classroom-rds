@@ -1,7 +1,7 @@
 {
   "name": "Escuela Rafael Díaz Serdán",
   "short_name": "Escuela RDS",
-  "description": "Aplicación de servicios escolares de la escuela Rafael Díaz Serdán",
+  "description": "Aplicación de servicios escolares de la Escuela Rafael Díaz Serdán",
   "theme_color": "#0060a0",
   "background_color": "#fff",
   "scope": "./",

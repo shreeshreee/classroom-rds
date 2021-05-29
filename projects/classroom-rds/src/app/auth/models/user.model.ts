@@ -5,7 +5,9 @@ export interface User {
   customerId?: string;
   archived?: boolean;
   suspended?: boolean;
+  password?: string;
   suspensionReason?: string;
+  orgUnitPath?: string;
   emails?: [{
     address: string,
     customType: string,
@@ -22,7 +24,7 @@ export interface User {
   // PERSONAL
   curp?: string;
   dob?: string;
-  gender?: 'Hombre' | 'Mujer';
+  gender?: 'Hombre' | 'Mujer' | '';
   role?: string;
 
   // FROM AUTH
@@ -56,7 +58,7 @@ export interface User {
         givenName?: string
       }
       curp?: string;
-      gender?: 'Hombre' | 'Mujer'
+      gender?: 'Hombre' | 'Mujer' | '',
       relation?: {
         type?: 'Madre' | 'Padre' | 'Otro',
         custom?: string,

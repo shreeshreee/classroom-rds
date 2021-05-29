@@ -117,6 +117,9 @@
                                 <a href="#signInWithCredential">signInWithCredential</a>
                             </li>
                             <li>
+                                <a href="#signInWithPopup">signInWithPopup</a>
+                            </li>
+                            <li>
                                 <a href="#signOut">signOut</a>
                             </li>
                             <li>
@@ -234,8 +237,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="67"
-                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:67</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="71"
+                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:71</a></div>
                 </td>
             </tr>
 
@@ -304,8 +307,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="75"
-                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:75</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="79"
+                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:79</a></div>
                 </td>
             </tr>
 
@@ -374,8 +377,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="57"
-                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:57</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="60"
+                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:60</a></div>
                 </td>
             </tr>
 
@@ -605,6 +608,45 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="signInWithPopup"></a>
+                    <span class="name">
+                        <b>
+                            signInWithPopup
+                        </b>
+                        <a href="#signInWithPopup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>signInWithPopup()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="45"
+                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:45</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="../interfaces/User.html" target="_self" >Observable&lt;firebase.auth.UserCredential&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="signOut"></a>
                     <span class="name">
                         <b>
@@ -623,8 +665,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="45"
-                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:45</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="48"
+                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:48</a></div>
                 </td>
             </tr>
 
@@ -693,8 +735,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="49"
-                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:49</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="52"
+                            class="link-to-prism">projects/classroom-rds/src/app/auth/services/auth-fire.service.ts:52</a></div>
                 </td>
             </tr>
 
@@ -880,7 +922,7 @@ export class AuthFireService {
     this.user$ &#x3D; this.getAuthState().pipe(
       switchMap((user) &#x3D;&gt; {
         if (user) {
-          return this.afDatabase.object&lt;User&gt;(&#x60;${this.userCollection}/${user.providerData[0].uid}&#x60;).valueChanges();
+          return this.afStore.collection&lt;User&gt;(&#x60;${this.userCollection}/${user.providerData[0].uid}&#x60;).valueChanges();
         } else {
           return of(null);
         }
@@ -897,6 +939,9 @@ export class AuthFireService {
   signInWithCredential(credentials: firebase.auth.AuthCredential): Promise&lt;firebase.auth.UserCredential&gt; {
     return this.afAuth.signInWithCredential(credentials);
   }
+  signInWithPopup(): Observable&lt;firebase.auth.UserCredential&gt; {
+    return from(this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider));
+  }
   signOut(id: string) {
     //this.updateOnlineStatus(id, false);
     return this.afAuth.signOut();
@@ -912,10 +957,11 @@ export class AuthFireService {
   createUser(user: Partial&lt;User&gt;) {
     const key &#x3D; user.id;
     return this.afStore.collection(&#x60;${this.userCollection}&#x60;).doc(key).set({
+      ...user,
       isVerified: user.isVerified,
       uid: user.uid,
     }, { merge: true }).then(
-      () &#x3D;&gt; this.afDatabase.object(&#x60;${this.userCollection}/${user.id}&#x60;).update(user)
+      () &#x3D;&gt; this.afDatabase.object&lt;User&gt;(&#x60;${this.userCollection}/${user.id}&#x60;).update(user)
     );
   }
 

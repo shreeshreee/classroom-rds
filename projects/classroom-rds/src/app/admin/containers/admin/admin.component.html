@@ -10,6 +10,7 @@
     </mat-card-header>
 
     <mat-card-actions align="end">
+      <button mat-button (click)="openCreateUser()">Nuevo Usuario</button>
       <button mat-button [routerLink]="['users']" routerLinkActive="active">Todos los usuarios</button>
       <button mat-button [routerLink]="['school-home']" routerLinkActive="active">Estudiantes</button>
       <button mat-button [routerLink]="['groups']" routerLinkActive="active">Grupos</button>

@@ -90,33 +90,35 @@ import { RemoteLearningComponent } from &#x27;@rds-shared/components/remote-lear
 import { TermsComponent } from &#x27;@rds-shared/components/terms/terms.component&#x27;;
 import { UnderConstructionComponent } from &#x27;@rds-shared/components/under-construction/under-construction.component&#x27;;
 
-import { ConfigComponent } from &#x27;./core/layout/config/config.component&#x27;;
-import { ResumeComponent } from &#x27;./shared/components/resume/resume.component&#x27;;
-import { YoutubeComponent } from &#x27;~/app/shared/components/youtube/youtube.component&#x27;;
-const routes: Routes &#x3D; [{
-  path: &#x27;&#x27;, component: LayoutComponent, children: [
-    { path: &#x27;&#x27;, component: HomeComponent },
-    { path: &#x27;config&#x27;, component: ConfigComponent },
-    { path: &#x27;escuela&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./school/school.module&#x27;).then(m &#x3D;&gt; m.SchoolModule)&quot;, canActivate: [AuthGuard] },
-    { path: &#x27;gsuite&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./classroom/classroom.module&#x27;).then(m &#x3D;&gt; m.ClassroomModule)&quot;, canActivate: [AuthGuard] },
-    { path: &#x27;perfil&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./classroom/user-profiles/user-profiles.module&#x27;).then(m &#x3D;&gt; m.UserProfilesModule)&quot;, canActivate: [AuthGuard] },
-    { path: &#x27;calificaciones&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./grades/grades.module&#x27;).then(m &#x3D;&gt; m.GradesModule)&quot;, canActivate: [AuthGuard] },
-    /*     { path: &#x27;clases&#x27;, loadChildren: () &#x3D;&gt; import(&#x27;./classroom/courses/courses.module&#x27;).then(m &#x3D;&gt; m.CoursesModule), canActivate: [AuthGuard] },*/
-    { path: &#x27;user&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./user/user.module&#x27;).then(m &#x3D;&gt; m.UserModule)&quot;, canActivate: [AuthGuard] },
-    { path: &#x27;admin&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./admin/admin.module&#x27;).then(m &#x3D;&gt; m.AdminModule)&quot;, canActivate: [AuthGuard] },
-    { path: &#x27;youtube&#x27;, component: YoutubeComponent },
-    { path: &#x27;about&#x27;, component: AboutComponent },
-    { path: &#x27;remote-learning&#x27;, component: RemoteLearningComponent },
-    { path: &#x27;privacy-policy&#x27;, component: PrivacyPolicyComponent },
-    { path: &#x27;not-found&#x27;, component: NotFoundComponent },
-    { path: &#x27;location&#x27;, component: LocationComponent },
-    { path: &#x27;license&#x27;, component: LicenseComponent },
-    { path: &#x27;code-conduct&#x27;, component: CodeConductComponent },
-    { path: &#x27;code-conduct-school&#x27;, component: CodeConductSchoolComponent },
-    { path: &#x27;terms&#x27;, component: TermsComponent },
-    { path: &#x27;under-construction&#x27;, component: UnderConstructionComponent },
-    { path: &#x27;resume&#x27;, component: ResumeComponent },
+import { SettingsComponent } from &#x27;@rds-core/components/settings/settings.component&#x27;;
 
+import { YoutubeComponent } from &#x27;@rds-shared/components/youtube/youtube.component&#x27;;
+
+import { AdminGuard } from &#x27;@rds-admin/guards/admin.guard&#x27;;
+
+import { ReopenningComponent } from &#x27;@rds-shared//components/reopenning/reopenning.component&#x27;;
+const routes: Routes &#x3D; [{
+  path: &#x27;&#x27;, component: LayoutComponent, data: { breadcrumb: &#x27;Home&#x27; }, children: [
+    { path: &#x27;&#x27;, component: HomeComponent, data: { breadcrumb: null } },
+    { path: &#x27;escuela&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./school/school.module&#x27;).then(m &#x3D;&gt; m.SchoolModule)&quot;, canActivate: [AdminGuard], data: { breadcrumb: &#x27;Administración&#x27; } },
+    { path: &#x27;gsuite&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./classroom/classroom.module&#x27;).then(m &#x3D;&gt; m.ClassroomModule)&quot;, canActivate: [AuthGuard], data: { breadcrumb: &#x27;Google GSuite&#x27; } },
+    { path: &#x27;perfil&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./classroom/user-profiles/user-profiles.module&#x27;).then(m &#x3D;&gt; m.UserProfilesModule)&quot;, canActivate: [AuthGuard] },
+    { path: &#x27;calificaciones&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./grades/grades.module&#x27;).then(m &#x3D;&gt; m.GradesModule)&quot;, canActivate: [AdminGuard] },
+    { path: &#x27;user&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./user/user.module&#x27;).then(m &#x3D;&gt; m.UserModule)&quot;, canActivate: [AuthGuard], data: { breadcrumb: &#x27;Servicios escolares&#x27; } },
+    { path: &#x27;admin&#x27;, loadChildren: () &#x3D;&gt; &quot;import(&#x27;./admin/admin.module&#x27;).then(m &#x3D;&gt; m.AdminModule)&quot;, canActivate: [AdminGuard] },
+    { path: &#x27;youtube&#x27;, component: YoutubeComponent },
+    { path: &#x27;about&#x27;, component: AboutComponent, data: { breadcrumb: &#x27;¿Quiénes somos?&#x27; } },
+    { path: &#x27;reopenning&#x27;, component: ReopenningComponent, data: { breadcrumb: &#x27;Reapertura&#x27; } },
+    { path: &#x27;remote-learning&#x27;, component: RemoteLearningComponent, data: { breadcrumb: &#x27;Educación a distancia&#x27; } },
+    { path: &#x27;privacy-policy&#x27;, component: PrivacyPolicyComponent, data: { breadcrumb: &#x27;Políticas de privacidad&#x27; } },
+    { path: &#x27;not-found&#x27;, component: NotFoundComponent },
+    { path: &#x27;location&#x27;, component: LocationComponent, data: { breadcrumb: &#x27;¿Dónde estamos?&#x27; } },
+    { path: &#x27;license&#x27;, component: LicenseComponent },
+    { path: &#x27;code-conduct&#x27;, component: CodeConductComponent, data: { breadcrumb: &#x27;Código de conducta&#x27; } },
+    { path: &#x27;code-conduct-school&#x27;, component: CodeConductSchoolComponent },
+    { path: &#x27;terms&#x27;, component: TermsComponent, data: { breadcrumb: &#x27;¿Quiénes somos?&#x27; } },
+    { path: &#x27;under-construction&#x27;, component: UnderConstructionComponent },
+    { path: &#x27;settings&#x27;, component: SettingsComponent, canActivate: [AuthGuard], data: { breadcrumb: &#x27;Configuración&#x27; } },
     { path: &#x27;**&#x27;, component: NotFoundComponent }
   ]
 }];

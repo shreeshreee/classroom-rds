@@ -81,10 +81,6 @@
     <table class="table table-sm table-hover">
         <tbody>
 
-            <tr>
-                <td class="col-md-3">changeDetection</td>
-                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
-            </tr>
 
 
 
@@ -205,7 +201,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="23" class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:23</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="22" class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -261,7 +257,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Definido en <a href="" data-line="21" class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:21</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="20" class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:20</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -282,7 +278,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Definido en <a href="" data-line="20" class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:20</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="19" class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:19</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -303,7 +299,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Definido en <a href="" data-line="19" class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:19</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="18" class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:18</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -339,8 +335,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="27"
-                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:27</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="26"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:26</a></div>
                 </td>
             </tr>
 
@@ -378,8 +374,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="61"
-                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:61</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="60"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:60</a></div>
                 </td>
             </tr>
 
@@ -417,8 +413,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="65"
-                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:65</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="64"
+                            class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:64</a></div>
                 </td>
             </tr>
 
@@ -491,7 +487,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="22" class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:22</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="21" class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:21</a></div>
                             </td>
                         </tr>
 
@@ -523,7 +519,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Definido en <a href="" data-line="23" class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:23</a></div>
+                                    <div class="io-line">Definido en <a href="" data-line="22" class="link-to-prism">projects/classroom-rds/src/app/shared/components/dashboard/dashboard.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -550,7 +546,6 @@ import { User } from &#x27;~/app/auth/models/user.model&#x27;;
   selector: &#x27;app-dashboard&#x27;,
   templateUrl: &#x27;./dashboard.component.html&#x27;,
   styleUrls: [&#x27;./dashboard.component.scss&#x27;],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent implements AfterViewInit, OnInit {
   //user$: Observable&lt;User&gt;;
@@ -608,57 +603,44 @@ export class DashboardComponent implements AfterViewInit, OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;user&quot; class&#x3D;&quot;px-2&quot;&gt;
-  &lt;div class&#x3D;&quot;py-2&quot;&gt;
-    &lt;mat-card&gt;
-      &lt;mat-card-header&gt;
-        &lt;!-- &lt;img mat-card-avatar src&#x3D;&quot;assets/images/rds-newlogo-transparent.png&quot;&gt;--&gt;
-        &lt;mat-card-title class&#x3D;&quot;view-title&quot;&gt;Bienvenido
-          &lt;!-- &lt;small class&#x3D;&quot;text-muted&quot;&gt;{{user.name.fullName}}&lt;/small&gt; --&gt;
-        &lt;/mat-card-title&gt;
-        &lt;mat-card-subtitle class&#x3D;&quot;view-subtitle&quot;&gt;Panel de acceso a servicios de información para estudiantes y
-          profesores.&lt;br&gt;
-        &lt;/mat-card-subtitle&gt;
-      &lt;/mat-card-header&gt;
-      &lt;mat-card-content&gt;
-        &lt;span class&#x3D;&quot;fs-1&quot;&gt;&lt;/span&gt;
-      &lt;/mat-card-content&gt;
-    &lt;/mat-card&gt;
-  &lt;/div&gt;
-
-  &lt;div fxLayout&#x3D;&quot;row wrap&quot; fxLayout.lt-sm&#x3D;&quot;column&quot; fxLayoutGap&#x3D;&quot;10px&quot; fxLayoutAlign&#x3D;&quot;flex-start&quot;&gt;
-    &lt;mat-card class&#x3D;&quot;mb-2 dashboard-cards&quot; fxFlex&#x3D;&quot;0 1 calc(33.3% - 10px)&quot; fxFlex.lt-lg&#x3D;&quot;0 1 calc(50% - 10px)&quot;
-      fxFlex.lt-sm&#x3D;&quot;100%&quot; [routerLink]&#x3D;&quot;[&#x27;user&#x27;,user.id]&quot; appMaterialElevation [raisedElevation]&#x3D;&quot;raisedElev&quot;&gt;
-      &lt;mat-card-header&gt;
-        &lt;mat-card-title&gt;Servicios Escolares&lt;/mat-card-title&gt;
-        &lt;mat-card-subtitle&gt;
-          &lt;p&gt;&lt;small&gt;Accede a toda tu información como alumno.&lt;/small&gt;&lt;/p&gt;
-        &lt;/mat-card-subtitle&gt;
-      &lt;/mat-card-header&gt;
-      &lt;img mat-card-image src&#x3D;&quot;assets/images/assignment-grades2.png&quot; /&gt;
-    &lt;/mat-card&gt;
-    &lt;mat-card *ngIf&#x3D;&quot;isTeacher || isAdmin&quot; class&#x3D;&quot;mb-2 dashboard-cards&quot; fxFlex&#x3D;&quot;0 1 calc(33.3% - 10px)&quot;
-      fxFlex.lt-lg&#x3D;&quot;0 1 calc(50% - 10px)&quot; fxFlex.lt-sm&#x3D;&quot;100%&quot; [routerLink]&#x3D;&quot;[&#x27;escuela&#x27;]&quot; appMaterialElevation
-      [raisedElevation]&#x3D;&quot;raisedElev&quot;&gt;
-      &lt;mat-card-header&gt;
-        &lt;mat-card-title&gt;Administración escolar&lt;/mat-card-title&gt;
-        &lt;mat-card-subtitle&gt;
-          &lt;p&gt;&lt;small&gt;Administra usuarios en la institución.&lt;/small&gt;&lt;/p&gt;
-        &lt;/mat-card-subtitle&gt;
-      &lt;/mat-card-header&gt;
-      &lt;img mat-card-image src&#x3D;&quot;assets/images/dashboard-image.png&quot; /&gt;
-    &lt;/mat-card&gt;
-    &lt;mat-card *ngIf&#x3D;&quot;isTeacher || isAdmin&quot; class&#x3D;&quot;mb-2 dashboard-cards&quot; fxFlex&#x3D;&quot;0 1 calc(33.3% - 10px)&quot;
-      fxFlex.lt-lg&#x3D;&quot;0 1 calc(50% - 10px)&quot; fxFlex.lt-sm&#x3D;&quot;100%&quot; [routerLink]&#x3D;&quot;[&#x27;gsuite&#x27;]&quot; appMaterialElevation
-      [raisedElevation]&#x3D;&quot;raisedElev&quot;&gt;
-      &lt;mat-card-header&gt;
-        &lt;mat-card-title&gt;Funciones de G Suite&lt;/mat-card-title&gt;
-        &lt;mat-card-subtitle&gt;
-          &lt;p&gt;&lt;small&gt;Administra Google Classroom y Google Admin Directory.&lt;/small&gt;&lt;/p&gt;
-        &lt;/mat-card-subtitle&gt;
-      &lt;/mat-card-header&gt;
-      &lt;img mat-card-image src&#x3D;&quot;assets/images/dashboard-google.png&quot; /&gt;
-    &lt;/mat-card&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;user&quot; class&#x3D;&quot;m-4&quot;&gt;
+  &lt;p class&#x3D;&quot;view-title&quot;&gt;Bienvenido&lt;/p&gt;
+  &lt;p class&#x3D;&quot;view-subtitle&quot;&gt;Servicios para estudiantes y profesores.&lt;/p&gt;
+  &lt;div class&#x3D;&quot;p-2&quot;&gt;
+    &lt;div fxLayout&#x3D;&quot;row wrap&quot; fxLayout.lt-sm&#x3D;&quot;column&quot; fxLayoutGap&#x3D;&quot;10px&quot; fxLayoutAlign&#x3D;&quot;flex-start&quot;&gt;
+      &lt;mat-card class&#x3D;&quot;mb-2 dashboard-cards&quot; fxFlex&#x3D;&quot;0 1 calc(33.3% - 10px)&quot; fxFlex.lt-lg&#x3D;&quot;0 1 calc(50% - 10px)&quot;
+        fxFlex.lt-sm&#x3D;&quot;100%&quot; [routerLink]&#x3D;&quot;[&#x27;user&#x27;,user.id]&quot; appMaterialElevation [raisedElevation]&#x3D;&quot;raisedElev&quot;&gt;
+        &lt;mat-card-header&gt;
+          &lt;mat-card-title&gt;Servicios Escolares&lt;/mat-card-title&gt;
+          &lt;mat-card-subtitle&gt;
+            &lt;p&gt;&lt;small&gt;Accede a toda tu información como alumno.&lt;/small&gt;&lt;/p&gt;
+          &lt;/mat-card-subtitle&gt;
+        &lt;/mat-card-header&gt;
+        &lt;img mat-card-image src&#x3D;&quot;assets/images/assignment-grades2.png&quot; /&gt;
+      &lt;/mat-card&gt;
+      &lt;mat-card *ngIf&#x3D;&quot;isTeacher || isAdmin&quot; class&#x3D;&quot;mb-2 dashboard-cards&quot; fxFlex&#x3D;&quot;0 1 calc(33.3% - 10px)&quot;
+        fxFlex.lt-lg&#x3D;&quot;0 1 calc(50% - 10px)&quot; fxFlex.lt-sm&#x3D;&quot;100%&quot; [routerLink]&#x3D;&quot;[&#x27;escuela&#x27;]&quot; appMaterialElevation
+        [raisedElevation]&#x3D;&quot;raisedElev&quot;&gt;
+        &lt;mat-card-header&gt;
+          &lt;mat-card-title&gt;Administración escolar&lt;/mat-card-title&gt;
+          &lt;mat-card-subtitle&gt;
+            &lt;p&gt;&lt;small&gt;Administra usuarios en la institución.&lt;/small&gt;&lt;/p&gt;
+          &lt;/mat-card-subtitle&gt;
+        &lt;/mat-card-header&gt;
+        &lt;img mat-card-image src&#x3D;&quot;assets/images/dashboard-image.png&quot; /&gt;
+      &lt;/mat-card&gt;
+      &lt;mat-card *ngIf&#x3D;&quot;isTeacher || isAdmin&quot; class&#x3D;&quot;mb-2 dashboard-cards&quot; fxFlex&#x3D;&quot;0 1 calc(33.3% - 10px)&quot;
+        fxFlex.lt-lg&#x3D;&quot;0 1 calc(50% - 10px)&quot; fxFlex.lt-sm&#x3D;&quot;100%&quot; [routerLink]&#x3D;&quot;[&#x27;gsuite&#x27;]&quot; appMaterialElevation
+        [raisedElevation]&#x3D;&quot;raisedElev&quot;&gt;
+        &lt;mat-card-header&gt;
+          &lt;mat-card-title&gt;Funciones de G Suite&lt;/mat-card-title&gt;
+          &lt;mat-card-subtitle&gt;
+            &lt;p&gt;&lt;small&gt;Administra Google Classroom y Google Admin Directory.&lt;/small&gt;&lt;/p&gt;
+          &lt;/mat-card-subtitle&gt;
+        &lt;/mat-card-header&gt;
+        &lt;img mat-card-image src&#x3D;&quot;assets/images/dashboard-google.png&quot; /&gt;
+      &lt;/mat-card&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -668,12 +650,7 @@ export class DashboardComponent implements AfterViewInit, OnInit {
                 <p class="comment">
                     <code>./dashboard.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">@import &quot;./../../../../assets/themes/colors.scss&quot;;
-mat-card::ng-deep.mat-card-header-text {
-  width: 100%;
-}
-
-.img-fluid {
+                <pre class="line-numbers"><code class="language-scss">.img-fluid {
   max-height: 120px;
 }
 
@@ -687,22 +664,6 @@ mat-card::ng-deep.mat-card-header-text {
   bottom: 15px;
   //border: 1px solid gray;
   box-shadow: none;
-}
-
-.view-title {
-  font-family: Comfortaa;
-  color:$rds-logo-color;
-  font-size: calc(1rem + 1.5vw);
-  font-weight: 800;
-  span {
-    font-weight: 300;
-  }
-}
-.view-subtitle {
-  font-family: Comfortaa;
-  margin-top: -50px;
-  font-size: calc(0.5rem + 1vw);
-  font-weight: 400;
 }
 </code></pre>
     </div>
@@ -732,9 +693,9 @@ mat-card::ng-deep.mat-card-header-text {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div *ngIf="user" class="px-2">  <div class="py-2">    <mat-card>      <mat-card-header>        <!-- <img mat-card-avatar src="assets/images/rds-newlogo-transparent.png">-->        <mat-card-title class="view-title">Bienvenido          <!-- <small class="text-muted">{{user.name.fullName}}</small> -->        </mat-card-title>        <mat-card-subtitle class="view-subtitle">Panel de acceso a servicios de información para estudiantes y          profesores.<br>        </mat-card-subtitle>      </mat-card-header>      <mat-card-content>        <span class="fs-1"></span>      </mat-card-content>    </mat-card>  </div>  <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="10px" fxLayoutAlign="flex-start">    <mat-card class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-lg="0 1 calc(50% - 10px)"      fxFlex.lt-sm="100%" [routerLink]="[\'user\',user.id]" appMaterialElevation [raisedElevation]="raisedElev">      <mat-card-header>        <mat-card-title>Servicios Escolares</mat-card-title>        <mat-card-subtitle>          <p><small>Accede a toda tu información como alumno.</small></p>        </mat-card-subtitle>      </mat-card-header>      <img mat-card-image src="assets/images/assignment-grades2.png" />    </mat-card>    <mat-card *ngIf="isTeacher || isAdmin" class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)"      fxFlex.lt-lg="0 1 calc(50% - 10px)" fxFlex.lt-sm="100%" [routerLink]="[\'escuela\']" appMaterialElevation      [raisedElevation]="raisedElev">      <mat-card-header>        <mat-card-title>Administración escolar</mat-card-title>        <mat-card-subtitle>          <p><small>Administra usuarios en la institución.</small></p>        </mat-card-subtitle>      </mat-card-header>      <img mat-card-image src="assets/images/dashboard-image.png" />    </mat-card>    <mat-card *ngIf="isTeacher || isAdmin" class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)"      fxFlex.lt-lg="0 1 calc(50% - 10px)" fxFlex.lt-sm="100%" [routerLink]="[\'gsuite\']" appMaterialElevation      [raisedElevation]="raisedElev">      <mat-card-header>        <mat-card-title>Funciones de G Suite</mat-card-title>        <mat-card-subtitle>          <p><small>Administra Google Classroom y Google Admin Directory.</small></p>        </mat-card-subtitle>      </mat-card-header>      <img mat-card-image src="assets/images/dashboard-google.png" />    </mat-card>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'ConfigComponent', 'selector': ''},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradeRecomendationComponent', 'selector': 'app-grade-recomendation'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesListComponent', 'selector': 'app-grades-list'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SchoolDashboardComponent', 'selector': 'app-school-dashboard'},{'name': 'SchoolFormComponent', 'selector': 'app-school-form'},{'name': 'SchoolHomeComponent', 'selector': 'app-school-home'},{'name': 'SchoolStudentsComponent', 'selector': 'app-school-students'},{'name': 'SchoolTeachersComponent', 'selector': 'app-school-teachers'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'SubjectsComponent', 'selector': 'app-subjects'},{'name': 'TeachersFormComponent', 'selector': 'app-teachers-form'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserGradesPrintableComponent', 'selector': 'app-user-grades-printable'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'},{'name': 'WorkingOnGradesComponent', 'selector': 'app-working-on-grades'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
-    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'}];
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="user" class="m-4">  <p class="view-title">Bienvenido</p>  <p class="view-subtitle">Servicios para estudiantes y profesores.</p>  <div class="p-2">    <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="10px" fxLayoutAlign="flex-start">      <mat-card class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-lg="0 1 calc(50% - 10px)"        fxFlex.lt-sm="100%" [routerLink]="[\'user\',user.id]" appMaterialElevation [raisedElevation]="raisedElev">        <mat-card-header>          <mat-card-title>Servicios Escolares</mat-card-title>          <mat-card-subtitle>            <p><small>Accede a toda tu información como alumno.</small></p>          </mat-card-subtitle>        </mat-card-header>        <img mat-card-image src="assets/images/assignment-grades2.png" />      </mat-card>      <mat-card *ngIf="isTeacher || isAdmin" class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)"        fxFlex.lt-lg="0 1 calc(50% - 10px)" fxFlex.lt-sm="100%" [routerLink]="[\'escuela\']" appMaterialElevation        [raisedElevation]="raisedElev">        <mat-card-header>          <mat-card-title>Administración escolar</mat-card-title>          <mat-card-subtitle>            <p><small>Administra usuarios en la institución.</small></p>          </mat-card-subtitle>        </mat-card-header>        <img mat-card-image src="assets/images/dashboard-image.png" />      </mat-card>      <mat-card *ngIf="isTeacher || isAdmin" class="mb-2 dashboard-cards" fxFlex="0 1 calc(33.3% - 10px)"        fxFlex.lt-lg="0 1 calc(50% - 10px)" fxFlex.lt-sm="100%" [routerLink]="[\'gsuite\']" appMaterialElevation        [raisedElevation]="raisedElev">        <mat-card-header>          <mat-card-title>Funciones de G Suite</mat-card-title>          <mat-card-subtitle>            <p><small>Administra Google Classroom y Google Admin Directory.</small></p>          </mat-card-subtitle>        </mat-card-header>        <img mat-card-image src="assets/images/dashboard-google.png" />      </mat-card>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AddUserGroupComponent', 'selector': 'app-add-user-group'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminWellcomeComponent', 'selector': 'app-admin-wellcome'},{'name': 'AnimatedTextComponent', 'selector': 'app-animated-text'},{'name': 'AnnouncementDialogComponent', 'selector': ''},{'name': 'AnnouncementResultComponent', 'selector': ''},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AssigmentsDashboardComponent', 'selector': 'app-assigments-dashboard'},{'name': 'AssignmentsComponent', 'selector': 'app-assignments'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'ClassroomComponent', 'selector': 'app-classroom'},{'name': 'CodeConductComponent', 'selector': 'app-code-conduct'},{'name': 'CodeConductSchoolComponent', 'selector': 'app-code-conduct-school'},{'name': 'CourseAnnouncementsComponent', 'selector': 'app-course-announcements'},{'name': 'CourseComponent', 'selector': 'app-course'},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CourseDialogComponent', 'selector': ''},{'name': 'CoursesComponent', 'selector': 'app-courses'},{'name': 'CoursesListComponent', 'selector': 'app-courses-list'},{'name': 'CourseStudentsComponent', 'selector': 'app-course-students'},{'name': 'CourseTeachersComponent', 'selector': 'app-course-teachers'},{'name': 'CourseUserDialogComponent', 'selector': ''},{'name': 'CourseWorkComponent', 'selector': 'app-course-work'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteButtonComponent', 'selector': 'app-delete-button'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GradeCourseComponent', 'selector': 'app-grade-course'},{'name': 'GradeRecomendationComponent', 'selector': 'app-grade-recomendation'},{'name': 'GradesBarChartComponent', 'selector': 'app-grades-bar-chart'},{'name': 'GradesComponent', 'selector': 'app-grades'},{'name': 'GradesListComponent', 'selector': 'app-grades-list'},{'name': 'GradesTableComponent', 'selector': 'app-grades-table'},{'name': 'GradesWellcomeComponent', 'selector': 'app-grades-wellcome'},{'name': 'GroupComponent', 'selector': 'app-group'},{'name': 'GroupDialogComponent', 'selector': 'app-group-dialog'},{'name': 'GroupsComponent', 'selector': 'app-groups'},{'name': 'GroupTableComponent', 'selector': 'app-group-table'},{'name': 'GuardiansListDialogComponent', 'selector': ''},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LayoutComponent', 'selector': 'app-layout'},{'name': 'LicenseComponent', 'selector': 'app-license'},{'name': 'LocationComponent', 'selector': 'app-location'},{'name': 'LoginDialogComponent', 'selector': ''},{'name': 'LogoAnimateComponent', 'selector': 'app-logo-animate'},{'name': 'LogoComponent', 'selector': 'app-logo'},{'name': 'MainContentComponent', 'selector': 'app-main-content'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'ParallaxComponent', 'selector': 'app-parallax'},{'name': 'ParallaxSpaceComponent', 'selector': 'app-parallax-space'},{'name': 'PreescolarComponent', 'selector': 'app-preescolar'},{'name': 'PrimariaComponent', 'selector': 'app-primaria'},{'name': 'PrivacyPolicyComponent', 'selector': 'app-privacy-policy'},{'name': 'ProfileUserComponent', 'selector': 'app-profile-user'},{'name': 'RemoteLearningComponent', 'selector': 'app-remote-learning'},{'name': 'RemoveConfirmComponent', 'selector': ''},{'name': 'ReopenningComponent', 'selector': 'app-reopenning'},{'name': 'ResumeComponent', 'selector': 'app-resume'},{'name': 'RoomComponent', 'selector': 'app-room'},{'name': 'RoomDialogComponent', 'selector': ''},{'name': 'RoomsComponent', 'selector': 'app-rooms'},{'name': 'SchoolComponent', 'selector': 'app-school'},{'name': 'SchoolDashboardComponent', 'selector': 'app-school-dashboard'},{'name': 'SchoolFormComponent', 'selector': 'app-school-form'},{'name': 'SchoolHomeComponent', 'selector': 'app-school-home'},{'name': 'SchoolStudentsComponent', 'selector': 'app-school-students'},{'name': 'SchoolTeachersComponent', 'selector': 'app-school-teachers'},{'name': 'SecundariaComponent', 'selector': 'app-secundaria'},{'name': 'SelectCourseComponent', 'selector': 'app-select-course'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SnackComponent', 'selector': ''},{'name': 'SubjectDialogComponent', 'selector': ''},{'name': 'SubjectsComponent', 'selector': 'app-subjects'},{'name': 'TeachersFormComponent', 'selector': 'app-teachers-form'},{'name': 'TermsComponent', 'selector': 'app-terms'},{'name': 'UnderConstructionComponent', 'selector': 'app-under-construction'},{'name': 'UserCardComponent', 'selector': 'app-user-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'UserDetailsComponent', 'selector': 'app-user-details'},{'name': 'UserGradesComponent', 'selector': 'app-user-grades'},{'name': 'UserGradesPrintableComponent', 'selector': 'app-user-grades-printable'},{'name': 'UserHomeComponent', 'selector': 'app-user-home'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'UserMenuComponent', 'selector': 'app-user-menu'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UserRoomDialogComponent', 'selector': ''},{'name': 'UsersComponent', 'selector': 'app-users'},{'name': 'UsersGroupsComponent', 'selector': 'app-users-groups'},{'name': 'UsersTableComponent', 'selector': 'app-users-table'},{'name': 'WellcomeComponent', 'selector': 'app-wellcome'},{'name': 'WorkingOnGradesComponent', 'selector': 'app-working-on-grades'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
+    var DIRECTIVES = [{'name': 'MaterialElevationDirective', 'selector': '[appMaterialElevation]'},{'name': 'ParallaxDirective', 'selector': '[appParallax]'}];
     var ACTUAL_COMPONENT = {'name': 'DashboardComponent'};
 </script>
 <script src="../js/tree.js"></script>

@@ -264,12 +264,12 @@
             <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from &#x27;@angular/router&#x27;;
 
+import { SubscriptionService } from &#x27;@rds-shared/services&#x27;;
+
+import { UserEntityService } from &#x27;@rds-store/user/user-entity.service&#x27;;
+
 import { Observable } from &#x27;rxjs&#x27;;
 import { filter, first, map, takeUntil, tap } from &#x27;rxjs/operators&#x27;;
-
-import { SubscriptionService } from &#x27;../../shared/services/subscription.service&#x27;;
-
-import { UserEntityService } from &#x27;~/app/store/user/user-entity.service&#x27;;
 
 
 @Injectable()
@@ -286,7 +286,7 @@ export class UsersResolver implements Resolve&lt;boolean&gt; {
       .pipe(
         tap(loaded &#x3D;&gt; {
           if (!loaded) {
-            this.userEntityService.getAll().pipe(takeUntil(this.subService.unsubscribe$));
+            this.userEntityService.getAll().pipe(takeUntil(this.subService.unsubscribe$)).pipe(map(users &#x3D;&gt; users.filter(users &#x3D;&gt; users.isTeacher &#x3D;&#x3D; true)));
           }
         }),
         filter(loaded &#x3D;&gt; !!loaded),

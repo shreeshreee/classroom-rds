@@ -23,6 +23,7 @@ import { adminServices } from '@rds-admin/services';
 
 import { GroupsResolver } from './services/groups.resolver';
 import { UserDomainsResolver } from './services/user-domains.resolver';
+import { CreateUserConfirmComponent } from './components/create-user-confirm/create-user-confirm.component';
 import { GroupTableComponent } from './components/group-table/group-table.component';
 import { SchoolHomeComponent } from './containers/school-home/school-home.component';
 import { GroupDataService } from './state/group/group-data.service';
@@ -30,6 +31,7 @@ import { GroupEntityService } from './state/group/group-entity.service';
 import { UserDomainDataService } from './state/user-domain/user-domain-data.service';
 import { UserDomainEntityService } from './state/user-domain/user-domain-entity.service';
 import { MaterialModule } from '~/app/modules/material.module';
+import { CreateUserErrorComponent } from './components/create-user-error/create-user-error.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { MaterialModule } from '~/app/modules/material.module';
     ...adminContainers,
     GroupTableComponent,
     SchoolHomeComponent,
+    CreateUserErrorComponent,
   ],
   imports: [
     CommonModule,
@@ -69,8 +72,8 @@ export class AdminModule {
     groupEntityService: GroupEntityService,
     groupDataService: GroupDataService
   ) {
-    entityServices.registerEntityCollectionServices([userDomainEntityService, groupEntityService]);
     eds.registerMetadataMap(fromEntity.entityMetadata);
+    entityServices.registerEntityCollectionServices([userDomainEntityService, groupEntityService]);
     entityDataService.registerService(fromUserDomain.entityCollectionName, userDomainDataService);
     entityDataService.registerService(fromGroup.entityCollectionName, groupDataService);
 

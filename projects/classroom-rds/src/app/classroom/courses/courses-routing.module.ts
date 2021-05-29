@@ -16,7 +16,7 @@ const routes: Routes = [
       { path: '', component: CoursesListComponent, data: { breadcrumb: null }, resolve: { courses: CoursesResolver } },
       {
         path: ':courseId', component: CourseComponent, data: { breadcrumb: null }, resolve: { course: CourseResolver }, children: [
-          { path: '', component: WellcomeComponent },
+          /* { path: '', component: WellcomeComponent }, */
           {
             path: 'students', loadChildren: () => import('../students/students.module').then(m => m.StudentsModule), data: { breadcrumb: 'Alumnos' }
           },

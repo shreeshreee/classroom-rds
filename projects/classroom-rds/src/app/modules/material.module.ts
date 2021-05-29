@@ -44,10 +44,12 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { MaterialElevationDirective } from './material-elevation.directive';
+import { ParallaxDirective } from './parallax.directive';
 
 @NgModule({
-  declarations: [MaterialElevationDirective],
+  declarations: [MaterialElevationDirective, ParallaxDirective],
   exports: [
+    ParallaxDirective,
     MaterialElevationDirective,
     A11yModule,
     DragDropModule,

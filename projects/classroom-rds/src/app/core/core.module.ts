@@ -5,13 +5,15 @@ import { SharedModule } from '@rds-shared/shared.module';
 
 import { AlertModule } from 'ngx-bootstrap/alert';
 
-import { layoutComponents } from './layout';
+import { layoutComponents } from './components';
 import { coreServices } from './services';
 
+import { LayoutComponent } from './layout/layout.component';
 import { appearanceModules } from '~/app/modules';
 @NgModule({
   declarations: [
-    ...layoutComponents
+    ...layoutComponents,
+    LayoutComponent
   ],
   imports: [
     AlertModule,

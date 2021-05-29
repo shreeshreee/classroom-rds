@@ -412,7 +412,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Devuelve : </b>    <code>{}</code>
+                        <b>Devuelve : </b>    <code>Promise&lt;void&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -698,7 +698,7 @@ export class AdminFireService {
     this.user$ &#x3D; this.getAuthState().pipe(
       switchMap((user) &#x3D;&gt; {
         if (user) {
-          return this.afDatabase.object&lt;User&gt;(&#x60;${this.userCollection}/${user.providerData[0].uid}&#x60;).valueChanges();
+          return this.afStore.collection(&#x60;${this.userCollection}/${user.providerData[0].uid}&#x60;).valueChanges();
         } else {
           return of(null);
         }
@@ -723,10 +723,10 @@ export class AdminFireService {
     return this.afStore.collection&lt;UserDomain&gt;(&#x60;${this.userCollection}&#x60;).valueChanges()
   }
 
-  async createUser(user: UserDomain) {
+  async createUser(user: UserDomain): Promise&lt;void&gt; {
     const key &#x3D; user.id;
-    //return await this.afStore.collection(&#x27;users&#x27;).doc(key).set(user, { merge: true });
-    return await this.afDatabase.object&lt;UserDomain&gt;(&#x60;${this.userCollection}/${key}&#x60;).update(user);
+    return await this.afStore.collection(&#x27;users&#x27;).doc(key).set(user, { merge: true });
+    //return await this.afDatabase.object&lt;UserDomain&gt;(&#x60;${this.userCollection}/${key}&#x60;).update(user);
   }
 
   async createGroup(group: Group) {

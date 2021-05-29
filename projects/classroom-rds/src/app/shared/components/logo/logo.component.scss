@@ -1,4 +1,13 @@
 @import "./../../../../assets/themes/colors.scss";
+.container {
+  transform: translate(-50%, -50%);
+  top: 20%;
+  left: 50%;
+  display: block;
+  position: absolute;
+  max-width: 225px;
+}
+
 h1 span {
   font-family: "Fredoka One";
   font-size: 1.8em;
@@ -20,19 +29,19 @@ h1 span {
 }
 .img-casa {
   position: absolute;
-  height: 180px;
+  height: 200px;
   width: auto;
-  margin-top: 70px;
-  margin-left: -70px;
+  margin-top: 50px;
+  margin-left: -80px;
   @media (min-width: 768px) and (max-width: 991.98px) {
-    height: 140px;
-    margin-left: -50px;
-    margin-top: 50px;
+    height: 160px;
+    margin-left: -70px;
+    margin-top: 30px;
   }
   @media (max-width: 767.98px) {
-    height: 80px;
-    margin-left: -35px;
-    margin-top: 40px;
+    height: 95px;
+    margin-left: -40px;
+    margin-top: 20px;
   }
 }
 .img-personas {
@@ -49,7 +58,7 @@ h1 span {
   @media (max-width: 767.98px) {
     height: 110px;
     margin-left: -90px;
-    margin-top: 90px;
+    margin-top: 80px;
   }
 }
 
